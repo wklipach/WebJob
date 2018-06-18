@@ -9,8 +9,23 @@ import { AdvancedSearchComponent } from './advanced-search/advanced-search.compo
 import { PersonalInformationComponent } from './personal-information/personal-information.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { LoginComponent } from './login/login.component';
+import { RouterModule, Routes } from '@angular/router';
+import { NotFoundComponent } from './not-found/not-found.component';
+
+
+// определение маршрутов
+const appRoutes: Routes =[
+  { path: '', component: HeaderTopComponent},
+  { path: 'login', component: LoginComponent},
+  { path: 'register', component: RegisterComponent},
+  { path: '**', component: NotFoundComponent }
+];
+
+
 
 @NgModule({
+  imports:
+   [ BrowserModule, RouterModule.forRoot(appRoutes)],
   declarations: [
     AppComponent,
     HeaderTopComponent,
@@ -19,11 +34,9 @@ import { LoginComponent } from './login/login.component';
     AdvancedSearchComponent,
     PersonalInformationComponent,
     ForgotPasswordComponent,
+    NotFoundComponent,
     LoginComponent,
    ],
-  imports: [
-    BrowserModule
-  ],
   providers: [],
   bootstrap: [AppComponent]
 })
