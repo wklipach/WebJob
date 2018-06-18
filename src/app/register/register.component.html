@@ -1,39 +1,67 @@
-<h2>Это Регистрация</h2>
+<h1>Регистрация</h1>
 <form>
   <div class="form-row">
     <div class="form-group col-md-2">
-      <label for="inputLogin">Логин</label>
+      <label for="inputLogin">Имя пользователя</label>
       <input type="text" class="form-control" id="inputLogin">
     </div>
-   </div>
 
-  <div class="form-row">
-      <div class="form-group col-md-3">
-      <label for="inputPassword">Пароль</label>
-      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+  <!-- Проверяем вносимый логин. Если логин уже есть в базе, показываем лейбл -Имя пользователя занято, или наоборот
+
+    <div class="form-group col-md-3">
+      <label>Имя пользователя свободно</label><br>
+      <label>Имя пользователя занято</label>
+    </div>
+     -->
+  </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-2">
+        <label for="inputName">Имя</label>
+        <input type="text" class="form-control" id="inputName">
+      </div>
     </div>
 
+    <div class="form-row">
+      <div class="form-group col-md-2">
+        <label for="inputLastname">Фамилия</label>
+        <input type="text" class="form-control" id="inputLastname">
+      </div>
+    </div>
+
+
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <label for="inputEmail1">Email</label>
+      <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
+    </div>
   </div>
 
-  <button type="submit" class="btn btn-primary">Войти</button><br>
-  <label>Забыли пароль или логин?</label>
-</form>
-<br>
+  <div class="form-row">
+        <div class="form-group col-md-3">
+      <label for="inputPassword1">Пароль</label>
+      <input type="password" class="form-control" id="inputPassword1" placeholder="Password">
 
-<form class="dropdown-menu p-4">
-  <div class="form-group">
-    <label for="exampleDropdownFormEmail2">Email address</label>
-    <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
+    </div>
   </div>
-  <div class="form-group">
-    <label for="exampleDropdownFormPassword2">Password</label>
-    <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+
+    <div class="form-group">
+    <div class="form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox"> Я согласен с правилами использования
+      </label><br>
+      <label>Прочитать правила использования
+      </label>
+    </div>
   </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="dropdownCheck2">
-    <label class="form-check-label" for="dropdownCheck2">
-      Remember me
-    </label>
-  </div>
-  <button type="submit" class="btn btn-primary">Sign in</button>
+  <button type="submit" class="btn btn-primary" disabled>Зарегистрироваться</button>
 </form>
+
+
+<div class="jumbotron">
+  <h1 class="display-4"></h1>
+  <p class="lead"></p>
+  <hr class="my-6">
+   <p class="lead">
+  </p>
+</div>
