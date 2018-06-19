@@ -11,13 +11,18 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { LoginComponent } from './login/login.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { RegisterEmployerComponent } from './register-employer/register-employer.component';
+import { RegisterEmployeeComponent } from './register-employee/register-employee.component';
+import { RulesComponent } from './rules/rules.component';
 
 
 // определение маршрутов
-const appRoutes: Routes =[
+const appRoutes: Routes = [
   { path: '', component: HeaderTopComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
+  { path: 'forgot-password', component: ForgotPasswordComponent},
+  { path: 'rules', component: RulesComponent},
   { path: '**', component: NotFoundComponent }
 ];
 
@@ -34,8 +39,11 @@ const appRoutes: Routes =[
     AdvancedSearchComponent,
     PersonalInformationComponent,
     ForgotPasswordComponent,
-    NotFoundComponent,
+    RegisterEmployerComponent,
+    RegisterEmployeeComponent,
     LoginComponent,
+    RulesComponent,
+    NotFoundComponent
    ],
   providers: [],
   bootstrap: [AppComponent]
