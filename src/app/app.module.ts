@@ -23,6 +23,8 @@ const appRoutes: Routes =[
   { path: '', component: HeaderTopComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
+  { path: 'employee', component: RegisterEmployeeComponent},
+  { path: 'employer', component: RegisterEmployerComponent},
   { path: '**', component: NotFoundComponent }
 ];
 
@@ -30,7 +32,7 @@ const appRoutes: Routes =[
 
 @NgModule({
   imports:
-   [ BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],
+   [ BrowserModule, HttpClientModule, FormsModule, RouterModule.forRoot(appRoutes)],
   declarations: [
     AppComponent,
     HeaderTopComponent,
@@ -41,8 +43,10 @@ const appRoutes: Routes =[
     ForgotPasswordComponent,
     NotFoundComponent,
     LoginComponent,
+    RegisterEmployeeComponent,
+    RegisterEmployerComponent
    ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
