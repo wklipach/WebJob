@@ -19,7 +19,7 @@ import { RulesComponent } from './rules/rules.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 // определение маршрутов
-const appRoutes: Routes =[
+const appRoutes: Routes = [
   { path: '', component: HeaderTopComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
@@ -30,7 +30,7 @@ const appRoutes: Routes =[
 
 @NgModule({
   imports:
-   [ BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],
+   [ BrowserModule, HttpClientModule, FormsModule, RouterModule.forRoot(appRoutes)],
   declarations: [
     AppComponent,
     HeaderTopComponent,
@@ -42,7 +42,7 @@ const appRoutes: Routes =[
     NotFoundComponent,
     LoginComponent,
    ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

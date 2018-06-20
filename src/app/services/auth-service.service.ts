@@ -8,8 +8,7 @@ export class AuthService {
 
   }
 
-  getDataUserTable()
-  {
+  getDataUserTable() {
     return this.http.get('http://localhost:3000/UserTable');
   }
 

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from '../services/auth-service.service';
+import {UserTable} from '../class/UserTable';
 
 @Component({
   selector: 'app-register',
@@ -7,21 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private httpService: AuthService) { }
-
   user: UserTable;
   checkRegisterRadio: boolean;
-  constructor() { }
+
+  constructor(private httpService: AuthService) { }
+
+
+
 
   ngOnInit() {
-  }
 
     this.httpService.getDataUserTable().subscribe(
-      (data:UserTable) => {this.user = data;
-                                console.log(this.user)}
-    )
+      (data: UserTable ) => {
+        this.user = data;
+        console.log(this.user);
+      }
+    );
   }
+
   newFunction() {
-    console.log ('???');
+    console.log ('Это соискатель !');
   }
 }

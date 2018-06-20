@@ -1,4 +1,4 @@
-export class UserTable{
+export class UserTable {
   title: string;
   author: number;
 }
