@@ -11,6 +11,8 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { LoginComponent } from './login/login.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
+import {AuthService} from './services/auth-service.service';
+import {HttpClientModule} from '@angular/common/http';
 
 
 // определение маршрутов
@@ -25,7 +27,7 @@ const appRoutes: Routes =[
 
 @NgModule({
   imports:
-   [ BrowserModule, RouterModule.forRoot(appRoutes)],
+   [ BrowserModule, HttpClientModule, RouterModule.forRoot(appRoutes)],
   declarations: [
     AppComponent,
     HeaderTopComponent,
@@ -37,7 +39,7 @@ const appRoutes: Routes =[
     NotFoundComponent,
     LoginComponent,
    ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
