@@ -10,14 +10,14 @@
   <div class="row">
     <div class="col-sm-10">
       <div class="form-check">
-        <input  class="form-check-input" [(ngModel)]="checkRegisterRadio" (change)="newFunction()" type="radio" name="registerRadios" id="employeeRadios">
-        <label class="form-check-label" for="employeeRadios">
+        <input  class="form-check-input" (change)="newFunction($event)" type="radio" name="registerRadios" id="rEmployee" >
+        <label class="form-check-label">
           Соискатель
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" [(ngModel)]="checkRegisterRadio" (change)="newFunction()" type="radio" name="registerRadios" id="employerRadios">
-        <label class="form-check-label" for="employerRadios">
+        <input class="form-check-input"  (change)="newFunction($event)" type="radio" name="registerRadios" id="rEmployer" >
+        <label class="form-check-label">
           Работодатель
         </label>
       </div>
@@ -26,4 +26,9 @@
 </fieldset>
 
 <!--
-<input [(ngModel)]="checkboxValue" (change)="newFunction()" type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked> -->
+<input [(ngModel)]="checkboxValue" (change)="newFunction()" type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+
+[(ngModel)]="checkRegisterRadio" (change)="newFunction()"
+[(ngModel)]="checkRegisterRadio2" (change)="newFunction()"
+
+-->
