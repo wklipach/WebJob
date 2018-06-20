@@ -9,7 +9,8 @@ import {UserTable} from '../class/UserTable';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private httpService: AuthService) { }
+  constructor(private httpService: AuthService) {
+  }
 
   user: UserTable;
 
@@ -19,8 +20,11 @@ export class RegisterComponent implements OnInit {
     console.log('fffffffffffffffffffffffffffffffff');
 
     this.httpService.getDataUserTable().subscribe(
-      (data:UserTable) => {this.user = data;
-                                console.log(this.user)}
-    )
+      (data: UserTable) => {
+        this.user = data;
+        console.log(this.user)
+      }
+    );
   }
 }
+
