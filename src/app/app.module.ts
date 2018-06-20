@@ -14,7 +14,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { RegisterEmployerComponent } from './register-employer/register-employer.component';
 import { RegisterEmployeeComponent } from './register-employee/register-employee.component';
 import { RulesComponent } from './rules/rules.component';
-
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 // определение маршрутов
 const appRoutes: Routes = [
@@ -30,7 +30,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports:
-   [ BrowserModule, RouterModule.forRoot(appRoutes)],
+   [ BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],
   declarations: [
     AppComponent,
     HeaderTopComponent,

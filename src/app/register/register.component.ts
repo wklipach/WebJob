@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
+  checkRegisterRadio: boolean;
   constructor() { }
 
   ngOnInit() {
   }
 
+  newFunction() {
+    console.log ('???');
+  }
 }
