@@ -13,6 +13,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
 import {AuthService} from './services/auth-service.service';
 import {HttpClientModule} from '@angular/common/http';
+import { RegisterEmployerComponent } from './register-employer/register-employer.component';
+import { RegisterEmployeeComponent } from './register-employee/register-employee.component';
+import { RulesComponent } from './rules/rules.component';
 
 
 // определение маршрутов
@@ -27,7 +30,7 @@ const appRoutes: Routes =[
 
 @NgModule({
   imports:
-   [ BrowserModule, HttpClientModule, RouterModule.forRoot(appRoutes)],
+   [ BrowserModule, RouterModule.forRoot(appRoutes)],
   declarations: [
     AppComponent,
     HeaderTopComponent,
@@ -39,7 +42,7 @@ const appRoutes: Routes =[
     NotFoundComponent,
     LoginComponent,
    ],
-  providers: [AuthService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
