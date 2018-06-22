@@ -17,11 +17,12 @@ import { RegisterEmployerComponent } from './register-employer/register-employer
 import { RegisterEmployeeComponent } from './register-employee/register-employee.component';
 import { RulesComponent } from './rules/rules.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {AngularFontAwesomeModule} from 'angular-font-awesome';
 
 // определение маршрутов
 const appRoutes: Routes =[
-  { path: '', component: HeaderTopComponent},
-  { path: 'login', component: LoginComponent},
+  { path: '', component: HeaderTopComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent},
   { path: 'employee', component: RegisterEmployeeComponent},
   { path: 'employer', component: RegisterEmployerComponent},
@@ -32,7 +33,7 @@ const appRoutes: Routes =[
 
 @NgModule({
   imports:
-   [ BrowserModule, HttpClientModule, FormsModule, RouterModule.forRoot(appRoutes)],
+   [ BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule, AngularFontAwesomeModule, RouterModule.forRoot(appRoutes)],
   declarations: [
     AppComponent,
     HeaderTopComponent,

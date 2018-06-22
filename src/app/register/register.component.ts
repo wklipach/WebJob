@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../services/auth-service.service';
 import {UserTable} from '../class/UserTable';
 import {Router} from '@angular/router';
+import { FormGroup, FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -14,8 +15,7 @@ export class RegisterComponent implements OnInit {
   }
 
   user: UserTable;
-  checkRegisterRadio: boolean;
-  checkRegisterRadio2: boolean;
+  myForm : FormGroup;
 
   ngOnInit() {
     this.httpService.getDataUserTable().subscribe(
@@ -24,6 +24,10 @@ export class RegisterComponent implements OnInit {
         console.log(this.user)
       }
     );
+
+
+    // assets/img/b3291e37c5413656444d23e0bec71e2b.jpg
+
   }
 
   newFunction(event) {
@@ -37,5 +41,11 @@ export class RegisterComponent implements OnInit {
     }
 
   }
+
+  submit(){
+    console.log(this.myForm);
+  }
+
+
 }
 
