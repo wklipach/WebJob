@@ -3,20 +3,31 @@
 <form [formGroup]="myForm" novalidate (ngSubmit)="submit()">
   <div class="form-row">
     <div class="form-group col-md-2">
-      <label for="inputLogin">Имя пользователя</label>
-      <input type="text" class="form-control" id="inputLogin" formControlName="userName">
+      <label>Имя пользователя</label>
+      <input type="text" class="form-control" id="userName" formControlName="userName">
     </div>
 
+    <div class="form-group col-md-3">
+
+      <!-- Проверяем вносимый логин. Если логин уже есть в базе, показываем лейбл -Имя пользователя занято, или наоборот
+    -->
+
     <div class="alert alert-danger"
-         *ngIf="myForm.controls['userName'].invalid && myForm.controls['userName'].touched">
+         *ngIf="myForm.controls['userName'].touched && myForm.controls['userName'].value.length === 0 ">
       Не указано имя
     </div>
 
-    <!-- Проверяем вносимый логин. Если логин уже есть в базе, показываем лейбл -Имя пользователя занято, или наоборот
-  -->
-    <div class="form-group col-md-3">
-      <label>Имя пользователя свободно</label><br>
-      <label>Имя пользователя занято</label>
+    <div *ngIf="myForm.controls['userName'].value.length > 0">
+      <div *ngIf="myForm.controls['userName'].invalid; else trueUserNameTemplate">
+        <div class="alert alert-danger">Имя пользователя занято</div>
+      </div>
+
+      <ng-template #trueUserNameTemplate>
+        <div class="alert alert-info">Имя пользователя свободно</div>
+      </ng-template>
+
+  </div>
+      <!-- закончили проверку логина -->
     </div>
 
   </div>
@@ -49,7 +60,7 @@
         Я согласен с правилами использования
       </label>
       <div class="alert alert-danger"
-           *ngIf="myForm.controls['cbLicense'].invalid">
+           *ngIf="myForm.controls['cbLicense'].invalid && myForm.controls['cbLicense'].touched">
         Согласитесь с лицензией
       </div>
       <br>

@@ -11,23 +11,13 @@ import { FormGroup, FormControl, Validators} from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private httpService: AuthService, private router: Router) {
+  constructor(private router: Router) {
   }
 
-  user: UserTable;
   myForm : FormGroup;
 
   ngOnInit() {
-    this.httpService.getDataUserTable().subscribe(
-      (data: UserTable) => {
-        this.user = data;
-        console.log(this.user)
-      }
-    );
-
-
     // assets/img/b3291e37c5413656444d23e0bec71e2b.jpg
-
   }
 
   newFunction(event) {
@@ -43,7 +33,7 @@ export class RegisterComponent implements OnInit {
   }
 
   submit(){
-    console.log(this.myForm);
+    // console.log(this.myForm);
   }
 
 

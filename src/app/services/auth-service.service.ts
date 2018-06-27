@@ -8,8 +8,9 @@ export class AuthService {
 
   }
 
-  getDataUserTable()
+  getDataUserTable(UserName: string)
   {
+    //вставить запрос типа select top 10 * from UserTable where UserName=:@UserName
     return this.http.get('http://localhost:3000/UserTable');
   }
 

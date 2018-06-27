@@ -1,4 +1,5 @@
 export class UserTable{
-  title: string;
-  author: number;
+  UserName: string;
+  EMail: string;
+  Password: string;
 }
