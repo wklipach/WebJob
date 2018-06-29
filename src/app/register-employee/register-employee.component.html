@@ -3,8 +3,7 @@
 <form [formGroup]="myForm" novalidate (ngSubmit)="submit()">
   <div class="form-row">
     <div class="form-group col-md-2">
-      <label>Имя пользователя</label>
-      <input type="text" class="form-control" id="userName" formControlName="userName">
+        <input type="text" class="form-control" id="userName" formControlName="userName" placeholder="Имя пользователя">
     </div>
 
     <div class="form-group col-md-3">
@@ -35,7 +34,7 @@
   <div class="form-row">
     <div class="form-group col-md-3">
       <label for="inputEmail">Email</label>
-      <input type="email" class="form-control" id="inputEmail" placeholder="Email" formControlName="userEmail" formControlName="userEmail">
+      <input type="email" class="form-control" id="inputEmail" placeholder="Email" formControlName="userEmail">
     </div>
 
     <div class="alert alert-danger"
