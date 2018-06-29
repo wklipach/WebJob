@@ -26,6 +26,7 @@ const appRoutes: Routes =[
   { path: 'register', component: RegisterComponent},
   { path: 'employee', component: RegisterEmployeeComponent},
   { path: 'employer', component: RegisterEmployerComponent},
+  {path: 'forgot-password', component: ForgotPasswordComponent},
   { path: '**', component: NotFoundComponent }
 ];
 
