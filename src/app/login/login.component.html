@@ -1,0 +1,31 @@
+<app-header-top></app-header-top>
+<h1>
+Войти
+</h1>
+
+
+<form>
+  <div class="form-row">
+    <div class="form-group col-md-2">
+      <label for="inputLogin">Логин или E-Mail</label>
+      <input type="text" class="form-control" id="inputLogin" placeholder="Логин или E-mail">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-2">
+      <label for="inputPassword">Пароль</label>
+      <input type="password" class="form-control" id="inputPassword" placeholder="Пароль">
+    </div>
+
+  </div>
+
+  <button type="submit" class="btn btn-primary">Войти</button><br>
+  <a class="nav-link" routerLink="/forgot-password" routerLinkActive="active">Забыли пароль или логин?</a>
+  <a class="nav-link" routerLink="/register" routerLinkActive="active">Зарегистрироваться</a>
+    <br>
+
+</form>
+
+
+<app-footer></app-footer>

@@ -1,0 +1,29 @@
+<app-header-top></app-header-top>
+
+<h1>Регистрация</h1>
+
+<fieldset class="form-group">
+  <div class="row">
+    <label class="col-sm-10">Выберите один из вариантов регистрации.</label>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-10">
+      <div class="form-check">
+        <input  class="form-check-input" (change)="newFunction($event)" type="radio" name="registerRadios" id="rEmployee" >
+        <label class="form-check-label">
+          Соискатель
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input"  (change)="newFunction($event)" type="radio" name="registerRadios" id="rEmployer" >
+        <label class="form-check-label">
+          Работодатель
+        </label>
+      </div>
+
+    </div>
+  </div>
+</fieldset>
+
+
