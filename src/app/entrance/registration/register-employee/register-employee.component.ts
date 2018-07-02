@@ -1,9 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {UserTable} from '../class/UserTable';
-import {AuthService} from '../services/auth-service.service';
+import {UserTable} from '../../../class/UserTable';
+import {AuthService} from '../../../services/auth-service.service';
 import {isUndefined} from 'util';
-import {UserType} from '../class/UserType';
+import {UserType} from '../../../class/UserType';
 import {Router} from '@angular/router';
 
 @Component({
