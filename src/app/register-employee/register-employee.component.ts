@@ -14,7 +14,7 @@ import {Router} from '@angular/router';
 export class RegisterEmployeeComponent implements OnInit {
 
   user: UserTable;
-  myForm : FormGroup;
+  myForm: FormGroup;
 
   constructor(private httpService: AuthService, private router: Router) {
 
@@ -27,8 +27,8 @@ export class RegisterEmployeeComponent implements OnInit {
         Validators.required,
         Validators.email
       ]),
-      'userPassword1': new FormControl("", Validators.required),
-      'cbLicense': new FormControl("", Validators.requiredTrue)
+      'userPassword1': new FormControl('', Validators.required),
+      'cbLicense': new FormControl('', Validators.requiredTrue)
     });
 
   }
@@ -58,17 +58,17 @@ export class RegisterEmployeeComponent implements OnInit {
    }
 
   // валидатор
-  userNameAsyncValidator(control: FormControl): Promise<{[s:string]:boolean}> {
+  userNameAsyncValidator(control: FormControl): Promise<{[s:string]: boolean}> {
     return new Promise(
       (resolve, reject)=>{
 
         return this.httpService.getDataUserTable(control.value).subscribe(
           (data: UserTable) => {
             if (this.getCheckUser (data,control.value) === true) {
-              resolve( {'myError': true})
+              resolve( {'myError': true});
             }
             else {
-              resolve(null)
+              resolve(null);
             }
           }
         );

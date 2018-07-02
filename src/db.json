@@ -31,16 +31,16 @@
       "Password": "Пароль 5"
     },
     {
-      "UserName": "Петька",
-      "EMail": "klipach@mail.ru",
-      "Password": "12345678",
+      "UserName": "пользователь 6",
+      "EMail": "yal@mail.ru",
+      "Password": "8464",
       "bEmployer": true,
       "id": 6
     },
     {
-      "UserName": "Сержка",
-      "EMail": "klipach234@mail.ru",
-      "Password": "121111222dff",
+      "UserName": "aasd",
+      "EMail": "asd@sdfsdf",
+      "Password": "sdfsdf",
       "bEmployer": true,
       "id": 7
     }
