@@ -3,6 +3,8 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {UserTable} from '../class/UserTable';
 import {AuthService} from '../services/auth-service.service';
 import {isUndefined} from 'util';
+import {UserType} from '../class/UserType';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-register-employee',
@@ -13,28 +15,20 @@ export class RegisterEmployeeComponent implements OnInit {
 
   user: UserTable;
   myForm : FormGroup;
-  //если имя занято переменная true
-  isBoolExistsUser: boolean;
-  @Input("isTest") isTest: boolean;
 
-  constructor(private httpService: AuthService) {
-
-    this.isBoolExistsUser = false;
-    this.isTest = false;
+  constructor(private httpService: AuthService, private router: Router) {
 
     this.myForm  = new FormGroup({
-      "userName": new FormControl('',
+      'userName': new FormControl('',
          [Validators.required], [this.userNameAsyncValidator.bind(this)]
       ),
 
-
-
-      "userEmail": new FormControl(null, [
+      'userEmail': new FormControl(null, [
         Validators.required,
         Validators.email
       ]),
-      userPassword1: new FormControl("", Validators.required),
-      cbLicense: new FormControl("", Validators.requiredTrue)
+      'userPassword1': new FormControl("", Validators.required),
+      'cbLicense': new FormControl("", Validators.requiredTrue)
     });
 
   }
@@ -43,29 +37,24 @@ export class RegisterEmployeeComponent implements OnInit {
   }
 
   submit(){
-    this.getBoolTenUser('ЗАГЛУШКА');
-  }
 
-  getBoolTenUser (UserName: string) {
+    const {userName, userEmail, userPassword1} = this.myForm.value;
 
-    return this.httpService.getDataUserTable(UserName).subscribe(
-      (data: UserTable) => {
-        this.user = data;
-        this.isBoolExistsUser = this.getCheckUser (data,UserName);
-      }
-    );
+    const AddUser  = new UserType(userName,userEmail,userPassword1,true); // (userName,  userEmail, userPassword1,true);
 
+    console.log(AddUser);
+
+    return this.httpService.postDataUserTable(AddUser).subscribe(
+      () => {
+        this.router.navigate(['/login']); }
+    )
 
   }
 
     getCheckUser (ListUser: UserTable, UserName: string): boolean
     {
-    // console.log('--------', Object(ListUser).length );
-
-      //console.log('UserName=', UserName);
-      var ResUser = Object(ListUser).find( x => x.UserName === UserName.trim());
+      var ResUser = Object(ListUser).find( x => x.UserName.toLowerCase() === UserName.trim().toLowerCase());
       if (isUndefined(ResUser)) {return false;} else {return true;}
-
    }
 
   // валидатор
@@ -76,7 +65,7 @@ export class RegisterEmployeeComponent implements OnInit {
         return this.httpService.getDataUserTable(control.value).subscribe(
           (data: UserTable) => {
             if (this.getCheckUser (data,control.value) === true) {
-              resolve( {"myError": true})
+              resolve( {'myError': true})
             }
             else {
               resolve(null)

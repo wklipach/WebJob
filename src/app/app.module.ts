@@ -18,21 +18,15 @@ import { RegisterEmployeeComponent } from './register-employee/register-employee
 import { RulesComponent } from './rules/rules.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AngularFontAwesomeModule} from 'angular-font-awesome';
-import { Controlpanel1Component } from './controlpanel1/controlpanel1.component';
-import { Controlpanel2Component } from './controlpanel2/controlpanel2.component';
-import {controlPath} from '@angular/forms/src/directives/shared';
 
 // определение маршрутов
-const appRoutes: Routes = [
+const appRoutes: Routes =[
   { path: '', component: HeaderTopComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent},
   { path: 'employee', component: RegisterEmployeeComponent},
   { path: 'employer', component: RegisterEmployerComponent},
   {path: 'forgot-password', component: ForgotPasswordComponent},
-  {path: 'rules', component: RulesComponent},
-  {path: 'controlpanel1', component: Controlpanel1Component},
-  {path: 'controlpanel2', component: Controlpanel2Component},
   { path: '**', component: NotFoundComponent }
 ];
 
@@ -49,13 +43,10 @@ const appRoutes: Routes = [
     AdvancedSearchComponent,
     PersonalInformationComponent,
     ForgotPasswordComponent,
+    NotFoundComponent,
     LoginComponent,
     RegisterEmployeeComponent,
-    RegisterEmployerComponent,
-    RulesComponent,
-    Controlpanel1Component,
-    Controlpanel2Component,
-    NotFoundComponent
+    RegisterEmployerComponent
    ],
   providers: [AuthService],
   bootstrap: [AppComponent]

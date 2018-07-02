@@ -1,37 +1,48 @@
-{ "UserTable":
-[
-  {
-    "id": 1,
-    "UserName": "Пользователь 1",
-    "EMail": "Почта 1",
-    "Password": "Пароль 1"
-  },
-  {
-    "id": 2,
-    "UserName": "Пользователь 2",
-    "EMail": "Почта 2",
-    "Password": "Пароль 2"
-  },
-  {
-    "id": 3,
-    "UserName": "Пользователь 3",
-    "EMail": "Почта 3",
-    "Password": "Пароль 3"
-  },
-  {
-    "id": 4,
-    "UserName": "Пользователь 4",
-    "EMail": "Почта 4",
-    "Password": "Пароль 4"
-  },
-  {
-    "id": 5,
-    "UserName": "Пользователь 5",
-    "EMail": "Почта 5",
-    "Password": "Пароль 5"
-  }
-
-
-
-]
+{
+  "UserTable": [
+    {
+      "id": 1,
+      "UserName": "Пользователь 1",
+      "EMail": "Почта 1",
+      "Password": "Пароль 1"
+    },
+    {
+      "id": 2,
+      "UserName": "Пользователь 2",
+      "EMail": "Почта 2",
+      "Password": "Пароль 2"
+    },
+    {
+      "id": 3,
+      "UserName": "Пользователь 3",
+      "EMail": "Почта 3",
+      "Password": "Пароль 3"
+    },
+    {
+      "id": 4,
+      "UserName": "Пользователь 4",
+      "EMail": "Почта 4",
+      "Password": "Пароль 4"
+    },
+    {
+      "id": 5,
+      "UserName": "Пользователь 5",
+      "EMail": "Почта 5",
+      "Password": "Пароль 5"
+    },
+    {
+      "UserName": "Петька",
+      "EMail": "klipach@mail.ru",
+      "Password": "12345678",
+      "bEmployer": true,
+      "id": 6
+    },
+    {
+      "UserName": "Сержка",
+      "EMail": "klipach234@mail.ru",
+      "Password": "121111222dff",
+      "bEmployer": true,
+      "id": 7
+    }
+  ]
 }
