@@ -6,8 +6,23 @@ import {UserType} from '../class/UserType';
 @Injectable()
 export class AuthService {
 
+  private isAuthenticated = false;
+
   constructor(private http: HttpClient) {
 
+  }
+
+  login() {
+    this.isAuthenticated = true;
+  }
+
+  logout() {
+    this.isAuthenticated = false;
+    window.localStorage.clear();
+  }
+
+  isLoggedIn(): boolean {
+    return this.isAuthenticated;
   }
 
   getDataUserTable(UserName: string)
@@ -28,6 +43,5 @@ export class AuthService {
     //вставить запрос по добавлению пользователя в базу
     return this.http.post('http://localhost:3000/UserTable',user);
   }
-
 
 }

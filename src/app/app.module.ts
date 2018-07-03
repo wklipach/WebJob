@@ -52,6 +52,7 @@ const appRoutes: Routes = [
     RegisterEmployerComponent,
     Controlpanel1Component,
     Controlpanel2Component,
+    RulesComponent,
     NotFoundComponent
    ],
   providers: [AuthService],
