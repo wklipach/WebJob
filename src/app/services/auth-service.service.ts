@@ -2,18 +2,27 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {UserTable} from '../class/UserTable';
 import {UserType} from '../class/UserType';
+import {Subject} from 'rxjs';
 
 @Injectable()
 export class AuthService {
 
+
+  public IsUserLoggedIn: Subject<{connect: boolean, name : string}> = new Subject<{connect: boolean, name : string}>();
+
   private isAuthenticated = false;
+  private sUserName : string = '';
+
+
+
 
   constructor(private http: HttpClient) {
 
   }
 
-  login() {
+  login(sUserName: string) {
     this.isAuthenticated = true;
+    this.sUserName = sUserName;
   }
 
   logout() {
@@ -21,9 +30,16 @@ export class AuthService {
     window.localStorage.clear();
   }
 
-  isLoggedIn(): boolean {
+  isLoggedIn(): boolean
+
+  {
     return this.isAuthenticated;
   }
+
+  getUserNameIn(): string {
+    return this.sUserName;
+  }
+
 
   getDataUserTable(UserName: string)
   {
