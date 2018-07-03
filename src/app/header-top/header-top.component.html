@@ -21,12 +21,20 @@
 
     <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link active" routerLink="/login" routerLinkActive="active">Войти</a>
-      </li>
-      <li class="nav-item">
+
+        <p *ngIf="bConnected">
+          Здравствуйте, {{ htUserName }}
+          <button class="btn btn-primary" (click)="logout()">Выйти</button>
+        </p>
+        <p *ngIf="!bConnected">
+          <a class="nav-link active" routerLink="/login" routerLinkActive="active">Войти</a>
+        </p>
+
+
+
         <a class="nav-link" routerLink="/register" routerLinkActive="active">Регистрация</a>
       </li>
-         </ul>
+    </ul>
   </div>
 
     <div class="col-2">
