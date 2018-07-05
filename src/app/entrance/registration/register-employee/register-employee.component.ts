@@ -20,13 +20,14 @@ export class RegisterEmployeeComponent implements OnInit {
 
     this.myForm  = new FormGroup({
       'userName': new FormControl('',
-         [Validators.required], [this.userNameAsyncValidator.bind(this)]
+         [Validators.required],[this.userNameAsyncValidator.bind(this)]
       ),
 
       'userEmail': new FormControl(null, [
         Validators.required,
         Validators.email
-      ]),
+      ], [this.userEmailAsyncValidator.bind(this)]
+      ),
       'userPassword1': new FormControl('', Validators.required),
       'cbLicense': new FormControl('', Validators.requiredTrue)
     });
@@ -57,7 +58,7 @@ export class RegisterEmployeeComponent implements OnInit {
       if (isUndefined(ResUser)) {return false;} else {return true;}
    }
 
-  // валидатор
+  // валидатор по имени пользователя
   userNameAsyncValidator(control: FormControl): Promise<{[s:string]: boolean}> {
     return new Promise(
       (resolve, reject)=>{
@@ -75,5 +76,32 @@ export class RegisterEmployeeComponent implements OnInit {
       }
     );
   }
+
+
+  getCheckEmail (ListUser: UserTable, sEmail: string): boolean
+  {
+    var ResUser = Object(ListUser).find( x => x.EMail.toLowerCase() === sEmail.trim().toLowerCase());
+    if (isUndefined(ResUser)) {return false;} else {return true;}
+  }
+
+  // валидатор по EMail
+  userEmailAsyncValidator(control: FormControl): Promise<{[s:string]: boolean}> {
+    return new Promise(
+      (resolve, reject)=>{
+
+        return this.httpService.getDataUserTable(control.value).subscribe(
+          (data: UserTable) => {
+            if (this.getCheckEmail (data,control.value) === true) {
+              resolve( {'errorEmailExists': true});
+            }
+            else {
+              resolve(null);
+            }
+          }
+        );
+      }
+    );
+  }
+
 
 }

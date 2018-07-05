@@ -37,12 +37,41 @@
       <input type="email" class="form-control" id="inputEmail" placeholder="Email" formControlName="userEmail">
     </div>
 
+
+<!-- начало обработки почтовых ошибок -->
+    <div *ngIf="myForm.controls['userEmail'].dirty">
+
     <div class="alert alert-danger"
-         *ngIf="myForm.controls['userEmail'].invalid && myForm.controls['userEmail'].touched">
-      Некорректный email
+         *ngIf="myForm.controls['userEmail'].value.length === 0 ">
+      Не указан Email.
     </div>
 
+    <div *ngIf="myForm.controls['userEmail'].value.length > 0">
+      <div *ngIf="myForm.controls['userEmail'].invalid; else trueSucc">
+
+      <div class="alert alert-danger"
+           *ngIf="myForm.controls['userEmail'].hasError('errorEmailExists') === true">
+        Данный Email уже занят.
+      </div>
+
+      <div class="alert alert-danger"
+           *ngIf="myForm.controls['userEmail'].hasError('email') === true">
+        Неверно введен Email.
+      </div>
+
+    </div>
+    <ng-template #trueSucc>
+      <div class="alert alert-info">Email свободен.</div>
+    </ng-template>
   </div>
+
+</div>
+<!-- закончили обработку почтовых ошибок -->
+
+
+  </div>
+
+
 
   <div class="form-row">
     <div class="form-group col-md-3">
