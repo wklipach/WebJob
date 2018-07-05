@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Controlpanel2Component } from './controlpanel2.component';
+import { Controlpanel1Component } from './account-employee.component';
 
-describe('Controlpanel2Component', () => {
-  let component: Controlpanel2Component;
-  let fixture: ComponentFixture<Controlpanel2Component>;
+describe('Controlpanel1Component', () => {
+  let component: Controlpanel1Component;
+  let fixture: ComponentFixture<Controlpanel1Component>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ Controlpanel2Component ]
+      declarations: [ Controlpanel1Component ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Controlpanel2Component);
+    fixture = TestBed.createComponent(Controlpanel1Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
