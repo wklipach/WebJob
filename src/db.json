@@ -64,6 +64,13 @@
       "Password": "sdfsdf",
       "bEmployer": true,
       "id": 9
+    },
+    {
+      "UserName": "Васька",
+      "EMail": "hjed@mail.ru",
+      "Password": "12345678333",
+      "bEmployer": true,
+      "id": 10
     }
   ]
 }
