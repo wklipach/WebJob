@@ -2,7 +2,16 @@
 
 <h3>Личный кабинет соискателя</h3>
 
+<label>Личные данные</label>
+
 <form>
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <input type="text" class="form-control" id="inputUserName" placeholder="Имя пользователя">
+    </div>
+  </div>
+
+
    <div class="form-row">
     <div class="form-group col-md-3">
       <input type="text" class="form-control" id="inputName" placeholder="Имя">
@@ -10,48 +19,44 @@
   </div>
 
   <div class="form-row">
-    <div class="form-group col-md-2">
+    <div class="form-group col-md-3">
       <input type="text" class="form-control" id="inputLastname" placeholder="Фамилия">
     </div>
   </div>
 
   <div class="form-row">
-    <div class="form-group">
-      <label for="inputAddress">Адрес</label>
-      <input type="text" class="form-control" id="inputAddress" placeholder="Адрес">
+  <div class="form-group col-md-1">
+
+    <input type="text" class="form-control" id="inputZip"  placeholder="Индекс">
+  </div>
+  </div>
+
+  <div class="form-group col-md-3">
+   <select id="inputCity" class="form-control">
+    <option selected>Выбрать город...</option>
+    <option>Таллин</option>
+    <option>Тарту</option>
+  </select>
+</div>
+  <div class="form-row">
+    <div class="form-group col-md-3">
+
+      <input type="text" class="form-control" id="inputAddress" placeholder="Домашний адрес">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-3">
+
+      <input type="text" class="form-control" id="inputPhone" placeholder="Телефон">
     </div>
   </div>
 
-  <div class="form-group">
-    <label for="inputAddress2">Фактический адрес</label>
-    <input type="text" class="form-control" id="inputAddress2" placeholder="Внесите фактический адрес">
-  </div>
-  <!--
-
-    <div class="form-row">
-      <div class="form-group col-md-4">
-        <label for="inputState">Область</label>
-        <select id="inputState" class="form-control">
-          <option selected>Выбрать...</option>
-          <option>Харьюма</option>
-          <option>Ида-Вырума</option>
-        </select>
-      </div> -->
 
 
-  <div class="form-group col-md-4">
-    <label for="inputCity">Город</label>
-    <select id="inputCity" class="form-control">
-      <option selected>Выбрать...</option>
-      <option>Таллин</option>
-      <option>Тарту</option>
-    </select>
-  </div>
 
-  <div class="form-group col-md-2">
-    <label for="inputZip">Индекс</label>
-    <input type="text" class="form-control" id="inputZip">
-  </div>
+
+
+
 
   </form>
 <br>
@@ -67,3 +72,7 @@
 
 <app-footer></app-footer>
 
+<!--
+<label for="inputAddress"></label>
+
+-->

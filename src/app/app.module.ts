@@ -10,7 +10,6 @@ import { PersonalInformationComponent } from './account/personal-information/per
 import { ForgotPasswordComponent } from './entrance/forgot-password/forgot-password.component';
 import { LoginComponent } from './entrance/login/login.component';
 import { RouterModule, Routes } from '@angular/router';
-import { NotFoundComponent } from './not-found/not-found.component';
 import {AuthService} from './services/auth-service.service';
 import {HttpClientModule} from '@angular/common/http';
 import { RegisterEmployerComponent } from './entrance/registration/register-employer/register-employer.component';
@@ -21,11 +20,13 @@ import {AngularFontAwesomeModule} from 'angular-font-awesome';
 import {AccountEmployeeComponent} from './account/account-employee/account-employee.component';
 import {AccountEmployerComponent} from './account/account-employer/account-employer.component';
 import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 // определение маршрутов
 const appRoutes: Routes = [
   { path: '', component: HeaderTopComponent },
-  { path: 'login', component: LoginComponent },
+   { path: 'login', component: LoginComponent },
+  { path: 'advanced-search', component: AdvancedSearchComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'employee', component: RegisterEmployeeComponent},
   { path: 'employer', component: RegisterEmployerComponent},

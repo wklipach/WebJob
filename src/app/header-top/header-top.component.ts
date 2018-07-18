@@ -15,7 +15,7 @@ export class HeaderTopComponent implements OnInit {
     this.httpService.IsUserLoggedIn.subscribe(value => {
       this.htUserName = value.name;
       this.bConnected = value.connect;
-      console.log('this.htUserName =', this.htUserName)
+      console.log('this.htUserName =', this.htUserName);
     });
 
 
