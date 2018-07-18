@@ -20,6 +20,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AngularFontAwesomeModule} from 'angular-font-awesome';
 import {AccountEmployeeComponent} from './account/account-employee/account-employee.component';
 import {AccountEmployerComponent} from './account/account-employer/account-employer.component';
+import { HomeComponent } from './home/home.component';
 
 // определение маршрутов
 const appRoutes: Routes = [
@@ -28,9 +29,11 @@ const appRoutes: Routes = [
   { path: 'register', component: RegisterComponent},
   { path: 'employee', component: RegisterEmployeeComponent},
   { path: 'employer', component: RegisterEmployerComponent},
+  { path: 'rules', component: RulesComponent},
   {path: 'forgot-password', component: ForgotPasswordComponent},
   {path: 'account-employee', component: AccountEmployeeComponent},
   {path: 'account-employer', component: AccountEmployerComponent},
+  {path: 'home', component: HomeComponent},
   { path: '**', component: NotFoundComponent }
 ];
 
@@ -53,6 +56,7 @@ const appRoutes: Routes = [
     AccountEmployeeComponent,
     AccountEmployerComponent,
     RulesComponent,
+    HomeComponent,
     NotFoundComponent
    ],
   providers: [AuthService],
