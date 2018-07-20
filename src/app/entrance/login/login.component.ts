@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {UserTable} from '../../class/UserTable';
 import {AuthService} from '../../services/auth-service.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
   public showSucc : boolean = false;
   public sResTrouble : string = '';
 
-  constructor(private httpService: AuthService) {
+  constructor(private httpService: AuthService, private router: Router) {
 
     this.loginForm  = new FormGroup({
       'nameOrEmail': new FormControl('',
@@ -34,10 +35,10 @@ export class LoginComponent implements OnInit {
 
     var ResUser = Object(ListUser)
                  .filter( x => x.UserName.trim().toLowerCase() === tUser.sUserOrEmail.trim().toLowerCase() || x.EMail.trim().toLowerCase() === tUser.sUserOrEmail.trim().toLowerCase())
-                 .filter(y => y.Password.trim().toLowerCase()===tUser.sPassword.trim().toLowerCase());
+                 .filter(y => y.Password.trim().toLowerCase() === tUser.sPassword.trim().toLowerCase());
 
-    if (ResUser.length===1) {  console.log('вернули',ResUser[0].UserName); return {bCheck: true, uName: ResUser[0].UserName} } else {
-      if (ResUser.length===0) {
+    if (ResUser.length === 1) {  console.log('вернули',ResUser[0].UserName); return {bCheck: true, uName: ResUser[0].UserName} } else {
+      if (ResUser.length === 0) {
         this.sResTrouble = 'Не существующие имя или пароль.';
         return {bCheck: false, uName: ''};
       } else {
@@ -58,7 +59,7 @@ export class LoginComponent implements OnInit {
     return this.httpService.getDataUserTable(sUserOrEmail).subscribe(
       (data: UserTable) => {
 
-        const curRes : {bCheck: boolean, uName: string} = this.getCheckNameOrEmailAndPassword (data, tUser);
+        const curRes: {bCheck: boolean, uName: string} = this.getCheckNameOrEmailAndPassword (data, tUser);
 
         if (curRes.bCheck === true) {
           this.httpService.login((curRes.uName));
@@ -70,6 +71,7 @@ export class LoginComponent implements OnInit {
           console.log('НАЖАЛИ ЛОГИН', curRes.uName);
           this.showSucc = true;
           this.showErr = false;
+          this.router.navigate(['/home']);
         }
         else {
           this.httpService.IsUserLoggedIn.next({connect : false, name : ''});
@@ -79,7 +81,6 @@ export class LoginComponent implements OnInit {
         }
       }
     );
-
 
 
   }
