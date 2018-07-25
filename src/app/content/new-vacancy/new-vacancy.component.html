@@ -1,0 +1,62 @@
+<app-header-top></app-header-top>
+<h3>Новая вакансия</h3>
+<br>
+<div class="form-group col-md-3">
+  <select id="inputCity" class="form-control" title="Локация вакансии">
+    <option selected>Таллин</option>
+    <option>Нарва</option>
+    <option>Тарту</option>
+  </select>
+</div>
+
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <input type="text" class="form-control" id="inputVacancyShortTitle" placeholder="Наименование вакансии до 30 знаков.">
+    </div>
+  </div>
+
+<div class="form-group col-md-3">
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text"></span>
+  </div>
+  <textarea class="form-control" aria-label="Описание вакансии до 400 знаков"  placeholder="Описание вакансии до 400 знаков"></textarea>
+</div>
+</div>
+
+
+
+
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <input type="text" class="form-control" id="inputSalary" placeholder="Заработная плата. (от - до)">
+    </div>
+  </div>
+
+<div class="col-3">
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <label class="input-group-text" for="inputGroupSelect01">Срок размещения</label>
+    </div>
+    <select class="custom-select" id="inputGroupSelect01">
+      <option selected>1 месяц</option>
+      <option value="1">2 месяца</option>
+      <option value="2">3 месяца</option>
+      <option value="2">Безсрочно</option>
+    </select>
+  </div>
+
+  <br>
+
+
+  <div class="form-row">
+      <div class="input-group mb-3">
+      <div class="vacancy">
+        <input type="file" class="vacancy-input" id="validatedVacancy" required>
+        <label class="custom-file-label" for="validatedVacancy">Загрузить резюме из файла</label>
+        <div class="invalid-feedback">Формат файла не поддерживается</div>
+      </div>
+    </div>
+    </div>
+
+</div>

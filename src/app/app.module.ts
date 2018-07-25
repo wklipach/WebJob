@@ -23,6 +23,7 @@ import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CvComponent } from './content/cv/cv.component';
 import { VacancyComponent } from './content/vacancy/vacancy.component';
+import { NewVacancyComponent } from './content/new-vacancy/new-vacancy.component';
 
 // определение маршрутов
 const appRoutes: Routes = [
@@ -39,6 +40,7 @@ const appRoutes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'cv', component: CvComponent},
   {path: 'vacancy', component: VacancyComponent},
+  {path: 'new-vacancy', component: NewVacancyComponent},
   { path: '**', component: NotFoundComponent }
 ];
 
@@ -64,6 +66,7 @@ const appRoutes: Routes = [
     HomeComponent,
     CvComponent,
     VacancyComponent,
+    NewVacancyComponent,
     NotFoundComponent
    ],
   providers: [AuthService],
