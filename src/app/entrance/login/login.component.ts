@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {UserTable} from '../../class/UserTable';
 import {AuthService} from '../../services/auth-service.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
   public showSucc : boolean = false;
   public sResTrouble : string = '';
 
-  constructor(private httpService: AuthService) {
+  constructor(private httpService: AuthService,private router: Router) {
 
     this.loginForm  = new FormGroup({
       'nameOrEmail': new FormControl('',
