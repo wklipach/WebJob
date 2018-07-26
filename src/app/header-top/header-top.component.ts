@@ -8,8 +8,8 @@ import {AuthService} from '../services/auth-service.service';
 })
 export class HeaderTopComponent implements OnInit {
 
-  htUserName: string = '';
-  bConnected: boolean = false;
+  htUserName = '';
+  bConnected = false;
 
   constructor(private httpService: AuthService) {
     this.httpService.IsUserLoggedIn.subscribe(value => {
