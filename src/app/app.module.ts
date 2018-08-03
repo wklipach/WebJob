@@ -25,6 +25,8 @@ import { VacancyComponent } from './content/vacancy/vacancy.component';
 import { NewVacancyComponent } from './content/new-vacancy/new-vacancy.component';
 import { AtempComponent } from './atemp/atemp.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import {GuideService} from './services/guide-service.service';
+import {NewVacancyService} from './services/new-vacancy.service';
 
 
 // определение маршрутов
@@ -74,7 +76,7 @@ const appRoutes: Routes = [
     AtempComponent,
     NotFoundComponent
    ],
-  providers: [AuthService],
+  providers: [AuthService, GuideService, NewVacancyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
