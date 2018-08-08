@@ -1,0 +1,72 @@
+<app-header-top></app-header-top>
+<h1>
+Войти
+</h1>
+
+
+
+<!--
+   начали модель
+-->
+
+<form [formGroup]="loginForm" novalidate (ngSubmit)="submit()">
+  <div class="form-row">
+    <div class="form-group col-md-2">
+      <label for="inputLogin">Логин или E-Mail</label>
+      <input type="text" class="form-control" id="inputLogin" formControlName="nameOrEmail" placeholder="Логин или E-mail">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-2">
+      <label for="inputPassword">Пароль</label>
+      <input type="password" class="form-control" id="inputPassword" formControlName="password"  placeholder="Пароль">
+    </div>
+
+  </div>
+
+
+  <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Войти</button><br>
+
+  <ng-container *ngIf="showErr">
+    <div class="alert alert-danger" role="alert">
+      {{sResTrouble}}
+    </div>
+  </ng-container>
+
+  <!--  -->
+  <ng-container *ngIf="showSucc">
+
+   <div class="alert alert-success" role="alert">
+      Успешный вход.
+    </div>
+    <a routerLink="/home" routerLinkActive="active"></a>
+  </ng-container>
+
+
+</form>
+  <!--
+     занончили модель
+  -->
+
+  <div class="form-row">
+    <div class="form-group col-md-2">
+  <a class="nav-link" routerLink="/forgot-password" routerLinkActive="active">Забыли пароль или логин?</a>
+  <a class="nav-link" routerLink="/register" routerLinkActive="active">Зарегистрироваться</a>
+    <br>
+
+</div>
+</div>
+
+
+
+<label>Личный кабинет</label>
+
+
+<a class="nav-link" routerLink="/account-employee" routerLinkActive="active">Личный кабинет соискателя</a>
+<a class="nav-link" routerLink="/account-employer" routerLinkActive="active">Личный кабинет работодателя</a>
+
+<a class="nav-link" routerLink="/advanced-search" routerLinkActive="active">Расширенный поиск</a>
+
+
+<app-footer></app-footer>

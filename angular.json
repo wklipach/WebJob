@@ -26,6 +26,16 @@
                 "glob": "**/*",
                 "input": "src/assets",
                 "output": "/assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/images",
+                "output": "/assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "server/uploads/img",
+                "output": "/upp"
               }
             ],
             "styles": [
