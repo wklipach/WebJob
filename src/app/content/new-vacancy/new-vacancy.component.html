@@ -1,10 +1,21 @@
 <app-header-top></app-header-top>
 <h3>Новая вакансия</h3>
+
+
+<form [formGroup]="newVacancyForm" novalidate (ngSubmit)="submit()">
+
+
 <br>
   <div class="form-row">
     <div class="form-group col-md-3">
-      <input type="text" class="form-control" id="inputVacancyShortTitle" placeholder="Наименование вакансии до 30 знаков.">
+      <input type="text" class="form-control" formControlName="inputVacancyShortTitle" id="inputVacancyShortTitle" placeholder="Наименование вакансии до 30 знаков.">
+
+      <div class="alert alert-danger" *ngIf="newVacancyForm.controls['inputVacancyShortTitle'].invalid && newVacancyForm.controls['inputVacancyShortTitle'].touched">
+        Ошибка в наименовании вакансии
+      </div>
+
     </div>
+
   </div>
 
 <div class="form-group col-md-3">
@@ -12,55 +23,79 @@
   <div class="input-group-prepend">
     <span class="input-group-text"></span>
   </div>
-  <textarea class="form-control" aria-label="Описание вакансии до 400 знаков"  placeholder="Описание вакансии до 400 знаков"></textarea>
+  <textarea class="form-control" aria-label="Описание вакансии до 400 знаков" formControlName="inputVacancyDescription" id="inputVacancyDescription" placeholder="Описание вакансии до 400 знаков"></textarea>
 </div>
+
+  <div class="alert alert-danger" *ngIf="newVacancyForm.controls['inputVacancyDescription'].invalid && newVacancyForm.controls['inputVacancyDescription'].touched">
+    Ошибка в описании вакансии
+  </div>
+
+
 </div>
+
+
 
 <div class="form-group col-md-3">
   <div class="input-group">
     <div class="input-group-prepend">
       <span class="input-group-text"></span>
     </div>
-    <textarea class="form-control" aria-label="Полное описание вакансии до 2000 знаков"  placeholder="Полное описание вакансии до 2000 знаков"></textarea>
+    <textarea class="form-control" aria-label="Полное описание вакансии до 2000 знаков" formControlName="inputVacancyBigDescription" id="inputVacancyBigDescription" placeholder="Полное описание вакансии до 2000 знаков"></textarea>
   </div>
+
+  <div class="alert alert-danger" *ngIf="newVacancyForm.controls['inputVacancyBigDescription'].invalid && newVacancyForm.controls['inputVacancyBigDescription'].touched">
+    Ошибка в полном описании вакансии
+  </div>
+
+
 </div>
 
 <div class="form-group col-md-3">
   <label for="inputCity">Локация вакансии</label>
-  <select id="inputCity" class="form-control" title="Локация вакансии">
-    <option selected>Таллин</option>
-    <option>Нарва</option>
-    <option>Тарту</option>
-    <option>Пярну</option>
-    <option>Вильянди</option>
-    <option>Раквере</option>
+  <select id="inputCity" formControlName="inputCity" class="form-control" title="Локация вакансии">
+    <option  *ngFor="let lc of listCity" [value]="lc.name">
+      {{lc.name}}
+    </option>
   </select>
+
+
 </div>
 
 <div class="form-inline">
 <div class="form-row">
   <div class="form-group col-md-1">
-    <input type="text" class="form-control" id="inputSalaryFrom" placeholder="Заработная плата от">
+    <input type="text" class="form-control" formControlName="inputSalaryFrom" id="inputSalaryFrom" placeholder="Заработная плата от">
   </div>
+
 </div>
   <div class="form-group col-md-1">
-    <input type="text" class="form-control" id="inputSalary" placeholder="Заработная плата до)">
+    <input type="text" class="form-control" formControlName="inputSalary" id="inputSalary" placeholder="Заработная плата до)">
+  </div>
+</div>
+
+  <div class="alert alert-danger" *ngIf="newVacancyForm.controls['inputSalaryFrom'].invalid && newVacancyForm.controls['inputSalaryFrom'].touched">
+    Ошибка в "Заработная плата от"
+  </div>
+
+  <div class="alert alert-danger" *ngIf="newVacancyForm.controls['inputSalary'].invalid && newVacancyForm.controls['inputSalary'].touched">
+    Ошибка в "Заработная плата до"
   </div>
 
 
-</div>
 
 <div class="col-3">
   <div class="input-group mb-3">
     <div class="input-group-prepend">
-      <label class="input-group-text" for="inputGroupSelect01">Срок размещения</label>
+      <label class="input-group-text" for="displayPeriod">Срок размещения</label>
     </div>
-    <select class="custom-select" id="inputGroupSelect01">
-      <option selected>1 месяц</option>
-      <option value="1">2 месяца</option>
-      <option value="2">3 месяца</option>
-      <option value="2">Безсрочно</option>
+
+
+    <select class="custom-select" formControlName="displayPeriod" id="displayPeriod">
+        <option  *ngFor="let dpl of displayPeriodList" [value]="dpl.name">
+          {{dpl.name}}
+        </option>
     </select>
+
   </div>
 
   <br>
@@ -75,121 +110,51 @@
 <div class="row align-items-start">
   <div class="form-group form-check">
 
-    <div class="row">
-      <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" id="industryCheck1" title="Автомобильный бизнес">Автомобильный бизнес<br>
-        <input type="checkbox" class="form-check-input" id="industryCheck2" title="Гостиницы, рестораны, общепит, кейтеринг">Гостиницы, рестораны, общепит, кейтеринг<br>
-        <input type="checkbox" class="form-check-input" id="industryCheck3" title="Государственные организации">Государственные организации<br>
-        <input type="checkbox" class="form-check-input" id="industryCheck4" title="Добывающая отрасль">Добывающая отрасль<br>
-        <input type="checkbox" class="form-check-input" id="industryCheck5" title="ЖКХ">ЖКХ<br />
-        <input type="checkbox" class="form-check-input" id="industryCheck6" title="Информационные технологии, системная интеграция, интернет">Информационные технологии, системная интеграция, интернет<br>
-        <input type="checkbox" class="form-check-input" id="industryCheck7" title="Искусство, культура">Искусство, культура<br>
-        <input type="checkbox" class="form-check-input" id="industryCheck8" title="Лесная промышленность, деревообработка">Лесная промышленность, деревообработка<br>
-        <input type="checkbox" class="form-check-input" id="industryCheck9" title="Медицина, фармацевтика, аптеки">Медицина, фармацевтика, аптеки<br>
-        <input type="checkbox" class="form-check-input" id="industryCheck10" title="Металлургия, металлообработка">Металлургия, металлообработка<br>
-        <input type="checkbox" class="form-check-input" id="industryCheck11" title="Нефть и газ">Нефть и газ<br>
-        <input type="checkbox" class="form-check-input" id="industryCheck12" title="Образовательные учреждения">Образовательные учреждения<br>
-        <input type="checkbox" class="form-check-input" id="industryCheck13" title="Общественная деятельность, партии, благотворительность, НКО">Общественная деятельность, партии, благотворительность, НКО<br>
-        <input type="checkbox" class="form-check-input" id="industryCheck14" title="Перевозки, логистика, склад, ВЭД">Перевозки, логистика, склад, ВЭД<br>
-        <input type="checkbox" class="form-check-input" id="industryCheck15" title="Продукты питания">Продукты питания<br />
-        <input type="checkbox" class="form-check-input" id="industryCheck16" title="Промышленное оборудование, техника, станки и комплектующие">Промышленное оборудование, техника, станки и комплектующие<br>
-        <input type="checkbox" class="form-check-input" id="industryCheck17" title="Розничная торговля">Розничная торговля<br>
-        <input type="checkbox" class="form-check-input" id="industryCheck18" title="СМИ, маркетинг, реклама, BTL, PR, дизайн, продюсирование">СМИ, маркетинг, реклама, BTL, PR, дизайн, продюсирование<br>
-        <input type="checkbox" class="form-check-input" id="industryCheck19" title="Сельское хозяйство">Сельское хозяйство<br />
-        <input type="checkbox" class="form-check-input" id="industryCheck20" title="Строительство, недвижимость, эксплуатация, проектирование">Строительство, недвижимость, эксплуатация, проектирование<br>
-        <input type="checkbox" class="form-check-input" id="industryCheck21" title="Телекоммуникации, связь">Телекоммуникации, связь<br>
-        <input type="checkbox" class="form-check-input" id="industryCheck22" title="Товары народного потребления (непищевые">Товары народного потребления (непищевые<br>
-        <input type="checkbox" class="form-check-input" id="industryCheck23" title="Тяжелое машиностроение">Тяжелое машиностроение<br />
-        <input type="checkbox" class="form-check-input" id="industryCheck24" title="Управление многопрофильными активами">Управление многопрофильными активами<br>
-        <input type="checkbox" class="form-check-input" id="industryCheck25" title="Услуги для бизнеса">Услуги для бизнеса<br>
-        <input type="checkbox" class="form-check-input" id="industryCheck26" title="Услуги для населения">Услуги для населения<br />
-        <input type="checkbox" class="form-check-input" id="industryCheck27" title="Финансовый сектор">Финансовый сектор<br>
-        <input type="checkbox" class="form-check-input" id="industryCheck28" title="Химическое производство, удобрения">Химическое производство, удобрения<br>
-        <input type="checkbox" class="form-check-input" id="industryCheck29" title="Электроника, приборостроение, бытовая техника, компьютеры и оргтехника">Электроника, приборостроение, бытовая техника, компьютеры и оргтехника<br>
-        <input type="checkbox" class="form-check-input" id="industryCheck30" title="Энергетика">Энергетика<br />
-      </div>
+    <div class="row" *ngFor="let item of listIndustry">
+        <input type="checkbox" class="form-check-input" formControlName="industryCheck{{item.id}}" id="industryCheck{{item.id}}" title={{item.name}}> {{item.name}}
     </div>
   </div>
 </div>
 
-<h3>Занятость</h3><br>
-
-<div class="row align-items-start">
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="employmentCheck1" title="Полная занятость">Полная занятость<br>
-    <input type="checkbox" class="form-check-input" id="employmentCheck2" title="Частичная занятость">Частичная занятость<br>
-    <input type="checkbox" class="form-check-input" id="employmentCheck3" title="Проектная работа">Проектная работа<br>
-    <input type="checkbox" class="form-check-input" id="employmentCheck4" title="Стажировка">Стажировка<br>
-    <input type="checkbox" class="form-check-input" id="employmentCheck5" title="Волонтерство">Волонтерство<br>
+<h3>Занятость</h3>
+  <div class="row align-items-start" *ngFor="let item of listEmployment">
+      <input type="checkbox" class="form-check-input" formControlName="employmentCheck{{item.id}}" id="employmentCheck{{item.id}}" title={{item.name}}> {{item.name}}
   </div>
-</div>
-
 
 
 <h3>График работы</h3>
-<div class="row align-items-start">
-  <div class="form-group form-check">
-
-    <input type="checkbox" class="form-check-input" id="grafikCheck1" title="Полный день">Полный день<br />
-    <input type="checkbox" class="form-check-input" id="grafikCheck2" title="Гибкий график">Гибкий график<br />
-    <input type="checkbox" class="form-check-input" id="grafikCheck3" title="Сменный график">Сменный график<br />
-    <input type="checkbox" class="form-check-input" id="grafikCheck4" title="Вахтовый метод">Вахтовый метод<br />
-    <input type="checkbox" class="form-check-input" id="grafikCheck5" title="Удаленная работа">Удаленная работа<br />
-  </div>
-</div>
-
-
-
-<fieldset class="form-group">
-  <div class="row">
-    <div class="col-form-label col-sm-2 pt-0">Опыт работы</div>
-    <div class="col-sm-10">
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="experienceRadios" id="experienceRadios1" value="option1" checked>
-        <label class="form-check-label" for="experienceRadios1">
-          Без опыта
-        </label>
+   <div class="row align-items-start">
+    <div class="form-group form-check">
+      <div class="row" *ngFor="let item of listSchedule">
+          <input type="checkbox" class="form-check-input" formControlName="scheduleCheck{{item.id}}" id="scheduleCheck{{item.id}}" title={{item.name}}> {{item.name}}
       </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="experienceRadios" id="experienceRadios2" value="option2">
-        <label class="form-check-label" for="experienceRadios2">
-          От 1 до 3 лет
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="experienceRadios" id="experienceRadios3" value="option3">
-        <label class="form-check-label" for="experienceRadios3">
-          От 3 до 5 лет
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="experienceRadios" id="experienceRadios4" value="option4">
-        <label class="form-check-label" for="experienceRadios4">
-          Более 5 лет
-        </label>
+    </div>
+    </div>
+
+  <h3>Опыт работы</h3>
+  <div class="row align-items-start">
+    <div class="form-group form-check">
+      <div class="row" *ngFor="let item of listExperience">
+          <input type="checkbox" class="form-check-input" formControlName="experienceCheck{{item.id}}" id="experienceCheck{{item.id}}" title={{item.name}}> {{item.name}}
       </div>
     </div>
   </div>
-</fieldset>
-
 
 
 
   <h3>Образование</h3>
   <div class="row align-items-start">
     <div class="form-group form-check">
-      <ul>
-     <li> <input type="checkbox" class="form-check-input" id="educationCheck1" title="Бакалавр">Бакалавр</li>
-     <li><input type="checkbox" class="form-check-input" id="educationCheck2" title="Аспирантура">Аспирантура</li>
-     <li> <input type="checkbox" class="form-check-input" id="educationCheck3" title="Магистр">Магистр</li>
-     <li><input type="checkbox" class="form-check-input" id="educationCheck4" title="3 класса">3 класса</li>
-     <li><input type="checkbox" class="form-check-input" id="educationCheck5" title="Среднее">Среднее</li>
-      </ul>
+      <div class="row" *ngFor="let item of listEducation">
+        <input type="checkbox" class="form-check-input" formControlName="educationCheck{{item.id}}" id="educationCheck{{item.id}}" title={{item.name}}> {{item.name}}
+      </div>
     </div>
   </div>
+
   <div class="form-group row">
-    <button type="submit" class="btn btn-primary">Отправить</button>
+    <button type="submit" class="btn btn-primary" [disabled]="newVacancyForm.invalid">Отправить</button>
   </div>
 
+  </div>
 
-</div>
+    </form>

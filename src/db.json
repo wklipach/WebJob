@@ -114,5 +114,139 @@
       "bEmployer": true,
       "id": 16
     }
+  ],
+  "Vacancy": [
+    {
+      "vacancy": {
+        "VacancyShortTitle": "33",
+        "VacancyDescription": "33",
+        "VacancyBigDescription": "33",
+        "SalaryFrom": "3",
+        "Salary": "3",
+        "industry": [
+          4
+        ]
+      },
+      "id": 1
+    },
+    {
+      "vacancy": {
+        "VacancyShortTitle": "Город",
+        "VacancyDescription": "111",
+        "VacancyBigDescription": "111",
+        "SalaryFrom": "1",
+        "Salary": "1",
+        "Industry": [
+          2,
+          4
+        ],
+        "DisplayPeriod": 1,
+        "City": 6
+      },
+      "id": 3
+    },
+    {
+      "vacancy": {
+        "VacancyShortTitle": "Проба2",
+        "VacancyDescription": "Пробная вторая",
+        "VacancyBigDescription": "Нет описания",
+        "SalaryFrom": "100",
+        "Salary": "300",
+        "Industry": [
+          1,
+          30
+        ],
+        "DisplayPeriod": 3,
+        "City": 4,
+        "Schedule": [
+          3,
+          4
+        ],
+        "Employment": [
+          1,
+          2
+        ],
+        "Education": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "Experience": [
+          2,
+          4
+        ]
+      },
+      "id": 4
+    },
+    {
+      "vacancy": {
+        "VacancyShortTitle": "Проба3",
+        "VacancyDescription": "Пробная вторая",
+        "VacancyBigDescription": "Нет описания",
+        "SalaryFrom": "100",
+        "Salary": "300",
+        "Industry": [
+          1,
+          30
+        ],
+        "DisplayPeriod": 3,
+        "City": 4,
+        "Schedule": [
+          1,
+          3,
+          4
+        ],
+        "Employment": [
+          1,
+          2
+        ],
+        "Education": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "Experience": [
+          2,
+          4
+        ]
+      },
+      "id": 5
+    }
+  ],
+  "City": [
+    {
+      "name": "Таллин",
+      "order": "1",
+      "id": 1
+    },
+    {
+      "name": "Нарва",
+      "order": "2",
+      "id": 2
+    },
+    {
+      "name": "Тарту",
+      "order": "3",
+      "id": 3
+    },
+    {
+      "name": "Пярну",
+      "order": "4",
+      "id": 4
+    },
+    {
+      "name": "Вильянди",
+      "order": "5",
+      "id": 5
+    },
+    {
+      "name": "Раквере",
+      "order": "6",
+      "id": 6
+    }
   ]
 }
