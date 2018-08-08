@@ -18,6 +18,13 @@ export class GuideService {
 
   }
 
+  getIndustryName(i: number): string {
+    this.industryList = IndustryList;
+    return this.industryList.find(value => value.id === i ).name;
+  }
+
+
+
   getIndustryList(): Guide[] {
    this.industryList = IndustryList;
    return this.industryList.sort( ((a, b) => a.order - b.order ) );
@@ -29,20 +36,40 @@ export class GuideService {
   }
 
 
+  getScheduleName(i: number): string {
+    this.scheduleList = ScheduleList;
+    return this.scheduleList.find(value => value.id === i ).name;
+  }
+
   getScheduleList(): Guide[] {
     this.scheduleList = ScheduleList;
     return this.scheduleList.sort( ((a, b) => a.order - b.order ) );
   }
 
 //
+  getEmploymentName(i: number): string {
+    this.employmentList = EmploymentList;
+    return this.employmentList.find(value => value.id === i ).name;
+  }
+
   getEmploymentList(): Guide[] {
     this.employmentList = EmploymentList;
     return this.employmentList.sort( ((a, b) => a.order - b.order ) );
   }
 
+  getEducationName(i: number): string {
+    this.educationList = EducationList;
+    return this.educationList.find(value => value.id === i ).name;
+  }
+
   getEducationList(): Guide[] {
     this.educationList = EducationList;
     return this.educationList.sort( ((a, b) => a.order - b.order ) );
+  }
+
+  getExperienceName(i: number): string {
+    this.experienceList = ExperienceList;
+    return this.experienceList.find(value => value.id === i ).name;
   }
 
   getExperienceList(): Guide[] {

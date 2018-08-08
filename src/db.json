@@ -131,24 +131,6 @@
     },
     {
       "vacancy": {
-        "VacancyShortTitle": "ffff",
-        "VacancyDescription": "ff",
-        "VacancyBigDescription": "ff",
-        "SalaryFrom": "1",
-        "Salary": "1",
-        "Industry": [
-          8,
-          13,
-          14,
-          15,
-          30
-        ],
-        "DisplayPeriod": 2
-      },
-      "id": 2
-    },
-    {
-      "vacancy": {
         "VacancyShortTitle": "Город",
         "VacancyDescription": "111",
         "VacancyBigDescription": "111",
@@ -197,6 +179,42 @@
         ]
       },
       "id": 4
+    },
+    {
+      "vacancy": {
+        "VacancyShortTitle": "Проба3",
+        "VacancyDescription": "Пробная вторая",
+        "VacancyBigDescription": "Нет описания",
+        "SalaryFrom": "100",
+        "Salary": "300",
+        "Industry": [
+          1,
+          30
+        ],
+        "DisplayPeriod": 3,
+        "City": 4,
+        "Schedule": [
+          1,
+          3,
+          4
+        ],
+        "Employment": [
+          1,
+          2
+        ],
+        "Education": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "Experience": [
+          2,
+          4
+        ]
+      },
+      "id": 5
     }
   ],
   "City": [

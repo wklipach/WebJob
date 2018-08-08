@@ -18,4 +18,10 @@ export class Vacancy{
   Education: number[];
   //опыт работы
   Experience: number[];
+  id : number;
+}
+
+export class  dataVacancy extends Vacancy {
+  CityName: string;
+  EmployerName: string;
 }
