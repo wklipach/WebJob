@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Params} from '@angular/router';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Params, Router} from '@angular/router';
 import {dataVacancy} from '../../class/Vacancy';
 import {MoveService} from '../../services/move.service';
 import {GuideService} from '../../services/guide-service.service';
@@ -29,14 +29,17 @@ export class DescriptionVacancyComponent implements OnInit {
 
   private dvSubscription: Subscription;
 
-  constructor(private activatedRoute: ActivatedRoute, private moveS: MoveService, private sGuide: GuideService) { }
+  constructor(private activatedRoute: ActivatedRoute, private moveS: MoveService, private sGuide: GuideService, private router: Router) { }
+
 
   ngOnInit() {
-  this.dvSubscription = this.moveS.getDataVacancy()
-      .subscribe(curDataVacancy =>
-      {this.descrDataVacancy = curDataVacancy;
-      // console.log('this.descrDataVacancy',this.descrDataVacancy);
 
+      this.dvSubscription = this.moveS.getDataVacancy()
+      .subscribe (curDataVacancy =>
+      {
+        this.descrDataVacancy = curDataVacancy;
+
+        if (typeof this.descrDataVacancy !== 'undefined') {
         // отрасль
         if (typeof this.descrDataVacancy['vacancy'].Industry !== 'undefined') {
         this.descrDataVacancy['vacancy'].Industry.forEach( intIndustry => this.sIndusrtry.push(this.sGuide.getIndustryName(intIndustry) ) );
@@ -61,10 +64,14 @@ export class DescriptionVacancyComponent implements OnInit {
         if (typeof this.descrDataVacancy['vacancy'].Experience !== 'undefined') {
           this.descrDataVacancy['vacancy'].Experience.forEach( intExperience => this.sExperience.push(this.sGuide.getExperienceName(intExperience) ) );
         }
+      }
+
+      }, error => {this.router.navigate(['/home']); } );
 
 
-
-      });
+    if (typeof this.descrDataVacancy === 'undefined') {
+      this.router.navigate(['/home']);
+    }
   }
 
   ngOnDestroy() {
