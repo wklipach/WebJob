@@ -29,7 +29,7 @@
      <div class="col-4" *ngIf="!bConnected">
     <form class="form-inline">
          <div class="form-group">
-             <a class="nav-link active" routerLink="/login" routerLinkActive="active">Войти</a>
+           <button class="btn btn-primary" (click)="login()">Войти</button>
              <a class="nav-link" routerLink="/register" routerLinkActive="active">Регистрация</a>
          </div>
        </form>
