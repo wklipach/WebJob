@@ -1,5 +1,6 @@
 <app-header-top></app-header-top>
 
+
 <h3>Вакансии</h3>
 
 <div class="container-fluid">
@@ -31,7 +32,6 @@
 
   </div>
 
-  <!-- начали строку -->
    <div class="row" *ngFor="let curVacancy of myDataVacancy; let i = index" (click)="MyMethod(curVacancy.id)">
 
         <div class="col-1">
@@ -59,9 +59,10 @@
         </div>
 
   </div>
-    <!-- закончили строку -->
+
 
 </div>
 
 
 <app-footer></app-footer>
+

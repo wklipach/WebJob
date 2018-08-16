@@ -37,7 +37,7 @@ const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'home', component: HomeComponent},
   { path: 'header-top', component: HeaderTopComponent },
-   { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'advanced-search', component: AdvancedSearchComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'employee', component: RegisterEmployeeComponent},

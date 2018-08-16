@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../services/auth-service.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-header-top',
@@ -11,7 +12,9 @@ export class HeaderTopComponent implements OnInit {
   htUserName = '';
   bConnected = false;
 
-  constructor(private httpService: AuthService) {
+  constructor(private httpService: AuthService, private router: Router) {
+
+
     this.httpService.IsUserLoggedIn.subscribe(value => {
       this.htUserName = value.name;
       this.bConnected = value.connect;
@@ -19,14 +22,25 @@ export class HeaderTopComponent implements OnInit {
     });
 
 
-
   }
 
   ngOnInit() {
 
-    this.htUserName = JSON.parse(window.localStorage.getItem('htUserName'));
-    this.bConnected = JSON.parse(window.localStorage.getItem('bConnected'));
 
+
+    if (window.localStorage.getItem('htUserName') !== '') {
+      this.htUserName = JSON.parse(window.localStorage.getItem('htUserName'));
+    }
+
+    if (window.localStorage.getItem('bConnected') !== '') {
+      this.bConnected = JSON.parse(window.localStorage.getItem('bConnected'));
+    }
+
+  }
+
+  login() {
+
+    this.router.navigate(['/login']);
   }
 
 
