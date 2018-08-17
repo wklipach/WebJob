@@ -1,26 +1,106 @@
-<p>
-  <b>Описание вакансии</b>
-</p>
-<b>Город</b><br>
-<div> {{this.descrDataVacancy?.CityName}}</div><br>
-<b>Зарплата от</b><br>
-<div *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy['vacancy'].SalaryFrom}}</div><br>
-<b>Зарплата до</b><br>
-<div *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy['vacancy'].Salary}}</div><br>
-<b>Наименование</b><br>
-<div *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy['vacancy'].VacancyShortTitle}}</div><br>
-<b>Описание</b><br>
-<div *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy['vacancy'].VacancyDescription}}</div><br>
-<b>Подробности</b><br>
-<div *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy['vacancy'].VacancyBigDescription}}</div><br>
-<b>Отрасль</b><br>
-<div *ngFor="let sI of sIndusrtry"> {{sI}}<br> </div>
-<b>График работы</b><br>
-<div *ngFor="let sS of sSchedule"> {{sS}}<br> </div>
-<b>Занятость</b><br>
-<div *ngFor="let sEmp of sEmployment"> {{sEmp}}<br> </div>
-<b>Образование</b><br>
-<div *ngFor="let sEd of sEducation"> {{sEd}}<br> </div>
-<b>Опыт работы</b><br>
-<div *ngFor="let sExp of sExperience"> {{sExp}}<br> </div>
+<app-header-top></app-header-top>
+<div class="container-justify">
+  <h1>Описание вакансии</h1>
+<div class="row">
+  <div class="col-2">
+<label class="labelDescr">Город</label>
+  </div>
+  <div class="col-4">
+    <div class="descVac"> {{this.descrDataVacancy?.CityName}}</div>
+  </div>
+</div>
 
+  <div class="row">
+    <div class="col-2">
+  <label class="labelDescr">Зарплата от</label>
+      </div>
+    <div class="col-4">
+  <div  *ngIf="this.descrDataVacancy" class="descVac">{{ this.descrDataVacancy['vacancy'].SalaryFrom}}</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-2">
+      <label class="labelDescr">Зарплата до</label>
+    </div>
+    <div class="col-4">
+<div *ngIf="this.descrDataVacancy" class="descVac">{{ this.descrDataVacancy['vacancy'].Salary}}</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-2">
+      <label class="labelDescr">Наименование</label>
+    </div>
+    <div class="col-4">
+
+    <div *ngIf="this.descrDataVacancy" class="descVac">{{ this.descrDataVacancy['vacancy'].VacancyShortTitle}}</div>
+</div>
+</div>
+
+
+  <div class="row">
+    <div class="col-2">
+      <label class="labelDescr">Описание</label>
+    </div>
+    <div class="col-4">
+<div *ngIf="this.descrDataVacancy" class="descVac">{{ this.descrDataVacancy['vacancy'].VacancyDescription}}</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-2">
+      <label class="labelDescr">Подробности</label>
+    </div>
+    <div class="col-4">
+<div *ngIf="this.descrDataVacancy" class="descVac">{{ this.descrDataVacancy['vacancy'].VacancyBigDescription}}</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-2">
+      <label class="labelDescr">Отрасль</label>
+    </div>
+    <div class="col-4">
+<div *ngFor="let sI of sIndusrtry" class="descVac"> {{sI}}</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-2">
+      <label class="labelDescr">График работы</label>
+    </div>
+    <div class="col-4">
+      <div *ngFor="let sS of sSchedule" class="descVac"> {{sS}}</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-2">
+      <label class="labelDescr">Занятость</label>
+    </div>
+    <div class="col-4">
+      <div *ngFor="let sEmp of sEmployment" class="descVac"> {{sEmp}}</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-2">
+      <label class="labelDescr">Образование</label>
+    </div>
+    <div class="col-4">
+      <div *ngFor="let sEd of sEducation" class="descVac"> {{sEd}}</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-2">
+      <label class="labelDescr">Опыт работы</label>
+    </div>
+    <div class="col-4">
+      <div *ngFor="let sExp of sExperience" class="descVac"> {{sExp}}</div>
+    </div>
+  </div>
+
+</div>
+<app-footer></app-footer>

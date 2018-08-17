@@ -1,0 +1,15 @@
+.descVac{
+  color: darkblue;
+  font-size: 1.2em;
+  font-weight: 400;
+  }
+.labelDescr{
+  color: #403A3A;
+  font-size: 1.2em;
+  font-weight: 400;
+  float: left;
+
+}
+.row{
+  padding: 0 0 0 1em;
+ }

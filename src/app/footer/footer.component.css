@@ -1,0 +1,10 @@
+#footer {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+    padding: 1em 0;
+  margin: 2em 0;
+  border-top: 3px solid #ddd;
+  background-color: lightblue;
+  }
