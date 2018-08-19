@@ -1,13 +1,11 @@
 <app-header-top></app-header-top>
-
-
+<div class="container-fluid">
 <h3>Вакансии</h3>
 
-<div class="container-fluid">
   <div class="row">
 
     <div class="col-1">
-      <h5>№</h5>
+      <h5>#</h5>
     </div>
 
     <div class="col-2">
@@ -51,18 +49,17 @@
         </div>
 
         <div class="col-5">
+          <div class="bigDescr">
           {{curVacancy['vacancy'].VacancyBigDescription}}
         </div>
+   </div>
 
         <div class="col-1">
+          <div class="solar">
           {{curVacancy['vacancy'].SalaryFrom}}-{{curVacancy['vacancy'].Salary}}
         </div>
-
+   </div>
   </div>
-
-
 </div>
-
-
 <app-footer></app-footer>
 

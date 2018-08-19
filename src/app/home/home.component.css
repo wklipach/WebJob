@@ -1,3 +1,9 @@
 .row:hover{
   background-color: lightblue;
 }
+.bigDescr{
+font-size: 0.9em;
+}
+.solar{
+  color: red;
+}

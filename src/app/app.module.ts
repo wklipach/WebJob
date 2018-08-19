@@ -30,6 +30,7 @@ import {NewVacancyService} from './services/new-vacancy.service';
 import {TableVacancyService} from './services/table-vacancy.service';
 import { DescriptionVacancyComponent } from './content/description-vacancy/description-vacancy.component';
 import {MoveService} from './services/move.service';
+import { NewcvComponent } from './content/cv/newcv/newcv.component';
 
 
 // определение маршрутов
@@ -51,6 +52,7 @@ const appRoutes: Routes = [
   {path: 'new-vacancy', component: NewVacancyComponent},
   {path: 'atemp', component: AtempComponent},
   {path: 'description-vacancy', component: DescriptionVacancyComponent},
+  {path: 'newcv', component: NewcvComponent},
   { path: '**', component: NotFoundComponent }
 ];
 
@@ -79,6 +81,7 @@ const appRoutes: Routes = [
     NewVacancyComponent,
     AtempComponent,
     DescriptionVacancyComponent,
+    NewcvComponent,
     NotFoundComponent
    ],
   providers: [AuthService, GuideService, NewVacancyService, TableVacancyService, MoveService],
