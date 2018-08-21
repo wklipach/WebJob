@@ -3,6 +3,7 @@ import {AuthService} from '../services/auth-service.service';
 import {Router} from '@angular/router';
 import {FormControl, FormGroup} from '@angular/forms';
 import {TableVacancyService} from '../services/table-vacancy.service';
+import {MoveService} from '../services/move.service';
 
 @Component({
   selector: 'app-header-top',
@@ -14,8 +15,9 @@ export class HeaderTopComponent implements OnInit {
   headerTopForm : FormGroup;
   htUserName = '';
   bConnected = false;
+  sElementMask: string = '';
 
-  constructor(private httpService: AuthService, private router: Router, private httpTvsService: TableVacancyService) {
+  constructor(private httpService: AuthService, private router: Router, private httpTvsService: TableVacancyService, private moveS: MoveService) {
 
     this.headerTopForm = new FormGroup({
       'inputSearch': new FormControl('',[])
@@ -34,7 +36,6 @@ export class HeaderTopComponent implements OnInit {
   ngOnInit() {
 
 
-
     if (window.localStorage.getItem('htUserName') !== '') {
       this.htUserName = JSON.parse(window.localStorage.getItem('htUserName'));
     }
@@ -42,6 +43,9 @@ export class HeaderTopComponent implements OnInit {
     if (window.localStorage.getItem('bConnected') !== '') {
       this.bConnected = JSON.parse(window.localStorage.getItem('bConnected'));
     }
+
+
+    this.sElementMask  = this.moveS.getStringFind();
 
   }
 
@@ -69,7 +73,17 @@ export class HeaderTopComponent implements OnInit {
   // запускаем триггер события
   //
   getVacancy(sMask: string) {
-    this.httpTvsService.triggerReopenVacancy(sMask);
+
+    //если домашняя страница запускаем событие, если нет переходим на нее и маску передаем через Экстракт
+    if ( (this.router.isActive('home',true)===false)  && (this.router.isActive('',true) ===false)  ) {
+       window.localStorage.setItem('keyFind', sMask);
+      this.router.navigate(['/']);
+     } else {
+      window.localStorage.removeItem('keyFind');
+      this.httpTvsService.triggerReopenVacancy(sMask);
+    }
+
+
   }
 
 

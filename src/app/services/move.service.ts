@@ -8,6 +8,9 @@ import {Observable, of} from 'rxjs';
 export class MoveService {
 
   public oDataVacancy: dataVacancy;
+  public sFind: string;
+
+
   constructor() { }
 
   public getDataVacancy(): Observable<dataVacancy> {
@@ -18,6 +21,18 @@ export class MoveService {
     this.oDataVacancy = oDataVacancy;
     return of (true);
   }
+
+
+  public getStringFind(): string {
+    return this.sFind;
+  }
+
+  public setStringFind(sFind: string) {
+    this.sFind = sFind;
+  }
+
+
+
 
 }
 

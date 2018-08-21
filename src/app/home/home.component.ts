@@ -1,11 +1,12 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {TableVacancyService} from '../services/table-vacancy.service';
-import {dataVacancy, Vacancy} from '../class/Vacancy';
+import {dataVacancy} from '../class/Vacancy';
 import {City} from '../class/City';
 import {isNullOrUndefined} from 'util';
 import {Router} from '@angular/router';
 import {MoveService} from '../services/move.service';
 import {Subscription} from 'rxjs';
+import {isNull} from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-home',
@@ -22,18 +23,28 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    //this.getVacancy('нет');
+
+    let sMask: string = '';
+    if (window.localStorage.getItem('keyFind') !== null) {
+      sMask = window.localStorage.getItem('keyFind');
+    }
+    window.localStorage.removeItem('keyFind');
+
 
     this.httpService.onReopenVacancy.subscribe((value: string) => this.getVacancy(value));
+    // запускаем событие "получить вакансии", в первый раз с пустой маской
+    this.httpService.triggerReopenVacancy(sMask);
 
-    // запускаем событие "получить вакансии" с пустой маской
-    this.httpService.triggerReopenVacancy('');
+    //записываем значение маски в элемент, так как при перегрузке страницы он стирается ??????
+    this.moveS.setStringFind(sMask);
+
 
   }
 
   getVacancy(sMask: string) {
     return this.getTableVacancy = this.httpService.getTableVacancy(sMask).subscribe(
       (data: dataVacancy[]) => {
+
         //это получаем город из нового вызываемого сервиса
         this.httpService.getCity().subscribe((city: City[]) => {
 
@@ -48,12 +59,11 @@ export class HomeComponent implements OnInit, OnDestroy {
                 eekey.CityName = CurCity.name;
               }
             });
-
             this.myDataVacancy = data;
             // console.log('this.myDataVacancy', this.myDataVacancy);
           }
         );
-      }
+     }
     );
   }
 

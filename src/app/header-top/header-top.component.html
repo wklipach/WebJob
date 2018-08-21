@@ -11,8 +11,9 @@
   <div class="col-4">
   <div class="form-inline">
      <div class="form-group">
-       <input type="search" class="form-control" formControlName="inputSearch" id="inputSearch" placeholder="Поиск">
-       <button type="submit" class="btn btn-primary" (click)="find()">Искать</button>
+       <input type="search" class="form-control" formControlName="inputSearch" id="inputSearch" placeholder="Искать" [value]="sElementMask">
+       <button type="submit" class="btn btn-primary" (click)="find()">Поиск</button>
+
      </div>
    </div>
   </div>
