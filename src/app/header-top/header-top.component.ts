@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../services/auth-service.service';
 import {Router} from '@angular/router';
+import {FormControl, FormGroup} from '@angular/forms';
+import {TableVacancyService} from '../services/table-vacancy.service';
 
 @Component({
   selector: 'app-header-top',
@@ -9,16 +11,21 @@ import {Router} from '@angular/router';
 })
 export class HeaderTopComponent implements OnInit {
 
+  headerTopForm : FormGroup;
   htUserName = '';
   bConnected = false;
 
-  constructor(private httpService: AuthService, private router: Router) {
+  constructor(private httpService: AuthService, private router: Router, private httpTvsService: TableVacancyService) {
+
+    this.headerTopForm = new FormGroup({
+      'inputSearch': new FormControl('',[])
+    });
 
 
     this.httpService.IsUserLoggedIn.subscribe(value => {
       this.htUserName = value.name;
       this.bConnected = value.connect;
-      console.log('this.htUserName =', this.htUserName);
+      // console.log('this.htUserName =', this.htUserName);
     });
 
 
@@ -50,5 +57,21 @@ export class HeaderTopComponent implements OnInit {
     window.localStorage.removeItem('bConnected');
     this.httpService.IsUserLoggedIn.next({connect : false, name : ''});
   }
+
+
+  find() {
+    const sInputSearch = this.headerTopForm.controls['inputSearch'].value;
+    this.getVacancy(sInputSearch);
+  }
+
+
+  //
+  // запускаем триггер события
+  //
+  getVacancy(sMask: string) {
+    this.httpTvsService.triggerReopenVacancy(sMask);
+  }
+
+
 
 }

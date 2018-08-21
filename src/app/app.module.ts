@@ -28,7 +28,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import {GuideService} from './services/guide-service.service';
 import {NewVacancyService} from './services/new-vacancy.service';
 import {TableVacancyService} from './services/table-vacancy.service';
-import { DescriptionVacancyComponent } from './content/description-vacancy/description-vacancy.component';
+import {VacancyDescriptionComponent } from './content/vacancy-description/vacancy-description.component';
 import {MoveService} from './services/move.service';
 import { NewcvComponent } from './content/cv/newcv/newcv.component';
 
@@ -51,7 +51,7 @@ const appRoutes: Routes = [
   {path: 'vacancy', component: VacancyComponent},
   {path: 'new-vacancy', component: NewVacancyComponent},
   {path: 'atemp', component: AtempComponent},
-  {path: 'description-vacancy', component: DescriptionVacancyComponent},
+  {path: 'vacancy-description', component: VacancyDescriptionComponent},
   {path: 'newcv', component: NewcvComponent},
   { path: '**', component: NotFoundComponent }
 ];
@@ -80,7 +80,7 @@ const appRoutes: Routes = [
     VacancyComponent,
     NewVacancyComponent,
     AtempComponent,
-    DescriptionVacancyComponent,
+    VacancyDescriptionComponent,
     NewcvComponent,
     NotFoundComponent
    ],

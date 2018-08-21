@@ -1,3 +1,5 @@
+<form [formGroup]="headerTopForm">
+
 <div class="container-fluid">
   <div class="row">
      <div class="col-2">
@@ -7,31 +9,31 @@
 
 
   <div class="col-4">
-  <form class="form-inline">
+  <div class="form-inline">
      <div class="form-group">
-       <input type="search" class="form-control" id="Inputsearch" placeholder="Поиск">
-       <button type="submit" class="btn btn-primary">Искать</button>
+       <input type="search" class="form-control" formControlName="inputSearch" id="inputSearch" placeholder="Поиск">
+       <button type="submit" class="btn btn-primary" (click)="find()">Искать</button>
      </div>
-   </form>
+   </div>
   </div>
 
 
   <div class="col-3" *ngIf="bConnected">
-     <form class="form-inline">
+     <div class="form-inline">
        <div class="form-group">
            <i class="fa fa-user" style="font-size:24px;color:blue"></i>  {{ htUserName }}
             <button class="btn btn-primary" (click)="logout()">Выйти</button>
        </div>
-     </form>
+     </div>
    </div>
 
      <div class="col-3" *ngIf="!bConnected">
-    <form class="form-inline">
+    <div class="form-inline">
          <div class="form-group">
            <button class="btn btn-primary" (click)="login()">Войти</button>
              <a class="nav-link" routerLink="/register" routerLinkActive="active">Регистрация</a>
          </div>
-       </form>
+       </div>
     </div>
 
     <div class="col-2">
@@ -49,3 +51,6 @@
     </div>
           </div>
              </div>
+
+
+</form>

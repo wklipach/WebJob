@@ -1,17 +1,16 @@
-import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Params, Router} from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
 import {dataVacancy} from '../../class/Vacancy';
 import {MoveService} from '../../services/move.service';
 import {GuideService} from '../../services/guide-service.service';
-import {ExperienceList} from '../../class/GuideList';
 import {Subscription} from 'rxjs';
 
 @Component({
-  selector: 'app-description-vacancy',
-  templateUrl: './description-vacancy.component.html',
-  styleUrls: ['./description-vacancy.component.css']
+  selector: 'app-vacancy-description',
+  templateUrl: './vacancy-description.component.html',
+  styleUrls: ['./vacancy-description.component.css']
 })
-export class DescriptionVacancyComponent implements OnInit {
+export class VacancyDescriptionComponent implements OnInit {
 
 
   descrDataVacancy: dataVacancy;

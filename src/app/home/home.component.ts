@@ -22,11 +22,17 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.getVacancy();
+    //this.getVacancy('нет');
+
+    this.httpService.onReopenVacancy.subscribe((value: string) => this.getVacancy(value));
+
+    // запускаем событие "получить вакансии" с пустой маской
+    this.httpService.triggerReopenVacancy('');
+
   }
 
-  getVacancy() {
-    return this.getTableVacancy = this.httpService.getTableVacancy().subscribe(
+  getVacancy(sMask: string) {
+    return this.getTableVacancy = this.httpService.getTableVacancy(sMask).subscribe(
       (data: dataVacancy[]) => {
         //это получаем город из нового вызываемого сервиса
         this.httpService.getCity().subscribe((city: City[]) => {
@@ -53,9 +59,9 @@ export class HomeComponent implements OnInit, OnDestroy {
 
 
   MyMethod(zid : number) {
-    console.log('id--', zid);
+    // console.log('id--', zid);
     let vacancy = this.myDataVacancy.find(vacancy =>  vacancy.id===zid);
-     this.dvSubscription = this.moveS.setDataVacancy(vacancy).subscribe( ()=> this.router.navigate(['/description-vacancy']));
+     this.dvSubscription = this.moveS.setDataVacancy(vacancy).subscribe( ()=> this.router.navigate(['/vacancy-description']));
   }
 
   ngOnDestroy() {
