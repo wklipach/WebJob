@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     // запускаем событие "получить вакансии", в первый раз с пустой маской
     this.httpService.triggerReopenVacancy(sMask);
 
-    //записываем значение маски в элемент, так как при перегрузке страницы он стирается ??????
+    // записываем значение маски в элемент, так как при перегрузке страницы он стирается ??????
     this.moveS.setStringFind(sMask);
 
 

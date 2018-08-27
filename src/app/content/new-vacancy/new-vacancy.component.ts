@@ -14,17 +14,17 @@ import {City} from '../../class/City';
 })
 export class NewVacancyComponent implements OnInit {
 
-  newVacancyForm : FormGroup;
-  listIndustry : Guide[];
-  listSchedule : Guide[];
-  listEmployment : Guide[];
-  listExperience : Guide[];
-  listEducation : Guide[];
+  newVacancyForm: FormGroup;
+  listIndustry: Guide[];
+  listSchedule: Guide[];
+  listEmployment: Guide[];
+  listExperience: Guide[];
+  listEducation: Guide[];
 
-  displayPeriodList : Guide[];
+  displayPeriodList: Guide[];
   listCity : City[] =[];
-  myDisplayPeriod : string = "";
-  myDisplayCity : string = "";
+  myDisplayPeriod: string = "";
+  myDisplayCity: string = "";
 
 
   constructor(private is: GuideService, private httpService: NewVacancyService, private router: Router) {
@@ -60,17 +60,17 @@ export class NewVacancyComponent implements OnInit {
 
     this.listEmployment = is.getEmploymentList();
     for (let p in this.listEmployment) {
-      this.newVacancyForm.addControl('employmentCheck'+(this.listEmployment[p].id).toString(), new FormControl(''));
+      this.newVacancyForm.addControl('employmentCheck' + (this.listEmployment[p].id).toString(), new FormControl(''));
     }
 
     this.listExperience = is.getExperienceList();
     for (let p in this.listExperience) {
-      this.newVacancyForm.addControl('experienceCheck'+(this.listExperience[p].id).toString(), new FormControl(''));
+      this.newVacancyForm.addControl('experienceCheck' + (this.listExperience[p].id).toString(), new FormControl(''));
     }
 
     this.listEducation = is.getEducationList();
     for (let p in this.listEducation) {
-      this.newVacancyForm.addControl('educationCheck'+(this.listEducation[p].id).toString(), new FormControl(''));
+      this.newVacancyForm.addControl('educationCheck' + (this.listEducation[p].id).toString(), new FormControl(''));
     }
 
 
@@ -81,10 +81,10 @@ export class NewVacancyComponent implements OnInit {
     // console.log('this.listIndustry',this.listIndustry);
 
     is.getCityTable().subscribe(
-      (data: City[]) =>{
+      (data: City[]) => {
            this.listCity = data;
-           if (this.listCity.length>0) this.myDisplayCity = this.listCity[0].name;
-           this.newVacancyForm.setControl('inputCity', new FormControl(this.myDisplayCity,[]));
+           if (this.listCity.length > 0) this.myDisplayCity = this.listCity[0].name;
+           this.newVacancyForm.setControl('inputCity', new FormControl(this.myDisplayCity, []));
       }
     );
 
