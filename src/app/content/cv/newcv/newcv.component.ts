@@ -8,7 +8,7 @@ import {FormControl, FormGroup} from '@angular/forms';
 })
 export class NewcvComponent implements OnInit {
 
-  newCVForm : FormGroup;
+  newCVForm: FormGroup;
 
   constructor() {
 
