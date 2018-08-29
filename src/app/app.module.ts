@@ -36,6 +36,7 @@ import { CvEmploymentComponent } from './content/cv/cv-employment/cv-employment.
 import { CvScheduleComponent } from './content/cv/cv-schedule/cv-schedule.component';
 import { CvExperienceComponent } from './content/cv/cv-experience/cv-experience.component';
 import { CvEducationComponent } from './content/cv/cv-education/cv-education.component';
+import { CvPreviousComponent } from './content/cv/cv-previous/cv-previous.component';
 
 
 // определение маршрутов
@@ -59,7 +60,8 @@ const appRoutes: Routes = [
   {path: 'vacancy-description', component: VacancyDescriptionComponent},
   {path: 'newcv', component: NewcvComponent},
   {path: 'test', component: CvScheduleComponent},
-  { path: '**', component: NotFoundComponent }
+  {path: 'cv-previous', component: CvPreviousComponent},
+  {path: '**', component: NotFoundComponent }
 ];
 
 
@@ -93,6 +95,7 @@ const appRoutes: Routes = [
     CvScheduleComponent,
     CvExperienceComponent,
     CvEducationComponent,
+    CvPreviousComponent,
     NotFoundComponent
    ],
   providers: [AuthService, GuideService, NewVacancyService, TableVacancyService, MoveService],

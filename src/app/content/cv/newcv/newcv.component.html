@@ -68,12 +68,13 @@
     </div>
   </div>
 
+
   <div class="row">
     <div class="col-2">
       <label class="labelDescr">Отрасль</label>
     </div>
     <div class="col-4">
-      <div>Отрасль как в  new-vacancy </div>
+      <app-cv_industry></app-cv_industry>
     </div>
   </div>
 
@@ -82,7 +83,8 @@
       <label class="labelDescr">График работы</label>
     </div>
     <div class="col-4">
-      <div>Так же как в  new-vacancy </div>
+      <!-- график работы -->
+      <app-cv-schedule></app-cv-schedule>
     </div>
   </div>
 
@@ -91,7 +93,8 @@
       <label class="labelDescr">Занятость</label>
     </div>
     <div class="col-4">
-      <div>Так же как в  new-vacancy </div>
+      <!-- Занятость -->
+      <app-cv-employment></app-cv-employment>
     </div>
   </div>
 
@@ -100,7 +103,8 @@
       <label class="labelDescr">Образование</label>
     </div>
     <div class="col-4">
-      <div>Так же как в  new-vacancy </div>
+      <!-- Образование -->
+      <app-cv-education></app-cv-education>
     </div>
   </div>
 
@@ -109,80 +113,23 @@
       <label class="labelDescr">Опыт работы</label>
     </div>
     <div class="col-4">
-      <div>Так же как в  new-vacancy </div>
+      <!-- Опыт работы -->
+      <app-cv-experience></app-cv-experience>
     </div>
   </div>
 
 <br>
-  <h3>Предыдущее место работы</h3>
 
-  <div class="row">
-    <div class="col-2">
-      <label class="labelDescr">Начальная дата</label>
-    </div>
-    <div class="col-4">
-      <input type="date" class="form-control" formControlName="startDate" id="startDate" placeholder="Начальная дата">
-    </div>
-  </div>
+    <a class="nav-link" routerLink="/cv-previous" routerLinkActive="active">Добавить предыдущее место работы</a><br>
 
-  <div class="row">
-    <div class="col-2">
-      <label class="labelDescr">Конечная дата</label>
-    </div>
-    <div class="col-4">
-      <input type="date" class="form-control" formControlName="completionDate" id="completionDate" placeholder="Конечная дата">
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-2">
-      <label class="labelDescr">Компания</label>
-    </div>
-    <div class="col-4">
-      <input type="text" class="form-control" formControlName="company" id="company" placeholder="Компания">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-2">
-      <label class="labelDescr">Должность</label>
-    </div>
-    <div class="col-4">
-      <input type="text" class="form-control" formControlName="previousPosition" id="previousPosition" placeholder="Должность">
-    </div>
-  </div>
-
-
-  <div class="row">
-    <div class="col-2">
-      <label class="labelDescr">Должностные обязанности и достижения</label>
-    </div>
-    <div class="col-4">
-     <textarea class="form-control" aria-label="Должностные обязанности и достижения до 800 знаков" formControlName="inputPositionDescription" id="inputPositionDescription" placeholder="Должностные обязанности и достижения до 800 знаков"></textarea>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-2">
-      <label class="labelDescr">Основные навыки и умения</label>
-    </div>
-    <div class="col-4">
-      <textarea class="form-control" aria-label="Основные навыки и умения до 400 знаков" formControlName="inputSkillsAbilities" id="inputSkillsAbilities" placeholder="Основные навыки и умения до 400 знаков"></textarea>
-    </div>
-  </div>
-
-    <details>
-      <summary>Добавить место работы (Читай комментарий в коде </summary>
-      <!-- Я сделал пока так, но это тупое решение, потому как у человека может быть десяток предыдущих
-         мест работ, и надо эти элементы как-то создавать динамически. И хрен знает как это лучше реализовать. Может у тебя есть мысли?
-          И еще в отладчике ругань на форму, погляди.
-          -->
+    <!-- Old
 
     <div class="row">
       <div class="col-2">
         <label class="labelDescr">Начальная дата</label>
       </div>
       <div class="col-4">
-        <input type="date" class="form-control" formControlName="startDate2" id="startDate2" placeholder="Начальная дата">
+        <input type="date" class="form-control" formControlName="startDate" id="startDate" placeholder="Начальная дата">
       </div>
     </div>
 
@@ -191,7 +138,7 @@
         <label class="labelDescr">Конечная дата</label>
       </div>
       <div class="col-4">
-        <input type="date" class="form-control" formControlName="completionDate2" id="completionDate2" placeholder="Конечная дата">
+        <input type="date" class="form-control" formControlName="completionDate" id="completionDate" placeholder="Конечная дата">
       </div>
     </div>
 
@@ -200,7 +147,7 @@
         <label class="labelDescr">Компания</label>
       </div>
       <div class="col-4">
-        <input type="text" class="form-control" formControlName="company2" id="company2" placeholder="Компания">
+        <input type="text" class="form-control" formControlName="company" id="company" placeholder="Компания">
       </div>
     </div>
     <div class="row">
@@ -208,7 +155,7 @@
         <label class="labelDescr">Должность</label>
       </div>
       <div class="col-4">
-        <input type="text" class="form-control" formControlName="previousPosition2" id="previousPosition2" placeholder="Должность">
+        <input type="text" class="form-control" formControlName="previousPosition" id="previousPosition" placeholder="Должность">
       </div>
     </div>
 
@@ -218,7 +165,7 @@
         <label class="labelDescr">Должностные обязанности и достижения</label>
       </div>
       <div class="col-4">
-        <textarea class="form-control" aria-label="Должностные обязанности и достижения до 800 знаков" formControlName="inputPositionDescription2" id="inputPositionDescription2" placeholder="Должностные обязанности и достижения до 800 знаков"></textarea>
+       <textarea class="form-control" aria-label="Должностные обязанности и достижения до 800 знаков" formControlName="inputPositionDescription" id="inputPositionDescription" placeholder="Должностные обязанности и достижения до 800 знаков"></textarea>
       </div>
     </div>
 
@@ -227,12 +174,76 @@
         <label class="labelDescr">Основные навыки и умения</label>
       </div>
       <div class="col-4">
-        <textarea class="form-control" aria-label="Основные навыки и умения до 400 знаков" formControlName="inputSkillsAbilities2" id="inputSkillsAbilities2" placeholder="Основные навыки и умения до 400 знаков"></textarea>
+        <textarea class="form-control" aria-label="Основные навыки и умения до 4000 знаков" formControlName="inputSkillsAbilities" id="inputSkillsAb placeholder="Основные навыки и умения до 4000 знаков"></textarea>
       </div>
     </div>
 
-  </details>
-  <br>
+
+  <!-- Old
+      <details>
+        <summary></summary>
+
+
+      <div class="row">
+        <div class="col-2">
+          <label class="labelDescr">Начальная дата</label>
+        </div>
+        <div class="col-4">
+          <input type="date" class="form-control" formControlName="startDate2" id="startDate2" placeholder="Начальная дата">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-2">
+          <label class="labelDescr">Конечная дата</label>
+        </div>
+        <div class="col-4">
+          <input type="date" class="form-control" formControlName="completionDate2" id="completionDate2" placeholder="Конечная дата">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-2">
+          <label class="labelDescr">Компания</label>
+        </div>
+        <div class="col-4">
+          <input type="text" class="form-control" formControlName="company2" id="company2" placeholder="Компания">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2">
+          <label class="labelDescr">Должность</label>
+        </div>
+        <div class="col-4">
+          <input type="text" class="form-control" formControlName="previousPosition2" id="previousPosition2" placeholder="Должность">
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-2">
+          <label class="labelDescr">Должностные обязанности и достижения</label>
+        </div>
+        <div class="col-4">
+          <textarea class="form-control" aria-label="Должностные обязанности и достижения до 800 знаков" formControlName="inputPositionDescription2" id="inputPositionDescription2" placeholder="Должностные обязанности и достижения до 800 знаков"></textarea>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-2">
+          <label class="labelDescr">Основные навыки и умения</label>
+        </div>
+        <div class="col-4">
+          <textarea class="form-control" aria-label="Основные навыки и умения до 400 знаков" formControlName="inputSkillsAbilities2" id="inputSkillsAbilities2" placeholder="Основные навыки и умения до 400 знаков"></textarea>
+        </div>
+      </div>
+
+    </details>
+    <br>
+    </form>
+  </div>
+  -->
+<app-footer></app-footer>
+
   </form>
 </div>
-<app-footer></app-footer>
