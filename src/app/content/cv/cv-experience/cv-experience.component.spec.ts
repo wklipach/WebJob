@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Cvinfo2Component } from './cvinfo2.component';
+import { CvExperienceComponent } from './cv-experience.component';
 
-describe('Cvinfo2Component', () => {
-  let component: Cvinfo2Component;
-  let fixture: ComponentFixture<Cvinfo2Component>;
+describe('CvExperienceComponent', () => {
+  let component: CvExperienceComponent;
+  let fixture: ComponentFixture<CvExperienceComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ Cvinfo2Component ]
+      declarations: [ CvExperienceComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Cvinfo2Component);
+    fixture = TestBed.createComponent(CvExperienceComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

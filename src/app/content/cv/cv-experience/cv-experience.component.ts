@@ -1,0 +1,70 @@
+import { Component, OnInit } from '@angular/core';
+import {FormControl, FormGroup} from '@angular/forms';
+import {Guide} from '../../../class/guide';
+import {GuideService} from '../../../services/guide-service.service';
+import {Subscription} from 'rxjs';
+
+@Component({
+  selector: 'app-cv-experience',
+  templateUrl: './cv-experience.component.html',
+  styleUrls: ['./cv-experience.component.css']
+})
+export class CvExperienceComponent implements OnInit {
+
+  formExperience: FormGroup;
+  listExperience: Guide[];
+  private experienceSubscription: Subscription;
+
+  constructor(private is: GuideService) {
+
+    this.formExperience = new FormGroup({});
+
+    this.listExperience = is.getExperienceList();
+    for (let p in this.listExperience) {
+      this.formExperience.addControl('experienceCheck'+(this.listExperience[p].id).toString(), new FormControl(''));
+    }
+
+    this.experienceSubscription = this.is.onCheckExperienceList.subscribe((value: string) =>
+      {
+        this.is.experienceNumber=this.CheckMassive(this.listExperience);
+      }
+    );
+
+  }
+
+  ngOnInit() {
+  }
+
+
+  // controlPrefics "experienceCheck"
+  CheckMassive(bigMassive: Guide[]) : number[] {
+
+    let MyResult: number[] = [];
+    let bChecked: boolean = false;
+
+    for (let i = 0; i < bigMassive.length; i++) {
+      bChecked = false;
+      let ss: string = 'experienceCheck' + (bigMassive[i].id).toString();
+
+      if (!(this.formExperience.controls[ss].value === '')) {
+        bChecked = this.formExperience.controls[ss].value;
+      } else bChecked = false;
+
+      if (bChecked) {
+        // заполняем таблицу industry
+        MyResult.push(bigMassive[i].id)
+      }
+    }
+
+    return MyResult;
+  }
+
+  ngOnDestroy() {
+
+    if (typeof this.experienceSubscription !== 'undefined') {
+      this.experienceSubscription.unsubscribe();
+    }
+
+  }
+
+}

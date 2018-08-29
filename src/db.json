@@ -246,6 +246,41 @@
         ]
       },
       "id": 6
+    },
+    {
+      "vacancy": {
+        "VacancyShortTitle": "Проба М",
+        "VacancyDescription": "Проба М",
+        "VacancyBigDescription": "Проба М",
+        "SalaryFrom": "1",
+        "Salary": "11",
+        "Industry": [
+          1,
+          30
+        ],
+        "DisplayPeriod": 1,
+        "City": 1,
+        "Schedule": [
+          3,
+          4
+        ],
+        "Employment": [
+          1,
+          2,
+          5
+        ],
+        "Education": [
+          1,
+          5
+        ],
+        "Experience": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "id": 39
     }
   ],
   "City": [

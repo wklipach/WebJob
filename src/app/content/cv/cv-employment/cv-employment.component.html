@@ -1,0 +1,7 @@
+<h3>Занятость</h3>
+
+<form [formGroup]="formEmployment">
+  <div class="row align-items-start" *ngFor="let item of listEmployment">
+    <input type="checkbox" class="form-check-input" formControlName="employmentCheck{{item.id}}" id="employmentCheck{{item.id}}" title={{item.name}}> {{item.name}}
+  </div>
+</form>
