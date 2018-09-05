@@ -16,6 +16,7 @@ export class HeaderTopComponent implements OnInit {
   htUserName = '';
   bConnected = false;
   sElementMask: string = '';
+  id_user: number;
 
   constructor(private httpService: AuthService, private router: Router, private httpTvsService: TableVacancyService, private moveS: MoveService) {
 
@@ -27,6 +28,7 @@ export class HeaderTopComponent implements OnInit {
     this.httpService.IsUserLoggedIn.subscribe(value => {
       this.htUserName = value.name;
       this.bConnected = value.connect;
+      this.id_user = value.id_user;
       // console.log('this.htUserName =', this.htUserName);
     });
 
@@ -44,6 +46,10 @@ export class HeaderTopComponent implements OnInit {
       this.bConnected = JSON.parse(window.localStorage.getItem('bConnected'));
     }
 
+    if (window.localStorage.getItem('id_user') !== '') {
+      this.bConnected = JSON.parse(window.localStorage.getItem('id_user'));
+    }
+
 
     this.sElementMask  = this.moveS.getStringFind();
 
@@ -59,13 +65,19 @@ export class HeaderTopComponent implements OnInit {
 
     window.localStorage.removeItem('htUserName');
     window.localStorage.removeItem('bConnected');
-    this.httpService.IsUserLoggedIn.next({connect : false, name : ''});
+    window.localStorage.removeItem('id_user');
+    this.httpService.IsUserLoggedIn.next({connect : false, name : '', id_user: -1});
   }
 
 
   find() {
     const sInputSearch = this.headerTopForm.controls['inputSearch'].value;
     this.getVacancy(sInputSearch);
+  }
+
+
+  newcv(){
+    this.router.navigate(['/newcv']);
   }
 
 

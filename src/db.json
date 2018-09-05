@@ -113,6 +113,13 @@
       "Password": "2",
       "bEmployer": true,
       "id": 16
+    },
+    {
+      "UserName": "Виталий",
+      "EMail": "klipach@mail.ru",
+      "Password": "1",
+      "bEmployer": true,
+      "id": 17
     }
   ],
   "Vacancy": [
@@ -313,6 +320,177 @@
       "name": "Раквере",
       "order": "6",
       "id": 6
+    }
+  ],
+  "CV": [
+    {
+      "cv": {
+        "SalaryFrom": "",
+        "Position": "",
+        "City": 1,
+        "Industry": [
+          1,
+          4
+        ],
+        "Schedule": [],
+        "Employment": [],
+        "Education": [],
+        "Experience": []
+      },
+      "id": 1
+    },
+    {
+      "cv": {
+        "SalaryFrom": "",
+        "Position": "",
+        "City": 1,
+        "Industry": [],
+        "Schedule": [
+          4,
+          5
+        ],
+        "Employment": [],
+        "Education": [],
+        "Experience": []
+      },
+      "id": 2
+    },
+    {
+      "cv": {
+        "SalaryFrom": "",
+        "Position": "",
+        "City": 1,
+        "Industry": [],
+        "Schedule": [],
+        "Employment": [],
+        "Education": [
+          5
+        ],
+        "Experience": []
+      },
+      "id": 3
+    },
+    {
+      "cv": {
+        "SalaryFrom": "",
+        "Position": "",
+        "City": 1,
+        "Industry": [],
+        "Schedule": [],
+        "Employment": [],
+        "Education": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "Experience": []
+      },
+      "id": 4
+    },
+    {
+      "cv": {
+        "id_user": -1,
+        "SalaryFrom": "2",
+        "Position": "200",
+        "City": 3,
+        "Industry": [
+          1
+        ],
+        "Schedule": [],
+        "Employment": [
+          2
+        ],
+        "Education": [
+          4
+        ],
+        "Experience": [
+          3
+        ]
+      },
+      "id": 5
+    },
+    {
+      "cv": {
+        "id_user": -1,
+        "SalaryFrom": "4",
+        "Position": "444",
+        "City": 5,
+        "Industry": [
+          1
+        ],
+        "Schedule": [
+          3
+        ],
+        "Employment": [
+          2
+        ],
+        "Education": [
+          5
+        ],
+        "Experience": [
+          4
+        ]
+      },
+      "id": 6
+    }
+  ],
+  "CV_Previous": [
+    {
+      "previous": [
+        {
+          "id_cv": 5,
+          "dStartDate": "2018-08-30",
+          "dCompletionDate": "",
+          "sCompany": "",
+          "sPreviousPosition": "111",
+          "sInputPositionDescription": "",
+          "sInputSkillsAbilities": ""
+        },
+        {
+          "id_cv": 5,
+          "dStartDate": "2018-09-28",
+          "dCompletionDate": "",
+          "sCompany": "2",
+          "sPreviousPosition": "222",
+          "sInputPositionDescription": "",
+          "sInputSkillsAbilities": ""
+        }
+      ],
+      "id": 1
+    },
+    {
+      "previous": [
+        {
+          "id_cv": 6,
+          "dStartDate": "",
+          "dCompletionDate": "",
+          "sCompany": "ц",
+          "sPreviousPosition": "",
+          "sInputPositionDescription": "",
+          "sInputSkillsAbilities": ""
+        },
+        {
+          "id_cv": 6,
+          "dStartDate": "",
+          "dCompletionDate": "",
+          "sCompany": "цц",
+          "sPreviousPosition": "",
+          "sInputPositionDescription": "",
+          "sInputSkillsAbilities": ""
+        },
+        {
+          "id_cv": 6,
+          "dStartDate": "",
+          "dCompletionDate": "",
+          "sCompany": "ццц",
+          "sPreviousPosition": "",
+          "sInputPositionDescription": "",
+          "sInputSkillsAbilities": ""
+        }
+      ],
+      "id": 2
     }
   ]
 }

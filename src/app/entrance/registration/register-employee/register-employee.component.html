@@ -67,11 +67,63 @@
 
 </div>
 <!-- закончили обработку почтовых ошибок -->
+  </div>
 
+<!-- ФИО и т.п.
+-->
 
+  <div class="row">
+    <div class="col-2">
+      <label class="labelDescr">Загрузить фото</label>
+    </div>
+    <div class="col-4">
+      <input type="image" title="photo" id="photo">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-2">
+      <label class="labelDescr">Имя</label>
+    </div>
+    <div class="col-4">
+            <input type="text" class="form-control" formControlName="name" id="name" placeholder="Имя">
+      </div>
+      </div>
+
+  <div class="row">
+    <div class="col-2">
+      <label class="labelDescr">Фамилия</label>
+    </div>
+    <div class="col-4">
+      <input type="text" class="form-control" formControlName="surname" id="surname" placeholder="Фамилия">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-2">
+      <label class="labelDescr">Дата рождения</label>
+    </div>
+    <div class="col-4">
+      <input type="date" class="form-control" formControlName="dateBirth" id="dateBirth" placeholder="Дата рождения">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-2">
+      <label class="labelDescr">Пол</label>
+    </div>
+    <div class="col-4">
+      <div>Выбор пола
+        <br/>
+        <input name="options" type="radio" value="1">  Мужской <br/>
+        <input name="options" type="radio" value="2">  Женский <br/>
+      </div>
+    </div>
   </div>
 
 
+  <!-- закончили ввод ФИО и т.п.
+  -->
 
   <div class="form-row">
     <div class="form-group col-md-3">

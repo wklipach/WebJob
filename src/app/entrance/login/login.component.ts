@@ -32,20 +32,23 @@ export class LoginComponent implements OnInit {
   }
 
 
-  getCheckNameOrEmailAndPassword (ListUser: UserTable, tUser : {sUserOrEmail : string, sPassword : string} ): {bCheck: boolean, uName: string}
+  getCheckNameOrEmailAndPassword (ListUser: UserTable, tUser : {sUserOrEmail : string, sPassword : string} ): {bCheck: boolean, uName: string, id_user: number}
   {
 
     var ResUser = Object(ListUser)
                  .filter( x => x.UserName.trim().toLowerCase() === tUser.sUserOrEmail.trim().toLowerCase() || x.EMail.trim().toLowerCase() === tUser.sUserOrEmail.trim().toLowerCase())
                  .filter(y => y.Password.trim().toLowerCase() === tUser.sPassword.trim().toLowerCase());
 
-    if (ResUser.length === 1) {  console.log('вернули',ResUser[0].UserName); return {bCheck: true, uName: ResUser[0].UserName} } else {
+
+    console.log('ResUser[id]', ResUser, ResUser[0].id);
+
+    if (ResUser.length === 1) {  console.log('вернули',ResUser[0].UserName); return {bCheck: true, uName: ResUser[0].UserName, id_user: ResUser[0].id} } else {
       if (ResUser.length === 0) {
         this.sResTrouble = 'Не существующие имя или пароль.';
-        return {bCheck: false, uName: ''};
+        return {bCheck: false, uName: '', id_user: -1};
       } else {
         this.sResTrouble = 'Существует несколько пользователей с такими именем или паролем.';
-        return {bCheck: false, uName: ''};
+        return {bCheck: false, uName: '', id_user: -1};
       }
 
     }
@@ -61,14 +64,15 @@ export class LoginComponent implements OnInit {
     return this.httpService.getDataUserTable(sUserOrEmail).subscribe(
       (data: UserTable) => {
 
-        const curRes: {bCheck: boolean, uName: string} = this.getCheckNameOrEmailAndPassword (data, tUser);
+        const curRes: {bCheck: boolean, uName: string, id_user: number} = this.getCheckNameOrEmailAndPassword (data, tUser);
 
         if (curRes.bCheck === true) {
-          this.httpService.login((curRes.uName));
-          this.httpService.IsUserLoggedIn.next({connect : true, name : curRes.uName});
+          this.httpService.login(curRes.uName, curRes.id_user);
+          this.httpService.IsUserLoggedIn.next({connect : true, name : curRes.uName, id_user: curRes.id_user });
 
           window.localStorage.setItem('htUserName', JSON.stringify(curRes.uName));
           window.localStorage.setItem('bConnected', JSON.stringify(true));
+          window.localStorage.setItem('id_user', JSON.stringify(curRes.id_user));
 
           console.log('НАЖАЛИ ЛОГИН', curRes.uName);
           this.showSucc = true;
@@ -76,7 +80,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/home']);
         }
         else {
-          this.httpService.IsUserLoggedIn.next({connect : false, name : ''});
+          this.httpService.IsUserLoggedIn.next({connect : false, name : '', id_user: -1});
           this.httpService.logout();
           this.showSucc = false;
           this.showErr = true;

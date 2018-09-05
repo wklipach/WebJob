@@ -49,6 +49,7 @@ export class NewVacancyComponent implements OnInit {
     });
 
 
+/*
     this.listExperience = is.getExperienceList();
     for (let p in this.listExperience) {
       this.newVacancyForm.addControl('experienceCheck' + (this.listExperience[p].id).toString(), new FormControl(''));
@@ -58,6 +59,7 @@ export class NewVacancyComponent implements OnInit {
     for (let p in this.listEducation) {
       this.newVacancyForm.addControl('educationCheck' + (this.listEducation[p].id).toString(), new FormControl(''));
     }
+*/
 
     // console.log('this.listIndustry',this.listIndustry);
 

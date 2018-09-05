@@ -1,10 +1,10 @@
-
-export class Vacancy{
-  VacancyShortTitle: string;
-  VacancyDescription: string;
-  VacancyBigDescription: string;
+export class CV{
+  // пользователь
+  id_user: number;
+  // желаемая должность
+  Position: string;
+  // оплата
   SalaryFrom: number;
-  Salary: number;
   // отрасль
   Industry: number[];
   DisplayPeriod: number;
@@ -17,10 +17,6 @@ export class Vacancy{
   Education: number[];
   //опыт работы
   Experience: number[];
+  //номер резюме
   id : number;
-}
-
-export class  dataVacancy extends Vacancy {
-  CityName: string;
-  EmployerName: string;
 }

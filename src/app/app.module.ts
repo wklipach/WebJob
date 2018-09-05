@@ -37,6 +37,8 @@ import { CvScheduleComponent } from './content/cv/cv-schedule/cv-schedule.compon
 import { CvExperienceComponent } from './content/cv/cv-experience/cv-experience.component';
 import { CvEducationComponent } from './content/cv/cv-education/cv-education.component';
 import { CvPreviousComponent } from './content/cv/cv-previous/cv-previous.component';
+import {PreviousService} from './services/previous.service';
+import {NewcvService} from './services/newcv.service';
 
 
 // определение маршрутов
@@ -98,7 +100,10 @@ const appRoutes: Routes = [
     CvPreviousComponent,
     NotFoundComponent
    ],
-  providers: [AuthService, GuideService, NewVacancyService, TableVacancyService, MoveService],
+  entryComponents: [
+    CvPreviousComponent
+  ],
+  providers: [AuthService, GuideService, NewVacancyService, TableVacancyService, MoveService, PreviousService, NewcvService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

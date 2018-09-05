@@ -7,11 +7,11 @@ import {Subject} from 'rxjs';
 export class AuthService {
 
 
-  public IsUserLoggedIn: Subject<{connect: boolean, name : string}> = new Subject<{connect: boolean, name : string}>();
+  public IsUserLoggedIn: Subject<{connect: boolean, name : string, id_user: number}> = new Subject<{connect: boolean, name : string, id_user: number}>();
 
   private isAuthenticated = false;
-  private sUserName : string = '';
-
+  private _sUserName : string = '';
+  private _id_user: number;
 
 
 
@@ -19,9 +19,10 @@ export class AuthService {
 
   }
 
-  login(sUserName: string) {
+  login(sUserName: string, id_user: number) {
     this.isAuthenticated = true;
-    this.sUserName = sUserName;
+    this._sUserName = sUserName;
+    this._id_user = id_user;
   }
 
   logout() {
@@ -36,8 +37,13 @@ export class AuthService {
   }
 
   getUserNameIn(): string {
-    return this.sUserName;
+    return this._sUserName;
   }
+
+  getId_User(): number {
+    return this._id_user;
+  }
+
 
 
   getDataUserTable(UserName: string)

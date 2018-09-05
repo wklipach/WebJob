@@ -6,7 +6,7 @@ import {isNullOrUndefined} from 'util';
 import {Router} from '@angular/router';
 import {MoveService} from '../services/move.service';
 import {Subscription} from 'rxjs';
-import {isNull} from '@angular/compiler/src/output/output_ast';
+
 
 @Component({
   selector: 'app-home',

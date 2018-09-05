@@ -1,6 +1,9 @@
-<app-header-top></app-header-top>
-
 <h3>Предыдущее место работы</h3>
+
+<form [formGroup]="formPrevious">
+
+
+<button (click)="checkNumberPrevious()">Удалить данное место работы</button>
 
 <div class="row">
   <div class="col-2">
@@ -55,6 +58,4 @@
     <textarea class="form-control" aria-label="Основные навыки и умения до 4000 знаков" formControlName="inputSkillsAbilities" id="inputSkillsAbilities" placeholder="Основные навыки и умения до 4000 знаков"></textarea>
   </div>
 </div>
-
-<app-footer></app-footer>
-
+</form>
