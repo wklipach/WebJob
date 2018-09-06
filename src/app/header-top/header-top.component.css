@@ -1,8 +1,19 @@
-a{
-  text-decoration: none;
-}
+/*
 li{
   text-decoration: none;
   list-style: none;
 }
+*/
 
+
+
+h1{
+  color: red;
+  font-weight: bold;
+  font-size: 45px;
+}
+
+h1:hover{
+
+  color: #00A4E4;
+ }

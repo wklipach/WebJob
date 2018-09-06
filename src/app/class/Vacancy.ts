@@ -15,7 +15,7 @@ export class Vacancy{
   Employment: number[];
   // образование
   Education: number[];
-  //опыт работы
+  // опыт работы
   Experience: number[];
   id : number;
 }
