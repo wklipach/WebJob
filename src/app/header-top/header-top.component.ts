@@ -37,19 +37,10 @@ export class HeaderTopComponent implements OnInit {
 
   ngOnInit() {
 
-
-    if (window.localStorage.getItem('htUserName') !== '') {
-      this.htUserName = JSON.parse(window.localStorage.getItem('htUserName'));
-    }
-
-    if (window.localStorage.getItem('bConnected') !== '') {
-      this.bConnected = JSON.parse(window.localStorage.getItem('bConnected'));
-    }
-
-    if (window.localStorage.getItem('id_user') !== '') {
-      this.bConnected = JSON.parse(window.localStorage.getItem('id_user'));
-    }
-
+    var Res =  this.httpService.loginStorage();
+    this.htUserName = Res.htUserName;
+    this.bConnected = Res.bConnected;
+    this.id_user =  Res.id_user;
 
     this.sElementMask  = this.moveS.getStringFind();
 

@@ -19,4 +19,9 @@ export class CV{
   Experience: number[];
   //номер резюме
   id : number;
+  //поле для отметок "выбрано"
+  bChecked : boolean = false;
+  // признак удаленного резюме
+  bInvisible : boolean = false;
+
 }

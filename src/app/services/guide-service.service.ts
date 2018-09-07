@@ -134,6 +134,14 @@ export class GuideService {
     return this.http.get('http://localhost:3000/City');
   }
 
+
+  getCityName(id_city: number)
+  {
+    // вставить запрос типа select Name from City where id=21
+    return this.http.get('http://localhost:3000/City?id='+id_city);
+  }
+
+
 }
 
 
