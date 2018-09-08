@@ -1,4 +1,3 @@
-import {Guide} from './guide';
 
 export class Vacancy{
   VacancyShortTitle: string;
@@ -16,7 +15,7 @@ export class Vacancy{
   Employment: number[];
   // образование
   Education: number[];
-  //опыт работы
+  // опыт работы
   Experience: number[];
   id : number;
 }

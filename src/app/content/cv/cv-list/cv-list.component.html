@@ -1,0 +1,40 @@
+<app-header-top></app-header-top>
+<h1>Мои резюме</h1>
+
+<!--
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-2">
+          <label>Главный дизайнер</label><br>
+          <i class="fa fa-gg-circle" style="font-size:48px;color:red"></i><br>
+          <label class="cv-ed-del" (click)="EditElement()">Редактировать</label>
+          <label class="cv-ed-del" (click)="DeleteElement()">***  Удалить ***</label>
+        </div>
+  </div>
+</div>
+-->
+
+<tbody>
+<tr *ngFor="let item of cvList; let i = index;">
+  <td><input type="checkbox" [(ngModel)]="item.bChecked"></td>
+  <td>{{i}}</td>
+  <td>Должность "{{item.cv.Position}}"</td>
+  <td>Зарплата "{{item.cv.SalaryFrom}}"</td>
+  <td>Город "{{item.CityName}}"</td>
+  <td><button type="button" class="btn btn-success" [disabled]="!item.bChecked" (click)="DeleteElement(item)">Удалить</button></td>
+</tr>
+</tbody>
+
+
+<!--
+
+| uppercase
+
+<pre>{{item.bChecked}}</pre>
+
+
+<div class="text-hide" style="background-image: url('/src/assets/img/1.jpg'); width: 50px; height: 50px;">Главный дизайнер</div>
+ <label></label>
+<span class="glyphicon glyphicon-search"></span>
+-->

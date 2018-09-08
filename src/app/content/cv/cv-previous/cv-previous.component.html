@@ -1,0 +1,61 @@
+<h3>Предыдущее место работы</h3>
+
+<form [formGroup]="formPrevious">
+
+
+<button (click)="checkNumberPrevious()">Удалить данное место работы</button>
+
+<div class="row">
+  <div class="col-2">
+    <label class="labelDescr">Начальная дата</label>
+  </div>
+  <div class="col-4">
+    <input type="date" class="form-control" formControlName="startDate" id="startDate" placeholder="Начальная дата">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-2">
+    <label class="labelDescr">Конечная дата</label>
+  </div>
+  <div class="col-4">
+    <input type="date" class="form-control" formControlName="completionDate" id="completionDate" placeholder="Конечная дата">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-2">
+    <label class="labelDescr">Компания</label>
+  </div>
+  <div class="col-4">
+    <input type="text" class="form-control" formControlName="company" id="company" placeholder="Компания">
+  </div>
+</div>
+<div class="row">
+  <div class="col-2">
+    <label class="labelDescr">Должность</label>
+  </div>
+  <div class="col-4">
+    <input type="text" class="form-control" formControlName="previousPosition" id="previousPosition" placeholder="Должность">
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-2">
+    <label class="labelDescr">Должностные обязанности и достижения</label>
+  </div>
+  <div class="col-4">
+    <textarea class="form-control" aria-label="Должностные обязанности и достижения до 800 знаков" formControlName="inputPositionDescription" id="inputPositionDescription" placeholder="Должностные обязанности и достижения до 800 знаков"></textarea>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-2">
+    <label class="labelDescr">Основные навыки и умения</label>
+  </div>
+  <div class="col-4">
+    <textarea class="form-control" aria-label="Основные навыки и умения до 4000 знаков" formControlName="inputSkillsAbilities" id="inputSkillsAbilities" placeholder="Основные навыки и умения до 4000 знаков"></textarea>
+  </div>
+</div>
+</form>

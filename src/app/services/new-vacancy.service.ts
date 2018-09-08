@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Vacancy} from '../class/Vacancy';
+import {Previous} from '../class/Previous';
 
 @Injectable()
 export class NewVacancyService {
@@ -10,5 +11,6 @@ export class NewVacancyService {
   postNewVacancy(vacancy: Vacancy) {
     return this.http.post('http://localhost:3000/Vacancy', {vacancy});
   }
+
 
 }

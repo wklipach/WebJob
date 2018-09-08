@@ -2,21 +2,70 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Guide} from '../class/guide';
 import {DisplayPeriodList, EducationList, EmploymentList, ExperienceList, IndustryList, ScheduleList} from '../class/GuideList';
+import {Observable, Subject} from 'rxjs';
 
 @Injectable()
 
 export class GuideService {
 
+  public industryNumber: number[];
+  public employmentNumber: number[];
+  public scheduleNumber: number[];
+  public experienceNumber: number[];
+  public educationNumber: number[];
+
   private industryList: Guide[];
-  private displayPeriodList: Guide[];
   private scheduleList: Guide[];
   private educationList: Guide[];
   private employmentList: Guide[];
   private experienceList: Guide[];
 
-  constructor( private http: HttpClient) {
+  private displayPeriodList: Guide[];
 
+  private _onCheckIndustryList = new Subject<string>();
+  private _onCheckEmploymentList = new Subject<string>();
+  private _onCheckScheduleList = new Subject<string>();
+  private _onCheckExperienceList = new Subject<string>();
+  private _onCheckEducationList = new Subject<string>();
+
+  constructor( private http: HttpClient) {}
+
+  public get onCheckEducationList(): Observable<string> { return this._onCheckEducationList.asObservable(); }
+  public startCheckEducationList(value: string): number[] {
+    this._onCheckEducationList.next(value);
+    return this.educationNumber;
   }
+
+  public get onCheckExperienceList(): Observable<string> { return this._onCheckExperienceList.asObservable(); }
+  public startCheckExperienceList(value: string): number[] {
+    this._onCheckExperienceList.next(value);
+    return this.experienceNumber;
+  }
+
+  public get onCheckScheduleList(): Observable<string> { return this._onCheckScheduleList.asObservable(); }
+
+  public startCheckScheduleList(value: string): number[] {
+    this._onCheckScheduleList.next(value);
+    return this.scheduleNumber;
+  }
+
+  public get onCheckIndustryList(): Observable<string> { return this._onCheckIndustryList.asObservable(); }
+
+  public startCheckIndustryList(value: string): number[] {
+    this._onCheckIndustryList.next(value);
+    return this.industryNumber;
+  }
+
+  public get onCheckEmploymentList(): Observable<string> { return this._onCheckEmploymentList.asObservable(); }
+
+  public startCheckEmploymentList(value: string): number[] {
+    this._onCheckEmploymentList.next(value);
+    return this.employmentNumber;
+  }
+
+
+
+
 
   getIndustryName(i: number): string {
     this.industryList = IndustryList;
@@ -84,6 +133,14 @@ export class GuideService {
     // вставить запрос типа select top 10 * from City
     return this.http.get('http://localhost:3000/City');
   }
+
+
+  getCityName(id_city: number)
+  {
+    // вставить запрос типа select Name from City where id=21
+    return this.http.get('http://localhost:3000/City?id='+id_city);
+  }
+
 
 }
 

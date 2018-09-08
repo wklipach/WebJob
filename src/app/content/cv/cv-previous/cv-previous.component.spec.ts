@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VacancyDescriptionComponent } from './vacancy-description.component';
+import { CvPreviousComponent } from './cv-previous.component';
 
-describe('DescriptionVacancyComponent', () => {
-  let component: VacancyDescriptionComponent;
-  let fixture: ComponentFixture<VacancyDescriptionComponent>;
+describe('CvPreviousComponent', () => {
+  let component: CvPreviousComponent;
+  let fixture: ComponentFixture<CvPreviousComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ VacancyDescriptionComponent ]
+      declarations: [ CvPreviousComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(VacancyDescriptionComponent);
+    fixture = TestBed.createComponent(CvPreviousComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

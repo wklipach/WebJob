@@ -113,6 +113,13 @@
       "Password": "2",
       "bEmployer": true,
       "id": 16
+    },
+    {
+      "UserName": "Виталий",
+      "EMail": "klipach@mail.ru",
+      "Password": "1",
+      "bEmployer": true,
+      "id": 17
     }
   ],
   "Vacancy": [
@@ -246,6 +253,41 @@
         ]
       },
       "id": 6
+    },
+    {
+      "vacancy": {
+        "VacancyShortTitle": "Проба М",
+        "VacancyDescription": "Проба М",
+        "VacancyBigDescription": "Проба М",
+        "SalaryFrom": "1",
+        "Salary": "11",
+        "Industry": [
+          1,
+          30
+        ],
+        "DisplayPeriod": 1,
+        "City": 1,
+        "Schedule": [
+          3,
+          4
+        ],
+        "Employment": [
+          1,
+          2,
+          5
+        ],
+        "Education": [
+          1,
+          5
+        ],
+        "Experience": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "id": 39
     }
   ],
   "City": [
@@ -278,6 +320,249 @@
       "name": "Раквере",
       "order": "6",
       "id": 6
+    }
+  ],
+  "CV": [
+    {
+      "cv": {
+        "bChecked": false,
+        "bInvisible": false,
+        "id_user": 17,
+        "SalaryFrom": "2000",
+        "Position": "Программист",
+        "City": 6,
+        "Industry": [
+          12,
+          13
+        ],
+        "Schedule": [
+          2,
+          3
+        ],
+        "Employment": [
+          1,
+          5
+        ],
+        "Education": [
+          1
+        ],
+        "Experience": [
+          4
+        ]
+      },
+      "id": 1
+    },
+    {
+      "cv": {
+        "bChecked": false,
+        "bInvisible": false,
+        "id_user": 17,
+        "SalaryFrom": "7000",
+        "Position": "Дизайнер",
+        "City": 4,
+        "Industry": [
+          1,
+          3
+        ],
+        "Schedule": [
+          2,
+          3,
+          5
+        ],
+        "Employment": [
+          5
+        ],
+        "Education": [
+          1,
+          2
+        ],
+        "Experience": [
+          1
+        ]
+      },
+      "id": 2
+    },
+    {
+      "cv": {
+        "bChecked": false,
+        "bInvisible": false,
+        "id_user": 17,
+        "SalaryFrom": "6000",
+        "Position": "Хирург",
+        "City": 5,
+        "Industry": [
+          9
+        ],
+        "Schedule": [
+          5
+        ],
+        "Employment": [
+          4,
+          5
+        ],
+        "Education": [
+          4
+        ],
+        "Experience": [
+          4
+        ]
+      },
+      "id": 3
+    },
+    {
+      "body": {
+        "cv": {
+          "bChecked": false,
+          "bInvisible": true,
+          "id_user": 17,
+          "SalaryFrom": "7000",
+          "Position": "Дизайнер",
+          "City": 4,
+          "Industry": [
+            1,
+            3
+          ],
+          "Schedule": [
+            2,
+            3,
+            5
+          ],
+          "Employment": [
+            5
+          ],
+          "Education": [
+            1,
+            2
+          ],
+          "Experience": [
+            1
+          ]
+        },
+        "id": 2,
+        "CityName": "Пярну",
+        "bChecked": true
+      },
+      "id": 4
+    },
+    {
+      "bChecked": false,
+      "bInvisible": true,
+      "id_user": 17,
+      "SalaryFrom": "7000",
+      "Position": "Дизайнер",
+      "City": 4,
+      "Industry": [
+        1,
+        3
+      ],
+      "Schedule": [
+        2,
+        3,
+        5
+      ],
+      "Employment": [
+        5
+      ],
+      "Education": [
+        1,
+        2
+      ],
+      "Experience": [
+        1
+      ],
+      "id": 5
+    },
+    {
+      "body": {
+        "bChecked": false,
+        "bInvisible": true,
+        "id_user": 17,
+        "SalaryFrom": "7000",
+        "Position": "Дизайнер",
+        "City": 4,
+        "Industry": [
+          1,
+          3
+        ],
+        "Schedule": [
+          2,
+          3,
+          5
+        ],
+        "Employment": [
+          5
+        ],
+        "Education": [
+          1,
+          2
+        ],
+        "Experience": [
+          1
+        ]
+      },
+      "id": 6
+    }
+  ],
+  "CV_Previous": [
+    {
+      "previous": [
+        {
+          "id_cv": 1,
+          "dStartDate": "",
+          "dCompletionDate": "2018-09-22",
+          "sCompany": "Промторгсервис",
+          "sPreviousPosition": "Программист",
+          "sInputPositionDescription": "Никаких достижений не было",
+          "sInputSkillsAbilities": "Навыков тоже нет"
+        },
+        {
+          "id_cv": 1,
+          "dStartDate": "2014-09-13",
+          "dCompletionDate": "2018-09-04",
+          "sCompany": "Салтыков-Сервис",
+          "sPreviousPosition": "Программист",
+          "sInputPositionDescription": "писать программы",
+          "sInputSkillsAbilities": "спать на рабочем месте"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "previous": [
+        {
+          "id_cv": 2,
+          "dStartDate": "2017-06-05",
+          "dCompletionDate": "2018-12-08",
+          "sCompany": "Бутылки-Кампани",
+          "sPreviousPosition": "Сборщик стеклотары",
+          "sInputPositionDescription": "Принимал бутылки у алкашей",
+          "sInputSkillsAbilities": "Умею приворовывать на сдаче"
+        },
+        {
+          "id_cv": 2,
+          "dStartDate": "",
+          "dCompletionDate": "",
+          "sCompany": "Избирком РФ",
+          "sPreviousPosition": "расклейщик листовок",
+          "sInputPositionDescription": "приставать с листовками к прохожим",
+          "sInputSkillsAbilities": "много болтаю"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "previous": [
+        {
+          "id_cv": 3,
+          "dStartDate": "",
+          "dCompletionDate": "2018-09-07",
+          "sCompany": "Медицина-Кладбище",
+          "sPreviousPosition": "Лечильщик",
+          "sInputPositionDescription": "Достиг 80 левела в обмане старых бабок и ",
+          "sInputSkillsAbilities": "Болтаю, язык без костей"
+        }
+      ],
+      "id": 3
     }
   ]
 }

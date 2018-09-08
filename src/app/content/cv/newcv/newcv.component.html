@@ -1,62 +1,23 @@
 <app-header-top></app-header-top>
 
+  <form [formGroup]="newCVForm">
 
 
-<!--
+    <div class="container">
 
-ПРОСТО ДОБАВИЛ ДЛЯ КОММИТА
--->
+    <h2>Создание резюме</h2>
 
-
-<div class="container-justify">
-  <form [formGroup]="newCVForm" novalidate (ngSubmit)="submit()">
-  <h2>Создание резюме</h2>
-
-  <div class="row">
-    <div class="col-2">
-      <label class="labelDescr">Загрузить фото</label>
+    <div class="form-group col-md-3">
+      <label for="inputCity">Локация вакансии</label>
+      <select id="inputCity" formControlName="inputCity" class="form-control" title="Локация вакансии">
+        <option  *ngFor="let lc of listCity" [value]="lc.name">
+          {{lc.name}}
+        </option>
+      </select>
     </div>
-    <div class="col-4">
-      <input type="image" title="photo" id="photo">
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-2">
-      <label class="labelDescr">Имя</label>
-    </div>
-    <div class="col-4">
-            <input type="text" class="form-control" formControlName="name" id="name" placeholder="Имя">
-      </div>
-      </div>
-
-  <div class="row">
-    <div class="col-2">
-      <label class="labelDescr">Фамилия</label>
-    </div>
-    <div class="col-4">
-      <input type="text" class="form-control" formControlName="surname" id="surname" placeholder="Фамилия">
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-2">
-      <label class="labelDescr">Дата рождения</label>
-    </div>
-    <div class="col-4">
-      <input type="date" class="form-control" formControlName="dateBirth" id="dateBirth" placeholder="Дата рождения">
-    </div>
-  </div>
 
 
-  <div class="row">
-    <div class="col-2">
-      <label class="labelDescr">Пол</label>
-    </div>
-    <div class="col-4">
-      <div>Выбор (Радио-батон) Мужской Женский  </div>
-    </div>
-  </div>
+
 
   <div class="row">
     <div class="col-2">
@@ -76,171 +37,33 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-2">
-      <label class="labelDescr">Отрасль</label>
-    </div>
-    <div class="col-4">
-      <div>Отрасль как в  new-vacancy </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-2">
-      <label class="labelDescr">График работы</label>
-    </div>
-    <div class="col-4">
-      <div>Так же как в  new-vacancy </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-2">
-      <label class="labelDescr">Занятость</label>
-    </div>
-    <div class="col-4">
-      <div>Так же как в  new-vacancy </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-2">
-      <label class="labelDescr">Образование</label>
-    </div>
-    <div class="col-4">
-      <div>Так же как в  new-vacancy </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-2">
-      <label class="labelDescr">Опыт работы</label>
-    </div>
-    <div class="col-4">
-      <div>Так же как в  new-vacancy </div>
-    </div>
-  </div>
+      <!-- Отрасль -->
+      <app-cv_industry></app-cv_industry>
+      <!-- Занятость -->
+      <app-cv-employment></app-cv-employment>
+      <!-- график работы -->
+      <app-cv-schedule></app-cv-schedule>
+      <!-- Опыт работы -->
+      <app-cv-experience></app-cv-experience>
+      <!-- Образование -->
+      <app-cv-education></app-cv-education>
+</div>
 
 <br>
-  <h3>Предыдущее место работы</h3>
 
-  <div class="row">
-    <div class="col-2">
-      <label class="labelDescr">Начальная дата</label>
-    </div>
-    <div class="col-4">
-      <input type="date" class="form-control" formControlName="startDate" id="startDate" placeholder="Начальная дата">
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-2">
-      <label class="labelDescr">Конечная дата</label>
-    </div>
-    <div class="col-4">
-      <input type="date" class="form-control" formControlName="completionDate" id="completionDate" placeholder="Конечная дата">
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-2">
-      <label class="labelDescr">Компания</label>
-    </div>
-    <div class="col-4">
-      <input type="text" class="form-control" formControlName="company" id="company" placeholder="Компания">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-2">
-      <label class="labelDescr">Должность</label>
-    </div>
-    <div class="col-4">
-      <input type="text" class="form-control" formControlName="previousPosition" id="previousPosition" placeholder="Должность">
-    </div>
-  </div>
-
-
-  <div class="row">
-    <div class="col-2">
-      <label class="labelDescr">Должностные обязанности и достижения</label>
-    </div>
-    <div class="col-4">
-     <textarea class="form-control" aria-label="Должностные обязанности и достижения до 800 знаков" formControlName="inputPositionDescription" id="inputPositionDescription" placeholder="Должностные обязанности и достижения до 800 знаков"></textarea>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-2">
-      <label class="labelDescr">Основные навыки и умения</label>
-    </div>
-    <div class="col-4">
-      <textarea class="form-control" aria-label="Основные навыки и умения до 400 знаков" formControlName="inputSkillsAbilities" id="inputSkillsAbilities" placeholder="Основные навыки и умения до 400 знаков"></textarea>
-    </div>
-  </div>
-
-    <details>
-      <summary>Добавить место работы (Читай комментарий в коде </summary>
-      <!-- Я сделал пока так, но это тупое решение, потому как у человека может быть десяток предыдущих
-         мест работ, и надо эти элементы как-то создавать динамически. И хрен знает как это лучше реализовать. Может у тебя есть мысли?
-          И еще в отладчике ругань на форму, погляди.
-          -->
-
-    <div class="row">
-      <div class="col-2">
-        <label class="labelDescr">Начальная дата</label>
-      </div>
-      <div class="col-4">
-        <input type="date" class="form-control" formControlName="startDate2" id="startDate2" placeholder="Начальная дата">
-      </div>
+    <div class="container">
+    <ng-container #spot></ng-container>
+    <button (click)="createNewBlock()">Предыдущее место работы</button>
     </div>
 
-    <div class="row">
-      <div class="col-2">
-        <label class="labelDescr">Конечная дата</label>
-      </div>
-      <div class="col-4">
-        <input type="date" class="form-control" formControlName="completionDate2" id="completionDate2" placeholder="Конечная дата">
-      </div>
+    <br>
+    <div class="container">
+    <button (click)="newcv()">Сохранить резюме</button>
     </div>
 
-    <div class="row">
-      <div class="col-2">
-        <label class="labelDescr">Компания</label>
-      </div>
-      <div class="col-4">
-        <input type="text" class="form-control" formControlName="company2" id="company2" placeholder="Компания">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-2">
-        <label class="labelDescr">Должность</label>
-      </div>
-      <div class="col-4">
-        <input type="text" class="form-control" formControlName="previousPosition2" id="previousPosition2" placeholder="Должность">
-      </div>
-    </div>
-
-
-    <div class="row">
-      <div class="col-2">
-        <label class="labelDescr">Должностные обязанности и достижения</label>
-      </div>
-      <div class="col-4">
-        <textarea class="form-control" aria-label="Должностные обязанности и достижения до 800 знаков" formControlName="inputPositionDescription2" id="inputPositionDescription2" placeholder="Должностные обязанности и достижения до 800 знаков"></textarea>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-2">
-        <label class="labelDescr">Основные навыки и умения</label>
-      </div>
-      <div class="col-4">
-        <textarea class="form-control" aria-label="Основные навыки и умения до 400 знаков" formControlName="inputSkillsAbilities2" id="inputSkillsAbilities2" placeholder="Основные навыки и умения до 400 знаков"></textarea>
-      </div>
-    </div>
-
-  </details>
-  <br>
-  </form>
-</div>
 <app-footer></app-footer>
+
+  </form>
+
+
+

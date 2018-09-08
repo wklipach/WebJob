@@ -14,17 +14,17 @@ import {City} from '../../class/City';
 })
 export class NewVacancyComponent implements OnInit {
 
-  newVacancyForm : FormGroup;
-  listIndustry : Guide[];
-  listSchedule : Guide[];
-  listEmployment : Guide[];
-  listExperience : Guide[];
-  listEducation : Guide[];
+  newVacancyForm: FormGroup;
+  listIndustry: Guide[];
+  listSchedule: Guide[];
+  listEmployment: Guide[];
+  listExperience: Guide[];
+  listEducation: Guide[];
 
-  displayPeriodList : Guide[];
+  displayPeriodList: Guide[];
   listCity : City[] =[];
-  myDisplayPeriod : string = "";
-  myDisplayCity : string = "";
+  myDisplayPeriod: string = "";
+  myDisplayCity: string = "";
 
 
   constructor(private is: GuideService, private httpService: NewVacancyService, private router: Router) {
@@ -48,43 +48,26 @@ export class NewVacancyComponent implements OnInit {
       'inputCity' : new FormControl('',[])
     });
 
-    this.listIndustry = is.getIndustryList();
-    for (let p in this.listIndustry) {
-      this.newVacancyForm.addControl('industryCheck'+(this.listIndustry[p].id).toString(), new FormControl(''));
-    }
 
-    this.listSchedule = is.getScheduleList();
-    for (let p in this.listSchedule) {
-      this.newVacancyForm.addControl('scheduleCheck'+(this.listSchedule[p].id).toString(), new FormControl(''));
-    }
-
-    this.listEmployment = is.getEmploymentList();
-    for (let p in this.listEmployment) {
-      this.newVacancyForm.addControl('employmentCheck'+(this.listEmployment[p].id).toString(), new FormControl(''));
-    }
-
+/*
     this.listExperience = is.getExperienceList();
     for (let p in this.listExperience) {
-      this.newVacancyForm.addControl('experienceCheck'+(this.listExperience[p].id).toString(), new FormControl(''));
+      this.newVacancyForm.addControl('experienceCheck' + (this.listExperience[p].id).toString(), new FormControl(''));
     }
 
     this.listEducation = is.getEducationList();
     for (let p in this.listEducation) {
-      this.newVacancyForm.addControl('educationCheck'+(this.listEducation[p].id).toString(), new FormControl(''));
+      this.newVacancyForm.addControl('educationCheck' + (this.listEducation[p].id).toString(), new FormControl(''));
     }
-
-
-
-
-
+*/
 
     // console.log('this.listIndustry',this.listIndustry);
 
     is.getCityTable().subscribe(
-      (data: City[]) =>{
+      (data: City[]) => {
            this.listCity = data;
-           if (this.listCity.length>0) this.myDisplayCity = this.listCity[0].name;
-           this.newVacancyForm.setControl('inputCity', new FormControl(this.myDisplayCity,[]));
+           if (this.listCity.length > 0) this.myDisplayCity = this.listCity[0].name;
+           this.newVacancyForm.setControl('inputCity', new FormControl(this.myDisplayCity, []));
       }
     );
 
@@ -128,28 +111,28 @@ export class NewVacancyComponent implements OnInit {
 
 
     // controlPrefics "industryCheck"
-    MyIndustry = this.CheckMassive(this.listIndustry, "industryCheck");
-    MySchedule = this.CheckMassive(this.listSchedule, "scheduleCheck");
-    MyEmployment = this.CheckMassive(this.listEmployment, "employmentCheck");
-    MyEducation = this.CheckMassive(this.listEducation, "educationCheck");
-    MyExperience = this.CheckMassive(this.listExperience, "experienceCheck");
+    MyIndustry = this.is.startCheckIndustryList('! startCheckIndustryList !');
+    MyEmployment= this.is.startCheckEmploymentList('! startCheckEmploymentList !');
+    MySchedule= this.is.startCheckScheduleList('! startCheckScheduleList !');
+    MyEducation = this.is.startCheckEducationList('! startCheckEducationList !');
+    MyExperience = this.is.startCheckExperienceList('! startCheckExperienceList !');
 
 
-/*
-     for ( let i=0; i<this.listIndustry.length; i++ ) {
-       bChecked = false;
-       let ss: string = "industryCheck"+(this.listIndustry[i].id).toString();
+    console.log('MyIndustry===');
+    console.log(MyIndustry);
 
-       if (!(this.newVacancyForm.controls[ss].value ==='')) {
-         bChecked=this.newVacancyForm.controls[ss].value;
-       } else bChecked = false;
+    console.log('MyEmployment===');
+    console.log(MyEmployment);
 
-         if (bChecked) {
-           // заполняем таблицу industry
-           MyIndustry.push(this.listIndustry[i].id)
-         }
-    }
-*/
+    console.log('MySchedule===');
+    console.log(MySchedule);
+
+    console.log('MyEducation===');
+    console.log(MyEducation);
+
+    console.log('MyExperience===');
+    console.log(MyExperience);
+
 
     let period = this.displayPeriodList.find(x=>x.name===this.newVacancyForm.controls['displayPeriod'].value);
     let city = this.listCity.find(x=>x.name===this.newVacancyForm.controls['inputCity'].value);
@@ -180,6 +163,5 @@ export class NewVacancyComponent implements OnInit {
     );
 
   }
-
 
 }

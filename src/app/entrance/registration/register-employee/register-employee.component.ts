@@ -29,7 +29,11 @@ export class RegisterEmployeeComponent implements OnInit {
       ], [this.userEmailAsyncValidator.bind(this)]
       ),
       'userPassword1': new FormControl('', Validators.required),
-      'cbLicense': new FormControl('', Validators.requiredTrue)
+      'cbLicense': new FormControl('', Validators.requiredTrue),
+
+      'surname': new FormControl({}),
+      'dateBirth': new FormControl({}),
+      'name': new FormControl({})
     });
 
   }

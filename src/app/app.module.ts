@@ -31,6 +31,16 @@ import {TableVacancyService} from './services/table-vacancy.service';
 import {VacancyDescriptionComponent } from './content/vacancy-description/vacancy-description.component';
 import {MoveService} from './services/move.service';
 import { NewcvComponent } from './content/cv/newcv/newcv.component';
+import {CvIndustryComponent} from './content/cv/cv-industry/cv_industry.component';
+import { CvEmploymentComponent } from './content/cv/cv-employment/cv-employment.component';
+import { CvScheduleComponent } from './content/cv/cv-schedule/cv-schedule.component';
+import { CvExperienceComponent } from './content/cv/cv-experience/cv-experience.component';
+import { CvEducationComponent } from './content/cv/cv-education/cv-education.component';
+import { CvPreviousComponent } from './content/cv/cv-previous/cv-previous.component';
+import {PreviousService} from './services/previous.service';
+import {NewcvService} from './services/newcv.service';
+import { CvListComponent } from './content/cv/cv-list/cv-list.component';
+import {CvListService} from './services/cv-list.service';
 
 
 // определение маршрутов
@@ -53,7 +63,10 @@ const appRoutes: Routes = [
   {path: 'atemp', component: AtempComponent},
   {path: 'vacancy-description', component: VacancyDescriptionComponent},
   {path: 'newcv', component: NewcvComponent},
-  { path: '**', component: NotFoundComponent }
+  {path: 'test', component: CvScheduleComponent},
+  {path: 'cv-previous', component: CvPreviousComponent},
+  {path: 'cv-list', component: CvListComponent},
+  {path: '**', component: NotFoundComponent }
 ];
 
 
@@ -82,9 +95,20 @@ const appRoutes: Routes = [
     AtempComponent,
     VacancyDescriptionComponent,
     NewcvComponent,
+    CvIndustryComponent,
+    CvEmploymentComponent,
+    CvScheduleComponent,
+    CvExperienceComponent,
+    CvEducationComponent,
+    CvPreviousComponent,
+    CvListComponent,
     NotFoundComponent
    ],
-  providers: [AuthService, GuideService, NewVacancyService, TableVacancyService, MoveService],
+  entryComponents: [
+    CvPreviousComponent
+  ],
+  providers: [AuthService, GuideService, NewVacancyService, TableVacancyService,
+              MoveService, PreviousService, NewcvService, CvListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

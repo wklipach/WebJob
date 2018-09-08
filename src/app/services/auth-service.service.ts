@@ -7,11 +7,11 @@ import {Subject} from 'rxjs';
 export class AuthService {
 
 
-  public IsUserLoggedIn: Subject<{connect: boolean, name : string}> = new Subject<{connect: boolean, name : string}>();
+  public IsUserLoggedIn: Subject<{connect: boolean, name : string, id_user: number}> = new Subject<{connect: boolean, name : string, id_user: number}>();
 
   private isAuthenticated = false;
-  private sUserName : string = '';
-
+  private _sUserName : string = '';
+  private _id_user: number;
 
 
 
@@ -19,9 +19,13 @@ export class AuthService {
 
   }
 
-  login(sUserName: string) {
+  login(sUserName: string, id_user: number) {
     this.isAuthenticated = true;
-    this.sUserName = sUserName;
+    this._sUserName = sUserName;
+    this._id_user = id_user;
+
+    console.log('login=',this._id_user,this._sUserName,this.isAuthenticated);
+
   }
 
   logout() {
@@ -36,8 +40,13 @@ export class AuthService {
   }
 
   getUserNameIn(): string {
-    return this.sUserName;
+    return this._sUserName;
   }
+
+  getId_User(): number {
+    return this._id_user;
+  }
+
 
 
   getDataUserTable(UserName: string)
@@ -58,5 +67,30 @@ export class AuthService {
     // вставить запрос по добавлению пользователя в базу
     return this.http.post('http://localhost:3000/UserTable',user);
   }
+
+
+///
+
+ public loginStorage(): {htUserName: string; bConnected: boolean; id_user: number} {
+
+  let htUserName = '';
+  if (window.localStorage.getItem('htUserName') !== '') {
+    htUserName = JSON.parse(window.localStorage.getItem('htUserName'));
+  }
+
+  let bConnected = false;
+  if (window.localStorage.getItem('bConnected') !== '') {
+    bConnected = JSON.parse(window.localStorage.getItem('bConnected'));
+  }
+
+  let id_user = -1;
+  if (window.localStorage.getItem('id_user') !== '') {
+    id_user = JSON.parse(window.localStorage.getItem('id_user'));
+  }
+
+  return {htUserName: htUserName,bConnected: bConnected, id_user: id_user};
+}
+
+////
 
 }
