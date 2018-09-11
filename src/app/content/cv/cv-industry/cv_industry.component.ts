@@ -14,6 +14,7 @@ export class CvIndustryComponent implements OnInit {
   listIndustry: Guide[];
   formIndustry: FormGroup;
   private industrySubscription: Subscription;
+  private industryCheckedElementSubscription: Subscription;
 
   constructor(private is: GuideService) {
     this.formIndustry  = new FormGroup({});
@@ -27,6 +28,23 @@ export class CvIndustryComponent implements OnInit {
                                               this.is.industryNumber=this.CheckMassive(this.listIndustry);
                                             }
                                           );
+
+
+    this.industryCheckedElementSubscription = this.is.onCheckedElementIndustryList.subscribe((curMass: number[]) =>
+      {
+        // this.is.industryNumber=this.CheckMassive(this.listIndustry);
+        console.log('получили событие onCheckedElementIndustryList', curMass);
+
+
+        if (curMass.length>0) {
+          curMass.forEach( (value)=>{
+            let sIndustryElement = 'industryCheck'+value;
+            this.formIndustry.controls[sIndustryElement].setValue('true');
+          });
+        }
+      }
+    );
+
   }
 
   ngOnInit() {
@@ -61,6 +79,11 @@ export class CvIndustryComponent implements OnInit {
     if (typeof this.industrySubscription !== 'undefined') {
       this.industrySubscription.unsubscribe();
     }
+
+    if (typeof this.industryCheckedElementSubscription !== 'undefined') {
+      this.industryCheckedElementSubscription.unsubscribe();
+    }
+
 
   }
 

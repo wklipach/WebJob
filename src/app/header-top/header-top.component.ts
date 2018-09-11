@@ -58,17 +58,13 @@ export class HeaderTopComponent implements OnInit {
     window.localStorage.removeItem('bConnected');
     window.localStorage.removeItem('id_user');
     this.httpService.IsUserLoggedIn.next({connect : false, name : '', id_user: -1});
+    this.router.navigate(['/']);
   }
 
 
   find() {
     const sInputSearch = this.headerTopForm.controls['inputSearch'].value;
     this.getVacancy(sInputSearch);
-  }
-
-
-  newcv(){
-    this.router.navigate(['/newcv']);
   }
 
 

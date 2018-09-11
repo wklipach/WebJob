@@ -4,6 +4,8 @@ import {Subscription} from 'rxjs';
 import {AuthService} from '../../../services/auth-service.service';
 import {GuideService} from '../../../services/guide-service.service';
 import {City} from '../../../class/City';
+import {Router} from '@angular/router';
+import {CvEditService} from '../../../services/cv-edit.service';
 
 @Component({
   selector: 'app-cv-list',
@@ -23,8 +25,9 @@ export class CvListComponent implements OnInit {
 
   constructor( private cls : CvListService,
                private authService: AuthService,
-               private  gs: GuideService) {
-
+               private  gs: GuideService,
+               private router: Router,
+               private cveditserv: CvEditService) {
   }
 
   ngOnInit() {
@@ -33,6 +36,7 @@ export class CvListComponent implements OnInit {
     var Res =  this.authService.loginStorage();
     this.bConnected = Res.bConnected;
     this.id_user =  Res.id_user;
+
 
     this.cvCity = this.gs.getCityTable().subscribe((value) => {
         this.cityList = value as City[];
@@ -65,17 +69,28 @@ export class CvListComponent implements OnInit {
   }
 
 
-
-  EditElement(item: any) {
-    console.log('EDIT');
+  newcv(){
+    this.router.navigate(['/newcv']);
   }
 
+
+  // редактируем - по факту будем перезаписывать тело элемента на новое
+  EditElement(item: any) {
+   // this.router.navigate(['/cv-edit'],{ queryParams:{'cv_id': item.id,}});
+
+    this.cveditserv.setCvId(item.id);
+    this.cveditserv.setCvItem(item.cv);
+    this.router.navigate(['/cv-edit']);
+  }
+
+  // удаляем - по факту ставим признак невидимости элемента
   DeleteElement(item: any) {
     item.cv.bInvisible = true;
-    console.log('new DELETE item', item, item.id);
-
-    this.cvDeleteCv = this.cls.setDeleteCv(item.id, item).subscribe(()=> console.log('СДЕЛАЛИ'), err => console.log(err) );
-
+    this.cvDeleteCv = this.cls.setDeleteCv(item.id, item.cv).subscribe( ()=> {
+                                                                        console.log('удалили элемент', item.id);
+                                                                        this.router.navigate(['/cv-list']);
+                                                                        },
+                                                                        err => console.log('при удалении элемента возникла нештатная ситуация ',err));
   }
 
 }

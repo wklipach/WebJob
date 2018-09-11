@@ -124,7 +124,11 @@ export class NewcvComponent implements OnInit {
     let MyExperience: number[];
 
 
-    if (this.authService.isLoggedIn()) MyCv.id_user = this.authService.getId_User(); else MyCv.id_user = -1;
+    var Res =  this.authService.loginStorage();
+    if (Res.bConnected) MyCv.id_user = Res.id_user; else MyCv.id_user = -1;
+
+
+
 
     MyIndustry = this.is.startCheckIndustryList('! startCheckIndustryList !');
     MyEmployment= this.is.startCheckEmploymentList('! startCheckEmploymentList !');
@@ -187,7 +191,7 @@ export class NewcvComponent implements OnInit {
         this.previousPostPrevious =this.httpService.postPrevious(mPrevious).subscribe(
           (value) => {
             console.log('Данные успешно занесены.');
-            this.router.navigate(['/login']); }
+            this.router.navigate(['/cv-list']); }
         );
       }
     );

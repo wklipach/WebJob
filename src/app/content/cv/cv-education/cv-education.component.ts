@@ -14,6 +14,7 @@ export class CvEducationComponent implements OnInit {
   formEducation: FormGroup;
   listEducation: Guide[];
   private educationSubscription: Subscription;
+  private educationCheckedElementSubscription: Subscription;
 
   constructor(private is: GuideService) {
 
@@ -27,6 +28,21 @@ export class CvEducationComponent implements OnInit {
     this.educationSubscription =  this.is.onCheckEducationList.subscribe((value: string) =>
       {
         this.is.educationNumber=this.CheckMassive(this.listEducation);
+      }
+    );
+
+    this.educationCheckedElementSubscription = this.is.onCheckedElementEducationList.subscribe((curMass: number[]) =>
+      {
+        // this.is.industryNumber=this.CheckMassive(this.listIndustry);
+        console.log('получили событие onCheckedElementEducationList', curMass);
+
+
+        if (curMass.length>0) {
+          curMass.forEach( (value)=>{
+            let sEducationElement = 'educationCheck'+value;
+            this.formEducation.controls[sEducationElement].setValue('true');
+          });
+        }
       }
     );
 
@@ -63,6 +79,10 @@ export class CvEducationComponent implements OnInit {
 
     if (typeof this.educationSubscription !== 'undefined') {
       this.educationSubscription.unsubscribe();
+    }
+
+    if (typeof this.educationCheckedElementSubscription !== 'undefined') {
+      this.educationCheckedElementSubscription.unsubscribe();
     }
 
   }

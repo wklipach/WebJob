@@ -14,7 +14,6 @@
      <div class="form-group">
        <input type="search" class="form-control" formControlName="inputSearch" id="inputSearch" placeholder="Искать" [value]="sElementMask">
        <button type="submit" class="btn btn-primary" (click)="find()">Поиск</button>
-       <button class="btn btn-primary" (click)="newcv()">Новое резюме(временно)</button>
      </div>
    </div>
   </div>
@@ -25,8 +24,9 @@
            <i class="fa fa-user" style="font-size:24px;color:blue"></i>  {{ htUserName }}
             <button class="btn btn-primary" (click)="logout()">Выйти</button>
        </div>
-     </div>
    </div>
+    <a href="/cv-list">Личный кабинет</a>
+  </div>
 
      <div class="col-3" *ngIf="!bConnected">
     <div class="form-inline">

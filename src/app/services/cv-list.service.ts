@@ -19,14 +19,17 @@ export class CvListService {
   }
 
 
-  setDeleteCv(id_cv: number, body) {
+  setDeleteCv(id_cv: number, cvbody) {
 
-    let sUrl = 'http://localhost:3000/CV?id=' + id_cv;
+      let sUrl = 'http://localhost:3000/CV/'+id_cv;
 
-    console.log('body', body);
+      return this.http.patch(sUrl,
+        {
+          cv: cvbody
+        }
+      );
 
-    return this.http.patch(sUrl, body);
   }
-  // http://localhost:3000/City?dddid_ne=1
+
 
 }

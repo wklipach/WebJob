@@ -14,6 +14,7 @@ export class CvEmploymentComponent implements OnInit {
   listEmployment: Guide[];
   formEmployment: FormGroup;
   private employmentSubscription: Subscription;
+  private employmentCheckedElementSubscription: Subscription;
 
   constructor(private is: GuideService) {
     this.formEmployment  = new FormGroup({});
@@ -27,6 +28,22 @@ export class CvEmploymentComponent implements OnInit {
         this.is.employmentNumber=this.CheckMassive(this.listEmployment);
       }
     );
+
+    this.employmentCheckedElementSubscription = this.is.onCheckedElementEmploymentList.subscribe((curMass: number[]) =>
+      {
+        // this.is.industryNumber=this.CheckMassive(this.listIndustry);
+        console.log('получили событие onCheckedElemntEmploymentList', curMass);
+
+
+        if (curMass.length>0) {
+          curMass.forEach( (value)=>{
+            let sEmploymentElement = 'employmentCheck'+value;
+            this.formEmployment.controls[sEmploymentElement].setValue('true');
+          });
+        }
+      }
+    );
+
 
   }
 
@@ -63,6 +80,13 @@ export class CvEmploymentComponent implements OnInit {
     if (typeof this.employmentSubscription !== 'undefined') {
       this.employmentSubscription.unsubscribe();
     }
+
+    if (typeof this.employmentCheckedElementSubscription !== 'undefined') {
+      this.employmentCheckedElementSubscription.unsubscribe();
+    }
+
+
+
 
   }
 
