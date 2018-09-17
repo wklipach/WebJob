@@ -1,13 +1,11 @@
+<div class="top-block">
 <form [formGroup]="headerTopForm">
+  <div class="container-fluid">
 
-<div class="container-fluid">
   <div class="row">
-     <div class="col-2">
-     <!--   <h1 class="nav-link" routerLink="index.html" routerLinkActive="active">MU CV</h1> -->
-     <a class="nav-link" routerLink="" routerLinkActive="active"><h1>MU CV</h1></a>
+    <div class="col-2 text-center">
+       <a class="nav-link" routerLink="" routerLinkActive="active"><h1>MU CV</h1></a>
     </div>
-
-
 
   <div class="col-4">
   <div class="form-inline">
@@ -25,7 +23,9 @@
             <button class="btn btn-primary" (click)="logout()">Выйти</button>
        </div>
    </div>
-    <a href="/cv-list">Личный кабинет</a>
+
+    <a class="nav-link" routerLink="/cv-list" routerLinkActive="active">Личный кабинет</a>
+  <!--  <a href="/cv-list"></a> -->
   </div>
 
      <div class="col-3" *ngIf="!bConnected">
@@ -54,4 +54,4 @@
              </div>
 
 
-</form>
+</form></div>

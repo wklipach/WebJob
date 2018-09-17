@@ -1,3 +1,7 @@
+.row{
+  border-bottom: dotted 2px;
+  border-color: #dddddd;
+}
 .row:hover{
   background-color: lightblue;
 }

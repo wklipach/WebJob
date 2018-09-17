@@ -120,6 +120,13 @@
       "Password": "1",
       "bEmployer": true,
       "id": 17
+    },
+    {
+      "UserName": "21",
+      "EMail": "hjh@kjhk",
+      "Password": "",
+      "bEmployer": true,
+      "id": 18
     }
   ],
   "Vacancy": [
