@@ -1,9 +1,24 @@
-.row:hover{
+.head-row{
+  background-color: #e0a800;
+  font-size: 1.4em;
+  color: #000;
+  z-index: auto;
+
+}
+.head-row-2{
+  background-color: white;
+  font-size: 1em;
+  color: red;
+}
+.row:hover {
   background-color: lightblue;
 }
 .bigDescr{
 font-size: 0.9em;
 }
-.solar{
+.solar {
   color: red;
+  font-width: 120%;
+  font-weight: bold;
+  font-style: italic;
 }
