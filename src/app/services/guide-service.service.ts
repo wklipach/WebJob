@@ -27,6 +27,11 @@ export class GuideService {
   private _onCheckScheduleList = new Subject<string>();
   private _onCheckExperienceList = new Subject<string>();
   private _onCheckEducationList = new Subject<string>();
+  private _onCheckedElementIndustryList = new Subject<number[]>();
+  private _onCheckedElementEmploymentList = new Subject<number[]>();
+  private _onCheckedElementScheduleList = new Subject<number[]>();
+  private _onCheckedElementExperienceList = new Subject<number[]>();
+  private _onCheckedElementEducationList = new Subject<number[]>();
 
   constructor( private http: HttpClient) {}
 
@@ -51,6 +56,7 @@ export class GuideService {
 
   public get onCheckIndustryList(): Observable<string> { return this._onCheckIndustryList.asObservable(); }
 
+
   public startCheckIndustryList(value: string): number[] {
     this._onCheckIndustryList.next(value);
     return this.industryNumber;
@@ -63,7 +69,39 @@ export class GuideService {
     return this.employmentNumber;
   }
 
+  public get onCheckedElementIndustryList(): Observable<number[]> { return this._onCheckedElementIndustryList.asObservable(); }
+  public startCheckedElementIndustryList(value: number[]) {
+    this._onCheckedElementIndustryList.next(value);
+    return this.industryNumber;
+  }
 
+
+  public get onCheckedElementEmploymentList(): Observable<number[]> { return this._onCheckedElementEmploymentList.asObservable(); }
+  public startCheckedElementEmploymentList(value: number[]) {
+    this._onCheckedElementEmploymentList.next(value);
+    return this.employmentNumber;
+  }
+
+
+  public get onCheckedElementScheduleList(): Observable<number[]> { return this._onCheckedElementScheduleList.asObservable(); }
+  public startCheckedElementScheduleList(value: number[]) {
+    this._onCheckedElementScheduleList.next(value);
+    return this.scheduleNumber;
+  }
+
+
+  public get onCheckedElementExperienceList(): Observable<number[]> { return this._onCheckedElementExperienceList.asObservable(); }
+  public startCheckedElementExperienceList(value: number[]) {
+    this._onCheckedElementExperienceList.next(value);
+    return this.experienceNumber;
+  }
+
+
+  public get onCheckedElementEducationList(): Observable<number[]> { return this._onCheckedElementEducationList.asObservable(); }
+  public startCheckedElementEducationList(value: number[]) {
+    this._onCheckedElementEducationList.next(value);
+    return this.educationNumber;
+  }
 
 
 
@@ -133,6 +171,14 @@ export class GuideService {
     // вставить запрос типа select top 10 * from City
     return this.http.get('http://localhost:3000/City');
   }
+
+
+  getCityName(id_city: number)
+  {
+    // вставить запрос типа select Name from City where id=21
+    return this.http.get('http://localhost:3000/City?id='+id_city);
+  }
+
 
 }
 

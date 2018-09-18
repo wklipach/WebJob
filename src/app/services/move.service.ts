@@ -22,17 +22,18 @@ export class MoveService {
     return of (true);
   }
 
-
   public getStringFind(): string {
-    return this.sFind;
+    if (typeof this.sFind !== 'undefined')
+      return this.sFind;
+      else return '';
   }
 
   public setStringFind(sFind: string) {
-    this.sFind = sFind;
+
+    if (typeof sFind !== 'undefined')
+      this.sFind = ''; else
+      this.sFind = sFind;
   }
-
-
-
 
 }
 

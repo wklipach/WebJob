@@ -45,7 +45,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     return this.getTableVacancy = this.httpService.getTableVacancy(sMask).subscribe(
       (data: dataVacancy[]) => {
 
-        //это получаем город из нового вызываемого сервиса
+        // это получаем город из нового вызываемого сервиса
         this.httpService.getCity().subscribe((city: City[]) => {
 
           //  console.log('data', data);
@@ -55,7 +55,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
               let idCity = eekey['vacancy'].City;
               if (isNullOrUndefined(idCity) === false) {
-                let CurCity = city.find(city => city.id === idCity)
+                let CurCity = city.find(city => city.id === idCity);
                 eekey.CityName = CurCity.name;
               }
             });
@@ -68,7 +68,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
 
-  MyMethod(zid : number) {
+  MyMethod(zid: number) {
     // console.log('id--', zid);
     let vacancy = this.myDataVacancy.find(vacancy =>  vacancy.id===zid);
      this.dvSubscription = this.moveS.setDataVacancy(vacancy).subscribe( ()=> this.router.navigate(['/vacancy-description']));

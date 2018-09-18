@@ -23,6 +23,9 @@ export class AuthService {
     this.isAuthenticated = true;
     this._sUserName = sUserName;
     this._id_user = id_user;
+
+    console.log('login=',this._id_user,this._sUserName,this.isAuthenticated);
+
   }
 
   logout() {
@@ -64,5 +67,30 @@ export class AuthService {
     // вставить запрос по добавлению пользователя в базу
     return this.http.post('http://localhost:3000/UserTable',user);
   }
+
+
+///
+
+ public loginStorage(): {htUserName: string; bConnected: boolean; id_user: number} {
+
+  let htUserName = '';
+  if (window.localStorage.getItem('htUserName') !== '') {
+    htUserName = JSON.parse(window.localStorage.getItem('htUserName'));
+  }
+
+  let bConnected = false;
+  if (window.localStorage.getItem('bConnected') !== '') {
+    bConnected = JSON.parse(window.localStorage.getItem('bConnected'));
+  }
+
+  let id_user = -1;
+  if (window.localStorage.getItem('id_user') !== '') {
+    id_user = JSON.parse(window.localStorage.getItem('id_user'));
+  }
+
+  return {htUserName: htUserName,bConnected: bConnected, id_user: id_user};
+}
+
+////
 
 }

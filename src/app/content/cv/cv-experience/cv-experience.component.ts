@@ -14,6 +14,7 @@ export class CvExperienceComponent implements OnInit {
   formExperience: FormGroup;
   listExperience: Guide[];
   private experienceSubscription: Subscription;
+  private experienceCheckedElementSubscription: Subscription;
 
   constructor(private is: GuideService) {
 
@@ -29,6 +30,22 @@ export class CvExperienceComponent implements OnInit {
         this.is.experienceNumber=this.CheckMassive(this.listExperience);
       }
     );
+
+    this.experienceCheckedElementSubscription = this.is.onCheckedElementExperienceList.subscribe((curMass: number[]) =>
+      {
+        // this.is.industryNumber=this.CheckMassive(this.listIndustry);
+        console.log('получили событие onCheckedElementExperienceList', curMass);
+
+
+        if (curMass.length>0) {
+          curMass.forEach( (value)=>{
+            let sExperienceElement = 'experienceCheck'+value;
+            this.formExperience.controls[sExperienceElement].setValue('true');
+          });
+        }
+      }
+    );
+
 
   }
 
@@ -63,6 +80,10 @@ export class CvExperienceComponent implements OnInit {
 
     if (typeof this.experienceSubscription !== 'undefined') {
       this.experienceSubscription.unsubscribe();
+    }
+
+    if (typeof this.experienceCheckedElementSubscription !== 'undefined') {
+      this.experienceCheckedElementSubscription.unsubscribe();
     }
 
   }

@@ -27,6 +27,8 @@ export class NewcvComponent implements OnInit {
 
   private previousCityTable: Subscription;
   private previousDelete: Subscription;
+  private previousPostPrevious: Subscription;
+  private previousPostNewCV: Subscription;
 
   newCVForm: FormGroup;
   listCity : City[] =[];
@@ -100,6 +102,15 @@ export class NewcvComponent implements OnInit {
       this.previousDelete.unsubscribe();
     }
 
+    if (typeof this.previousPostNewCV !== 'undefined') {
+      this.previousPostNewCV.unsubscribe();
+    }
+
+    if (typeof this.previousPostPrevious !== 'undefined') {
+      this.previousPostPrevious.unsubscribe();
+    }
+
+
   }
 
 
@@ -113,7 +124,11 @@ export class NewcvComponent implements OnInit {
     let MyExperience: number[];
 
 
-    if (this.authService.isLoggedIn()) MyCv.id_user = this.authService.getId_User(); else MyCv.id_user = -1;
+    var Res =  this.authService.loginStorage();
+    if (Res.bConnected) MyCv.id_user = Res.id_user; else MyCv.id_user = -1;
+
+
+
 
     MyIndustry = this.is.startCheckIndustryList('! startCheckIndustryList !');
     MyEmployment= this.is.startCheckEmploymentList('! startCheckEmploymentList !');
@@ -136,6 +151,8 @@ export class NewcvComponent implements OnInit {
     MyCv.Education = MyEducation;
     //опыт работы
     MyCv.Experience = MyExperience;
+    // признак удаленного
+    MyCv.bInvisible = false;
     return MyCv
   }
 
@@ -158,7 +175,7 @@ export class NewcvComponent implements OnInit {
 
     //получаем изначальные данные без динамических блоков
     let MyCv: CV = this.loadMainCV();
-    return this.httpService.postNewCV(MyCv).subscribe(
+    return this.previousPostNewCV =this.httpService.postNewCV(MyCv).subscribe(
       (value) => {
         //из возвращенного результата забираем новое ID
         let id = value['id'];
@@ -171,10 +188,10 @@ export class NewcvComponent implements OnInit {
         );
 
         // записываем массив блоков Previous[] в базу
-        this.httpService.postPrevious(mPrevious).subscribe(
+        this.previousPostPrevious =this.httpService.postPrevious(mPrevious).subscribe(
           (value) => {
             console.log('Данные успешно занесены.');
-            this.router.navigate(['/login']); }
+            this.router.navigate(['/cv-list']); }
         );
       }
     );

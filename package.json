@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "start-open": "ng serve --open",
-    "jonserv": "json-server src/db.json",
+    "jonserv": "json-server src/db.json --routes src/routes.json",
     "aaa": "concurrently --kill-others \"npm run start-open\" \"npm run jonserv\""
   },
   "private": true,

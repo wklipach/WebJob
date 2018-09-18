@@ -1,11 +1,9 @@
-/*
-li{
-  text-decoration: none;
-  list-style: none;
+.top-block{
+ /* background: url(/src/assets/img/bg-top-block.gif) repeat 0 0; */
+  background-color: #D9D9D9;
+  border-bottom: 4px solid #F2F2F0;
+  padding:6px 0;
 }
-*/
-
-
 
 h1{
   color: red;
@@ -14,6 +12,12 @@ h1{
 }
 
 h1:hover{
-
   color: #00A4E4;
  }
+
+.myform{
+  color: red;
+}
+.serchinput{
+  margin: 0 1px 0 1px;
+}

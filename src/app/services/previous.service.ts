@@ -13,6 +13,7 @@ export class PreviousService {
 
   private _onCheckPrevious = new Subject<number>();
   private _onNumberPrevious = new Subject<number>();
+  private _onLoadPrevious = new Subject<Previous>();
 
 
   /*  СОБЫТИЕ УДАЛЕНИЯ ДИНАМИЧЕСКОГО БЛОКА "ПРЕДЫДУЩЕЕ МЕСТО РАБОТЫ" в создании нового резяме
@@ -44,6 +45,13 @@ export class PreviousService {
     this._onCheckPrevious.next(value);
     return this.getPrevious();
   }
+
+  // событие загрузки данных в множащийся блок
+  public get onLoadPrevious(): Observable<Previous> { return this._onLoadPrevious.asObservable(); }
+  public startLoadPrevious(value: Previous) {
+    this._onLoadPrevious.next(value);
+  }
+
 
 
   /* Удалить один или все динамические блоки Передыдущее место работы */

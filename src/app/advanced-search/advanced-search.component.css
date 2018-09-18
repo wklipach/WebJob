@@ -1,0 +1,7 @@
+.search-btn {
+  padding: 15px 40px;
+  display: block;
+  cursor: pointer;
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+}

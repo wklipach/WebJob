@@ -14,6 +14,7 @@ export class CvScheduleComponent implements OnInit {
   formSchedule: FormGroup;
   listSchedule: Guide[];
   private scheduleSubscription: Subscription;
+  private scheduleCheckedElementSubscription: Subscription;
 
   constructor(private is: GuideService) {
 
@@ -30,6 +31,20 @@ export class CvScheduleComponent implements OnInit {
       }
     );
 
+    this.scheduleCheckedElementSubscription = this.is.onCheckedElementScheduleList.subscribe((curMass: number[]) =>
+      {
+        // this.is.industryNumber=this.CheckMassive(this.listIndustry);
+        console.log('получили событие onCheckedElementScheduleList', curMass);
+
+
+        if (curMass.length>0) {
+          curMass.forEach( (value)=>{
+            let sScheduleElement = 'scheduleCheck'+value;
+            this.formSchedule.controls[sScheduleElement].setValue('true');
+          });
+        }
+      }
+    );
 
 
   }
@@ -66,6 +81,10 @@ export class CvScheduleComponent implements OnInit {
 
     if (typeof this.scheduleSubscription !== 'undefined') {
       this.scheduleSubscription.unsubscribe();
+    }
+
+    if (typeof this.scheduleCheckedElementSubscription !== 'undefined') {
+      this.scheduleCheckedElementSubscription.unsubscribe();
     }
 
   }

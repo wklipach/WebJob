@@ -14,6 +14,7 @@ export class CvPreviousComponent implements OnInit {
   public iIndex: number = 0;
   formPrevious: FormGroup;
   private previousSubscription: Subscription;
+  private previousLoadSubscription: Subscription;
 
   constructor(private ps: PreviousService) {
     this.formPrevious = new FormGroup({
@@ -35,6 +36,15 @@ export class CvPreviousComponent implements OnInit {
       }
     );
 
+
+    this.previousLoadSubscription = this.ps.onLoadPrevious.subscribe((value: Previous) =>
+      {
+        console.log('this.iIndex='+this.iIndex);
+        this.loaddata(value);
+      }
+    );
+
+
   }
 
 
@@ -44,6 +54,37 @@ export class CvPreviousComponent implements OnInit {
 
   protected setIndex(i: number) {
     this.iIndex = i;
+  }
+
+  startLoadPrevious(curPrevious: Previous) {
+    this.ps.startLoadPrevious(curPrevious);
+  }
+
+  loaddata(p: Previous) {
+
+    if (typeof p.dStartDate !== 'undefined') {
+      this.formPrevious.controls['startDate'].setValue(p.dStartDate);
+    }
+
+    if (typeof p.dCompletionDate !== 'undefined') {
+      this.formPrevious.controls['completionDate'].setValue(p.dCompletionDate);
+    }
+
+    if (typeof p.sCompany !== 'undefined') {
+      this.formPrevious.controls['company'].setValue(p.sCompany);
+    }
+
+    if (typeof p.sPreviousPosition !== 'undefined') {
+      this.formPrevious.controls['previousPosition'].setValue(p.sPreviousPosition);
+    }
+
+    if (typeof p.sInputPositionDescription !== 'undefined') {
+      this.formPrevious.controls['inputPositionDescription'].setValue(p.sInputPositionDescription);
+    }
+
+    if (typeof p.sInputSkillsAbilities !== 'undefined') {
+      this.formPrevious.controls['inputSkillsAbilities'].setValue(p.sInputSkillsAbilities);
+    }
   }
 
 
@@ -72,6 +113,11 @@ export class CvPreviousComponent implements OnInit {
     if (typeof this.previousSubscription !== 'undefined') {
       this.previousSubscription.unsubscribe();
     }
+
+    if (typeof this.previousLoadSubscription !== 'undefined') {
+      this.previousLoadSubscription.unsubscribe();
+    }
+
   }
 
 
