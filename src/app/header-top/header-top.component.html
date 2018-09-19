@@ -1,57 +1,136 @@
-<div class="top-block">
-<form [formGroup]="headerTopForm">
   <div class="container-fluid">
+    <div class="row">
+      <div class="col-2 text-center">
+        <a class="nav-link" routerLink="" routerLinkActive="active"><h1>MU CV</h1></a>
+      </div>
 
-  <div class="row">
-    <div class="col-2 text-center">
-       <a class="nav-link" routerLink="" routerLinkActive="active"><h1>MU CV</h1></a>
-    </div>
+      <div class="col-3">
+      <form class="form-inline" [formGroup]="headerTopForm">
+            <input type="search" class="form-control" formControlName="inputSearch" id="inputSearch" placeholder="Искать" [value]="sElementMask">
+            <button type="submit" class="btn btn-primary" (click)="find()">Поиск</button>
+      </form>
+      </div>
 
-  <div class="col-4">
-  <div class="form-inline">
-     <div class="form-group">
-       <input type="search" class="form-control" formControlName="inputSearch" id="inputSearch" placeholder="Искать" [value]="sElementMask">
-       <button type="submit" class="btn btn-primary" (click)="find()">Поиск</button>
-     </div>
-   </div>
-  </div>
-
-  <div class="col-3" *ngIf="bConnected">
-     <div class="form-inline">
-       <div class="form-group">
-           <i class="fa fa-user" style="font-size:24px;color:blue"></i>  {{ htUserName }}
-            <button class="btn btn-primary" (click)="logout()">Выйти</button>
-       </div>
-   </div>
-
-    <a class="nav-link" routerLink="/cv-list" routerLinkActive="active">Личный кабинет</a>
-  <!--  <a href="/cv-list"></a> -->
-  </div>
-
-     <div class="col-3" *ngIf="!bConnected">
-    <div class="form-inline">
-         <div class="form-group">
+      <div class="col-4">
+       <div class="form-inline" *ngIf="!bConnected">
            <button class="btn btn-primary" (click)="login()">Войти</button>
-             <a class="nav-link" routerLink="/register" routerLinkActive="active">Регистрация</a>
-         </div>
-       </div>
-    </div>
+            <a class="nav-link" routerLink="/register" routerLinkActive="active">Регистрация</a>
+          </div>
 
-    <div class="col-2">
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="inputGroupSelect01">Выберите язык</label>
+
+        <div class="menu" *ngIf="bConnected">
+          <div class="menu-header"><i class="fa fa-user" style="font-size:24px;color:blue"></i>  {{ htUserName }}</div>
+            <ul>
+              <li><a class="nav-link" routerLink="/account-employee" routerLinkActive="active">Личный кабинет</a></li>
+              <li><a class="nav-link" routerLink="/cv-list" routerLinkActive="active">Мои резюме</a></li>
+              <li><button class="btn btn-primary" (click)="logout()">Выйти</button></li>
+            </ul>
+
         </div>
-        <select class="custom-select" id="inputGroupSelect01">
+      </div>
+<!--
+
+        <nav class="navbar navbar" id="nav5" *ngIf="bConnected">
+
+          <div class="navbar-header" title="Управление аккаунтом">
+            <i class="fa fa-user" style="font-size:24px;color:blue"></i>  {{ htUserName }}  >>>
+          </div>
+          <ul class="nav navbar-nav">
+            <li><a class="nav-link" routerLink="/account-employee" routerLinkActive="active">Личный кабинет</a></li>
+            <li><a class="nav-link" routerLink="/cv-list" routerLinkActive="active">Мои резюме</a></li>
+            <li><button class="btn btn-primary" (click)="logout()">Выйти</button></li>
+          </ul>
+        </nav>
+      </div>
+-->
+
+
+  <div class="col-3">
+  <div class="langselect">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputLanguageSelect">Страна</label>
+        </div>
+        <select class="custom-select" id="inputLanguageSelect">
           <option selected>EST</option>
           <option value="1">RUS</option>
           <option value="2">ENG</option>
         </select>
       </div>
+  </div>
+  </div>
 
+
+
+
+
+
+<!-- Старая страница
+
+<form [formGroup]="headerTopForm">
+  <div class="container-fluid">
+      <div class="row">
+    <div class="col-2 text-center">
+       <a class="nav-link" routerLink="" routerLinkActive="active"><h1>MU CV</h1></a>
     </div>
+
+  <div class="col-3">
+  <div class="form-inline">
+     <div class="form-group">
+       <input type="search" class="form-control" formControlName="inputSearch" id="inputSearch" placeholder="Искать" [value]="sElementMask">
+       <button type="submit" class="btn btn-primary" (click)="find()">Поиск</button>
+
+     </div>
+   </div>
+  </div>
+
+        <div class="col-4" *ngIf="!bConnected">
+          <div class="form-inline">
+            <div class="form-group">
+              <button class="btn btn-primary" (click)="login()">Войти</button>
+              <a class="nav-link" routerLink="/register" routerLinkActive="active">Регистрация</a>
+            </div>
           </div>
-             </div>
+        </div>
+
+  <div class="col-4" *ngIf="bConnected">
+
+    <nav class="navbar navbar" id="nav5">
+
+      <div class="navbar-header" title="Управление аккаунтом">
+    <i class="fa fa-user" style="font-size:24px;color:blue"></i>  {{ htUserName }}  >>>
+        </div>
+        <ul class="nav navbar-nav">
+
+          <li><a class="nav-link" routerLink="/account-employee" routerLinkActive="active">Личный кабинет</a></li>
+          <li><a class="nav-link" routerLink="/cv-list" routerLinkActive="active">Мои резюме</a></li>
+          <li><button class="btn btn-primary" (click)="logout()">Выйти</button></li>
+        </ul>
+
+    </nav>
+
+      </div>
+  </div>
+
+  </div>
 
 
-</form></div>
+<div class="langselect">
+<div class="col-3">
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <label class="input-group-text" for="inputLanguageSelect01"><i class="fa fa-user" style="font-size:24px;color:blue"></i></label>
+    </div>
+    <select class="custom-select" id="inputLanguageSelect01">
+      <option selected>EST</option>
+      <option value="1">RUS</option>
+      <option value="2">ENG</option>
+    </select>
+  </div>
+</div>
+
+  </div>
+</form>
+
+-->
+    </div></div>

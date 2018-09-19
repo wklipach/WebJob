@@ -1,3 +1,47 @@
+/*  Меню  */
+.menu-header{
+  width: 200px;
+  height: 50px;
+  line-height: 50px;
+  text-align: left;
+  background: #ddd;
+  cursor: pointer;
+  }
+.menu-header:hover{
+  background: #888;
+  }
+ul{
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+li{
+  display: block;
+  width: 200px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background: #ddd;
+  cursor: pointer;
+  }
+li:hover{
+  background: #888;
+}
+
+.menu-header:hover{
+  background: #888;
+}
+
+.menu-header:hover + ul{
+display: block;
+}
+ul:hover{
+  display: block;
+}
+
+/*  Закончили меню  */
+
+
 .top-block{
  /* background: url(/src/assets/img/bg-top-block.gif) repeat 0 0; */
   background-color: #D9D9D9;
@@ -21,3 +65,83 @@ h1:hover{
 .serchinput{
   margin: 0 1px 0 1px;
 }
+
+.navbar-header{
+  padding-top: 1px;
+}
+
+.navbar-nav{
+  margin: 0;
+}
+.langselect{
+  margin: 5px 1px;
+}
+
+/* cтили навигации*/
+#nav{
+  float:left;
+  width:100%;
+  list-style:none;
+
+  margin:10px 0 0 30px;
+}
+#nav li{
+  float:left;
+  margin-right:10px;
+  position:relative;
+  display:block;
+}
+
+#nav li a{
+  display:block;
+  padding:5px;
+  color:#005ea8;
+}
+#nav li a:hover{
+  color:#fff;
+ }
+
+/*--- ВЫПАДАЮЩИЕ ПУНКТЫ ---*/
+#nav ul{
+  list-style:none;
+  position:absolute;
+  left:-9999px; /* Скрываем за экраном, когда не нужно (данный метод лучше, чем display:none;) */
+  opacity:0; /* Устнавливаем начальное состояние прозрачности */
+  -webkit-transition:0.25s linear opacity; /* В Webkit выпадающие пункты будут проявляться */
+  background:#fff;
+
+  background-color: rgba(255, 255, 255, 0.9);
+
+
+
+}
+#nav ul li{
+  padding-top:1px; /* Вводим отступ между li чтобы создать иллюзию разделенных пунктов меню */
+  float:none;
+
+}
+#nav ul a{
+  white-space:nowrap; /* Останавливаем перенос текста и создаем многострочный выпадающий пункт */
+  color:#005ea8;
+  font-size:18px;
+  padding-left:30px;
+
+}
+#nav li:hover ul{ /* Выводим выпадающий пункт при наведении курсора */
+  left:0; /* Приносим его обратно на экран, когда нужно */
+  opacity:1; /* Делаем непрозрачным */
+  z-index:101;
+}
+#nav li:hover a{ /* Устанавливаем стили для верхнего уровня, когда выводится выпадающий список */
+
+}
+#nav li:hover ul a{ /* Изменяем некоторые стили верхнего уровня при выводе выпадающего пункта */
+  text-decoration:none;
+  -webkit-transition:-webkit-transform 0.075s linear;
+}
+#nav li:hover ul li a:hover{
+  white-space:nowrap;
+  color:#03abe1;
+  font-size:18px;
+  padding-left:20px;
+  }

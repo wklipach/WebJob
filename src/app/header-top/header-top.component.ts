@@ -73,7 +73,7 @@ export class HeaderTopComponent implements OnInit {
   //
   getVacancy(sMask: string) {
 
-    //если домашняя страница запускаем событие, если нет переходим на нее и маску передаем через Экстракт
+    // если домашняя страница запускаем событие, если нет переходим на нее и маску передаем через Экстракт
     if ( (this.router.isActive('home',true)===false)  && (this.router.isActive('',true) ===false)  ) {
        window.localStorage.setItem('keyFind', sMask);
       this.router.navigate(['/']);
