@@ -127,6 +127,13 @@
       "Password": "",
       "bEmployer": true,
       "id": 18
+    },
+    {
+      "UserName": "Сидоров",
+      "EMail": "as@sa",
+      "Password": "1",
+      "bEmployer": true,
+      "id": 19
     }
   ],
   "Vacancy": [

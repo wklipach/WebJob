@@ -1,5 +1,5 @@
 <app-header-top></app-header-top>
-<h1>Регистрация как соискателя.</h1>
+<h3>Регистрация как соискателя.</h3>
 <form [formGroup]="myForm" novalidate (ngSubmit)="submit()">
   <div class="form-row">
     <div class="form-group col-md-2">
@@ -115,8 +115,8 @@
     <div class="col-4">
       <div>Выбор пола
         <br/>
-        <input name="options" type="radio" value="1">  Мужской <br/>
-        <input name="options" type="radio" value="2">  Женский <br/>
+        <input name="options" type="radio" value="1" title="man">  Мужской <br/>
+        <input name="options" type="radio" value="2" title="woman">  Женский <br/>
       </div>
     </div>
   </div>
@@ -126,9 +126,11 @@
   -->
 
   <div class="form-row">
-    <div class="form-group col-md-3">
+    <div class="form-group col-3">
       <label for="inputPassword1">Пароль</label>
       <input type="password" class="form-control" id="inputPassword1" placeholder="Password" formControlName="userPassword1">
+      <label for="inputPassword1">Повторитие пароль</label>
+      <input type="password" class="form-control" id="inputPassword2" placeholder="Password" formControlName="userPassword2">
 
     </div>
   </div>
