@@ -105,7 +105,13 @@
       "EMail": "10yal@mail.ru",
       "Password": "10",
       "bEmployer": false,
-      "id": 15
+      "id": 15,
+      "City": 3,
+      "Zip": "194292",
+      "Name": "Юллар",
+      "LastName": "Сапп",
+      "Address": "Лесной, 12",
+      "Phone": "+7 812 3202462"
     },
     {
       "UserName": "3333333333",
@@ -636,6 +642,32 @@
         "Experience": []
       },
       "id": 10
+    },
+    {
+      "cv": {
+        "bChecked": false,
+        "bInvisible": false,
+        "id_user": 15,
+        "SalaryFrom": "1500",
+        "Position": "Дворник",
+        "City": 1,
+        "Industry": [
+          3
+        ],
+        "Schedule": [
+          1
+        ],
+        "Employment": [
+          1
+        ],
+        "Education": [
+          2
+        ],
+        "Experience": [
+          2
+        ]
+      },
+      "id": 11
     }
   ],
   "CV_Previous": [
@@ -697,6 +729,20 @@
     {
       "previous": [],
       "id": 10
+    },
+    {
+      "previous": [
+        {
+          "id_cv": 11,
+          "dStartDate": "2015-06-26",
+          "dCompletionDate": "2017-08-30",
+          "sCompany": "Отличная компания",
+          "sPreviousPosition": "Старший дворник",
+          "sInputPositionDescription": "Мыть полы",
+          "sInputSkillsAbilities": "Умение мыть полы"
+        }
+      ],
+      "id": 11
     }
   ]
 }

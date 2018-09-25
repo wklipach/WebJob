@@ -5,10 +5,10 @@
 
   <div class="container">
 
-    <h2>Создание резюме</h2>
+    <h2>Редактирование резюме</h2>
 
     <div class="form-group col-md-3">
-      <label for="inputCity">Локация вакансии</label>
+      <label for="inputCity">Расположение вакансии</label>
       <select id="inputCity" formControlName="inputCity" class="form-control" title="Локация вакансии">
         <option  *ngFor="let lc of listCity" [value]="lc.name">
           {{lc.name}}
@@ -58,6 +58,9 @@
 
   <br>
   <div class="container">
+
+    <button (click)="nav-link" routerLink="/cv-list" routerLinkActive="active">Отмена</button>
+
     <button (click)="savecv()">Сохранить резюме</button>
   </div>
 
