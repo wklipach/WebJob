@@ -45,7 +45,7 @@ export class RegisterEmployeeComponent implements OnInit {
 
     const {userName, userEmail, userPassword1} = this.myForm.value;
 
-    const AddUser  = new UserType(userName,userEmail,userPassword1,true); // (userName,  userEmail, userPassword1,true);
+    const AddUser  = new UserType(userName,userEmail,userPassword1,false, -1,'','','','','');
 
     console.log(AddUser);
 

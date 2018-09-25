@@ -34,105 +34,111 @@
       "UserName": "Пользователь 6",
       "EMail": "yal@mail.ru",
       "Password": "1",
-      "bEmployer": true,
+      "bEmployer": false,
       "id": 6
     },
     {
       "UserName": "Пользователь 7",
       "EMail": "yal5@mail.ru",
       "Password": "2",
-      "bEmployer": true,
+      "bEmployer": false,
       "id": 7
     },
     {
       "UserName": "Пользователь 8",
       "EMail": "yal5@mail.ru",
       "Password": "3",
-      "bEmployer": true,
+      "bEmployer": false,
       "id": 8
     },
     {
       "UserName": "Пользователь 9",
       "EMail": "yal@mail.ru",
       "Password": "1",
-      "bEmployer": true,
+      "bEmployer": false,
       "id": 8
     },
     {
       "UserName": "aasd",
       "EMail": "asd@sdfsdf",
       "Password": "sdfsdf",
-      "bEmployer": true,
+      "bEmployer": false,
       "id": 9
     },
     {
       "UserName": "Васька",
       "EMail": "hjed@mail.ru",
       "Password": "12345678333",
-      "bEmployer": true,
+      "bEmployer": false,
       "id": 10
     },
     {
       "UserName": "11",
       "EMail": "yal@mail.ru",
       "Password": "2",
-      "bEmployer": true,
+      "bEmployer": false,
       "id": 11
     },
     {
       "UserName": "aw",
       "EMail": "21yal@mail.ru",
       "Password": "2",
-      "bEmployer": true,
+      "bEmployer": false,
       "id": 12
     },
     {
       "UserName": "111",
       "EMail": "22yal@mail.ru",
       "Password": "2",
-      "bEmployer": true,
+      "bEmployer": false,
       "id": 13
     },
     {
       "UserName": "65651651651651655",
       "EMail": "345yal@mail.ru",
       "Password": "111",
-      "bEmployer": true,
+      "bEmployer": false,
       "id": 14
     },
     {
       "UserName": "10",
       "EMail": "10yal@mail.ru",
       "Password": "10",
-      "bEmployer": true,
+      "bEmployer": false,
       "id": 15
     },
     {
       "UserName": "3333333333",
       "EMail": "yal@150mail.ru",
       "Password": "2",
-      "bEmployer": true,
+      "bEmployer": false,
       "id": 16
     },
     {
       "UserName": "Виталий",
       "EMail": "klipach@mail.ru",
       "Password": "1",
-      "bEmployer": true,
-      "id": 17
+      "bEmployer": false,
+      "id": 17,
+      "City": 4,
+      "Zip": "908123",
+      "Name": "Сергей",
+      "LastName": "Петров",
+      "Address": "Сернуково-1-231",
+      "Phone": "8911-755-81-35"
     },
     {
       "UserName": "21",
       "EMail": "hjh@kjhk",
       "Password": "",
-      "bEmployer": true,
+      "bEmployer": false,
       "id": 18
     },
     {
       "UserName": "Сидоров",
       "EMail": "as@sa",
       "Password": "1",
-      "bEmployer": true,
+      "bEmployer": false,
       "id": 19
     }
   ],
@@ -390,7 +396,7 @@
     {
       "cv": {
         "bChecked": false,
-        "bInvisible": false,
+        "bInvisible": true,
         "id_user": 17,
         "SalaryFrom": "9000",
         "Position": "10000",
@@ -440,7 +446,7 @@
     {
       "cv": {
         "bChecked": false,
-        "bInvisible": false,
+        "bInvisible": true,
         "id_user": 17,
         "SalaryFrom": "3000",
         "Position": "Ассенизатор",
@@ -579,6 +585,57 @@
         ]
       },
       "id": 8
+    },
+    {
+      "cv": {
+        "bChecked": false,
+        "bInvisible": false,
+        "id_user": 17,
+        "SalaryFrom": "9000",
+        "Position": "Отрыватель талонов",
+        "City": 5,
+        "Industry": [
+          1,
+          2
+        ],
+        "Schedule": [
+          1,
+          2
+        ],
+        "Employment": [
+          1,
+          2
+        ],
+        "Education": [],
+        "Experience": [
+          1,
+          2
+        ]
+      },
+      "id": 9
+    },
+    {
+      "cv": {
+        "bChecked": false,
+        "bInvisible": false,
+        "id_user": 17,
+        "SalaryFrom": "3000",
+        "Position": "Ассенизатор",
+        "City": 6,
+        "Industry": [
+          1,
+          8
+        ],
+        "Schedule": [
+          1
+        ],
+        "Employment": [
+          1
+        ],
+        "Education": [],
+        "Experience": []
+      },
+      "id": 10
     }
   ],
   "CV_Previous": [
@@ -632,6 +689,14 @@
         }
       ],
       "id": 8
+    },
+    {
+      "previous": [],
+      "id": 9
+    },
+    {
+      "previous": [],
+      "id": 10
     }
   ]
 }

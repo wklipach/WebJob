@@ -61,11 +61,23 @@ export class AuthService {
     return this.http.get('http://localhost:3000/UserTable');
   }
 
+  getDataUserFromId(id_user: number) {
+    return this.http.get('http://localhost:3000/UserTable/'+id_user);
+      }
 
 
   postDataUserTable(user: UserType){
     // вставить запрос по добавлению пользователя в базу
     return this.http.post('http://localhost:3000/UserTable',user);
+  }
+
+
+  //  Запрос типа PATCH
+  //  Для того чтобы обновить уже существующую запись необходимо отправить PATCH запрос с указанием новых значений для уже существующей записи.
+  //  К примеру, чтобы обновить пользователя с Id 2, отправьте PATCH запрос по адресу http://localhost:3000/UserTable/2:
+  updateDataUserTable(user: UserType, id_user: number){
+    // вставить запрос по добавлению пользователя в базу
+    return this.http.patch('http://localhost:3000/UserTable/'+id_user, user);
   }
 
 

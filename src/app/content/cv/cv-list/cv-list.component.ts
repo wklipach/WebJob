@@ -74,7 +74,7 @@ export class CvListComponent implements OnInit {
   }
 
 
-  // редактируем - по факту будем перезаписывать тело элемента на новое
+  // редактируем - по факту будем удалять пометкой "удаленное" но оставляя в базе и вписывая новое значение
   EditElement(item: any) {
    // this.router.navigate(['/cv-edit'],{ queryParams:{'cv_id': item.id,}});
 
@@ -88,6 +88,10 @@ export class CvListComponent implements OnInit {
     item.cv.bInvisible = true;
     this.cvDeleteCv = this.cls.setDeleteCv(item.id, item.cv).subscribe( ()=> {
                                                                         console.log('удалили элемент', item.id);
+
+
+
+
                                                                         this.router.navigate(['/cv-list']);
                                                                         },
                                                                         err => console.log('при удалении элемента возникла нештатная ситуация ',err));
