@@ -4,6 +4,7 @@
 }
 .row:hover{
   background-color: lightblue;
+  cursor: pointer;
 }
 .bigDescr{
 font-size: 0.9em;

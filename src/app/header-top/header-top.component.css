@@ -8,7 +8,7 @@
   cursor: pointer;
   }
 .menu-header:hover{
-  background: #888;
+  background: #FFF;
   }
 ul{
   position: absolute;
@@ -27,11 +27,11 @@ li{
   cursor: pointer;
   }
 li:hover{
-  background: #888;
+  background: #FFF;
 }
 
 .menu-header:hover{
-  background: #888;
+  background: #FFF;
 }
 
 .menu-header:hover + ul{
@@ -147,3 +147,9 @@ h1:hover{
   font-size:18px;
   padding-left:20px;
   }
+
+.fa-caret-down::after{
+  font-size: 16px;
+  color: white;
+  padding-left:5px ;
+}

@@ -17,9 +17,8 @@
             <a class="nav-link" routerLink="/register" routerLinkActive="active">Регистрация</a>
           </div>
 
-
         <div class="menu" *ngIf="bConnected">
-          <div class="menu-header"><i class="fa fa-user" style="font-size:24px;color:blue"></i>  {{ htUserName }}</div>
+          <div class="menu-header"><i class="fa fa-user" style="font-size:24px;color:blue"></i>{{ htUserName }}<i class="fa fa-caret-down"></i></div>
             <ul>
               <li><a class="nav-link" routerLink="/account-employee" routerLinkActive="active">Личный кабинет</a></li>
               <li><a class="nav-link" routerLink="/cv-list" routerLinkActive="active">Мои резюме</a></li>
@@ -45,8 +44,19 @@
 -->
 
 
-  <div class="col-3">
-  <div class="langselect">
+<div class="col-3">
+
+  <div class="menu">
+    <div class="menu-header"><i class="fa fa-user" style="font-size:24px;color:blue"></i>Язык<i class="fa fa-caret-down"></i> </div>
+    <ul>
+      <li>Русский</li>
+      <li>Эстонский</li>
+      <li>Английский</li>
+    </ul>
+
+  </div>
+
+ <!--    <div class="langselect">
       <div class="input-group">
         <div class="input-group-prepend">
           <label class="input-group-text" for="inputLanguageSelect">Страна</label>
@@ -57,7 +67,7 @@
           <option value="2">ENG</option>
         </select>
       </div>
-  </div>
+  </div>      -->
   </div>
 
 

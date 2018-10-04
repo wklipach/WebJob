@@ -12,7 +12,7 @@ import {CV} from '../../../class/CV';
 import {NewVacancyService} from '../../../services/new-vacancy.service';
 import {NewcvService} from '../../../services/newcv.service';
 import {AuthService} from '../../../services/auth-service.service';
-import {isNullOrUndefined} from "util";
+import {isNullOrUndefined} from 'util';
 import {Router} from '@angular/router';
 
 @Component({
@@ -31,7 +31,7 @@ export class NewcvComponent implements OnInit {
   private previousPostNewCV: Subscription;
 
   newCVForm: FormGroup;
-  listCity : City[] =[];
+  listCity: City[] = [];
   myDisplayCity: string = "";
   index: number = 0;
 
@@ -173,11 +173,11 @@ export class NewcvComponent implements OnInit {
   /* сохранение данных */
   newcv() {
 
-    //получаем изначальные данные без динамических блоков
+    // получаем изначальные данные без динамических блоков
     let MyCv: CV = this.loadMainCV();
     return this.previousPostNewCV =this.httpService.postNewCV(MyCv).subscribe(
       (value) => {
-        //из возвращенного результата забираем новое ID
+        // из возвращенного результата забираем новое ID
         let id = value['id'];
         let mPrevious = this.getPreviousData();
         // присваиваем полученный id_cv внутрь каждого блока
