@@ -494,7 +494,7 @@
     {
       "cv": {
         "bChecked": false,
-        "bInvisible": false,
+        "bInvisible": true,
         "id_user": 17,
         "SalaryFrom": "5000",
         "Position": "Проектировщик",
@@ -564,7 +564,7 @@
     {
       "cv": {
         "bChecked": false,
-        "bInvisible": false,
+        "bInvisible": true,
         "id_user": 17,
         "SalaryFrom": "4500",
         "Position": "34",
@@ -595,7 +595,7 @@
     {
       "cv": {
         "bChecked": false,
-        "bInvisible": false,
+        "bInvisible": true,
         "id_user": 17,
         "SalaryFrom": "9000",
         "Position": "Отрыватель талонов",
@@ -748,6 +748,61 @@
         ]
       },
       "id": 14
+    },
+    {
+      "cv": {
+        "bChecked": false,
+        "bInvisible": true,
+        "id_user": 17,
+        "SalaryFrom": "25",
+        "Position": "Ефрейтор",
+        "City": 4,
+        "Industry": [
+          1
+        ],
+        "Schedule": [],
+        "Employment": [],
+        "Education": [],
+        "Experience": []
+      },
+      "id": 15
+    },
+    {
+      "cv": {
+        "bChecked": false,
+        "bInvisible": true,
+        "id_user": 17,
+        "SalaryFrom": "45",
+        "Position": "Никто",
+        "City": 5,
+        "Industry": [
+          1,
+          6
+        ],
+        "Schedule": [],
+        "Employment": [],
+        "Education": [],
+        "Experience": []
+      },
+      "id": 16
+    },
+    {
+      "cv": {
+        "bChecked": false,
+        "bInvisible": true,
+        "id_user": 17,
+        "SalaryFrom": "33",
+        "Position": "Мое",
+        "City": 6,
+        "Industry": [
+          15
+        ],
+        "Schedule": [],
+        "Employment": [],
+        "Education": [],
+        "Experience": []
+      },
+      "id": 17
     }
   ],
   "CV_Previous": [
@@ -865,6 +920,18 @@
         }
       ],
       "id": 14
+    },
+    {
+      "previous": [],
+      "id": 15
+    },
+    {
+      "previous": [],
+      "id": 16
+    },
+    {
+      "previous": [],
+      "id": 17
     }
   ]
 }
