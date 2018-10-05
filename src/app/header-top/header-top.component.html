@@ -17,8 +17,17 @@
             <a class="nav-link" routerLink="/register" routerLinkActive="active">Регистрация</a>
           </div>
 
-        <div class="menu" *ngIf="bConnected">
-          <div class="menu-header"><i class="fa fa-user" style="font-size:24px;color:blue"></i>{{ htUserName }}<i class="fa fa-caret-down"></i></div>
+        <div class="form-inline" *ngIf="!Connected">
+         <div class="bell">
+           <i class="fa fa-envelope" style="font-size:20px;color:red" title="Новые сообщения"></i>
+           <i class="fa fa-bell" style="font-size:20px;color:green" title="Новые события"></i>
+         </div>
+
+         <div class="menu">
+         <div class="menu-header">
+            <i class="fa fa-user" style="font-size:24px;color:blue"></i>{{ htUserName }}
+            <i class="fa fa-caret-down" style="font-size:24px;color:blue"></i>
+          </div>
             <ul>
               <li><a class="nav-link" routerLink="/account-employee" routerLinkActive="active">Личный кабинет</a></li>
               <li><a class="nav-link" routerLink="/cv-list" routerLinkActive="active">Мои резюме</a></li>
@@ -26,22 +35,24 @@
             </ul>
 
         </div>
+
       </div>
-<!--
+      </div>
+    <!--
 
-        <nav class="navbar navbar" id="nav5" *ngIf="bConnected">
+            <nav class="navbar navbar" id="nav5" *ngIf="bConnected">
 
-          <div class="navbar-header" title="Управление аккаунтом">
-            <i class="fa fa-user" style="font-size:24px;color:blue"></i>  {{ htUserName }}  >>>
+              <div class="navbar-header" title="Управление аккаунтом">
+                <i class="fa fa-user" style="font-size:24px;color:blue"></i>  {{ htUserName }}  >>>
+              </div>
+              <ul class="nav navbar-nav">
+                <li><a class="nav-link" routerLink="/account-employee" routerLinkActive="active">Личный кабинет</a></li>
+                <li><a class="nav-link" routerLink="/cv-list" routerLinkActive="active">Мои резюме</a></li>
+                <li><button class="btn btn-primary" (click)="logout()">Выйти</button></li>
+              </ul>
+            </nav>
           </div>
-          <ul class="nav navbar-nav">
-            <li><a class="nav-link" routerLink="/account-employee" routerLinkActive="active">Личный кабинет</a></li>
-            <li><a class="nav-link" routerLink="/cv-list" routerLinkActive="active">Мои резюме</a></li>
-            <li><button class="btn btn-primary" (click)="logout()">Выйти</button></li>
-          </ul>
-        </nav>
-      </div>
--->
+    -->
 
 
 <div class="col-3">
