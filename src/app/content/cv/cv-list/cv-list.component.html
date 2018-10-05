@@ -1,19 +1,6 @@
 <app-header-top></app-header-top>
 <h2>Мои резюме</h2>
 
-<!--
-<div class="container-fluid">
-
-    <div class="row">
-        <div class="col-2">
-          <label>Главный дизайнер</label><br>
-          <i class="fa fa-gg-circle" style="font-size:48px;color:red"></i><br>
-          <label class="cv-ed-del" (click)="EditElement()">Редактировать</label>
-          <label class="cv-ed-del" (click)="DeleteElement()">***  Удалить ***</label>
-        </div>
-  </div>
-</div>
--->
 
 <button class="btn btn-primary" (click)="newcv()">Новое резюме(временно)</button>
 <br>
@@ -28,64 +15,21 @@
   <td>Должность "{{item.cv.Position}}"</td>
   <td>Зарплата "{{item.cv.SalaryFrom}}"</td>
   <td>Город "{{item.CityName}}"</td>
-  <td><button type="button" class="btn btn-primary" [disabled]="!item.bChecked" (click)="DeleteElement(item)">Удалить</button></td>
+  <td><button type="button" class="btn btn-primary" [disabled]="!item.bChecked" (click)="CheckDeleteElement(item)">Удалить</button></td>
+
+
+  <div class="alert alert-primary"
+       *ngIf="item.cv.bInvisible === true && item.bChecked">
+    Вы желаете удалить данное резюме?
+    <button type="button" class="btn btn-outline-danger" (click)="DeleteElement(item)">Да</button>
+    <button type="button" class="btn btn-outline-success" (click)="UnDeleteElement(item)">Нет</button>
+  </div>
+
   <td><button type="button" class="btn btn-success" [disabled]="!item.bChecked" (click)="EditElement(item)">Редактировать</button></td>
 
 </tr>
 </tbody>
 
-<br><br>
-<br>
-
-<div class="del-alert">
-
-<!--
-
-Кнопка удалить с модальным окном
--->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#del-alert">
-  Удалить
-</button>
-
-<!-- Модальное окно -->
-<div class="modal" id="del-alert">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <!-- Заголовок -->
-      <div class="modal-header">
-        <h4 class="modal-title">Удаление резюме</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-
-      <!-- Текст -->
-      <div class="modal-body">
-        Вы уверены, что хотите удалить резюме?
-      </div>
-
-      <!-- Кнопки -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Отмена</button>
-        <button type="button" class="btn btn-primary">Удалить</button>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-
-</div>
 
 
 
-<!--
-
-| uppercase
-
-<pre>{{item.bChecked}}</pre>
-
-
-<div class="text-hide" style="background-image: url('/src/assets/img/1.jpg'); width: 50px; height: 50px;">Главный дизайнер</div>
- <label></label>
-<span class="glyphicon glyphicon-search"></span>
--->

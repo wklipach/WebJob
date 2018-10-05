@@ -6,6 +6,7 @@ import {GuideService} from '../../../services/guide-service.service';
 import {City} from '../../../class/City';
 import {Router} from '@angular/router';
 import {CvEditService} from '../../../services/cv-edit.service';
+import {FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-cv-list',
@@ -14,6 +15,8 @@ import {CvEditService} from '../../../services/cv-edit.service';
 })
 export class CvListComponent implements OnInit {
 
+
+  cvListForm: FormGroup;
   protected cvList : any;
   protected  cityList: City[];
   private id_user: number;
@@ -83,16 +86,33 @@ export class CvListComponent implements OnInit {
     this.router.navigate(['/cv-edit']);
   }
 
+
+  CheckDeleteElement(item: any) {
+    item.cv.bInvisible = true;
+
+  }
+
+  UnDeleteElement(item: any) {
+    item.cv.bInvisible = false;
+  }
+
+
+  RouterReload() {
+      this.router.routeReuseStrategy.shouldReuseRoute = function () {
+        return false;
+      };
+    this.router.navigated = false;
+
+    this.router.navigate([this.router.url]);
+  }
+
+
   // удаляем - по факту ставим признак невидимости элемента
   DeleteElement(item: any) {
     item.cv.bInvisible = true;
     this.cvDeleteCv = this.cls.setDeleteCv(item.id, item.cv).subscribe( ()=> {
                                                                         console.log('удалили элемент', item.id);
-
-
-
-
-                                                                        this.router.navigate(['/cv-list']);
+                                                                        this.RouterReload();
                                                                         },
                                                                         err => console.log('при удалении элемента возникла нештатная ситуация ',err));
   }
