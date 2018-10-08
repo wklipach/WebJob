@@ -699,7 +699,7 @@
     {
       "cv": {
         "bChecked": false,
-        "bInvisible": false,
+        "bInvisible": true,
         "id_user": 15,
         "SalaryFrom": "5000",
         "Position": "Главный по тарелочкам",
@@ -803,6 +803,104 @@
         "Experience": []
       },
       "id": 17
+    },
+    {
+      "cv": {
+        "bChecked": false,
+        "bInvisible": false,
+        "id_user": 15,
+        "SalaryFrom": "566000",
+        "Position": "Повар",
+        "City": 5,
+        "Industry": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "Schedule": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "Employment": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "Education": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "Experience": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "id": 18
+    },
+    {
+      "cv": {
+        "bChecked": false,
+        "bInvisible": false,
+        "id_user": 15,
+        "SalaryFrom": "100",
+        "Position": "Золотарь ",
+        "City": 1,
+        "Industry": [
+          2,
+          4
+        ],
+        "Schedule": [
+          3,
+          4
+        ],
+        "Employment": [
+          1
+        ],
+        "Education": [
+          3
+        ],
+        "Experience": [
+          3
+        ]
+      },
+      "id": 19
     }
   ],
   "CV_Previous": [
@@ -932,6 +1030,14 @@
     {
       "previous": [],
       "id": 17
+    },
+    {
+      "previous": [],
+      "id": 18
+    },
+    {
+      "previous": [],
+      "id": 19
     }
   ]
 }

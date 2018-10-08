@@ -4,7 +4,7 @@
         <a class="nav-link" routerLink="" routerLinkActive="active"><h1>MU CV</h1></a>
       </div>
 
-      <div class="col-3">
+      <div class="col-4">
       <form class="form-inline" [formGroup]="headerTopForm">
             <input type="search" class="form-control" formControlName="inputSearch" id="inputSearch" placeholder="Искать" [value]="sElementMask">
             <button type="submit" class="btn btn-primary" (click)="find()">Поиск</button>
@@ -17,7 +17,7 @@
             <a class="nav-link" routerLink="/register" routerLinkActive="active">Регистрация</a>
           </div>
 
-        <div class="form-inline" *ngIf="!Connected">
+        <div class="form-inline" *ngIf="bConnected">
          <div class="bell">
            <i class="fa fa-envelope" style="font-size:20px;color:red" title="Новые сообщения"></i>
            <i class="fa fa-bell" style="font-size:20px;color:green" title="Новые события"></i>
@@ -38,31 +38,15 @@
 
       </div>
       </div>
-    <!--
 
-            <nav class="navbar navbar" id="nav5" *ngIf="bConnected">
-
-              <div class="navbar-header" title="Управление аккаунтом">
-                <i class="fa fa-user" style="font-size:24px;color:blue"></i>  {{ htUserName }}  >>>
-              </div>
-              <ul class="nav navbar-nav">
-                <li><a class="nav-link" routerLink="/account-employee" routerLinkActive="active">Личный кабинет</a></li>
-                <li><a class="nav-link" routerLink="/cv-list" routerLinkActive="active">Мои резюме</a></li>
-                <li><button class="btn btn-primary" (click)="logout()">Выйти</button></li>
-              </ul>
-            </nav>
-          </div>
-    -->
-
-
-<div class="col-3">
+<div class="col-2">
 
   <div class="menu">
-    <div class="menu-header"><i class="fa fa-user" style="font-size:24px;color:blue"></i>Язык<i class="fa fa-caret-down"></i> </div>
+    <div class="menu-header">RU<img src="assets/img/rus-flag.gif"><i class="fa fa-caret-down"></i> </div>
     <ul>
-      <li>Русский</li>
-      <li>Эстонский</li>
-      <li>Английский</li>
+      <li><img src="assets/img/rus-flag.gif" title="По-русски">Русский</li>
+      <li><img src="assets/img/est-flag.gif" title="По-эстонски">Эстонский</li>
+      <li><img src="assets/img/ing-flag.gif" title="По-английски">Английский</li>
     </ul>
 
   </div>
