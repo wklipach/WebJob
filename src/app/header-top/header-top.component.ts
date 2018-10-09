@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../services/auth-service.service';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {FormControl, FormGroup} from '@angular/forms';
 import {TableVacancyService} from '../services/table-vacancy.service';
 import {MoveService} from '../services/move.service';
@@ -18,10 +18,21 @@ export class HeaderTopComponent implements OnInit {
   sElementMask: string = '';
   id_user: number;
 
-  constructor(private httpService: AuthService, private router: Router, private httpTvsService: TableVacancyService, private moveS: MoveService) {
+  sNullValueFind : string = '';
+
+  constructor(private httpService: AuthService, private router: Router,
+                      private httpTvsService: TableVacancyService, private moveS: MoveService,
+                      private curRoute: ActivatedRoute  ) {
 
     this.headerTopForm = new FormGroup({
       'inputSearch': new FormControl('',[])
+    });
+
+
+    this.moveS.onNullFind.subscribe((value) => {
+      console.log('event', value);
+      this.sNullValueFind = value;
+      this.headerTopForm.controls['inputSearch'].setValue('');
     });
 
 
@@ -43,7 +54,9 @@ export class HeaderTopComponent implements OnInit {
     this.id_user =  Res.id_user;
 
     this.sElementMask  = this.moveS.getStringFind();
-
+    this.sNullValueFind = this.moveS.getNullValueFind();
+    // обнуляем сервис после вывода предупреждающего сообщения об неуспешном поиске
+    this.moveS.setNullValueFind('');
   }
 
   login() {
@@ -73,10 +86,16 @@ export class HeaderTopComponent implements OnInit {
   //
   getVacancy(sMask: string) {
 
+    this.sNullValueFind = '';
+
+    window.localStorage.setItem('backPage', this.router.url);
     // если домашняя страница запускаем событие, если нет переходим на нее и маску передаем через Экстракт
+    // событие инициализируется фактом запуска компонента Home и наличием маски
     if ( (this.router.isActive('home',true)===false)  && (this.router.isActive('',true) ===false)  ) {
-       window.localStorage.setItem('keyFind', sMask);
+
+      window.localStorage.setItem('keyFind', sMask);
       this.router.navigate(['/']);
+
      } else {
       window.localStorage.removeItem('keyFind');
       this.httpTvsService.triggerReopenVacancy(sMask);

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {dataVacancy} from '../class/Vacancy';
-import {Observable, of} from 'rxjs';
+import {Observable, of, Subject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +9,9 @@ export class MoveService {
 
   public oDataVacancy: dataVacancy;
   public sFind: string;
+  public sNull: string;
+
+  private _onNullFind = new Subject<string>();
 
 
   constructor() { }
@@ -34,6 +37,31 @@ export class MoveService {
       this.sFind = ''; else
       this.sFind = sFind;
   }
+
+
+  public setNullValueFind(sNull: string) {
+
+    if (typeof sNull === 'undefined')
+      this.sNull = ''; else
+      this.sNull = sNull;
+  }
+
+  public getNullValueFind(): string {
+    if (typeof this.sNull !== 'undefined')
+      return this.sNull;
+    else return '';
+  }
+
+
+
+  public get onNullFind(): Observable<string> { return this._onNullFind.asObservable(); }
+  public startNullFind(value: string): boolean {
+    this._onNullFind.next(value);
+    return true;
+  }
+
+
+
 
 }
 

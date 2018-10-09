@@ -13,6 +13,7 @@ export class TableVacancyService {
 
 
   private _onReopenVacancy = new Subject<string>();
+
   public get onReopenVacancy(): Observable<string> { return this._onReopenVacancy.asObservable(); }
 
   public triggerReopenVacancy(value: string) {
@@ -21,12 +22,12 @@ export class TableVacancyService {
 
 
 
-
   /*
   Full-text search
   Add q
   GET /posts?q=internet
   */
+
   getTableVacancy(sMask: string)
   {
     let sUrl = 'http://localhost:3000/vacancy';

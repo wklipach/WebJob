@@ -18,26 +18,23 @@ export class HomeComponent implements OnInit, OnDestroy {
   myDataVacancy: dataVacancy[];
   private dvSubscription: Subscription;
   private getTableVacancy: Subscription;
+  private sMask: string = '';
 
   constructor(private httpService: TableVacancyService, private router: Router, private moveS: MoveService) {
   }
 
   ngOnInit() {
 
-    let sMask: string = '';
     if (window.localStorage.getItem('keyFind') !== null) {
-      sMask = window.localStorage.getItem('keyFind');
+      this.sMask = window.localStorage.getItem('keyFind');
     }
     window.localStorage.removeItem('keyFind');
-
-
+    //
     this.httpService.onReopenVacancy.subscribe((value: string) => this.getVacancy(value));
     // запускаем событие "получить вакансии", в первый раз с пустой маской
-    this.httpService.triggerReopenVacancy(sMask);
-
+    this.httpService.triggerReopenVacancy(this.sMask);
     // записываем значение маски в элемент, так как при перегрузке страницы он стирается ??????
-    this.moveS.setStringFind(sMask);
-
+    this.moveS.setStringFind(this.sMask);
 
   }
 
@@ -48,9 +45,6 @@ export class HomeComponent implements OnInit, OnDestroy {
         // это получаем город из нового вызываемого сервиса
         this.httpService.getCity().subscribe((city: City[]) => {
 
-          //  console.log('data', data);
-           // console.log('city', city);
-
             data.forEach((eekey, ih) => {
 
               let idCity = eekey['vacancy'].City;
@@ -60,7 +54,25 @@ export class HomeComponent implements OnInit, OnDestroy {
               }
             });
             this.myDataVacancy = data;
-            // console.log('this.myDataVacancy', this.myDataVacancy);
+            if (this.myDataVacancy.length === 0) {
+
+              // console.log('ЕСЛИ НИЧЕГО НЕ НАШЛИ');
+              if (window.localStorage.getItem('backPage') !== null) {
+                let sBack = window.localStorage.getItem('backPage');
+                window.localStorage.removeItem('backPage');
+                if (sBack !== '/') {
+                  this.router.navigateByUrl(sBack);
+                  this.moveS.setNullValueFind('Поиск не дал результатов.');
+                }
+                if (sBack === '/' && sMask !== '')  {
+                  this.sMask = '';
+                  this.getVacancy('');
+                  this.moveS.startNullFind('Поиск не дал результатов.');
+                }
+              }
+            }
+            window.localStorage.removeItem('backPage');
+
           }
         );
      }
