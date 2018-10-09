@@ -40,7 +40,8 @@ export class LoginComponent implements OnInit {
                  .filter(y => y.Password.trim().toLowerCase() === tUser.sPassword.trim().toLowerCase());
 
 
-    console.log('ResUser[id]', ResUser, ResUser[0].id);
+    //console.log('ResUser[id]', ResUser);
+    //console.log('ResUser[id]', ResUser, ResUser[0].id);
 
     if (ResUser.length === 1) {  console.log('вернули',ResUser[0].UserName); return {bCheck: true, uName: ResUser[0].UserName, id_user: ResUser[0].id} } else {
       if (ResUser.length === 0) {
