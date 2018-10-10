@@ -807,7 +807,7 @@
     {
       "cv": {
         "bChecked": false,
-        "bInvisible": false,
+        "bInvisible": true,
         "id_user": 15,
         "SalaryFrom": "566000",
         "Position": "Повар",
@@ -901,6 +901,103 @@
         ]
       },
       "id": 19
+    },
+    {
+      "cv": {
+        "bChecked": false,
+        "bInvisible": false,
+        "id_user": 15,
+        "SalaryFrom": "566000",
+        "Position": "Повар",
+        "City": 5,
+        "Industry": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "Schedule": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "Employment": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "Education": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "Experience": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "id": 20
+    },
+    {
+      "cv": {
+        "bChecked": false,
+        "bInvisible": false,
+        "id_user": 11,
+        "SalaryFrom": "5000",
+        "Position": "6000",
+        "City": 4,
+        "Industry": [
+          2,
+          3
+        ],
+        "Schedule": [
+          3,
+          4
+        ],
+        "Employment": [
+          4
+        ],
+        "Education": [
+          3
+        ],
+        "Experience": [
+          2
+        ]
+      },
+      "id": 21
     }
   ],
   "CV_Previous": [
@@ -1038,6 +1135,24 @@
     {
       "previous": [],
       "id": 19
+    },
+    {
+      "previous": [],
+      "id": 20
+    },
+    {
+      "previous": [
+        {
+          "id_cv": 21,
+          "dStartDate": "2016-09-05",
+          "dCompletionDate": "2018-10-10",
+          "sCompany": "Офигенная",
+          "sPreviousPosition": "Трепло",
+          "sInputPositionDescription": " Трепаться Трепаться Трепаться Трепаться Трепаться Трепаться Трепаться Трепаться Трепаться Трепаться Трепаться Трепаться Трепаться",
+          "sInputSkillsAbilities": " Трепаться Трепаться Трепаться Трепаться Трепаться Трепаться Трепаться Трепаться"
+        }
+      ],
+      "id": 21
     }
   ]
 }
