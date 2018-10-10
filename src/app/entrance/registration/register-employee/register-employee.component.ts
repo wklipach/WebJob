@@ -29,6 +29,7 @@ export class RegisterEmployeeComponent implements OnInit {
       ], [this.userEmailAsyncValidator.bind(this)]
       ),
       'userPassword1': new FormControl('', Validators.required),
+      'userPassword2': new FormControl('', Validators.required),
       'cbLicense': new FormControl('', Validators.requiredTrue),
 
       'surname': new FormControl({}),

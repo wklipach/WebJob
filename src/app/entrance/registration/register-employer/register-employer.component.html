@@ -80,13 +80,13 @@
 
     <!-- начало обработки почтовых ошибок -->
 
-    <div *ngIf="myForm.controls['userEmail'].dirty">
+    <div *ngIf="formRegisterEmployer.controls['userEmail'].dirty">
 
 
 
       <div class="alert alert-danger"
 
-           *ngIf="myForm.controls['userEmail'].value.length === 0 ">
+           *ngIf="formRegisterEmployer.controls['userEmail'].value.length === 0 ">
 
         Не указан Email.
 
@@ -94,15 +94,15 @@
 
 
 
-      <div *ngIf="myForm.controls['userEmail'].value.length > 0">
+      <div *ngIf="formRegisterEmployer.controls['userEmail'].value.length > 0">
 
-        <div *ngIf="myForm.controls['userEmail'].invalid; else trueSucc">
+        <div *ngIf="formRegisterEmployer.controls['userEmail'].invalid; else trueSucc">
 
 
 
           <div class="alert alert-danger"
 
-               *ngIf="myForm.controls['userEmail'].hasError('errorEmailExists') === true">
+               *ngIf="formRegisterEmployer.controls['userEmail'].hasError('errorEmailExists') === true">
 
             Данный Email уже занят.
 
@@ -112,7 +112,7 @@
 
           <div class="alert alert-danger"
 
-               *ngIf="myForm.controls['userEmail'].hasError('email') === true">
+               *ngIf="formRegisterEmployer.controls['userEmail'].hasError('email') === true">
 
             Неверно введен Email.
 
