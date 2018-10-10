@@ -77,7 +77,13 @@
       "EMail": "yal@mail.ru",
       "Password": "2",
       "bEmployer": false,
-      "id": 11
+      "id": 11,
+      "City": 1,
+      "Zip": "194585",
+      "Name": "Вова",
+      "LastName": "Конев",
+      "Address": "Рропогрпор",
+      "Phone": "98981981981"
     },
     {
       "UserName": "aw",

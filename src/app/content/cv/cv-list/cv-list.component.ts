@@ -17,7 +17,7 @@ export class CvListComponent implements OnInit {
 
 
   cvListForm: FormGroup;
-  protected cvList : any;
+  protected cvList: any;
   protected  cityList: City[];
   private id_user: number;
   private  bConnected: boolean;
@@ -114,7 +114,7 @@ export class CvListComponent implements OnInit {
                                                                         console.log('удалили элемент', item.id);
                                                                         this.RouterReload();
                                                                         },
-                                                                        err => console.log('при удалении элемента возникла нештатная ситуация ',err));
+ err => console.log('при удалении элемента возникла нештатная ситуация ',err));
   }
 
 }

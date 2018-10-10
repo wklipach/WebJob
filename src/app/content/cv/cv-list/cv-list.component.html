@@ -1,36 +1,42 @@
 <app-header-top></app-header-top>
-<h2>Мои резюме</h2>
+
+<div class="container-fluid">
+<h3>Мои резюме</h3>
+<div class="row" *ngFor="let item of cvList; let i = index;">
 
 
+  <div class="col-1 tt">
+    <input type="checkbox" [(ngModel)]="item.bChecked" title="Check">
+  </div>
 
-<button class="btn btn-primary" (click)="newcv()">Новое резюме</button>
-<br>
-<br>
+  <div class="col-2 tt">
+  Должность "{{item.cv.Position}}"
+  </div>
+  <div class="col-2 tt">
+  Зарплата "{{item.cv.SalaryFrom}}"
+  </div>
+  <div class="col-2 tt">
+  Город "{{item.CityName}}"
+</div>
+  <div class="col-1 tt">
+  <button type="button" class="btn btn-primary" [disabled]="!item.bChecked" (click)="CheckDeleteElement(item)">Удалить</button>
+   </div>
+   <div class="col-1 tt">
+    <button type="button" class="btn btn-success" [disabled]="!item.bChecked" (click)="EditElement(item)">Редактировать</button>
+  </div>
 
-
-
-<tbody>
-<tr *ngFor="let item of cvList; let i = index;">
-  <td><input type="checkbox" [(ngModel)]="item.bChecked"></td>
-  <td>{{i}}</td>
-  <td>Должность "{{item.cv.Position}}"</td>
-  <td>Зарплата "{{item.cv.SalaryFrom}}"</td>
-  <td>Город "{{item.CityName}}"</td>
-  <td><button type="button" class="btn btn-primary" [disabled]="!item.bChecked" (click)="CheckDeleteElement(item)">Удалить</button></td>
-
-
-  <div class="alert alert-primary"
-       *ngIf="item.cv.bInvisible === true && item.bChecked">
+  <div class="alert alert-primary" *ngIf="item.cv.bInvisible === true && item.bChecked">
     Вы желаете удалить данное резюме?
     <button type="button" class="btn btn-outline-danger" (click)="DeleteElement(item)">Да</button>
     <button type="button" class="btn btn-outline-success" (click)="UnDeleteElement(item)">Нет</button>
   </div>
-
-  <td><button type="button" class="btn btn-success" [disabled]="!item.bChecked" (click)="EditElement(item)">Редактировать</button></td>
-
-</tr>
-</tbody>
-
+</div>
+</div>
+  <div class="row">
+    <button class="btn btn-primary" (click)="newcv()">Новое резюме</button>
+    <br>
+    <br>
+  </div>
 
 
 
