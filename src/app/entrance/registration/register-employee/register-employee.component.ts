@@ -52,7 +52,7 @@ export class RegisterEmployeeComponent implements OnInit {
     return this.httpService.postDataUserTable(AddUser).subscribe(
       () => {
         this.router.navigate(['/login']); }
-    )
+    );
 
   }
 
@@ -60,7 +60,7 @@ export class RegisterEmployeeComponent implements OnInit {
     {
       var ResUser = Object(ListUser).find( x => x.UserName.toLowerCase() === UserName.trim().toLowerCase());
       if (isUndefined(ResUser)) {return false;} else {return true;}
-   }
+    }
 
   // валидатор по имени пользователя
   userNameAsyncValidator(control: FormControl): Promise<{[s:string]: boolean}> {
