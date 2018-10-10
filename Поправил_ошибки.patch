@@ -1,0 +1,196 @@
+Index: src/app/entrance/registration/register-employee/register-employee.component.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/app/entrance/registration/register-employee/register-employee.component.ts	(date 1539171272000)
++++ src/app/entrance/registration/register-employee/register-employee.component.ts	(date 1539174014000)
+@@ -29,6 +29,8 @@
+       ], [this.userEmailAsyncValidator.bind(this)]
+       ),
+       'userPassword1': new FormControl('', Validators.required),
++      'userPassword2': new FormControl('', Validators.required),
++
+       'cbLicense': new FormControl('', Validators.requiredTrue),
+ 
+       'surname': new FormControl({}),
+Index: src/app/entrance/registration/register-employer/register-employer.component.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/app/entrance/registration/register-employer/register-employer.component.html	(date 1539171272000)
++++ src/app/entrance/registration/register-employer/register-employer.component.html	(date 1539174014000)
+@@ -80,13 +80,13 @@
+ 
+     <!-- начало обработки почтовых ошибок -->
+ 
+-    <div *ngIf="myForm.controls['userEmail'].dirty">
++    <div *ngIf="formRegisterEmployer.controls['userEmail'].dirty">
+ 
+ 
+ 
+       <div class="alert alert-danger"
+ 
+-           *ngIf="myForm.controls['userEmail'].value.length === 0 ">
++           *ngIf="formRegisterEmployer.controls['userEmail'].value.length === 0 ">
+ 
+         Не указан Email.
+ 
+@@ -94,15 +94,15 @@
+ 
+ 
+ 
+-      <div *ngIf="myForm.controls['userEmail'].value.length > 0">
++      <div *ngIf="formRegisterEmployer.controls['userEmail'].value.length > 0">
+ 
+-        <div *ngIf="myForm.controls['userEmail'].invalid; else trueSucc">
++        <div *ngIf="formRegisterEmployer.controls['userEmail'].invalid; else trueSucc">
+ 
+ 
+ 
+           <div class="alert alert-danger"
+ 
+-               *ngIf="myForm.controls['userEmail'].hasError('errorEmailExists') === true">
++               *ngIf="formRegisterEmployer.controls['userEmail'].hasError('errorEmailExists') === true">
+ 
+             Данный Email уже занят.
+ 
+@@ -112,7 +112,7 @@
+ 
+           <div class="alert alert-danger"
+ 
+-               *ngIf="myForm.controls['userEmail'].hasError('email') === true">
++               *ngIf="formRegisterEmployer.controls['userEmail'].hasError('email') === true">
+ 
+             Неверно введен Email.
+ 
+Index: src/app/entrance/registration/register-employer/register-employer.component.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/app/entrance/registration/register-employer/register-employer.component.ts	(date 1539171272000)
++++ src/app/entrance/registration/register-employer/register-employer.component.ts	(date 1539174014000)
+@@ -21,12 +21,15 @@
+         [Validators.required], [this.userNameAsyncValidator.bind(this)]
+       ),
+ 
++
+       'userEmail': new FormControl(null, [
+           Validators.required,
+           Validators.email
+         ], [this.userEmailAsyncValidator.bind(this)]
+       ),
+       'userPassword1': new FormControl('', Validators.required),
++      'userPassword2': new FormControl('', Validators.required),
++
+       'cbLicense': new FormControl('', Validators.requiredTrue),
+ 
+       'surname': new FormControl({}),
+Index: src/app/header-top/header-top.component.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/app/header-top/header-top.component.html	(date 1539171272000)
++++ src/app/header-top/header-top.component.html	(date 1539174014000)
+@@ -1,7 +1,7 @@
+   <div class="container-fluid">
+     <div class="row">
+       <div class="col-2 text-center">
+-        <a class="nav-link" routerLink="" routerLinkActive="active"><h1>MU CV</h1></a>
++        <a class="nav-link" routerLink="/"><h1>MU CV</h1></a>
+       </div>
+ 
+       <div class="col-4">
+@@ -51,89 +51,9 @@
+ 
+   </div>
+ 
+- <!--    <div class="langselect">
+-      <div class="input-group">
+-        <div class="input-group-prepend">
+-          <label class="input-group-text" for="inputLanguageSelect">Страна</label>
+-        </div>
+-        <select class="custom-select" id="inputLanguageSelect">
+-          <option selected>EST</option>
+-          <option value="1">RUS</option>
+-          <option value="2">ENG</option>
+-        </select>
+-      </div>
+-  </div>      -->
+   </div>
+ 
+ 
+ {{sNullValueFind}}
+ 
+-<!-- Старая страница
+-
+-<form [formGroup]="headerTopForm">
+-  <div class="container-fluid">
+-      <div class="row">
+-    <div class="col-2 text-center">
+-       <a class="nav-link" routerLink="" routerLinkActive="active"><h1>MU CV</h1></a>
+-    </div>
+-
+-  <div class="col-3">
+-  <div class="form-inline">
+-     <div class="form-group">
+-       <input type="search" class="form-control" formControlName="inputSearch" id="inputSearch" placeholder="Искать" [value]="sElementMask">
+-       <button type="submit" class="btn btn-primary" (click)="find()">Поиск</button>
+-
+-     </div>
+-   </div>
+-  </div>
+-
+-        <div class="col-4" *ngIf="!bConnected">
+-          <div class="form-inline">
+-            <div class="form-group">
+-              <button class="btn btn-primary" (click)="login()">Войти</button>
+-              <a class="nav-link" routerLink="/register" routerLinkActive="active">Регистрация</a>
+-            </div>
+-          </div>
+-        </div>
+-
+-  <div class="col-4" *ngIf="bConnected">
+-
+-    <nav class="navbar navbar" id="nav5">
+-
+-      <div class="navbar-header" title="Управление аккаунтом">
+-    <i class="fa fa-user" style="font-size:24px;color:blue"></i>  {{ htUserName }}  >>>
+-        </div>
+-        <ul class="nav navbar-nav">
+-
+-          <li><a class="nav-link" routerLink="/account-employee" routerLinkActive="active">Личный кабинет</a></li>
+-          <li><a class="nav-link" routerLink="/cv-list" routerLinkActive="active">Мои резюме</a></li>
+-          <li><button class="btn btn-primary" (click)="logout()">Выйти</button></li>
+-        </ul>
+-
+-    </nav>
+-
+-      </div>
+-  </div>
+-
+-  </div>
+-
+-
+-<div class="langselect">
+-<div class="col-3">
+-  <div class="input-group">
+-    <div class="input-group-prepend">
+-      <label class="input-group-text" for="inputLanguageSelect01"><i class="fa fa-user" style="font-size:24px;color:blue"></i></label>
+-    </div>
+-    <select class="custom-select" id="inputLanguageSelect01">
+-      <option selected>EST</option>
+-      <option value="1">RUS</option>
+-      <option value="2">ENG</option>
+-    </select>
+-  </div>
+-</div>
+-
+-  </div>
+-</form>
+-
+--->
+     </div></div>
