@@ -1,73 +1,100 @@
 <app-header-top></app-header-top>
 
-<h3>Личный кабинет работодателя</h3>
+<h3>Профиль компании</h3>
 
-<label>Данные работодателя</label>
+<label class="labelDescr">Данные компании</label>
 
-<form>
+<div class="row">
+  <div class="col-2">
+    <label class="labelDescr">Загрузить логотип</label>
+  </div>
+  <div class="col-4">
+    <!-- <input type="image" title="photo" id="photo">  -->
+    <img src="/assets/img/rus-flag.gif" alt="Фото" title="Загрузить логотип"
+         class="img-thumbnail">
+  </div>
+</div>
+
+<form [formGroup]="accountEmployerForm">
   <div class="form-row">
     <div class="form-group col-md-3">
-      <input type="text" class="form-control" id="inputUserName" placeholder="Имя пользователя">
+      <label class="labelDescr">Имя пользователя</label>
+      <input type="text" class="form-control" id="inputUserName"
+             formControlName="inputUserName" placeholder="Имя пользователя" disabled>
     </div>
   </div>
 
 
   <div class="form-row">
     <div class="form-group col-md-3">
-      <input type="text" class="form-control" id="inputName" placeholder="Имя">
+      <label class="labelDescr">Имя</label>
+      <input type="text" class="form-control" id="inputName"
+             formControlName="inputName" placeholder="Имя">
     </div>
   </div>
 
   <div class="form-row">
     <div class="form-group col-md-3">
-      <input type="text" class="form-control" id="inputLastname" placeholder="Фамилия">
+      <label class="labelDescr">Фамилия</label>
+      <input type="text" class="form-control" id="inputLastname"
+             formControlName="inputLastName" placeholder="Фамилия">
     </div>
   </div>
 
   <div class="form-row">
     <div class="form-group col-md-1">
-
-      <input type="text" class="form-control" id="inputZip"  placeholder="Индекс">
+      <label class="labelDescr">Почтовый индекс</label>
+      <input type="text" class="form-control" id="inputZip"
+             formControlName="inputZip" placeholder="Индекс">
     </div>
   </div>
 
   <div class="form-group col-md-3">
-    <select id="inputCity" class="form-control">
-      <option selected>Выбрать город...</option>
-      <option>Таллин</option>
-      <option>Тарту</option>
+    <label class="labelDescr">Место жительства</label>
+    <select id="inputCity" formControlName="inputCity" class="form-control"
+            title="Локация вакансии">
+      <option  *ngFor="let lc of listCity" [value]="lc.name">
+        {{lc.name}}
+      </option>
     </select>
+
+
   </div>
   <div class="form-row">
     <div class="form-group col-md-3">
-
-      <input type="text" class="form-control" id="inputAddress" placeholder="Домашний адрес">
+      <label class="labelDescr">Домашний адрес</label>
+      <input type="text" class="form-control" id="inputAddress"
+             formControlName="inputAddress" placeholder="Домашний адрес">
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-3">
-
-      <input type="text" class="form-control" id="inputPhone" placeholder="Телефон">
+      <label class="labelDescr">№ телефона</label>
+      <input type="text" class="form-control" id="inputPhone"
+             formControlName="inputPhone" placeholder="Телефон">
     </div>
   </div>
 
-
-
-
-
-
-
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <button type="submit" class="btn btn-primary">Изменить пароль</button>
+    </div>
+  </div>
 
 </form>
+
+
 <br>
-
-<div class="jumbotron">
-  <h1 class="display-4"></h1>
-  <p class="lead"></p>
-  <hr class="my-6">
-  <p></p>
-  <p class="lead">
-  </p>
+<div class="form-row">
+  <div class="btn-group col-md-3">
+    <button type="submit" class="btn btn-primary"
+            (click)="savecv()">Сохранить</button>
+    <button type="submit" class="btn btn-primary"
+            (click)="back()">Отмена</button>
+  </div>
 </div>
-
 <app-footer></app-footer>
+
+<!--
+<label for="inputAddress"></label>
+-->
