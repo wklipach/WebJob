@@ -28,10 +28,18 @@
             <i class="fa fa-user" style="font-size:24px;color:blue"></i>{{ htUserName }}
             <i class="fa fa-caret-down" style="font-size:24px;color:blue"></i>
           </div>
+
             <ul>
-              <li><a class="nav-link" routerLink="/account-employee" routerLinkActive="active">Личный кабинет</a></li>
-              <li><a class="nav-link" routerLink="/cv-list" routerLinkActive="active">Мои резюме</a></li>
-              <li><button class="btn btn-primary" (click)="logout()">Выйти</button></li>
+              <div class="form-inline" *ngIf = "bEmployer">
+                 <li><a class="nav-link" routerLink="/account-employer" routerLinkActive="active">Кабинет работодателя</a></li>
+              </div>
+
+              <div class="form-inline" *ngIf="!bEmployer">
+                <li><a class="nav-link" routerLink="/account-employee" routerLinkActive="active">Кабинет соискателя</a></li>
+              </div>
+
+               <li><a class="nav-link" routerLink="/cv-list" routerLinkActive="active">Мои резюме</a></li>
+               <li><button class="btn btn-primary" (click)="logout()">Выйти</button></li>
             </ul>
 
         </div>

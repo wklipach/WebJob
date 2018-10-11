@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {City} from '../../class/City';
 import {GuideService} from '../../services/guide-service.service';
 import {Subscription} from 'rxjs';
@@ -31,30 +31,34 @@ export class AccountEmployerComponent implements OnInit {
               private router: Router,
               private gs: GuideService) {
 
+
     this.accountEmployerForm = new FormGroup({
 
-      'inputUserName': new FormControl('', []),
-      'inputName': new FormControl('', []),
-      'inputLastName' : new FormControl('', []),
-      'inputZip' : new FormControl('', []),
-      'inputAddress' : new FormControl('', []),
-      'inputPhone' : new FormControl('', []),
-      'inputCity' : new FormControl('', [])
+      'inputUserName': new FormControl({value: '', disabled: true}, []),
+      'inputName': new FormControl(),
+      'inputLastName' : new FormControl(),
+      'inputZip' : new FormControl(),
+      'inputAddress' : new FormControl(),
+      'inputPhone' : new FormControl(),
+      'inputCity' : new FormControl()
     });
 
   }
 
   ngOnInit() {
+
     var Res =  this.auth.loginStorage();
 
     if (Res.bConnected) this.id_user = Res.id_user; else this.id_user = -1;
+
     this.subscrDataUserFromId =
       this.auth.getDataUserFromId(this.id_user).subscribe(value =>
-       {  this.loadCurrentUserInfo(value);
-
+       {
+         this.loadCurrentUserInfo(value);
         }
 
       );
+
     }
 
   ngOnDestroy() {

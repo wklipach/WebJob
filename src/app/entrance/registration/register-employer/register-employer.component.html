@@ -1,6 +1,6 @@
 <app-header-top></app-header-top>
 
-<h3>Регистрация как соискателя.</h3>
+<h3>Регистрация как работодателя.</h3>
 
 <form [formGroup]="formRegisterEmployer" novalidate (ngSubmit)="submit()">
 
@@ -8,7 +8,7 @@
 
     <div class="form-group col-md-2">
 
-      <input type="text" class="form-control" id="userName" formControlName="userName" placeholder="Имя пользователя">
+      <input type="text" class="form-control" id="userName" formControlName="userName" placeholder="Имя работодателя">
 
     </div>
 
@@ -28,7 +28,7 @@
 
            *ngIf="formRegisterEmployer.controls['userName'].touched && formRegisterEmployer.controls['userName'].value.length === 0 ">
 
-        Не указано имя
+        Не указано имя работодателя
 
       </div>
 
@@ -38,7 +38,7 @@
 
         <div *ngIf="formRegisterEmployer.controls['userName'].invalid; else trueUserNameTemplate">
 
-          <div class="alert alert-danger">Имя пользователя занято</div>
+          <div class="alert alert-danger">Имя работодателя занято</div>
 
         </div>
 
@@ -46,7 +46,7 @@
 
         <ng-template #trueUserNameTemplate>
 
-          <div class="alert alert-info">Имя пользователя свободно</div>
+          <div class="alert alert-info">Имя работодателя свободно</div>
 
         </ng-template>
 
@@ -180,8 +180,6 @@
       </div>
 
       <br>
-
-
 
       <a class="nav-link" routerLink="/rules" routerLinkActive="active">Прочитать правила использования.</a>
 

@@ -17,6 +17,7 @@ export class HeaderTopComponent implements OnInit {
   bConnected = false;
   sElementMask: string = '';
   id_user: number;
+  bEmployer : boolean;
 
   sNullValueFind : string = '';
 
@@ -40,6 +41,7 @@ export class HeaderTopComponent implements OnInit {
       this.htUserName = value.name;
       this.bConnected = value.connect;
       this.id_user = value.id_user;
+      this.bEmployer = value.bEmployer;
       // console.log('this.htUserName =', this.htUserName);
     });
 
@@ -52,6 +54,7 @@ export class HeaderTopComponent implements OnInit {
     this.htUserName = Res.htUserName;
     this.bConnected = Res.bConnected;
     this.id_user =  Res.id_user;
+    this.bEmployer =  Res.bEmployer;
 
     this.sElementMask  = this.moveS.getStringFind();
     this.sNullValueFind = this.moveS.getNullValueFind();
@@ -60,7 +63,6 @@ export class HeaderTopComponent implements OnInit {
   }
 
   login() {
-
     this.router.navigate(['/login']);
   }
 
@@ -69,8 +71,9 @@ export class HeaderTopComponent implements OnInit {
 
     window.localStorage.removeItem('htUserName');
     window.localStorage.removeItem('bConnected');
+    window.localStorage.removeItem('bEmployer');
     window.localStorage.removeItem('id_user');
-    this.httpService.IsUserLoggedIn.next({connect : false, name : '', id_user: -1});
+    this.httpService.IsUserLoggedIn.next({connect : false, name : '', id_user: -1, bEmployer: false});
     this.router.navigate(['/']);
   }
 

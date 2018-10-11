@@ -4,6 +4,7 @@ import {UserTable} from '../../../class/UserTable';
 import {isUndefined} from 'util';
 import {AuthService} from '../../../services/auth-service.service';
 import {Router} from '@angular/router';
+import {UserType} from '../../../class/UserType';
 
 @Component({
   selector: 'app-register-employer',
@@ -18,13 +19,13 @@ export class RegisterEmployerComponent implements OnInit {
   constructor(private httpService: AuthService, private router: Router) {
     this.formRegisterEmployer  = new FormGroup({
       'userName': new FormControl('',
-        [Validators.required], [this.userNameAsyncValidator.bind(this)]
+        [Validators.required], [this.employerNameAsyncValidator.bind(this)]
       ),
 
       'userEmail': new FormControl(null, [
           Validators.required,
           Validators.email
-        ], [this.userEmailAsyncValidator.bind(this)]
+        ], [this.employerEmailAsyncValidator.bind(this)]
       ),
       'userPassword1': new FormControl('', Validators.required),
       'userPassword2': new FormControl('', Validators.required),
@@ -40,12 +41,22 @@ export class RegisterEmployerComponent implements OnInit {
   }
 
   submit() {
-    console.log('btn-push');
+    const {userName, userEmail, userPassword1} = this.formRegisterEmployer.value;
+
+    const AddUser  = new UserType(userName,userEmail,userPassword1,true, -1,'','','','','');
+
+    console.log(AddUser);
+
+    return this.httpService.postDataUserTable(AddUser).subscribe(
+      () => {
+        this.router.navigate(['/login']); }
+    );
+
 
   }
 
-  // валидатор по имени пользователя
-  userNameAsyncValidator(control: FormControl): Promise<{[s:string]: boolean}> {
+  // валидатор по имени работодателя
+  employerNameAsyncValidator(control: FormControl): Promise<{[s:string]: boolean}> {
     return new Promise(
       (resolve, reject) => {
 
@@ -71,7 +82,7 @@ export class RegisterEmployerComponent implements OnInit {
   }
 
   // валидатор по EMail
-  userEmailAsyncValidator(control: FormControl): Promise<{[s:string]: boolean}> {
+  employerEmailAsyncValidator(control: FormControl): Promise<{[s:string]: boolean}> {
     return new Promise(
       (resolve, reject)=>{
 

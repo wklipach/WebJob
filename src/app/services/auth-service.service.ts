@@ -7,11 +7,12 @@ import {Subject} from 'rxjs';
 export class AuthService {
 
 
-  public IsUserLoggedIn: Subject<{connect: boolean, name : string, id_user: number}> = new Subject<{connect: boolean, name : string, id_user: number}>();
+  public IsUserLoggedIn: Subject<{connect: boolean, name : string, id_user: number, bEmployer: boolean}> = new Subject<{connect: boolean, name : string, id_user: number, bEmployer: boolean}>();
 
   private isAuthenticated = false;
   private _sUserName : string = '';
   private _id_user: number;
+  private _bEmployer: boolean;
 
 
 
@@ -19,10 +20,11 @@ export class AuthService {
 
   }
 
-  login(sUserName: string, id_user: number) {
+  login(sUserName: string, id_user: number, bEmployer: boolean) {
     this.isAuthenticated = true;
     this._sUserName = sUserName;
     this._id_user = id_user;
+    this._bEmployer = bEmployer;
 
     console.log('login=',this._id_user,this._sUserName,this.isAuthenticated);
 
@@ -48,11 +50,27 @@ export class AuthService {
   }
 
 
+  // получаем список соискателей
+  getOnlyUser(UserName: string)  {
+    // вставить запрос типа select top 10 * from UserTable where UserName=:@UserName
+    return this.http.get('http://localhost:3000/UserTable?bEmployer=false');
+  }
 
-  getDataUserTable(UserName: string)
-  {
+  //получаем список работодателей
+  getOnlyEmployer(UserName: string)  {
+    // вставить запрос типа select top 10 * from UserTable where UserName=:@UserName
+    return this.http.get('http://localhost:3000/UserTable?bEmployer=true');
+  }
+
+
+
+  getDataUserTable(UserName: string) {
     // вставить запрос типа select top 10 * from UserTable where UserName=:@UserName
     return this.http.get('http://localhost:3000/UserTable');
+
+    // http://localhost:3000/UserTable?bEmployer=false
+
+
   }
 
   getDataUserOrEmailTable(sUserOrEmail: string)
@@ -83,7 +101,7 @@ export class AuthService {
 
 ///
 
- public loginStorage(): {htUserName: string; bConnected: boolean; id_user: number} {
+ public loginStorage(): {htUserName: string; bConnected: boolean; id_user: number; bEmployer: boolean} {
 
   let htUserName = '';
   if (window.localStorage.getItem('htUserName') !== '') {
@@ -100,7 +118,13 @@ export class AuthService {
     id_user = JSON.parse(window.localStorage.getItem('id_user'));
   }
 
-  return {htUserName: htUserName,bConnected: bConnected, id_user: id_user};
+   let bEmployer = false;
+   if (window.localStorage.getItem('bEmployer') !== '') {
+     bEmployer = JSON.parse(window.localStorage.getItem('bEmployer'));
+   }
+
+
+  return {htUserName: htUserName,bConnected: bConnected, id_user: id_user, bEmployer: bEmployer};
 }
 
 ////

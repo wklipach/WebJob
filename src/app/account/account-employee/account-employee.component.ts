@@ -32,7 +32,7 @@ export class AccountEmployeeComponent implements OnInit {
               private gs: GuideService) {
 
     this.accountEmployeeForm = new FormGroup({
-      'inputUserName': new FormControl('',[]),
+      'inputUserName': new FormControl({disabled: true},[]),
       'inputName': new FormControl('',[]),
       'inputLastName' : new FormControl('',[]),
       'inputZip' : new FormControl('',[]),
