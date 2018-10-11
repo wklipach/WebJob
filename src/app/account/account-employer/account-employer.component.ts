@@ -25,6 +25,9 @@ export class AccountEmployerComponent implements OnInit {
   private _sEmail: string = '';
   private _sPassword: string = '';
 
+  public bPasswordNew: boolean = false;
+  private loadUser: UserType;
+
   constructor(private is: GuideService,
 
               private auth: AuthService,
@@ -40,7 +43,9 @@ export class AccountEmployerComponent implements OnInit {
       'inputZip' : new FormControl(),
       'inputAddress' : new FormControl(),
       'inputPhone' : new FormControl(),
-      'inputCity' : new FormControl()
+      'inputCity' : new FormControl(),
+      'inputNewPassword1' : new FormControl('',[]),
+      'inputNewPassword2' : new FormControl('',[])
     });
 
   }
@@ -55,6 +60,9 @@ export class AccountEmployerComponent implements OnInit {
       this.auth.getDataUserFromId(this.id_user).subscribe(value =>
        {
          this.loadCurrentUserInfo(value);
+         this.loadUser = value as UserType;
+         console.log('this.loadUser',this.loadUser);
+
         }
 
       );
@@ -154,6 +162,22 @@ export class AccountEmployerComponent implements OnInit {
 
     });
   }
+
+  NewPassword() {
+    const {inputNewPassword1: inputNewPassword1, inputNewPassword2: inputNewPassword2} = this.accountEmployerForm.value;
+
+
+    if (inputNewPassword1 === inputNewPassword2) {
+      this.loadUser.Password = inputNewPassword1;
+      console.log('this.loadUser', this.loadUser);
+      return this.auth.updateDataUserTable(this.loadUser, this.id_user).subscribe(
+        () => {
+          this.bPasswordNew = true;
+        }
+      );
+    }
+  }
+
   back() {
 
     this.router.navigate(['/']);

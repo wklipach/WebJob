@@ -123,7 +123,7 @@
     {
       "UserName": "Виталий",
       "EMail": "klipach@mail.ru",
-      "Password": "1",
+      "Password": "s1",
       "bEmployer": false,
       "id": 17,
       "City": 4,
@@ -150,7 +150,7 @@
     {
       "UserName": "Работодатель",
       "EMail": "job@mail.ru",
-      "Password": "1",
+      "Password": "12",
       "bEmployer": false,
       "City": 2,
       "Zip": "111111",

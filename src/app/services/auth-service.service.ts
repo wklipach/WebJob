@@ -95,6 +95,7 @@ export class AuthService {
   //  К примеру, чтобы обновить пользователя с Id 2, отправьте PATCH запрос по адресу http://localhost:3000/UserTable/2:
   updateDataUserTable(user: UserType, id_user: number){
     // вставить запрос по добавлению пользователя в базу
+
     return this.http.patch('http://localhost:3000/UserTable/'+id_user, user);
   }
 
