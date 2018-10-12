@@ -75,9 +75,8 @@
     </div>
   </div>
 
+  <button type="button" class="btn btn-link" (click)="accessPassword()"> Изменить пароль </button>
   <div class="form-row">
-
-    <a class="alert-link" (click)="accessPassword()">Изменить пароль</a>
     <ng-container *ngIf="bShowChangePassword">
       <div class="form-group col-md-3">
         <input type="text" class="form-control" id="inputNewPassword1" formControlName="inputNewPassword1" placeholder="Новый пароль">
@@ -86,7 +85,6 @@
         <ng-container *ngIf="bPasswordNew">Пароль изменен</ng-container>
       </div>
     </ng-container>
-
   </div>
 
 </form>
