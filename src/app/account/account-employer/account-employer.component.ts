@@ -149,7 +149,7 @@ export class AccountEmployerComponent implements OnInit {
       const AddUser  = new UserType(inputUserName, this._sEmail,
         this._sPassword,
 
-        false, id_city, inputZip, inputName, inputLastName, inputAddress,
+        true, id_city, inputZip, inputName, inputLastName, inputAddress,
         inputPhone);
 
       return this.auth.updateDataUserTable(AddUser, this.id_user).subscribe(
