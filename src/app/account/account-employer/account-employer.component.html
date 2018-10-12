@@ -76,12 +76,17 @@
   </div>
 
   <div class="form-row">
-    <div class="form-group col-md-3">
-      <input type="text" class="form-control" id="inputNewPassword1" formControlName="inputNewPassword1" placeholder="Новый пароль">
-      <input type="text" class="form-control" id="inputNewPassword2" formControlName="inputNewPassword2" placeholder="Повторить пароль">
-      <button type="submit" class="btn btn-primary" (click)="NewPassword()">Изменить пароль</button>
-      <ng-container *ngIf="bPasswordNew">Пароль изменен</ng-container>
-    </div>
+
+    <a class="alert-link" (click)="accessPassword()">Изменить пароль</a>
+    <ng-container *ngIf="bShowChangePassword">
+      <div class="form-group col-md-3">
+        <input type="text" class="form-control" id="inputNewPassword1" formControlName="inputNewPassword1" placeholder="Новый пароль">
+        <input type="text" class="form-control" id="inputNewPassword2" formControlName="inputNewPassword2" placeholder="Повторить пароль">
+        <button type="submit" class="btn btn-primary" (click)="NewPassword()">Изменить пароль</button>
+        <ng-container *ngIf="bPasswordNew">Пароль изменен</ng-container>
+      </div>
+    </ng-container>
+
   </div>
 
 </form>

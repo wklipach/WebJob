@@ -24,6 +24,7 @@ export class AccountEmployeeComponent implements OnInit {
   private _sEmail: string = '';
   private _sPassword: string = '';
   public bPasswordNew: boolean = false;
+  public bShowChangePassword: boolean = false;
 
 private loadUser: UserType;
 
@@ -144,6 +145,11 @@ private loadUser: UserType;
       }
 
     }
+
+
+  accessPassword() {
+    this.bShowChangePassword = !this.bShowChangePassword;
+  }
 
   back() {
     this.router.navigate(['/']);

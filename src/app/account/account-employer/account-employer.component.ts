@@ -28,6 +28,9 @@ export class AccountEmployerComponent implements OnInit {
   public bPasswordNew: boolean = false;
   private loadUser: UserType;
 
+  public bShowChangePassword: boolean = false;
+
+
   constructor(private is: GuideService,
 
               private auth: AuthService,
@@ -177,6 +180,11 @@ export class AccountEmployerComponent implements OnInit {
       );
     }
   }
+
+
+  accessPassword() {
+    this.bShowChangePassword = !this.bShowChangePassword;
+ }
 
   back() {
 
