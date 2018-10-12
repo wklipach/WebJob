@@ -1,50 +1,46 @@
+<app-header-top></app-header-top>
 <h3>Расширенный поиск</h3>
 
+<div class="container-fluid">
+  <div class="row">
+    <form class="col-6">
 
- <form class="col-6">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Поиск">
 
-  <div class="input-group">
-    <input type="text" class="form-control" placeholder="Поиск">
+        <div class="input-group-btn">
+          <button class="btn btn-primary" type="submit"> Искать
+            <i class="fa fa-search" style="color: #fff"></i></button>
+        </div>
+      </div>
 
-    <div class="input-group-btn">
-      <button class="btn btn-primary" type="submit"> Искать
-        <i class="fa fa-search" style="color: #fff"></i></button>
+    </form>
+
   </div>
+
+  <div class="row mp">
+    <div class="col-6">
+      <label class="advSearch">Выберите условия поиска</label>
+    </div>
   </div>
 
- </form>
-<!--
-<ul class="dropdown">
-  <li><a href="#">Home</a></li>
-  <li><a href="#">Catagories</a></li>
-  <li><a href="#">Single Article</a></li>
-  <li><a href="#">Quize Article</a></li>
-  <li><a href="#">Contact</a></li>
-  <li class="has-down"><a href="#">Dropdown</a>
-    <ul class="#">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Catagories</a></li>
-      <li><a href="#">Single Article</a></li>
-      <li><a href="#">Quize Article</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-    <span class="dd-trigger"></span></li>
-</ul>
-<li><a href="#">Home</a></li>
-<li><a href="#">Catagories</a></li>
-<li><a href="#">Single Article</a></li>
-<li><a href="#">Quize Article</a></li>
-<li><a href="#">Contact</a></li>
-<li class="has-down"><a href="#">Dropdown</a>
-  <ul class="dropdown">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Catagories</a></li>
-    <li><a href="#">Single Article</a></li>
-    <li><a href="#">Quize Article</a></li>
-    <li><a href="#">Contact</a></li>
+  <div class="row">
+    <div class="col-6">
+      <div class="form-group form-check">
+        <ul>
+          <li> <input type="checkbox" class="form-check-input" id="advSearchCheck1" title="Искать только в названии вакансии">Искать только в названии вакансии</li>
+          <li><input type="checkbox" class="form-check-input" id="advSearchCheck2" title="Искать только в кратком описании вакансии">Искать только в кратком описании вакансии</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
-  <span class="dd-trigger"></span></li>
+</div> <!-- Конец контейнера -->
 
-</ul>
 
--->
+
+
+
+<br><br><br><br><br><br><br><br><br><br>
+
+<app-footer></app-footer>
