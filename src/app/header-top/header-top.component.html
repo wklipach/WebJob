@@ -34,12 +34,25 @@
                  <li><a class="nav-link" routerLink="/account-employer" routerLinkActive="active">Данные работодателя</a></li>
               </div>
 
+              <div class="form-inline" *ngIf = "bEmployer">
+                <li><a class="nav-link" routerLink="/advanced-search" routerLinkActive="active">Поиск сотрудников</a></li>
+              </div>
+
+
               <div class="form-inline" *ngIf="!bEmployer">
                 <li><a class="nav-link" routerLink="/account-employee" routerLinkActive="active">Данные соискателя</a></li>
               </div>
 
+
+              <div class="form-inline" *ngIf="!bEmployer">
                <li><a class="nav-link" routerLink="/cv-list" routerLinkActive="active">Мои резюме</a></li>
+              </div>
+
+              <div class="form-inline">
                <li><button class="btn btn-primary" (click)="logout()">Выйти</button></li>
+              </div>
+
+
             </ul>
 
         </div>
