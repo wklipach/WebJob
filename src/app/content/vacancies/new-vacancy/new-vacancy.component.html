@@ -51,7 +51,7 @@
 </div>
 
 <div class="form-group col-md-3">
-  <label for="inputCity">Локация вакансии</label>
+  <label for="inputCity">Расположение вакансии</label>
   <select id="inputCity" formControlName="inputCity" class="form-control" title="Локация вакансии">
     <option  *ngFor="let lc of listCity" [value]="lc.name">
       {{lc.name}}
@@ -117,7 +117,7 @@
 
 <div>
   <div class="form-group row">
-    <button type="submit" class="btn btn-primary" [disabled]="newVacancyForm.invalid">Отправить</button>
+    <button type="submit" class="btn btn-primary" [disabled]="newVacancyForm.invalid">Сохранить</button>
   </div>
 </div>
 

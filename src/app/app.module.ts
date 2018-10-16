@@ -21,14 +21,14 @@ import {AccountEmployeeComponent} from './account/account-employee/account-emplo
 import {AccountEmployerComponent} from './account/account-employer/account-employer.component';
 import { HomeComponent } from './home/home.component';
 import { CvComponent } from './content/cv/cv.component';
-import { VacancyComponent } from './content/vacancy/vacancy.component';
-import { NewVacancyComponent } from './content/new-vacancy/new-vacancy.component';
+import { NewVacancyComponent } from './content/vacancies/new-vacancy/new-vacancy.component';
 import { AtempComponent } from './atemp/atemp.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import {GuideService} from './services/guide-service.service';
+import { VacanciesComponent } from './content/vacancies/vacancies/vacancies.component';
 import {NewVacancyService} from './services/new-vacancy.service';
 import {TableVacancyService} from './services/table-vacancy.service';
-import {VacancyDescriptionComponent } from './content/vacancy-description/vacancy-description.component';
+import {VacancyDescriptionComponent } from './content/vacancies/vacancy-description/vacancy-description.component';
 import {MoveService} from './services/move.service';
 import { NewcvComponent } from './content/cv/newcv/newcv.component';
 import {CvIndustryComponent} from './content/cv/cv-industry/cv_industry.component';
@@ -60,8 +60,8 @@ const appRoutes: Routes = [
   {path: 'account-employee', component: AccountEmployeeComponent},
   {path: 'account-employer', component: AccountEmployerComponent},
   {path: 'cv', component: CvComponent},
-  {path: 'vacancy', component: VacancyComponent},
-  {path: 'new-vacancy', component: NewVacancyComponent},
+  {path: 'vacancies', component: VacanciesComponent},
+    {path: 'new-vacancy', component: NewVacancyComponent},
   {path: 'atemp', component: AtempComponent},
   {path: 'vacancy-description', component: VacancyDescriptionComponent},
   {path: 'newcv', component: NewcvComponent},
@@ -94,7 +94,6 @@ const appRoutes: Routes = [
     RulesComponent,
     HomeComponent,
     CvComponent,
-    VacancyComponent,
     NewVacancyComponent,
     AtempComponent,
     VacancyDescriptionComponent,
@@ -107,6 +106,7 @@ const appRoutes: Routes = [
     CvPreviousComponent,
     CvListComponent,
     CvEditComponent,
+    VacanciesComponent,
     NotFoundComponent
    ],
   entryComponents: [

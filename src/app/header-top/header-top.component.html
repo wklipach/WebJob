@@ -35,13 +35,23 @@
               </div>
 
               <div class="form-inline" *ngIf = "bEmployer">
+                <li><a class="nav-link" routerLink="/new-vacancy" routerLinkActive="active">Новая вакансия</a></li>
+              </div>
+
+              <div class="form-inline" *ngIf = "bEmployer">
+                <li><a class="nav-link" routerLink="/vacancies" routerLinkActive="active">Все вакансии</a></li>
+              </div>
+
+              <div class="form-inline" *ngIf = "bEmployer">
                 <li><a class="nav-link" routerLink="/advanced-search" routerLinkActive="active">Поиск сотрудников</a></li>
               </div>
+
 
 
               <div class="form-inline" *ngIf="!bEmployer">
                 <li><a class="nav-link" routerLink="/account-employee" routerLinkActive="active">Данные соискателя</a></li>
               </div>
+
 
 
               <div class="form-inline" *ngIf="!bEmployer">

@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {Guide} from '../../class/guide';
-import {GuideService} from '../../services/guide-service.service';
-import {Vacancy} from '../../class/Vacancy';
+import {Guide} from '../../../class/guide';
+import {GuideService} from '../../../services/guide-service.service';
+import {Vacancy} from '../../../class/Vacancy';
 import {Router} from '@angular/router';
-import {NewVacancyService} from '../../services/new-vacancy.service';
-import {City} from '../../class/City';
+import {NewVacancyService} from '../../../services/new-vacancy.service';
+import {City} from '../../../class/City';
 
 @Component({
   selector: 'app-new-vacancy',

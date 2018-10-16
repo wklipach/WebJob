@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {dataVacancy} from '../../class/Vacancy';
-import {MoveService} from '../../services/move.service';
-import {GuideService} from '../../services/guide-service.service';
+import {dataVacancy} from '../../../class/Vacancy';
+import {MoveService} from '../../../services/move.service';
+import {GuideService} from '../../../services/guide-service.service';
 import {Subscription} from 'rxjs';
 
 @Component({
