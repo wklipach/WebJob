@@ -20,7 +20,6 @@ export class CvListService {
 
 
   setDeleteCv(id_cv: number, cvbody) {
-
       let sUrl = 'http://localhost:3000/CV/'+id_cv;
 
       return this.http.patch(sUrl,
@@ -28,7 +27,6 @@ export class CvListService {
           cv: cvbody
         }
       );
-
   }
 
 

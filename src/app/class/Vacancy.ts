@@ -18,6 +18,15 @@ export class Vacancy{
   // опыт работы
   Experience: number[];
   id : number;
+  //создатель вакансии
+  id_user : number;
+  //дата создания вакансии
+  DateTimeCreate: string;
+  //поле для отметок "выбрано"
+  bChecked : boolean = false;
+  // признак удаленного резюме
+  bInvisible : boolean = false;
+
 }
 
 export class  dataVacancy extends Vacancy {

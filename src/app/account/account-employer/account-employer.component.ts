@@ -29,6 +29,7 @@ export class AccountEmployerComponent implements OnInit {
   private loadUser: UserType;
 
   public bShowChangePassword: boolean = false;
+  public bErrorRepeatPassword: boolean = false;
 
 
   constructor(private is: GuideService,
@@ -169,6 +170,9 @@ export class AccountEmployerComponent implements OnInit {
   NewPassword() {
     const {inputNewPassword1: inputNewPassword1, inputNewPassword2: inputNewPassword2} = this.accountEmployerForm.value;
 
+
+    if (inputNewPassword1 === inputNewPassword2) this.bErrorRepeatPassword = false;
+    else this.bErrorRepeatPassword = true;
 
     if (inputNewPassword1 === inputNewPassword2) {
       this.loadUser.Password = inputNewPassword1;

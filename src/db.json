@@ -164,19 +164,6 @@
   "Vacancy": [
     {
       "vacancy": {
-        "VacancyShortTitle": "33",
-        "VacancyDescription": "33",
-        "VacancyBigDescription": "33",
-        "SalaryFrom": "3",
-        "Salary": "3",
-        "industry": [
-          4
-        ]
-      },
-      "id": 1
-    },
-    {
-      "vacancy": {
         "VacancyShortTitle": "Город",
         "VacancyDescription": "111",
         "VacancyBigDescription": "111",
@@ -330,32 +317,71 @@
     },
     {
       "vacancy": {
-        "VacancyShortTitle": "Первая пробная вакансия",
-        "VacancyDescription": "Описание первой пробной вакансии Описание первой пробной вакансии Описание первой пробной вакансии Описание первой пробной вакансии Описание первой пробной вакансии Описание первой пробной вакансии Описание первой пробной вакансии Описание первой пробной вакансии Описание первой пробной вакансии Описание первой пробной вакансии Описание первой пробной вакансии ",
-        "VacancyBigDescription": "Описание первой пробной вакансии Описание первой пробной вакансии Описание первой пробной вакансии Описание первой пробной вакансии Описание первой пробной вакансии Описание первой пробной вакансии Описание первой пробной вакансии Описание первой пробной вакансии Описание первой пробной вакансии Описание первой пробной вакансии Описание первой пробной вакансии Описание первой пробной вакансии Описание первой пробной вакансии Описание первой пробной вакансии Описание первой пробной вакансии Описание первой пробной вакансОписание первой пробной вакансии Описание первой пробной вакансии Описание первой пробной вакансии Описание первой пробной вакансии Описание первой пробной вакансии Описание первой пробной вакансии Описание первой пробной вакансии Описание первой пробной вакансии ",
-        "SalaryFrom": "1000",
-        "Salary": "1500",
-        "Industry": [
-          6
-        ],
+        "VacancyShortTitle": "",
+        "VacancyDescription": "",
+        "VacancyBigDescription": "",
+        "SalaryFrom": "",
+        "Salary": "",
+        "Industry": [],
         "DisplayPeriod": 1,
-        "City": 5,
-        "Schedule": [
-          1,
-          2
-        ],
-        "Employment": [
-          1,
-          2
-        ],
-        "Education": [
-          2
-        ],
-        "Experience": [
-          4
-        ]
+        "City": 1,
+        "Schedule": [],
+        "Employment": [],
+        "Education": [],
+        "Experience": []
       },
       "id": 40
+    },
+    {
+      "vacancy": {
+        "VacancyShortTitle": "",
+        "VacancyDescription": "",
+        "VacancyBigDescription": "",
+        "SalaryFrom": "",
+        "Salary": "",
+        "Industry": [],
+        "DisplayPeriod": 1,
+        "City": 1,
+        "Schedule": [],
+        "Employment": [],
+        "Education": [],
+        "Experience": []
+      },
+      "id": 41
+    },
+    {
+      "vacancy": {
+        "VacancyShortTitle": "",
+        "VacancyDescription": "",
+        "VacancyBigDescription": "",
+        "SalaryFrom": "",
+        "Salary": "",
+        "Industry": [],
+        "DisplayPeriod": 1,
+        "City": 1,
+        "Schedule": [],
+        "Employment": [],
+        "Education": [],
+        "Experience": []
+      },
+      "id": 42
+    },
+    {
+      "vacancy": {
+        "VacancyShortTitle": "",
+        "VacancyDescription": "",
+        "VacancyBigDescription": "",
+        "SalaryFrom": "",
+        "Salary": "",
+        "Industry": [],
+        "DisplayPeriod": 1,
+        "City": 1,
+        "Schedule": [],
+        "Employment": [],
+        "Education": [],
+        "Experience": []
+      },
+      "id": 43
     }
   ],
   "City": [

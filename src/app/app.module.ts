@@ -43,6 +43,7 @@ import { CvListComponent } from './content/cv/cv-list/cv-list.component';
 import {CvListService} from './services/cv-list.service';
 import { CvEditComponent } from './content/cv/cv-edit/cv-edit.component';
 import {CvEditService} from './services/cv-edit.service';
+import {VacanciesListService} from './services/vacancies-list.service';
 
 
 // определение маршрутов
@@ -113,7 +114,7 @@ const appRoutes: Routes = [
     CvPreviousComponent
   ],
   providers: [AuthService, GuideService, NewVacancyService, TableVacancyService,
-              MoveService, PreviousService, NewcvService, CvListService, CvEditService],
+              MoveService, PreviousService, NewcvService, CvListService, CvEditService,VacanciesListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

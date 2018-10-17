@@ -25,6 +25,7 @@ export class AccountEmployeeComponent implements OnInit {
   private _sPassword: string = '';
   public bPasswordNew: boolean = false;
   public bShowChangePassword: boolean = false;
+  public bErrorRepeatPassword: boolean = false;
 
 private loadUser: UserType;
 
@@ -132,17 +133,22 @@ private loadUser: UserType;
 
 
     NewPassword() {
-      const {inputNewPassword1, inputNewPassword2} = this.accountEmployeeForm.value;
+
+            const {inputNewPassword1, inputNewPassword2} = this.accountEmployeeForm.value;
 
 
-      if (inputNewPassword1 === inputNewPassword2) {
-          this.loadUser.Password = inputNewPassword1;
-          console.log('this.loadUser',this.loadUser);
-          return this.auth.updateDataUserTable(this.loadUser, this.id_user).subscribe(
-              () => {
-                this.bPasswordNew = true; }
-          );
-      }
+
+            if (inputNewPassword1 === inputNewPassword2) this.bErrorRepeatPassword = false;
+                                                    else this.bErrorRepeatPassword = true;
+
+            if (inputNewPassword1 === inputNewPassword2) {
+                this.loadUser.Password = inputNewPassword1;
+                console.log('this.loadUser',this.loadUser);
+                return this.auth.updateDataUserTable(this.loadUser, this.id_user).subscribe(
+                    () => {
+                      this.bPasswordNew = true; }
+                );
+            }
 
     }
 

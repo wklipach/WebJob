@@ -2,7 +2,7 @@
 
 <div class="container-fluid">
   <h3>Все вакансии</h3>
-  <div class="row" *ngFor="let item of cvList; let i = index;">
+  <div class="row" *ngFor="let item of vacanciesList; let i = index;">
 
 
     <div class="col-1 tt">
@@ -10,10 +10,10 @@
     </div>
 
     <div class="col-2 tt">
-      Должность "{{item.cv.Position}}"
+      Должность "{{item.vacancy.VacancyShortTitle}}"
     </div>
     <div class="col-2 tt">
-      Зарплата "{{item.cv.SalaryFrom}}"
+      Описание "{{item.vacancy.VacancyDescription}}"
     </div>
     <div class="col-2 tt">
       Город "{{item.CityName}}"
@@ -21,19 +21,22 @@
     <div class="col-1 tt">
       <button type="button" class="btn btn-primary" [disabled]="!item.bChecked" (click)="CheckDeleteElement(item)">Удалить</button>
     </div>
+
+
     <div class="col-1 tt">
       <button type="button" class="btn btn-success" [disabled]="!item.bChecked" (click)="EditElement(item)">Редактировать</button>
     </div>
 
-    <div class="alert alert-primary" *ngIf="item.cv.bInvisible === true && item.bChecked">
-      Вы желаете удалить данное резюме?
+
+    <div class="alert alert-primary" *ngIf="item.vacancy.bInvisible === true && item.bChecked">
+      Вы желаете удалить данную вакансию?
       <button type="button" class="btn btn-outline-danger" (click)="DeleteElement(item)">Да</button>
       <button type="button" class="btn btn-outline-success" (click)="UnDeleteElement(item)">Нет</button>
     </div>
   </div>
 </div>
 <div class="row">
-  <button class="btn btn-primary" (click)="newcv()">Новая вакансия</button>
+  <button class="btn btn-primary" (click)="newVac()">Новая вакансия</button>
   <br>
   <br>
 </div>

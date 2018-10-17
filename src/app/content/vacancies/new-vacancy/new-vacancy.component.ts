@@ -6,6 +6,8 @@ import {Vacancy} from '../../../class/Vacancy';
 import {Router} from '@angular/router';
 import {NewVacancyService} from '../../../services/new-vacancy.service';
 import {City} from '../../../class/City';
+import {AuthService} from '../../../services/auth-service.service';
+import {DatePipe} from '@angular/common';
 
 @Component({
   selector: 'app-new-vacancy',
@@ -25,9 +27,13 @@ export class NewVacancyComponent implements OnInit {
   listCity : City[] =[];
   myDisplayPeriod: string = "";
   myDisplayCity: string = "";
+  private id_user: number = -1;
 
 
-  constructor(private is: GuideService, private httpService: NewVacancyService, private router: Router) {
+  constructor(private is: GuideService,
+              private httpService: NewVacancyService,
+              private router: Router,
+              private auth: AuthService) {
 
     this.displayPeriodList = is.getDisplayPeriodList();
     if (this.displayPeriodList.length>0) this.myDisplayPeriod = this.displayPeriodList[0].name;
@@ -98,16 +104,28 @@ export class NewVacancyComponent implements OnInit {
   }
 
 
-  ngOnInit() {  }
+  ngOnInit() {
 
+    var Res =  this.auth.loginStorage();
+    if (Res.bConnected) this.id_user = Res.id_user; else this.id_user = -1;
+
+
+  }
 
   submit() {
+
+    if (this.id_user <= 0) return;
+
     let MyIndustry: number[];
     let MyVacancy: Vacancy = new Vacancy();
     let MySchedule: number[];
     let MyEmployment: number[];
     let MyEducation: number[];
     let MyExperience: number[];
+
+
+    var datePipe = new DatePipe("en-US");
+    var currentDate = datePipe.transform(new Date(), 'dd/MM/yyyy hh:mm');
 
 
     // controlPrefics "industryCheck"
@@ -142,7 +160,7 @@ export class NewVacancyComponent implements OnInit {
     MyVacancy.VacancyBigDescription = this.newVacancyForm.controls['inputVacancyBigDescription'].value;
     MyVacancy.SalaryFrom = this.newVacancyForm.controls['inputSalaryFrom'].value;
     MyVacancy.Salary = this.newVacancyForm.controls['inputSalary'].value;
-    //
+
     MyVacancy.Industry = MyIndustry;
     MyVacancy.DisplayPeriod = period.id;
     MyVacancy.City = city.id;
@@ -155,6 +173,12 @@ export class NewVacancyComponent implements OnInit {
     //опыт работы
     MyVacancy.Experience = MyExperience;
 
+    //пользователь
+    MyVacancy.id_user = this.id_user;
+
+    //дата создания вакансии
+    MyVacancy.DateTimeCreate = currentDate;
+
 
     return this.httpService.postNewVacancy(MyVacancy).subscribe(
       () => {
@@ -163,5 +187,6 @@ export class NewVacancyComponent implements OnInit {
     );
 
   }
+
 
 }
