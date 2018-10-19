@@ -178,8 +178,6 @@ export class CvEditComponent implements OnInit, OnDestroy {
 
     console.log('Смотрим строку ниже');
     console.log(item);
-
-
     item.bInvisible = true;
 
     this.cvDeleteCv = this.cls.setDeleteCv(this.cv_id, item).subscribe( ()=> {

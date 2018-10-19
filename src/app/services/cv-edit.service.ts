@@ -30,7 +30,7 @@ export class CvEditService {
     this._cvitem  = cv_item;
   }
 
-  public  getCvItem(): number {
+  public  getCvItem(): any {
     if (window.localStorage.getItem('_cvitem') !== '') {
       return this._cvitem = JSON.parse(window.localStorage.getItem('_cvitem'));
     } else

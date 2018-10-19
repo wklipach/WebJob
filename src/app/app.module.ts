@@ -44,6 +44,7 @@ import {CvListService} from './services/cv-list.service';
 import { CvEditComponent } from './content/cv/cv-edit/cv-edit.component';
 import {CvEditService} from './services/cv-edit.service';
 import {VacanciesListService} from './services/vacancies-list.service';
+import { VacancyEditComponent } from './content/vacancies/vacancy-edit/vacancy-edit.component';
 
 
 // определение маршрутов
@@ -65,6 +66,7 @@ const appRoutes: Routes = [
     {path: 'new-vacancy', component: NewVacancyComponent},
   {path: 'atemp', component: AtempComponent},
   {path: 'vacancy-description', component: VacancyDescriptionComponent},
+  {path: 'vacancy-edit', component: VacancyEditComponent},
   {path: 'newcv', component: NewcvComponent},
   {path: 'test', component: CvScheduleComponent},
   {path: 'cv-previous', component: CvPreviousComponent},
@@ -108,6 +110,7 @@ const appRoutes: Routes = [
     CvListComponent,
     CvEditComponent,
     VacanciesComponent,
+    VacancyEditComponent,
     NotFoundComponent
    ],
   entryComponents: [

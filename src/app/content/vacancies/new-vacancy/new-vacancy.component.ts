@@ -25,8 +25,8 @@ export class NewVacancyComponent implements OnInit {
 
   displayPeriodList: Guide[];
   listCity : City[] =[];
-  myDisplayPeriod: string = "";
-  myDisplayCity: string = "";
+  myDisplayPeriod: string = '';
+  myDisplayCity: string = '';
   private id_user: number = -1;
 
 
@@ -179,10 +179,9 @@ export class NewVacancyComponent implements OnInit {
     //дата создания вакансии
     MyVacancy.DateTimeCreate = currentDate;
 
-
     return this.httpService.postNewVacancy(MyVacancy).subscribe(
       () => {
-        console.log(MyVacancy);
+        this.router.navigate(['/vacancies']);
       }
     );
 

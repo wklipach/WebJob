@@ -1,3 +1,4 @@
 {
-  "/CV\\?id=:id": "/CV/:id"
+  "/CV\\?id=:id": "/CV/:id",
+  "/vacancy\\?id=:id": "/vacancy/:id"
 }

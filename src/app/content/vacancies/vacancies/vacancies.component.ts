@@ -6,7 +6,6 @@ import {Subscription} from 'rxjs';
 import {GuideService} from '../../../services/guide-service.service';
 import {VacanciesListService} from '../../../services/vacancies-list.service';
 import {Router} from '@angular/router';
-import {Vacancy} from '../../../class/Vacancy';
 
 @Component({
   selector: 'app-vacancies',
@@ -91,9 +90,9 @@ export class VacanciesComponent implements OnInit {
   // редактируем - по факту будем удалять пометкой "удаленное" но оставляя в базе и вписывая новое значение
   EditElement(item: any) {
 
-    //this.cveditserv.setCvId(item.id);
-    //this.cveditserv.setCvItem(item.cv);
-    //this.router.navigate(['/cv-edit']);
+    this.gls.setVacId(item.id);
+    this.gls.setVacItem(item.vacancy);
+    this.router.navigate(['/vacancy-edit']);
   }
 
 

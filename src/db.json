@@ -164,76 +164,234 @@
   "Vacancy": [
     {
       "vacancy": {
-        "VacancyShortTitle": "Город",
-        "VacancyDescription": "111",
-        "VacancyBigDescription": "111",
+        "bChecked": false,
+        "bInvisible": true,
+        "VacancyShortTitle": "Тестовая вакансия 1",
+        "VacancyDescription": "Тестовая вакансия описание 1",
+        "VacancyBigDescription": "Полное описание тестовой вакансии 1",
         "SalaryFrom": "1",
-        "Salary": "1",
+        "Salary": "100",
         "Industry": [
-          2,
-          4
+          1
         ],
         "DisplayPeriod": 1,
-        "City": 6
+        "City": 2,
+        "Schedule": [
+          3
+        ],
+        "Employment": [
+          5
+        ],
+        "Education": [
+          3
+        ],
+        "Experience": [],
+        "id_user": 20,
+        "DateTimeCreate": "18/10/2018 04:20"
+      },
+      "id": 1
+    },
+    {
+      "vacancy": {
+        "bChecked": false,
+        "bInvisible": false,
+        "VacancyShortTitle": "Тестовая вакансия 1",
+        "VacancyDescription": "Тестовая вакансия описание 1",
+        "VacancyBigDescription": "Полное описание тестовой вакансии 1",
+        "SalaryFrom": "1",
+        "Salary": "100",
+        "Industry": [
+          1
+        ],
+        "DisplayPeriod": 1,
+        "City": 2,
+        "Schedule": [
+          3
+        ],
+        "Employment": [
+          5
+        ],
+        "Education": [
+          3
+        ],
+        "Experience": [],
+        "id_user": 20,
+        "DateTimeCreate": "18/10/2018 04:20"
+      },
+      "id": 2
+    },
+    {
+      "vacancy": {
+        "bChecked": false,
+        "bInvisible": false,
+        "VacancyShortTitle": "Тестовая вакансия 2",
+        "VacancyDescription": "Описание для Тестовая вакансия 2",
+        "VacancyBigDescription": "Полное описание для Тестовая вакансия 2",
+        "SalaryFrom": "2",
+        "Salary": "200",
+        "Industry": [],
+        "DisplayPeriod": 1,
+        "City": 5,
+        "Schedule": [],
+        "Employment": [],
+        "Education": [],
+        "Experience": [],
+        "id_user": 20,
+        "DateTimeCreate": "18/10/2018 04:25"
       },
       "id": 3
     },
     {
       "vacancy": {
-        "VacancyShortTitle": "Проба2",
-        "VacancyDescription": "Пробная вторая",
-        "VacancyBigDescription": "Нет описания",
-        "SalaryFrom": "100",
-        "Salary": "300",
-        "Industry": [
-          1,
-          30
-        ],
-        "DisplayPeriod": 3,
-        "City": 4,
-        "Schedule": [
-          3,
-          4
-        ],
-        "Employment": [
-          1,
-          2
-        ],
-        "Education": [
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "Experience": [
-          2,
-          4
-        ]
+        "bChecked": false,
+        "bInvisible": true,
+        "VacancyShortTitle": "Тестовая вакансия 2",
+        "VacancyDescription": "Описание для Тестовая вакансия 2",
+        "VacancyBigDescription": "Полное описание для Тестовая вакансия 2",
+        "SalaryFrom": "2",
+        "Salary": "200",
+        "Industry": [],
+        "DisplayPeriod": 1,
+        "City": 5,
+        "Schedule": [],
+        "Employment": [],
+        "Education": [],
+        "Experience": [],
+        "id_user": 20,
+        "DateTimeCreate": "18/10/2018 04:25"
       },
       "id": 4
     },
     {
       "vacancy": {
-        "VacancyShortTitle": "Проба3",
-        "VacancyDescription": "Пробная вторая",
-        "VacancyBigDescription": "Нет описания",
-        "SalaryFrom": "100",
+        "bChecked": false,
+        "bInvisible": false,
+        "VacancyShortTitle": "Тестовая вакансия 3",
+        "VacancyDescription": "Описание для Тестовая вакансия 3",
+        "VacancyBigDescription": "Полное описание для Тестовая вакансия 3",
+        "SalaryFrom": "3",
         "Salary": "300",
+        "Industry": [],
+        "DisplayPeriod": 1,
+        "City": 4,
+        "Schedule": [],
+        "Employment": [],
+        "Education": [],
+        "Experience": [],
+        "id_user": 20,
+        "DateTimeCreate": "18/10/2018 04:27"
+      },
+      "id": 5
+    },
+    {
+      "vacancy": {
+        "bChecked": false,
+        "bInvisible": true,
+        "VacancyShortTitle": "Тестовая вакансия 3",
+        "VacancyDescription": "Описание для Тестовая вакансия 3",
+        "VacancyBigDescription": "Полное описание для Тестовая вакансия 3",
+        "SalaryFrom": "3",
+        "Salary": "300",
+        "Industry": [],
+        "DisplayPeriod": 1,
+        "City": 4,
+        "Schedule": [],
+        "Employment": [],
+        "Education": [],
+        "Experience": [],
+        "id_user": 20,
+        "DateTimeCreate": "18/10/2018 04:27"
+      },
+      "id": 6
+    },
+    {
+      "vacancy": {
+        "bChecked": false,
+        "bInvisible": false,
+        "VacancyShortTitle": "Тестовая вакансия 4",
+        "VacancyDescription": "описание Тестовая вакансия 4",
+        "VacancyBigDescription": "Полное описание Тестовая вакансия 4",
+        "SalaryFrom": "4",
+        "Salary": "400",
+        "Industry": [],
+        "DisplayPeriod": 1,
+        "City": 2,
+        "Schedule": [],
+        "Employment": [],
+        "Education": [],
+        "Experience": [],
+        "id_user": 20,
+        "DateTimeCreate": "18/10/2018 05:01"
+      },
+      "id": 7
+    },
+    {
+      "vacancy": {
+        "bChecked": false,
+        "bInvisible": true,
+        "VacancyShortTitle": "Тестовая вакансия 5",
+        "VacancyDescription": "Описание Тестовая вакансия 5",
+        "VacancyBigDescription": "Полное описание Тестовая вакансия 5",
+        "SalaryFrom": "5",
+        "Salary": "500",
         "Industry": [
           1,
+          2,
+          29,
           30
         ],
-        "DisplayPeriod": 3,
-        "City": 4,
+        "DisplayPeriod": 2,
+        "City": 5,
         "Schedule": [
           1,
-          3,
-          4
+          5
         ],
         "Employment": [
           1,
-          2
+          5
+        ],
+        "Education": [
+          1,
+          5
+        ],
+        "Experience": [
+          1,
+          4
+        ],
+        "id_user": 20,
+        "DateTimeCreate": "19/10/2018 01:12"
+      },
+      "id": 8
+    },
+    {
+      "vacancy": {
+        "bChecked": false,
+        "bInvisible": true,
+        "VacancyShortTitle": "Тестовая вакансия 5",
+        "VacancyDescription": "Описание Тестовая вакансия 5 с добавкой",
+        "VacancyBigDescription": "Полное описание Тестовая вакансия 5",
+        "SalaryFrom": "5",
+        "Salary": "5000",
+        "Industry": [
+          1,
+          2,
+          3,
+          28,
+          29,
+          30
+        ],
+        "DisplayPeriod": 4,
+        "City": 6,
+        "Schedule": [
+          1,
+          5
+        ],
+        "Employment": [
+          1,
+          2,
+          3,
+          4,
+          5
         ],
         "Education": [
           1,
@@ -243,67 +401,54 @@
           5
         ],
         "Experience": [
+          1,
           2,
-          4
-        ]
-      },
-      "id": 5
-    },
-    {
-      "vacancy": {
-        "VacancyShortTitle": "Менеджер по продажам",
-        "VacancyDescription": "В связи с расширением штата нам требуются специалисты по продажам первичной недвижимости (новостроек).\n\nНаши преимущества:\n\nСтабильно высокий уровень дохода. Компания активно инвестирует в продвижение, что обеспечивает высокий клиентский поток и увеличение объемов продаж даже в кризис.\n",
-        "VacancyBigDescription": "В связи с расширением штата нам требуются специалисты по продажам первичной недвижимости (новостроек).\n\nНаши преимущества:\n\nСтабильно высокий уровень дохода. Компания активно инвестирует в продвижение, что обеспечивает высокий клиентский поток и увеличение объемов продаж даже в кризис.\n\nЗаработная плата вовремя, не дожидаясь застройщика. Благодаря наличию собственных средств, компания берет на себя расчёты с застройщиками, наши сотрудники получают бонусы в дату ближайшей заработной платы.\n\nОтлаженные бизнес-процессы. Разумные планы продаж выставляются таким образом, чтобы каждый сотрудник имел возможность их выполнить и перевыполнить.\n\nЛичностный рост. Мы хорошо чувствуем потенциал каждого нашего сотрудника, поэтому смело открываем новые возможности для самореализации.\n\n",
-        "SalaryFrom": "3000",
-        "Salary": "6000",
-        "Industry": [
-          26
-        ],
-        "DisplayPeriod": 3,
-        "City": 5,
-        "Schedule": [
-          1,
-          2
-        ],
-        "Employment": [
-          1,
-          2
-        ],
-        "Education": [
-          1,
-          3
-        ],
-        "Experience": [
           3,
           4
-        ]
+        ],
+        "id_user": 20,
+        "DateTimeCreate": "19/10/2018 02:20"
       },
-      "id": 6
+      "id": 9
     },
     {
       "vacancy": {
-        "VacancyShortTitle": "Проба М",
-        "VacancyDescription": "Проба М",
-        "VacancyBigDescription": "Проба М",
-        "SalaryFrom": "1",
-        "Salary": "11",
+        "bChecked": false,
+        "bInvisible": false,
+        "VacancyShortTitle": "Тестовая вакансия 5",
+        "VacancyDescription": "Описание Тестовая вакансия 5 с добавкой",
+        "VacancyBigDescription": "Полное описание Тестовая вакансия 5",
+        "SalaryFrom": "5",
+        "Salary": "5000",
         "Industry": [
           1,
+          2,
+          3,
+          28,
+          29,
           30
         ],
-        "DisplayPeriod": 1,
-        "City": 1,
+        "DisplayPeriod": 4,
+        "City": 6,
         "Schedule": [
+          1,
+          2,
           3,
-          4
+          4,
+          5
         ],
         "Employment": [
           1,
           2,
+          3,
+          4,
           5
         ],
         "Education": [
           1,
+          2,
+          3,
+          4,
           5
         ],
         "Experience": [
@@ -311,77 +456,11 @@
           2,
           3,
           4
-        ]
+        ],
+        "id_user": 20,
+        "DateTimeCreate": "19/10/2018 02:21"
       },
-      "id": 39
-    },
-    {
-      "vacancy": {
-        "VacancyShortTitle": "",
-        "VacancyDescription": "",
-        "VacancyBigDescription": "",
-        "SalaryFrom": "",
-        "Salary": "",
-        "Industry": [],
-        "DisplayPeriod": 1,
-        "City": 1,
-        "Schedule": [],
-        "Employment": [],
-        "Education": [],
-        "Experience": []
-      },
-      "id": 40
-    },
-    {
-      "vacancy": {
-        "VacancyShortTitle": "",
-        "VacancyDescription": "",
-        "VacancyBigDescription": "",
-        "SalaryFrom": "",
-        "Salary": "",
-        "Industry": [],
-        "DisplayPeriod": 1,
-        "City": 1,
-        "Schedule": [],
-        "Employment": [],
-        "Education": [],
-        "Experience": []
-      },
-      "id": 41
-    },
-    {
-      "vacancy": {
-        "VacancyShortTitle": "",
-        "VacancyDescription": "",
-        "VacancyBigDescription": "",
-        "SalaryFrom": "",
-        "Salary": "",
-        "Industry": [],
-        "DisplayPeriod": 1,
-        "City": 1,
-        "Schedule": [],
-        "Employment": [],
-        "Education": [],
-        "Experience": []
-      },
-      "id": 42
-    },
-    {
-      "vacancy": {
-        "VacancyShortTitle": "",
-        "VacancyDescription": "",
-        "VacancyBigDescription": "",
-        "SalaryFrom": "",
-        "Salary": "",
-        "Industry": [],
-        "DisplayPeriod": 1,
-        "City": 1,
-        "Schedule": [],
-        "Employment": [],
-        "Education": [],
-        "Experience": []
-      },
-      "id": 43
+      "id": 10
     }
   ],
   "City": [
