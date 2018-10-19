@@ -8,10 +8,10 @@
 <br>
   <div class="form-row">
     <div class="form-group col-md-3">
-      <input type="text" class="form-control" formControlName="inputVacancyShortTitle" id="inputVacancyShortTitle" placeholder="Наименование вакансии до 30 знаков.">
+      <input type="text" class="form-control" maxlength="50" formControlName="inputVacancyShortTitle" id="inputVacancyShortTitle" placeholder="Наименование вакансии до 50 знаков.">
 
       <div class="alert alert-danger" *ngIf="newVacancyForm.controls['inputVacancyShortTitle'].invalid && newVacancyForm.controls['inputVacancyShortTitle'].touched">
-        Ошибка в наименовании вакансии
+        Ошибка в количестве знаков в вакансии
       </div>
 
     </div>
@@ -23,7 +23,7 @@
   <div class="input-group-prepend">
     <span class="input-group-text"></span>
   </div>
-  <textarea class="form-control" aria-label="Описание вакансии до 4000 знаков" formControlName="inputVacancyDescription" id="inputVacancyDescription" placeholder="Описание вакансии до 4000 знаков"></textarea>
+  <textarea class="form-control" maxlength="4000" aria-label="Описание вакансии до 4000 знаков" formControlName="inputVacancyDescription" id="inputVacancyDescription" placeholder="Описание вакансии до 4000 знаков"></textarea>
 </div>
 
   <div class="alert alert-danger" *ngIf="newVacancyForm.controls['inputVacancyDescription'].invalid && newVacancyForm.controls['inputVacancyDescription'].touched">
@@ -40,7 +40,7 @@
     <div class="input-group-prepend">
       <span class="input-group-text"></span>
     </div>
-    <textarea class="form-control" aria-label="Полное описание вакансии до 2000 знаков" formControlName="inputVacancyBigDescription" id="inputVacancyBigDescription" placeholder="Полное описание вакансии до 2000 знаков"></textarea>
+    <textarea class="form-control" maxlength="2000" aria-label="Полное описание вакансии до 2000 знаков" formControlName="inputVacancyBigDescription" id="inputVacancyBigDescription" placeholder="Полное описание вакансии до 2000 знаков"></textarea>
   </div>
 
   <div class="alert alert-danger" *ngIf="newVacancyForm.controls['inputVacancyBigDescription'].invalid && newVacancyForm.controls['inputVacancyBigDescription'].touched">
