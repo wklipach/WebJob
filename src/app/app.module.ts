@@ -45,6 +45,9 @@ import { CvEditComponent } from './content/cv/cv-edit/cv-edit.component';
 import {CvEditService} from './services/cv-edit.service';
 import {VacanciesListService} from './services/vacancies-list.service';
 import { VacancyEditComponent } from './content/vacancies/vacancy-edit/vacancy-edit.component';
+import { MessageCenterComponent } from './account/message-center/message-center/message-center.component';
+import { MessagesComponent } from './account/message-center/messages/messages.component';
+import { InfoComponent } from './account/message-center/info/info.component';
 
 
 // определение маршрутов
@@ -72,6 +75,9 @@ const appRoutes: Routes = [
   {path: 'cv-previous', component: CvPreviousComponent},
   {path: 'cv-list', component: CvListComponent},
   {path: 'cv-edit', component: CvEditComponent},
+  {path: 'message-center', component: MessageCenterComponent},
+  {path: 'messages', component: MessagesComponent},
+  {path: 'info', component: InfoComponent},
   {path: '**', component: NotFoundComponent }
 ];
 
@@ -111,13 +117,16 @@ const appRoutes: Routes = [
     CvEditComponent,
     VacanciesComponent,
     VacancyEditComponent,
+    MessageCenterComponent,
+    MessagesComponent,
+    InfoComponent,
     NotFoundComponent
    ],
   entryComponents: [
     CvPreviousComponent
   ],
   providers: [AuthService, GuideService, NewVacancyService, TableVacancyService,
-              MoveService, PreviousService, NewcvService, CvListService, CvEditService,VacanciesListService],
+              MoveService, PreviousService, NewcvService, CvListService, CvEditService, VacanciesListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

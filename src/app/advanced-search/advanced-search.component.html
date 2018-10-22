@@ -30,10 +30,60 @@
         <ul>
           <li> <input type="checkbox" class="form-check-input" id="advSearchCheck1" title="Искать только в названии вакансии">Искать только в названии вакансии</li>
           <li><input type="checkbox" class="form-check-input" id="advSearchCheck2" title="Искать только в кратком описании вакансии">Искать только в кратком описании вакансии</li>
+<li>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Искать вакансии не старше
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">1 неделя</a>
+              <a class="dropdown-item" href="#">2 недели</a>
+              <a class="dropdown-item" href="#">1 месяц</a>
+              <a class="dropdown-item" href="#">2 месяца</a>
+              <a class="dropdown-item" href="#">3 месяца</a>
+            </div>
+          </div>
+</li>
+
         </ul>
       </div>
     </div>
   </div>
+
+  <div class="row">
+    <div class="form-group col-md-3">
+      <label for="inputCity">Город</label>
+      <select id="inputCity" formControlName="inputCity" class="form-control" title="Город">
+        <option  *ngFor="let lc of listCity" [value]="lc.name">
+          {{lc.name}}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2">
+      <label for="inputSalaryFrom" class="labelDescr">Заработная плата от</label>
+      <input type="text" class="form-control" formControlName="inputSalaryFrom" id="inputSalaryFrom" placeholder="Заработная плата от">
+    </div>
+  </div>
+    <div class="col-4">
+
+      <app-cv_industry></app-cv_industry>
+  </div>
+
+  <form [formGroup]="formEmployment">
+    <div class="row align-items-start" *ngFor="let item of listEmployment">
+      <input type="checkbox" class="form-check-input" formControlName="employmentCheck{{item.id}}" id="employmentCheck{{item.id}}" title={{item.name}}> {{item.name}}
+    </div>
+  </form>
+
+
+
+
+
+
+
+
 
 </div> <!-- Конец контейнера -->
 

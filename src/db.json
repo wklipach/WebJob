@@ -150,7 +150,7 @@
     {
       "UserName": "Работодатель",
       "EMail": "job@mail.ru",
-      "Password": "1",
+      "Password": "11",
       "bEmployer": true,
       "City": 2,
       "Zip": "111111",

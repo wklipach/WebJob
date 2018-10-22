@@ -71,8 +71,8 @@
   <div class="form-row">
       <ng-container *ngIf="bShowChangePassword">
         <div class="form-group col-md-3">
-          <input type="text" class="form-control" id="inputNewPassword1" formControlName="inputNewPassword1" placeholder="Новый пароль">
-          <input type="text" class="form-control" id="inputNewPassword2" formControlName="inputNewPassword2" placeholder="Повторить пароль">
+          <input type="password" class="form-control" id="inputNewPassword1" formControlName="inputNewPassword1" placeholder="Новый пароль">
+          <input type="password" class="form-control" id="inputNewPassword2" formControlName="inputNewPassword2" placeholder="Повторить пароль">
           <button type="submit" class="btn btn-primary" (click)="NewPassword()">Изменить пароль</button>
           <ng-container *ngIf="bPasswordNew">Пароль изменен</ng-container>
           <div class="alert-primary" *ngIf="bErrorRepeatPassword">Пароли не совпадают</div>
