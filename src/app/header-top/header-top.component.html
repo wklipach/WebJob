@@ -8,7 +8,7 @@
       <form class="form-inline" [formGroup]="headerTopForm">
             <input type="search" class="form-control" formControlName="inputSearch" id="inputSearch" placeholder="Искать" [value]="sElementMask">
             <button type="submit" class="btn btn-primary" (click)="find()">Поиск</button>
-        <button class="btn btn-primary" type="button" id="AdvSearch" title="Расширенный поиск">Расширенный поиск</button>
+        <button class="btn btn-primary" type="button" id="AdvSearch" title="Расширенный поиск" (click)="toAdvance()" >Расширенный поиск</button>
        </form>
       </div>
 

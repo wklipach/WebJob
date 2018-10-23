@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Guide} from '../class/guide';
-import {DisplayPeriodList, EducationList, EmploymentList, ExperienceList, IndustryList, ScheduleList} from '../class/GuideList';
+import {
+  DisplayPeriodList, EducationList, EmploymentList, ExperienceList, IndustryList, ScheduleList,
+  TimePlacementList
+} from '../class/GuideList';
 import {Observable, Subject} from 'rxjs';
 
 @Injectable()
@@ -13,12 +16,14 @@ export class GuideService {
   public scheduleNumber: number[];
   public experienceNumber: number[];
   public educationNumber: number[];
+  public timePlacementNumber: number[];
 
   private industryList: Guide[];
   private scheduleList: Guide[];
   private educationList: Guide[];
   private employmentList: Guide[];
   private experienceList: Guide[];
+  private timePlacementList: Guide[];
 
   private displayPeriodList: Guide[];
 
@@ -27,11 +32,15 @@ export class GuideService {
   private _onCheckScheduleList = new Subject<string>();
   private _onCheckExperienceList = new Subject<string>();
   private _onCheckEducationList = new Subject<string>();
+
   private _onCheckedElementIndustryList = new Subject<number[]>();
   private _onCheckedElementEmploymentList = new Subject<number[]>();
   private _onCheckedElementScheduleList = new Subject<number[]>();
   private _onCheckedElementExperienceList = new Subject<number[]>();
   private _onCheckedElementEducationList = new Subject<number[]>();
+
+  private _onCheckedElementTimePlacementList = new Subject<number[]>();
+  private _onCheckTimePlacementList = new Subject<string>();
 
   constructor( private http: HttpClient) {}
 
@@ -40,6 +49,14 @@ export class GuideService {
     this._onCheckEducationList.next(value);
     return this.educationNumber;
   }
+
+  public get onCheckTimePlacementList(): Observable<string> { return this._onCheckTimePlacementList.asObservable(); }
+  public startCheckTimePlacementList(value: string): number[] {
+    this._onCheckTimePlacementList.next(value);
+    return this.timePlacementNumber;
+  }
+
+
 
   public get onCheckExperienceList(): Observable<string> { return this._onCheckExperienceList.asObservable(); }
   public startCheckExperienceList(value: string): number[] {
@@ -162,6 +179,17 @@ export class GuideService {
   getExperienceList(): Guide[] {
     this.experienceList = ExperienceList;
     return this.experienceList.sort( ((a, b) => a.order - b.order ) );
+  }
+
+
+  getTimePlacementName(i: number): string {
+    this.timePlacementList = TimePlacementList;
+    return this.timePlacementList.find(value => value.id === i ).name;
+  }
+
+  getTimePlacementList(): Guide[] {
+    this.timePlacementList = TimePlacementList;
+    return this.timePlacementList.sort( ((a, b) => a.order - b.order ) );
   }
 
 //

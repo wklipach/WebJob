@@ -104,7 +104,10 @@ export class HeaderTopComponent implements OnInit {
       this.httpTvsService.triggerReopenVacancy(sMask);
     }
 
+  }
 
+  toAdvance() {
+    this.router.navigate(['/advanced-search']);
   }
 
 

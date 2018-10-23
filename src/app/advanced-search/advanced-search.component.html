@@ -1,20 +1,22 @@
 <app-header-top></app-header-top>
+
 <h3>Расширенный поиск</h3>
+
+<form [formGroup]="advancedSearchForm">
 
 <div class="container-fluid">
   <div class="row">
-    <form class="col-6">
+    <div class="col-6">
 
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Поиск">
+        <input type="text" class="form-control" placeholder="Поиск" formControlName="stringFind">
 
         <div class="input-group-btn">
-          <button class="btn btn-primary" type="submit"> Искать
+          <button class="btn btn-primary" (click)="submit()" > Искать
             <i class="fa fa-search" style="color: #fff"></i></button>
         </div>
       </div>
-
-    </form>
+    </div>
 
   </div>
 
@@ -24,73 +26,85 @@
     </div>
   </div>
 
+
+
   <div class="row">
     <div class="col-6">
       <div class="form-group form-check">
         <ul>
-          <li> <input type="checkbox" class="form-check-input" id="advSearchCheck1" title="Искать только в названии вакансии">Искать только в названии вакансии</li>
-          <li><input type="checkbox" class="form-check-input" id="advSearchCheck2" title="Искать только в кратком описании вакансии">Искать только в кратком описании вакансии</li>
-<li>
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Искать вакансии не старше
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">1 неделя</a>
-              <a class="dropdown-item" href="#">2 недели</a>
-              <a class="dropdown-item" href="#">1 месяц</a>
-              <a class="dropdown-item" href="#">2 месяца</a>
-              <a class="dropdown-item" href="#">3 месяца</a>
-            </div>
-          </div>
-</li>
 
-        </ul>
+
+          <input name="typeVac" type="radio" class="form-check-input" id="advSearchCheck1" (click)="findOnly(true,false)">Искать только в названии вакансии<br>
+          <input name="typeVac" type="radio" class="form-check-input" id="advSearchCheck2" (click)="findOnly(false,true)">Искать только в кратком описании вакансии<br>
+
+          <br>
+
+          <div class="dropdown open">
+              <button type="button" class="btn btn-primary  dropdown-toggle" id="dropdownTimePlacement"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Искать вакансии не старше
+              </button>
+
+            &nbsp;&nbsp;<label>{{resFind.timePlacement}}</label>
+
+              <div class="dropdown-menu" aria-labelledby="dropdownTimePlacement">
+                <div class="row align-items-start" *ngFor="let item of listTimePlacement; let i = index;">
+                  <a class="dropdown-item" (click)="timePlacement(item.name, i+1)">{{item.name}}</a>
+                </div>
+                <a class="dropdown-item" (click)="timePlacement('',-1)">Отмена</a>
+             </div>
+        </div>
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+
+
+
+    <div class="row">
+      <div class="form-group col-md-3">
+        <label for="inputCity">Город</label>
+        <select id="inputCity" class="form-control" title="Город" formControlName="inputCity">
+          <option  *ngFor="let lc of listCity" [value]="lc.name">
+            {{lc.name}}
+          </option>
+        </select>
       </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="form-group col-md-3">
-      <label for="inputCity">Город</label>
-      <select id="inputCity" formControlName="inputCity" class="form-control" title="Город">
-        <option  *ngFor="let lc of listCity" [value]="lc.name">
-          {{lc.name}}
-        </option>
-      </select>
+
+
+    <div class="row">
+      <div class="col-2">
+        <label for="inputSalary" class="labelDescr">Заработная плата от</label>
+        <input type="text" class="form-control" id="inputSalary" placeholder="Заработная плата до" formControlName="inputSalary">
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-2">
-      <label for="inputSalaryFrom" class="labelDescr">Заработная плата от</label>
-      <input type="text" class="form-control" formControlName="inputSalaryFrom" id="inputSalaryFrom" placeholder="Заработная плата от">
-    </div>
-  </div>
+
+  <div class="container">
     <div class="col-4">
-
+      <!-- Отрасль -->
       <app-cv_industry></app-cv_industry>
+      <!-- Занятость -->
+      <app-cv-employment></app-cv-employment>
+      <!-- график работы -->
+      <app-cv-schedule></app-cv-schedule>
+      <!-- Опыт работы -->
+      <app-cv-experience></app-cv-experience>
+      <!-- Образование -->
+      <app-cv-education></app-cv-education>
+    </div>
   </div>
 
-  <form [formGroup]="formEmployment">
-    <div class="row align-items-start" *ngFor="let item of listEmployment">
-      <input type="checkbox" class="form-check-input" formControlName="employmentCheck{{item.id}}" id="employmentCheck{{item.id}}" title={{item.name}}> {{item.name}}
-    </div>
+
+
+</div>
+
+
   </form>
 
 
-
-
-
-
-
-
-
-</div> <!-- Конец контейнера -->
-
-
-
-
-
-<br><br><br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br><br>
 
 <app-footer></app-footer>

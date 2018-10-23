@@ -76,6 +76,11 @@ export const ExperienceList: Guide[] = [
   { id: 4, order: 4, name: 'Более 5 лет' }
 ];
 
-
-
-
+//срок размещения
+export const TimePlacementList: Guide[] = [
+  { id: 1, order: 1, name: '1 неделя' },
+  { id: 2, order: 2, name: '2 недели' },
+  { id: 3, order: 3, name: '1 месяц' },
+  { id: 4, order: 4, name: '2 месяца' },
+  { id: 5, order: 5, name: '3 месяца' },
+];
