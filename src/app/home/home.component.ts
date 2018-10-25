@@ -6,6 +6,8 @@ import {isNullOrUndefined} from 'util';
 import {Router} from '@angular/router';
 import {MoveService} from '../services/move.service';
 import {Subscription} from 'rxjs';
+import {AppComponent} from '../app.component';
+
 
 
 @Component({
@@ -18,6 +20,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   myDataVacancy: dataVacancy[];
   private dvSubscription: Subscription;
   private getTableVacancy: Subscription;
+  private sbReopenVacancyAdvanced: Subscription;
   private sMask: string = '';
 
   constructor(private httpService: TableVacancyService, private router: Router, private moveS: MoveService) {
@@ -29,19 +32,40 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.sMask = window.localStorage.getItem('keyFind');
     }
     window.localStorage.removeItem('keyFind');
-    //
+
+
     this.httpService.onReopenVacancy.subscribe((value: string) => this.getVacancy(value));
-    // запускаем событие "получить вакансии", в первый раз с пустой маской
-    this.httpService.triggerReopenVacancy(this.sMask);
-    // записываем значение маски в элемент, так как при перегрузке страницы он стирается ??????
-    this.moveS.setStringFind(this.sMask);
+
+
+
+    //если не было расширенного поиска вакансий делаем обычный поиск, иначе расширенный запускается из advanced-search.component
+    if ( this.httpService.getMessageAdvancedFindObj() === null ) {
+      // запускаем событие "получить вакансии", в первый раз с пустой маской
+      this.httpService.triggerReopenVacancy(this.sMask);
+      // записываем значение маски в элемент, так как при перегрузке страницы он стирается ??????
+      this.moveS.setStringFind(this.sMask);
+    } else
+    {
+      let advancedFindObj = this.httpService.getMessageAdvancedFindObj();
+      this.httpService.clearAdvancedFindObj();
+      this.getVacancyAdvanced(advancedFindObj);
+    }
+
 
   }
 
-  getVacancy(sMask: string) {
+  getVacancyAdvanced(advancedFindObj: any) {
+    console.log ('событие вызвало перемещение объекта', advancedFindObj);
+
+    //выводим всю таблицу по сути это заглушка вместо продвинутого поиска
+    this.getVacancy('');
+  }
+
+
+
+   getVacancy(sMask: string) {
     return this.getTableVacancy = this.httpService.getTableVacancy(sMask).subscribe(
       (data: dataVacancy[]) => {
-
         // это получаем город из нового вызываемого сервиса
         this.httpService.getCity().subscribe((city: City[]) => {
 
@@ -90,11 +114,15 @@ export class HomeComponent implements OnInit, OnDestroy {
 
 
     if (typeof this.dvSubscription !== 'undefined') {
-           this.dvSubscription.unsubscribe();
+      this.dvSubscription.unsubscribe();
     }
 
     if (typeof this.getTableVacancy !== 'undefined') {
       this.getTableVacancy.unsubscribe();
+    }
+
+    if (typeof this.sbReopenVacancyAdvanced !== 'undefined') {
+      this.sbReopenVacancyAdvanced.unsubscribe();
     }
 
   }

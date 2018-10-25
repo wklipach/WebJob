@@ -4,6 +4,8 @@ import {Guide} from '../class/guide';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {City} from '../class/City';
 import {Vacancy} from '../class/Vacancy';
+import {TableVacancyService} from '../services/table-vacancy.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-advanced-search',
@@ -31,7 +33,9 @@ export class AdvancedSearchComponent implements OnInit {
     City: number;
   }
 
-  constructor(private gs: GuideService) {
+  constructor(private gs: GuideService,
+              private router: Router,
+              private httpTvsService: TableVacancyService) {
     this.listTimePlacement = gs.getTimePlacementList();
     this.resFind = {stringFind: '',
                     timePlacement: '',
@@ -109,8 +113,13 @@ export class AdvancedSearchComponent implements OnInit {
     this.resFind.City = city.id;
     this.resFind.stringFind = this.advancedSearchForm.controls['stringFind'].value;
 
-    console.log('this.resFind',this.resFind);
+    //отправляем событие, словит его app-component
+    this.httpTvsService.triggerReopenVacancyAdvanced(this.resFind);
+    this.router.navigate(['/']);
+
+
   }
+
 
 
 }
