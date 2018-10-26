@@ -6,10 +6,10 @@
   text-align: left;
   background: #FFF;
   cursor: pointer;
-  }
+}
 .menu-header:hover{
   background: #FFF;
-  }
+}
 ul{
   position: absolute;
   margin: 0;
@@ -25,7 +25,7 @@ li{
   text-align: center;
   background: #ddd;
   cursor: pointer;
-  }
+}
 li:hover{
   background: #FFF;
 }
@@ -35,7 +35,7 @@ li:hover{
 }
 
 .menu-header:hover + ul{
-display: block;
+  display: block;
 }
 ul:hover{
   display: block;
@@ -45,7 +45,7 @@ ul:hover{
 
 
 .top-block{
- /* background: url(/src/assets/img/bg-top-block.gif) repeat 0 0; */
+  /* background: url(/src/assets/img/bg-top-block.gif) repeat 0 0; */
   background-color: #D9D9D9;
   border-bottom: 4px solid #F2F2F0;
   padding:6px 0;
@@ -59,7 +59,7 @@ h1{
 
 h1:hover{
   color: #00A4E4;
- }
+}
 
 .myform{
   color: red;
@@ -101,7 +101,7 @@ h1:hover{
 }
 #nav li a:hover{
   color:#fff;
- }
+}
 
 /*--- ВЫПАДАЮЩИЕ ПУНКТЫ ---*/
 #nav ul{
@@ -146,7 +146,7 @@ h1:hover{
   color:#03abe1;
   font-size:18px;
   padding-left:20px;
-  }
+}
 
 .fa-caret-down::after{
   font-size: 16px;
@@ -154,8 +154,9 @@ h1:hover{
   padding-left:5px ;
 }
 .fa-envelope{
-   padding: 1px 5px;
- }
+  padding: 1px 5px;
+}
 .fa-bell{
   padding: 1px 5px;
 }
+

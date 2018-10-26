@@ -1,3 +1,47 @@
-<p>
-  info works!
-</p>
+<div class="wrapper">
+
+  <div class="menu-top">
+
+
+        <img src="/assets/img/user.png" alt="Welcome" title="Welcome">
+        <span class="hello">
+      Здравствуйте, {{ htUserName }} !
+    </span>
+    <img src="/assets/img/arrow-down.png" alt="Открыть меню пользователя" title="Mеню пользователя">
+    <img class="alerts" src="/assets/img/envelope.png" alt="Новые сообщения" title="Новые сообщения">
+    <img class="alerts" src="/assets/img/bell.png" alt="Новые события" title="Новые события">
+<div class="langselect">
+    <img src="/assets/img/flag-russia.png" alt="Русский" title="Руский">
+    <img src="/assets/img/arrow-down.png" alt="Выбрать язык" title="Выбрать язык">
+  </div>
+  </div>
+
+
+
+
+
+
+  <div class="t2">
+    <ul>
+   <li class="logo">MUCV</li>
+    <li class="search">
+    <input type="search" class="inputSearch" formControlName="inputSearch" id="inputSearch" placeholder="Поиск вакансий.." [value]="sElementMask">
+  </li>
+      <li><button type="submit" class="btn-search" (click)="find()">Поиск</button></li>
+      <li> <button class="btn-advsearch" type="button" id="AdvSearch" title="Расширенный поиск" (click)="toAdvance()" >Расширенный поиск</button></li>
+     </ul>
+
+</div>
+<br><br><br><br><br><br>
+
+
+  <ul>
+    <li>Зазор</li>
+    <li>между</li>
+    <li>блоками</li>
+  </ul>
+
+
+
+</div>
+

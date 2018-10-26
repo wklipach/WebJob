@@ -1,0 +1,93 @@
+.wrapper{
+  width: 100%;
+  height: 180px;
+  margin: 0 auto;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.menu-top{
+  width: 1170px;
+  height: 59px;
+  margin: 0 auto;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: solid 1px;
+
+}
+
+
+.hello{
+  padding-top: 15px;
+  font-size: 16px;
+  font-family: "ProximaNova";
+  color: rgb(68, 75, 84);
+
+}
+.user-login{
+  width: 30%;
+  background-color: yellow;
+}
+img{
+  padding: 0 6px;
+}
+.langselect{
+  text-align: right;
+}
+
+
+
+.t2 {
+  width: 1170px;
+  height: 120px;
+  margin: 0 auto;
+}
+li .logo {
+  font-size: 48px;
+  font-family: "ArialRoundedMTBold";
+  color: rgb(68, 75, 84);
+  text-align: left;
+  position: absolute;
+}
+li .search{
+  padding: 0 3px;
+}
+.inputSearch{
+  border-width: 1px;
+  border-color: rgb(184, 184, 184);
+  border-style: solid;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  left: 286px;
+  top: 95px;
+  width: 682px;
+  height: 48px;
+}
+li {
+  display: inline-block;
+  width: 180px;
+  line-height: 120px;
+  font-size: 32px;
+  text-align: center;
+}
+.btn-search{
+  position: absolute;
+  font-family: "ProximaNova";
+  font-size: 16px;
+  background-color: rgb(2, 98, 210);
+  border-radius: 3px;
+  color: rgb(255, 255, 255);
+  line-height: 2.25;
+  text-align: left;
+  width: 108px;
+  height: 50px;
+}
+.btn-advsearch{
+  position: absolute;
+  font-family: "ProximaNova";
+  font-size: 16px;
+  color: rgb(130, 135, 141);
+  line-height: 2.25;
+  text-align: left;
+}
