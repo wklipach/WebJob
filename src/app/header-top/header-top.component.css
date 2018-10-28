@@ -1,3 +1,107 @@
+h1 {
+  font-size: 48px;
+  font-family: "ArialRoundedMTBold";
+  color: #484c54;
+  text-align: left;
+  text-decoration: none;
+}
+h1:hover{
+  cursor: pointer;
+  color: red;
+  text-decoration: none;
+}
+a{
+  text-decoration: none;
+}
+.serchinput{
+  margin: 0 1px 0 1px;
+}
+.box {
+  display: inline-block;
+}
+.wrapper{
+  width: 100%;
+  height: 180px;
+  margin: 0 auto;
+  padding-right: 0;
+  padding-left: 0;
+}
+.menu-top{
+  width: 1400px;
+  height: 59px;
+  margin: 0 auto;
+  vertical-align: middle;
+/*  border-bottom: solid 1px; */
+}
+.hello{
+  padding-top: 15px;
+  font-size: 16px;
+  font-family: "ProximaNova";
+  color: rgb(68, 75, 84);
+}
+.user-login{
+  width: 30%;
+  background-color: yellow;
+}
+img{
+  padding: 0 6px;
+}
+.langchoice{
+  font-size: 14px;
+  font-family: "Proxima Nova";
+  color: rgb(68, 75, 84);
+  line-height: 2.57;
+  text-align: left;
+  position: absolute;
+  padding:0 2px;
+}
+.menu-bottom{
+  width: 1170px;
+  height: 120px;
+  margin: 0 auto;
+}
+.box .search{
+  padding: 0 3px;
+}
+.box .inputSearch{
+  border-width: 1px;
+  border-color: #b7b7b7;
+  border-style: solid;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  left: 286px;
+  top: 95px;
+  width: 682px;
+  height: 48px;
+}
+.box .btn-search{
+  font-family: "ProximaNova";
+  font-size: 16px;
+  background-color: #3862ce;
+  border-radius: 3px;
+  color: rgb(255, 255, 255);
+  line-height: 2.25;
+  text-align: left;
+  width: 108px;
+  height: 50px;
+}
+.box .btn-advsearch{
+  font-family: "ProximaNova";
+  font-size: 16px;
+  color: #484d55;
+  background-color: #ffffff;
+  border-color: #d46117;
+  border-radius: 3px;
+  border-style: solid;
+  line-height: 2.25;
+  text-align: center;
+  width: 200px;
+  height: 50px;
+}
+.serchinput{
+  margin: 0 1px 0 1px;
+}
+
 /*  Меню  */
 .menu-header{
   width: 200px;
@@ -42,121 +146,3 @@ ul:hover{
 }
 
 /*  Закончили меню  */
-
-
-.top-block{
-  /* background: url(/src/assets/img/bg-top-block.gif) repeat 0 0; */
-  background-color: #D9D9D9;
-  border-bottom: 4px solid #F2F2F0;
-  padding:6px 0;
-}
-
-h1{
-  color: red;
-  font-weight: bold;
-  font-size: 45px;
-}
-
-h1:hover{
-  color: #00A4E4;
-}
-
-.myform{
-  color: red;
-}
-.serchinput{
-  margin: 0 1px 0 1px;
-}
-
-.navbar-header{
-  padding-top: 1px;
-}
-
-.navbar-nav{
-  margin: 0;
-}
-.langselect{
-  margin: 5px 1px;
-}
-
-/* cтили навигации*/
-#nav{
-  float:left;
-  width:100%;
-  list-style:none;
-
-  margin:10px 0 0 30px;
-}
-#nav li{
-  float:left;
-  margin-right:10px;
-  position:relative;
-  display:block;
-}
-
-#nav li a{
-  display:block;
-  padding:5px;
-  color:#005ea8;
-}
-#nav li a:hover{
-  color:#fff;
-}
-
-/*--- ВЫПАДАЮЩИЕ ПУНКТЫ ---*/
-#nav ul{
-  list-style:none;
-  position:absolute;
-  left:-9999px; /* Скрываем за экраном, когда не нужно (данный метод лучше, чем display:none;) */
-  opacity:0; /* Устнавливаем начальное состояние прозрачности */
-  -webkit-transition:0.25s linear opacity; /* В Webkit выпадающие пункты будут проявляться */
-  background:#fff;
-
-  background-color: rgba(255, 255, 255, 0.9);
-
-
-
-}
-#nav ul li{
-  padding-top:1px; /* Вводим отступ между li чтобы создать иллюзию разделенных пунктов меню */
-  float:none;
-
-}
-#nav ul a{
-  white-space:nowrap; /* Останавливаем перенос текста и создаем многострочный выпадающий пункт */
-  color:#005ea8;
-  font-size:18px;
-  padding-left:30px;
-
-}
-#nav li:hover ul{ /* Выводим выпадающий пункт при наведении курсора */
-  left:0; /* Приносим его обратно на экран, когда нужно */
-  opacity:1; /* Делаем непрозрачным */
-  z-index:101;
-}
-#nav li:hover a{ /* Устанавливаем стили для верхнего уровня, когда выводится выпадающий список */
-
-}
-#nav li:hover ul a{ /* Изменяем некоторые стили верхнего уровня при выводе выпадающего пункта */
-  text-decoration:none;
-  -webkit-transition:-webkit-transform 0.075s linear;
-}
-#nav li:hover ul li a:hover{
-  white-space:nowrap;
-  color:#03abe1;
-  font-size:18px;
-  padding-left:20px;
-}
-
-.fa-caret-down::after{
-  font-size: 16px;
-  color: white;
-  padding-left:5px ;
-}
-.fa-envelope{
-  padding: 1px 5px;
-}
-.fa-bell{
-  padding: 1px 5px;
-}
-
