@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'ArialRoundedMTBold';
+  src: local('ArialRoundedMTBold'),
+  url('../src/assets/fonts/ARLRDBD.TTF') format('ttf');
+}
+
+@font-face {
+  font-family: 'ProximaNovaRg';
+  src: local('ProximaNovaRg'),
+  url('../src/assets/fonts/ProximaNova-Regular.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'ProximaNovaLt';
+  src: local('ProximaNovaLt'),
+  url('../src/assets/fonts/ProximaNova-Light.ttf') format('ttf');
+}
+
+

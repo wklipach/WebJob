@@ -34,10 +34,11 @@ a{
 /*  border-bottom: solid 1px; */
 }
 .hello{
-  padding-top: 15px;
-  font-size: 16px;
-  font-family: "ProximaNova";
-  color: rgb(68, 75, 84);
+  font-size: 48px;
+  font-family: "ProximaNovaRg";
+  color: #484c54;
+  text-align: left;
+  text-decoration: none;
 }
 .user-login{
   width: 30%;
