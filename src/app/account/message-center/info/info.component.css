@@ -1,12 +1,30 @@
 
 .box {
   display: inline-block;
-}
-.box2 {
-  position: inherit;
-
-  width:350px;
-  height: 50px;
+  width:250px;
+  height: 150px;
   background-color: #00BBFF;
   color: white;
+
+}
+.box2 {
+  display: inline-block;
+  width:250px;
+  height: 150px;
+  background-color: #00BBFF;
+  color: white;
+  text-align: left;
+
+
   }
+.a111{
+
+  margin-top: 10px;
+  color: #403A3A;
+  background-color: #F74933;
+
+}
+.wrapper{
+  height: 300px;
+  background-color: yellow;
+}
