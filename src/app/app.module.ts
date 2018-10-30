@@ -48,6 +48,7 @@ import { VacancyEditComponent } from './content/vacancies/vacancy-edit/vacancy-e
 import { MessageCenterComponent } from './account/message-center/message-center/message-center.component';
 import { MessagesComponent } from './account/message-center/messages/messages.component';
 import { InfoComponent } from './account/message-center/info/info.component';
+import { MessageComponent } from './account/message-center/message/message.component';
 
 
 // определение маршрутов
@@ -77,6 +78,7 @@ const appRoutes: Routes = [
   {path: 'cv-edit', component: CvEditComponent},
   {path: 'message-center', component: MessageCenterComponent},
   {path: 'messages', component: MessagesComponent},
+  {path: 'message', component: MessageComponent},
   {path: 'info', component: InfoComponent},
   {path: '**', component: NotFoundComponent }
 ];
@@ -120,7 +122,8 @@ const appRoutes: Routes = [
     MessageCenterComponent,
     MessagesComponent,
     InfoComponent,
-    NotFoundComponent
+    MessageComponent,
+    NotFoundComponent,
    ],
   entryComponents: [
     CvPreviousComponent
