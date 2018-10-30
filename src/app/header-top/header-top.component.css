@@ -32,7 +32,9 @@ a{
   height: 59px;
   margin: 0 auto;
   vertical-align: middle;
-/*  border-bottom: solid 1px; */
+  border-bottom: solid 1px;
+/*  border-color: rgb(184, 184, 184); */
+  border-color: #b8b8b8;
 }
 .hello{
   font-size: 16px;
@@ -54,11 +56,10 @@ img{
   color: rgb(68, 75, 84);
   line-height: 2.57;
   text-align: left;
-  position: absolute;
   padding:0 2px;
 }
 .menu-bottom{
-  width: 1170px;
+  width: 1400px;
   height: 120px;
   margin: 0 auto;
 }
@@ -70,7 +71,7 @@ img{
   border-color: #b7b7b7;
   border-style: solid;
   border-radius: 3px;
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   left: 286px;
   top: 95px;
   width: 682px;
@@ -106,9 +107,11 @@ img{
 
 /*  Меню  */
 .menu-header{
+  font-family: "ProximaNovaRg";
   width: 200px;
   height: 45px;
   line-height: 45px;
+  color: #484c54;
   text-align: left;
   background: #FFF;
   cursor: pointer;

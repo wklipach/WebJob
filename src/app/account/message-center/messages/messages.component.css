@@ -1,0 +1,27 @@
+.wrapper{
+  width: 100%;
+  height: 100px;
+  margin: 0 auto 5% auto;
+  padding-right: 0;
+  padding-left: 0;
+}
+.box {
+  width: 150px;
+  position: relative;
+  display: inline-block;
+  padding: 0 3px;
+  color: #03abe1;
+  background-color: #DFDFDF;
+  border-right:1px;
+  border-color: #000;
+}
+p{
+  color: #000;
+  height:60px;
+  background-color: #FFFFFF;
+
+}
+span{
+  border-bottom: 1px solid;
+  border-color: #4D4D4d;
+}
