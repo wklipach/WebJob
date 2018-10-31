@@ -23,7 +23,6 @@ import { HomeComponent } from './home/home.component';
 import { CvComponent } from './content/cv/cv.component';
 import { NewVacancyComponent } from './content/vacancies/new-vacancy/new-vacancy.component';
 import { AtempComponent } from './atemp/atemp.component';
-import { NotFoundComponent } from './not-found/not-found.component';
 import {GuideService} from './services/guide-service.service';
 import { VacanciesComponent } from './content/vacancies/vacancies/vacancies.component';
 import {NewVacancyService} from './services/new-vacancy.service';
@@ -49,6 +48,7 @@ import { MessageCenterComponent } from './account/message-center/message-center/
 import { MessagesComponent } from './account/message-center/messages/messages.component';
 import { InfoComponent } from './account/message-center/info/info.component';
 import { MessageComponent } from './account/message-center/message/message.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 // определение маршрутов
