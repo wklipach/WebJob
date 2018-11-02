@@ -1,5 +1,90 @@
 <div class="wrapper">
 
+  <div class="top" *ngIf="bConnected">
+
+
+    <div class="box">
+      <img src="/assets/img/user.png" alt="Welcome" title="Welcome">
+      <span class="hello">Здравствуйте,&nbsp;</span>
+    </div>
+
+    <div class="box">
+      <div class="menu-header">{{ htUserName }}!
+        <span> <img src="/assets/img/arrow-down.png" alt="Открыть меню пользователя" title="Mеню пользователя"></span>
+      </div>
+
+      <ul>
+        <li *ngIf = "bEmployer"><a routerLink="/account-employer" routerLinkActive="active">Данные работодателя</a></li>
+        <li *ngIf = "bEmployer"><a routerLink="/new-vacancy" routerLinkActive="active">Новая вакансия</a></li>
+        <li *ngIf = "bEmployer"><a routerLink="/vacancies" routerLinkActive="active">Все вакансии</a></li>
+        <li *ngIf = "bEmployer"><a routerLink="/advanced-search" routerLinkActive="active">Поиск сотрудников</a></li>
+        <li *ngIf="!bEmployer"><a routerLink="/account-employee" routerLinkActive="active">Данные соискателя</a></li>
+        <li *ngIf="!bEmployer"><a routerLink="/cv-list" routerLinkActive="active">Мои резюме</a></li>
+        <li *ngIf = "bEmployer"><a routerLink="/message-center" routerLinkActive="active">Центр сообщений</a></li>
+        <li><button class="btn btn-primary" (click)="logout()">Выйти</button></li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <img class="alerts" src="/assets/img/envelope.png" alt="Новые сообщения" title="Новые сообщения">
+      <img class="alerts" src="/assets/img/bell.png" alt="Новые события" title="Новые события">
+    </div>
+
+    <div class="box">
+      <div class="menu-header"><span class="langchoice">RU</span>
+        <img src="/assets/img/flag-russia.png" alt="Русский" title="Руский">
+        <img src="/assets/img/arrow-down.png" alt="Выбор языка" title="Выбор языка">
+      </div>
+      <ul>
+        <li><img src="/assets/img/flag-russia.png" alt="Русский" title="Руский">Руский</li>
+        <li><img src="/assets/img/flag-english.png" alt="Английский" title="Английский">Английский</li>
+      </ul>
+    </div>
+
+    <div class="menu-top" *ngIf="!bConnected">
+      <button class="btn btn-primary" (click)="login()">Войти</button>
+      <a routerLink="/register" routerLinkActive="active">Регистрация</a>
+    </div>
+
+  </div>
+
+
+  <div class="bottom">
+    <div class="box">
+      <a routerLink="" title="На главную">
+        <h1>MUCV</h1></a>
+    </div>
+
+
+    <form [formGroup]="headerTopForm">
+      <div class="box">
+        <input type="search" class="inputSearch" formControlName="inputSearch" id="inputSearch" placeholder="Поиск вакансий.." [value]="sElementMask">
+
+
+
+        <div class="btn-search"> <button type="submit" class="btn-search" (click)="find()">
+          <img src="/assets/img/icon-search.png" alt="Найти" title="Поиск">Найти</button>
+        </div>
+      </div>
+
+
+        <button class="btn-advsearch" type="button" id="AdvSearch" title="Расширенный поиск" (click)="toAdvance()" >Расширенный поиск</button>
+
+    </form>
+
+  </div>
+
+</div>
+
+
+
+
+{{sNullValueFind}}
+
+<!--
+
+<div class="wrapper">
+
    <div class="menu-top" *ngIf="bConnected">
 
 
@@ -77,3 +162,5 @@
 
 
 {{sNullValueFind}}
+
+-->

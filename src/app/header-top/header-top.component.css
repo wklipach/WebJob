@@ -13,10 +13,25 @@ h1:hover{
 a{
   text-decoration: none;
 }
-.serchinput{
+.inputSearch{
+  display: inline-block;
+  position: relative;
   margin: 0 1px 0 1px;
+  top: -85px;
+  left: 160px;
+
 }
 .box {
+  position: relative;
+  display: inline-block;
+  background-color: yellow;
+}
+.box2{
+  position: relative;
+  display: inline-block;
+  background-color: #03abe1;
+}
+.box-search{
   position: relative;
   display: inline-block;
   background-color: yellow;
@@ -28,7 +43,7 @@ a{
   padding-right: 0;
   padding-left: 0;
 }
-.menu-top{
+.top{
   width: 1400px;
   height: 59px;
   margin: 0 auto;
@@ -41,7 +56,9 @@ a{
   font-size: 16px;
   font-family: "ProximaNovaRg";
   color: #484c54;
-  text-align: left;
+  left: 7px;
+  position: relative;
+  top: -7px;
   text-decoration: none;
 }
 .user-login{
@@ -59,7 +76,7 @@ img{
   text-align: left;
   padding:0 2px;
 }
-.menu-bottom{
+.bottom{
   width: 1400px;
   height: 120px;
   margin: 0 auto;
@@ -102,14 +119,21 @@ img{
   width: 200px;
   height: 50px;
 }
-.serchinput{
-  margin: 0 1px 0 1px;
-}
+
+
+
+
+
+
+
+
+
 
 /*  Меню  */
 .menu-header{
   font-family: "ProximaNovaRg";
-  width: 200px;
+  width: auto;
+  max-width: 200px;
   height: 45px;
   line-height: 45px;
   color: #484c54;
