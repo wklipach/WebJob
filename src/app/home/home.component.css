@@ -1,14 +1,199 @@
-.row{
-  border-bottom: dotted 2px;
-  border-color: #dddddd;
+.wrapper{
+  display: inline-block;
+  position: relative;
+  font-family: "ProximaNovaRg";
+  font-size: 16px;
+  width: 100%;
+  margin: 0 auto;
+  padding-right: 0;
+  padding-left: 0;
 }
-.row:hover{
-  background-color: lightblue;
+.top{
+  width: 1170px;
+  height: 79px;
+  margin: 0 auto;
+  border-bottom: solid 1px;
+  border-color: #b7b7b7;
+  /*vertical-align: middle; */
+  font-size: 30px;
+  font-family: "Proxima Nova";
+  color: rgb(68, 75, 84);
+  text-align: left;
+  padding-top: 20px;
+}
+.vacancy-box{
+  width: 1170px;
+  height: 330px;
+  margin: 0 auto;
+  border-bottom: solid 1px;
+  border-color: #b7b7b7;
+  /*vertical-align: middle; */
+  font-size: 30px;
+  font-family: "Proxima Nova";
+  color: rgb(68, 75, 84);
+  text-align: left;
+
+}
+.vacancy-box:hover{
+  background-color: #f8f8f8;
   cursor: pointer;
 }
-.bigDescr{
-font-size: 0.9em;
+.title{
+  display: inline-block;
+  position: absolute;
+  font-size: 20px;
+  font-family: "Proxima Nova";
+  color: rgb(2, 98, 210);
+  text-align: left;
+  width: 600px;
+  margin-top: 16px;
+  margin-left:15px;
 }
-.solar{
-  color: red;
+.income{
+  display: inline-block;
+  position: absolute;
+  font-size: 20px;
+  font-family: "Proxima Nova";
+  color: rgb(242, 97, 0);
+  text-align: right;
+  width: 190px;
+  margin-top: 17px;
+  margin-left: 972px;
 }
+.city{
+  display: inline-block;
+  position: absolute;
+  text-align: left;
+  width:12px;
+  margin-top: 45px;
+  margin-left: 15px;
+  overflow: hidden;
+}
+.city-name{
+  display: inline-block;
+  position: absolute;
+  font-size: 18px;
+  font-family: "Proxima Nova";
+  color: rgb(68, 75, 84);
+  text-align: left;
+  margin-top: 41px;
+  margin-left: 42px;
+  overflow: hidden;
+}
+.logotype-company{
+  display: inline-block;
+  position: absolute;
+  margin-top: 85px;
+  margin-left: 15px;
+}
+.company-name{
+  display: inline-block;
+  position: absolute;
+  font-size: 18px;
+  font-family: "Proxima Nova";
+  color: rgb(68, 75, 84);
+  text-align: left;
+  margin-top: 93px;
+  margin-left: 208px;
+  overflow: hidden;
+}
+.description{
+  display: inline-block;
+  position: absolute;
+  font-size: 16px;
+  color: rgb(68, 75, 84);
+  width: 1130px;
+  height: 80px;
+  text-align: left;
+  margin-top: 143px;
+  margin-left: 15px;
+  padding-right: 20px;
+  overflow: auto;
+}
+
+.btn-response {
+  display: inline-block;
+  position: absolute;
+  border-radius: 3px;
+  background-color: rgb(2, 98, 210);
+  width: 155px;
+  height: 50px;
+  color: rgb(255, 255, 255);
+  border-color: #054086;
+  border-width: 1px;
+  border-style: solid;
+  margin-top: 242px;
+  margin-left: 15px;
+}
+.btn-favorites{
+  display: inline-block;
+  position: absolute;
+  color: #484d55;
+  background-color: #ffffff;
+  border-color: #d46117;
+  border-color: rgb(242, 97, 0);
+  border-radius: 3px;
+  border-width: 1px;
+  border-style: solid;
+  text-align: center;
+  width: 156px;
+  height: 48px;
+  margin-top: 243px;
+  margin-left: 172px;
+}
+.btn-favorites:hover{
+  background-color:#f26100;
+  color: white;
+
+}
+.btn-hide{
+  display: inline-block;
+  position: absolute;
+  color: #484d55;
+  background-color: #ffffff;
+  border-color: #d46117;
+  border-color: rgb(242, 97, 0);
+  border-radius: 3px;
+  border-width: 1px;
+  border-style: solid;
+  text-align: center;
+  width: 156px;
+  height: 48px;
+  margin-top: 243px;
+  margin-left: 330px;
+}
+.btn-hide:hover{
+  background-color:#f26100;
+  color: white;
+
+}
+.line{
+  width: 1170px;
+  height: 79px;
+  margin: 0 auto;
+  font-size: 13px;
+}
+
+.number{
+  position: absolute;
+  visibility:hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

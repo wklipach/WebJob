@@ -1,4 +1,58 @@
 <app-header-top></app-header-top>
+<div class="wrapper">
+  <div class="top">
+    Вакансии
+  </div>
+  <div class="vacancy-box" *ngFor="let curVacancy of myDataVacancy; let i = index" (click)="MyMethod(curVacancy.id)">
+    <div class="number">{{i+1}}</div>
+    <div class="title">{{curVacancy['vacancy'].VacancyShortTitle}}</div>
+    <div class="income">
+      {{curVacancy['vacancy'].SalaryFrom}}-{{curVacancy['vacancy'].Salary}} Р</div>
+    <img class="city" src="/assets/img/city.png" alt="Город">
+    <span class="city-name">{{curVacancy.CityName}}</span>
+    <img class="logotype-company" src="/assets/img/iport-logo.png" alt="Логотип компании">
+    <span class="company-name">iPort</span>
+    <span class="description">{{curVacancy['vacancy'].VacancyBigDescription}}</span>
+    <button class="btn-response" type="button" id="response" title="Откликнуться" (click)="response()" >Откликнуться</button>
+    <button class="btn-favorites" type="button" id="favorites" title="В избранное" (click)="favorites()" >В избранное</button>
+    <button class="btn-hide" type="button" id="hide" title="Не показывать" (click)="favorites()" >Не показывать</button>
+  </div>
+  <div class="line"></div>
+</div>
+
+
+
+<!--
+
+
+  <div class="top">
+Вакансии
+  </div>
+<div class="vacancy-box">
+  <div class="title">Менеджер по подбору персонала в крупной компании</div>
+  <div class="income">100000-150000 Р</div>
+  <img class="city" src="/assets/img/city.png" alt="Город">
+  <span class="city-name">Санкт-Петербург</span>
+  <img class="logotype-company" src="/assets/img/iport-logo.png" alt="Логотип компании">
+  <span class="company-name">iPort</span>
+  <span class="description">
+Мы ищем амбициозных и активных людей, готовых помочь нам оставаться лидером!
+В связи с расширением штата открыта вакансия "мастер по ремонту телефонов и планшетов".
+Готовы рассматривать специалистов без опыта, но с огромным желанием развиваться в данной сфере!
+Рассмотрим менеджеров по продажам, торговых представителей, курьеров, водителей, всех, кто хотел бы сменить сферу деятельности, а также тех, кто имеет базовые навыки в связи.
+  </span>
+  <button class="btn-response" type="button" id="response" title="Откликнуться" (click)="response()" >Откликнуться</button>
+  <button class="btn-favorites" type="button" id="favorites" title="В избранное" (click)="favorites()" >В избранное</button>
+  <button class="btn-favorites" type="button" id="favorites2" title="Не показывать" (click)="favorites()" >Не показывать</button>
+</div>
+  <div class="line">{{i+1}}</div>
+
+
+
+
+
+
+
 <div class="container-fluid">
 <h3>Вакансии</h3>
 
@@ -63,4 +117,7 @@
    </div>
   </div>
 </div>
+
 <app-footer></app-footer>
+
+-->
