@@ -1,6 +1,7 @@
 <div class="wrapper">
 
-  <div class="top" *ngIf="bConnected">
+  <div class="top">
+  <div *ngIf="bConnected">
 
       <img class="user" src="/assets/img/user.png" alt="Welcome" title="Welcome">
       <span class="hello">Здравствуйте,&nbsp;</span>
@@ -25,16 +26,7 @@
       <img  src="/assets/img/bell.png" alt="Новые события" title="Новые события">
     </div>
 
-    <div class="flag-box">
-      <div class="menu-header-lang"><span class="langchoice">RU</span>
-        <img src="/assets/img/flag-russia.png" alt="Русский" title="Руский">
-        <img class="arrow-down" src="/assets/img/arrow-down.png" alt="Выбор языка" title="Выбор языка">
-      </div>
-      <ul>
-        <li><span class="langchoice">RU</span><img src="/assets/img/flag-russia.png" alt="Русский" title="Руский"></li>
-        <li><span class="langchoice">EN</span><img src="/assets/img/flag-english.png" alt="Английский" title="Английский"></li>
-      </ul>
-    </div>
+  </div>
 
     <div class="menu-top" *ngIf="!bConnected">
       <div class="box">
@@ -42,6 +34,17 @@
       <a routerLink="/register" routerLinkActive="active">Регистрация</a>
     </div>
     </div>
+
+  <div class="flag-box">
+    <div class="menu-header-lang"><span class="langchoice">RU</span>
+      <img src="/assets/img/flag-russia.png" alt="Русский" title="Руский">
+      <img class="arrow-down" src="/assets/img/arrow-down.png" alt="Выбор языка" title="Выбор языка">
+    </div>
+    <ul>
+      <li><span class="langchoice">RU</span><img src="/assets/img/flag-russia.png" alt="Русский" title="Руский"></li>
+      <li><span class="langchoice">EN</span><img src="/assets/img/flag-english.png" alt="Английский" title="Английский"></li>
+    </ul>
+  </div>
 
   </div>
 
