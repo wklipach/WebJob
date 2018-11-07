@@ -7,6 +7,7 @@ import {Router} from '@angular/router';
 import {MoveService} from '../services/move.service';
 import {Subscription} from 'rxjs';
 import {AppComponent} from '../app.component';
+import {AuthService} from '../services/auth-service.service';
 
 
 
@@ -17,16 +18,25 @@ import {AppComponent} from '../app.component';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
+  private bConnected = false;
+  private id_user = -1;
+  private bEmployer = false;
+  public sNoUserValueFind = '';
   myDataVacancy: dataVacancy[];
   private dvSubscription: Subscription;
   private getTableVacancy: Subscription;
   private sbReopenVacancyAdvanced: Subscription;
   private sMask: string = '';
 
-  constructor(private httpService: TableVacancyService, private router: Router, private moveS: MoveService) {
+  constructor(private httpService: TableVacancyService, private router: Router, private moveS: MoveService, private authService: AuthService,) {
   }
 
   ngOnInit() {
+
+    var Res =  this.authService.loginStorage();
+    this.bConnected = Res.bConnected;
+    this.id_user =  Res.id_user;
+    this.bEmployer = Res.bEmployer;
 
     if (window.localStorage.getItem('keyFind') !== null) {
       this.sMask = window.localStorage.getItem('keyFind');
@@ -104,8 +114,17 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
 
-  MyMethod(zid: number) {
-    // console.log('id--', zid);
+  MyMethod(zid: number, $event) {
+
+
+    console.log ('$event.explicitOriginalTarget.id', $event.explicitOriginalTarget.id);
+
+    if ($event.explicitOriginalTarget.id === 'vcresponse' ||
+        $event.explicitOriginalTarget.id === 'vcfavorites' ||
+        $event.explicitOriginalTarget.id === 'vchide')
+    return;
+
+    console.log('id--', zid);
     let vacancy = this.myDataVacancy.find(vacancy =>  vacancy.id===zid);
      this.dvSubscription = this.moveS.setDataVacancy(vacancy).subscribe( ()=> this.router.navigate(['/vacancy-description']));
   }
@@ -125,6 +144,73 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.sbReopenVacancyAdvanced.unsubscribe();
     }
 
+  }
+
+  favorites($event, index: number, vcid: number) {
+
+   this.sNoUserValueFind = '';
+    this.myDataVacancy[index].sErrorText = '';
+   if  (!this.bConnected) {
+     this.sNoUserValueFind = 'Для использования функции "В избранное" пройдите верификацию.';
+     this.myDataVacancy[index].sErrorText = this.sNoUserValueFind;
+     return;
+   }
+   if (this.bEmployer) {
+     this.sNoUserValueFind = 'Работодателям функция "В избранное" для вакансий недоступна.';
+     this.myDataVacancy[index].sErrorText = this.sNoUserValueFind;
+     return;
+   }
+
+    console.log('избранное', 'vcid', vcid);
+    this.httpService.postFavoritesVacancy(this.id_user, vcid).subscribe( ()=> this.RouterReload());
+
+
+  }
+
+  unshow($event, index: number, vcid: number) {
+
+    this.sNoUserValueFind = '';
+    this.myDataVacancy[index].sErrorText = '';
+    if  (!this.bConnected)  {
+      this.sNoUserValueFind = 'Для использования функции "Не показывать" пройдите верификацию.';
+      this.myDataVacancy[index].sErrorText = this.sNoUserValueFind;
+      return;
+    }
+    if (this.bEmployer) {
+      this.sNoUserValueFind = 'Работодателям функция "Не показывать" для вакансий недоступна.';
+      this.myDataVacancy[index].sErrorText = this.sNoUserValueFind;
+      return;
+    }
+
+    console.log('не показывать');
+    this.httpService.postUnshowVacancy(this.id_user, vcid).subscribe( ()=> this.RouterReload());
+
+  }
+
+  response($event, index: number, vcid: number) {
+
+    this.sNoUserValueFind = '';
+    this.myDataVacancy[index].sErrorText = '';
+    if  (!this.bConnected)  {
+      this.sNoUserValueFind = 'Для использования функции "Откликнуться" пройдите верификацию.';
+      this.myDataVacancy[index].sErrorText = this.sNoUserValueFind;
+      return;
+    }
+    if (this.bEmployer) {
+      this.sNoUserValueFind = 'Работодателям функция "Откликнуться" для вакансий недоступна.';
+      this.myDataVacancy[index].sErrorText = this.sNoUserValueFind;
+      return;
+    }
+    console.log('ответить');
+  }
+
+  RouterReload() {
+    this.router.routeReuseStrategy.shouldReuseRoute = function () {
+      return false;
+    };
+    this.router.navigated = false;
+
+    this.router.navigate([this.router.url]);
   }
 
 }

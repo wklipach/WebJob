@@ -3,7 +3,7 @@
   <div class="top">
     Вакансии
   </div>
-  <div class="vacancy-box" *ngFor="let curVacancy of myDataVacancy; let i = index" (click)="MyMethod(curVacancy.id)">
+  <div class="vacancy-box" id="vacancy-box" *ngFor="let curVacancy of myDataVacancy; let i = index" (click)="MyMethod(curVacancy.id, $event)">
     <div class="number">{{i+1}}</div>
     <div class="title">{{curVacancy['vacancy'].VacancyShortTitle}}</div>
     <div class="income">
@@ -13,10 +13,18 @@
     <img class="logotype-company" src="/assets/img/iport-logo.png" alt="Логотип компании">
     <span class="company-name">iPort</span>
     <span class="description">{{curVacancy['vacancy'].VacancyBigDescription}}</span>
-    <button class="btn-response" type="button" id="response" title="Откликнуться" (click)="response()" >Откликнуться</button>
-    <button class="btn-favorites" type="button" id="favorites" title="В избранное" (click)="favorites()" >В избранное</button>
-    <button class="btn-hide" type="button" id="hide" title="Не показывать" (click)="favorites()" >Не показывать</button>
+
+
+    <button class="btn-response" type="button" id="vcresponse" title="Откликнуться" (click)="response($event,i, curVacancy.id)" >Откликнуться</button>
+    <button class="btn-favorites" type="button" id="vcfavorites" title="В избранное" (click)="favorites($event,i, curVacancy.id)" >В избранное</button>
+    <button class="btn-hide" type="button" id="vchide" title="Не показывать" (click)="unshow($event,i, curVacancy.id)" >Не показывать</button>
+    {{curVacancy.sErrorText}}
+
+
   </div>
+
+
+
   <div class="line"></div>
 </div>
 

@@ -32,4 +32,5 @@ export class Vacancy{
 export class  dataVacancy extends Vacancy {
   CityName: string;
   EmployerName: string;
+  sErrorText: string;
 }

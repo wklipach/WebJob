@@ -1,4 +1,22 @@
 {
+  "UserFavoritesUnit": [
+    {
+      "id_user": 17,
+      "id_vc": 6,
+      "id": 1
+    },
+    {
+      "id_user": 17,
+      "id_vc": 6,
+      "id": 2
+    },
+    {
+      "id_user": 17,
+      "id_vc": 41,
+      "id": 3
+    }
+  ],
+  "UserDontShowUnit": [],
   "UserTable": [
     {
       "id": 1,

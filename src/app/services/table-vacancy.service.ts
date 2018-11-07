@@ -86,5 +86,23 @@ export class TableVacancyService {
   }
 
 
+  postFavoritesVacancy(id_user: number, id_vc: number)
+  {
+    let sUrl = 'http://localhost:3000/UserFavoritesUnit';
+    let sRs = {id_user: id_user, id_vc: id_vc}
+    return this.http.post(sUrl, sRs);
+  }
+
+
+  postUnshowVacancy(id_user: number, id_vc: number)
+  {
+    let sUrl = 'http://localhost:3000/UserDontShowUnit';
+    let sRs = {id_user: id_user, id_vc: id_vc}
+    return this.http.post(sUrl, sRs);
+  }
+
+
+
+
 }
 
