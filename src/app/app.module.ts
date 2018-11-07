@@ -48,7 +48,9 @@ import { MessageCenterComponent } from './account/message-center/message-center/
 import { MessagesComponent } from './account/message-center/messages/messages.component';
 import { InfoComponent } from './account/message-center/info/info.component';
 import { MessageComponent } from './account/message-center/message/message.component';
+import { ResponseComponent } from './content/response/response.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+
 
 
 // определение маршрутов
@@ -67,7 +69,7 @@ const appRoutes: Routes = [
   {path: 'account-employer', component: AccountEmployerComponent},
   {path: 'cv', component: CvComponent},
   {path: 'vacancies', component: VacanciesComponent},
-    {path: 'new-vacancy', component: NewVacancyComponent},
+  {path: 'new-vacancy', component: NewVacancyComponent},
   {path: 'atemp', component: AtempComponent},
   {path: 'vacancy-description', component: VacancyDescriptionComponent},
   {path: 'vacancy-edit', component: VacancyEditComponent},
@@ -80,6 +82,7 @@ const appRoutes: Routes = [
   {path: 'messages', component: MessagesComponent},
   {path: 'message', component: MessageComponent},
   {path: 'info', component: InfoComponent},
+  {path: 'response', component: ResponseComponent},
   {path: '**', component: NotFoundComponent }
 ];
 
@@ -123,7 +126,8 @@ const appRoutes: Routes = [
     MessagesComponent,
     InfoComponent,
     MessageComponent,
-    NotFoundComponent,
+    ResponseComponent,
+    NotFoundComponent
    ],
   entryComponents: [
     CvPreviousComponent
