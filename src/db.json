@@ -1,4 +1,19 @@
 {
+  "Correspondence": [
+    {
+      "letter": {
+        "bOld": false,
+        "bReadByRecipient": false,
+        "id_user_from": 17,
+        "id_cv": 10,
+        "id_vc": 43,
+        "id_user_to": 20,
+        "letterText": "первая запись первое письмо",
+        "DateTimeCreate": "08/11/2018 03:44"
+      },
+      "id": 1
+    }
+  ],
   "UserFavoritesUnit": [
     {
       "id_user": 17,
@@ -1167,6 +1182,40 @@
         ]
       },
       "id": 21
+    },
+    {
+      "cv": {
+        "bChecked": false,
+        "bInvisible": true,
+        "id_user": 17,
+        "SalaryFrom": "100",
+        "Position": "300",
+        "City": 1,
+        "Industry": [],
+        "Schedule": [],
+        "Employment": [],
+        "Education": [],
+        "Experience": []
+      },
+      "id": 22
+    },
+    {
+      "cv": {
+        "bChecked": false,
+        "bInvisible": false,
+        "id_user": 17,
+        "SalaryFrom": "100",
+        "Position": "Автослесарь",
+        "City": 1,
+        "Industry": [
+          1
+        ],
+        "Schedule": [],
+        "Employment": [],
+        "Education": [],
+        "Experience": []
+      },
+      "id": 23
     }
   ],
   "CV_Previous": [
@@ -1322,6 +1371,14 @@
         }
       ],
       "id": 21
+    },
+    {
+      "previous": [],
+      "id": 22
+    },
+    {
+      "previous": [],
+      "id": 23
     }
   ]
 }

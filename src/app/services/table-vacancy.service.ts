@@ -13,6 +13,9 @@ export class TableVacancyService {
 
   private _messageAdvancedFindObj: any = null;
 
+  private _id_user: number;
+  private _id_vc: number;
+
   public getMessageAdvancedFindObj () {
     return this._messageAdvancedFindObj;
   }
@@ -102,6 +105,16 @@ export class TableVacancyService {
   }
 
 
+  postResponse(id_user: number, id_vc: number)
+  {
+    this._id_user = id_user;
+    this._id_vc = id_vc;
+  }
+
+  getResponse(): {'id_user': number, 'id_vc' : number}
+  {
+      return {id_user: this._id_user, id_vc: this._id_vc};
+  }
 
 
 }

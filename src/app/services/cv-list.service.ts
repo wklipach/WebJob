@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {Letter} from '../class/Letter';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +29,14 @@ export class CvListService {
         }
       );
   }
+
+
+  setCorrespondence(letter: Letter) {
+    let sUrl = 'http://localhost:3000/Correspondence';
+
+    return this.http.post(sUrl, {letter});
+  }
+
 
 
 }

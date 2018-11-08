@@ -8,6 +8,7 @@ import {MoveService} from '../services/move.service';
 import {Subscription} from 'rxjs';
 import {AppComponent} from '../app.component';
 import {AuthService} from '../services/auth-service.service';
+import {CvEditService} from '../services/cv-edit.service';
 
 
 
@@ -28,7 +29,11 @@ export class HomeComponent implements OnInit, OnDestroy {
   private sbReopenVacancyAdvanced: Subscription;
   private sMask: string = '';
 
-  constructor(private httpService: TableVacancyService, private router: Router, private moveS: MoveService, private authService: AuthService,) {
+  constructor(private httpService: TableVacancyService,
+              private router: Router,
+              private moveS: MoveService,
+              private authService: AuthService,
+              private cvEditSrv: CvEditService) {
   }
 
   ngOnInit() {
@@ -202,6 +207,10 @@ export class HomeComponent implements OnInit, OnDestroy {
       return;
     }
     console.log('ответить');
+
+    this.cvEditSrv.setCvId(vcid);
+    this.router.navigate(['/response']);
+
   }
 
   RouterReload() {

@@ -53,5 +53,11 @@ export class VacanciesListService {
       return this._vacitem;
   }
 
+  getVc(id_vc: number) {
+    let sUrl = 'http://localhost:3000/Vacancy?id='+id_vc;
+    return this.http.get(sUrl);
+  }
+
+
 
 }
