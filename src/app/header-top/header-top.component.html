@@ -5,9 +5,10 @@
 
       <img class="user" src="/assets/img/user.png" alt="Welcome" title="Welcome">
       <span class="hello">Здравствуйте,&nbsp;</span>
-    <div class="box">
+
       <div class="menu-header">{{ htUserName }}!
       <img class="arrow-down" src="/assets/img/arrow-down.png" alt="Открыть меню пользователя" title="Mеню пользователя">
+
       </div>
       <ul>
         <li *ngIf = "bEmployer"><a routerLink="/account-employer" routerLinkActive="active">Данные работодателя</a></li>
@@ -19,12 +20,9 @@
         <li *ngIf = "bEmployer"><a routerLink="/message-center" routerLinkActive="active">Центр сообщений</a></li>
         <li><button class="btn btn-primary" (click)="logout()">Выйти</button></li>
       </ul>
-    </div>
 
-    <div class="alerts">
       <img class="img-envelop" src="/assets/img/envelope.png" alt="Новые сообщения" title="Новые сообщения">
-      <img  src="/assets/img/bell.png" alt="Новые события" title="Новые события">
-    </div>
+      <img class="img-bell" src="/assets/img/bell.png" alt="Новые события" title="Новые события">
 
   </div>
 
@@ -36,7 +34,7 @@
     </div>
     </div>
 
-  <div class="flag-box">
+
     <div class="menu-header-lang"><span class="langchoice">RU</span>
       <img src="/assets/img/flag-russia.png" alt="Русский" title="Руский">
       <img class="arrow-down" src="/assets/img/arrow-down.png" alt="Выбор языка" title="Выбор языка">
@@ -45,9 +43,7 @@
       <li><span class="langchoice">RU</span><img src="/assets/img/flag-russia.png" alt="Русский" title="Руский"></li>
       <li><span class="langchoice">EN</span><img src="/assets/img/flag-english.png" alt="Английский" title="Английский"></li>
     </ul>
-  </div>
-
-  </div>
+    </div>
 
 
   <div class="bottom">
@@ -55,35 +51,22 @@
       <a routerLink="" title="На главную">
         <h1>MUCV</h1></a>
     </div>
+
+
     <form [formGroup]="headerTopForm">
-      <div class="box">
         <input type="search" class="inputSearch" formControlName="inputSearch" id="inputSearch" placeholder=" &nbsp; &nbsp; &nbsp;Поиск вакансий.." [value]="sElementMask">
-
-
-
         <button class="btn-search" type="submit" (click)="find()">
-          <img src="/assets/img/icon-search.png" alt="Найти" title="Поиск">&nbsp;Найти
+        <img src="/assets/img/icon-search.png" alt="Найти" title="Поиск">&nbsp;Найти
         </button>
-
-
-
-
         <button class="btn-advsearch" type="button" id="AdvSearch" title="Расширенный поиск" (click)="toAdvance()" >Расширенный поиск</button>
-  </div>
     </form>
 
   </div>
-
-</div>
-
+   </div>
 
 
+<div class="notfound">
 
 {{sNullValueFind}}
 
-<!--
-<div class="box">
-  <button class="btn btn-primary" (click)="login()">Войти</button>
-  <a routerLink="/register" routerLinkActive="active">Регистрация</a>
 </div>
--->

@@ -1,11 +1,17 @@
 <app-header-top></app-header-top>
 
-  <form [formGroup]="newCVForm">
+<div class="wrapper">
 
 
-    <div class="container">
+  <form [formGroup]="newCVForm">  </form>
 
-    <h2>Создание резюме</h2>
+   <div class="top">
+     <h2>Создание резюме</h2>
+   </div>
+
+    <div class="cv-box">
+
+
 
     <div class="form-group col-md-3">
       <label for="inputCity">Локация вакансии</label>
@@ -16,9 +22,6 @@
       </select>
     </div>
 
-
-
-
   <div class="row">
     <div class="col-2">
       <label class="labelDescr">Заработная плата от</label>
@@ -27,7 +30,7 @@
       <input type="text" class="form-control" formControlName="inputSalaryFrom" id="inputSalaryFrom" placeholder="Заработная плата от">
     </div>
   </div>
-
+    </div>
   <div class="row">
     <div class="col-2">
       <label class="labelDescr">Желаемая должность</label>
@@ -46,8 +49,9 @@
       <!-- Опыт работы -->
       <app-cv-experience></app-cv-experience>
       <!-- Образование -->
-      <app-cv-education></app-cv-education>
-</div>
+     <app-cv-education></app-cv-education>
+
+
 
 <br>
 
@@ -61,9 +65,9 @@
     <button (click)="newcv()">Сохранить резюме</button>
     </div>
 
-<app-footer></app-footer>
+</div>
 
-  </form>
+
 
 
 

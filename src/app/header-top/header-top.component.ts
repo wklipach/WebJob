@@ -62,10 +62,6 @@ export class HeaderTopComponent implements OnInit {
     this.moveS.setNullValueFind('');
   }
 
-  login() {
-    this.router.navigate(['/login']);
-  }
-
 
   logout() {
 

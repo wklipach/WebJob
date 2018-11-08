@@ -13,31 +13,31 @@
   width: 1170px;
   height: 59px;
   margin: 0 auto;
+  background-color: yellow;
   border-bottom: solid 1px;
   border-color: #b7b7b7;
-
   /*vertical-align: middle; */
 }
 .user{
-  position: relative;
+  position: absolute;
   display: inline-block;
-  top:15px;
+  margin-top:15px;
+  margin-left: 1px;
 }
 .hello{
+  position: absolute;
   display: inline-block;
-  position: relative;
   color: #484c54;
-  padding-left: 15px;
-  left: 7px;
-  top: 6px;
+  margin-top:15px;
+  margin-left: 28px;
   text-decoration: none;
   width: 116px;
 }
 .arrow-down{
+  position: absolute;
   display: inline-block;
-  position: relative;
-  top:-1px;
-  padding-left: 9px;
+  margin-top:15px;
+  margin-left: 28px;
 }
 h1 {
   font-size: 48px;
@@ -53,14 +53,23 @@ h1:hover{
 a{
   text-decoration: none;
 }
+a:visited {
+  color: rgb(68, 75, 84);
+}
 .img-envelop{
-margin-right: 17px;
+  position: absolute;
+  display: inline-block;
+  margin-top:15px;
+  margin-left: 330px;
 }
 .img-bell{
-
+  position: absolute;
+  display: inline-block;
+  margin-top:15px;
+  margin-left: 380px;
 }
 .alerts{
-  position: relative;
+  position: absolute;
   display: inline-block;
   top: 12px;
   left: 50px;
@@ -68,12 +77,12 @@ margin-right: 17px;
 
 }
 .box{
-  position: relative;
+  position: absolute;
   display: inline-block;
-  background-color: white;
+
 }
 .flag-box{
-  position: relative;
+  position: absolute;
   display: inline-block;
   width: 50px;
   left: 800px;
@@ -84,7 +93,6 @@ margin-right: 17px;
   display: inline-block;
   background-color: yellow;
 }
-
 
 .user-login{
   width: 30%;
@@ -99,89 +107,84 @@ margin-right: 17px;
   padding-right: 5px;
 }
 .bottom{
+  position: relative;
   width: 1170px;
   height: 120px;
   margin: 0 auto;
-}
-.search{
-  padding: 0 3px;
+  background-color: #DFDFDF;
 }
 .inputSearch{
   display: inline-block;
-  position: relative;
+  position: absolute;
   border-width: 1px;
   border-color: #b7b7b7;
   border-style: solid;
   border-radius: 3px;
   background-color: white;
   color: #82878d;
-  top: -85px;
-  left: 184px;
   width: 682px;
   height: 48px;
+  margin-top:32px;
+  margin-left: 180px;
 }
 .btn-search{
   display: inline-block;
-  position: relative;
-  background-color: #3862ce;
+  position: absolute;
+  background-color: #3366ff;
  color: rgb(255, 255, 255);
   border-color: #054086;
   border-width: 1px;
   border-style: solid;
   border-radius: 3px;
   line-height: 2.25;
-  top: -85px;
-  left: 185px;
   width: 108px;
   height: 48px;
+  margin-top:32px;
+  margin-left: 870px;
 }
 .btn-search:hover{
-  background-color: #91afd1;
+  background-color: #0066cc;
 }
-
+.btn-search:active{
+  border-color: #66ccff;
+  border-style: solid;
+  border-width: 3px;
+  mso-font-width: 15px;
+}
 .btn-advsearch{
   display: inline-block;
-  position: relative;
+  position: absolute;
   color: #484d55;
   background-color: #ffffff;
   border-color: #d46117;
   border-radius: 3px;
   border-width: 1px;
   border-style: solid;
-  line-height: 2.25;
   text-align: center;
-  top: -85px;
-  left: 186px;
   width: 193px;
   height: 48px;
+  margin-top:32px;
+  margin-left: 960px;
 }
 .btn-advsearch:hover{
   background-color:#f26100;
   color: white;
-
 }
-
-
-
-
-
-
 
 /*  Меню пользователя */
 .menu-header{
   display: inline-block;
-  position: relative;
+  position: absolute;
   width: auto;
   min-width: 150px;
   max-width: 200px;
   height: 45px;
   font-size: 16px;
-  line-height: 45px;
   color: #484c54;
   text-align: left;
   cursor: pointer;
-  top:6px;
-  left: 7px;
+  margin-top:15px;
+  margin-left: 150px;
 }
 .menu-header:hover{
   background: #FFF;
@@ -222,20 +225,18 @@ ul:hover{
 /*  Закончили меню пользователя, начали меню выбора языка */
 
 .menu-header-lang{
+  position: absolute;
   display: inline-block;
-  position: relative;
   width: auto;
   min-width: 150px;
   max-width: 200px;
   height: 45px;
   font-size: 16px;
-  line-height: 45px;
   color: #484c54;
   text-align: right;
   cursor: pointer;
-  top:6px;
-  left: -221px;
-  vertical-align: middle;
+  margin-top:15px;
+  margin-left: 830px;
 }
 .menu-header-lang:hover{
   background: #FFF;
@@ -245,7 +246,7 @@ ul{
   margin: 0;
   padding: 0;
   display: none;
-  z-index: 2;
+  z-index: 1;
 }
 li{
   position: relative;
@@ -280,5 +281,9 @@ li:hover{
 ul:hover{
   display: block;
 }
-
-
+.notfound{
+  font-size: 28px;
+  color: #F74933;
+  margin: 25px auto;
+  text-align: center;
+}
