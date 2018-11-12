@@ -13,7 +13,6 @@
   width: 1170px;
   height: 59px;
   margin: 0 auto;
-  background-color: yellow;
   border-bottom: solid 1px;
   border-color: #b7b7b7;
   /*vertical-align: middle; */
@@ -21,23 +20,30 @@
 .user{
   position: absolute;
   display: inline-block;
-  margin-top:15px;
+  margin-top:17px;
   margin-left: 1px;
 }
 .hello{
   position: absolute;
   display: inline-block;
   color: #484c54;
-  margin-top:15px;
-  margin-left: 28px;
+  margin-top:22px;
+  margin-left: 43px;
   text-decoration: none;
   width: 116px;
 }
 .arrow-down{
   position: absolute;
   display: inline-block;
-  margin-top:15px;
-  margin-left: 28px;
+  margin-top:7px;
+  margin-left: 9px;
+}
+.arrow-down-lang{
+  position: absolute;
+  display: inline-block;
+  margin-top: 1px;
+  margin-top:14px;
+  margin-left: -13px;
 }
 h1 {
   font-size: 48px;
@@ -59,14 +65,49 @@ a:visited {
 .img-envelop{
   position: absolute;
   display: inline-block;
-  margin-top:15px;
-  margin-left: 330px;
+  margin-top:18px;
+  margin-left: 334px;
+}
+.img-circle{
+  position: absolute;
+  display: inline-block;
+  margin-top:10px;
+  margin-left: 356px;
 }
 .img-bell{
   position: absolute;
   display: inline-block;
-  margin-top:15px;
-  margin-left: 380px;
+  margin-top:18px;
+  margin-left: 379px;
+}
+.img-circle-bell{
+  position: absolute;
+  display: inline-block;
+  margin-top:10px;
+  margin-left: 393px;
+}
+.number-env{
+  position: absolute;
+  display: inline-block;
+  margin-top:11px;
+  margin-left: 362px;
+  color: white;
+  font-size: 12px;
+
+}
+.number-bell{
+  position: absolute;
+  display: inline-block;
+  margin-top:11px;
+  margin-left: 399px;
+  color: white;
+  font-size: 11px;
+}
+.flag-menu{
+  position: absolute;
+  display: inline-block;
+  margin-top:5px;
+  margin-left: -53px;
 }
 .alerts{
   position: absolute;
@@ -80,13 +121,6 @@ a:visited {
   position: absolute;
   display: inline-block;
 
-}
-.flag-box{
-  position: absolute;
-  display: inline-block;
-  width: 50px;
-  left: 800px;
-  background-color: white;
 }
 .box-search{
   position: relative;
@@ -102,8 +136,15 @@ a:visited {
 .langchoice{
   font-size: 14px;
   color: rgb(68, 75, 84);
-  line-height: 2.57;
-  text-align: left;
+  position: absolute;
+  display: inline-block;
+  margin-top: 8px;
+  margin-left:-80px;
+}
+.langchoice-tumb{
+  font-size: 14px;
+  color: rgb(68, 75, 84);
+  margin-left: -15px;
   padding-right: 5px;
 }
 .bottom{
@@ -124,8 +165,8 @@ a:visited {
   color: #82878d;
   width: 682px;
   height: 48px;
-  margin-top:32px;
-  margin-left: 180px;
+  margin-top:35px;
+  margin-left: 185px;
 }
 .btn-search{
   display: inline-block;
@@ -139,17 +180,18 @@ a:visited {
   line-height: 2.25;
   width: 108px;
   height: 48px;
-  margin-top:32px;
-  margin-left: 870px;
+  margin-top:35px;
+  margin-left: 868px;
 }
 .btn-search:hover{
   background-color: #0066cc;
 }
 .btn-search:active{
-  border-color: #66ccff;
+  border-color: #3399ff;
   border-style: solid;
   border-width: 3px;
-  mso-font-width: 15px;
+  border-radius: 3px;
+  font-width: 15px;
 }
 .btn-advsearch{
   display: inline-block;
@@ -161,10 +203,11 @@ a:visited {
   border-width: 1px;
   border-style: solid;
   text-align: center;
-  width: 193px;
+  width: 191px;
   height: 48px;
-  margin-top:32px;
-  margin-left: 960px;
+  height: 48px;
+  margin-top: 35px;
+  margin-left: 977px;
 }
 .btn-advsearch:hover{
   background-color:#f26100;
@@ -175,24 +218,22 @@ a:visited {
 .menu-header{
   display: inline-block;
   position: absolute;
-  width: auto;
-  min-width: 150px;
-  max-width: 200px;
+  width: 150px;
   height: 45px;
   font-size: 16px;
   color: #484c54;
   text-align: left;
   cursor: pointer;
-  margin-top:15px;
-  margin-left: 150px;
+  margin-top:22px;
+  margin-left: 144px;
 }
 .menu-header:hover{
   background: #FFF;
 }
-ul{
+ul.user-list{
   position: absolute;
-  margin: 0;
-  padding: 0;
+  margin-top: 41px;
+  margin-left: 105px;
   display: none;
   z-index: 2;
 }
@@ -225,33 +266,31 @@ ul:hover{
 /*  Закончили меню пользователя, начали меню выбора языка */
 
 .menu-header-lang{
-  position: absolute;
+  position: relative;
   display: inline-block;
-  width: auto;
-  min-width: 150px;
-  max-width: 200px;
+  width: 120px;
   height: 45px;
   font-size: 16px;
   color: #484c54;
+  float: right;
   text-align: right;
   cursor: pointer;
   margin-top:15px;
-  margin-left: 830px;
 }
 .menu-header-lang:hover{
   background: #FFF;
 }
-ul{
+ul.lang-list{
   position: absolute;
-  margin: 0;
-  padding: 0;
+  margin-top: 41px;
+  margin-left: 905px;
   display: none;
-  z-index: 1;
+  z-index: 2;
 }
-li{
+ul.lang-list li{
   position: relative;
   display: block;
-  width: 162px;
+  width: 90px;
   height: 45px;
   line-height: 45px;
   text-align: left;
@@ -260,16 +299,11 @@ li{
   /*border-color: #dddddd;
   border-style: solid;
   border-width:1px; */
-  left: -28px;
+  margin-left:150px;
   top: auto;
 }
-li:hover{
+.lang-list li:hover{
   background: #e8f1fb;
-}
-.lang{
-  position: relative;
-  display: block;
-  left:auto;
 }
 .menu-header-lang:hover{
   background: #FFF;

@@ -8,22 +8,24 @@
 
       <div class="menu-header">{{ htUserName }}!
       <img class="arrow-down" src="/assets/img/arrow-down.png" alt="Открыть меню пользователя" title="Mеню пользователя">
-
       </div>
-      <ul>
-        <li *ngIf = "bEmployer"><a routerLink="/account-employer" routerLinkActive="active">Данные работодателя</a></li>
-        <li *ngIf = "bEmployer"><a routerLink="/new-vacancy" routerLinkActive="active">Новая вакансия</a></li>
-        <li *ngIf = "bEmployer"><a routerLink="/vacancies" routerLinkActive="active">Все вакансии</a></li>
-        <li *ngIf = "bEmployer"><a routerLink="/advanced-search" routerLinkActive="active">Поиск сотрудников</a></li>
-        <li *ngIf="!bEmployer"><a routerLink="/account-employee" routerLinkActive="active">Данные соискателя</a></li>
-        <li *ngIf="!bEmployer"><a routerLink="/cv-list" routerLinkActive="active">Мои резюме</a></li>
-        <li *ngIf = "bEmployer"><a routerLink="/message-center" routerLinkActive="active">Центр сообщений</a></li>
-        <li><button class="btn btn-primary" (click)="logout()">Выйти</button></li>
+      <ul class="user-list">
+        <a routerLink="/account-employer" routerLinkActive="active"><li *ngIf = "bEmployer">Данные работодателя</li></a>
+        <a routerLink="/new-vacancy" routerLinkActive="active"><li *ngIf = "bEmployer">Новая вакансия</li></a>
+        <a routerLink="/vacancies" routerLinkActive="active"><li *ngIf = "bEmployer">Все вакансии</li></a>
+        <a routerLink="/advanced-search" routerLinkActive="active"><li *ngIf = "bEmployer">Поиск сотрудников</li></a>
+        <a routerLink="/account-employee" routerLinkActive="active"><li *ngIf="!bEmployer">Данные соискателя</li></a>
+        <a routerLink="/cv-list" routerLinkActive="active"><li *ngIf="!bEmployer">Мои резюме</li></a>
+        <a routerLink="/message-center" routerLinkActive="active"><li *ngIf = "bEmployer">Центр сообщений</li></a>
+        <span class="logout" (click)="logout()"><li>Выйти</li></span>
       </ul>
 
       <img class="img-envelop" src="/assets/img/envelope.png" alt="Новые сообщения" title="Новые сообщения">
+      <img class="img-circle" src="/assets/img/circle.png" alt="Всего сообщений" title="Всего сообщений">
       <img class="img-bell" src="/assets/img/bell.png" alt="Новые события" title="Новые события">
-
+      <img class="img-circle-bell" src="/assets/img/circle-bell.png" alt="Всего событий" title="Всего событий">
+      <span class="number-env">3</span>
+      <span class="number-bell">1</span>
   </div>
 
     <div class="menu-top" *ngIf="!bConnected">
@@ -35,13 +37,14 @@
     </div>
 
 
-    <div class="menu-header-lang"><span class="langchoice">RU</span>
-      <img src="/assets/img/flag-russia.png" alt="Русский" title="Руский">
-      <img class="arrow-down" src="/assets/img/arrow-down.png" alt="Выбор языка" title="Выбор языка">
+    <div class="menu-header-lang">
+      <span class="langchoice">RU</span>
+      <img  class="flag-menu" src="/assets/img/russian.png" alt="Русский" title="Руский">
+      <img class="arrow-down-lang" src="/assets/img/arrow-down.png" alt="Выбор языка" title="Выбор языка">
     </div>
-    <ul>
-      <li><span class="langchoice">RU</span><img src="/assets/img/flag-russia.png" alt="Русский" title="Руский"></li>
-      <li><span class="langchoice">EN</span><img src="/assets/img/flag-english.png" alt="Английский" title="Английский"></li>
+    <ul class="lang-list">
+      <li><span class="langchoice-tumb">RU</span><img src="/assets/img/flag-russia.png" alt="Русский" title="Руский"></li>
+      <li><span class="langchoice-tumb">EN</span><img src="/assets/img/flag-english.png" alt="Английский" title="Английский"></li>
     </ul>
     </div>
 

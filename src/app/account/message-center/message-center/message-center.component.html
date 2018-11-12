@@ -1,18 +1,29 @@
-
-<div class="container">
-<h3>Центр сообщений</h3>
-  <div class="row">
-    <div class="col-6">
-    <a class="nav-link" routerLink="/messages" routerLinkActive="active">Cообщения<span class="badge badge-secondary">3</span></a>
-       </div>
-    <app-messages></app-messages>
-</div>
-
-  <div class="row">
-    <div class="col-6">
-        <a class="nav-link" routerLink="/info" routerLinkActive="active">Информация<span class="badge badge-secondary">2</span></a>
-    </div>
+<app-header-top></app-header-top>
+<div class="wrapper">
+  <div class="top">
+    Центр сообщений
   </div>
 
-  <app-info></app-info>
+
+  <div class="message">
+    <app-messages></app-messages>
+    <app-info></app-info>
+     </div>
 </div>
+
+
+<!--
+ <a class="nav-link" routerLink="/messages" routerLinkActive="active">Cообщения<span class="badge badge-secondary">3</span></a>
+ <a class="nav-link" routerLink="/info" routerLinkActive="active">Информация<span class="badge badge-secondary">2</span></a>
+
+
+.message{
+ width: 1170px;
+  margin: 0 auto;
+}
+.message:hover{
+  cursor: pointer;
+  background-color: #f8f8f8;
+}
+
+-->

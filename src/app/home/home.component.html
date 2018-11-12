@@ -3,7 +3,9 @@
   <div class="top">
     Вакансии
   </div>
+
   <div class="vacancy-box" id="vacancy-box" *ngFor="let curVacancy of myDataVacancy; let i = index" (click)="MyMethod(curVacancy.id, $event)">
+    <div class="v-line"></div>
     <div class="number">{{i+1}}</div>
     <div class="title">{{curVacancy['vacancy'].VacancyShortTitle}}</div>
     <div class="income">
@@ -20,9 +22,10 @@
     <button class="btn-hide" type="button" id="vchide" title="Не показывать" (click)="unshow($event,i, curVacancy.id)" >Не показывать</button>
     {{curVacancy.sErrorText}}
 
+  <!--  <div class="line"></div> -->
 
   </div>
-  <div class="line"></div>
+
 </div>
 
 
