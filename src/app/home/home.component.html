@@ -13,7 +13,7 @@
     <img class="city" src="/assets/img/city.png" alt="Город">
     <span class="city-name">{{curVacancy.CityName}}</span>
     <img class="logotype-company" src="/assets/img/iport-logo.png" alt="Логотип компании">
-    <span class="company-name">Работодатель!!! {{curVacancy['vacancy'].id_user}}</span>
+    <span class="company-name">{{curVacancy['vacancy'].id_user}}</span>
     <span class="description">{{curVacancy['vacancy'].VacancyBigDescription}}</span>
 
 
@@ -21,8 +21,6 @@
     <button class="btn-favorites" type="button" id="vcfavorites" title="В избранное" (click)="favorites($event,i, curVacancy.id)" >В избранное</button>
     <button class="btn-hide" type="button" id="vchide" title="Не показывать" (click)="unshow($event,i, curVacancy.id)" >Не показывать</button>
     {{curVacancy.sErrorText}}
-
-  <!--  <div class="line"></div> -->
 
   </div>
 

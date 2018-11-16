@@ -1,12 +1,252 @@
-.labelDescr{
-  font-size: 0.9em;
-  font-weight: bold;
-  color: #00A4E4;
-
+.wrapper{
+  font-family: "ProximaNovaRg";
+  font-size: 16px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  color: rgb(68, 75, 84);
+  text-align: left;
 }
-.img-thumbnail{
-  width: 100px;
-  height: 100px;
-  border-color: #03abe1;
+.top{
+  width: 1170px;
+  height: 42px;
+  margin: 0 auto;
+  font-size: 36px;
+  font-family: "Proxima Nova";
+}
+.profile{
+  width: 1170px;
+  margin: 0 auto;
+  position: relative;
+}
+.employee-form{
+}
+label{
+  position: absolute;
+  font-size: 16px;
+  font-family: "Proxima Nova";
+  color: rgb(2, 98, 210);
+  text-align: left;
+}
+.personal {
+  font-size: 18px;
+  margin-left: 12px;
+  margin-top: 16px;
+}
+.photo-upload {
+  font-size: 13px;
+  margin-left: 20px;
+  margin-top: 176px;
+}
+.img-thumbnail {
+  border-width: 1px;
+  border-color: rgb(188, 188, 188);
+  border-style: solid;
+  border-radius: 3px;
+  background-color: rgb(220, 220, 220);
+  position: absolute;
+  width: 103px;
+  height: 103px;
+  margin-left: 12px;
+  margin-top: 73px;
+}
+.img-thumbnail:hover{
   cursor: pointer;
 }
+.user-name{
+  margin-left: 220px;
+  margin-top: 73px;
+}
+.inputUserName{
+  position: absolute;
+  font-size: 13px;
+  font-family: "Proxima Nova";
+  text-align: center;
+  border-width: 1px;
+  border-color: rgb(68, 75, 84);
+  border-style: solid;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  width: 228px;
+  height: 43px;
+  margin-left: 220px;
+  margin-top: 103px;
+}
+.name{
+  margin-left: 220px;
+  margin-top: 153px;
+}
+.input-name{
+  position: absolute;
+  font-size: 13px;
+  font-family: "Proxima Nova";
+  text-align: center;
+  border-width: 1px;
+  border-color: rgb(68, 75, 84);
+  border-style: solid;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  width: 228px;
+  height: 43px;
+  margin-left: 220px;
+  margin-top: 173px;
+}
+.lastname{
+  margin-left: 520px;
+  margin-top: 73px;
+}
+.inputLastname{
+  position: absolute;
+  font-size: 13px;
+  font-family: "Proxima Nova";
+  text-align: center;
+  border-width: 1px;
+  border-color: rgb(68, 75, 84);
+  border-style: solid;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  width: 228px;
+  height: 43px;
+  margin-left: 520px;
+  margin-top: 103px;
+}
+
+.location{
+  margin-left: 220px;
+  margin-top: 253px;
+}
+.zip{
+  margin-left: 520px;
+  margin-top: 153px;
+}
+.inputCity{
+  border-width: 1px;
+  border-color: rgb(68, 75, 84);
+  border-style: solid;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  width: 489px;
+  height: 43px;
+  margin-left: 220px;
+  margin-top: 383px;
+}
+.inputZip{
+  position: absolute;
+  font-size: 13px;
+  font-family: "Proxima Nova";
+  text-align: center;
+  border-width: 1px;
+  border-color: rgb(68, 75, 84);
+  border-style: solid;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  width: 228px;
+  height: 43px;
+  margin-left: 520px;
+  margin-top: 183px;
+}
+.btn-save{
+  display: inline-block;
+  position: absolute;
+  background-color: #3366ff;
+  color: rgb(255, 255, 255);
+  border-color: #054086;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px;
+  line-height: 2.25;
+  width: 108px;
+  height: 48px;
+  margin-top:650px;
+  margin-left: 220px;
+}
+.btn-save:hover{
+  background-color: #0066cc;
+}
+.btn-save:active{
+  border-color: #3399ff;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 3px;
+  font-width: 15px;
+}
+.btn-cancel{
+  font-size: 18px;
+  font-family: "Proxima Nova";
+  color: rgb(68, 75, 84);
+  background-color: rgb(255, 255, 255);
+  line-height: 2;
+  text-align: left;
+  margin-top: 650px;
+  margin-left: 395px;
+}
+
+/*
+
+
+
+.message:hover{
+
+cursor: pointer;
+
+background-color: #f8f8f8;
+
+}
+
+ul{
+
+list-style: none;
+
+}
+
+li{
+
+position: relative;
+
+display: inline-block;
+
+}
+
+.headline{
+
+font-family: "Proxima Nova";
+
+background-color: #DFDFDF;
+
+}
+
+.bline{
+
+width: 100%;
+
+height: auto;
+
+border-color: #b7b7b7;
+
+font-size: 16px;
+
+font-family: "Proxima Nova";
+
+}
+
+.date{
+
+width:100px;
+
+}
+
+.from{
+
+width:250px;
+
+}
+
+.subject{
+
+width:700px;
+
+}
+
+*/
+

@@ -20,13 +20,18 @@
         <span class="logout" (click)="logout()"><li>Выйти</li></span>
       </ul>
 
+    <a routerLink="/messages" routerLinkActive="active">
       <img class="img-envelop" src="/assets/img/envelope.png" alt="Новые сообщения" title="Новые сообщения">
       <img class="img-circle" src="/assets/img/circle.png" alt="Всего сообщений" title="Всего сообщений">
+      <span class="number-env">3</span></a>
+     <a routerLink="/messages" routerLinkActive="active">
       <img class="img-bell" src="/assets/img/bell.png" alt="Новые события" title="Новые события">
       <img class="img-circle-bell" src="/assets/img/circle-bell.png" alt="Всего событий" title="Всего событий">
-      <span class="number-env">3</span>
-      <span class="number-bell">1</span>
+       <span class="number-bell">1</span></a>
   </div>
+
+
+
 
     <div class="menu-top" *ngIf="!bConnected">
       <div class="box">

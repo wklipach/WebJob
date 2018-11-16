@@ -12,6 +12,19 @@
         "DateTimeCreate": "08/11/2018 03:44"
       },
       "id": 1
+    },
+    {
+      "letter": {
+        "bOld": false,
+        "bReadByRecipient": false,
+        "id_user_from": 15,
+        "id_cv": 19,
+        "id_vc": 43,
+        "id_user_to": 20,
+        "letterText": "Хочу черпать навоз в вашей конторе",
+        "DateTimeCreate": "16/11/2018 02:11"
+      },
+      "id": 2
     }
   ],
   "UserFavoritesUnit": [
