@@ -81,6 +81,10 @@ export class HomeComponent implements OnInit, OnDestroy {
    getVacancy(sMask: string) {
     return this.getTableVacancy = this.httpService.getTableVacancy(sMask).subscribe(
       (data: dataVacancy[]) => {
+
+        console.log('DATA');
+        console.log(data);
+
         // это получаем город из нового вызываемого сервиса
         this.httpService.getCity().subscribe((city: City[]) => {
 
@@ -91,7 +95,9 @@ export class HomeComponent implements OnInit, OnDestroy {
                 let CurCity = city.find(city => city.id === idCity);
                 eekey.CityName = CurCity.name;
               }
-            });
+            }
+
+            );
             this.myDataVacancy = data;
             if (this.myDataVacancy.length === 0) {
 

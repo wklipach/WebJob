@@ -12,6 +12,7 @@ export class UserType{
   LastName: string;
   Address: string;
   Phone: string;
+  Avatar: any;
 
   constructor(UserName: string, EMail: string, Password: string, bEmployer: boolean,
               City: number, Zip: string, Name: string,

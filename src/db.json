@@ -192,6 +192,23 @@
       "Address": "Работская ул 1-1",
       "Phone": "123-34-56",
       "id": 20
+    },
+    {
+      "UserName": "Работодатель-картинка",
+      "EMail": "aaa@mail.ru",
+      "Password": "1",
+      "bEmployer": true,
+      "City": -1,
+      "Zip": "",
+      "Name": "",
+      "LastName": "",
+      "Address": "",
+      "Phone": "",
+      "id": 21,
+      "Avatar": {
+        "Avatar": "{\"value\":\"Qk12AgAAAAAAAHYAAAAoAAAAIAAAACAAAAABAAQAAAAAAAACAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAgAAAgAAAAICAAIAAAACAAIAAgIAAAICAgADAwMAAAAD/AAD/AAAA//8A/wAAAP8A/wD//wAA////AIiAAIiIiIiIiIiAAIiIiIiIgJAIiIiIiIiIgJAIiIiIiICQGIiIiIiIiICQGIiIiIiAkBiIiIiIiIiAkBiIiIiIgJAQgIiIiIiIgJAQgIiIiICQEQEIiIiIiICQEQEIiIiAkBERCIiIiIiAkBERCIgZGRkZGRkZGRkZGRkZGRkZAAAAAAAAAAAAAAAAAAAAADMzMzMzMzMzMzMzMzMzMzOIgJCIiIiIiIiIgJCIiIiIuICQu4iLu4iLu4CQu7iIu4iAkIiIiIiIiIiAkIiIiIh3cJB3AQd3d3d3cJB3AQd3iICQiAEIiIiIiICQiAEIiIiAkIgBCIiIiIiAkIgBCIiIgJCIAQiIiIiIgJCIAQiIiICQiAEIiIiIiICQiAEIiIiAkIgBCIiIiIiAkIgBCIiIgJCIAQiIiIiIgJCIAQiIiICQCAEIiIiIiICQCAEIiIiAkBABCIiIiIiAkBABCIiIgACRAQiIiIiIgACRAQiIiIs4CREIiIiIiIs4CREIiIiIiICRCIiIiIiIiICQGIiIiIiICQiIiIiIiIiICQiIiIiIiAkIiIiIiIiIiAkIiIiIiIgACIiIiIiIiIgACIiIiIiIs4iIiIiIiIiIs4iIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI\"}",
+        "Name": "BRIDGE.BMP"
+      }
     }
   ],
   "Vacancy": [

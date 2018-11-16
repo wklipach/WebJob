@@ -100,6 +100,15 @@ export class AuthService {
   }
 
 
+  updateAvatarUserTable(curAvatar: any, id_user: number){
+
+
+    console.log('curAvatar',curAvatar);
+
+    return this.http.patch('http://localhost:3000/UserTable/'+id_user, {"Avatar": curAvatar});
+  }
+
+
 ///
 
  public loginStorage(): {htUserName: string; bConnected: boolean; id_user: number; bEmployer: boolean} {

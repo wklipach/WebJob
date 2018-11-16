@@ -10,6 +10,31 @@
   </div>
   <div class="col-4">
     <!-- <input type="image" title="photo" id="photo">  -->
+
+    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!   -->
+    <form [formGroup]="form">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Bob" formControlName="name">
+      </div>
+      <div class="form-group">
+        <label for="avatar">Avatar</label>
+        <input type="file" id="avatar" (change)="onFileChange($event)" #fileInput>
+        <button type="button" (click)="onPostImageAvatar()"  >Сохранить в базу <i class="fa fa-spinner fa-spin fa-fw" *ngIf="loading"></i></button>
+      </div>
+
+    </form>
+    <!-- -->
+
+    <br>
+
+
+    <div *ngIf="base64textString.length>0">
+      <img *ngFor="let item of base64textString"  src={{item}} alt="" id="img">
+    <br>
+    </div>
+
+
     <img src="/assets/img/rus-flag.gif" alt="Фото" title="Загрузить логотип"
          class="img-thumbnail">
   </div>
