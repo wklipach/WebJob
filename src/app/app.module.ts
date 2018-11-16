@@ -50,6 +50,7 @@ import { InfoComponent } from './account/message-center/info/info.component';
 import { MessageComponent } from './account/message-center/message/message.component';
 import { ResponseComponent } from './content/response/response.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import {LetterService} from './services/letter.service';
 
 
 
@@ -133,7 +134,7 @@ const appRoutes: Routes = [
     CvPreviousComponent
   ],
   providers: [AuthService, GuideService, NewVacancyService, TableVacancyService,
-              MoveService, PreviousService, NewcvService, CvListService, CvEditService, VacanciesListService],
+              MoveService, PreviousService, NewcvService, CvListService, CvEditService, VacanciesListService, LetterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,8 +4,7 @@
   </div>
 
 
-  <div class="message">
-
+  <div class="message" id="message" *ngFor="let curLetter of myDataLetter; let i = index" (click)="curLetterClick(curLetter.letter.id_vc, $event)">
     <div class="v-line"></div>
     <ul class="headline">
       <li class="date">Дата</li>
@@ -14,30 +13,12 @@
     </ul>
 
     <ul class="bline">
-      <li class="date">21.10.2018</li>
-      <li class="from">Петрова И.И.</li>
-      <li class="subject">Отклик на вакансию: Программист С++</li>
+      <li class="date">{{curLetter.letter.DateTimeCreate}}</li>
+      <li class="from">{{curLetter.letter.id_user_from}}</li>
+      <li class="subject">Отклик на вакансию: {{curLetter.letter.id_vc}} </li>
     </ul>
-
-
-
-</div>
-  <div class="message">
-
-
-    <ul class="headline">
-      <li class="date" id="date">Дата</li>
-      <li class="from" id="from">От</li>
-      <li class="subject" id="subject">Тема</li>
-    </ul>
-
-    <ul class="bline">
-      <li class="date">01.11.2018</li>
-      <li class="from">Грызлова С.И.</li>
-      <li class="subject">Отклик на вакансию: Менеджер парламента</li>
-    </ul>
-
   </div>
+
     </div>
 
 
