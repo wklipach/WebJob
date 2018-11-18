@@ -18,13 +18,25 @@
         "bOld": false,
         "bReadByRecipient": false,
         "id_user_from": 15,
-        "id_cv": 19,
-        "id_vc": 43,
-        "id_user_to": 20,
-        "letterText": "Хочу черпать навоз в вашей конторе",
-        "DateTimeCreate": "16/11/2018 02:11"
+        "id_cv": 14,
+        "id_vc": 40,
+        "letterText": "jnkknbnnnnnnnnnmnnnnnnnnnnnnnnnnnnn",
+        "DateTimeCreate": "18/11/2018 12:55"
       },
       "id": 2
+    },
+    {
+      "letter": {
+        "bOld": false,
+        "bReadByRecipient": false,
+        "id_user_from": 15,
+        "id_cv": 14,
+        "id_vc": 42,
+        "id_user_to": 20,
+        "letterText": " Тру ля ля Тру ля ля Тру ля ля Тру ля ля Тру ля ля Тру ля ля Тру ля ля Тру ля ля Тру ля ля Тру ля ля Тру ля ля Тру ля ля Тру ля ля Тру ля ля Тру ля ля Тру ля ля Тру ля ля Тру ля ля Тру ля ля Тру ля ля Тру ля ля Тру ля ля Тру ля ля Тру ля ля Тру ля ля Тру ля ля Тру ля ля Тру ля ля Тру ля ля \"\nГород \"Тарту\"\n",
+        "DateTimeCreate": "18/11/2018 12:56"
+      },
+      "id": 3
     }
   ],
   "UserFavoritesUnit": [
@@ -204,23 +216,10 @@
       "LastName": "Работов",
       "Address": "Работская ул 1-1",
       "Phone": "123-34-56",
-      "id": 20
-    },
-    {
-      "UserName": "Работодатель-картинка",
-      "EMail": "aaa@mail.ru",
-      "Password": "1",
-      "bEmployer": true,
-      "City": -1,
-      "Zip": "",
-      "Name": "",
-      "LastName": "",
-      "Address": "",
-      "Phone": "",
-      "id": 21,
+      "id": 20,
       "Avatar": {
-        "Avatar": "{\"value\":\"Qk12AgAAAAAAAHYAAAAoAAAAIAAAACAAAAABAAQAAAAAAAACAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAgAAAgAAAAICAAIAAAACAAIAAgIAAAICAgADAwMAAAAD/AAD/AAAA//8A/wAAAP8A/wD//wAA////AIiAAIiIiIiIiIiAAIiIiIiIgJAIiIiIiIiIgJAIiIiIiICQGIiIiIiIiICQGIiIiIiAkBiIiIiIiIiAkBiIiIiIgJAQgIiIiIiIgJAQgIiIiICQEQEIiIiIiICQEQEIiIiAkBERCIiIiIiAkBERCIgZGRkZGRkZGRkZGRkZGRkZAAAAAAAAAAAAAAAAAAAAADMzMzMzMzMzMzMzMzMzMzOIgJCIiIiIiIiIgJCIiIiIuICQu4iLu4iLu4CQu7iIu4iAkIiIiIiIiIiAkIiIiIh3cJB3AQd3d3d3cJB3AQd3iICQiAEIiIiIiICQiAEIiIiAkIgBCIiIiIiAkIgBCIiIgJCIAQiIiIiIgJCIAQiIiICQiAEIiIiIiICQiAEIiIiAkIgBCIiIiIiAkIgBCIiIgJCIAQiIiIiIgJCIAQiIiICQCAEIiIiIiICQCAEIiIiAkBABCIiIiIiAkBABCIiIgACRAQiIiIiIgACRAQiIiIs4CREIiIiIiIs4CREIiIiIiICRCIiIiIiIiICQGIiIiIiICQiIiIiIiIiICQiIiIiIiAkIiIiIiIiIiAkIiIiIiIgACIiIiIiIiIgACIiIiIiIs4iIiIiIiIiIs4iIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI\"}",
-        "Name": "BRIDGE.BMP"
+        "Avatar": "{\"value\":\"iVBORw0KGgoAAAANSUhEUgAAAIIAAAAmCAYAAAAIjkMFAAABJmlDQ1BBZG9iZSBSR0IgKDE5OTgpAAAoz2NgYDJwdHFyZRJgYMjNKykKcndSiIiMUmA/z8DGwMwABonJxQWOAQE+IHZefl4qAwb4do2BEURf1gWZxUAa4EouKCoB0n+A2CgltTiZgYHRAMjOLi8pAIozzgGyRZKywewNIHZRSJAzkH0EyOZLh7CvgNhJEPYTELsI6Akg+wtIfTqYzcQBNgfClgGxS1IrQPYyOOcXVBZlpmeUKBhaWloqOKbkJ6UqBFcWl6TmFit45iXnFxXkFyWWpKYA1ULcBwaCEIWgENMAarTQZKAyAMUDhPU5EBy+jGJnEGIIkFxaVAZlMjIZE+YjzJgjwcDgv5SBgeUPQsykl4FhgQ4DA/9UhJiaIQODgD4Dw745AMDGT/0ZOjZcAAAACXBIWXMAAAsTAAALEwEAmpwYAAAF0WlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDIgNzkuMTYwOTI0LCAyMDE3LzA3LzEzLTAxOjA2OjM5ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOCAoV2luZG93cykiIHhtcDpDcmVhdGVEYXRlPSIyMDE4LTExLTE3VDEwOjM0OjM5KzAzOjAwIiB4bXA6TW9kaWZ5RGF0ZT0iMjAxOC0xMS0xN1QxMDo0MjoyOCswMzowMCIgeG1wOk1ldGFkYXRhRGF0ZT0iMjAxOC0xMS0xN1QxMDo0MjoyOCswMzowMCIgZGM6Zm9ybWF0PSJpbWFnZS9wbmciIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6YzQ3ODg3NmMtNjdlNS0xMjRmLTgxYmQtZDIwMWNiZjEwZDRmIiB4bXBNTTpEb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6MjVlOGZiMDItMzYxNy0xZDRmLWI0ZjgtOTgwNTUzZDhiMmFjIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6MDFhMGJjOGQtYWQyMC02YjQxLTlmZGEtNzAzODA2Y2UzOTFhIj4gPHhtcE1NOkhpc3Rvcnk+IDxyZGY6U2VxPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY3JlYXRlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDowMWEwYmM4ZC1hZDIwLTZiNDEtOWZkYS03MDM4MDZjZTM5MWEiIHN0RXZ0OndoZW49IjIwMTgtMTEtMTdUMTA6MzQ6MzkrMDM6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE4IChXaW5kb3dzKSIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6YzQ3ODg3NmMtNjdlNS0xMjRmLTgxYmQtZDIwMWNiZjEwZDRmIiBzdEV2dDp3aGVuPSIyMDE4LTExLTE3VDEwOjQyOjI4KzAzOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOCAoV2luZG93cykiIHN0RXZ0OmNoYW5nZWQ9Ii8iLz4gPC9yZGY6U2VxPiA8L3htcE1NOkhpc3Rvcnk+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+wOni6gAABYRJREFUeNrtnEtv3DYQgHWIkpuW+rv5OT31kEsRoEAQ5JJDWhRtby2CJEZejtf7EO0mtuN4V2SHkbSgtSQ1JIfyxt7DYNcriaLIT/Pi0NlJWWYUwsvyS1WWNXyXvJWTbQlu/979+2Z58MD9t+0cXfrnYI+5RL/Oddx1jiZ5/1qQvP09d/XBNiY9IYEAALiyTDwZDHsQdhwEgGB9gocgGIY9CDsMAm9NQaDsQbgNIAAEIgIC2V4fBYJ2vGu37p+PbD8Y1jsNgppEHgGBJiISBCtgCBBItNddBoEKgug3zwKCknoABKzWGuznroLgO9a+EIRMLGaAJZVG6DRNN0AxmgDTz50CATc20SCIiLc7XgV7gqC9GUGaoELmQ+4aCBQqPqqNe37qTxpAQN0fABBKZvB9bgdB7iwICU0DZTgoeWBbFhAymwM6cM6g07osy88Aw3oxoBVQIektAIE8JxCagdQH5NoAqAFxDCriOZz9XbqdY98XSbW1ArmgSu0bTLYY0pYmGRWCGBhcIOhvX94DIzZP0PWX+4W+tmhm43+AtqlBvkQA4DSLVCAkXTcIuYcJBMPbJkCVf81xKlIQOMpez8W1T9A08hjkEMzPtCxnlOOWE4EwBgTe98I4i+3g1jHxdCQIVk1Qtf2rehGJckgPGZPvGVtSjRcFCFQQhJ5re4tQ4SNvQFgjso+SCFrRP84N95o3pkBO289FC0N3XP0GIMgPjM0pMqGxpiEFBFtrAIEPKbAgzNJohKHnsmqCeQPA6qgszz+Bk6i+z3paodJggM+DyHR4FAgpIehkFQODKUwznbcBgVYjDLVh9AXAFNQwyWeGpfsLUzSiYHjH2FUACFvJt5DwkQoCcRK/wDQMgkMjVJ1pQGgEz9VP15gEt88N/Z828hEJgTULmwqE7EcAgesgDKda0X3iASD4QMa3tcK5hzYyJt9CE0oU0cEqZQoaEzW0ttYHhKF+Ya6JDU2vXascybeMrWJqJWIzixQOlQi0yZICBKyPQLh0Tu6IqhDzgLEaxux5MAgEi04UeQLKt84rj7ABAZdQoqifIAGhbxr+ZUyAiXt6kyBkHiqcIo8gqUGYa0Up1BqBJwJB1waHIL9PJjWA8PNNg+AzcaOnmIdAWCQwDdpaQx3gQ6CcxS5iAG0gnxTFZZSPkBgEylRz8KKTC4Q2hy9iTUOlpYTnTX3CKuG4bBJP4CTKF5OJfFQURzHtI1LMyQpTUpe7GQswLRpB5PjM4rWKJAXRvBG1MvgN5HPk86Ag6NLM/wAIj4tC/lIUT2PazgOW3yn3LiQtcsGWqi1aH6Fbjk68aJZRhKa89Q3+BBB+KooaNMPDGBC0ol103zAPSrWdbZRStQU+ashSwcDdxa8mc6aSSPI5mIVfi+I3ZJIOA0KG9H/q5Codey1HPBxGI8xuBgRRaSamwpfkbczCSwDh2WRy6pGtHUooec3bjZSzh0wMViNMu2XocUFQJvQM7i26pWaOgKEDR9Uj/D2ZXMJ1j3rtrkMylyHV2yk9/lE3uPBePYLNR2gHX1CD0NY3vn7D2OW7Zjl5U3PgMgmqSukVYxdg0p4Z2jy3aJe1JwhZChCysSHAmoaqWdNf6xW+3fa87u1TYdqn4SXxKDlgbAoO3/q4V4Ci90OtKRyBGQMn0VWZdNyvXVg2nxcBIDjnboyEUJBPEAKCmnQY3FM91FQqGyb/G8glTMzZR8ZOYaJepQShNRV/gZmoZs29VS3ld2lDU1Wc8h+inT/U88A1V+rfDyyb675C2x8iQDBWV49Vc5h+W7xtA2hvE2g+sCG0v5cw99lMOrRnwXa+q93eObmhknurshu7KVY7NloBKr/uQGV7EG4fCD6aIdhJ24PwY4CQIbTBOuk/09qDEAXC/zQtRz7mHYn5AAAAAElFTkSuQmCC\"}",
+        "Name": "iport-logo-red.png"
       }
     }
   ],

@@ -31,6 +31,15 @@
   text-decoration: none;
   width: 116px;
 }
+.register{
+  position: absolute;
+  display: inline-block;
+  color: #484c54;
+  margin-top:22px;
+  margin-left: 94px;
+  text-decoration: none;
+  width: 150px;
+}
 .arrow-down{
   position: absolute;
   display: inline-block;
@@ -151,6 +160,9 @@ a:visited {
   width: 1170px;
   height: 120px;
   margin: 0 auto;
+}
+.logout{
+  color: #484c54;
 }
 .inputSearch{
   display: inline-block;

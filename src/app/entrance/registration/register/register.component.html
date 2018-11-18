@@ -1,29 +1,20 @@
 <app-header-top></app-header-top>
+<div class="wrapper">
+  <div class="top">Регистрация</div>
 
-<h1>Регистрация</h1>
+  <div class="box">
 
-<fieldset class="form-group">
-  <div class="row">
-    <label class="col-sm-10">Выберите один из вариантов регистрации.</label>
-  </div>
+    <span>Выберите один из вариантов регистрации.</span>
 
-  <div class="row">
-    <div class="col-sm-10">
-      <div class="form-check">
-        <input  class="form-check-input" (change)="newFunction($event)" type="radio" name="registerRadios" id="rEmployee" >
-        <label class="form-check-label" for="rEmployee">
+        <input  class="radio-employee" (change)="newFunction($event)" type="radio" name="registerRadios" id="rEmployee" >
+        <label class="label-employee" for="rEmployee">
           Соискатель
         </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input"  (change)="newFunction($event)" type="radio" name="registerRadios" id="rEmployer" >
-        <label class="form-check-label" for="rEmployer">
+
+        <input class="radio-employer"  (change)="newFunction($event)" type="radio" name="registerRadios" id="rEmployer" >
+        <label class="label-employer" for="rEmployer">
           Работодатель
         </label>
-      </div>
 
     </div>
   </div>
-</fieldset>
-
-

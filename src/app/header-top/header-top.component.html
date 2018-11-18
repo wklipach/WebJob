@@ -34,11 +34,12 @@
 
 
     <div class="menu-top" *ngIf="!bConnected">
-      <div class="box">
-      <!-- <button class="btn btn-primary" (click)="login()">Войти</button> -->
-      <a routerLink="/login" routerLinkActive="active">Войти&nbsp;/</a>
-      <a routerLink="/register" routerLinkActive="active">&nbsp;Регистрация</a>
-    </div>
+      <img class="user" src="/assets/img/user-login.png" alt="Войти" title="Войти">
+           <!-- <button class="btn btn-primary" (click)="login()">Войти</button> -->
+
+      <a routerLink="/login" routerLinkActive="active"><span class="hello">Войти&nbsp;/</span></a>
+      <a routerLink="/register" routerLinkActive="active"><span class="register">&nbsp;Регистрация</span></a>
+
     </div>
 
 

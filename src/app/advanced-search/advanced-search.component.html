@@ -1,40 +1,29 @@
 <app-header-top></app-header-top>
+<div class="wrapper">
+  <div class="top">Расширенный поиск вакансий</div>
 
-<h3>Расширенный поиск вакансий</h3>
+  <div class="box">
 
-<form [formGroup]="advancedSearchForm">
+    <form [formGroup]="advancedSearchForm">
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-6">
+        <input class="inputSearch" type="search" placeholder="Поиск" formControlName="stringFind">
 
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Поиск" formControlName="stringFind">
+       <span>Выберите условия поиска</span><br>
 
-        <div class="input-group-btn">
-          <button class="btn btn-primary" (click)="submit()" > Искать
-            <i class="fa fa-search" style="color: #fff"></i></button>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="row mp">
-    <div class="col-6">
-      <label class="advSearch">Выберите условия поиска</label>
-    </div>
-  </div>
+      <br> <br>
+  <button class="btn-search" (click)="submit()">
+    <img src="/assets/img/icon-search.png" alt="Найти" title="Поиск">&nbsp;
+    Искать
+  </button>
 
 
 
-  <div class="row">
-    <div class="col-6">
       <div class="form-group form-check">
         <ul>
 
 
-          <input name="typeVac" type="radio" class="form-check-input" id="advSearchCheck1" (click)="findOnly(true,false)">Искать только в названии вакансии<br>
+          <input name="typeVac" type="radio" class="form-check-input" id="advSearchCheck1" (click)="findOnly(true,false)">
+          <label class="label-employee" for="advSearchCheck1">Искать только в названии вакансии</label>
           <input name="typeVac" type="radio" class="form-check-input" id="advSearchCheck2" (click)="findOnly(false,true)">Искать только в кратком описании вакансии<br>
 
           <br>
@@ -56,35 +45,22 @@
 
                   </ul>
                 </div>
-              </div>
-            </div>
 
-
-
-
-    <div class="row">
-      <div class="form-group col-md-3">
         <label for="inputCity">Город</label>
         <select id="inputCity" class="form-control" title="Город" formControlName="inputCity">
           <option  *ngFor="let lc of listCity" [value]="lc.name">
             {{lc.name}}
           </option>
         </select>
-      </div>
-    </div>
 
 
 
-    <div class="row">
-      <div class="col-2">
         <label for="inputSalary" class="labelDescr">Заработная плата от</label>
         <input type="text" class="form-control" id="inputSalary" placeholder="Заработная плата до" formControlName="inputSalary">
-      </div>
-    </div>
 
-  <div class="container">
-    <div class="col-4">
-      <!-- Отрасль -->
+  <br>
+
+       <!-- Отрасль -->
       <app-cv_industry></app-cv_industry>
       <!-- Занятость -->
       <app-cv-employment></app-cv-employment>
@@ -94,17 +70,10 @@
       <app-cv-experience></app-cv-experience>
       <!-- Образование -->
       <app-cv-education></app-cv-education>
-    </div>
-  </div>
-
-
-
-</div>
-
 
   </form>
 
 
-  <br><br><br><br><br><br><br><br><br><br>
-
+</div>
+</div>
 <app-footer></app-footer>

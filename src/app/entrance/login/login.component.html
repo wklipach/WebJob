@@ -1,32 +1,26 @@
 <app-header-top></app-header-top>
-<h1>
-Войти
-</h1>
 
+<div class="wrapper">
+  <div class="top">Войти</div>
 
 
 <!--
    начали модель
 -->
-
+<div class="box">
 <form [formGroup]="loginForm" novalidate (ngSubmit)="submit()">
-  <div class="form-row">
-    <div class="form-group col-md-2">
-      <label for="inputLogin">Логин или E-Mail</label>
-      <input type="text" class="form-control" id="inputLogin" formControlName="nameOrEmail" placeholder="Логин или E-mail">
-    </div>
-  </div>
 
-  <div class="form-row">
-    <div class="form-group col-md-2">
-      <label for="inputPassword">Пароль</label>
-      <input type="password" class="form-control" id="inputPassword" formControlName="password"  placeholder="Пароль">
-    </div>
+  <label class="login" for="inputLogin">Логин или E-Mail</label>
+  <input type="text" class="inputLogin" id="inputLogin" formControlName="nameOrEmail" placeholder="Логин или E-mail">
 
-  </div>
+        <br><br><br><br><br>
 
+  <label class="password" for="inputPassword">Пароль</label>
+  <input type="password" class="inputPassword" id="inputPassword" formControlName="password"  placeholder="Пароль">
 
-  <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Войти</button><br>
+  <br><br><br>
+
+  <button type="submit" class="btn-signin" [disabled]="loginForm.invalid">Войти</button><br>
 
   <ng-container *ngIf="showErr">
     <div class="alert alert-danger" role="alert">
@@ -43,7 +37,7 @@
     <a routerLink="/home" routerLinkActive="active"></a>
   </ng-container>
 
-
+  <br><br><br><br><br>
 </form>
   <!--
      занончили модель
@@ -51,22 +45,12 @@
 
   <div class="form-row">
     <div class="form-group col-md-2">
-  <a class="nav-link" routerLink="/forgot-password" routerLinkActive="active">Забыли пароль или логин?</a>
-  <a class="nav-link" routerLink="/register" routerLinkActive="active">Зарегистрироваться</a>
+  <a class="nav-link" routerLink="/forgot-password" routerLinkActive="active">Забыли пароль или логин?</a><br>
+  <a class="nav-link" routerLink="/register" routerLinkActive="active">Зарегистрироваться</a><br>
     <br>
 
 </div>
-</div>
-
-
-
-<label>Личный кабинет</label>
-
-
-<a class="nav-link" routerLink="/account-employee" routerLinkActive="active">Личный кабинет соискателя</a>
-<a class="nav-link" routerLink="/account-employer" routerLinkActive="active">Личный кабинет работодателя</a>
-
-<a class="nav-link" routerLink="/advanced-search" routerLinkActive="active">Расширенный поиск</a>
-
-
+ </div>
+  </div>
+   </div>
 <app-footer></app-footer>

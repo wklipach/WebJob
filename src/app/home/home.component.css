@@ -13,7 +13,6 @@
   height: 36px;
   margin: 0 auto;
   border-color: #b7b7b7;
-  /*vertical-align: middle;  */
   font-size: 30px;
   font-family: "Proxima Nova";
   color: rgb(68, 75, 84);
@@ -21,7 +20,7 @@
 }
 .vacancy-box{
   width: 1170px;
-  height: 330px;
+  height: 315px;
   margin: 30px auto;
   border-top: solid 1px;
   border-bottom: solid 1px;
@@ -36,7 +35,7 @@
   display: inline-block;
   position: relative;
   width:6px;
-  height:330px;
+  height:315px;
   background-color: #b8b8b8;
 }
 .vacancy-box:hover{

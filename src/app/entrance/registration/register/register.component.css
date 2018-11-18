@@ -1,0 +1,77 @@
+.wrapper{
+  display: inline-block;
+  position: relative;
+  font-family: "ProximaNovaRg";
+  font-size: 16px;
+  width: 100%;
+  margin: 0 auto;
+  padding-right: 0;
+  padding-left: 0;
+}
+.top{
+  width: 1170px;
+  height: 36px;
+  margin: 0 auto;
+  border-color: #b7b7b7;
+  /*vertical-align: middle;  */
+  font-size: 30px;
+  font-family: "Proxima Nova";
+  color: rgb(68, 75, 84);
+  text-align: left;
+}
+.box{
+  width: 1170px;
+  height: 180px;
+  margin: 30px auto;
+  border-top: solid 1px;
+  border-bottom: solid 1px;
+  border-color: #b7b7b7;
+  /*vertical-align: middle; */
+  font-size: 16px;
+  font-family: "Proxima Nova";
+  color: rgb(68, 75, 84);
+  text-align: left;
+}
+.radio-employee{
+  position: absolute;
+  display: inline-block;
+  font-size: 14px;
+  font-family: "Proxima Nova";
+  text-align: left;
+  background-color: rgb(255, 255, 255);
+  width: auto;
+  height: 43px;
+  margin-left: 15px;
+  margin-top: 15px;
+}
+.radio-employer{
+  position: absolute;
+  display: inline-block;
+  font-size: 14px;
+  font-family: "Proxima Nova";
+  text-align: left;
+  background-color: rgb(255, 255, 255);
+  width: auto;
+  height: 43px;
+  margin-left: 15px;
+  margin-top: 41px;
+}
+label{
+  position: absolute;
+  font-size: 16px;
+  font-family: "Proxima Nova";
+  color: rgb(2, 98, 210);
+  text-align: left;
+}
+.label-employee{
+  padding-left: 38px;
+  margin-top: 27px;
+}
+.label-employer{
+  padding-left: 38px;
+  margin-top: 53px;
+}
+span {
+  position: absolute;
+  display: inline-block;
+}
