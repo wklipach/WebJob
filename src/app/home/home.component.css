@@ -187,3 +187,13 @@
   position: absolute;
   visibility:hidden;
 }
+
+.counter-line{
+  position: relative;
+  width: 1170px;
+  height: 66px;
+  margin: 0 auto;
+  border-color: #b7b7b7;
+  border-style: solid;
+  border-width: 1px;
+}

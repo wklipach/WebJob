@@ -51,6 +51,7 @@ import { MessageComponent } from './account/message-center/message/message.compo
 import { ResponseComponent } from './content/response/response.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import {LetterService} from './services/letter.service';
+import { PageCountComponent } from './page-count/page-count.component';
 
 
 
@@ -84,6 +85,7 @@ const appRoutes: Routes = [
   {path: 'message', component: MessageComponent},
   {path: 'info', component: InfoComponent},
   {path: 'response', component: ResponseComponent},
+  {path: 'page-count', component: PageCountComponent},
   {path: '**', component: NotFoundComponent }
 ];
 
@@ -128,6 +130,7 @@ const appRoutes: Routes = [
     InfoComponent,
     MessageComponent,
     ResponseComponent,
+    PageCountComponent,
     NotFoundComponent
    ],
   entryComponents: [

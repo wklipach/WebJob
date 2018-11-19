@@ -21,9 +21,11 @@
     <button class="btn-favorites" type="button" id="vcfavorites" title="В избранное" (click)="favorites($event,i, curVacancy.id)" >В избранное</button>
     <button class="btn-hide" type="button" id="vchide" title="Не показывать" (click)="unshow($event,i, curVacancy.id)" >Не показывать</button>
     {{curVacancy.sErrorText}}
+     </div>
 
+  <div class="counter-line">
+    <app-page-count></app-page-count>
   </div>
-
 </div>
 
 

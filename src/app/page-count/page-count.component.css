@@ -1,0 +1,16 @@
+.page {
+  position: absolute;
+  display: inline-block;
+  margin-top: 6px;
+  margin-left: 10px;
+
+}
+li{
+  display: inline-block;
+  font-size: 24px;
+  color: #F74933;
+  padding-right: 15px;
+}
+li:hover{
+  cursor: pointer;
+}
