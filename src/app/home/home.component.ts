@@ -9,6 +9,8 @@ import {Subscription} from 'rxjs';
 import {AppComponent} from '../app.component';
 import {AuthService} from '../services/auth-service.service';
 import {CvEditService} from '../services/cv-edit.service';
+import {NgbPaginationConfig} from '@ng-bootstrap/ng-bootstrap';
+
 
 
 
@@ -19,6 +21,7 @@ import {CvEditService} from '../services/cv-edit.service';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
+  page = 4;
   private bConnected = false;
   private id_user = -1;
   private bEmployer = false;

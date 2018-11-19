@@ -52,6 +52,7 @@ import { ResponseComponent } from './content/response/response.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import {LetterService} from './services/letter.service';
 import { PageCountComponent } from './page-count/page-count.component';
+import {NgbModule, NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -93,7 +94,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports:
-   [ BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule, AngularFontAwesomeModule,
+   [ BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule, AngularFontAwesomeModule, NgbModule, NgbPaginationModule,NgbAlertModule,
      RouterModule.forRoot(appRoutes)],
   declarations: [
     AppComponent,
