@@ -1,8 +1,11 @@
 <div class="page-count">
 <div class="page">
   <ul>
-    <li>1</li>
-    <li>2</li>
+    <li><div (click)="onFirstPage()"> << </div></li>
+    <li><div (click)="onPriorPage()"> < </div></li>
+      <li *ngFor="let item of numberOfPage" (click)="onCurrentPageChange(item)"><div tabindex="curPage">{{item}}</div></li>
+    <li><div (click)="onNextPage()"> > </div></li>
+    <li><div (click)="onLastPage()"> >> </div></li>
   </ul>
 </div>
 </div>

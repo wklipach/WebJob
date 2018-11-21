@@ -21,7 +21,7 @@ import {NgbPaginationConfig} from '@ng-bootstrap/ng-bootstrap';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-  page = 4;
+  page = 1;
   private bConnected = false;
   private id_user = -1;
   private bEmployer = false;

@@ -24,11 +24,13 @@
      </div>
 
   <div class="counter-line">
-    <app-page-count></app-page-count>
+    <app-page-count [numberOfRecordsPerPage] = "10" [numberOfVisiblePages]="7" [(currentPage)] = "page" numberOfRecordsPerAll = "428"></app-page-count>
   </div>
 
 </div>
 
-<ngb-pagination [collectionSize]="120" [(page)]="page" [maxSize]="3" [boundaryLinks]="true" [rotate]="true"></ngb-pagination>
+<!--
+ <ngb-pagination [collectionSize]="120" [(page)]="page" [maxSize]="3" [boundaryLinks]="true" [rotate]="true"></ngb-pagination>
+ -->
 
 <pre>Current page: {{page}}</pre>

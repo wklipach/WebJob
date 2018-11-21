@@ -11,6 +11,15 @@ li{
   color: #F74933;
   padding-right: 15px;
 }
+
 li:hover{
   cursor: pointer;
+}
+
+div:focus {
+  background-color: #00A4E4;
+}
+
+li:active{
+  background-color: #00A4E4;
 }
