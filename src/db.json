@@ -54,9 +54,30 @@
       "id_user": 17,
       "id_vc": 41,
       "id": 3
+    },
+    {
+      "id_user": 17,
+      "id_vc": 1,
+      "id": 4
+    },
+    {
+      "id_user": 17,
+      "id_vc": 1,
+      "id": 5
+    },
+    {
+      "id_user": 17,
+      "id_vc": 1,
+      "id": 6
     }
   ],
-  "UserDontShowUnit": [],
+  "UserDontShowUnit": [
+    {
+      "id_user": 17,
+      "id_vc": 43,
+      "id": 1
+    }
+  ],
   "UserTable": [
     {
       "id": 1,

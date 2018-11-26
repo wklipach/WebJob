@@ -6,10 +6,9 @@ import {isNullOrUndefined} from 'util';
 import {Router} from '@angular/router';
 import {MoveService} from '../services/move.service';
 import {Subscription} from 'rxjs';
-import {AppComponent} from '../app.component';
 import {AuthService} from '../services/auth-service.service';
 import {CvEditService} from '../services/cv-edit.service';
-import {NgbPaginationConfig} from '@ng-bootstrap/ng-bootstrap';
+import {GuideService} from '../services/guide-service.service';
 
 
 
@@ -21,12 +20,22 @@ import {NgbPaginationConfig} from '@ng-bootstrap/ng-bootstrap';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-  page = 1;
+  //текущая страница
+  public page = 1;
+  //записей на странице
+  public rowPerPage = 5;
+  //всего записей после запроса
+  public recordsPerAll = 0;
+
   private bConnected = false;
   private id_user = -1;
   private bEmployer = false;
   public sNoUserValueFind = '';
+
+  /* TODO First myDataVacancy   */
   myDataVacancy: dataVacancy[];
+  allDataVacancy: dataVacancy[];
+
   private dvSubscription: Subscription;
   private getTableVacancy: Subscription;
   private sbReopenVacancyAdvanced: Subscription;
@@ -36,7 +45,14 @@ export class HomeComponent implements OnInit, OnDestroy {
               private router: Router,
               private moveS: MoveService,
               private authService: AuthService,
-              private cvEditSrv: CvEditService) {
+              private cvEditSrv: CvEditService,
+              private is: GuideService) {
+  }
+
+
+  onPageChanged(pageNumber: number) {
+    console.log('переключили страницу, новая страница=', pageNumber);
+    this.reloadPAge(this.allDataVacancy, this.sMask);
   }
 
   ngOnInit() {
@@ -80,51 +96,71 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
 
-
+    // TODO getVacancy
    getVacancy(sMask: string) {
-    return this.getTableVacancy = this.httpService.getTableVacancy(sMask).subscribe(
+    return this.getTableVacancy = this.httpService.getTableVacancy(sMask, this.rowPerPage, this.page).subscribe(
       (data: dataVacancy[]) => {
 
-        console.log('DATA');
-        console.log(data);
+        this.myDataVacancy = data;
+        this.allDataVacancy = data;
+        this.recordsPerAll = data.length;
+        this.is.startCheckPaginator(this.recordsPerAll);
+        console.log('всего записей', this.recordsPerAll);
+        this.reloadPAge(this.allDataVacancy, sMask);
 
-        // это получаем город из нового вызываемого сервиса
-        this.httpService.getCity().subscribe((city: City[]) => {
-
-            data.forEach((eekey, ih) => {
-
-              let idCity = eekey['vacancy'].City;
-              if (isNullOrUndefined(idCity) === false) {
-                let CurCity = city.find(city => city.id === idCity);
-                eekey.CityName = CurCity.name;
-              }
-            }
-
-            );
-            this.myDataVacancy = data;
-            if (this.myDataVacancy.length === 0) {
-
-              // console.log('ЕСЛИ НИЧЕГО НЕ НАШЛИ');
-              if (window.localStorage.getItem('backPage') !== null) {
-                let sBack = window.localStorage.getItem('backPage');
-                window.localStorage.removeItem('backPage');
-                if (sBack !== '/') {
-                  this.router.navigateByUrl(sBack);
-                  this.moveS.setNullValueFind('Поиск не дал результатов.');
-                }
-                if (sBack === '/' && sMask !== '')  {
-                  this.sMask = '';
-                  this.getVacancy('');
-                  this.moveS.startNullFind('Поиск не дал результатов.');
-                }
-              }
-            }
-            window.localStorage.removeItem('backPage');
-
-          }
-        );
      }
     );
+  }
+
+
+  //получаем из массива кол. записей и кусок записей на данной странице
+  reloadPAge(data: dataVacancy[], sMask: string) {
+
+    console.log('this.rowPerPage*(this.page-1)',this.rowPerPage*(this.page-1),'this.rowPerPage',this.rowPerPage);
+    console.log('DATA1', data);
+    data = data.slice(this.rowPerPage*(this.page-1),this.rowPerPage*(this.page-1)+this.rowPerPage);
+    console.log('DATA2', data);
+    // это получаем город из нового вызываемого сервиса
+    this.httpService.getCity().subscribe((city: City[]) => {
+
+        data.forEach((eekey, ih) => {
+
+            let idCity = eekey['vacancy'].City;
+            if (isNullOrUndefined(idCity) === false) {
+              let CurCity = city.find(city => city.id === idCity);
+              eekey.CityName = CurCity.name;
+            }
+          }
+
+        );
+
+        this.myDataVacancy = data;
+
+        // TODO 2 this.myDataVacancy
+
+        if (this.allDataVacancy.length === 0) {
+
+          // console.log('ЕСЛИ НИЧЕГО НЕ НАШЛИ');
+          if (window.localStorage.getItem('backPage') !== null) {
+            let sBack = window.localStorage.getItem('backPage');
+            window.localStorage.removeItem('backPage');
+            if (sBack !== '/') {
+              this.router.navigateByUrl(sBack);
+              this.moveS.setNullValueFind('Поиск не дал результатов.');
+            }
+            if (sBack === '/' && sMask !== '')  {
+              this.sMask = '';
+              this.getVacancy('');
+              this.moveS.startNullFind('Поиск не дал результатов.');
+            }
+          }
+        }
+        window.localStorage.removeItem('backPage');
+
+      }
+
+    );
+
   }
 
 
@@ -139,6 +175,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     return;
 
     console.log('id--', zid);
+
+    // TODO 3 myDataVacancy
     let vacancy = this.myDataVacancy.find(vacancy =>  vacancy.id===zid);
      this.dvSubscription = this.moveS.setDataVacancy(vacancy).subscribe( ()=> this.router.navigate(['/vacancy-description']));
   }
@@ -162,6 +200,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   favorites($event, index: number, vcid: number) {
 
+    //TODO 4 this.myDataVacancy
+
    this.sNoUserValueFind = '';
     this.myDataVacancy[index].sErrorText = '';
    if  (!this.bConnected) {
@@ -183,6 +223,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   unshow($event, index: number, vcid: number) {
 
+    //TODO 5 this.myDataVacancy
+
     this.sNoUserValueFind = '';
     this.myDataVacancy[index].sErrorText = '';
     if  (!this.bConnected)  {
@@ -202,6 +244,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   response($event, index: number, vcid: number) {
+
+    // TODO 6 this.myDataVacancy
 
     this.sNoUserValueFind = '';
     this.myDataVacancy[index].sErrorText = '';

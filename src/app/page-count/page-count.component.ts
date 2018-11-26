@@ -1,4 +1,7 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {GuideService} from '../services/guide-service.service';
+import {Subscription} from 'rxjs';
+
 
 @Component({
   selector: 'app-page-count',
@@ -7,22 +10,20 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class PageCountComponent implements OnInit {
 
+  @ViewChild('liExpert', {read: ElementRef}) liExpert: ElementRef;
   @Input() numberOfVisiblePages: number = 5;
   @Input() numberOfRecordsPerAll: number = 28;
   @Input() currentPage: number;
   @Output() currentPageChange = new EventEmitter<number>();
 
-
   private _numberOfRecordsPerPage = 10;
-
   protected numberOfPage: string[] = [];
   private _numberOfPage: number = 1;
 
-  constructor() {
+  private  paginatorSubscription: Subscription;
 
-    console.log('constructor', this.currentPage);
 
-  }
+  constructor(private is: GuideService) { }
 
   @Input()
   set numberOfRecordsPerPage(numberRecords: number) {
@@ -33,6 +34,19 @@ export class PageCountComponent implements OnInit {
   get numberOfRecordsPerPage() { return this._numberOfRecordsPerPage; }
 
 
+  ngAfterViewChecked () {
+    var cE: any;
+    for(var element of this.liExpert.nativeElement.childNodes) {
+      if (element.childNodes.length === 1) {
+        if (element.childNodes[0] != undefined) element.childNodes[0].setAttribute("class", "normalNumeral");
+        if (element.childNodes[0].innerText === this.currentPage.toString() ) {
+          cE = element.childNodes[0];
+          cE.setAttribute("class", "bigNumeral");
+        }
+      }
+    }
+  }
+
 
   onCurrentPageChange(pageNumber: number){
 
@@ -42,6 +56,7 @@ export class PageCountComponent implements OnInit {
     this.currentPage = pageNumber;
     this.currentPageChange.emit(pageNumber);
   }
+
 
 
   moveRightBlockPages(pageNumber: number) {
@@ -78,8 +93,6 @@ export class PageCountComponent implements OnInit {
       if (newLastPage<1) newLastPage = 1;
       this.RepeatInitializePages(newLastPage);
     }
-
-
   };
 
 
@@ -89,12 +102,10 @@ export class PageCountComponent implements OnInit {
     //если это не последняя страница смотрим следующую, если это '...' сдвигаем пагинатор
      if (parseInt(curValuePage) <this._numberOfPage) {
        if (this.numberOfPage[curIndex+1] ==='...') {
-
                //если это последний промежуток, ничего не двигаем
                if (parseInt(this.numberOfPage[curIndex]) === parseInt(this.numberOfPage[curIndex+2])-1) {
                  return true;
                }
-
                //сдвигаем влево на 1/2 от numberOfVisiblePages
                var leftMove = Math.floor(this.numberOfVisiblePages/2);
                var newFirstPage = pageNumber - leftMove;
@@ -106,33 +117,38 @@ export class PageCountComponent implements OnInit {
 
 
   RepeatInitializePages(newFirstPage: number) {
-
     this.numberOfPage = [];
-    //this.numberOfPage.push('1');
 
     for (var i = 0; i < this.numberOfVisiblePages; i++) {
 
       var curPage = newFirstPage+i;
       this.numberOfPage.push(curPage.toString());
-
       //если это последняя страница выходим
       if (curPage === this._numberOfPage) return;
-
       //если последняя итерация, а страница не последняя лобавляем многоточие и последнюю страницу
       if (i === (this.numberOfVisiblePages-1)) {
+        //если страница не последняя
         if (curPage !== this._numberOfPage) {
-          this.numberOfPage.push('...');
+          //если последняя страница не идет следом за текущей добавляем многоточие
+          if (curPage !== this._numberOfPage-1) this.numberOfPage.push('...');
+          // добавляем последнюю страницу
           this.numberOfPage.push(this._numberOfPage.toString());
         }
       }
-
     }
-
   }
 
   ngOnInit() {
     this._numberOfPage = Math.ceil(this.numberOfRecordsPerAll / this.numberOfRecordsPerPage);
     this.InitializePages();
+    this.paginatorSubscription = this.is.onCheckPaginator.subscribe((value) => {
+        this.numberOfRecordsPerAll = value;
+      this._numberOfPage = Math.ceil(this.numberOfRecordsPerAll / this.numberOfRecordsPerPage);
+        this.InitializePages();
+      }
+    );
+
+
   }
 
   //рисуем первоначальный блок со страничками
@@ -142,10 +158,9 @@ export class PageCountComponent implements OnInit {
 
     for (var i = 1; i <= this._numberOfPage; i++) {
       if (i<=this.numberOfVisiblePages)  this.numberOfPage.push(i.toString()); else {
-        if (i<this._numberOfPage) {
-          this.numberOfPage.push('...');
+          //если последнюю страницу отделяет от предпоследней многоточие, убираем его
+          if (i !== this._numberOfPage) this.numberOfPage.push('...');
           this.numberOfPage.push(this._numberOfPage.toString());
-        }
         return;
       }
     }
@@ -165,7 +180,11 @@ export class PageCountComponent implements OnInit {
 
   onNextPage() {
     //перевод в стринг из-за арифметки - this.currentPage хоть и number системой видится как стринг при арифметике
-    if (this.currentPage === this._numberOfPage) return;
+
+    console.log('this.currentPage',this.currentPage, 'this._numberOfPage', this._numberOfPage);
+
+    if (this.currentPage.toString() === this._numberOfPage.toString() ) return;
+
     var nextStringPage = this.currentPage.toString();
     this.onCurrentPageChange(parseInt(nextStringPage)+1);
   }
@@ -175,6 +194,13 @@ export class PageCountComponent implements OnInit {
     if (this.currentPage === 1) return;
     var priorStringPage = this.currentPage.toString();
     this.onCurrentPageChange(parseInt(priorStringPage)-1);
+  }
+
+
+  ngOnDestroy() {
+    if (typeof this.paginatorSubscription !== 'undefined') {
+      this.paginatorSubscription.unsubscribe();
+    }
   }
 
 

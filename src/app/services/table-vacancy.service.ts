@@ -66,8 +66,11 @@ export class TableVacancyService {
   GET /posts?q=internet
   */
 
-  getTableVacancy(sMask: string)
+  getTableVacancy(sMask: string, rowPerPage: number, currentPage: number)
   {
+
+    console.log('getTableVacancy сработал');
+
     let sUrl = 'http://localhost:3000/vacancy';
     if (sMask !== '') sUrl = sUrl +'?q='+sMask;
     // вставить запрос типа select top 10 * from Vacancy по маске или еще что такое же

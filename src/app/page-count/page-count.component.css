@@ -20,6 +20,14 @@ div:focus {
   background-color: #00A4E4;
 }
 
-li:active{
-  background-color: #00A4E4;
+.bigNumeral{
+  display: inline-block;
+  font-size: 26px;
+  color: black;
+}
+
+.norlalNumeral{
+  display: inline-block;
+  font-size: 24px;
+  color: #00A4E4;
 }
