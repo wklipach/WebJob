@@ -133,7 +133,6 @@ export class AuthService {
      bEmployer = JSON.parse(window.localStorage.getItem('bEmployer'));
    }
 
-
   return {htUserName: htUserName,bConnected: bConnected, id_user: id_user, bEmployer: bEmployer};
 }
 

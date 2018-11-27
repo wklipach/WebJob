@@ -39,7 +39,13 @@ export class HomeComponent implements OnInit, OnDestroy {
   private dvSubscription: Subscription;
   private getTableVacancy: Subscription;
   private sbReopenVacancyAdvanced: Subscription;
-  private sMask: string = '';
+  private sMask: string = ''
+
+
+  private bChecked5 = true;
+  private bChecked10 = false;
+  private bChecked20 = false;
+  private bChecked50 = false;
 
   constructor(private httpService: TableVacancyService,
               private router: Router,
@@ -47,6 +53,39 @@ export class HomeComponent implements OnInit, OnDestroy {
               private authService: AuthService,
               private cvEditSrv: CvEditService,
               private is: GuideService) {
+  }
+
+
+  OnClickRowPerPage(pecordPerPage: number) {
+
+    this.bChecked5 = false;
+    this.bChecked10 = false;
+    this.bChecked20 = false;
+    this.bChecked50 = false;
+
+    if (pecordPerPage === 5) {
+      this.bChecked5 = true;
+      window.localStorage.setItem('rowPerPage', '5');
+    }
+    if (pecordPerPage === 10) {
+      this.bChecked10 = true;
+      window.localStorage.setItem('rowPerPage', '10');
+    }
+    if (pecordPerPage === 20) {
+      this.bChecked20 = true;
+      window.localStorage.setItem('rowPerPage', '20');
+    }
+    if (pecordPerPage === 50) {
+      this.bChecked50 = true;
+      window.localStorage.setItem('rowPerPage', '50');
+    }
+
+    this.rowPerPage = pecordPerPage;
+    console.log('передаем число записей на страницу', this.rowPerPage);
+    this.is.startCheckPaginator({value1: this.recordsPerAll, value2: this.rowPerPage});
+    console.log('всего записей', this.recordsPerAll);
+    this.reloadPAge(this.allDataVacancy, this.sMask);
+
   }
 
 
@@ -62,9 +101,17 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.id_user =  Res.id_user;
     this.bEmployer = Res.bEmployer;
 
+
+    this.rowPerPage = 5;
+    if (window.localStorage.getItem('rowPerPage') !== '') {
+      this.rowPerPage = JSON.parse(window.localStorage.getItem('rowPerPage'));
+    }
+
+
     if (window.localStorage.getItem('keyFind') !== null) {
       this.sMask = window.localStorage.getItem('keyFind');
     }
+
     window.localStorage.removeItem('keyFind');
 
 
@@ -104,7 +151,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.myDataVacancy = data;
         this.allDataVacancy = data;
         this.recordsPerAll = data.length;
-        this.is.startCheckPaginator(this.recordsPerAll);
+        this.is.startCheckPaginator({value1: this.recordsPerAll, value2: this.rowPerPage});
         console.log('всего записей', this.recordsPerAll);
         this.reloadPAge(this.allDataVacancy, sMask);
 

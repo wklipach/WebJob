@@ -42,7 +42,7 @@ export class GuideService {
   private _onCheckedElementTimePlacementList = new Subject<number[]>();
   private _onCheckTimePlacementList = new Subject<string>();
 
-  private _onCheckPaginator= new Subject<number>();
+  private _onCheckPaginator= new Subject<{value1: number, value2: number}>();
 
 
   constructor( private http: HttpClient) {}
@@ -219,9 +219,9 @@ export class GuideService {
 
 
   // обновление числа записей в наборе данных для пагинатора с перестройкой числа страниц
-  public get onCheckPaginator(): Observable<number> { return this._onCheckPaginator.asObservable(); }
-  public startCheckPaginator(value: number) {
-    this._onCheckPaginator.next(value);
+  public get onCheckPaginator(): Observable<{value1: number, value2: number}> { return this._onCheckPaginator.asObservable(); }
+  public startCheckPaginator({value1, value2}) {
+    this._onCheckPaginator.next({value1, value2});
   }
 
 

@@ -142,8 +142,15 @@ export class PageCountComponent implements OnInit {
     this._numberOfPage = Math.ceil(this.numberOfRecordsPerAll / this.numberOfRecordsPerPage);
     this.InitializePages();
     this.paginatorSubscription = this.is.onCheckPaginator.subscribe((value) => {
-        this.numberOfRecordsPerAll = value;
+        this.numberOfRecordsPerAll = value.value1;
+      this.numberOfRecordsPerPage = value.value2;
+
       this._numberOfPage = Math.ceil(this.numberOfRecordsPerAll / this.numberOfRecordsPerPage);
+
+      console.log('в подписке полное число записей',this.numberOfRecordsPerAll);
+      console.log('в подписке число элементов на страницу',this.numberOfRecordsPerPage);
+      console.log('в подписке число страниц',this._numberOfPage);
+
         this.InitializePages();
       }
     );
