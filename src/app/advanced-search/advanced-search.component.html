@@ -54,10 +54,24 @@
         <label>{{resFind.timePlacement}}</label> &nbsp;&nbsp;
 
 
+<!--
         <div class="row align-items-start" *ngFor="let item of listTimePlacement; let i = index;">
           <a class="dropdown-item" (click)="timePlacement(item.name, i+1)">{{item.name}}</a>
         </div>
-        <a class="dropdown-item" (click)="timePlacement('',-1)">Отмена</a>
+-->
+<br>
+       <label class="row align-items-start" for="timePlacement">Срок</label>
+        <br>
+          <select id="timePlacement" class="timePlacement" title="Срок" formControlName="timePlacement">
+            <option  *ngFor="let item of listTimePlacement; let i = index;" [value]="item.name" (click)="timePlacement(item.name, i+1)">
+              {{item.name}}
+            </option>
+            <option  [value]="" (click)="timePlacement('',-1)">
+              Отмена
+            </option>
+
+          </select>
+
 
       </div>
 
