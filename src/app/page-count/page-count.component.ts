@@ -67,7 +67,7 @@ export class PageCountComponent implements OnInit {
     var curIndex = this.numberOfPage.indexOf(pageNumber.toString());
     var curValuePage = this.numberOfPage[curIndex];
 
-    //страница должна быть больше чем 1
+    // страница должна быть больше чем 1
     if (parseInt(curValuePage)>1) {
       //если index=0 сдвигаем
       if (curIndex === 0) bMove = true;
@@ -79,9 +79,9 @@ export class PageCountComponent implements OnInit {
       }
     }
 
-    //переменная показывает что надо сдвигать потому что первая страница больше первой
+    // переменная показывает что надо сдвигать потому что первая страница больше первой
     if (bMove) {
-      //сдвигаем влево на 1/2 от numberOfVisiblePages
+      // сдвигаем влево на 1/2 от numberOfVisiblePages
       var rightMove = Math.floor(this.numberOfVisiblePages/2);
       var newFirstPage = pageNumber - rightMove;
       if (newFirstPage<1) newFirstPage = 1;
@@ -106,7 +106,7 @@ export class PageCountComponent implements OnInit {
                if (parseInt(this.numberOfPage[curIndex]) === parseInt(this.numberOfPage[curIndex+2])-1) {
                  return true;
                }
-               //сдвигаем влево на 1/2 от numberOfVisiblePages
+               // сдвигаем влево на 1/2 от numberOfVisiblePages
                var leftMove = Math.floor(this.numberOfVisiblePages/2);
                var newFirstPage = pageNumber - leftMove;
                this.RepeatInitializePages(newFirstPage);
@@ -123,13 +123,13 @@ export class PageCountComponent implements OnInit {
 
       var curPage = newFirstPage+i;
       this.numberOfPage.push(curPage.toString());
-      //если это последняя страница выходим
+      // если это последняя страница выходим
       if (curPage === this._numberOfPage) return;
-      //если последняя итерация, а страница не последняя лобавляем многоточие и последнюю страницу
+      // если последняя итерация, а страница не последняя лобавляем многоточие и последнюю страницу
       if (i === (this.numberOfVisiblePages-1)) {
         //если страница не последняя
         if (curPage !== this._numberOfPage) {
-          //если последняя страница не идет следом за текущей добавляем многоточие
+          // если последняя страница не идет следом за текущей добавляем многоточие
           if (curPage !== this._numberOfPage-1) this.numberOfPage.push('...');
           // добавляем последнюю страницу
           this.numberOfPage.push(this._numberOfPage.toString());
@@ -158,14 +158,14 @@ export class PageCountComponent implements OnInit {
 
   }
 
-  //рисуем первоначальный блок со страничками
+  // рисуем первоначальный блок со страничками
   InitializePages() {
 
     this.numberOfPage = [];
 
     for (var i = 1; i <= this._numberOfPage; i++) {
       if (i<=this.numberOfVisiblePages)  this.numberOfPage.push(i.toString()); else {
-          //если последнюю страницу отделяет от предпоследней многоточие, убираем его
+          // если последнюю страницу отделяет от предпоследней многоточие, убираем его
           if (i !== this._numberOfPage) this.numberOfPage.push('...');
           this.numberOfPage.push(this._numberOfPage.toString());
         return;
@@ -186,7 +186,7 @@ export class PageCountComponent implements OnInit {
   }
 
   onNextPage() {
-    //перевод в стринг из-за арифметки - this.currentPage хоть и number системой видится как стринг при арифметике
+    // перевод в стринг из-за арифметки - this.currentPage хоть и number системой видится как стринг при арифметике
 
     console.log('this.currentPage',this.currentPage, 'this._numberOfPage', this._numberOfPage);
 
@@ -197,7 +197,7 @@ export class PageCountComponent implements OnInit {
   }
 
   onPriorPage() {
-    //перевод в стринг из-за арифметки - this.currentPage хоть и number системой видится как стринг при арифметике
+    // перевод в стринг из-за арифметки - this.currentPage хоть и number системой видится как стринг при арифметике
     if (this.currentPage === 1) return;
     var priorStringPage = this.currentPage.toString();
     this.onCurrentPageChange(parseInt(priorStringPage)-1);

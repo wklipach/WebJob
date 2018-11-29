@@ -1,33 +1,35 @@
-.page {
-  position: absolute;
-  display: inline-block;
-  margin-top: 6px;
-  margin-left: 10px;
 
+ul{
+  width: 400px;
 }
 li{
   display: inline-block;
-  font-size: 24px;
-  color: #F74933;
-  padding-right: 15px;
+  list-style: none;
+  color: #484c54;
+  padding-right: 10px;
 }
 
 li:hover{
   cursor: pointer;
 }
 
-div:focus {
-  background-color: #00A4E4;
-}
+
 
 .bigNumeral{
-  display: inline-block;
-  font-size: 26px;
-  color: black;
+  font-size: 17px;
+  color: #484c54;
+  font-weight: bold;
+  /*
+
+  div:focus {
+  background-color: #00A4E4;
+
+  border-radius: 3px;
+  border-style: double;
+  border-color: red; */
 }
 
-.norlalNumeral{
-  display: inline-block;
-  font-size: 24px;
-  color: #00A4E4;
+.normalNumeral{
+  font-size: 16px;
+  color: #484c54;
 }

@@ -4,10 +4,10 @@
   <div class="top">Мой профиль</div>
 
   <div class="profile">
-
+    <div class="v-line"></div>
     <label class="personal">Личные данные соискателя</label>
 
-    <img class="img-thumbnail" src="/assets/img/rus-flag.gif" alt="Фото" title="Загрузить фото"
+    <img class="img-thumbnail" src="/assets/img/usernull.png" alt="Фото" title="Загрузить фото"
          height="103px" width="103px">
 
     <form class="employee-form" [formGroup]="accountEmployeeForm">
@@ -23,7 +23,7 @@
       <label class="lastname">Фамилия</label>
       <input type="text" class="inputLastname" id="inputLastname" formControlName="inputLastName" placeholder="введите фамилию">
 
-      <label class="location">Место жительства</label>
+      <label class="location">Город</label>
 
       <select id="inputCity" formControlName="inputCity" class="inputCity" title="Город">
         <option  *ngFor="let lc of listCity" [value]="lc.name">
@@ -36,25 +36,38 @@
       <input type="text" class="inputZip" id="inputZip" formControlName="inputZip" placeholder="введите индекс">
 
 
+      <label class="home-address">Домашний адрес</label>
+      <input type="text" class="inputHomeAddress" id="inputAddress" formControlName="inputAddress" placeholder="Домашний адрес">
+
+      <label class="phone">Телефон</label>
+      <input type="text" class="inputPhone" id="inputPhone" formControlName="inputPhone" placeholder="Телефон">
+
+
+
+      <img class="img-lock" src="/assets/img/lock.png" alt="Смена пароля" title="Смена пароля">
+
+      <label class="changePass" (click)="accessPassword()"> Изменить пароль </label>
+
+      <ng-container *ngIf="bShowChangePassword">
+        <div class="changepassBox">
+          <input type="password" class="inputNewPassword1" id="inputNewPassword1" formControlName="inputNewPassword1" placeholder="Введите новый пароль">
+          <input type="password" class="inputNewPassword2" id="inputNewPassword2" formControlName="inputNewPassword2" placeholder="Повторите пароль">
+          <button type="submit" class="btn-newPassword" (click)="NewPassword()">Изменить пароль</button>
+          <ng-container *ngIf="bPasswordNew">Пароль изменен</ng-container>
+          <div class="alert-pass" *ngIf="bErrorRepeatPassword">Пароли не совпадают</div>
+        </div>
+      </ng-container>
     </form>
+
 
     <button type="submit" class="btn-save" (click)="savecv()">Сохранить</button>
     <button type="submit" class="btn-cancel" (click)="back()">Отмена</button>
 
 
-
-
-
-
-
-
-
-
   </div>
-
 </div>
 
-
+<app-footer></app-footer>
 
 
 <!--

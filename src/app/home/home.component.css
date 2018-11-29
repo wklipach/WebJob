@@ -136,7 +136,6 @@
   position: absolute;
   color: #484d55;
   background-color: #ffffff;
-  border-color: #d46117;
   border-color: rgb(242, 97, 0);
   border-radius: 3px;
   border-width: 1px;
@@ -157,7 +156,6 @@
   position: absolute;
   color: #484d55;
   background-color: #ffffff;
-  border-color: #d46117;
   border-color: rgb(242, 97, 0);
   border-radius: 3px;
   border-width: 1px;
@@ -191,9 +189,35 @@
 .counter-line{
   position: relative;
   width: 1170px;
-  height: 66px;
+  height: auto;
   margin: 0 auto;
-  border-color: #b7b7b7;
+  padding: 20px 10px;
+  /*border-color: #b7b7b7;
   border-style: solid;
-  border-width: 1px;
+  border-width: 1px;*/
 }
+label{
+  color: #484c54;
+  font-size:16px;
+}
+
+ul{
+
+  width: 500px;
+  margin-left: 750px;
+}
+li{
+  display: inline-block;
+  list-style: none;
+  color: #484c54;
+  margin-right: 10px;
+  padding: 0 10px;
+}
+.nPage{
+  visibility:hidden;
+}
+.left-box{
+  position: absolute;
+  float: left;
+}
+

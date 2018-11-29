@@ -1,75 +1,50 @@
 <app-header-top></app-header-top>
-<h3>Новая вакансия</h3>
 
+<div class="wrapper">
+  <div class="top">Новая вакансия</div>
+  <div class="box">
 
 <form [formGroup]="newVacancyForm" novalidate (ngSubmit)="submit()">
 
+  <label class="shortTitle">Наименование вакансии</label>
+      <input type="text" class="inputVacancyShortTitle" maxlength="90" formControlName="inputVacancyShortTitle"
+             id="inputVacancyShortTitle" placeholder="Наименование вакансии до 90 знаков.">
 
-<br>
-  <div class="form-row">
-    <div class="form-group col-md-3">
-      <input type="text" class="form-control" maxlength="50" formControlName="inputVacancyShortTitle" id="inputVacancyShortTitle" placeholder="Наименование вакансии до 50 знаков.">
-
-      <div class="alert alert-danger" *ngIf="newVacancyForm.controls['inputVacancyShortTitle'].invalid && newVacancyForm.controls['inputVacancyShortTitle'].touched">
+      <div class="alert alert-danger"
+        *ngIf="newVacancyForm.controls['inputVacancyShortTitle'].invalid && newVacancyForm.controls['inputVacancyShortTitle'].touched">
         Ошибка в количестве знаков в вакансии
       </div>
 
-    </div>
+  <label class="vacancyDescription">Краткое описание вакансии</label>
+  <textarea class="inputVacancyDescription" maxlength="2000" aria-label="Описание вакансии до 2000 знаков" formControlName="inputVacancyDescription" id="inputVacancyDescription" placeholder="Описание вакансии до 2000 знаков"></textarea>
 
-  </div>
-
-<div class="form-group col-md-3">
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text"></span>
-  </div>
-  <textarea class="form-control" maxlength="4000" aria-label="Описание вакансии до 4000 знаков" formControlName="inputVacancyDescription" id="inputVacancyDescription" placeholder="Описание вакансии до 4000 знаков"></textarea>
-</div>
 
   <div class="alert alert-danger" *ngIf="newVacancyForm.controls['inputVacancyDescription'].invalid && newVacancyForm.controls['inputVacancyDescription'].touched">
     Ошибка в описании вакансии
   </div>
 
+  <label class="vacancyBigDescription">Полное описание вакансии</label>
+    <textarea class="inputVacancyBigDescription" maxlength="4000" aria-label="Полное описание вакансии до 4000 знаков" formControlName="inputVacancyBigDescription" id="inputVacancyBigDescription" placeholder="Полное описание вакансии до 4000 знаков"></textarea>
 
-</div>
-
-
-
-<div class="form-group col-md-3">
-  <div class="input-group">
-    <div class="input-group-prepend">
-      <span class="input-group-text"></span>
-    </div>
-    <textarea class="form-control" maxlength="2000" aria-label="Полное описание вакансии до 2000 знаков" formControlName="inputVacancyBigDescription" id="inputVacancyBigDescription" placeholder="Полное описание вакансии до 2000 знаков"></textarea>
-  </div>
 
   <div class="alert alert-danger" *ngIf="newVacancyForm.controls['inputVacancyBigDescription'].invalid && newVacancyForm.controls['inputVacancyBigDescription'].touched">
     Ошибка в полном описании вакансии
   </div>
 
 
-</div>
+  <label class="city">Город</label>
 
-<div class="form-group col-md-3">
-  <label for="inputCity">Расположение вакансии</label>
-  <select id="inputCity" formControlName="inputCity" class="form-control" title="Локация вакансии">
+  <select id="inputCity" formControlName="inputCity" class="inputCity" title="Город">
     <option  *ngFor="let lc of listCity" [value]="lc.name">
       {{lc.name}}
     </option>
   </select>
-</div>
 
-<div class="form-inline">
-<div class="form-row">
-  <div class="form-group col-md-1">
-    <input type="text" class="form-control" formControlName="inputSalaryFrom" id="inputSalaryFrom" placeholder="Заработная плата от">
-  </div>
+  <label class="salary">Заработная плата:</label>
+    <input type="text" class="inputSalaryFrom" formControlName="inputSalaryFrom" id="inputSalaryFrom" placeholder="от">
+    <input type="text" class="inputSalary" formControlName="inputSalary" id="inputSalary" placeholder="до">
 
-</div>
-  <div class="form-group col-md-1">
-    <input type="text" class="form-control" formControlName="inputSalary" id="inputSalary" placeholder="Заработная плата до)">
-  </div>
-</div>
+
 
   <div class="alert alert-danger" *ngIf="newVacancyForm.controls['inputSalaryFrom'].invalid && newVacancyForm.controls['inputSalaryFrom'].touched">
     Ошибка в "Заработная плата от"
@@ -80,28 +55,14 @@
   </div>
 
 
+      <label class="displayPeriod" for="displayPeriod">Срок размещения</label>
 
-<div class="col-3">
-  <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <label class="input-group-text" for="displayPeriod">Срок размещения</label>
-    </div>
-
-
-    <select class="custom-select" formControlName="displayPeriod" id="displayPeriod">
+    <select class="selectDisplayPeriod" formControlName="displayPeriod" id="displayPeriod">
         <option  *ngFor="let dpl of displayPeriodList" [value]="dpl.name">
           {{dpl.name}}
         </option>
     </select>
 
-  </div>
-
-  <br>
-
-</div>
-
-
-  <div class="container">
   <!-- Отрасль -->
 <app-cv_industry></app-cv_industry>
 <!-- Занятость -->
@@ -113,13 +74,8 @@
   <!-- Образование -->
 <app-cv-education></app-cv-education>
 
-</div>
-
-<div>
-  <div class="form-group row">
-    <button type="submit" class="btn btn-primary" [disabled]="newVacancyForm.invalid">Сохранить</button>
-  </div>
-</div>
-
+    <button type="submit" class="btn-save" [disabled]="newVacancyForm.invalid">Сохранить</button>
 
 </form>
+  </div>
+</div>
