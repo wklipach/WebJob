@@ -42,10 +42,10 @@ export class HomeComponent implements OnInit, OnDestroy {
   private sMask: string = ''
 
 
-  private bChecked5 = true;
-  private bChecked10 = false;
-  private bChecked20 = false;
-  private bChecked50 = false;
+  protected bChecked5 = true;
+  protected bChecked10 = false;
+  protected bChecked20 = false;
+  protected bChecked50 = false;
 
   constructor(private httpService: TableVacancyService,
               private router: Router,
@@ -80,6 +80,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       window.localStorage.setItem('rowPerPage', '50');
     }
 
+    this.page = 1;
     this.rowPerPage = pecordPerPage;
     console.log('передаем число записей на страницу', this.rowPerPage);
     this.is.startCheckPaginator({value1: this.recordsPerAll, value2: this.rowPerPage});
@@ -94,6 +95,21 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.reloadPAge(this.allDataVacancy, this.sMask);
   }
 
+
+   private funcCheckedFind(nPageNumber: number)   {
+
+     this.bChecked5 = false;
+     this.bChecked10 = false;
+     this.bChecked20 = false;
+     this.bChecked50 = false;
+
+     if (nPageNumber===5) this.bChecked5 = true;
+     if (nPageNumber===10)  this.bChecked10 = true;
+     if (nPageNumber===20)  this.bChecked20 = true;
+     if (nPageNumber===50)  this.bChecked50 = true;
+     if (!this.bChecked5 && !this.bChecked10 && !this.bChecked20 && !this.bChecked50) this.bChecked5 = true;
+   }
+
   ngOnInit() {
 
     var Res =  this.authService.loginStorage();
@@ -106,6 +122,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     if (window.localStorage.getItem('rowPerPage') !== '') {
       this.rowPerPage = JSON.parse(window.localStorage.getItem('rowPerPage'));
     }
+
+    this.funcCheckedFind(this.rowPerPage);
 
 
     if (window.localStorage.getItem('keyFind') !== null) {
