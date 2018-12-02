@@ -7,8 +7,7 @@
     <div class="v-line"></div>
     <label class="personal">Личные данные соискателя</label>
 
-    <img class="img-thumbnail" src="/assets/img/usernull.png" alt="Фото" title="Загрузить фото"
-         height="103px" width="103px">
+    <img class="img-thumbnail" src="/assets/img/usernull.png" alt="Фото" title="Загрузить фото" height="103px" width="103px">
 
     <form class="employee-form" [formGroup]="accountEmployeeForm">
 
@@ -24,13 +23,11 @@
       <input type="text" class="inputLastname" id="inputLastname" formControlName="inputLastName" placeholder="введите фамилию">
 
       <label class="location">Город</label>
-
       <select id="inputCity" formControlName="inputCity" class="inputCity" title="Город">
         <option  *ngFor="let lc of listCity" [value]="lc.name">
           {{lc.name}}
         </option>
       </select>
-
 
       <label class="zip">Почтовый индекс</label>
       <input type="text" class="inputZip" id="inputZip" formControlName="inputZip" placeholder="введите индекс">

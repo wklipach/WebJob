@@ -1,43 +1,31 @@
 <app-header-top></app-header-top>
 
-<div class="container-fluid">
-<h3>Мои резюме</h3>
-<div class="row" *ngFor="let item of cvList; let i = index;">
+<div class="wrapper">
+  <div class="top">Мои резюме</div>
 
 
-  <div class="col-1 tt">
-    <input type="checkbox" [(ngModel)]="item.bChecked" title="Check">
-  </div>
+  <div class="box" *ngFor="let item of cvList; let i = index;">
 
-  <div class="col-2 tt">
-  Должность "{{item.cv.Position}}"
-  </div>
-  <div class="col-2 tt">
-  Зарплата "{{item.cv.SalaryFrom}}"
-  </div>
-  <div class="col-2 tt">
-  Город "{{item.CityName}}"
-  </div>
+    <input class="editCheck" type="checkbox" [(ngModel)]="item.bChecked" title="Check">
 
-  <div class="col-1 tt">
-  <button type="button" class="btn btn-primary" [disabled]="!item.bChecked" (click)="CheckDeleteElement(item)">Удалить</button>
-   </div>
-   <div class="col-1 tt">
-    <button type="button" class="btn btn-success" [disabled]="!item.bChecked" (click)="EditElement(item)">Редактировать</button>
-  </div>
+  <label class="tt">  Должность "{{item.cv.Position}}"  </label>
+  <label class="col-2 tt">  Зарплата "{{item.cv.SalaryFrom}}"  </label>
+  <label class="col-2 tt">  Город "{{item.CityName}}"  </label>
+
+
+  <button type="button" class="btn-delete" [disabled]="!item.bChecked" (click)="CheckDeleteElement(item)">Удалить</button>
+  <button type="button" class="btn-edit" [disabled]="!item.bChecked" (click)="EditElement(item)">Редактировать</button>
+
 
   <div class="alert alert-primary" *ngIf="item.cv.bInvisible === true && item.bChecked">
     Вы желаете удалить данное резюме?
     <button type="button" class="btn btn-outline-danger" (click)="DeleteElement(item)">Да</button>
     <button type="button" class="btn btn-outline-success" (click)="UnDeleteElement(item)">Нет</button>
   </div>
+
+
+
 </div>
-</div>
-  <div class="row">
-    <button class="btn btn-primary" (click)="newcv()">Новое резюме</button>
-    <br>
-    <br>
+  <button class="btn-newcv" (click)="newcv()">Новое резюме</button>
+
   </div>
-
-
-

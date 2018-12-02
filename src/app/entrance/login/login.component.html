@@ -7,20 +7,20 @@
 <!--
    начали модель
 -->
-<div class="box">
-<form [formGroup]="loginForm" novalidate (ngSubmit)="submit()">
 
+<div class="box">
+  <form [formGroup]="loginForm" novalidate (ngSubmit)="submit()">
   <label class="login" for="inputLogin">Логин или E-Mail</label>
   <input type="text" class="inputLogin" id="inputLogin" formControlName="nameOrEmail" placeholder="Логин или E-mail">
-
-        <br><br><br><br><br>
 
   <label class="password" for="inputPassword">Пароль</label>
   <input type="password" class="inputPassword" id="inputPassword" formControlName="password"  placeholder="Пароль">
 
-  <br><br><br>
+   <button type="submit" class="btn-signin" [disabled]="loginForm.invalid">Войти</button><br>
 
-  <button type="submit" class="btn-signin" [disabled]="loginForm.invalid">Войти</button><br>
+    <a class="forgot-password" routerLink="/forgot-password" routerLinkActive="active">Забыли пароль или логин?</a>
+    <a class="register" routerLink="/register" routerLinkActive="active">Зарегистрироваться</a>
+
 
   <ng-container *ngIf="showErr">
     <div class="alert alert-danger" role="alert">
@@ -28,29 +28,18 @@
     </div>
   </ng-container>
 
-  <!--  -->
-  <ng-container *ngIf="showSucc">
 
-   <div class="alert alert-success" role="alert">
-      Успешный вход.
-    </div>
+  <ng-container *ngIf="showSucc">
+   <div class="alert alert-success" role="alert">Успешный вход.</div>
     <a routerLink="/home" routerLinkActive="active"></a>
   </ng-container>
 
-  <br><br><br><br><br>
 </form>
   <!--
      занончили модель
   -->
 
-  <div class="form-row">
-    <div class="form-group col-md-2">
-  <a class="nav-link" routerLink="/forgot-password" routerLinkActive="active">Забыли пароль или логин?</a><br>
-  <a class="nav-link" routerLink="/register" routerLinkActive="active">Зарегистрироваться</a><br>
-    <br>
-
 </div>
  </div>
-  </div>
-   </div>
+
 <app-footer></app-footer>

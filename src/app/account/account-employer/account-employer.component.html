@@ -1,132 +1,75 @@
 <app-header-top></app-header-top>
 
-<h3>Профиль компании</h3>
+<div class="wrapper">
+  <div class="top">Профиль компании</div>
 
-<label class="labelDescr">Данные компании</label>
+  <div class="profile">
+    <div class="v-line"></div>
+    <label class="personal">Данные компании</label>
 
-<div class="row">
-  <div class="col-2">
-    <label class="labelDescr">Загрузить логотип</label>
-  </div>
-  <div class="col-4">
-    <!-- <input type="image" title="photo" id="photo">  -->
 
-    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!   -->
+    <img class="img-thumbnail" src="/assets/img/usernull.png" alt="Фото" title="Загрузить фото" height="103px" width="103px">
+
     <form [formGroup]="form">
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" placeholder="Bob" formControlName="name">
-      </div>
-      <div class="form-group">
-        <label for="avatar">Avatar</label>
+
+        <input type="text" class="fileName" id="name" placeholder="" formControlName="name">
+
+
         <input type="file" id="avatar" (change)="onFileChange($event)" #fileInput>
-        <button type="button" (click)="onPostImageAvatar()"  >Сохранить в базу <i class="fa fa-spinner fa-spin fa-fw" *ngIf="loading"></i></button>
-      </div>
-
+        <button type="button" class="btn-save" (click)="onPostImageAvatar()"  >Сохранить в базу <i class="fa fa-spinner fa-spin fa-fw" *ngIf="loading"></i></button>
     </form>
-    <!-- -->
 
-    <br>
-
-
-    <div *ngIf="base64textString.length>0">
-      <img *ngFor="let item of base64textString"  src={{item}} alt="" id="img">
-    <br>
-    </div>
-
-
-    <img src="/assets/img/rus-flag.gif" alt="Фото" title="Загрузить логотип"
-         class="img-thumbnail">
-  </div>
-</div>
+      <div *ngIf="base64textString.length>0">
+      <img class="logotype" *ngFor="let item of base64textString"  src={{item}} alt="" id="img">
+     </div>
 
 <form [formGroup]="accountEmployerForm">
-  <div class="form-row">
-    <div class="form-group col-md-3">
-      <label class="labelDescr">Имя пользователя</label>
-      <input type="text" class="form-control" id="inputUserName"
-             formControlName="inputUserName" placeholder="Имя пользователя">
-    </div>
-  </div>
+  <label class="user-name">Имя пользователя</label>
+  <input type="text" class="inputUserName" id="inputUserName" formControlName="inputUserName" placeholder="введите имя пользователя">
 
+      <label class="name">Имя</label>
+      <input type="text" class="input-name" id="inputName" formControlName="inputName" placeholder="Имя">
 
-  <div class="form-row">
-    <div class="form-group col-md-3">
-      <label class="labelDescr">Имя</label>
-      <input type="text" class="form-control" id="inputName"
-             formControlName="inputName" placeholder="Имя">
-    </div>
-  </div>
+      <label class="lastname">Фамилия</label>
+      <input type="text" class="inputLastname" id="inputLastname" formControlName="inputLastName" placeholder="введите фамилию">
 
-  <div class="form-row">
-    <div class="form-group col-md-3">
-      <label class="labelDescr">Фамилия</label>
-      <input type="text" class="form-control" id="inputLastname"
-             formControlName="inputLastName" placeholder="Фамилия">
-    </div>
-  </div>
-
-  <div class="form-row">
-    <div class="form-group col-md-1">
-      <label class="labelDescr">Почтовый индекс</label>
-      <input type="text" class="form-control" id="inputZip"
-             formControlName="inputZip" placeholder="Индекс">
-    </div>
-  </div>
-
-  <div class="form-group col-md-3">
-    <label class="labelDescr">Место жительства</label>
-    <select id="inputCity" formControlName="inputCity" class="form-control"
-            title="Локация вакансии">
-      <option  *ngFor="let lc of listCity" [value]="lc.name">
+        <label class="location">Город</label>
+      <select id="inputCity" formControlName="inputCity" class="inputCity" title="Город">
+        <option  *ngFor="let lc of listCity" [value]="lc.name">
         {{lc.name}}
-      </option>
-    </select>
+        </option>
+      </select>
+
+  <label class="zip">Почтовый индекс</label>
+  <input type="text" class="inputZip" id="inputZip" formControlName="inputZip" placeholder="введите индекс">
+
+  <label class="home-address">Адрес</label>
+  <input type="text" class="inputHomeAddress" id="inputAddress" formControlName="inputAddress" placeholder="Адрес">
+
+  <label class="phone">Телефон</label>
+  <input type="text" class="inputPhone" id="inputPhone" formControlName="inputPhone" placeholder="Телефон">
 
 
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-3">
-      <label class="labelDescr">Домашний адрес</label>
-      <input type="text" class="form-control" id="inputAddress"
-             formControlName="inputAddress" placeholder="Домашний адрес">
+  <img class="img-lock" src="/assets/img/lock.png" alt="Смена пароля" title="Смена пароля">
+  <label class="changePass" (click)="accessPassword()"> Изменить пароль </label>
+
+  <ng-container *ngIf="bShowChangePassword">
+    <div class="changepassBox">
+      <input type="password" class="inputNewPassword1" id="inputNewPassword1" formControlName="inputNewPassword1" placeholder="Введите новый пароль">
+      <input type="password" class="inputNewPassword2" id="inputNewPassword2" formControlName="inputNewPassword2" placeholder="Повторите пароль">
+      <button type="submit" class="btn-newPassword" (click)="NewPassword()">Изменить пароль</button>
+      <ng-container *ngIf="bPasswordNew">Пароль изменен</ng-container>
+      <div class="alert-pass" *ngIf="bErrorRepeatPassword">Пароли не совпадают</div>
     </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-3">
-      <label class="labelDescr">№ телефона</label>
-      <input type="text" class="form-control" id="inputPhone"
-             formControlName="inputPhone" placeholder="Телефон">
-    </div>
-  </div>
-
-  <button type="button" class="btn btn-link" (click)="accessPassword()"> Изменить пароль </button>
-  <div class="form-row">
-    <ng-container *ngIf="bShowChangePassword">
-      <div class="form-group col-md-3">
-        <input type="password" class="form-control" id="inputNewPassword1" formControlName="inputNewPassword1" placeholder="Новый пароль">
-        <input type="password" class="form-control" id="inputNewPassword2" formControlName="inputNewPassword2" placeholder="Повторить пароль">
-        <button type="submit" class="btn btn-primary" (click)="NewPassword()">Изменить пароль</button>
-        <ng-container *ngIf="bPasswordNew">Пароль изменен</ng-container>
-        <div class="alert-primary" *ngIf="bErrorRepeatPassword">Пароли не совпадают</div>
-      </div>
-    </ng-container>
-  </div>
+  </ng-container>
 
 </form>
 
+    <button type="submit" class="btn-save" (click)="savecv()">Сохранить</button>
+    <button type="submit" class="btn-cancel" (click)="back()">Отмена</button>
 
-<br>
-<div class="form-row">
-  <div class="btn-group col-md-3">
-    <button type="submit" class="btn btn-primary"
-            (click)="savecv()">Сохранить</button>
-    <button type="submit" class="btn btn-primary"
-            (click)="back()">Отмена</button>
   </div>
 </div>
-<app-footer></app-footer>
 
-<!--
-<label for="inputAddress"></label>
--->
+ <app-footer></app-footer>
+

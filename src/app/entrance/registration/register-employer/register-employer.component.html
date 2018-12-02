@@ -1,68 +1,34 @@
 <app-header-top></app-header-top>
 
-<h3>Регистрация как работодателя.</h3>
+<div class="wrapper">
+  <div class="top">Регистрация работодателя</div>
+  <div class="box">
 
 <form [formGroup]="formRegisterEmployer" novalidate (ngSubmit)="submit()">
 
-  <div class="form-row">
-
-    <div class="form-group col-md-2">
-
-      <input type="text" class="form-control" id="userName" formControlName="userName" placeholder="Имя работодателя">
-
-    </div>
-
-
+  <label class="userName">Имя пользователя (Nic)</label>
+  <input type="text" class="form-control" id="userName" formControlName="userName" placeholder="Имя работодателя">
 
     <div class="form-group col-md-3">
-
-
-
-      <!-- Проверяем вносимый логин. Если логин уже есть в базе, показываем лейбл -Имя пользователя занято, или наоборот
-
-    -->
-
-
+      <!-- Проверяем вносимый логин. Если логин уже есть в базе, показываем лейбл -Имя пользователя занято, или наоборот -->
 
       <div class="alert alert-danger"
-
            *ngIf="formRegisterEmployer.controls['userName'].touched && formRegisterEmployer.controls['userName'].value.length === 0 ">
-
         Не указано имя работодателя
-
       </div>
-
-
 
       <div *ngIf="formRegisterEmployer.controls['userName'].value.length > 0">
-
         <div *ngIf="formRegisterEmployer.controls['userName'].invalid; else trueUserNameTemplate">
-
           <div class="alert alert-danger">Имя работодателя занято</div>
-
         </div>
 
-
-
         <ng-template #trueUserNameTemplate>
-
           <div class="alert alert-info">Имя работодателя свободно</div>
-
         </ng-template>
 
-
-
       </div>
-
       <!-- закончили проверку логина -->
-
     </div>
-
-
-
-  </div>
-
-
 
   <div class="form-row">
 
@@ -74,94 +40,45 @@
 
     </div>
 
-
-
-
-
     <!-- начало обработки почтовых ошибок -->
 
     <div *ngIf="formRegisterEmployer.controls['userEmail'].dirty">
-
-
-
       <div class="alert alert-danger"
-
            *ngIf="formRegisterEmployer.controls['userEmail'].value.length === 0 ">
-
         Не указан Email.
-
       </div>
 
-
-
       <div *ngIf="formRegisterEmployer.controls['userEmail'].value.length > 0">
-
         <div *ngIf="formRegisterEmployer.controls['userEmail'].invalid; else trueSucc">
-
-
-
           <div class="alert alert-danger"
-
                *ngIf="formRegisterEmployer.controls['userEmail'].hasError('errorEmailExists') === true">
-
             Данный Email уже занят.
-
           </div>
-
-
 
           <div class="alert alert-danger"
-
                *ngIf="formRegisterEmployer.controls['userEmail'].hasError('email') === true">
-
             Неверно введен Email.
-
           </div>
-
-
 
         </div>
 
         <ng-template #trueSucc>
-
           <div class="alert alert-info">Email свободен.</div>
-
         </ng-template>
-
       </div>
-
-
-
     </div>
-
     <!-- закончили обработку почтовых ошибок -->
-
   </div>
 
 
-  <div class="form-row">
-
-    <div class="form-group col-3">
-
       <label for="inputPassword1">Пароль</label>
-
       <input type="password" class="form-control" id="inputPassword1" placeholder="Password" formControlName="userPassword1">
-
       <label for="inputPassword1">Повторитие пароль</label>
-
       <input type="password" class="form-control" id="inputPassword2" placeholder="Password" formControlName="userPassword2">
 
 
 
-    </div>
 
-  </div>
-
-
-
-  <div class="form-group">
-
-    <div class="form-check">
 
       <label class="form-check-label">
 
@@ -172,23 +89,14 @@
       </label>
 
       <div class="alert alert-danger"
-
            *ngIf="formRegisterEmployer.controls['cbLicense'].invalid && formRegisterEmployer.controls['cbLicense'].touched">
-
         Согласитесь с лицензией
-
       </div>
-
-      <br>
 
       <a class="nav-link" routerLink="/rules" routerLinkActive="active">Прочитать правила использования.</a>
 
-    </div>
-
-  </div>
-
-
-
-  <button class="btn btn-primary" [disabled]="formRegisterEmployer.invalid">Зарегистрироваться</button>
+  <button class="btn-register" [disabled]="formRegisterEmployer.invalid">Зарегистрироваться</button>
 
 </form>
+  </div>
+</div>

@@ -30,7 +30,20 @@
       </select>
 
       <label for="inputSalary" class="salary">Заработная плата от</label>
-      <input type="text" class="inputSalary" id="inputSalary" placeholder="Заработная плата до" formControlName="inputSalary">
+      <input type="text" class="inputSalary" id="inputSalary" placeholder="0" formControlName="inputSalary">
+
+      <label class="dropdownTimePlacement" id="dropdownTimePlacement">Искать вакансии не старше  {{resFind.timePlacement}}</label>
+
+      <select id="timePlacement" class="timePlacement" title="Срок" formControlName="timePlacement">
+        <option  *ngFor="let item of listTimePlacement; let i = index;" [value]="item.name" (click)="timePlacement(item.name, i+1)">
+          {{item.name}}
+        </option>
+        <option  [value]="" (click)="timePlacement('',-1)">
+          Отмена
+        </option>
+
+      </select>
+
 
     </div>
 
@@ -45,13 +58,8 @@
     <!-- Образование -->
     <app-cv-education></app-cv-education>
 
-    <div class="box">
-      <div class="dropdown open">
-        <button type="button" class="btn btn-primary  dropdown-toggle" id="dropdownTimePlacement"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Искать вакансии не старше
-        </button>
 
-        <label>{{resFind.timePlacement}}</label> &nbsp;&nbsp;
+
 
 
 <!--
@@ -59,23 +67,14 @@
           <a class="dropdown-item" (click)="timePlacement(item.name, i+1)">{{item.name}}</a>
         </div>
 -->
-<br>
-       <label class="row align-items-start" for="timePlacement">Срок</label>
-        <br>
-          <select id="timePlacement" class="timePlacement" title="Срок" formControlName="timePlacement">
-            <option  *ngFor="let item of listTimePlacement; let i = index;" [value]="item.name" (click)="timePlacement(item.name, i+1)">
-              {{item.name}}
-            </option>
-            <option  [value]="" (click)="timePlacement('',-1)">
-              Отмена
-            </option>
-
-          </select>
 
 
-      </div>
 
-    </div>
+
+
+
+
+
   </form>
 
 

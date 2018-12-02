@@ -1,208 +1,107 @@
 .wrapper{
-
   font-family: "ProximaNovaRg";
-
   font-size: 16px;
-
   width: 1170px;
-
   height: auto;
-
   margin: 0 auto;
-
   color: rgb(68, 75, 84);
-
   text-align: left;
-
   background-color: #fdfdfd;
-
   padding-bottom: 2%;
-
 }
-
 .top{
-
   width: 1170px;
-
   height: 42px;
-
   margin: 0 auto;
-
   font-size: 36px;
-
   font-family: "Proxima Nova";
-
 }
-
 .v-line{
-
   display: inline-block;
-
   position: absolute;
-
   width:1px;
-
   height:580px;
-
   background-color: #b8b8b8;
-
   margin-left: 149px;
-
   margin-top: 65px;
-
 }
-
 .profile{
-
   width: 1170px;
-
   margin: 0 auto;
-
   position: relative;
-
 }
-
 .employee-form{
-
 }
-
 label{
-
   position: absolute;
-
   font-size: 16px;
-
   font-family: "Proxima Nova";
-
   color: rgb(2, 98, 210);
-
   text-align: left;
-
 }
-
 .personal {
-
   font-size: 18px;
-
   margin-left: 12px;
-
   margin-top: 16px;
-
 }
-
 .photo-upload {
-
   font-size: 13px;
-
   margin-left: 18px;
-
   margin-top: 177px;
-
 }
-
 .img-thumbnail {
-
   border-width: 1px;
-
   border-color: rgb(188, 188, 188);
-
   border-style: solid;
-
   border-radius: 3px;
-
   background-color: rgb(220, 220, 220);
-
   position: absolute;
-
   width: 103px;
-
   height: 103px;
-
   margin-left: 12px;
-
   margin-top: 65px;
-
 }
-
 .img-thumbnail:hover{
-
   cursor: pointer;
-
 }
-
 .img-lock{
-
   position: absolute;
-
   margin-left: 180px;
-
   margin-top: 675px;
-
 }
-
 .changePass{
-
   position: absolute;
-
   margin-left: 211px;
-
   margin-top: 675px;
-
   cursor: pointer;
-
   text-decoration: underline;
-
 }
-
 .user-name{
-
   margin-left: 180px;
-
   margin-top: 62px;
-
 }
-
 .inputUserName{
-
   position: absolute;
-
-  font-size: 13px;
-
+  font-size: 14px;
   font-family: "Proxima Nova";
-
   text-align: center;
-
   border-width: 1px;
-
   border-color: rgb(68, 75, 84);
-
   border-style: solid;
-
   border-radius: 3px;
-
   background-color: rgb(255, 255, 255);
-
   width: 230px;
-
   height: 43px;
-
   margin-left: 180px;
-
   margin-top: 96px;
-
 }
-
 .name{
-
   margin-left: 180px;
-
   margin-top: 187px;
-
 }
-
 .input-name{
   position: absolute;
-  font-size: 13px;
+  font-size: 14px;
   font-family: "Proxima Nova";
   text-align: center;
   border-width: 1px;
@@ -215,391 +114,194 @@ label{
   margin-left: 180px;
   margin-top: 221px;
 }
-
 .lastname{
-
   margin-left: 444px;
-
   margin-top: 186px;
-
 }
-
 .inputLastname{
-
   position: absolute;
-
   font-size: 13px;
-
   font-family: "Proxima Nova";
-
   text-align: center;
-
   border-width: 1px;
-
   border-color: rgb(68, 75, 84);
-
   border-style: solid;
-
   border-radius: 3px;
-
   background-color: rgb(255, 255, 255);
-
   width: 228px;
-
   height: 43px;
-
   margin-left: 444px;
-
   margin-top: 221px;
-
 }
-
-
-
 .location{
-
   margin-left: 180px;
-
   margin-top: 313px;
-
 }
-
 .zip{
-
   margin-left: 444px;
-
   margin-top: 313px;
-
 }
-
 .inputCity{
-
   border-width: 1px;
-
   border-color: rgb(68, 75, 84);
-
   text-align: center;
-
   border-style: solid;
-
   border-radius: 3px;
-
   background-color: rgb(255, 255, 255);
-
   position: absolute;
-
   width: 228px;
-
   height: 43px;
-
   margin-left: 180px;
-
   margin-top: 348px;
-
 }
-
 .inputZip{
-
   position: absolute;
-
   font-size: 13px;
-
   font-family: "Proxima Nova";
-
   text-align: center;
-
   border-width: 1px;
-
   border-color: rgb(68, 75, 84);
-
   border-style: solid;
-
   border-radius: 3px;
-
   background-color: rgb(255, 255, 255);
-
   text-align: center;
-
   width: 228px;
-
   height: 43px;
-
   margin-left: 444px;
-
   margin-top: 348px;
-
 }
-
 .home-address{
-
   margin-left: 180px;
-
   margin-top: 435px;
-
 }
-
 .inputHomeAddress{
-
   border-width: 1px;
-
   border-color: rgb(68, 75, 84);
-
   border-style: solid;
-
   border-radius: 3px;
-
   background-color: rgb(255, 255, 255);
-
   position: absolute;
-
   text-align: center;
-
   width: 492px;
-
   height: 43px;
-
   margin-left: 180px;
-
   margin-top: 471px;
-
 }
-
 .phone{
-
   margin-left: 180px;
-
   margin-top: 563px;
-
 }
-
 .inputPhone{
-
   border-width: 1px;
-
   border-color: rgb(68, 75, 84);
-
   border-style: solid;
-
   border-radius: 3px;
-
   background-color: rgb(255, 255, 255);
-
   position: absolute;
-
   text-align: center;
-
   width: 228px;
-
   height: 43px;
-
   margin-left: 180px;
-
   margin-top: 599px;
-
 }
-
 .btn-save{
-
   display: inline-block;
-
   position: absolute;
-
   font-size: 18px;
-
   background-color: #3366ff;
-
   color: rgb(255, 255, 255);
-
   border-color: #054086;
-
   border-width: 1px;
-
   border-style: solid;
-
   border-radius: 3px;
-
   line-height: 2.25;
-
   width: 228px;
-
   height: 48px;
-
   margin-top:750px;
-
   margin-left: 180px;
-
 }
-
 .btn-save:hover{
-
   background-color: #0066cc;
-
 }
-
 .btn-save:active{
-
   border-color: #3399ff;
-
   border-style: solid;
-
   border-width: 3px;
-
   border-radius: 3px;
-
   font-weight: 600;
-
 }
-
 .btn-cancel{
-
   font-size: 18px;
-
   font-family: "Proxima Nova";
-
   width:228px;
-
   height: 48px;
-
   color: rgb(68, 75, 84);
-
   background-color: rgb(255, 255, 255);
-
   border-width: 1px;
-
   border-color: rgb(68, 75, 84);
-
   border-style: solid;
-
   border-radius: 3px;
-
   line-height: 2;
-
   text-align: center;
-
   margin-top: 750px;
-
   margin-left: 444px;
-
 }
-
 .btn-cancel:hover{
-
   background-color: rgb(240, 240, 240);
-
 }
-
 .btn-cancel:active{
-
   border-color: #3399ff;
-
   border-style: solid;
-
   border-width: 3px;
-
   border-radius: 3px;
-
   font-weight: 600;
-
 }
-
 .changepassBox {
-
   border-width: 1px;
-
   border-color: rgb(188, 188, 188);
-
   border-style: solid;
-
   border-radius: 3px;
-
   background-color: rgb(247, 247, 247);
-
   position: absolute;
-
   width: 489px;
-
   height: 199px;
-
   margin-left: 180px;
-
   margin-top: 720px;
-
   z-index: 10;
-
 }
-
 .inputNewPassword1 {
-
-
-
   text-align: center;
-
   background-color: rgb(255, 255, 255);
-
   width: 441px;
-
   height: 45px;
-
   margin-left: 22px;
-
   margin-top: 22px;
-
 }
-
 .inputNewPassword2 {
-
   border-radius: 3px;
-
   border-color: black;
-
   text-align: center;
-
   background-color: rgb(255, 255, 255);
-
   width: 441px;
-
   height: 45px;
-
   margin-left: 22px;
-
   margin-top: 12px;
-
 }
-
 .btn-newPassword{
-
   display: inline-block;
-
   position: absolute;
-
   font-size: 18px;
-
   background-color: #3366ff;
-
   color: rgb(255, 255, 255);
-
   border-color: #054086;
-
   border-width: 1px;
-
   border-style: solid;
-
   border-radius: 3px;
-
   line-height: 2.25;
-
   width: 190px;
-
   height: 48px;
-
   margin-top:78px;
-
   margin-left: -322px;
-
 }
-
 .alert-pass{
-
-
-
 }

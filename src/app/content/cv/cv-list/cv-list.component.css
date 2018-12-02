@@ -1,9 +1,61 @@
-.cv-ed-del{
-  color: #000;
-  font-size: 12px;
-  font-style: italic;
+.wrapper{
+  position: relative;
+  font-family: "ProximaNovaRg";
+  font-size: 16px;
+  width: 1170px;
+  margin: 0 auto;
+  padding-right: 0;
+  padding-left: 0;
 }
-.tt{
-  margin: 10px 15px;
-  font-weight: bold;
+.top{
+  width: 1170px;
+  height: 36px;
+  margin: 0 auto;
+  border-color: #b7b7b7;
+  font-size: 30px;
+  font-family: "Proxima Nova";
+  color: rgb(68, 75, 84);
+  text-align: left;
+}
+.box{
+  width: 1170px;
+  height: auto;
+  margin: 30px auto;
+  border-top: solid 1px;
+  border-color: #b7b7b7;
+  font-size: 16px;
+  font-family: "Proxima Nova";
+  color: rgb(68, 75, 84);
+  text-align: left;
+}
+label{
+  font-size: 16px;
+  font-family: "Proxima Nova";
+  color: rgb(2, 98, 210);
+  text-align: left;
+}
+
+.btn-newcv{
+  display: block;
+  background-color: #3366ff;
+  color: rgb(255, 255, 255);
+  border-color: #054086;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px;
+  line-height: 2.25;
+  width: 182px;
+  height: 48px;
+  margin-left: 15px;
+  margin-top: 21px;
+}
+.btn-newcv:hover{
+  background-color: #0066cc;
+}
+.btn-newcv:active{
+  border-color: #3399ff;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 3px;
+  font-weight: 600;
 }
