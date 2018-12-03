@@ -220,4 +220,12 @@ li{
   position: absolute;
   float: left;
 }
-
+.final-date{
+  position: absolute;
+  font-size: 15px;
+  width: 330px;
+  height: 30px;
+  text-align: left;
+  margin-top: 263px;
+  margin-left: 991px;
+}

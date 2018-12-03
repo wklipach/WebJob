@@ -1,13 +1,17 @@
-  <h3>Отрасль</h3>
+
+ <div class="wrapper">
+   <div class="top">Отрасль</div>
 
   <form [formGroup]="formIndustry">
-  <div class="row align-items-start">
-    <div class="form-group form-check">
+
       <div class="row" *ngFor="let item of listIndustry">
 
-        <input type="checkbox" class="form-check-input" formControlName="industryCheck{{item.id}}" id="industryCheck{{item.id}}" title={{item.name}}> {{item.name}}
+        <input type="checkbox" class="form-check-input"
+               formControlName="industryCheck{{item.id}}"
+               id="industryCheck{{item.id}}" title={{item.name}}> {{item.name}}
 
       </div>
-    </div>
-  </div>
+
   </form>
+
+ </div>
