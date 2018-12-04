@@ -8,15 +8,15 @@
     <label class="personal">Данные компании</label>
 
 
-    <img class="img-thumbnail" src="/assets/img/usernull.png" alt="Фото" title="Загрузить фото" height="103px" width="103px">
+    <img class="img-thumbnail" src="/assets/img/no-photo.png" alt="Логотип" title="Загрузить логотип">
 
     <form [formGroup]="form">
-
-        <input type="text" class="fileName" id="name" placeholder="" formControlName="name">
+        <input type="text" class="fileName" id="name" placeholder="Имя файла" formControlName="name">
 
 
         <input type="file" id="avatar" (change)="onFileChange($event)" #fileInput>
-        <button type="button" class="btn-save" (click)="onPostImageAvatar()"  >Сохранить в базу <i class="fa fa-spinner fa-spin fa-fw" *ngIf="loading"></i></button>
+        <button type="button" class="btn-save" (click)="onPostImageAvatar()"  >
+          Сохранить в базу <i class="fa fa-spinner fa-spin fa-fw" *ngIf="loading"></i></button>
     </form>
 
       <div *ngIf="base64textString.length>0">
