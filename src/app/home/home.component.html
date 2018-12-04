@@ -15,7 +15,10 @@
     <img class="logotype-company" src="/assets/img/iport-logo.png" alt="Логотип компании">
     <span class="company-name">{{curVacancy['vacancy'].id_user}}</span>
     <span class="description">{{curVacancy['vacancy'].VacancyBigDescription}}</span>
-    <span class="final-date">Размещено до 22.12.2018</span>
+
+    <div *ngIf="!curVacancy['vacancy'].errorEndDay">
+          <span class="final-date">Размещено до {{curVacancy['vacancy'].sDateEnd}}</span>
+    </div>
 
 
     <button class="btn-response" type="button" id="vcresponse" title="Откликнуться" (click)="response($event,i, curVacancy.id)" >Откликнуться</button>

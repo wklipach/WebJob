@@ -9,9 +9,7 @@ import {Subscription} from 'rxjs';
 import {AuthService} from '../services/auth-service.service';
 import {CvEditService} from '../services/cv-edit.service';
 import {GuideService} from '../services/guide-service.service';
-
-
-
+import {DatePipe} from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -165,6 +163,63 @@ export class HomeComponent implements OnInit, OnDestroy {
    getVacancy(sMask: string) {
     return this.getTableVacancy = this.httpService.getTableVacancy(sMask, this.rowPerPage, this.page).subscribe(
       (data: dataVacancy[]) => {
+
+        console.log('список вакансий =>',data);
+
+        let curRemDay: {numberMonth, errorDay} = {numberMonth: -1, errorDay: true};
+
+        console.log('curRemDay',curRemDay);
+
+
+        data.forEach(  (curVacancy, index, arrCurValue) => {
+
+            curVacancy['vacancy'].sDateEnd = "";
+            curVacancy['vacancy'].errorEndDay = true;
+
+            if (typeof curVacancy['vacancy'].DateTimeCreate !== 'undefined') {
+              if (typeof curVacancy['vacancy'].DisplayPeriod !== 'undefined') {
+
+                switch(curVacancy['vacancy'].DisplayPeriod) {
+                  case 1: {
+                    curRemDay.errorDay = false;
+                    curRemDay.numberMonth = 1;
+                    break;
+                  }
+                  case 2: {
+                    curRemDay.errorDay = false;
+                    curRemDay.numberMonth = 2;
+                    break;
+                  }
+
+                  case 3: {
+                    curRemDay.errorDay = false;
+                    curRemDay.numberMonth = 3;
+                    break;
+                  }
+
+                  default: {
+                    curRemDay.errorDay = false;
+                    curRemDay.numberMonth = 999999;
+                    break;
+                  }
+                }
+
+                /////высчитываем дату окончания
+                //dd/MM/yyyy hh:mm локаль en-US
+                //TODO Даты!!!!!
+                if (!curRemDay.errorDay) {
+                  var reggie = /(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2})/;
+                  var dateArray = reggie.exec(curVacancy['vacancy'].DateTimeCreate);
+                  var dateObject = new Date(+dateArray[3], +dateArray[2] - 1, +dateArray[1], +dateArray[4], +dateArray[5], 0, 0);
+                  let DateEnd = new Date(dateObject.setMonth(dateObject.getMonth() + curRemDay.numberMonth));
+                  var datePipe = new DatePipe("en-US");
+                  curVacancy['vacancy'].sDateEnd =  datePipe.transform(DateEnd, 'dd.MM.yyyy');
+                  curVacancy['vacancy'].errorEndDay = false;
+                }
+              }
+            }
+        }
+        );
 
         this.myDataVacancy = data;
         this.allDataVacancy = data;
