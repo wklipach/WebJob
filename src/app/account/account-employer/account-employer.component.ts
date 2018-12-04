@@ -223,8 +223,15 @@ export class AccountEmployerComponent implements OnInit {
 
 
   onFileChange(event) {
+
+    console.log('onFileChange(event)',event.target);
+
     let reader = new FileReader();
     if(event.target.files && event.target.files.length > 0) {
+
+      console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+
+
       let file = event.target.files[0];
       reader.readAsDataURL(file);
       reader.onload = () => {
@@ -235,6 +242,8 @@ export class AccountEmployerComponent implements OnInit {
         });
 
         this.form.get('name').setValue(file.name);
+        console.log('!file.name',file.name);
+        this.onPostImageAvatar();
       };
     }
   }

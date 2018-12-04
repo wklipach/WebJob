@@ -8,20 +8,35 @@
     <label class="personal">Данные компании</label>
 
 
-    <img class="img-thumbnail" src="/assets/img/no-photo.png" alt="Логотип" title="Загрузить логотип">
 
-    <form [formGroup]="form">
-        <input type="text" class="fileName" id="name" placeholder="Имя файла" formControlName="name">
+        <form [formGroup]="form">
 
 
-        <input type="file" id="avatar" (change)="onFileChange($event)" #fileInput>
-        <button type="button" class="btn-save" (click)="onPostImageAvatar()"  >
-          Сохранить в базу <i class="fa fa-spinner fa-spin fa-fw" *ngIf="loading"></i></button>
-    </form>
 
-      <div *ngIf="base64textString.length>0">
-      <img class="logotype" *ngFor="let item of base64textString"  src={{item}} alt="" id="img">
-     </div>
+<!--
+          <img src="/assets/img/no-photo.png" class="img-thumbnail" onclick="document.getElementById('avatar').click()">
+          <input type="file" id="avatar" (change)="onFileChange($event)" #fileInput style="display:none">
+
+          <div *ngIf="base64textString.length>0">
+            <img class="logotype" *ngFor="let item of base64textString"  src={{item}} alt="" id="img">
+          </div>
+-->
+
+          <div *ngIf="base64textString.length>0;then contentLoadAvatar else contentDefault">условия выполнить невозможно</div>
+          <ng-template #contentLoadAvatar>
+            <img class="logotype" *ngFor="let item of base64textString"  src={{item}} alt="" id="img" onclick="document.getElementById('avatar').click()">
+          </ng-template>
+
+          <ng-template #contentDefault>
+            <img src="/assets/img/no-photo.png" class="img-thumbnail" onclick="document.getElementById('avatar').click()">
+          </ng-template>
+
+          <input type="file" id="avatar" (change)="onFileChange($event)" #fileInput style="display:none">
+
+
+
+
+        </form>
 
 <form [formGroup]="accountEmployerForm">
   <label class="user-name">Имя пользователя</label>
