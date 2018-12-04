@@ -33,7 +33,7 @@
 }
 .v-line{
   display: inline-block;
-  position: relative;
+  position: absolute;
   width:6px;
   height:315px;
   background-color: #b8b8b8;
