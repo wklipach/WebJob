@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {City} from '../../class/City';
 import {GuideService} from '../../services/guide-service.service';
 import {Subscription} from 'rxjs';
@@ -14,7 +14,9 @@ import {Router} from '@angular/router';
 })
 export class AccountEmployeeComponent implements OnInit {
 
-
+  base64textString = [];
+  loading: boolean = false;
+  form: FormGroup;
   accountEmployeeForm: FormGroup;
   listCity : City[] =[];
   private cveditCityTable: Subscription;
@@ -32,10 +34,13 @@ private loadUser: UserType;
 
 
   constructor(private is: GuideService,
+              private fb: FormBuilder,
               private auth: AuthService,
               private router: Router,
               private gs: GuideService) {
 
+
+    this.createForm();
     this.accountEmployeeForm = new FormGroup({
       'inputUserName': new FormControl({disabled: true},[]),
       'inputName': new FormControl('',[]),
@@ -49,18 +54,58 @@ private loadUser: UserType;
     });
   }
 
+
+  createForm() {
+    this.form = this.fb.group({
+      name: ['', Validators.required],
+      avatar: ''
+    });
+  }
+
   ngOnInit() {
 
     var Res =  this.auth.loginStorage();
     if (Res.bConnected) this.id_user = Res.id_user; else this.id_user = -1;
 
-    this.subscrDataUserFromId = this.auth.getDataUserFromId(this.id_user).subscribe(value=>
-                                                                {  this.loadCurrentUserInfo(value);
-                                                                this.loadUser = value as UserType;
-                                                                console.log('this.loadUser',this.loadUser);
-                                                                }
-    );
+    this.subscrDataUserFromId = this.auth.getDataUserFromId(this.id_user).subscribe(value=> {
+
+      this.loadCurrentUserInfo(value);
+      this.loadUser = value as UserType;
+      //console.log('this.loadUser',this.loadUser);
+      // вытаскиваем из базы картинку аватара
+      const S = this.loadUser['Avatar'].Avatar;
+      this.base64textString.push('data:image/png;base64,' + JSON.parse(S).value);
+    });
   }
+
+
+  onFileChange(event) {
+
+    console.log('onFileChange(event)',event.target);
+
+    let reader = new FileReader();
+    if(event.target.files && event.target.files.length > 0) {
+
+      console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+
+
+      let file = event.target.files[0];
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        this.form.get('avatar').setValue({
+//          filename: file.name,
+//          filetype: file.type,
+          value: reader.result.split(',')[1]
+        });
+
+        this.form.get('name').setValue(file.name);
+        console.log('!file.name',file.name);
+        this.onPostImageAvatar();
+      };
+    }
+  }
+
+
 
   ngOnDestroy() {
     if (typeof  this.subscrDataUserFromId !== 'undefined') {
@@ -160,5 +205,38 @@ private loadUser: UserType;
   back() {
     this.router.navigate(['/']);
   }
+
+
+  onLoadFromBaseAvatar() {
+
+    this.auth.getDataUserFromId(this.id_user).subscribe((aRes)=>
+    {
+      const S = aRes['Avatar'].Avatar;
+      this.base64textString = [];
+      this.base64textString.push('data:image/png;base64,' + JSON.parse(S).value);
+    });
+
+  }
+
+  onPostImageAvatar() {
+
+    const formModel = this.prepareSave();
+    this.loading = true;
+    this.auth.updateAvatarUserTable( {'Avatar': formModel.get('avatar'), 'Name': formModel.get('name') }, this.id_user).subscribe(()=> {
+      this.loading = false;
+      this.onLoadFromBaseAvatar();
+    });
+
+  }
+
+  private prepareSave(): FormData {
+    let input: FormData = new FormData();
+    // This can be done a lot prettier; for example automatically assigning values by looping through `this.form.controls`, but we'll keep it as simple as possible here
+    //input.
+    input.append('name', this.form.get('name').value);
+    input.append('avatar', JSON.stringify(this.form.get('avatar').value));
+    return input;
+  }
+
 
 }
