@@ -45,6 +45,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   protected bChecked20 = false;
   protected bChecked50 = false;
 
+  base64textString = [];
+
   constructor(private httpService: TableVacancyService,
               private router: Router,
               private moveS: MoveService,
@@ -91,6 +93,19 @@ export class HomeComponent implements OnInit, OnDestroy {
   onPageChanged(pageNumber: number) {
     console.log('переключили страницу, новая страница=', pageNumber);
     this.reloadPAge(this.allDataVacancy, this.sMask);
+  }
+
+
+  //TODO  onLoadFromBaseAvatar()
+  onLoadFromBaseAvatar(k: any) {
+    k.base64textString = [];
+    if (typeof k.id_user !== 'undefined') {
+          this.authService.getDataUserFromId(k.id_user).subscribe((aRes) => {
+          const S = aRes['Avatar'].Avatar;
+          k.base64textString = [];
+          k.base64textString.push('data:image/png;base64,' + JSON.parse(S).value);
+          });
+    }
   }
 
 
@@ -173,6 +188,13 @@ export class HomeComponent implements OnInit, OnDestroy {
 
         data.forEach(  (curVacancy, index, arrCurValue) => {
 
+
+          //TODO ЗАГРУЖАЕМ КАРТИНКУ В ЗАЯВКУ
+          //base64textString = [];
+          this.onLoadFromBaseAvatar(curVacancy['vacancy']);
+
+
+          //ДАТА ОКОНЧАНИЯ ЗАЯВКИ
             curVacancy['vacancy'].sDateEnd = "";
             curVacancy['vacancy'].errorEndDay = true;
 
