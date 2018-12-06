@@ -57,7 +57,7 @@ export class AccountEmployerComponent implements OnInit {
 
     this.accountEmployerForm = new FormGroup({
 
-      'inputUserName': new FormControl({value: '', disabled: true}, []),
+      'inputUserName': new FormControl({value: ''}, []),
       'inputName': new FormControl(),
       'inputLastName' : new FormControl(),
       'inputZip' : new FormControl(),
@@ -67,6 +67,8 @@ export class AccountEmployerComponent implements OnInit {
       'inputNewPassword1' : new FormControl('',[]),
       'inputNewPassword2' : new FormControl('',[])
     });
+
+    this.accountEmployerForm.controls['inputUserName'].disable();
 
   }
 

@@ -69,7 +69,7 @@ export class TableVacancyService {
   getTableVacancy(sMask: string, rowPerPage: number, currentPage: number)
   {
 
-    console.log('getTableVacancy сработал');
+    console.log('getTableVacancy сработал, rowPerPage=',rowPerPage);
 
     let sUrl = 'http://localhost:3000/vacancy';
     if (sMask !== '') sUrl = sUrl +'?q='+sMask;

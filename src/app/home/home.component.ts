@@ -134,8 +134,26 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     this.rowPerPage = 5;
     if (window.localStorage.getItem('rowPerPage') !== '') {
+
+      console.log('Init rowPerPage', 'ищем');
+
       this.rowPerPage = JSON.parse(window.localStorage.getItem('rowPerPage'));
+
+      //TODO тут правим!!!!!!!!!!!!!!!!!
+      if (this.rowPerPage === null) {
+        if (this.bChecked5) this.rowPerPage = 5;
+        if (this.bChecked10) this.rowPerPage = 10;
+        if (this.bChecked20) this.rowPerPage = 20;
+        if (this.bChecked50) this.rowPerPage = 50;
+
+        if (this.rowPerPage === null) {
+          this.rowPerPage = 5;
+        }
+      }
+
     }
+
+    console.log('Init rowPerPage',this.rowPerPage);
 
     this.funcCheckedFind(this.rowPerPage);
 
@@ -175,7 +193,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     return this.getTableVacancy = this.httpService.getTableVacancy(sMask, this.rowPerPage, this.page).subscribe(
       (data: dataVacancy[]) => {
 
-        console.log('список вакансий =>',data);
+        console.log('список вакансий =>',data, 'rowPerPage',this.rowPerPage);
 
         let curRemDay: {numberMonth, errorDay} = {numberMonth: -1, errorDay: true};
 

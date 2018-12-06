@@ -42,7 +42,7 @@ private loadUser: UserType;
 
     this.createForm();
     this.accountEmployeeForm = new FormGroup({
-      'inputUserName': new FormControl({disabled: true},[]),
+      'inputUserName': new FormControl({},[]),
       'inputName': new FormControl('',[]),
       'inputLastName' : new FormControl('',[]),
       'inputZip' : new FormControl('',[]),
@@ -52,6 +52,8 @@ private loadUser: UserType;
       'inputNewPassword1' : new FormControl('',[]),
       'inputNewPassword2' : new FormControl('',[])
     });
+
+    this.accountEmployeeForm.controls['inputUserName'].disable();
   }
 
 

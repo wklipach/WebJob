@@ -138,6 +138,11 @@ export class PageCountComponent implements OnInit {
     }
   }
 
+
+  //в подписке полное число записей 13 page-count.component.ts:150:6
+  //в подписке число элементов на страницу null page-count.component.ts:151:6
+  //в подписке число страниц Infinity
+
   ngOnInit() {
     this._numberOfPage = Math.ceil(this.numberOfRecordsPerAll / this.numberOfRecordsPerPage);
     this.InitializePages();
