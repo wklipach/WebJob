@@ -60,6 +60,8 @@ label{
   height: 40px;
   margin-left: 12px;
   margin-top: 465px;
+ /* max-width: 100%;
+  box-sizing: border-box; */
 }
 .img-thumbnail:hover{
   cursor: pointer;
