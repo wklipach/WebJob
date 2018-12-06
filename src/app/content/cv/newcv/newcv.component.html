@@ -1,73 +1,49 @@
 <app-header-top></app-header-top>
 
 <div class="wrapper">
+  <div class="top">Создание резюме</div>
 
-
-  <form [formGroup]="newCVForm">  </form>
-
-   <div class="top">
-    Создание резюме
-   </div>
-
+  <form [formGroup]="newCVForm">
     <div class="cv-box">
 
-
-
-    <div class="form-group col-md-3">
-      <label for="inputCity">Локация вакансии</label>
-      <select id="inputCity" formControlName="inputCity" class="form-control" title="Локация вакансии">
+      <label class="location">Город</label>
+      <select id="inputCity" formControlName="inputCity" class="inputCity" title="Город">
         <option  *ngFor="let lc of listCity" [value]="lc.name">
           {{lc.name}}
         </option>
       </select>
-    </div>
 
-  <div class="row">
-    <div class="col-2">
-      <label class="labelDescr">Заработная плата от</label>
-    </div>
-    <div class="col-4">
-      <input type="text" class="form-control" formControlName="inputSalaryFrom" id="inputSalaryFrom" placeholder="Заработная плата от">
-    </div>
-  </div>
-    </div>
-  <div class="row">
-    <div class="col-2">
-      <label class="labelDescr">Желаемая должность</label>
-    </div>
-    <div class="col-4">
-      <input type="text" class="form-control" formControlName="position" id="position" placeholder="Желаемая должность">
-    </div>
-  </div>
-
-      <!-- Отрасль -->
-      <app-cv_industry></app-cv_industry>
-      <!-- Занятость -->
-      <app-cv-employment></app-cv-employment>
-      <!-- график работы -->
-      <app-cv-schedule></app-cv-schedule>
-      <!-- Опыт работы -->
-      <app-cv-experience></app-cv-experience>
-      <!-- Образование -->
-     <app-cv-education></app-cv-education>
+      <label class="salary">Заработная плата</label>
+      <input type="text" class="inputSalaryFrom" formControlName="inputSalaryFrom" id="inputSalaryFrom" placeholder="от">
 
 
 
-<br>
+      <label class="label-position">Желаемая должность</label>
+      <input type="text" class="position" formControlName="position" id="position" placeholder="Желаемая должность">
 
-    <div class="container">
+
+    </div>
+  </form>
+
+  <div class="cv-box">
+    <!-- Отрасль -->
+    <app-cv_industry></app-cv_industry>
+    <!-- Занятость -->
+    <app-cv-employment></app-cv-employment>
+    <!-- график работы -->
+    <app-cv-schedule></app-cv-schedule>
+    <!-- Опыт работы -->
+    <app-cv-experience></app-cv-experience>
+    <!-- Образование -->
+    <app-cv-education></app-cv-education>
+
+
     <ng-container #spot></ng-container>
     <button (click)="createNewBlock()">Предыдущее место работы</button>
-    </div>
 
-    <br>
-    <div class="container">
     <button (click)="newcv()">Сохранить резюме</button>
-    </div>
 
+
+  </div>
 </div>
-
-
-
-
 

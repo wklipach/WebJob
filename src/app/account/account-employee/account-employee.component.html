@@ -13,9 +13,9 @@
 -->
 
 <form [formGroup]="form">
-    <div *ngIf="base64textString.length>0;then contentLoadAvatar else contentDefault">условия выполнить невозможно</div>
+    <div *ngIf="base64textString.length>0;then contentLoadAvatar else contentDefault">Невозможно выполнить условия</div>
     <ng-template #contentLoadAvatar>
-      <img class="logotype" *ngFor="let item of base64textString"  src={{item}} alt="" id="img" onclick="document.getElementById('avatar').click()">
+      <img class="logotype" *ngFor="let item of base64textString"  src={{item}} alt="Загрузить фото" title="Загрузить фото" id="img" onclick="document.getElementById('avatar').click()">
     </ng-template>
 
     <ng-template #contentDefault>
@@ -24,20 +24,12 @@
 
     <input type="file" id="avatar" (change)="onFileChange($event)" #fileInput style="display:none">
 
-    <button (click)="clearFile()">Очистить</button>
+    <label class="photo-clear" (click)="clearFile()" title="Очистить">Очистить</label>
 
 </form>
 
-
-
-
     <form class="employee-form" [formGroup]="accountEmployeeForm">
-
-
-<!--
-      <label class="photo-upload">Загрузить фото</label>
--->
-
+      <label class="photo-upload" title="Загрузить фото"  onclick="document.getElementById('avatar').click()">Загрузить фото</label>
 
       <label class="user-name">Имя пользователя</label>
       <input type="text" class="inputUserName" id="inputUserName" formControlName="inputUserName" placeholder="введите имя пользователя">
@@ -91,104 +83,3 @@
 </div>
 
 <app-footer></app-footer>
-
-
-<!--
-
-<h3>Мой профиль</h3>
-
-<label class="labelDescr">Личные данные соискателя</label>
-
-<div class="row">
-  <div class="col-2">
-    <label class="labelDescr">Загрузить фото</label>
-  </div>
-  <div class="col-4">
-    <!- <input type="image" title="photo" id="photo">  --
-    <img src="/assets/img/rus-flag.gif" alt="Фото" title="Загрузить фото" class="img-thumbnail">
-  </div>
-</div>
-
-<form [formGroup]="accountEmployeeForm">
-  <div class="form-row">
-    <div class="form-group col-md-3">
-      <label class="labelDescr">Имя пользователя</label>
-      <input type="text" class="form-control" id="inputUserName" formControlName="inputUserName" placeholder="Имя пользователя">
-    </div>
-  </div>
-
-
-  <div class="form-row">
-    <div class="form-group col-md-3">
-      <label class="labelDescr">Имя</label>
-      <input type="text" class="form-control" id="inputName" formControlName="inputName" placeholder="Имя">
-    </div>
-  </div>
-
-  <div class="form-row">
-    <div class="form-group col-md-3">
-      <label class="labelDescr">Фамилия</label>
-      <input type="text" class="form-control" id="inputLastname" formControlName="inputLastName" placeholder="Фамилия">
-    </div>
-  </div>
-
-  <div class="form-row">
-    <div class="form-group col-md-1">
-      <label class="labelDescr">Почтовый индекс</label>
-      <input type="text" class="form-control" id="inputZip" formControlName="inputZip" placeholder="Индекс">
-    </div>
-  </div>
-
-  <div class="form-group col-md-3">
-    <label class="labelDescr">Место жительства</label>
-    <select id="inputCity" formControlName="inputCity" class="form-control" title="Локация вакансии">
-      <option  *ngFor="let lc of listCity" [value]="lc.name">
-        {{lc.name}}
-      </option>
-    </select>
-
-
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-3">
-      <label class="labelDescr">Домашний адрес</label>
-      <input type="text" class="form-control" id="inputAddress" formControlName="inputAddress" placeholder="Домашний адрес">
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-3">
-      <label class="labelDescr">№ телефона</label>
-      <input type="text" class="form-control" id="inputPhone" formControlName="inputPhone" placeholder="Телефон">
-    </div>
-  </div>
-
-  <button type="button" class="btn btn-link" (click)="accessPassword()"> Изменить пароль </button>
-  <div class="form-row">
-      <ng-container *ngIf="bShowChangePassword">
-        <div class="form-group col-md-3">
-          <input type="password" class="form-control" id="inputNewPassword1" formControlName="inputNewPassword1" placeholder="Новый пароль">
-          <input type="password" class="form-control" id="inputNewPassword2" formControlName="inputNewPassword2" placeholder="Повторить пароль">
-          <button type="submit" class="btn btn-primary" (click)="NewPassword()">Изменить пароль</button>
-          <ng-container *ngIf="bPasswordNew">Пароль изменен</ng-container>
-          <div class="alert-primary" *ngIf="bErrorRepeatPassword">Пароли не совпадают</div>
-        </div>
-      </ng-container>
-  </div>
-
-</form>
-
-
-<br>
-<div class="form-row">
-  <div class="btn-group col-md-3">
-    <button type="submit" class="btn btn-primary" (click)="savecv()">Сохранить</button>
-    <button type="submit" class="btn btn-primary" (click)="back()">Отмена</button>
-  </div>
-</div>
-
-<app-footer></app-footer>
-
-<!--
-<label for="inputAddress"></label>
--->
-
