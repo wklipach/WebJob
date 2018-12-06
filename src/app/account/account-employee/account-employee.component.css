@@ -64,6 +64,21 @@ label{
 .img-thumbnail:hover{
   cursor: pointer;
 }
+.logotype{
+  border-width: 1px;
+  border-color: rgb(188, 188, 188);
+  border-style: solid;
+  border-radius: 3px;
+  background-color: rgb(220, 220, 220);
+  position: absolute;
+  width: 103px;
+  height: 103px;
+  margin-left: 12px;
+  margin-top: 65px;
+}
+.logotype:hover{
+  cursor: pointer;
+}
 .img-lock{
   position: absolute;
   margin-left: 180px;
