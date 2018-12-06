@@ -224,29 +224,33 @@ export class AccountEmployerComponent implements OnInit {
 
   onFileChange(event) {
 
-    console.log('onFileChange(event)',event.target);
-
     let reader = new FileReader();
     if(event.target.files && event.target.files.length > 0) {
 
-      console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!');
-
 
       let file = event.target.files[0];
+
       reader.readAsDataURL(file);
       reader.onload = () => {
-        this.form.get('avatar').setValue({
+        var tempImg = new Image();
+        tempImg.src = reader.result;
+        tempImg.onload =() => {
+          var dataURL = this.ResizeImage(tempImg);
+          console.log('dataURL', dataURL);
+          this.form.get('avatar').setValue({
 //          filename: file.name,
 //          filetype: file.type,
-          value: reader.result.split(',')[1]
-        });
+            value: dataURL.split(',')[1]
+          });
 
-        this.form.get('name').setValue(file.name);
-        console.log('!file.name',file.name);
-        this.onPostImageAvatar();
+          this.form.get('name').setValue(file.name);
+          this.onPostImageAvatar();
+        };
       };
+
     }
   }
+
 
   clearFile() {
     this.form.get('avatar').setValue(null);
@@ -286,6 +290,35 @@ export class AccountEmployerComponent implements OnInit {
        });
 
   }
+
+
+  ResizeImage(tempImg: HTMLImageElement): string {
+    var MAX_WIDTH = 400;
+    var MAX_HEIGHT = 300;
+    var tempW = tempImg.width;
+    var tempH = tempImg.height;
+    if (tempW > tempH) {
+      if (tempW > MAX_WIDTH) {
+        tempH *= MAX_WIDTH / tempW;
+        tempW = MAX_WIDTH;
+      }
+    } else {
+      if (tempH > MAX_HEIGHT) {
+        tempW *= MAX_HEIGHT / tempH;
+        tempH = MAX_HEIGHT;
+      }
+    }
+    var canvas = document.createElement('canvas');
+    canvas.width = tempW;
+    canvas.height = tempH;
+    var ctx = canvas.getContext("2d");
+    ctx.drawImage(tempImg, 0, 0, tempW, tempH);
+    var dataURL = canvas.toDataURL("image/png");
+
+    return dataURL;
+  }
+
+
 
 
 

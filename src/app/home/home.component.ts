@@ -98,6 +98,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   //TODO  onLoadFromBaseAvatar()
   onLoadFromBaseAvatar(k: any) {
+
     k.base64textString = [];
     if (typeof k.id_user !== 'undefined') {
           this.authService.getDataUserFromId(k.id_user).subscribe((aRes) => {
@@ -126,10 +127,10 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit() {
 
     var Res =  this.authService.loginStorage();
+
     this.bConnected = Res.bConnected;
     this.id_user =  Res.id_user;
     this.bEmployer = Res.bEmployer;
-
 
     this.rowPerPage = 5;
     if (window.localStorage.getItem('rowPerPage') !== '') {
@@ -138,17 +139,12 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     this.funcCheckedFind(this.rowPerPage);
 
-
     if (window.localStorage.getItem('keyFind') !== null) {
       this.sMask = window.localStorage.getItem('keyFind');
     }
 
     window.localStorage.removeItem('keyFind');
-
-
     this.httpService.onReopenVacancy.subscribe((value: string) => this.getVacancy(value));
-
-
 
     //если не было расширенного поиска вакансий делаем обычный поиск, иначе расширенный запускается из advanced-search.component
     if ( this.httpService.getMessageAdvancedFindObj() === null ) {
