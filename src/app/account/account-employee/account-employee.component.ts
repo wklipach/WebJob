@@ -102,7 +102,7 @@ private loadUser: UserType;
       let file = event.target.files[0];
 
       reader.readAsDataURL(file);
-      reader.onload = () => {
+      reader.onloadend = () => {
         var tempImg = new Image();
         tempImg.src = reader.result;
         tempImg.onload =() => {
