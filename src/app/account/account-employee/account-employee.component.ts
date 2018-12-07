@@ -69,6 +69,7 @@ private loadUser: UserType;
     this.form.get('avatar').setValue(null);
     this.form.get('name').setValue(null);
     this.base64textString = [];
+    this.onPostImageAvatar();
   }
 
 

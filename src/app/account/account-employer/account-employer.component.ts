@@ -78,6 +78,8 @@ export class AccountEmployerComponent implements OnInit {
       name: ['', Validators.required],
       avatar: ''
     });
+
+    this.onPostImageAvatar();
   }
 
   ngOnInit() {
@@ -259,6 +261,7 @@ export class AccountEmployerComponent implements OnInit {
     this.form.get('name').setValue(null);
     this.fileInput.nativeElement.value = '';
     this.base64textString = [];
+    this.onPostImageAvatar();
   }
 
   private prepareSave(): FormData {
