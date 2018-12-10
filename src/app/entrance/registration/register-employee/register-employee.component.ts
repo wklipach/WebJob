@@ -15,6 +15,21 @@ export class RegisterEmployeeComponent implements OnInit {
 
   user: UserTable;
   myForm: FormGroup;
+  protected _bLicense: boolean = false;
+
+
+  get bLicense():boolean {
+    return this._bLicense;
+  }
+  set bLicense(theLicense:boolean) {
+    this._bLicense = theLicense;
+  }
+
+
+  licenseShow() {
+    this.bLicense =  !this.bLicense;
+  }
+
 
   constructor(private httpService: AuthService, private router: Router) {
 

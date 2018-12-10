@@ -93,7 +93,10 @@
         Согласитесь с лицензией
       </div>
 
-      <a class="nav-link" routerLink="/rules" routerLinkActive="active">Прочитать правила использования.</a>
+      <a (click)="licenseShow()">Прочитать правила использования.</a>
+      <div *ngIf="bLicense">ТУТ ДОЛЖНЫ БЫТЬ ПРАВИЛА ИСПОЛЬЗОВАНИЯ</div>
+
+
 
   <button class="btn-register" [disabled]="formRegisterEmployer.invalid">Зарегистрироваться</button>
 

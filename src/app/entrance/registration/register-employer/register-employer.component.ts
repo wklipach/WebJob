@@ -14,9 +14,26 @@ import {UserType} from '../../../class/UserType';
 export class RegisterEmployerComponent implements OnInit {
 
   user: UserTable;
+  protected _bLicense: boolean = false;
+
   formRegisterEmployer: FormGroup;
 
+
+  get bLicense():boolean {
+    return this._bLicense;
+  }
+  set bLicense(theLicense:boolean) {
+    this._bLicense = theLicense;
+  }
+
+
+  licenseShow() {
+     this.bLicense =  !this.bLicense;
+  }
+
+
   constructor(private httpService: AuthService, private router: Router) {
+
     this.formRegisterEmployer  = new FormGroup({
       'userName': new FormControl('',
         [Validators.required], [this.employerNameAsyncValidator.bind(this)]
