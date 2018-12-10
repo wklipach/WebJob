@@ -1,8 +1,9 @@
 {
-  "Correspondence": [
+  "UserTable": [
   ],
-  "UserFavoritesUnit": [
-  ],
+  "Vacancy": [],
+  "Correspondence": [],
+  "UserFavoritesUnit": [],
   "City": [
     {
       "name": "Таллин",
@@ -35,8 +36,6 @@
       "id": 6
     }
   ],
-  "CV": [
-  ],
-  "CV_Previous": [
-  ]
+  "CV": [],
+  "CV_Previous": []
 }

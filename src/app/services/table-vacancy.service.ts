@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable, Subject, Subscription} from 'rxjs';
 import {HomeComponent} from '../home/home.component';
+import {dataVacancy} from '../class/Vacancy';
 
 @Injectable({
   providedIn: 'root'
@@ -74,7 +75,14 @@ export class TableVacancyService {
     let sUrl = 'http://localhost:3000/vacancy';
     if (sMask !== '') sUrl = sUrl +'?q='+sMask;
     // вставить запрос типа select top 10 * from Vacancy по маске или еще что такое же
-    return this.http.get(sUrl);
+
+    console.log('s11');
+    let Result = this.http.get(sUrl);
+    console.log('s12');
+    console.log('s13',Result);
+
+    return Result;
+
   }
 
   getCity()

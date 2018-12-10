@@ -108,3 +108,16 @@ label{
   margin-left: 15px;
   margin-top:2px;
 }
+
+
+.trowblevalidator{
+  border-width: 1px;
+  border-style: solid;
+  border-color: red;
+}
+
+.succesfullvalidator {
+  border-width: 1px;
+  border-style: solid;
+  border-color: green;
+}

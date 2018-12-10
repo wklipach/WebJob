@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
 
     this.loginForm  = new FormGroup({
       'nameOrEmail': new FormControl('',
-        [Validators.required, Validators.minLength(2)]),
+        [Validators.required, Validators.minLength(3)]),
       'password': new FormControl('',
       [Validators.required])
     });
@@ -57,6 +57,10 @@ export class LoginComponent implements OnInit {
 
 
   submit() {
+
+
+    console.log('SUBMIT');
+
     const sUserOrEmail = this.loginForm.controls['nameOrEmail'].value;
     const sPassword = this.loginForm.controls['password'].value;
 

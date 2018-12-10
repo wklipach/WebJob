@@ -11,7 +11,12 @@
 <div class="box">
   <form [formGroup]="loginForm" novalidate (ngSubmit)="submit()">
   <label class="login" for="inputLogin">Логин или E-Mail</label>
-  <input type="text" class="inputLogin" id="inputLogin" formControlName="nameOrEmail" placeholder="Логин или E-mail">
+  <input type="text" class="inputLogin" id="inputLogin" formControlName="nameOrEmail" placeholder="Логин или E-mail"
+         [ngClass]="{
+                      succesfullvalidator: this.loginForm.controls['nameOrEmail'].value.length >= 3,
+                      trowblevalidator: loginForm.controls['nameOrEmail'].value.length >= 1 && loginForm.controls['nameOrEmail'].value.length <= 2
+                     }">
+
 
   <label class="password" for="inputPassword">Пароль</label>
   <input type="password" class="inputPassword" id="inputPassword" formControlName="password"  placeholder="Пароль">

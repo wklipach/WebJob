@@ -190,9 +190,13 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     // TODO getVacancy
    getVacancy(sMask: string) {
+     console.log('список a1');
     return this.getTableVacancy = this.httpService.getTableVacancy(sMask, this.rowPerPage, this.page).subscribe(
       (data: dataVacancy[]) => {
 
+        //dataVacancy[]
+
+        console.log('список a12');
         console.log('список вакансий =>',data, 'rowPerPage',this.rowPerPage);
 
         let curRemDay: {numberMonth, errorDay} = {numberMonth: -1, errorDay: true};
