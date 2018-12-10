@@ -104,6 +104,27 @@ input{
   font-weight: 600;
 }
 
-.rules-link {
-
+.form-check-input{
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  margin-left: 15px;
+  margin-top: 21px;
 }
+.form-check-label{
+ display: inline-block;
+  margin-left: 15px;
+  margin-top: 21px;
+}
+
+.rules-link {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.rules-link:hover {
+  color: red;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+
