@@ -87,6 +87,12 @@
       <label for="inputPassword1">Повторитие пароль</label>
       <input type="password" class="form-control" id="inputPassword2" placeholder="Password" formControlName="userPassword2">
 
+  <div *ngIf="bPassword">
+    Пароли не совпадают.
+  </div>
+
+
+
   <label class="rules-link" (click)="licenseShow()">Прочитать правила использования.</label>
   <div *ngIf="bLicense">
         <pre>

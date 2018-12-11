@@ -15,6 +15,7 @@ export class RegisterEmployerComponent implements OnInit {
 
   user: UserTable;
   protected _bLicense: boolean = false;
+  public bPassword: boolean = false;
 
   formRegisterEmployer: FormGroup;
 
@@ -58,7 +59,17 @@ export class RegisterEmployerComponent implements OnInit {
   }
 
   submit() {
-    const {userName, userEmail, userPassword1} = this.formRegisterEmployer.value;
+
+    this.bPassword = false;
+
+    const {userName, userEmail, userPassword1, userPassword2} = this.formRegisterEmployer.value;
+
+    if (userPassword1.trim() !== userPassword2.trim()) {
+      console.log('Пароли не совподают');
+      this.bPassword = true;
+      return -1;
+    }
+
 
     const AddUser  = new UserType(userName,userEmail,userPassword1,true, -1,'','','','','');
 

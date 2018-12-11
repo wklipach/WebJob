@@ -16,6 +16,7 @@ export class RegisterEmployeeComponent implements OnInit {
   user: UserTable;
   myForm: FormGroup;
   protected _bLicense: boolean = false;
+  public bPassword: boolean = false;
 
 
   get bLicense():boolean {
@@ -32,6 +33,8 @@ export class RegisterEmployeeComponent implements OnInit {
 
 
   constructor(private httpService: AuthService, private router: Router) {
+
+    this.bPassword = false;
 
     this.myForm  = new FormGroup({
       'userName': new FormControl('',
@@ -59,7 +62,15 @@ export class RegisterEmployeeComponent implements OnInit {
 
   submit(){
 
-    const {userName, userEmail, userPassword1} = this.myForm.value;
+    this.bPassword = false;
+
+    const {userName, userEmail, userPassword1, userPassword2} = this.myForm.value;
+
+    if (userPassword1.trim() !== userPassword2.trim()) {
+      console.log('Пароли не совподают');
+      this.bPassword = true;
+      return -1;
+    }
 
     const AddUser  = new UserType(userName,userEmail,userPassword1,false, -1,'','','','','');
 
