@@ -103,6 +103,10 @@ input{
   border-radius: 3px;
   font-weight: 600;
 }
+.btn-register:disabled{
+  color: white;
+  background-color: rgb( 145, 175, 209 );
+}
 
 .form-check-input{
   position: relative;

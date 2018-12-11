@@ -165,3 +165,7 @@ input, textarea, select{
   border-radius: 3px;
   font-weight: bold;
 }
+.btn-save:disabled{
+  color: white;
+  background-color: rgb( 145, 175, 209 );
+}

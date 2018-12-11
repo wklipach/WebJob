@@ -8,28 +8,33 @@
     <label class="personal">Личные данные соискателя</label>
 
 
-<!--
-    <img class="img-thumbnail" src="/assets/img/usernull.png" alt="Фото" title="Загрузить фото" height="103px" width="103px">
--->
+    <!--
+        <img class="img-thumbnail" src="/assets/img/usernull.png" alt="Фото" title="Загрузить фото" height="103px" width="103px">
+        -->
 
-<form [formGroup]="form">
-    <div *ngIf="base64textString.length>0;then contentLoadAvatar else contentDefault">Невозможно выполнить условия</div>
-    <ng-template #contentLoadAvatar>
-      <img class="logotype" *ngFor="let item of base64textString"  src={{item}} alt="Загрузить фото" title="Загрузить фото" id="img" onclick="document.getElementById('avatar').click()">
-    </ng-template>
+    <form [formGroup]="form">
+      <div *ngIf="base64textString.length>0;then contentLoadAvatar else contentDefault">условия выполнить невозможно</div>
+      <ng-template #contentLoadAvatar>
+        <img class="logotype" *ngFor="let item of base64textString"  src={{item}} alt="Загрузить фото" id="img" onclick="document.getElementById('avatar').click()">
+      </ng-template>
 
-    <ng-template #contentDefault>
-      <img src="/assets/img/usernull.png" class="img-thumbnail" onclick="document.getElementById('avatar').click()">
-    </ng-template>
+      <ng-template #contentDefault>
+        <img src="/assets/img/usernull.png" class="img-thumbnail" onclick="document.getElementById('avatar').click()">
+      </ng-template>
 
-    <input type="file" id="avatar" (change)="onFileChange($event)" #fileInput style="display:none">
+      <input type="file" id="avatar" (change)="onFileChange($event)" #fileInput style="display:none">
+    </form>
 
-    <label class="photo-clear" (click)="clearFile()" title="Очистить">Очистить</label>
 
-</form>
+
 
     <form class="employee-form" [formGroup]="accountEmployeeForm">
-      <label class="photo-upload" title="Загрузить фото"  onclick="document.getElementById('avatar').click()">Загрузить фото</label>
+
+
+      <!---->
+      <label class="photo-upload">Загрузить фото</label>
+
+
 
       <label class="user-name">Имя пользователя</label>
       <input type="text" class="inputUserName" id="inputUserName" formControlName="inputUserName" placeholder="введите имя пользователя">

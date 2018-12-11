@@ -103,3 +103,29 @@ input{
   border-radius: 3px;
   font-weight: 600;
 }
+.btn-register:disabled{
+  color: white;
+  background-color: rgb( 145, 175, 209 );
+}
+.form-check-input{
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  margin-left: 15px;
+  margin-top: 21px;
+}
+.form-check-label{
+  display: inline-block;
+  margin-left: 15px;
+  margin-top: 21px;
+}
+
+.rules-link {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.rules-link:hover {
+  color: red;
+  cursor: pointer;
+  text-decoration: underline;
+}

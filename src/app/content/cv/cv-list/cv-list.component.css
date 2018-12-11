@@ -59,3 +59,7 @@ label{
   border-radius: 3px;
   font-weight: 600;
 }
+.btn-delete:disabled{
+  color: white;
+  background-color: rgb( 145, 175, 209 );
+}

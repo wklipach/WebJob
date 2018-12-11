@@ -98,6 +98,10 @@ label{
   border-radius: 3px;
   font-weight: 600;
 }
+.btn-signin:disabled{
+  color: white;
+  background-color: rgb( 145, 175, 209 );
+}
 .forgot-password{
   display: block;
   margin-left: 15px;

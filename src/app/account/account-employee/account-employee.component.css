@@ -47,18 +47,10 @@ label{
 .photo-upload {
   font-size: 13px;
   margin-left: 18px;
-  margin-top: 185px;
+  margin-top: 177px;
 }
 .photo-upload:hover{
   cursor: pointer;
-}
-.photo-clear:hover{
-  cursor: pointer;
-}
-.photo-clear {
-  font-size: 13px;
-  margin-left: 37px;
-  margin-top: 215px;
 }
 .img-thumbnail {
   border-width: 1px;

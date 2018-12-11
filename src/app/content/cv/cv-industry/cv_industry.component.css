@@ -9,14 +9,30 @@
   padding-right: 0;
   padding-left: 0;
 }
+.box{
+  width: 1170px;
+  margin: 0 auto;
+  position: relative;
+}
+
 .top{
   width: 1170px;
   height: 59px;
-  margin: 0 auto;
-  border-bottom: solid 1px;
-  border-color: #b7b7b7;
+  margin: 20px auto;
 }
-input{
+.check-input{
   font-size: 36px;
   color: #F74933;
 }
+label{
+  font-size: 16px;
+  font-family: "Proxima Nova";
+  color: rgb(2, 98, 210);
+  text-align: left;
+}
+.industry{
+  position: relative;
+  margin-top: 21px;
+  margin-left: 15px;
+}
+

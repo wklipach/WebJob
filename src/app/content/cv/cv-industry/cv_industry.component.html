@@ -1,17 +1,9 @@
+<label class="industry">Отрасль</label>
 
- <div class="wrapper">
-   <div class="top">Отрасль</div>
+<form [formGroup]="formIndustry">
 
-  <form [formGroup]="formIndustry">
-
-      <div class="row" *ngFor="let item of listIndustry">
-
-        <input type="checkbox" class="form-check-input"
-               formControlName="industryCheck{{item.id}}"
-               id="industryCheck{{item.id}}" title={{item.name}}> {{item.name}}
-
-      </div>
-
-  </form>
-
- </div>
+  <div class="box" *ngFor="let item of listIndustry">
+    <input type="checkbox" class="check-input" formControlName="industryCheck{{item.id}}"
+           id="industryCheck{{item.id}}" title={{item.name}}> {{item.name}}
+  </div>
+</form>

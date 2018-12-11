@@ -7,7 +7,7 @@
 <form [formGroup]="formRegisterEmployer" novalidate (ngSubmit)="submit()">
 
   <label class="userName">Имя пользователя (Nic)</label>
-  <input type="text" class="form-control" id="userName" formControlName="userName" placeholder="Имя работодателя">
+  <input type="text" class="form-control" id="userName" formControlName="userName" placeholder="Имя пользователя">
 
     <div class="form-group col-md-3">
       <!-- Проверяем вносимый логин. Если логин уже есть в базе, показываем лейбл -Имя пользователя занято, или наоборот -->
@@ -142,7 +142,7 @@
   </div>
 
      <p>   <input class="form-check-input" type="checkbox" formControlName="cbLicense">
-        <label class="form-check-label">Я согласен с правилами использования</label></p>
+        <span class="form-check-label">Я согласен с правилами использования</span></p>
 
       <div class="alert alert-danger"
            *ngIf="formRegisterEmployer.controls['cbLicense'].invalid && formRegisterEmployer.controls['cbLicense'].touched">
