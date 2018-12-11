@@ -43,6 +43,42 @@
       <input type="text" class="inputEmail" id="inputEmail" formControlName="inputEmail" placeholder="введите Email">
 
 
+
+      <!-- начало обработки почтовых ошибок -->
+
+      <div *ngIf="accountEmployeeForm.controls['inputEmail'].dirty">
+
+        <div class="alert alert-danger"
+             *ngIf="accountEmployeeForm.controls['inputEmail'].value.length === 0 ">
+          Не указан Email.
+        </div>
+
+        <div *ngIf="accountEmployeeForm.controls['inputEmail'].value.length > 0">
+          <div *ngIf="accountEmployeeForm.controls['inputEmail'].invalid; else trueSucc">
+            <div class="alert alert-danger"
+                 *ngIf="accountEmployeeForm.controls['inputEmail'].hasError('errorEmailExists') === true">
+              Данный Email уже занят.
+            </div>
+
+            <div class="alert alert-danger"
+                 *ngIf="accountEmployeeForm.controls['inputEmail'].hasError('email') === true">
+              Неверно введен Email.
+            </div>
+
+          </div>
+
+          <ng-template #trueSucc>
+
+            <div class="alert alert-info">Email свободен.</div>
+
+          </ng-template>
+
+        </div>
+
+      </div>
+
+      <!-- закончили обработку почтовых ошибок -->
+
       <label class="name">Имя</label>
       <input type="text" class="input-name" id="inputName" formControlName="inputName" placeholder="Имя">
 
@@ -84,7 +120,7 @@
     </form>
 
 
-    <button type="submit" class="btn-save" (click)="savecv()">Сохранить</button>
+    <button type="submit" class="btn-save" (click)="savecv()" [disabled]="accountEmployeeForm.invalid">Сохранить</button>
     <button type="submit" class="btn-cancel" (click)="back()">Отмена</button>
 
 

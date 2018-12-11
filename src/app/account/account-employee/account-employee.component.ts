@@ -6,6 +6,8 @@ import {Subscription} from 'rxjs';
 import {AuthService} from '../../services/auth-service.service';
 import {UserType} from '../../class/UserType';
 import {Router} from '@angular/router';
+import {UserTable} from '../../class/UserTable';
+import {isUndefined} from "util";
 
 @Component({
   selector: 'app-accountemployee',
@@ -50,12 +52,16 @@ private loadUser: UserType;
       'inputPhone' : new FormControl('',[]),
       'inputCity' : new FormControl('',[]),
       'inputNewPassword1' : new FormControl('',[]),
-      'inputNewPassword2' : new FormControl('',[])
+      'inputNewPassword2' : new FormControl('',[]),
+
+      'inputEmail': new FormControl(null, [
+        Validators.required,
+        Validators.email
+      ], [this.userEmailAsyncValidator.bind(this)])
     });
 
     this.accountEmployeeForm.controls['inputUserName'].disable();
   }
-
 
   createForm() {
     this.form = this.fb.group({
@@ -70,6 +76,32 @@ private loadUser: UserType;
     this.form.get('name').setValue(null);
     this.base64textString = [];
     this.onPostImageAvatar();
+  }
+
+
+  getCheckEmail (ListUser: UserTable, sEmail: string): boolean
+  {
+    var ResUser = Object(ListUser).find( x => x.EMail.toLowerCase() === sEmail.trim().toLowerCase());
+    if (isUndefined(ResUser)) {return false;} else {return true;}
+  }
+
+  // валидатор по EMail
+  userEmailAsyncValidator(control: FormControl): Promise<{[s:string]: boolean}> {
+    return new Promise(
+      (resolve, reject)=>{
+
+        return this.auth.getDataUserTableWithoutCurrentUser(this.loadUser.UserName).subscribe(
+          (data: UserTable) => {
+            if (this.getCheckEmail (data,control.value) === true) {
+              resolve( {'errorEmailExists': true});
+            }
+            else {
+              resolve(null);
+            }
+          }
+        );
+      }
+    );
   }
 
 
@@ -201,7 +233,10 @@ private loadUser: UserType;
           this.accountEmployeeForm.controls['inputPhone'].setValue(item.Phone);
         }
 
-        if (typeof item.EMail !== 'undefined') this._sEmail = item.EMail;
+        if (typeof item.EMail !== 'undefined') {
+          this._sEmail = item.EMail;
+          this.accountEmployeeForm.controls['inputEmail'].setValue(item.EMail);
+        }
         if (typeof item.Password !== 'undefined') this._sPassword = item.Password;
       }
     );
@@ -209,12 +244,20 @@ private loadUser: UserType;
 
 
   savecv() {
+
+
+    if (this.accountEmployeeForm.invalid) {
+      console.log('ошибки во вводе данных для формы');
+      return -1;
+    }
+
+
     var id_city = -1;
-    const {inputUserName, inputName, inputLastName, inputZip, inputAddress, inputPhone, inputCity} = this.accountEmployeeForm.value;
+    const {inputUserName, inputName, inputLastName, inputZip, inputAddress, inputPhone, inputCity, inputEmail} = this.accountEmployeeForm.value;
     this.gs.getCityId(inputCity).subscribe( (value: City) => {
 
       if (typeof value[0].id  !== 'undefined') {id_city = value[0].id;}
-      const AddUser  = new UserType(inputUserName, this._sEmail, this._sPassword,
+      const AddUser  = new UserType(inputUserName, inputEmail, this._sPassword,
                                    false, id_city, inputZip, inputName, inputLastName, inputAddress, inputPhone);
       return this.auth.updateDataUserTable(AddUser, this.id_user).subscribe(
         () => {

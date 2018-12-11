@@ -2,7 +2,7 @@ import {City} from './City';
 
 export class UserType{
 
-  private UserName: string;
+  public UserName: string;
   private EMail: string;
   Password: string;
   private bEmployer: boolean;

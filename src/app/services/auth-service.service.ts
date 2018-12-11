@@ -67,11 +67,15 @@ export class AuthService {
   getDataUserTable(UserName: string) {
     // вставить запрос типа select top 10 * from UserTable where UserName=:@UserName
     return this.http.get('http://localhost:3000/UserTable');
-
     // http://localhost:3000/UserTable?bEmployer=false
+ }
 
 
+  getDataUserTableWithoutCurrentUser(UserName: string) {
+    // вставить запрос типа select top 10 * from UserTable where UserName<>:@UserName
+    return this.http.get('http://localhost:3000/UserTable?UserName_ne='+UserName);
   }
+
 
   getDataUserOrEmailTable(sUserOrEmail: string)
   {
@@ -80,8 +84,9 @@ export class AuthService {
   }
 
   getDataUserFromId(id_user: number) {
-    return this.http.get('http://localhost:3000/UserTable/'+id_user);
-      }
+    let S = 'http://localhost:3000/UserTable/'+id_user.toString();
+    return this.http.get(S);
+   }
 
 
   postDataUserTable(user: UserType){

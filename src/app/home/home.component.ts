@@ -102,9 +102,11 @@ export class HomeComponent implements OnInit, OnDestroy {
     k.base64textString = [];
     if (typeof k.id_user !== 'undefined') {
           this.authService.getDataUserFromId(k.id_user).subscribe((aRes) => {
-          const S = aRes['Avatar'].Avatar;
-          k.base64textString = [];
-          k.base64textString.push('data:image/png;base64,' + JSON.parse(S).value);
+          if (aRes['Avatar'] != undefined) {
+            const S = aRes['Avatar'].Avatar;
+            k.base64textString = [];
+            k.base64textString.push('data:image/png;base64,' + JSON.parse(S).value);
+          }
           });
     }
   }

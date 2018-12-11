@@ -8,6 +8,8 @@ import {UserType} from '../../class/UserType';
 import {Router} from '@angular/router';
 import {unescape} from 'querystring';
 import {DomSanitizer} from '@angular/platform-browser';
+import {UserTable} from '../../class/UserTable';
+import {isUndefined} from "util";
 
 @Component({
   selector: 'app-accountemployer',
@@ -45,7 +47,17 @@ export class AccountEmployerComponent implements OnInit {
   @ViewChild('imgRef') img:ElementRef;
 
 
-  constructor(private is: GuideService,
+    loadIdUser() {
+      var Res = this.auth.loginStorage();
+      if (Res.bConnected) {
+        this.id_user = Res.id_user;
+      } else {
+        this.id_user = -1;
+      }
+    }
+
+
+constructor(private is: GuideService,
 
               private auth: AuthService,
               private router: Router,
@@ -53,23 +65,38 @@ export class AccountEmployerComponent implements OnInit {
               private fb: FormBuilder,
               private _sanitizer: DomSanitizer) {
 
+
+
+    this.loadIdUser();
+
     this.createForm();
+    this.createAccountEmployerForm();
 
-    this.accountEmployerForm = new FormGroup({
+  }
 
-      'inputUserName': new FormControl({value: ''}, []),
-      'inputName': new FormControl(),
-      'inputLastName' : new FormControl(),
-      'inputZip' : new FormControl(),
-      'inputAddress' : new FormControl(),
-      'inputPhone' : new FormControl(),
-      'inputCity' : new FormControl(),
-      'inputNewPassword1' : new FormControl('',[]),
-      'inputNewPassword2' : new FormControl('',[])
-    });
+  getCheckEmail (ListUser: UserTable, sEmail: string): boolean
+  {
+    var ResUser = Object(ListUser).find( x => x.EMail.toLowerCase() === sEmail.trim().toLowerCase());
+    if (isUndefined(ResUser)) {return false;} else {return true;}
+  }
 
-    this.accountEmployerForm.controls['inputUserName'].disable();
+  // валидатор по EMail
+  userEmailAsyncValidator(control: FormControl): Promise<{[s:string]: boolean}> {
+    return new Promise(
+      (resolve, reject)=>{
 
+        return this.auth.getDataUserTableWithoutCurrentUser(this.loadUser.UserName).subscribe(
+          (data: UserTable) => {
+            if (this.getCheckEmail (data,control.value) === true) {
+              resolve( {'errorEmailExists': true});
+            }
+            else {
+              resolve(null);
+            }
+          }
+        );
+      }
+    );
   }
 
 
@@ -83,24 +110,41 @@ export class AccountEmployerComponent implements OnInit {
   }
 
   ngOnInit() {
-
-    var Res =  this.auth.loginStorage();
-
-    if (Res.bConnected) this.id_user = Res.id_user; else this.id_user = -1;
-
     this.subscrDataUserFromId =
       this.auth.getDataUserFromId(this.id_user).subscribe(value =>
        {
          this.loadCurrentUserInfo(value);
          this.loadUser = value as UserType;
+
          // вытаскиваем из базы картинку аватара
          const S = this.loadUser['Avatar'].Avatar;
          this.base64textString.push('data:image/png;base64,' + JSON.parse(S).value);
         }
-
       );
-
     }
+
+
+createAccountEmployerForm() {
+  this.accountEmployerForm = new FormGroup({
+
+    'inputUserName': new FormControl({value: ''}, []),
+    'inputName': new FormControl(),
+    'inputLastName': new FormControl(),
+    'inputZip': new FormControl(),
+    'inputAddress': new FormControl(),
+    'inputPhone': new FormControl(),
+    'inputCity': new FormControl(),
+    'inputNewPassword1': new FormControl('', []),
+    'inputNewPassword2': new FormControl('', []),
+    'inputEmail': new FormControl(null, [
+      Validators.required,
+      Validators.email
+    ], [this.userEmailAsyncValidator.bind(this)])
+  });
+
+  this.accountEmployerForm.controls['inputUserName'].disable();
+}
+
 
   ngOnDestroy() {
 
@@ -159,7 +203,10 @@ export class AccountEmployerComponent implements OnInit {
         if (typeof item.Phone !== 'undefined') {
           this.accountEmployerForm.controls['inputPhone'].setValue(item.Phone);
         }
-        if (typeof item.EMail !== 'undefined') this._sEmail = item.EMail;
+        if (typeof item.EMail !== 'undefined') {
+          this._sEmail = item.EMail;
+          this.accountEmployerForm.controls['inputEmail'].setValue(item.EMail);
+        }
         if (typeof item.Password !== 'undefined') this._sPassword =
           item.Password;
       }
@@ -169,17 +216,24 @@ export class AccountEmployerComponent implements OnInit {
 
   savecv() {
 
+
+    if (this.accountEmployerForm.invalid) {
+      console.log('ошибки во вводе данных для формы');
+      return -1;
+    }
+
+
     var id_city = -1;
 
     const {inputUserName, inputName, inputLastName, inputZip, inputAddress,
-      inputPhone, inputCity} = this.accountEmployerForm.value;
+      inputPhone, inputCity, inputEmail} = this.accountEmployerForm.value;
 
 
     this.gs.getCityId(inputCity).subscribe( (value: City) => {
 
       if (typeof value[0].id  !== 'undefined') {id_city = value[0].id;}
 
-      const AddUser  = new UserType(inputUserName, this._sEmail,
+      const AddUser  = new UserType(inputUserName, inputEmail,
         this._sPassword,
 
         true, id_city, inputZip, inputName, inputLastName, inputAddress,
