@@ -123,12 +123,11 @@
   padding-right: 20px;
   overflow: auto;
 }
-
 .btn-response {
   display: inline-block;
   position: absolute;
   border-radius: 3px;
-  background-color: rgb(2, 98, 210);
+  background-color: #3366ff;
   width: 155px;
   height: 50px;
   color: rgb(255, 255, 255);
@@ -138,12 +137,23 @@
   margin-top: 242px;
   margin-left: 15px;
 }
+.btn-response:hover{
+  background-color: #0066cc;
+  font-weight:600;
+}
+.btn-response:active{
+  border-color: #3399ff;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 3px;
+  font-width: 15px;
+}
 .btn-favorites{
   display: inline-block;
   position: absolute;
-  color: #484d55;
-  background-color: #ffffff;
-  border-color: rgb(242, 97, 0);
+  color: rgb(255, 255, 255);
+  background-color: #3366ff;
+  border-color: #054086;
   border-radius: 3px;
   border-width: 1px;
   border-style: solid;
@@ -154,9 +164,16 @@
   margin-left: 172px;
 }
 .btn-favorites:hover{
-  background-color:#f26100;
+  background-color: #0066cc;
   color: white;
-
+  font-weight:600;
+}
+.btn-favorites:active{
+  border-color: #3399ff;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 3px;
+  font-width: 15px;
 }
 .btn-hide{
   display: inline-block;
@@ -176,6 +193,7 @@
 .btn-hide:hover{
   background-color:#f26100;
   color: white;
+  font-weight:600;
 
 }
 .line{

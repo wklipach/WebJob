@@ -18,11 +18,11 @@ import {DatePipe} from '@angular/common';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-  //текущая страница
+  // текущая страница
   public page = 1;
-  //записей на странице
+  // записей на странице
   public rowPerPage = 5;
-  //всего записей после запроса
+  // всего записей после запроса
   public recordsPerAll = 0;
 
   private bConnected = false;
@@ -96,7 +96,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
 
-  //TODO  onLoadFromBaseAvatar()
+  // TODO  onLoadFromBaseAvatar()
   onLoadFromBaseAvatar(k: any) {
 
     k.base64textString = [];
@@ -166,7 +166,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     window.localStorage.removeItem('keyFind');
     this.httpService.onReopenVacancy.subscribe((value: string) => this.getVacancy(value));
 
-    //если не было расширенного поиска вакансий делаем обычный поиск, иначе расширенный запускается из advanced-search.component
+    // если не было расширенного поиска вакансий делаем обычный поиск, иначе расширенный запускается из advanced-search.component
     if ( this.httpService.getMessageAdvancedFindObj() === null ) {
       // запускаем событие "получить вакансии", в первый раз с пустой маской
       this.httpService.triggerReopenVacancy(this.sMask);
@@ -185,7 +185,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   getVacancyAdvanced(advancedFindObj: any) {
     console.log ('событие вызвало перемещение объекта', advancedFindObj);
 
-    //выводим всю таблицу по сути это заглушка вместо продвинутого поиска
+    // выводим всю таблицу по сути это заглушка вместо продвинутого поиска
     this.getVacancy('');
   }
 
@@ -196,7 +196,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     return this.getTableVacancy = this.httpService.getTableVacancy(sMask, this.rowPerPage, this.page).subscribe(
       (data: dataVacancy[]) => {
 
-        //dataVacancy[]
+        // dataVacancy[]
 
         console.log('список a12');
         console.log('список вакансий =>',data, 'rowPerPage',this.rowPerPage);
@@ -209,12 +209,12 @@ export class HomeComponent implements OnInit, OnDestroy {
         data.forEach(  (curVacancy, index, arrCurValue) => {
 
 
-          //TODO ЗАГРУЖАЕМ КАРТИНКУ В ЗАЯВКУ
-          //base64textString = [];
+          // TODO ЗАГРУЖАЕМ КАРТИНКУ В ЗАЯВКУ
+          // base64textString = [];
           this.onLoadFromBaseAvatar(curVacancy['vacancy']);
 
 
-          //ДАТА ОКОНЧАНИЯ ЗАЯВКИ
+          // ДАТА ОКОНЧАНИЯ ЗАЯВКИ
             curVacancy['vacancy'].sDateEnd = "";
             curVacancy['vacancy'].errorEndDay = true;
 
@@ -246,9 +246,9 @@ export class HomeComponent implements OnInit, OnDestroy {
                   }
                 }
 
-                /////высчитываем дату окончания
-                //dd/MM/yyyy hh:mm локаль en-US
-                //TODO Даты!!!!!
+                ///// высчитываем дату окончания
+                // dd/MM/yyyy hh:mm локаль en-US
+                // TODO Даты!!!!!
                 if (!curRemDay.errorDay) {
                   var reggie = /(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2})/;
                   var dateArray = reggie.exec(curVacancy['vacancy'].DateTimeCreate);
@@ -275,7 +275,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
 
-  //получаем из массива кол. записей и кусок записей на данной странице
+  // получаем из массива кол. записей и кусок записей на данной странице
   reloadPAge(data: dataVacancy[], sMask: string) {
 
     console.log('this.rowPerPage*(this.page-1)',this.rowPerPage*(this.page-1),'this.rowPerPage',this.rowPerPage);
@@ -362,7 +362,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   favorites($event, index: number, vcid: number) {
 
-    //TODO 4 this.myDataVacancy
+    // TODO 4 this.myDataVacancy
 
    this.sNoUserValueFind = '';
     this.myDataVacancy[index].sErrorText = '';
@@ -385,7 +385,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   unshow($event, index: number, vcid: number) {
 
-    //TODO 5 this.myDataVacancy
+    // TODO 5 this.myDataVacancy
 
     this.sNoUserValueFind = '';
     this.myDataVacancy[index].sErrorText = '';
@@ -438,4 +438,3 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
 }
-

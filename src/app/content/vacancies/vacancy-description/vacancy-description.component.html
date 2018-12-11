@@ -1,122 +1,64 @@
 <app-header-top></app-header-top>
 
-
-
 <div class="wrapper">
-
   <div class="top">Описание вакансии</div>
-
   <div class="vacancy-box">
 
-
-
-    <img class="city" src="/assets/img/city.png" alt="Город">
-
-    <div class="city-name"> {{this.descrDataVacancy?.CityName}}</div>
-
-
-
-    <img class="logotype-company" src="/assets/img/iport-logo.png" alt="Логотип компании">
-
-    <label class="labelDescr">Зарплата от</label>
-
-
-
-
-
-    <div  *ngIf="this.descrDataVacancy" class="descVac">{{ this.descrDataVacancy['vacancy'].SalaryFrom}}</div>
-
-
-
-
-
-    <label class="labelDescr">Зарплата до</label>
-
-    <br><br><br><br><br><br>
-
-
-
-    <div *ngIf="this.descrDataVacancy" class="descVac">{{ this.descrDataVacancy['vacancy'].Salary}}</div>
-
-
-
-    <label class="labelDescr">Наименование</label>
-
-
-
-
-
     <div class="title" *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy['vacancy'].VacancyShortTitle}}</div>
+ <div class="income">
+      <span *ngIf="this.descrDataVacancy" class="salaryFrom">{{ this.descrDataVacancy['vacancy'].SalaryFrom}}</span>-
+   <span *ngIf="this.descrDataVacancy" class="salaryMax">{{ this.descrDataVacancy['vacancy'].Salary}}</span>Р
+ </div>
+
+<div class="city-line">
+    <img class="city" src="/assets/img/city.png" alt="Город">
+    <div class="city-name"> {{this.descrDataVacancy?.CityName}}</div>
+  <div class="address">ул. Курская, 21</div>
+  </div>
+
+      <img class="logotype-company" src="/assets/img/iport-logo.png" alt="Логотип компании">
+      <div class="company-name">A-Number Software</div>
+
+       <label>Должностные обязанности</label>
+       <div *ngIf="this.descrDataVacancy" class="descVac">{{ this.descrDataVacancy['vacancy'].VacancyDescription}}</div>
+    <label>Требования</label>
+    <label>Условия</label>
 
 
 
-    <br><br><br><br><br><br>
-
-
-
-    <label class="labelDescr">Описание</label>
-
-
-
-    <div *ngIf="this.descrDataVacancy" class="descVac">{{ this.descrDataVacancy['vacancy'].VacancyDescription}}</div>
-
-
-
-    <label class="labelDescr">Подробности</label>
-
-
-
-
+    <label>Подробности</label>
 
     <div *ngIf="this.descrDataVacancy" class="descVac">{{ this.descrDataVacancy['vacancy'].VacancyBigDescription}}</div>
 
     <br><br><br><br><br><br>
 
-
-
-    <label class="labelDescr">Отрасль</label>
-
-
-
+    <label>Отрасль</label>
 
 
     <div *ngFor="let sI of sIndusrtry" class="descVac"> {{sI}}</div>
 
 
-
-
-
     <label class="labelDescr">График работы</label>
-
 
 
     <div *ngFor="let sS of sSchedule" class="descVac"> {{sS}}</div>
 
 
-
     <label class="labelDescr">Занятость</label>
-
 
 
     <div *ngFor="let sEmp of sEmployment" class="descVac"> {{sEmp}}</div>
 
 
-
     <label class="labelDescr">Образование</label>
-
 
 
     <div *ngFor="let sEd of sEducation" class="descVac"> {{sEd}}</div>
 
 
-
     <label class="labelDescr">Опыт работы</label>
 
-
-
     <div *ngFor="let sExp of sExperience" class="descVac"> {{sExp}}</div>
-
-
 
   </div>
 
