@@ -113,6 +113,25 @@ label{
   margin-left: 180px;
   margin-top: 96px;
 }
+.email{
+  margin-left: 444px;
+  margin-top: 62px;
+}
+.inputEmail{
+  position: absolute;
+  font-size: 14px;
+  font-family: "Proxima Nova";
+  text-align: center;
+  border-width: 1px;
+  border-color: rgb(68, 75, 84);
+  border-style: solid;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  width: 230px;
+  height: 43px;
+  margin-left: 444px;
+  margin-top: 96px;
+}
 .name{
   margin-left: 180px;
   margin-top: 187px;
