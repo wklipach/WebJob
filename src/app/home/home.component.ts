@@ -10,6 +10,7 @@ import {AuthService} from '../services/auth-service.service';
 import {CvEditService} from '../services/cv-edit.service';
 import {GuideService} from '../services/guide-service.service';
 import {DatePipe} from '@angular/common';
+import {Letter} from '../class/Letter';
 
 @Component({
   selector: 'app-home',
@@ -407,8 +408,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   response($event, index: number, vcid: number) {
 
-    // TODO 6 this.myDataVacancy
-
     this.sNoUserValueFind = '';
     this.myDataVacancy[index].sErrorText = '';
     if  (!this.bConnected)  {
@@ -421,11 +420,18 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.myDataVacancy[index].sErrorText = this.sNoUserValueFind;
       return;
     }
-    console.log('ответить');
 
-    this.cvEditSrv.setCvId(vcid);
-    this.router.navigate(['/response']);
+    // TODO 6 this.myDataVacancy
+    this.httpService.getNumberResponse(this.id_user, vcid).subscribe((value: Letter[]) => {
 
+        if (value.length>0) {
+            this.sNoUserValueFind = 'Вы уже откликались на данную вакансию. Дождитесь ответа';
+            this.myDataVacancy[index].sErrorText = this.sNoUserValueFind;
+            } else {
+              this.cvEditSrv.setCvId(vcid);
+              this.router.navigate(['/response']);
+            }
+      }) ;
   }
 
   RouterReload() {

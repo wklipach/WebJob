@@ -128,5 +128,15 @@ export class TableVacancyService {
   }
 
 
+  // проверяем наличие откликов данного юзера на данную вакансию
+  getNumberResponse(id_user_from: number, id_vc: number) {
+    // http://localhost:3000/Correspondence?letter.id_user_from=2&letter.id_vc=1
+    let sUrl = 'http://localhost:3000/Correspondence?letter.id_user_from='+id_user_from.toString()+'&letter.id_vc='+id_vc.toString();
+    return this.http.get(sUrl);
+  }
+
+
+
+
 }
 

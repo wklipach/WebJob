@@ -71,9 +71,17 @@ export class ResponseComponent implements OnInit {
       this.cvResponseGetCvList = this.cls.getCvList(this._id_user).subscribe((value) =>
         {
           this.cvList = value;
+
+          if (this.cvList.length === 1) {
+            this.modelResumeFromCheck.resumeFromCheck = this.cvList[0].id;
+          }
+
           this.cvList.forEach( (cvCur, index) => {
             let sCityName = (this.cityList as City[]).find((value) => (value.id === cvCur.cv.City) ).name;
             this.cvList[index].CityName = sCityName;
+
+            //this.modelResumeFromCheck.resumeFromCheck = this.cvList[index].id;
+
           });
         }
       )}

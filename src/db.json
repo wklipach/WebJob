@@ -168,12 +168,38 @@
         "bReadByRecipient": false,
         "id_user_from": 2,
         "id_cv": 1,
-        "id_vc": 2,
+        "id_vc": 1,
         "id_user_to": 1,
-        "letterText": "Это я проверяю отклик !",
-        "DateTimeCreate": "12/12/2018 02:47"
+        "letterText": "Я хочу быть шахтером!!!!!",
+        "DateTimeCreate": "12/12/2018 03:02"
       },
       "id": 2
+    },
+    {
+      "letter": {
+        "bOld": false,
+        "bReadByRecipient": false,
+        "id_user_from": 2,
+        "id_cv": 1,
+        "id_vc": 1,
+        "id_user_to": 1,
+        "letterText": "Хочу второй раз стать шахтером!!!!",
+        "DateTimeCreate": "12/12/2018 03:03"
+      },
+      "id": 3
+    },
+    {
+      "letter": {
+        "bOld": false,
+        "bReadByRecipient": false,
+        "id_user_from": 2,
+        "id_cv": 1,
+        "id_vc": 3,
+        "id_user_to": 3,
+        "letterText": "B nen if[nthjv [jxe!",
+        "DateTimeCreate": "12/12/2018 04:23"
+      },
+      "id": 4
     }
   ],
   "UserFavoritesUnit": [
