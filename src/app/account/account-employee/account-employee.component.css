@@ -302,8 +302,8 @@ label{
   position: absolute;
   width: 489px;
   height: 199px;
-  margin-left: 180px;
-  margin-top: 720px;
+  margin-left: 580px;
+  margin-top: 420px;
   z-index: 10;
 }
 .inputNewPassword1 {
@@ -337,8 +337,24 @@ label{
   line-height: 2.25;
   width: 190px;
   height: 48px;
-  margin-top:78px;
-  margin-left: -322px;
+  margin-top:72px;
+  margin-left: -445px;
+}
+.btn-newPasswordCancel{
+  display: inline-block;
+  position: absolute;
+  font-size: 18px;
+  background-color: #3366ff;
+  color: rgb(255, 255, 255);
+  border-color: #054086;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px;
+  line-height: 2.25;
+  width: 190px;
+  height: 48px;
+  margin-top:72px;
+  margin-left: -192px;
 }
 .alert-pass{
 }
