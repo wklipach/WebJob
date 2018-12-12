@@ -303,9 +303,13 @@ private loadUser: UserType;
     {
       this.base64textString = [];
       const S = aRes['Avatar'].Avatar;
-      if (typeof S !== 'undefined') {
-        if (S.length>0) {
-          this.base64textString.push('data:image/png;base64,' + JSON.parse(S).value);
+      if (S !== '""') {
+        if (typeof S !== 'undefined') {
+          if (S.length > 0) {
+            if (JSON.parse(S) !== null) {
+              this.base64textString.push('data:image/png;base64,' + JSON.parse(S).value);
+            }
+          }
         }
       }
     });

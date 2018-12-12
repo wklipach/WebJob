@@ -118,9 +118,15 @@ constructor(private is: GuideService,
 
          // вытаскиваем из базы картинку аватара
          const S = this.loadUser['Avatar'].Avatar;
-         this.base64textString.push('data:image/png;base64,' + JSON.parse(S).value);
+         if (S.toString().length>0) {
+           this.base64textString.push('data:image/png;base64,' + JSON.parse(S).value);
+         }
         }
       );
+
+
+    console.log('base64textString.length',this.base64textString.length);
+
     }
 
 
@@ -334,9 +340,16 @@ createAccountEmployerForm() {
     {
       const S = aRes['Avatar'].Avatar;
       this.base64textString = [];
-      this.base64textString.push('data:image/png;base64,' + JSON.parse(S).value);
+      if (S !== '""') {
+        if (typeof S !== 'undefined') {
+          if (S.length > 0) {
+            if (JSON.parse(S) !== null) {
+              this.base64textString.push('data:image/png;base64,' + JSON.parse(S).value);
+            }
+          }
+        }
+      }
     });
-
   }
 
   onPostImageAvatar() {
