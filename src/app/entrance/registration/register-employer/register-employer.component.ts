@@ -46,7 +46,7 @@ export class RegisterEmployerComponent implements OnInit {
         ], [this.employerEmailAsyncValidator.bind(this)]
       ),
       'userPassword1': new FormControl('', Validators.required),
-      'userPassword2': new FormControl('', Validators.required),
+      'userPassword2': new FormControl('', [Validators.required], [this.password2AsyncValidator.bind(this)]),
       'cbLicense': new FormControl('', Validators.requiredTrue),
 
       'surname': new FormControl({}),
@@ -81,6 +81,21 @@ export class RegisterEmployerComponent implements OnInit {
     );
 
 
+  }
+
+
+  // валидатор по паролю
+  password2AsyncValidator(control: FormControl): Promise<{[s:string]: boolean}> {
+    return new Promise(
+      (resolve, reject)=>{
+        if (this.formRegisterEmployer.controls['userPassword1'].value !== control.value) {
+          resolve( {'myError': true});
+        }
+        else {
+          resolve(null);
+        }
+      }
+    );
   }
 
   // валидатор по имени работодателя

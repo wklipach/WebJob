@@ -15,16 +15,15 @@
       </div>
 
       <div *ngIf="myForm.controls['userName'].value.length > 0">
+
         <div *ngIf="myForm.controls['userName'].invalid; else trueUserNameTemplate">
           <div class="alert alert-danger">Имя пользователя занято</div>
-
         </div>
 
         <ng-template #trueUserNameTemplate>
-
           <div class="alert alert-info">Имя пользователя свободно</div>
-
         </ng-template>
+
       </div>
 
       <!-- закончили проверку логина -->
@@ -78,14 +77,23 @@
     <!-- закончили обработку почтовых ошибок -->
 
 
-
-
-
-
       <label for="inputPassword1">Пароль</label>
       <input type="password" class="form-control" id="inputPassword1" placeholder="Password" formControlName="userPassword1">
       <label for="inputPassword1">Повторитие пароль</label>
       <input type="password" class="form-control" id="inputPassword2" placeholder="Password" formControlName="userPassword2">
+
+
+      <div *ngIf="myForm.controls['userPassword2'].value.length > 0">
+        <div *ngIf="myForm.controls['userPassword2'].invalid; else truePassword2Template">
+          <div class="alert alert-danger">Повторный пароль не совпадает</div>
+        </div>
+      </div>
+
+      <ng-template #truePassword2Template>
+          <div class="alert alert-info">Пароль совпал</div>
+      </ng-template>
+
+
 
   <div *ngIf="bPassword">
     Пароли не совпадают.

@@ -112,10 +112,22 @@
         <div class="changepassBox">
           <input type="password" class="inputNewPassword1" id="inputNewPassword1" formControlName="inputNewPassword1" placeholder="Введите новый пароль">
           <input type="password" class="inputNewPassword2" id="inputNewPassword2" formControlName="inputNewPassword2" placeholder="Повторите пароль">
+
+          <div *ngIf="accountEmployeeForm.controls['inputNewPassword2'].value.length > 0">
+            <div *ngIf="accountEmployeeForm.controls['inputNewPassword2'].invalid; else truePassword2Template">
+              <div class="alert alert-danger">Повторный пароль не совпадает</div>
+            </div>
+          </div>
+
+          <ng-template #truePassword2Template>
+            <div class="alert alert-info">Пароль совпал</div>
+          </ng-template>
+
           <button type="submit" class="btn-newPassword" (click)="NewPassword()">Изменить пароль</button>
           <ng-container *ngIf="bPasswordNew">Пароль изменен</ng-container>
           <div class="alert-pass" *ngIf="bErrorRepeatPassword">Пароли не совпадают</div>
         </div>
+        <button class="btn-newPassword" (click)="DisappearFrame()">Отмена</button>
       </ng-container>
     </form>
 

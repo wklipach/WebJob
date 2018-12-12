@@ -47,7 +47,7 @@ export class RegisterEmployeeComponent implements OnInit {
       ], [this.userEmailAsyncValidator.bind(this)]
       ),
       'userPassword1': new FormControl('', Validators.required),
-      'userPassword2': new FormControl('', Validators.required),
+      'userPassword2': new FormControl('', [Validators.required], [this.password2AsyncValidator.bind(this)]),
       'cbLicense': new FormControl('', Validators.requiredTrue),
 
       'surname': new FormControl({}),
@@ -88,6 +88,22 @@ export class RegisterEmployeeComponent implements OnInit {
       var ResUser = Object(ListUser).find( x => x.UserName.toLowerCase() === UserName.trim().toLowerCase());
       if (isUndefined(ResUser)) {return false;} else {return true;}
     }
+
+
+  // валидатор по паролю
+  password2AsyncValidator(control: FormControl): Promise<{[s:string]: boolean}> {
+    return new Promise(
+      (resolve, reject)=>{
+            if (this.myForm.controls['userPassword1'].value !== control.value) {
+              resolve( {'myError': true});
+            }
+            else {
+              resolve(null);
+            }
+      }
+    );
+  }
+
 
   // валидатор по имени пользователя
   userNameAsyncValidator(control: FormControl): Promise<{[s:string]: boolean}> {

@@ -76,6 +76,17 @@
       <label for="inputPassword1">Повторитие пароль</label>
       <input type="password" class="form-control" id="inputPassword2" placeholder="Password" formControlName="userPassword2">
 
+      <div *ngIf="formRegisterEmployer.controls['userPassword2'].value.length > 0">
+        <div *ngIf="formRegisterEmployer.controls['userPassword2'].invalid; else truePassword2Template">
+            <div class="alert alert-danger">Повторный пароль не совпадает</div>
+        </div>
+      </div>
+
+    <ng-template #truePassword2Template>
+        <div class="alert alert-info">Пароль совпал</div>
+    </ng-template>
+
+
 
 
   <label class="rules-link" (click)="licenseShow()">Прочитать правила использования.</label>

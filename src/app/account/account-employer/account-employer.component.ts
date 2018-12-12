@@ -141,7 +141,7 @@ createAccountEmployerForm() {
     'inputPhone': new FormControl(),
     'inputCity': new FormControl(),
     'inputNewPassword1': new FormControl('', []),
-    'inputNewPassword2': new FormControl('', []),
+    'inputNewPassword2': new FormControl('', [],[this.password2AsyncValidator.bind(this)]),
     'inputEmail': new FormControl(null, [
       Validators.required,
       Validators.email
@@ -219,6 +219,22 @@ createAccountEmployerForm() {
 
     );
   }
+
+
+  // валидатор по паролю
+  password2AsyncValidator(control: FormControl): Promise<{[s:string]: boolean}> {
+    return new Promise(
+      (resolve, reject)=>{
+        if (this.accountEmployerForm.controls['inputNewPassword1'].value !== control.value) {
+          resolve( {'myError': true});
+        }
+        else {
+          resolve(null);
+        }
+      }
+    );
+  }
+
 
   savecv() {
 
@@ -351,6 +367,14 @@ createAccountEmployerForm() {
       }
     });
   }
+
+  DisappearFrame() {
+
+    this.accountEmployerForm.controls['inputNewPassword1'].setValue('');
+    this.accountEmployerForm.controls['inputNewPassword2'].setValue('');
+    this.bShowChangePassword = false;
+  }
+
 
   onPostImageAvatar() {
 

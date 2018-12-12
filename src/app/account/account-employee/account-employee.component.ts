@@ -52,7 +52,7 @@ private loadUser: UserType;
       'inputPhone' : new FormControl('',[]),
       'inputCity' : new FormControl('',[]),
       'inputNewPassword1' : new FormControl('',[]),
-      'inputNewPassword2' : new FormControl('',[]),
+      'inputNewPassword2' : new FormControl('',[], [this.password2AsyncValidator.bind(this)]),
 
       'inputEmail': new FormControl(null, [
         Validators.required,
@@ -267,6 +267,14 @@ private loadUser: UserType;
     }
 
 
+  DisappearFrame() {
+
+    this.accountEmployeeForm.controls['inputNewPassword1'].setValue('');
+    this.accountEmployeeForm.controls['inputNewPassword2'].setValue('');
+    this.bShowChangePassword = false;
+  }
+
+
     NewPassword() {
 
             const {inputNewPassword1, inputNewPassword2} = this.accountEmployeeForm.value;
@@ -315,6 +323,23 @@ private loadUser: UserType;
     });
 
   }
+
+
+  // валидатор по паролю
+  password2AsyncValidator(control: FormControl): Promise<{[s:string]: boolean}> {
+    return new Promise(
+      (resolve, reject)=>{
+        if (this.accountEmployeeForm.controls['inputNewPassword1'].value !== control.value) {
+          resolve( {'myError': true});
+        }
+        else {
+          resolve(null);
+        }
+      }
+    );
+  }
+
+
 
   onPostImageAvatar() {
 
