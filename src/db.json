@@ -161,6 +161,19 @@
         "DateTimeCreate": "11/12/2018 12:58"
       },
       "id": 1
+    },
+    {
+      "letter": {
+        "bOld": false,
+        "bReadByRecipient": false,
+        "id_user_from": 2,
+        "id_cv": 1,
+        "id_vc": 2,
+        "id_user_to": 1,
+        "letterText": "Это я проверяю отклик !",
+        "DateTimeCreate": "12/12/2018 02:47"
+      },
+      "id": 2
     }
   ],
   "UserFavoritesUnit": [

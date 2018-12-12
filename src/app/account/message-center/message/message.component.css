@@ -1,47 +1,79 @@
 .wrapper{
-  position: relative;
-  width: 1400px;
-  height: 180px;
-  margin: 10px auto;
-  padding: 0 10px;
   font-family: "ProximaNovaRg";
-}
-ul{
-   color: black;
-
-   border-bottom: #6E83CD solid 1px;
-}
-li{
   font-size: 16px;
-  vertical-align: top;
-  text-align: center;
-  list-style: none;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  color: rgb(68, 75, 84);
+}
+.top{
+  width: 1170px;
+  height: 36px;
+  margin: 0 auto;
+  font-size: 22px;
+  font-family: "Proxima Nova";
+  text-align: left;
+  padding-bottom: 15px;
+}
+.message{
+  width: 1170px;
+  margin: 0 auto;
+}
+.message:hover{
+  cursor: pointer;
+  background-color: #f8f8f8;
+}
+.v-line{
   display: inline-block;
   position: relative;
-  padding: 5px 10px;
-  height: 30px;
+  width:6px;
+  height:auto;
+  background-color: #b8b8b8;
 }
-ul:hover{
+ul{
+  list-style: none;
+}
+li{
+  position: relative;
+  display: inline-block;
+}
+.headline{
+  font-family: "Proxima Nova";
   background-color: #DFDFDF;
 }
+.bline{
+  width: 100%;
+  height: auto;
+  border-color: #b7b7b7;
+  font-size: 16px;
+  font-family: "Proxima Nova";
+}
 .date{
-  width: 100px;
+  width:100px;
 }
 .from{
- overflow-x:auto;
- width: 100px;
+  width:250px;
 }
-.vacancy{
-  overflow:hidden;
-  overflow-scrolling: unset;
-  width: 400px;
+.subject{
+  width:700px;
 }
-.open{
- width: 100px;
+
+.logotype{
+  border-width: 1px;
+  border-color: rgb(188, 188, 188);
+  border-style: solid;
+  border-radius: 3px;
+  background-color: rgb(220, 220, 220);
+  position: absolute;
+  width: 103px;
+  height: 103px;
+  margin-left: 12px;
+  margin-top: 65px;
 }
-.del{
-  width: 100px;
-}
-.spam{
-  width: 100px;
+label{
+  position: absolute;
+  font-size: 16px;
+  font-family: "Proxima Nova";
+  color: rgb(2, 98, 210);
+  text-align: left;
 }
