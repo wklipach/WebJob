@@ -45,7 +45,11 @@
       "LastName": "",
       "Address": "",
       "Phone": "",
-      "id": 3
+      "id": 3,
+      "Avatar": {
+        "Avatar": "\"\"",
+        "Name": ""
+      }
     }
   ],
   "Vacancy": [

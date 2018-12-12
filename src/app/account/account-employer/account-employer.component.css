@@ -59,8 +59,8 @@ label{
   width: 130px;
   height: 40px;
   margin-left: 12px;
-  margin-top: 465px;
- /* max-width: 100%;
+  margin-top: 65px;
+  /* max-width: 100%;
   box-sizing: border-box; */
 }
 .img-thumbnail:hover{
@@ -78,12 +78,32 @@ label{
   width: 103px;
   height: 23px;
   margin-left: 12px;
-  margin-top: 265px;
+  margin-top: 65px;
 }
 .logotype{
   position: absolute;
   margin-left: 12px;
-  margin-top: 165px;
+  margin-top: 65px;
+  width: 130px;
+  height: 40px;
+}
+.upload-logo{
+  position: absolute;
+  margin-left: 12px;
+  margin-top: 125px;
+  font-size: 15px;
+}
+.upload-logo:hover{
+  cursor: pointer;
+}
+.clear{
+  position: absolute;
+  margin-left: 46px;
+  margin-top: 150px;
+  font-size: 15px;
+}
+.clear:hover{
+  cursor: pointer;
 }
 .img-lock{
   position: absolute;

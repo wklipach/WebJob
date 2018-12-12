@@ -9,26 +9,26 @@
 
 
 
-        <form [formGroup]="form">
+    <form [formGroup]="form">
 
 
-          <div *ngIf="base64textString.length>0; then contentLoadAvatar else contentDefault">условия выполнить невозможно</div>
-          <ng-template #contentLoadAvatar>
-            <img class="logotype" *ngFor="let item of base64textString"  src={{item}} alt="" id="img" onclick="document.getElementById('avatar').click()">
-          </ng-template>
+      <div *ngIf="base64textString.length>0; then contentLoadAvatar else contentDefault">условия выполнить невозможно</div>
+      <ng-template #contentLoadAvatar>
+        <img class="logotype" title="Загрузить логотип" *ngFor="let item of base64textString"  src={{item}} alt="Загрузить логотип" id="img" onclick="document.getElementById('avatar').click()">
+      </ng-template>
 
-          <ng-template #contentDefault>
-            <img src="/assets/img/no-photo.png" class="img-thumbnail" onclick="document.getElementById('avatar').click()">
-          </ng-template>
+      <ng-template #contentDefault>
+        <img src="/assets/img/no-photo.png" class="img-thumbnail" onclick="document.getElementById('avatar').click()">
+      </ng-template>
 
-          <input type="file" id="avatar" (change)="onFileChange($event)" #fileInput style="display:none">
+      <input type="file" id="avatar" (change)="onFileChange($event)" #fileInput style="display:none">
 
-
-          <button (click)="clearFile()">Очистить</button>
+      <label class="upload-logo" onclick="document.getElementById('avatar').click()">Загрузить логотип</label>
+      <label class="clear" (click)="clearFile()">Очистить</label>
 
     </form>
 
-<form [formGroup]="accountEmployerForm">
+    <form [formGroup]="accountEmployerForm">
 
       <label class="user-name">Имя пользователя</label>
       <input type="text" class="inputUserName" id="inputUserName" formControlName="inputUserName" placeholder="введите имя пользователя">
@@ -36,40 +36,40 @@
       <label class="email">Email</label>
       <input type="text" class="inputEmail" id="inputEmail" formControlName="inputEmail" placeholder="введите Email">
 
-  <!-- начало обработки почтовых ошибок -->
+      <!-- начало обработки почтовых ошибок -->
 
-  <div *ngIf="accountEmployerForm.controls['inputEmail'].dirty">
+      <div *ngIf="accountEmployerForm.controls['inputEmail'].dirty">
 
-    <div class="alert alert-danger"
-         *ngIf="accountEmployerForm.controls['inputEmail'].value.length === 0 ">
-      Не указан Email.
-    </div>
-
-    <div *ngIf="accountEmployerForm.controls['inputEmail'].value.length > 0">
-      <div *ngIf="accountEmployerForm.controls['inputEmail'].invalid; else trueSucc">
         <div class="alert alert-danger"
-             *ngIf="accountEmployerForm.controls['inputEmail'].hasError('errorEmailExists') === true">
-          Данный Email уже занят.
+             *ngIf="accountEmployerForm.controls['inputEmail'].value.length === 0 ">
+          Не указан Email.
         </div>
 
-        <div class="alert alert-danger"
-             *ngIf="accountEmployerForm.controls['inputEmail'].hasError('email') === true">
-          Неверно введен Email.
+        <div *ngIf="accountEmployerForm.controls['inputEmail'].value.length > 0">
+          <div *ngIf="accountEmployerForm.controls['inputEmail'].invalid; else trueSucc">
+            <div class="alert alert-danger"
+                 *ngIf="accountEmployerForm.controls['inputEmail'].hasError('errorEmailExists') === true">
+              Данный Email уже занят.
+            </div>
+
+            <div class="alert alert-danger"
+                 *ngIf="accountEmployerForm.controls['inputEmail'].hasError('email') === true">
+              Неверно введен Email.
+            </div>
+
+          </div>
+
+          <ng-template #trueSucc>
+
+            <div class="alert alert-info">Email свободен.</div>
+
+          </ng-template>
+
         </div>
 
       </div>
 
-      <ng-template #trueSucc>
-
-        <div class="alert alert-info">Email свободен.</div>
-
-      </ng-template>
-
-    </div>
-
-  </div>
-
-  <!-- закончили обработку почтовых ошибок -->
+      <!-- закончили обработку почтовых ошибок -->
 
 
       <label class="name">Имя</label>
@@ -78,51 +78,51 @@
       <label class="lastname">Фамилия</label>
       <input type="text" class="inputLastname" id="inputLastname" formControlName="inputLastName" placeholder="введите фамилию">
 
-        <label class="location">Город</label>
+      <label class="location">Город</label>
       <select id="inputCity" formControlName="inputCity" class="inputCity" title="Город">
         <option  *ngFor="let lc of listCity" [value]="lc.name">
-        {{lc.name}}
+          {{lc.name}}
         </option>
       </select>
 
-  <label class="zip">Почтовый индекс</label>
-  <input type="text" class="inputZip" id="inputZip" formControlName="inputZip" placeholder="введите индекс">
+      <label class="zip">Почтовый индекс</label>
+      <input type="text" class="inputZip" id="inputZip" formControlName="inputZip" placeholder="введите индекс">
 
-  <label class="home-address">Адрес</label>
-  <input type="text" class="inputHomeAddress" id="inputAddress" formControlName="inputAddress" placeholder="Адрес">
+      <label class="home-address">Адрес</label>
+      <input type="text" class="inputHomeAddress" id="inputAddress" formControlName="inputAddress" placeholder="Адрес">
 
-  <label class="phone">Телефон</label>
-  <input type="text" class="inputPhone" id="inputPhone" formControlName="inputPhone" placeholder="Телефон">
+      <label class="phone">Телефон</label>
+      <input type="text" class="inputPhone" id="inputPhone" formControlName="inputPhone" placeholder="Телефон">
 
 
-  <img class="img-lock" src="/assets/img/lock.png" alt="Смена пароля" title="Смена пароля">
-  <label class="changePass" (click)="accessPassword()"> Изменить пароль </label>
+      <img class="img-lock" src="/assets/img/lock.png" alt="Смена пароля" title="Смена пароля">
+      <label class="changePass" (click)="accessPassword()"> Изменить пароль </label>
 
-  <ng-container *ngIf="bShowChangePassword">
-    <div class="changepassBox">
-      <input type="password" class="inputNewPassword1" id="inputNewPassword1" formControlName="inputNewPassword1" placeholder="Введите новый пароль">
-      <input type="password" class="inputNewPassword2" id="inputNewPassword2" formControlName="inputNewPassword2" placeholder="Повторите пароль">
+      <ng-container *ngIf="bShowChangePassword">
+        <div class="changepassBox">
+          <input type="password" class="inputNewPassword1" id="inputNewPassword1" formControlName="inputNewPassword1" placeholder="Введите новый пароль">
+          <input type="password" class="inputNewPassword2" id="inputNewPassword2" formControlName="inputNewPassword2" placeholder="Повторите пароль">
 
-      <div *ngIf="accountEmployerForm.controls['inputNewPassword2'].value.length > 0">
-        <div *ngIf="accountEmployerForm.controls['inputNewPassword2'].invalid; else truePassword2Template">
-          <div class="alert alert-danger">Повторный пароль не совпадает</div>
+          <div *ngIf="accountEmployerForm.controls['inputNewPassword2'].value.length > 0">
+            <div *ngIf="accountEmployerForm.controls['inputNewPassword2'].invalid; else truePassword2Template">
+              <div class="alert alert-danger">Повторный пароль не совпадает</div>
+            </div>
+          </div>
+
+          <ng-template #truePassword2Template>
+            <div class="alert alert-info">Пароль совпал</div>
+          </ng-template>
+
+
+
+          <button type="submit" class="btn-newPassword" (click)="NewPassword()">Изменить пароль</button>
+          <ng-container *ngIf="bPasswordNew">Пароль изменен</ng-container>
+          <div class="alert-pass" *ngIf="bErrorRepeatPassword">Пароли не совпадают</div>
         </div>
-      </div>
+        <button class="btn-newPassword" (click)="DisappearFrame()">Отмена</button>
+      </ng-container>
 
-      <ng-template #truePassword2Template>
-        <div class="alert alert-info">Пароль совпал</div>
-      </ng-template>
-
-
-
-      <button type="submit" class="btn-newPassword" (click)="NewPassword()">Изменить пароль</button>
-      <ng-container *ngIf="bPasswordNew">Пароль изменен</ng-container>
-      <div class="alert-pass" *ngIf="bErrorRepeatPassword">Пароли не совпадают</div>
-    </div>
-    <button class="btn-newPassword" (click)="DisappearFrame()">Отмена</button>
-  </ng-container>
-
-</form>
+    </form>
 
     <button type="submit" class="btn-save" (click)="savecv()" [disabled]="accountEmployerForm.invalid">Сохранить</button>
     <button type="submit" class="btn-cancel" (click)="back()">Отмена</button>
@@ -130,5 +130,4 @@
   </div>
 </div>
 
- <app-footer></app-footer>
-
+<app-footer></app-footer>
