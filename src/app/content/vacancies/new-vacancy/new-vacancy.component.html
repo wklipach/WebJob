@@ -4,78 +4,81 @@
   <div class="top">Новая вакансия</div>
   <div class="box">
 
-<form [formGroup]="newVacancyForm" novalidate (ngSubmit)="submit()">
+    <form [formGroup]="newVacancyForm" novalidate (ngSubmit)="submit()">
 
-  <label class="shortTitle">Наименование вакансии</label>
+      <label class="shortTitle">Наименование вакансии</label>
       <input type="text" class="inputVacancyShortTitle" maxlength="90" formControlName="inputVacancyShortTitle"
              id="inputVacancyShortTitle" placeholder="Наименование вакансии до 90 знаков.">
 
       <div class="alert alert-danger"
-        *ngIf="newVacancyForm.controls['inputVacancyShortTitle'].invalid && newVacancyForm.controls['inputVacancyShortTitle'].touched">
+           *ngIf="newVacancyForm.controls['inputVacancyShortTitle'].invalid && newVacancyForm.controls['inputVacancyShortTitle'].touched">
         Ошибка в количестве знаков в вакансии
       </div>
 
-  <label class="vacancyDescription">Краткое описание вакансии</label>
-  <textarea class="inputVacancyDescription" maxlength="2000" aria-label="Описание вакансии до 2000 знаков" formControlName="inputVacancyDescription" id="inputVacancyDescription" placeholder="Описание вакансии до 2000 знаков"></textarea>
+      <label class="vacancyDescription">Краткое описание вакансии</label>
+      <textarea class="inputVacancyDescription" maxlength="2000" aria-label="Описание вакансии до 2000 знаков" formControlName="inputVacancyDescription" id="inputVacancyDescription" placeholder="Описание вакансии до 2000 знаков"></textarea>
+
+      <div class="alert alert-danger" *ngIf="newVacancyForm.controls['inputVacancyDescription'].invalid && newVacancyForm.controls['inputVacancyDescription'].touched">
+        Ошибка в описании вакансии
+      </div>
+
+      <label class="vacancyRequirements">Требования</label>
+      <textarea class="inputVacancyRequirements" maxlength="2000" aria-label="Требования до 2000 знаков" formControlName="inputVacancyRequirements" id="inputVacancyRequirements" placeholder="Требования до 2000 знаков"></textarea>
+
+      <label class="vacancyBigDescription">Полное описание вакансии</label>
+      <textarea class="inputVacancyBigDescription" maxlength="4000" aria-label="Полное описание вакансии до 4000 знаков" formControlName="inputVacancyBigDescription" id="inputVacancyBigDescription" placeholder="Полное описание вакансии до 4000 знаков"></textarea>
 
 
-  <div class="alert alert-danger" *ngIf="newVacancyForm.controls['inputVacancyDescription'].invalid && newVacancyForm.controls['inputVacancyDescription'].touched">
-    Ошибка в описании вакансии
-  </div>
-
-  <label class="vacancyBigDescription">Полное описание вакансии</label>
-    <textarea class="inputVacancyBigDescription" maxlength="4000" aria-label="Полное описание вакансии до 4000 знаков" formControlName="inputVacancyBigDescription" id="inputVacancyBigDescription" placeholder="Полное описание вакансии до 4000 знаков"></textarea>
+      <div class="alert alert-danger" *ngIf="newVacancyForm.controls['inputVacancyBigDescription'].invalid && newVacancyForm.controls['inputVacancyBigDescription'].touched">
+        Ошибка в полном описании вакансии
+      </div>
 
 
-  <div class="alert alert-danger" *ngIf="newVacancyForm.controls['inputVacancyBigDescription'].invalid && newVacancyForm.controls['inputVacancyBigDescription'].touched">
-    Ошибка в полном описании вакансии
-  </div>
+      <label class="city">Город</label>
 
+      <select id="inputCity" formControlName="inputCity" class="inputCity" title="Город">
+        <option  *ngFor="let lc of listCity" [value]="lc.name">
+          {{lc.name}}
+        </option>
+      </select>
 
-  <label class="city">Город</label>
-
-  <select id="inputCity" formControlName="inputCity" class="inputCity" title="Город">
-    <option  *ngFor="let lc of listCity" [value]="lc.name">
-      {{lc.name}}
-    </option>
-  </select>
-
-  <label class="salary">Заработная плата:</label>
-    <input type="text" class="inputSalaryFrom" formControlName="inputSalaryFrom" id="inputSalaryFrom" placeholder="от">
-    <input type="text" class="inputSalary" formControlName="inputSalary" id="inputSalary" placeholder="до">
+      <label class="salary">Заработная плата:</label>
+      <input type="text" class="inputSalaryFrom" formControlName="inputSalaryFrom" id="inputSalaryFrom" placeholder="от">
+      <input type="text" class="inputSalary" formControlName="inputSalary" id="inputSalary" placeholder="до">
 
 
 
-  <div class="alert alert-danger" *ngIf="newVacancyForm.controls['inputSalaryFrom'].invalid && newVacancyForm.controls['inputSalaryFrom'].touched">
-    Ошибка в "Заработная плата от"
-  </div>
+      <div class="alert alert-danger" *ngIf="newVacancyForm.controls['inputSalaryFrom'].invalid && newVacancyForm.controls['inputSalaryFrom'].touched">
+        Ошибка в "Заработная плата от"
+      </div>
 
-  <div class="alert alert-danger" *ngIf="newVacancyForm.controls['inputSalary'].invalid && newVacancyForm.controls['inputSalary'].touched">
-    Ошибка в "Заработная плата до"
-  </div>
+      <div class="alert alert-danger" *ngIf="newVacancyForm.controls['inputSalary'].invalid && newVacancyForm.controls['inputSalary'].touched">
+        Ошибка в "Заработная плата до"
+      </div>
 
 
       <label class="displayPeriod" for="displayPeriod">Срок размещения</label>
 
-    <select class="selectDisplayPeriod" formControlName="displayPeriod" id="displayPeriod">
+      <select class="selectDisplayPeriod" formControlName="displayPeriod" id="displayPeriod">
         <option  *ngFor="let dpl of displayPeriodList" [value]="dpl.name">
           {{dpl.name}}
         </option>
-    </select>
+      </select>
 
-  <!-- Отрасль -->
-<app-cv_industry></app-cv_industry>
-<!-- Занятость -->
-<app-cv-employment></app-cv-employment>
-<!-- график работы -->
-<app-cv-schedule></app-cv-schedule>
-  <!-- Опыт работы -->
-<app-cv-experience></app-cv-experience>
-  <!-- Образование -->
-<app-cv-education></app-cv-education>
+      <!-- Отрасль -->
+      <app-cv_industry></app-cv_industry>
+      <!-- Занятость -->
+      <app-cv-employment></app-cv-employment>
+      <!-- график работы -->
+      <app-cv-schedule></app-cv-schedule>
+      <!-- Опыт работы -->
+      <app-cv-experience></app-cv-experience>
+      <!-- Образование -->
+      <app-cv-education></app-cv-education>
 
-    <button type="submit" class="btn-save" [disabled]="newVacancyForm.invalid">Сохранить</button>
+      <button type="submit" class="btn-save" [disabled]="newVacancyForm.invalid">Сохранить</button>
 
-</form>
+    </form>
   </div>
 </div>
+

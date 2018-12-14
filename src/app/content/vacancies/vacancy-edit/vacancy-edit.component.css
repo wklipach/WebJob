@@ -1,4 +1,179 @@
-.btn-primary:disabled{
+
+.wrapper{
+  font-family: "ProximaNovaRg";
+  font-size: 16px;
+  width: 100%;
+  margin: 0 auto;
+  padding-right: 0;
+  padding-left: 0;
+}
+.top{
+  width: 1170px;
+  height: 36px;
+  margin: 0 auto;
+  border-color: #b7b7b7;
+  font-size: 30px;
+  font-family: "Proxima Nova";
+  color: rgb(68, 75, 84);
+  text-align: left;
+}
+.box{
+  width: 1170px;
+  height: auto;
+  margin: 30px auto;
+  border-top: solid 1px;
+  border-color: #b7b7b7;
+  /*vertical-align: middle; */
+  font-size: 16px;
+  font-family: "Proxima Nova";
+  color: rgb(68, 75, 84);
+  text-align: left;
+}
+label{
+  font-size: 18px;
+  font-family: "Proxima Nova";
+  color: rgb(2, 98, 210);
+  line-height: 2;
+  text-align: left;
+}
+.shortTitle{
+  position: relative;
+  width: 90%;
+  margin-left: 15px;
+  margin-top: 11px;
+}
+.vacancyDescription{
+  display: block;
+  width: 90%;
+  margin-left: 15px;
+  margin-top: 11px;
+}
+.vacancyBigDescription{
+  display: block;
+  width: 90%;
+  margin-left: 15px;
+  margin-top: 11px;
+}
+.city{
+  display: block;
+  width: 90%;
+  margin-left: 15px;
+  margin-top: 11px;
+}
+.salary{
+  display: block;
+  width: 828px;
+  height: 43px;
+  margin-left: 15px;
+  margin-top: 11px;
+}
+.displayPeriod{
+  display: block;
+  width: 828px;
+  height: 43px;
+  margin-left: 15px;
+  margin-top: 11px;
+}
+input, textarea, select{
+  font-size: 16px;
+  font-family: "Proxima Nova";
+  text-align: left;
+  border-width: 1px;
+  border-color: rgb(68, 75, 84);
+  border-style: solid;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+}
+.inputVacancyShortTitle{
+  display: block;
+  width: 828px;
+  height: 43px;
+  margin-left: 15px;
+  margin-top: 11px;
+}
+.inputVacancyRequirements{
+  display: block;
+  width: 828px;
+  height: 243px;
+  margin-left: 15px;
+  margin-top: 11px;
+}
+.inputVacancyDescription{
+  display: block;
+  width: 828px;
+  height: 243px;
+  margin-left: 15px;
+  margin-top: 31px;
+}
+.inputVacancyBigDescription{
+  display: block;
+  width: 828px;
+  height: 243px;
+  margin-left: 15px;
+  margin-top: 11px;
+}
+.inputCity{
+  display: block;
+  text-align: center;
+  border-width: 1px;
+  border-color: rgb(68, 75, 84);
+  border-style: solid;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  width: 288px;
+  height: 43px;
+  margin-left: 15px;
+  margin-top: 11px;
+}
+.inputSalaryFrom{
+  display: inline-block;
+  width: 134px;
+  height: 43px;
+  margin-left: 15px;
+  margin-top: 11px;
+  text-align: center;
+}
+.inputSalary{
+  display: inline-block;
+  width: 134px;
+  height: 43px;
+  margin-left: 10px;
+  margin-top: 11px;
+  text-align: center;
+}
+.selectDisplayPeriod{
+  display: inline-block;
+  width: 288px;
+  height: 43px;
+  margin-left: 10px;
+  margin-top: 11px;
+  text-align: center;
+}
+.btn-save{
+  font-size: 16px;
+  background-color: #3366ff;
+  color: rgb(255, 255, 255);
+  border-color: #054086;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px;
+  line-height: 2.25;
+  width: 218px;
+  height: 48px;
+  margin-top:20px;
+  margin-left: 15px;
+}
+.btn-save:hover{
+  background-color: #0066cc;
+}
+.btn-save:active{
+  border-color: #3399ff;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+.btn-save:disabled{
   color: white;
   background-color: rgb( 145, 175, 209 );
 }

@@ -1,126 +1,86 @@
 <app-header-top></app-header-top>
-<h3>Редактирование вакансии</h3>
 
+<div class="wrapper">
+  <div class="top">Редактирование вакансии</div>
+  <div class="box">
 
-<form [formGroup]="editVacancyForm" novalidate (ngSubmit)="submit()">
+    <form [formGroup]="editVacancyForm" novalidate (ngSubmit)="submit()">
 
-
-  <br>
-  <div class="form-row">
-    <div class="form-group col-md-3">
-      <input type="text" class="form-control" formControlName="inputVacancyShortTitle" id="inputVacancyShortTitle" placeholder="Наименование вакансии до 30 знаков.">
-
+      <label class="shortTitle">Наименование вакансии</label>
+      <input type="text" class="inputVacancyShortTitle" formControlName="inputVacancyShortTitle" id="inputVacancyShortTitle" placeholder="Наименование вакансии до 90 знаков.">
       <div class="alert alert-danger" *ngIf="editVacancyForm.controls['inputVacancyShortTitle'].invalid && editVacancyForm.controls['inputVacancyShortTitle'].touched">
         Ошибка в наименовании вакансии
       </div>
 
-    </div>
 
-  </div>
+      <label class="vacancyDescription">Краткое описание вакансии</label>
+      <textarea class="inputVacancyDescription" aria-label="Описание вакансии до 4000 знаков" formControlName="inputVacancyDescription" id="inputVacancyDescription" placeholder="Описание вакансии до 4000 знаков"></textarea>
 
-  <div class="form-group col-md-3">
-    <div class="input-group">
-      <div class="input-group-prepend">
-        <span class="input-group-text"></span>
-      </div>
-      <textarea class="form-control" aria-label="Описание вакансии до 4000 знаков" formControlName="inputVacancyDescription" id="inputVacancyDescription" placeholder="Описание вакансии до 4000 знаков"></textarea>
-    </div>
-
-    <div class="alert alert-danger" *ngIf="editVacancyForm.controls['inputVacancyDescription'].invalid && editVacancyForm.controls['inputVacancyDescription'].touched">
-      Ошибка в описании вакансии
-    </div>
-
-
-  </div>
-
-
-
-  <div class="form-group col-md-3">
-    <div class="input-group">
-      <div class="input-group-prepend">
-        <span class="input-group-text"></span>
-      </div>
-      <textarea class="form-control" aria-label="Полное описание вакансии до 2000 знаков" formControlName="inputVacancyBigDescription" id="inputVacancyBigDescription" placeholder="Полное описание вакансии до 2000 знаков"></textarea>
-    </div>
-
-    <div class="alert alert-danger" *ngIf="editVacancyForm.controls['inputVacancyBigDescription'].invalid && editVacancyForm.controls['inputVacancyBigDescription'].touched">
-      Ошибка в полном описании вакансии
-    </div>
-
-
-  </div>
-
-  <div class="form-group col-md-3">
-    <label for="inputCity">Расположение вакансии</label>
-    <select id="inputCity" formControlName="inputCity" class="form-control" title="Локация вакансии">
-      <option  *ngFor="let lc of listCity" [value]="lc.name">
-        {{lc.name}}
-      </option>
-    </select>
-  </div>
-
-  <div class="form-inline">
-    <div class="form-row">
-      <div class="form-group col-md-1">
-        <input type="text" class="form-control" formControlName="inputSalaryFrom" id="inputSalaryFrom" placeholder="Заработная плата от">
-      </div>
-
-    </div>
-    <div class="form-group col-md-1">
-      <input type="text" class="form-control" formControlName="inputSalary" id="inputSalary" placeholder="Заработная плата до)">
-    </div>
-  </div>
-
-  <div class="alert alert-danger" *ngIf="editVacancyForm.controls['inputSalaryFrom'].invalid && editVacancyForm.controls['inputSalaryFrom'].touched">
-    Ошибка в "Заработная плата от"
-  </div>
-
-  <div class="alert alert-danger" *ngIf="editVacancyForm.controls['inputSalary'].invalid && editVacancyForm.controls['inputSalary'].touched">
-    Ошибка в "Заработная плата до"
-  </div>
-
-
-
-  <div class="col-3">
-    <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <label class="input-group-text" for="displayPeriod">Срок размещения</label>
+      <div class="alert alert-danger" *ngIf="editVacancyForm.controls['inputVacancyDescription'].invalid && editVacancyForm.controls['inputVacancyDescription'].touched">
+        Ошибка в описании вакансии
       </div>
 
 
-      <select class="custom-select" formControlName="displayPeriod" id="displayPeriod">
+      <label class="vacancyRequirements">Требования</label>
+      <textarea class="inputVacancyRequirements" maxlength="2000" aria-label="Требования до 2000 знаков" formControlName="inputVacancyRequirements" id="inputVacancyRequirements" placeholder="Требования до 2000 знаков"></textarea>
+
+      <label class="vacancyRequirements">Полное описание вакансии</label>
+      <textarea class="inputVacancyBigDescription" aria-label="Полное описание вакансии до 2000 знаков" formControlName="inputVacancyBigDescription" id="inputVacancyBigDescription" placeholder="Полное описание вакансии до 2000 знаков"></textarea>
+
+      <div class="alert alert-danger" *ngIf="editVacancyForm.controls['inputVacancyBigDescription'].invalid && editVacancyForm.controls['inputVacancyBigDescription'].touched">
+        Ошибка в полном описании вакансии
+      </div>
+
+
+
+      <label class="city">Город</label>
+      <select id="inputCity" formControlName="inputCity" class="inputCity" title="Локация вакансии">
+        <option  *ngFor="let lc of listCity" [value]="lc.name">
+          {{lc.name}}
+        </option>
+      </select>
+
+
+      <label class="salary">Заработная плата:</label>
+
+      <input type="text" class="inputSalaryFrom" formControlName="inputSalaryFrom" id="inputSalaryFrom" placeholder="от">
+      <input type="text" class="inputSalary" formControlName="inputSalary" id="inputSalary" placeholder="до)">
+
+      <div class="alert alert-danger" *ngIf="editVacancyForm.controls['inputSalaryFrom'].invalid && editVacancyForm.controls['inputSalaryFrom'].touched">
+        Ошибка в "Заработная плата от"
+      </div>
+
+      <div class="alert alert-danger" *ngIf="editVacancyForm.controls['inputSalary'].invalid && editVacancyForm.controls['inputSalary'].touched">
+        Ошибка в "Заработная плата до"
+      </div>
+
+      <label class="displayPeriod" for="displayPeriod">Срок размещения</label>
+
+      <select class="selectDisplayPeriod" formControlName="displayPeriod" id="displayPeriod">
         <option  *ngFor="let dpl of displayPeriodList" [value]="dpl.name">
           {{dpl.name}}
         </option>
       </select>
 
-    </div>
+      <!-- Отрасль -->
+      <app-cv_industry></app-cv_industry>
+      <!-- Занятость -->
+      <app-cv-employment></app-cv-employment>
+      <!-- график работы -->
+      <app-cv-schedule></app-cv-schedule>
+      <!-- Опыт работы -->
+      <app-cv-experience></app-cv-experience>
+      <!-- Образование -->
+      <app-cv-education></app-cv-education>
 
-    <br>
+      <div>
+        <div class="form-group row">
+          <button type="submit" class="btn btn-primary" [disabled]="editVacancyForm.invalid">Сохранить</button>
+          <button class="btn btn-primary" routerLink="/vacancies" routerLinkActive="active">Отмена</button>
+        </div>
+      </div>
 
+
+    </form>
   </div>
-
-
-  <div class="container">
-    <!-- Отрасль -->
-    <app-cv_industry></app-cv_industry>
-    <!-- Занятость -->
-    <app-cv-employment></app-cv-employment>
-    <!-- график работы -->
-    <app-cv-schedule></app-cv-schedule>
-    <!-- Опыт работы -->
-    <app-cv-experience></app-cv-experience>
-    <!-- Образование -->
-    <app-cv-education></app-cv-education>
-
-  </div>
-
-  <div>
-    <div class="form-group row">
-      <button type="submit" class="btn btn-primary" [disabled]="editVacancyForm.invalid">Сохранить</button>
-      <button class="btn btn-primary" routerLink="/vacancies" routerLinkActive="active">Отмена</button>
-    </div>
-  </div>
-
-
-</form>
+</div>

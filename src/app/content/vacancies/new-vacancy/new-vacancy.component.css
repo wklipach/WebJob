@@ -47,11 +47,19 @@ label{
   margin-left: 15px;
   margin-top: 11px;
 }
-.vacancyBigDescription{
+.inputVacancyRequirements{
   display: block;
-  width: 90%;
+  width: 828px;
+  height: 243px;
   margin-left: 15px;
   margin-top: 11px;
+}
+.inputVacancyDescription{
+  display: block;
+  width: 828px;
+  height: 243px;
+  margin-left: 15px;
+  margin-top: 31px;
 }
 .city{
   display: block;
@@ -74,7 +82,7 @@ label{
   margin-top: 11px;
 }
 input, textarea, select{
-   font-size: 16px;
+  font-size: 16px;
   font-family: "Proxima Nova";
   text-align: left;
   border-width: 1px;

@@ -358,3 +358,24 @@ label{
 }
 .alert-pass{
 }
+.select-gender{
+  position: absolute;
+  margin-left: 580px;
+  margin-top: 513px;
+}
+.alert-incorrect{
+  position: absolute;
+  margin-top: 6px;
+  margin-left: 22px;
+  text-align: center;
+  width: 441px;
+  color: red;
+}
+.alert-correct{
+  position: absolute;
+  margin-top: 6px;
+  margin-left: 22px;
+  text-align: center;
+  width: 441px;
+  color: green;
+}

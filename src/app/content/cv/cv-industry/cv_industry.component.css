@@ -1,38 +1,27 @@
-.wrapper{
-  display: inline-block;
+.top{
   position: relative;
-  font-family: "ProximaNovaRg";
-  font-size: 16px;
-  width: 100%;
-  height: 180px;
-  margin: 0 auto;
-  padding-right: 0;
-  padding-left: 0;
+  margin-top: 21px;
+  margin-left: 15px;
 }
 .box{
   width: 1170px;
   margin: 0 auto;
   position: relative;
 }
-
-.top{
-  width: 1170px;
-  height: 59px;
-  margin: 20px auto;
-}
-.check-input{
-  font-size: 36px;
-  color: #F74933;
-}
-label{
-  font-size: 16px;
-  font-family: "Proxima Nova";
-  color: rgb(2, 98, 210);
+span{
+  font-size: 1em;
+  color: rgb(0, 0, 0);
   text-align: left;
-}
-.industry{
-  position: relative;
-  margin-top: 21px;
-  margin-left: 15px;
+  padding-left: 0.2%;
 }
 
+.check-input{
+  background-color: #F74933;
+  width: 20px;
+  height: 20px;
+
+}
+
+.check-input:hover{
+  cursor: pointer;
+}
