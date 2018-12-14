@@ -152,7 +152,7 @@ export class NewVacancyComponent implements OnInit {
     console.log(MyExperience);
 
 
-    let period = this.displayPeriodList.find(x=>x.name===this.newVacancyForm.controls['displayPeriod'].value);
+    let period = this.displayPeriodList.find((x)=>x.name===this.newVacancyForm.controls['displayPeriod'].value);
     let city = this.listCity.find(x=>x.name===this.newVacancyForm.controls['inputCity'].value);
 
     MyVacancy.VacancyShortTitle = this.newVacancyForm.controls['inputVacancyShortTitle'].value;

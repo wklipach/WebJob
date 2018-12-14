@@ -66,12 +66,8 @@ constructor(private is: GuideService,
               private _sanitizer: DomSanitizer) {
 
 
-
     this.loadIdUser();
-
     this.createForm();
-    this.createAccountEmployerForm();
-
   }
 
   getCheckEmail (ListUser: UserTable, sEmail: string): boolean
@@ -105,17 +101,17 @@ constructor(private is: GuideService,
       name: ['', Validators.required],
       avatar: ''
     });
-
-    this.onPostImageAvatar();
   }
 
   ngOnInit() {
+
+    this.createAccountEmployerForm();
+
     this.subscrDataUserFromId =
       this.auth.getDataUserFromId(this.id_user).subscribe(value =>
        {
          this.loadCurrentUserInfo(value);
          this.loadUser = value as UserType;
-
          // вытаскиваем из базы картинку аватара
          const S = this.loadUser['Avatar'].Avatar;
          if (S.toString().length>0) {
@@ -123,10 +119,6 @@ constructor(private is: GuideService,
          }
         }
       );
-
-
-    console.log('base64textString.length',this.base64textString.length);
-
     }
 
 
@@ -141,11 +133,13 @@ createAccountEmployerForm() {
     'inputPhone': new FormControl(),
     'inputCity': new FormControl(),
     'inputNewPassword1': new FormControl('', []),
-    'inputNewPassword2': new FormControl('', [],[this.password2AsyncValidator.bind(this)]),
+    'inputNewPassword2': new FormControl('', [], [this.password2AsyncValidator.bind(this)]
+    ),
     'inputEmail': new FormControl(null, [
       Validators.required,
       Validators.email
-    ], [this.userEmailAsyncValidator.bind(this)])
+    ], [this.userEmailAsyncValidator.bind(this)]
+    )
   });
 
   this.accountEmployerForm.controls['inputUserName'].disable();

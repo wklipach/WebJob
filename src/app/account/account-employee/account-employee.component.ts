@@ -43,24 +43,6 @@ private loadUser: UserType;
 
 
     this.createForm();
-    this.accountEmployeeForm = new FormGroup({
-      'inputUserName': new FormControl({},[]),
-      'inputName': new FormControl('',[]),
-      'inputLastName' : new FormControl('',[]),
-      'inputZip' : new FormControl('',[]),
-      'inputAddress' : new FormControl('',[]),
-      'inputPhone' : new FormControl('',[]),
-      'inputCity' : new FormControl('',[]),
-      'inputNewPassword1' : new FormControl('',[]),
-      'inputNewPassword2' : new FormControl('',[], [this.password2AsyncValidator.bind(this)]),
-
-      'inputEmail': new FormControl(null, [
-        Validators.required,
-        Validators.email
-      ], [this.userEmailAsyncValidator.bind(this)])
-    });
-
-    this.accountEmployeeForm.controls['inputUserName'].disable();
   }
 
   createForm() {
@@ -70,6 +52,26 @@ private loadUser: UserType;
     });
   }
 
+
+  createAccountEmployeeForm() {
+    this.accountEmployeeForm = new FormGroup({
+      'inputUserName': new FormControl({}, []),
+      'inputName': new FormControl('', []),
+      'inputLastName': new FormControl('', []),
+      'inputZip': new FormControl('', []),
+      'inputAddress': new FormControl('', []),
+      'inputPhone': new FormControl('', []),
+      'inputCity': new FormControl('', []),
+      'inputNewPassword1': new FormControl('', []),
+      'inputNewPassword2': new FormControl('', [], [this.password2AsyncValidator.bind(this)]),
+      'inputEmail': new FormControl(null, [
+        Validators.required,
+        Validators.email
+      ], [this.userEmailAsyncValidator.bind(this)])
+    });
+
+    this.accountEmployeeForm.controls['inputUserName'].disable();
+  }
 
   clearFile() {
     this.form.get('avatar').setValue(null);
@@ -106,6 +108,8 @@ private loadUser: UserType;
 
 
   ngOnInit() {
+
+    this.createAccountEmployeeForm();
 
     this.base64textString = [];
 
