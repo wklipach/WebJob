@@ -1,0 +1,86 @@
+<app-header-top></app-header-top>
+<div class="wrapper">
+  <div class="top">Избранные вакансии</div>
+
+  <div class="vacancy-box" id="vacancy-box">
+    <div class="v-line"></div>
+    <div class="number">10</div>
+    <div class="title">Программист</div>
+    <div class="income">1000 Р</div>
+
+
+
+    <img class="city" src="/assets/img/city.png" alt="Город">
+
+    <span class="city-name">Вильянди</span>
+
+
+      <img class="logotype-company" src="/assets/img/no-photo.png" alt="Логотип компании">
+
+
+
+
+    <span class="company-name">A-Number Software</span>
+    <span class="description">Описание вакансии</span>
+
+
+      <span class="final-date">Размещено до 21.01.1913</span>
+    </div>
+
+
+    <button class="btn-response" type="button">Откликнуться</button>
+    <button class="btn-favorites" type="button" >В избранное</button>
+    <button class="btn-hide" type="button" >Не показывать</button>
+
+  </div>
+
+
+  <!--
+
+  <div class="vacancy-box" id="vacancy-box" *ngFor="let curVacancy of myDataVacancy; let i = index" (click)="MyMethod(curVacancy.id, $event)">
+    <div class="v-line"></div>
+    <div class="number">{{i+1}}</div>
+    <div class="title">{{curVacancy['vacancy'].VacancyShortTitle}}</div>
+    <div class="income">
+      {{curVacancy['vacancy'].SalaryFrom}}-{{curVacancy['vacancy'].Salary}} Р</div>
+
+
+
+    <img class="city" src="/assets/img/city.png" alt="Город">
+
+    <span class="city-name">{{curVacancy.CityName}}</span>
+
+
+
+    <div *ngIf="curVacancy['vacancy'].base64textString.length>0; then contentLoadAvatar else contentDefault">условия выполнить невозможно</div>
+    <ng-template #contentLoadAvatar>
+      <img class="logotype" *ngFor="let item of curVacancy['vacancy'].base64textString"  src={{item}} alt="Логотип компании" id="img">
+    </ng-template>
+
+    <ng-template #contentDefault>
+      <img class="logotype-company" src="/assets/img/no-photo.png" alt="Логотип компании">
+    </ng-template>
+
+
+
+
+    <span class="company-name">{{curVacancy['vacancy'].id_user}}</span>
+    <span class="description">{{curVacancy['vacancy'].VacancyBigDescription}}</span>
+
+    <div *ngIf="!curVacancy['vacancy'].errorEndDay">
+      <span class="final-date">Размещено до {{curVacancy['vacancy'].sDateEnd}}</span>
+    </div>
+
+
+    <button class="btn-response" type="button" id="vcresponse" title="Откликнуться" (click)="response($event,i, curVacancy.id)" >Откликнуться</button>
+    <button class="btn-favorites" type="button" id="vcfavorites" title="В избранное" (click)="favorites($event,i, curVacancy.id)" >В избранное</button>
+    <button class="btn-hide" type="button" id="vchide" title="Не показывать" (click)="unshow($event,i, curVacancy.id)" >Не показывать</button>
+    {{curVacancy.sErrorText}}
+  </div>
+
+-->
+
+
+
+
+<app-footer></app-footer>

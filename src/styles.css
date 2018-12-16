@@ -18,6 +18,9 @@ body {margin: 0 !important; padding: 0 !important;}
   url('ProximaNova-Regular.ttf') format('ttf');
 }
 
+
+
+
 @font-face {
   font-family: 'ProximaNovaLt';
   src: local('ProximaNovaLt'),
@@ -29,4 +32,3 @@ body {margin: 0 !important; padding: 0 !important;}
 */
 @import "../node_modules/font-awesome/css/font-awesome.css";
 @import "../fonts/fonts.css";
-

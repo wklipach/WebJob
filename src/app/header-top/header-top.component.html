@@ -10,13 +10,15 @@
       <img class="arrow-down" src="/assets/img/arrow-down.png" alt="Открыть меню пользователя" title="Mеню пользователя">
       </div>
       <ul class="user-list">
-        <a routerLink="/account-employer" routerLinkActive="active"><li *ngIf = "bEmployer">Данные работодателя</li></a>
+        <a routerLink="/account-employer" routerLinkActive="active"><li *ngIf = "bEmployer">Профиль работодателя</li></a>
         <a routerLink="/new-vacancy" routerLinkActive="active"><li *ngIf = "bEmployer">Новая вакансия</li></a>
-        <a routerLink="/vacancies" routerLinkActive="active"><li *ngIf = "bEmployer">Все вакансии</li></a>
+        <a routerLink="/vacancies" routerLinkActive="active"><li *ngIf = "bEmployer">Наши вакансии</li></a>
         <a routerLink="/advanced-search" routerLinkActive="active"><li *ngIf = "bEmployer">Поиск сотрудников</li></a>
         <a routerLink="/account-employee" routerLinkActive="active"><li *ngIf="!bEmployer">Данные соискателя</li></a>
         <a routerLink="/cv-list" routerLinkActive="active"><li *ngIf="!bEmployer">Мои резюме</li></a>
         <a routerLink="/message-center" routerLinkActive="active"><li *ngIf = "bEmployer">Центр сообщений</li></a>
+        <a routerLink="/message-center" routerLinkActive="active"><li *ngIf = "!bEmployer">Центр сообщений</li></a>
+        <a routerLink="/about" routerLinkActive="active"><li *ngIf = "!bEmployer">О компании</li></a>
         <span class="logout" (click)="logout()"><li>Выйти</li></span>
       </ul>
 

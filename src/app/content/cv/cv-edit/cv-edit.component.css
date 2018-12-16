@@ -1,0 +1,53 @@
+.btn-save{
+  display: inline-block;
+  position: absolute;
+  font-size: 18px;
+  background-color: #3366ff;
+  color: rgb(255, 255, 255);
+  border-color: #054086;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px;
+  line-height: 2.25;
+  width: 228px;
+  height: 48px;
+  margin-top:50px;
+  margin-left: 180px;
+}
+.btn-save:hover{
+  background-color: #0066cc;
+  font-weight: 600;
+}
+.btn-save:active{
+  border-color: #3399ff;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 3px;
+
+}
+.btn-cancel{
+  font-size: 18px;
+  font-family: "Proxima Nova";
+  width:228px;
+  height: 48px;
+  color: rgb(68, 75, 84);
+  background-color: rgb(255, 255, 255);
+  border-width: 1px;
+  border-color: rgb(68, 75, 84);
+  border-style: solid;
+  border-radius: 3px;
+  line-height: 2;
+  text-align: center;
+  margin-top: 50px;
+  margin-left: 444px;
+}
+.btn-cancel:hover{
+  background-color: rgb(240, 240, 240);
+  font-weight: 600;
+}
+.btn-cancel:active{
+  border-color: #3399ff;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 3px;
+}

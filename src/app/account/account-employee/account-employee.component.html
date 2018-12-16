@@ -24,16 +24,10 @@
       <input type="file" id="avatar" (change)="onFileChange($event)" #fileInput style="display:none">
     </form>
 
-
-
-
     <form class="employee-form" [formGroup]="accountEmployeeForm">
-
 
       <!---->
       <label class="photo-upload">Загрузить фото</label>
-
-
 
       <label class="user-name">Имя пользователя</label>
       <input type="text" class="inputUserName" id="inputUserName" formControlName="inputUserName" placeholder="введите имя пользователя">
@@ -41,9 +35,17 @@
       <label class="email">Email</label>
       <input type="text" class="inputEmail" id="inputEmail" formControlName="inputEmail" placeholder="введите Email">
 
-
-
       <!-- начало обработки почтовых ошибок -->
+
+      <label class="gender">Выбрать пол</label>
+      <select class="inputGender" id="inputGender" formControlName="inputGender"  title="Выбрать пол">
+        <option>Женский</option>
+        <option>Мужской</option>
+      </select>
+
+      <label class="birth" for="inputBirth">Дата рождения</label>
+      <input class="inputBirth" type="date" id="inputBirth" name="inputBirth">
+
 
       <div *ngIf="accountEmployeeForm.controls['inputEmail'].dirty">
 
@@ -139,6 +141,8 @@
   </div>
 </div>
 
+<!--
+
 <label class="select-gender">Выберите пол</label>
 
 <input  class="radio-man" (change)="newFunction()" type="radio" name="manRadios" id="manRadios" >
@@ -150,11 +154,8 @@
 <label class="label-woman" for="womanRadios">
   Работодатель
 </label>
-
+-->
 
 <!--Рубль  &#x20BD; Евро &#8364;  ©  знак copyright  &#169;  $  знак доллара   &#36; Пробел &nbsp; -->
-
-
-
 
 <app-footer></app-footer>

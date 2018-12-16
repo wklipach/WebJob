@@ -53,6 +53,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import {LetterService} from './services/letter.service';
 import { PageCountComponent } from './page-count/page-count.component';
 import {NgbModule, NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
+import { AboutComponent } from './about/about.component';
+import { FavoritesComponent } from './account/favorites/favorites.component';
 
 
 
@@ -87,6 +89,8 @@ const appRoutes: Routes = [
   {path: 'info', component: InfoComponent},
   {path: 'response', component: ResponseComponent},
   {path: 'page-count', component: PageCountComponent},
+  {path: 'about', component: AboutComponent},
+  {path: 'favorites', component: FavoritesComponent},
   {path: '**', component: NotFoundComponent }
 ];
 
@@ -94,8 +98,8 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports:
-   [ BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule, AngularFontAwesomeModule, NgbModule, NgbPaginationModule,NgbAlertModule,
-     RouterModule.forRoot(appRoutes)],
+   [ BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule, AngularFontAwesomeModule,
+     NgbModule, NgbPaginationModule, NgbAlertModule, RouterModule.forRoot(appRoutes)],
   declarations: [
     AppComponent,
     HeaderTopComponent,
@@ -132,7 +136,10 @@ const appRoutes: Routes = [
     MessageComponent,
     ResponseComponent,
     PageCountComponent,
+    AboutComponent,
+    FavoritesComponent,
     NotFoundComponent
+
    ],
   entryComponents: [
     CvPreviousComponent

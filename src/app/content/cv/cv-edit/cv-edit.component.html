@@ -16,9 +16,6 @@
       </select>
     </div>
 
-
-
-
     <div class="row">
       <div class="col-2">
         <label class="labelDescr">Заработная плата от</label>
@@ -56,17 +53,9 @@
     <button (click)="createNewBlock()">Предыдущее место работы</button>
   </div>
 
-  <br>
-  <div class="container">
-
-    <button class="nav-link" routerLink="/cv-list" routerLinkActive="active">Отмена</button>
-
-    <button (click)="savecv()">Сохранить резюме</button>
-  </div>
+    <button class="btn-save" (click)="savecv()">Сохранить резюме</button>
+    <button class="btn-cancel" routerLink="/cv-list" routerLinkActive="active">Отмена</button>
 
   <app-footer></app-footer>
 
 </form>
-
-
-

@@ -108,7 +108,7 @@ label{
   border-style: solid;
   border-radius: 3px;
   background-color: rgb(255, 255, 255);
-  width: 230px;
+  width: 20%;
   height: 43px;
   margin-left: 180px;
   margin-top: 96px;
@@ -127,14 +127,49 @@ label{
   border-style: solid;
   border-radius: 3px;
   background-color: rgb(255, 255, 255);
-  width: 230px;
+  width: 20%;
   height: 43px;
   margin-left: 444px;
   margin-top: 96px;
 }
+.gender{
+  margin-left: 180px;
+  margin-top: 184px;
+}
+.inputGender{
+  border-width: 1px;
+  border-color: rgb(68, 75, 84);
+  text-align: center;
+  border-style: solid;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  width: 20%;
+  height: 43px;
+  margin-left: 180px;
+  margin-top: 218px;
+}
+.birth{
+  margin-left: 444px;
+  margin-top: 184px;
+}
+.inputBirth{
+  border-width: 1px;
+  border-color: rgb(68, 75, 84);
+  text-align: center;
+  border-style: solid;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  width: 20%;
+  height: 41px;
+  margin-left: 444px;
+  margin-top: 218px;
+  background:none;
+}
 .name{
   margin-left: 180px;
-  margin-top: 187px;
+  margin-top: 487px;
 }
 .input-name{
   position: absolute;
@@ -146,14 +181,14 @@ label{
   border-style: solid;
   border-radius: 3px;
   background-color: rgb(255, 255, 255);
-  width: 228px;
+  width: 20%;
   height: 43px;
   margin-left: 180px;
-  margin-top: 221px;
+  margin-top: 421px;
 }
 .lastname{
   margin-left: 444px;
-  margin-top: 186px;
+  margin-top: 586px;
 }
 .inputLastname{
   position: absolute;
@@ -165,18 +200,18 @@ label{
   border-style: solid;
   border-radius: 3px;
   background-color: rgb(255, 255, 255);
-  width: 228px;
+  width: 20%;
   height: 43px;
   margin-left: 444px;
-  margin-top: 221px;
+  margin-top: 621px;
 }
 .location{
   margin-left: 180px;
-  margin-top: 313px;
+  margin-top: 713px;
 }
 .zip{
   margin-left: 444px;
-  margin-top: 313px;
+  margin-top: 713px;
 }
 .inputCity{
   border-width: 1px;
@@ -186,10 +221,10 @@ label{
   border-radius: 3px;
   background-color: rgb(255, 255, 255);
   position: absolute;
-  width: 228px;
+  width: 20%;
   height: 43px;
   margin-left: 180px;
-  margin-top: 348px;
+  margin-top: 748px;
 }
 .inputZip{
   position: absolute;
@@ -202,14 +237,14 @@ label{
   border-radius: 3px;
   background-color: rgb(255, 255, 255);
   text-align: center;
-  width: 228px;
+  width: 20%;
   height: 43px;
   margin-left: 444px;
-  margin-top: 348px;
+  margin-top: 748px;
 }
 .home-address{
   margin-left: 180px;
-  margin-top: 435px;
+  margin-top: 835px;
 }
 .inputHomeAddress{
   border-width: 1px;
@@ -222,11 +257,11 @@ label{
   width: 492px;
   height: 43px;
   margin-left: 180px;
-  margin-top: 471px;
+  margin-top: 871px;
 }
 .phone{
   margin-left: 180px;
-  margin-top: 563px;
+  margin-top: 963px;
 }
 .inputPhone{
   border-width: 1px;
@@ -236,10 +271,10 @@ label{
   background-color: rgb(255, 255, 255);
   position: absolute;
   text-align: center;
-  width: 228px;
+  width: 20%;
   height: 43px;
   margin-left: 180px;
-  margin-top: 599px;
+  margin-top: 999px;
 }
 .btn-save{
   display: inline-block;
@@ -252,9 +287,9 @@ label{
   border-style: solid;
   border-radius: 3px;
   line-height: 2.25;
-  width: 228px;
+  width: 20%;
   height: 48px;
-  margin-top:750px;
+  margin-top:1150px;
   margin-left: 180px;
 }
 .btn-save:hover{
@@ -270,7 +305,7 @@ label{
 .btn-cancel{
   font-size: 18px;
   font-family: "Proxima Nova";
-  width:228px;
+  width: 20%;
   height: 48px;
   color: rgb(68, 75, 84);
   background-color: rgb(255, 255, 255);
@@ -280,7 +315,7 @@ label{
   border-radius: 3px;
   line-height: 2;
   text-align: center;
-  margin-top: 750px;
+  margin-top: 1150px;
   margin-left: 444px;
 }
 .btn-cancel:hover{
@@ -303,7 +338,7 @@ label{
   width: 489px;
   height: 199px;
   margin-left: 580px;
-  margin-top: 420px;
+  margin-top: 820px;
   z-index: 10;
 }
 .inputNewPassword1 {
@@ -357,11 +392,6 @@ label{
   margin-left: -192px;
 }
 .alert-pass{
-}
-.select-gender{
-  position: absolute;
-  margin-left: 580px;
-  margin-top: 513px;
 }
 .alert-incorrect{
   position: absolute;

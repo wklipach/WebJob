@@ -3,7 +3,6 @@
 <div class="wrapper">
   <div class="top">Мои резюме</div>
 
-
   <div class="box" *ngFor="let item of cvList; let i = index;">
 
     <input class="editCheck" type="checkbox" [(ngModel)]="item.bChecked" title="Check">
@@ -26,6 +25,7 @@
 
 
 </div>
+
   <button class="btn-newcv" (click)="newcv()">Новое резюме</button>
 
   </div>

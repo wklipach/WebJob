@@ -89,7 +89,7 @@ export class CvEditComponent implements OnInit, OnDestroy {
       this.editCVForm.controls['inputSalaryFrom'].setValue(item.SalaryFrom);
     }
 
-    //редактируемая должность (она же позиция)
+    // редактируемая должность (она же позиция)
     if (typeof item.Position !== 'undefined') {
       this.editCVForm.controls['position'].setValue(item.Position);
     }
@@ -108,15 +108,15 @@ export class CvEditComponent implements OnInit, OnDestroy {
         }
       );
 
-    //ставим чек-боксы в элементах ОТРАСЛЬ
+    // ставим чек-боксы в элементах ОТРАСЛЬ
      this.is.startCheckedElementIndustryList(item.Industry);
-     //ставим чек-боксы в элементах  ЗАНЯТОСТЬ
+     // ставим чек-боксы в элементах  ЗАНЯТОСТЬ
     this.is.startCheckedElementEmploymentList(item.Employment);
-    //ставим чек-боксы в элементах  график работы
+    // ставим чек-боксы в элементах  график работы
     this.is.startCheckedElementScheduleList(item.Schedule);
-    //ставим чек-боксы в элементах  Опыт работы
+    // ставим чек-боксы в элементах  Опыт работы
     this.is.startCheckedElementExperienceList(item.Experience);
-    //ставим чек-боксы в элементах  Образование
+    // ставим чек-боксы в элементах  Образование
     this.is.startCheckedElementEducationList(item.Education);
 
 
@@ -193,11 +193,11 @@ export class CvEditComponent implements OnInit, OnDestroy {
   /* сохранение данных */
   newcv() {
 
-    //получаем изначальные данные без динамических блоков
+    // получаем изначальные данные без динамических блоков
     let MyCv: CV = this.loadMainCV();
     return this.previousPostNewCV =this.httpService.postNewCV(MyCv).subscribe(
       (value) => {
-        //из возвращенного результата забираем новое ID
+        // из возвращенного результата забираем новое ID
         let id = value['id'];
         let mPrevious = this.getPreviousData();
         // присваиваем полученный id_cv внутрь каждого блока
@@ -253,7 +253,7 @@ export class CvEditComponent implements OnInit, OnDestroy {
     MyCv.Employment = MyEmployment;
     // образование
     MyCv.Education = MyEducation;
-    //опыт работы
+    // опыт работы
     MyCv.Experience = MyExperience;
     // признак удаленного
     MyCv.bInvisible = false;
