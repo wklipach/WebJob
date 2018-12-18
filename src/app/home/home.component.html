@@ -1,7 +1,7 @@
 <app-header-top></app-header-top>
 <div class="wrapper">
   <div class="top">
-    Вакансии
+    {{sVacancy}}
   </div>
 
   <div class="vacancy-box" id="vacancy-box" *ngFor="let curVacancy of myDataVacancy; let i = index" (click)="MyMethod(curVacancy.id, $event)">

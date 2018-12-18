@@ -18,6 +18,7 @@
         <a routerLink="/cv-list" routerLinkActive="active"><li *ngIf="!bEmployer">Мои резюме</li></a>
         <a routerLink="/message-center" routerLinkActive="active"><li *ngIf = "bEmployer">Центр сообщений</li></a>
         <a routerLink="/message-center" routerLinkActive="active"><li *ngIf = "!bEmployer">Центр сообщений</li></a>
+        <span class="logout" (click)="favorites()"><li *ngIf = "!bEmployer">Избранные вакансии</li></span>
         <a routerLink="/about" routerLinkActive="active"><li *ngIf = "!bEmployer">О компании</li></a>
         <span class="logout" (click)="logout()"><li>Выйти</li></span>
       </ul>
@@ -61,7 +62,7 @@
   <div class="bottom">
     <div class="box">
       <a routerLink="" title="На главную">
-        <h1>MUCV</h1></a>
+        <h1><span class="logout" (click)="clearfind()">MUCV</span></h1></a>
     </div>
 
 

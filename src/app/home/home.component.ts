@@ -19,6 +19,8 @@ import {Letter} from '../class/Letter';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
+  //заголовок вакансий
+  public sVacancy: string;
   // текущая страница
   public page = 1;
   // записей на странице
@@ -31,7 +33,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   private bEmployer = false;
   public sNoUserValueFind = '';
 
-  /* TODO First myDataVacancy   */
   myDataVacancy: dataVacancy[];
   allDataVacancy: dataVacancy[];
 
@@ -83,21 +84,16 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     this.page = 1;
     this.rowPerPage = pecordPerPage;
-    console.log('передаем число записей на страницу', this.rowPerPage);
     this.is.startCheckPaginator({value1: this.recordsPerAll, value2: this.rowPerPage});
-    console.log('всего записей', this.recordsPerAll);
     this.reloadPAge(this.allDataVacancy, this.sMask);
 
   }
 
 
   onPageChanged(pageNumber: number) {
-    console.log('переключили страницу, новая страница=', pageNumber);
     this.reloadPAge(this.allDataVacancy, this.sMask);
   }
 
-
-  // TODO  onLoadFromBaseAvatar()
   onLoadFromBaseAvatar(k: any) {
 
     k.base64textString = [];
@@ -138,11 +134,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.rowPerPage = 5;
     if (window.localStorage.getItem('rowPerPage') !== '') {
 
-      console.log('Init rowPerPage', 'ищем');
-
       this.rowPerPage = JSON.parse(window.localStorage.getItem('rowPerPage'));
 
-      //TODO тут правим!!!!!!!!!!!!!!!!!
       if (this.rowPerPage === null) {
         if (this.bChecked5) this.rowPerPage = 5;
         if (this.bChecked10) this.rowPerPage = 10;
@@ -156,8 +149,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     }
 
-    console.log('Init rowPerPage',this.rowPerPage);
-
     this.funcCheckedFind(this.rowPerPage);
 
     if (window.localStorage.getItem('keyFind') !== null) {
@@ -165,12 +156,17 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
 
     window.localStorage.removeItem('keyFind');
-    this.httpService.onReopenVacancy.subscribe((value: string) => this.getVacancy(value));
+
+    this.httpService.onReopenVacancy.subscribe(({sMask: value, isFavorites: bFavorites, isAdvancedFind: bAdvancedFind }) => {
+        this.getVacancy(value, bFavorites, bAdvancedFind);
+    });
+
 
     // если не было расширенного поиска вакансий делаем обычный поиск, иначе расширенный запускается из advanced-search.component
     if ( this.httpService.getMessageAdvancedFindObj() === null ) {
+
       // запускаем событие "получить вакансии", в первый раз с пустой маской
-      this.httpService.triggerReopenVacancy(this.sMask);
+      this.httpService.triggerReopenVacancy({sMask: this.sMask, isFavorites: false, isAdvancedFind: false});
       // записываем значение маски в элемент, так как при перегрузке страницы он стирается ??????
       this.moveS.setStringFind(this.sMask);
     } else
@@ -181,40 +177,24 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
 
 
+
   }
 
   getVacancyAdvanced(advancedFindObj: any) {
-    console.log ('событие вызвало перемещение объекта', advancedFindObj);
-
     // выводим всю таблицу по сути это заглушка вместо продвинутого поиска
-    this.getVacancy('');
+    this.getVacancy('', false, true);
   }
 
+   getVacancy(sMask: string,isFavorites: boolean, isAdvancedFind: boolean) {
 
-    // TODO getVacancy
-   getVacancy(sMask: string) {
-     console.log('список a1');
-    return this.getTableVacancy = this.httpService.getTableVacancy(sMask, this.rowPerPage, this.page).subscribe(
+    return this.getTableVacancy = this.httpService.getTableVacancy(sMask, this.rowPerPage, this.page, isFavorites, isAdvancedFind).subscribe(
       (data: dataVacancy[]) => {
-
-        // dataVacancy[]
-
-        console.log('список a12');
-        console.log('список вакансий =>',data, 'rowPerPage',this.rowPerPage);
 
         let curRemDay: {numberMonth, errorDay} = {numberMonth: -1, errorDay: true};
 
-        console.log('curRemDay',curRemDay);
-
-
         data.forEach(  (curVacancy, index, arrCurValue) => {
-
-
-          // TODO ЗАГРУЖАЕМ КАРТИНКУ В ЗАЯВКУ
           // base64textString = [];
           this.onLoadFromBaseAvatar(curVacancy['vacancy']);
-
-
           // ДАТА ОКОНЧАНИЯ ЗАЯВКИ
             curVacancy['vacancy'].sDateEnd = "";
             curVacancy['vacancy'].errorEndDay = true;
@@ -249,7 +229,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
                 ///// высчитываем дату окончания
                 // dd/MM/yyyy hh:mm локаль en-US
-                // TODO Даты!!!!!
                 if (!curRemDay.errorDay) {
                   var reggie = /(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2})/;
                   var dateArray = reggie.exec(curVacancy['vacancy'].DateTimeCreate);
@@ -268,8 +247,10 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.allDataVacancy = data;
         this.recordsPerAll = data.length;
         this.is.startCheckPaginator({value1: this.recordsPerAll, value2: this.rowPerPage});
-        console.log('всего записей', this.recordsPerAll);
         this.reloadPAge(this.allDataVacancy, sMask);
+
+        if (isFavorites) this.sVacancy = 'Избранные вакансии'; else this.sVacancy = 'Вакансии';
+
 
      }
     );
@@ -279,10 +260,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   // получаем из массива кол. записей и кусок записей на данной странице
   reloadPAge(data: dataVacancy[], sMask: string) {
 
-    console.log('this.rowPerPage*(this.page-1)',this.rowPerPage*(this.page-1),'this.rowPerPage',this.rowPerPage);
-    console.log('DATA1', data);
     data = data.slice(this.rowPerPage*(this.page-1),this.rowPerPage*(this.page-1)+this.rowPerPage);
-    console.log('DATA2', data);
     // это получаем город из нового вызываемого сервиса
     this.httpService.getCity().subscribe((city: City[]) => {
 
@@ -299,8 +277,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
         this.myDataVacancy = data;
 
-        // TODO 2 this.myDataVacancy
-
         if (this.allDataVacancy.length === 0) {
 
           // console.log('ЕСЛИ НИЧЕГО НЕ НАШЛИ');
@@ -313,7 +289,7 @@ export class HomeComponent implements OnInit, OnDestroy {
             }
             if (sBack === '/' && sMask !== '')  {
               this.sMask = '';
-              this.getVacancy('');
+              this.getVacancy('',false,false);
               this.moveS.startNullFind('Поиск не дал результатов.');
             }
           }
@@ -329,17 +305,11 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   MyMethod(zid: number, $event) {
 
-
-    console.log ('$event.explicitOriginalTarget.id', $event.explicitOriginalTarget.id);
-
     if ($event.explicitOriginalTarget.id === 'vcresponse' ||
         $event.explicitOriginalTarget.id === 'vcfavorites' ||
         $event.explicitOriginalTarget.id === 'vchide')
     return;
 
-    console.log('id--', zid);
-
-    // TODO 3 myDataVacancy
     let vacancy = this.myDataVacancy.find(vacancy =>  vacancy.id===zid);
      this.dvSubscription = this.moveS.setDataVacancy(vacancy).subscribe( ()=> this.router.navigate(['/vacancy-description']));
   }
@@ -361,9 +331,26 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   }
 
+
+  showFavorites(id_user: number) {
+    // TODO ПОКАЗ ФАВОРИТов
+    this.httpService.getFavoritesVacancy(id_user).subscribe((favor) =>{
+      let s='?&id=-1'; //-1 чтобы иметь пустой курсор в случае отсутствия избранных
+      for (let curFavor in favor) {
+        s=s+'&id='+favor[curFavor].id_vc;
+      }
+      // console.log('s=',s);
+      // 'http://localhost:3000/vacancy'+s;
+      window.localStorage.setItem('stringFavorites', s);
+      this.getVacancy('',true, false);
+    });
+
+  }
+
   favorites($event, index: number, vcid: number) {
 
-    // TODO 4 this.myDataVacancy
+    // TODO ПОСТИНГ ФАВОРИТОВ
+    this.sVacancy = 'Вакансии';
 
    this.sNoUserValueFind = '';
     this.myDataVacancy[index].sErrorText = '';
@@ -378,15 +365,23 @@ export class HomeComponent implements OnInit, OnDestroy {
      return;
    }
 
-    console.log('избранное', 'vcid', vcid);
-    this.httpService.postFavoritesVacancy(this.id_user, vcid).subscribe( ()=> this.RouterReload());
-
+   //проверяем нет ли уже такого в фаворитах, если есть то не даем внести
+    this.httpService.checkFavoritesVacancy(this.id_user, vcid).subscribe( value => {
+      let curV: any = value;
+      if (curV.length ===0) {
+            this.httpService.postFavoritesVacancy(this.id_user, vcid).subscribe( ()=> {
+            this.showFavorites(this.id_user);
+            // this.RouterReload()
+        });
+      } else {
+        this.sNoUserValueFind = 'Данная вакансия была занесена ранее.';
+        this.myDataVacancy[index].sErrorText = this.sNoUserValueFind;
+      }
+      });
 
   }
 
   unshow($event, index: number, vcid: number) {
-
-    // TODO 5 this.myDataVacancy
 
     this.sNoUserValueFind = '';
     this.myDataVacancy[index].sErrorText = '';
@@ -401,8 +396,9 @@ export class HomeComponent implements OnInit, OnDestroy {
       return;
     }
 
-    console.log('не показывать');
-    this.httpService.postUnshowVacancy(this.id_user, vcid).subscribe( ()=> this.RouterReload());
+    this.httpService.postUnshowVacancy(this.id_user, vcid).subscribe( ()=> {
+      this.showFavorites(this.id_user);
+    });
 
   }
 
@@ -421,7 +417,6 @@ export class HomeComponent implements OnInit, OnDestroy {
       return;
     }
 
-    // TODO 6 this.myDataVacancy
     this.httpService.getNumberResponse(this.id_user, vcid).subscribe((value: Letter[]) => {
 
         if (value.length>0) {

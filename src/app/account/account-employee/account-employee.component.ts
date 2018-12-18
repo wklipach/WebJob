@@ -67,7 +67,9 @@ private loadUser: UserType;
       'inputEmail': new FormControl(null, [
         Validators.required,
         Validators.email
-      ], [this.userEmailAsyncValidator.bind(this)])
+      ], [this.userEmailAsyncValidator.bind(this)]),
+      'inputGender': new FormControl('', []),
+
     });
 
     this.accountEmployeeForm.controls['inputUserName'].disable();

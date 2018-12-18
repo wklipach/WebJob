@@ -34,7 +34,7 @@ export class TableVacancyService {
 
 
 
-  private _onReopenVacancy = new Subject<string>();
+  private _onReopenVacancy = new Subject<{sMask: string, isFavorites: boolean, isAdvancedFind: boolean}>();
 
   //onReopenVacancyAdvanced - продвинутый поиск вакансий, запускается из advanced-search.component, подписан в  HomeComponent
   private _onReopenVacancyAdvanced = new Subject<any>();
@@ -47,9 +47,9 @@ export class TableVacancyService {
   }
 
 
-  public get onReopenVacancy(): Observable<string> { return this._onReopenVacancy.asObservable(); }
-  public triggerReopenVacancy(value: string) {
-    this._onReopenVacancy.next(value);
+  public get onReopenVacancy(): Observable<{sMask: string, isFavorites: boolean, isAdvancedFind: boolean}> { return this._onReopenVacancy.asObservable(); }
+  public triggerReopenVacancy({sMask, isFavorites, isAdvancedFind}) {
+    this._onReopenVacancy.next({sMask, isFavorites, isAdvancedFind});
   }
 
 
@@ -67,20 +67,20 @@ export class TableVacancyService {
   GET /posts?q=internet
   */
 
-  getTableVacancy(sMask: string, rowPerPage: number, currentPage: number)
+  getTableVacancy(sMask: string, rowPerPage: number, currentPage: number, isFavorites: boolean, isAdvancedFind: boolean)
   {
 
-    console.log('getTableVacancy сработал, rowPerPage=',rowPerPage);
-
     let sUrl = 'http://localhost:3000/vacancy';
-    if (sMask !== '') sUrl = sUrl +'?q='+sMask;
+
+    if (!isFavorites) {
+          if (sMask !== '') sUrl = sUrl +'?q='+sMask;
+          } else {
+          let s = window.localStorage.getItem('stringFavorites');
+          sUrl = sUrl + s;
+    }
+
     // вставить запрос типа select top 10 * from Vacancy по маске или еще что такое же
-
-    console.log('s11');
     let Result = this.http.get(sUrl);
-    console.log('s12');
-    console.log('s13',Result);
-
     return Result;
 
   }
@@ -100,12 +100,26 @@ export class TableVacancyService {
   }
 
 
+  getFavoritesVacancy(id_user: number)
+  {
+    let sUrl = 'http://localhost:3000/UserFavoritesUnit?id_user='+id_user;
+    return this.http.get(sUrl);
+  }
+
+
   postFavoritesVacancy(id_user: number, id_vc: number)
   {
     let sUrl = 'http://localhost:3000/UserFavoritesUnit';
     let sRs = {id_user: id_user, id_vc: id_vc}
     return this.http.post(sUrl, sRs);
   }
+
+  checkFavoritesVacancy(id_user: number, id_vc: number)
+  {
+    let sUrl = 'http://localhost:3000/UserFavoritesUnit?id_user='+id_user+'&id_vc='+id_vc;
+    return this.http.get(sUrl);
+  }
+
 
 
   postUnshowVacancy(id_user: number, id_vc: number)

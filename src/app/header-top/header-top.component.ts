@@ -74,16 +74,46 @@ export class HeaderTopComponent implements OnInit {
   }
 
 
+  favorites() {
+    // TODO ПОКАЗ ФАВОРИТов 2
+    this.httpTvsService.getFavoritesVacancy(this.id_user).subscribe((favor) =>{
+      let s='?&id=-1'; //-1 чтобы иметь пустой курсор в случае отсутствия избранных
+      for (let curFavor in favor) {
+        s=s+'&id='+favor[curFavor].id_vc;
+      }
+      window.localStorage.setItem('stringFavorites', s);
+      this.getVacancy('',true, false);
+    });
+
+  }
+
+
+  clearfind() {
+     this.getVacancy('', false, false);
+
+//    window.localStorage.removeItem('keyFind');
+//    this.router.navigate(['/home']);
+
+
+
+  }
+
+
+
+
   find() {
+
+    console.log('нажали обычный поиск!!!!!');
+
     const sInputSearch = this.headerTopForm.controls['inputSearch'].value;
-    this.getVacancy(sInputSearch);
+    this.getVacancy(sInputSearch, false, false);
   }
 
 
   //
   // запускаем триггер события
   //
-  getVacancy(sMask: string) {
+  getVacancy(sMask: string,isFavorites: boolean, isAdvancedFind: boolean) {
 
     this.sNullValueFind = '';
 
@@ -91,13 +121,12 @@ export class HeaderTopComponent implements OnInit {
     // если домашняя страница запускаем событие, если нет переходим на нее и маску передаем через Экстракт
     // событие инициализируется фактом запуска компонента Home и наличием маски
     if ( (this.router.isActive('home',true)===false)  && (this.router.isActive('',true) ===false)  ) {
-
       window.localStorage.setItem('keyFind', sMask);
       this.router.navigate(['/']);
 
      } else {
       window.localStorage.removeItem('keyFind');
-      this.httpTvsService.triggerReopenVacancy(sMask);
+      this.httpTvsService.triggerReopenVacancy({sMask, isFavorites, isAdvancedFind});
     }
 
   }
@@ -105,7 +134,6 @@ export class HeaderTopComponent implements OnInit {
   toAdvance() {
     this.router.navigate(['/advanced-search']);
   }
-
 
 
 }
