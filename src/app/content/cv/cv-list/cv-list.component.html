@@ -5,6 +5,64 @@
 
   <div class="box" *ngFor="let item of cvList; let i = index;">
 
+
+    <ul class="head-line">
+
+      <li class="date">Дата</li>
+      <li class="city">Город</li>
+      <li class="salary">salary</li>
+      <li class="position">Должность</li>
+      <li class="choice">Выбрать действие</li>
+
+    </ul>
+
+    <ul class="botom-line">
+      <li class="date">22.10.2018</li>
+      <li class="city">{{item.CityName}}</li>
+      <li class="salary">{{item.cv.SalaryFrom}} &#x20BD;</li>
+      <li class="position">{{item.cv.Position}}</li>
+      <li><select class="selectChoice" title="Выбрать действие">
+        <option> ...</option>
+        <option>Просмотр</option>
+        <option>Редактировать</option>
+        <option>Создать копию</option>
+        <option>Удалить</option>
+      </select>
+      </li>
+    </ul>
+
+
+    <div class="alert alert-primary" *ngIf="item.cv.bInvisible === true && item.bChecked">
+      Вы желаете удалить данное резюме?
+      <button type="button" class="btn btn-outline-danger" (click)="DeleteElement(item)">Да</button>
+      <button type="button" class="btn btn-outline-success" (click)="UnDeleteElement(item)">Нет</button>
+
+    </div>
+
+
+
+    <br>
+    <input class="editCheck" type="checkbox" [(ngModel)]="item.bChecked" title="Check">
+    <button type="button" class="btn-delete" [disabled]="!item.bChecked" (click)="CheckDeleteElement(item)">Удалить</button>
+    <button type="button" class="btn-edit" [disabled]="!item.bChecked" (click)="EditElement(item)">Редактировать</button>
+  </div>
+  <div class="cvlist">
+    <button class="btn-newcv" (click)="newcv()">Новое резюме</button>
+  </div>
+</div>
+
+
+<!--
+
+
+
+<app-header-top></app-header-top>
+
+<div class="wrapper">
+  <div class="top">Мои резюме</div>
+
+  <div class="box" *ngFor="let item of cvList; let i = index;">
+
     <input class="editCheck" type="checkbox" [(ngModel)]="item.bChecked" title="Check">
 
   <label class="tt">  Должность "{{item.cv.Position}}"  </label>
@@ -29,3 +87,5 @@
   <button class="btn-newcv" (click)="newcv()">Новое резюме</button>
 
   </div>
+
+ -->

@@ -1,29 +1,40 @@
+<app-header-top></app-header-top>
 <div class="wrapper">
-  <div class="top">
-    Сообщение
-  </div>
-
-
+  <div class="top">Сообщение</div>
 
   <div class="message" id="message">
     <div class="v-line"></div>
 
+    <label>От</label>
+    <div class="from" *ngIf="_letter != undefined; else UF">
+      {{_letter.UserFrom}}
+    </div>
+    <ng-template #UF></ng-template>
+    <form [formGroup]="form">
+      <div *ngIf="base64textString.length>0;then contentLoadAvatar else contentDefault">условия выполнить невозможно</div>
+      <ng-template #contentLoadAvatar>
+        <img class="logotype" *ngFor="let item of base64textString"  src={{item}} alt="Посмотреть профиль" id="img" (click) = "onProfileClick($event)">
+      </ng-template>
+
+      <ng-template #contentDefault>
+        <img src="/assets/img/usernull.png" class="img-thumbnail" onclick="">
+      </ng-template>
+    </form>
+    <label>Перейти к резюме</label>
+
+
+    <br><br><br><br><br><br><br><br><br><br><br>
+
 
     <label>Дата</label>
     <div   *ngIf="_letter != undefined; else DTC">
-        <p>{{_letter.letter.DateTimeCreate}}</p>
+      <p>{{_letter.letter.DateTimeCreate}}</p>
     </div>
     <ng-template #DTC><p></p></ng-template>
 
     <br>
 
-    <label>От</label>
-    <div   *ngIf="_letter != undefined; else UF">
-          <p>{{_letter.UserFrom}}</p>
-    </div>
-    <ng-template #UF><p></p></ng-template>
 
-     <br>
 
     <label>Кому</label>
     <div   *ngIf="_letter != undefined; else UT">
@@ -36,30 +47,20 @@
 
 
 
-        <label>Тема</label><p>Отклик на вакансию</p> <br>
-        <label>Посмотреть профиль</label>
+    <label>Тема</label><p>Отклик на вакансию</p> <br>
+
 
     <br><br>
 
-    <form [formGroup]="form">
-      <div *ngIf="base64textString.length>0;then contentLoadAvatar else contentDefault">условия выполнить невозможно</div>
-      <ng-template #contentLoadAvatar>
-        <img class="logotype" *ngFor="let item of base64textString"  src={{item}} alt="Посмотреть профиль" id="img" (click) = "onProfileClick($event)">
-      </ng-template>
 
-      <ng-template #contentDefault>
-        <img src="/assets/img/usernull.png" class="img-thumbnail" onclick="">
-      </ng-template>
-    </form>
 
-         <label>Сообщение</label>
+    <label>Сообщение</label>
 
-        <div   *ngIf="_letter != undefined;else LT">
-            <p >{{_letter.letter.letterText}}</p>
-        </div>
-        <ng-template #LT><p></p></ng-template>
-<br>
+    <div   *ngIf="_letter != undefined;else LT">
+      <p >{{_letter.letter.letterText}}</p>
+    </div>
+    <ng-template #LT><p></p></ng-template>
+    <br>
 
   </div>
 </div>
-

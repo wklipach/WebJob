@@ -18,6 +18,7 @@
 .message{
   width: 1170px;
   margin: 0 auto;
+  position: relative;
 }
 .message:hover{
   cursor: pointer;
@@ -25,10 +26,12 @@
 }
 .v-line{
   display: inline-block;
-  position: relative;
-  width:6px;
-  height:auto;
+  position: absolute;
+  width:1px;
+  height: auto;
   background-color: #b8b8b8;
+  margin-left: 250px;
+  margin-top: 1px;
 }
 ul{
   list-style: none;
@@ -52,23 +55,25 @@ li{
   width:100px;
 }
 .from{
+  position: relative;
   width:250px;
+  margin-top:20px;
+  margin-left:35px;
 }
 .subject{
   width:700px;
 }
-
 .logotype{
   border-width: 1px;
   border-color: rgb(188, 188, 188);
   border-style: solid;
   border-radius: 3px;
   background-color: rgb(220, 220, 220);
-  position: absolute;
+  position: relative;
   width: 103px;
   height: 103px;
-  margin-left: 12px;
-  margin-top: 65px;
+  margin-left: 22px;
+  margin-top: 25px;
 }
 label{
   position: absolute;

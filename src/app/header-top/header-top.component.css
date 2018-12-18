@@ -64,8 +64,9 @@ h1:hover{
   color: red;
 
 }
-a{
+a:link{
   text-decoration: none;
+  color: rgb(68, 75, 84);
 }
 a:visited {
   color: rgb(68, 75, 84);
