@@ -8,6 +8,7 @@ import {UserType} from '../../class/UserType';
 import {Router} from '@angular/router';
 import {UserTable} from '../../class/UserTable';
 import {isUndefined} from "util";
+import {Guide} from '../../class/guide';
 
 @Component({
   selector: 'app-accountemployee',
@@ -21,6 +22,7 @@ export class AccountEmployeeComponent implements OnInit {
   form: FormGroup;
   accountEmployeeForm: FormGroup;
   listCity : City[] =[];
+  genderList: Guide[];
   private cveditCityTable: Subscription;
   private subscrDataUserFromId: Subscription;
   private _myDisplayCity: string;
@@ -43,6 +45,7 @@ private loadUser: UserType;
 
 
     this.createForm();
+
   }
 
   createForm() {
@@ -69,8 +72,11 @@ private loadUser: UserType;
         Validators.email
       ], [this.userEmailAsyncValidator.bind(this)]),
       'inputGender': new FormControl('', []),
-
+      'inputBirth': new FormControl('', [])
     });
+
+    this.genderList = this.gs.getGenderList();
+
 
     this.accountEmployeeForm.controls['inputUserName'].disable();
   }
@@ -244,12 +250,40 @@ private loadUser: UserType;
           this.accountEmployeeForm.controls['inputEmail'].setValue(item.EMail);
         }
         if (typeof item.Password !== 'undefined') this._sPassword = item.Password;
+
+
+        if (typeof item.Gender !== 'undefined') {
+          this.accountEmployeeForm.controls['inputGender'].setValue(this.genderList.find((value) => value.id == item.Gender).name);
+        }
+
+        if (typeof item.DateBirth !== 'undefined') {
+          let birthDate = new Date(item.DateBirth);
+          this.accountEmployeeForm.controls['inputBirth'].setValue(birthDate.toISOString().substring(0,10));
+        }
       }
     );
   }
 
 
+  checkinputGender() {
+    const {inputBirth} = this.accountEmployeeForm.value;
+    console.log('inputBirth',inputBirth,Date.parse(inputBirth));
+    let nDate = Date.parse(inputBirth);
+    console.log('nDate',nDate);
+    let date = new Date(nDate);
+    console.log('date',date);
+
+
+
+
+
+  }
+
+
   savecv() {
+
+//    console.log('genderList', this.genderList.find(
+//          (value) => value.id == 1));
 
 
     if (this.accountEmployeeForm.invalid) {
@@ -259,17 +293,26 @@ private loadUser: UserType;
 
 
     var id_city = -1;
-    const {inputUserName, inputName, inputLastName, inputZip, inputAddress, inputPhone, inputCity, inputEmail} = this.accountEmployeeForm.value;
+    const {inputUserName, inputName, inputLastName, inputZip, inputAddress, inputPhone, inputCity, inputEmail, inputGender, inputBirth} = this.accountEmployeeForm.value;
     this.gs.getCityId(inputCity).subscribe( (value: City) => {
+
+
 
       if (typeof value[0].id  !== 'undefined') {id_city = value[0].id;}
       const AddUser  = new UserType(inputUserName, inputEmail, this._sPassword,
-                                   false, id_city, inputZip, inputName, inputLastName, inputAddress, inputPhone);
+                                   false, id_city, inputZip, inputName, inputLastName, inputAddress, inputPhone,
+                                    this.genderList.find((value)=>value.name == inputGender).id,
+       Date.parse(inputBirth));
+
+
       return this.auth.updateDataUserTable(AddUser, this.id_user).subscribe(
         () => {
           this.router.navigate(['/']); }
       );
     });
+
+
+
     }
 
 
