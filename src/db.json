@@ -37,7 +37,7 @@
     {
       "UserName": "Employer_2",
       "EMail": "yal3@mail.ru",
-      "Password": "10",
+      "Password": "22",
       "bEmployer": true,
       "City": -1,
       "Zip": "",
@@ -46,6 +46,19 @@
       "Address": "",
       "Phone": "",
       "id": 3
+    },
+    {
+      "UserName": "Employee_2",
+      "EMail": "yal5@mail.ru",
+      "Password": "11",
+      "bEmployer": false,
+      "City": 1,
+      "Zip": "194292",
+      "Name": "Работяжка",
+      "LastName": "Работов",
+      "Address": "Работская ул 1-1",
+      "Phone": "123-34-56",
+      "id": 4
     }
   ],
   "Vacancy": [
@@ -146,6 +159,59 @@
         "DateTimeCreate": "11/12/2018 02:45"
       },
       "id": 3
+    },
+    {
+      "vacancy": {
+        "bChecked": false,
+        "bInvisible": false,
+        "VacancyShortTitle": "Montaažilukksepp",
+        "VacancyDescription": "• töökoht on 2018. a. valminud kaasaegses tootmishoones, mugavad söögi-, pesemis- ja riietusruumid, firma poolt tööriided, kõik vajalikud isikukaitsevahendid, toetame sportimist, korraldame firmaüritusi, võimaldame lisapuhkusepäevi vastavalt staažile,\n• pakume arvestatavat soodustust oma toodangu ja firmariiete soetamisel\n",
+        "VacancyBigDescription": "• töökoht on 2018. a. valminud kaasaegses tootmishoones, mugavad söögi-, pesemis- ja riietusruumid, firma poolt tööriided, kõik vajalikud isikukaitsevahendid, toetame sportimist, korraldame firmaüritusi, võimaldame lisapuhkusepäevi vastavalt staažile,\n• pakume arvestatavat soodustust oma toodangu ja firmariiete soetamisel,\n• stabiilset tööd (ettevõttel pole maksuvõlgu, mitmete töötajate staaž Respos on 20 -27 aastat, paljude isade eeskujul ka nende pojad meile tööle asunud)\n• sõbralikku kollektiivi, rahulikku ja asjalikku töökeskkonda.",
+        "SalaryFrom": "1000",
+        "Salary": "1000",
+        "Industry": [
+          3,
+          4,
+          7,
+          9,
+          11,
+          13,
+          14,
+          16,
+          18,
+          19,
+          20
+        ],
+        "DisplayPeriod": 1,
+        "City": 1,
+        "Schedule": [
+          1,
+          3,
+          4,
+          5
+        ],
+        "Employment": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "Education": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "Experience": [
+          2,
+          3
+        ],
+        "id_user": 3,
+        "DateTimeCreate": "19/12/2018 03:00"
+      },
+      "id": 4
     }
   ],
   "Correspondence": [
@@ -213,6 +279,32 @@
         "DateTimeCreate": "01/12/2018 21:12"
       },
       "id": 5
+    },
+    {
+      "letter": {
+        "bOld": false,
+        "bReadByRecipient": false,
+        "id_user_from": 2,
+        "id_cv": 1,
+        "id_vc": 4,
+        "id_user_to": 3,
+        "letterText": "• töökoht on 2018. a. valminud kaasaegses tootmishoones, mugavad söögi-, pesemis- ja riietusruumid, firma poolt tööriided, kõik vajalikud isikukaitsevahendid, toetame sportimist, korraldame firmaüritusi, võimaldame lisapuhkusepäevi vastavalt staažile,\n• pakume arvestatavat soodustust oma toodangu ja firmariiete soetamisel,\n• stabiilset tööd (ettevõttel pole maksuvõlgu, mitmete töötajate staaž Respos on 20 -27 aastat, paljude isade eeskujul ka nende pojad meile tööle asunud)\n• sõbralikku kollektiivi, rahulikku ja asjalikku töökeskkonda.",
+        "DateTimeCreate": "19/12/2018 03:02"
+      },
+      "id": 6
+    },
+    {
+      "letter": {
+        "bOld": false,
+        "bReadByRecipient": false,
+        "id_user_from": 2,
+        "id_cv": 1,
+        "id_vc": 2,
+        "id_user_to": 1,
+        "letterText": "Проверка отправки отклика от employee_1  Проверка отправки отклика от employee_1  Проверка отправки отклика от employee_1  Проверка отправки отклика от employee_1  Проверка отправки отклика от employee_1  ",
+        "DateTimeCreate": "19/12/2018 10:23"
+      },
+      "id": 7
     }
   ],
   "UserFavoritesUnit": [
@@ -225,6 +317,11 @@
       "id_user": 2,
       "id_vc": 3,
       "id": 2
+    },
+    {
+      "id_user": 2,
+      "id_vc": 4,
+      "id": 3
     }
   ],
   "City": [
@@ -286,6 +383,36 @@
         ]
       },
       "id": 1
+    },
+    {
+      "cv": {
+        "bChecked": false,
+        "bInvisible": false,
+        "id_user": 2,
+        "SalaryFrom": "600",
+        "Position": "Контробандист",
+        "City": 2,
+        "Industry": [
+          2,
+          3
+        ],
+        "Schedule": [
+          2,
+          3
+        ],
+        "Employment": [
+          1,
+          2
+        ],
+        "Education": [
+          3
+        ],
+        "Experience": [
+          2,
+          3
+        ]
+      },
+      "id": 2
     }
   ],
   "CV_Previous": [
@@ -302,6 +429,20 @@
         }
       ],
       "id": 1
+    },
+    {
+      "previous": [
+        {
+          "id_cv": 2,
+          "dStartDate": "2018-12-08",
+          "dCompletionDate": "2018-12-02",
+          "sCompany": "Отличная компания",
+          "sPreviousPosition": "Разнорабочий",
+          "sInputPositionDescription": " Разнорабочий Разнорабочий Разнорабочий Разнорабочий Разнорабочий Разнорабочий Разнорабочий Разнорабочий Разнорабочий Разнорабочий Разнорабочий Разнорабочий Разнорабочий Разнорабочий Разнорабочий Разнорабочий Разнорабочий Разнорабочий Разнорабочий Разнорабочий Разнорабочий Разнорабочий Разнорабочий Разнорабочий",
+          "sInputSkillsAbilities": " Разнорабочий Разнорабочий Разнорабочий Разнорабочий Разнорабочий Разнорабочий Разнорабочий Разнорабочий Разнорабочий Разнорабочий Разнорабочий Разнорабочий"
+        }
+      ],
+      "id": 2
     }
   ]
 }

@@ -1,5 +1,5 @@
 .wrapper{
-  font-family: "ProximaNovaRg";
+  font-family: ProximaNovaRg,sans-serif;
   font-size: 16px;
   width: 100%;
   height: auto;
@@ -11,7 +11,7 @@
   height: 36px;
   margin: 0 auto;
   font-size: 22px;
-  font-family: "Proxima Nova";
+  font-family: Proxima Nova,sans-serif;
   text-align: left;
   padding-bottom: 15px;
 }
@@ -36,10 +36,10 @@ ul{
 li{
   position: relative;
   display: inline-block;
-  font-family: "Proxima Nova";
+  font-family: Proxima Nova,sans-serif;
 }
 .head-line{
-  font-family: "Proxima Nova";
+  font-family: Proxima Nova,sans-serif;
   background-color: #DFDFDF;
 }
 .botom-line{
@@ -47,8 +47,7 @@ li{
   height: auto;
   border-color: #b7b7b7;
   font-size: 16px;
-  font-family: "Proxima Nova";
-
+  font-family: Proxima Nova,sans-serif;
 }
 .date{
   width:90px;
@@ -72,6 +71,7 @@ li{
   border-style: solid;
   border-radius: 3px;
   background-color: rgb(255, 255, 255);
+  font-family: Proxima Nova,sans-serif;
   position: absolute;
   width: 228px;
   height: 33px;
