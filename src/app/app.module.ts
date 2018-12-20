@@ -55,6 +55,7 @@ import { PageCountComponent } from './page-count/page-count.component';
 import {NgbModule, NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 import { AboutComponent } from './about/about.component';
 import { FavoritesComponent } from './account/favorites/favorites.component';
+import { CvViewComponent } from './content/cv/cv-view/cv-view.component';
 
 
 
@@ -91,6 +92,7 @@ const appRoutes: Routes = [
   {path: 'page-count', component: PageCountComponent},
   {path: 'about', component: AboutComponent},
   {path: 'favorites', component: FavoritesComponent},
+  {path: 'cv-view', component: CvViewComponent},
   {path: '**', component: NotFoundComponent }
 ];
 
@@ -138,8 +140,8 @@ const appRoutes: Routes = [
     PageCountComponent,
     AboutComponent,
     FavoritesComponent,
+    CvViewComponent,
     NotFoundComponent
-
    ],
   entryComponents: [
     CvPreviousComponent

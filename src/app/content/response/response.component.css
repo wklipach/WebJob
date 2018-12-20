@@ -1,0 +1,121 @@
+.wrapper{
+  font-family: ProximaNovaRg,sans-serif;
+  font-size: 16px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  color: rgb(68, 75, 84);
+}
+.top{
+  width: 1170px;
+  height: 36px;
+  margin: 0 auto;
+  font-size: 22px;
+  font-family: Proxima Nova,sans-serif;
+  text-align: left;
+  padding-bottom: 15px;
+}
+.box{
+  width: 1170px;
+  margin: 0 auto;
+}
+.cvlist{
+  width: 1170px;
+  margin: 0 auto;
+}
+.v-line{
+  display: inline-block;
+  position: relative;
+  width:6px;
+  height:auto;
+  background-color: #b8b8b8;
+}
+ul{
+  list-style: none;
+  display: inline-block;
+}
+li{
+  position: relative;
+  display: inline-block;
+  font-family: Proxima Nova,sans-serif;
+}
+.head-line{
+  display: inline-block;
+  font-family: Proxima Nova,sans-serif;
+  background-color: #DFDFDF;
+  margin-left: 30px;
+}
+.botom-line{
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  border-color: #b7b7b7;
+  font-size: 16px;
+  font-family: Proxima Nova,sans-serif;
+  margin-left: 30px;
+  margin-top: -1px;
+}
+.date{
+  width:90px;
+}
+.city{
+  width:120px;
+}
+.position{
+  width:570px;
+}
+.salary{
+  width:90px;
+}
+.choice{
+  width: 230px;
+}
+.selectChoice{
+  border-width: 1px;
+  border-color: rgb(68, 75, 84);
+  text-align: left;
+  border-style: solid;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  width: 228px;
+  height: 33px;
+  margin-top: -20px;
+  margin-left: 20px;
+}
+.btn-newcv{
+  display: inline-block;
+  position: absolute;
+  border-radius: 3px;
+  background-color: #3366ff;
+  width: 155px;
+  height: 50px;
+  color: rgb(255, 255, 255);
+  border-color: #054086;
+  border-width: 1px;
+  border-style: solid;
+  margin-top: 1%;
+}
+.btn-newcv:hover{
+  background-color: #0066cc;
+  font-weight:600;
+}
+.btn-newcv:active{
+  border-color: #3399ff;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 3px;
+  font-weight: 500;
+}
+.radio-place{
+  position: absolute;
+  display: inline-block;
+  width:30px;
+  height:30px;
+  margin-top:30px;
+}
+.comment{
+  display: block;
+  width: 935px;
+  margin-top: 13px;
+}
