@@ -48,6 +48,21 @@
       "Address": "",
       "Phone": "",
       "id": 3
+    },
+    {
+      "UserName": "employee_2",
+      "EMail": "yal6@mail.ru",
+      "Password": "11",
+      "bEmployer": false,
+      "City": -1,
+      "Zip": "",
+      "Name": "",
+      "LastName": "",
+      "Address": "",
+      "Phone": "",
+      "Gender": 0,
+      "DateBirth": 0,
+      "id": 4
     }
   ],
   "Vacancy": [
@@ -216,6 +231,19 @@
       },
       "id": 5,
       "bOld": true
+    },
+    {
+      "letter": {
+        "bOld": true,
+        "bReadByRecipient": false,
+        "id_user_from": 4,
+        "id_cv": 2,
+        "id_vc": 2,
+        "id_user_to": 1,
+        "letterText": "Отправка отклика 20 декабря 2018",
+        "DateTimeCreate": "20/12/2018 02:01"
+      },
+      "id": 6
     }
   ],
   "UserFavoritesUnit": [
@@ -289,6 +317,38 @@
         ]
       },
       "id": 1
+    },
+    {
+      "cv": {
+        "bChecked": false,
+        "bInvisible": false,
+        "id_user": 4,
+        "SalaryFrom": "600",
+        "Position": "Бездельник высшего класса",
+        "City": 4,
+        "Industry": [
+          4,
+          10,
+          12,
+          27
+        ],
+        "Schedule": [
+          2,
+          3
+        ],
+        "Employment": [
+          3
+        ],
+        "Education": [
+          2,
+          3
+        ],
+        "Experience": [
+          2,
+          3
+        ]
+      },
+      "id": 2
     }
   ],
   "CV_Previous": [
@@ -305,6 +365,10 @@
         }
       ],
       "id": 1
+    },
+    {
+      "previous": [],
+      "id": 2
     }
   ]
 }
