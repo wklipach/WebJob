@@ -56,6 +56,42 @@ export class CvListComponent implements OnInit {
 
 }
 
+  brokerSelected ($event) {
+    switch ($event.target.value) {
+      // 1: '';
+      // 2: '';
+      case 1: {
+        console.log('просмотр');
+        break;
+      }
+      case 2: {
+        console.log('Редактировать');
+        break;
+      }
+      case 3: {
+        //statements;
+        console.log('Создать копию');
+        break;
+      }
+      case 4: {
+        console.log('Удалить');
+        break;
+      }
+      default: {
+        break;
+      }
+    }
+}
+
+  OpenCV() {
+    console.log('просмотр резюме');
+  }
+
+  EditCV() {
+    console.log('редактирование резюме');
+  }
+
+
   ngOnDestroy() {
     if (typeof  this.cvlistGetCvList !== 'undefined') {
       this.cvlistGetCvList.unsubscribe();

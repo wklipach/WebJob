@@ -21,12 +21,12 @@
       <li class="city">{{item.CityName}}</li>
       <li class="salary">{{item.cv.SalaryFrom}} &#x20BD;</li>
       <li class="position">{{item.cv.Position}}</li>
-      <li><select class="selectChoice" title="Выбрать действие">
-        <option> ...</option>
-        <option>Просмотр</option>
-        <option>Редактировать</option>
-        <option>Создать копию</option>
-        <option>Удалить</option>
+      <li><select class="selectChoice" title="Выбрать действие"  (change)= "brokerSelected($event)">
+        <option>...</option>
+        <option [value]="1">Просмотр</option>
+        <option [value]="2">Редактировать</option>
+        <option [value]="3">Создать копию</option>
+        <option [value]="4">Удалить</option>
       </select>
       </li>
     </ul>
@@ -39,13 +39,18 @@
 
     </div>
 
-
-
     <br>
     <input class="editCheck" type="checkbox" [(ngModel)]="item.bChecked" title="Check">
     <button type="button" class="btn-delete" [disabled]="!item.bChecked" (click)="CheckDeleteElement(item)">Удалить</button>
     <button type="button" class="btn-edit" [disabled]="!item.bChecked" (click)="EditElement(item)">Редактировать</button>
+
+
+
   </div>
+
+
+
+
   <div class="cvlist">
     <button class="btn-newcv" (click)="newcv()">Новое резюме</button>
   </div>
