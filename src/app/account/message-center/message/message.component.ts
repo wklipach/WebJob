@@ -76,10 +76,8 @@ export class MessageComponent implements OnInit {
           let anyLetter: any = oLetter;
           this.parseLetter(anyLetter);
         } else {
-            console.log('не имеем oLetter!!!!!');
             if (window.localStorage.getItem('_letterid') !== null) {
-                console.log('имеем код oLetter!!!!!', window.localStorage.getItem('_letterid'));
-                let lid = parseInt(window.localStorage.getItem('_letterid'));
+              let lid = parseInt(window.localStorage.getItem('_letterid'));
               this.httpLetter.getAnyLetter(lid).subscribe(curLetter => {
                   if (typeof curLetter[0] !== 'undefined') {
                     let anyLetter: any = curLetter[0];

@@ -58,4 +58,6 @@ li{
   width:700px;
 }
 
-
+.boldletter {
+  font-weight: bold;
+}

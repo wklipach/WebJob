@@ -15,7 +15,7 @@ import {FormGroup} from '@angular/forms';
 export class MessagesComponent implements OnInit {
 
   private bConnected = false;
-  private id_user = -1;
+  protected id_user = -1;
   private bEmployer = false;
   protected myDataLetter: any;
   private sbscTableLetter: Subscription;
