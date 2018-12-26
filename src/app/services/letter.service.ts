@@ -31,13 +31,18 @@ export class LetterService {
 //    return this.http.get(sUrl);
   }
 
-  public setLetter(oLetter: Letter): Observable<boolean> {
+  //помечаем письмо как прочитанное
+  public setLetter(oLetter: Letter) {
     this._letter = oLetter;
-    return of (true);
+    let postObj: any = this._letter;
+    postObj.letter.bOld = true;
+    let sUrl = 'http://localhost:3000/Correspondence/'+this._letter.id;
+    return this.http.patch(sUrl, postObj);
   }
 
+
   public getLetter(): Observable<Letter> {
-    return of (this._letter);
+     return of (this._letter);
   }
 
   // получение ФИО данного юзера От кого и кому (два объекта на выходе)

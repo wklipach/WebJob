@@ -35,17 +35,20 @@
       <label class="email">Email</label>
       <input type="text" class="inputEmail" id="inputEmail" formControlName="inputEmail" placeholder="введите Email">
 
-      <!-- начало обработки почтовых ошибок -->
 
       <label class="gender">Выбрать пол</label>
       <select class="inputGender" id="inputGender" formControlName="inputGender"  title="Выбрать пол">
-        <option>Женский</option>
-        <option>Мужской</option>
+        <option  *ngFor="let gl of genderList" [value]="gl.name">
+          {{gl.name}}
+        </option>
       </select>
 
-      <label class="birth" for="inputBirth">Дата рождения</label>
-      <input class="inputBirth" type="date" id="inputBirth" name="inputBirth">
 
+      <label class="birth" for="inputBirth">Дата рождения</label>
+      <input  class="inputBirth" type="date" id="inputBirth" name="inputBirth" formControlName="inputBirth">
+
+
+      <!-- начало обработки почтовых ошибок -->
 
       <div *ngIf="accountEmployeeForm.controls['inputEmail'].dirty">
 
@@ -140,6 +143,9 @@
 
   </div>
 </div>
+
+
+<button (click)="checkinputGender()">Дата</button>
 
 <!--
 

@@ -24,8 +24,6 @@
     <label>Требования</label>
     <label>Условия</label>
 
-
-
     <label>Подробности</label>
 
     <div *ngIf="this.descrDataVacancy" class="descVac">{{ this.descrDataVacancy['vacancy'].VacancyBigDescription}}</div>
@@ -34,27 +32,19 @@
 
     <label>Отрасль</label>
 
-
     <div *ngFor="let sI of sIndusrtry" class="descVac"> {{sI}}</div>
-
 
     <label class="labelDescr">График работы</label>
 
-
     <div *ngFor="let sS of sSchedule" class="descVac"> {{sS}}</div>
-
 
     <label class="labelDescr">Занятость</label>
 
-
     <div *ngFor="let sEmp of sEmployment" class="descVac"> {{sEmp}}</div>
-
 
     <label class="labelDescr">Образование</label>
 
-
     <div *ngFor="let sEd of sEducation" class="descVac"> {{sEd}}</div>
-
 
     <label class="labelDescr">Опыт работы</label>
 

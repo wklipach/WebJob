@@ -1,52 +1,4 @@
-<app-header-top></app-header-top>
-
-<div class="wrapper">
-  <div class="top">Отклик на вакансию</div>
-
-  <div class="box" *ngFor="let item of cvList; let i = index;">
-    <div class="radio-place">
-    <input type="radio" name="cv" title="cv" [(ngModel)]="modelResumeFromCheck.resumeFromCheck" [value] = "item.id">
-    </div>
-
-    <ul class="head-line">
-      <li></li>
-      <li class="date">Дата</li>
-      <li class="city">Город</li>
-      <li class="salary">Зарплата</li>
-      <li class="position">Должность</li>
-    </ul>
-
-    <ul class="botom-line">
-      <li class="date">22.10.2018</li>
-      <li class="city">{{item.CityName}}</li>
-      <li class="salary">{{item.cv.SalaryFrom}} &#x20BD;</li>
-      <li class="position">{{item.cv.Position}}</li>
-    </ul>
-
-    <br>
-
-  </div>
-
-  <div class="cvlist">
-    <div *ngIf="bErrorResumeCheck">Вы не выбрали резюме, прикрепляемое к отклику</div>
-    <div *ngIf="bErrorResumeLetter">Вы не внесли текст сообщения</div>
-
-    <div [formGroup]="formResponse">
-
-      <p>Комментарий к отклику<Br>
-        <textarea formControlName="textCommentValue" name="comment" cols="100" rows="6"></textarea></p>
-      <button class="btn-newcv" (click)="MoveResult()">Отправить</button>
-    </div>
-
-  </div>
-</div>
-
-
 <!--
-
-
-
-
 <h3>Отправка отклика на вакансию</h3>
 
 <div class="row" *ngFor="let item of cvList; let i = index;">
@@ -76,3 +28,159 @@
 </div>
 
 -->
+
+
+<app-header-top></app-header-top>
+
+
+
+<div class="wrapper">
+
+  <div class="top">Отклик на вакансию</div>
+
+
+
+  <div class="box" *ngFor="let item of cvList; let i = index;">
+
+    <div class="radio-place">
+
+      <input type="radio" name="cv" title="cv" [(ngModel)]="modelResumeFromCheck.resumeFromCheck" [value] = "item.id">
+
+    </div>
+
+
+
+    <ul class="head-line">
+
+      <li></li>
+
+      <li class="date">Дата</li>
+
+      <li class="city">Город</li>
+
+      <li class="salary">Зарплата</li>
+
+      <li class="position">Должность</li>
+
+    </ul>
+
+
+
+    <ul class="botom-line">
+
+      <li class="date">22.10.2018</li>
+
+      <li class="city">{{item.CityName}}</li>
+
+      <li class="salary">{{item.cv.SalaryFrom}} &#x20BD;</li>
+
+      <li class="position">{{item.cv.Position}}</li>
+
+    </ul>
+
+
+
+    <br>
+
+
+
+  </div>
+
+
+
+  <div class="cvlist">
+
+    <div *ngIf="bErrorResumeCheck">Вы не выбрали резюме, прикрепляемое к отклику</div>
+
+    <div *ngIf="bErrorResumeLetter">Вы не внесли текст сообщения</div>
+
+
+
+    <div [formGroup]="formResponse">
+
+
+
+     <textarea class="comment" formControlName="textCommentValue" name="comment" cols="100" rows="6" placeholder="Ваш комментарий к отклику"></textarea>
+
+      <button class="btn-newcv" (click)="MoveResult()">Отправить</button>
+
+    </div>
+
+
+
+  </div>
+
+</div>
+
+
+
+
+
+<!--
+
+
+
+
+
+
+
+
+
+<h3>Отправка отклика на вакансию</h3>
+
+
+
+<div class="row" *ngFor="let item of cvList; let i = index;">
+
+
+
+
+
+  <input type="radio" name="cv" [(ngModel)]="modelResumeFromCheck.resumeFromCheck" [value] = "item.id">
+
+
+
+    <div class="col-2 tt">
+
+      Должность "{{item.cv.Position}}"
+
+    </div>
+
+  <div class="col-2 tt">
+
+    Зарплата "{{item.cv.SalaryFrom}}"
+
+  </div>
+
+  <div class="col-2 tt">
+
+    Город "{{item.CityName}}"
+
+  </div>
+
+</div>
+
+<br>
+
+<div *ngIf="bErrorResumeCheck">Вы не выбрали резюме, прикрепляемое к отклику</div>
+
+<div *ngIf="bErrorResumeLetter">Вы не внесли текст сообщения</div>
+
+
+
+<div [formGroup]="formResponse">
+
+
+
+<p>Комментарий к отклику<Br>
+
+  <textarea formControlName="textCommentValue" name="comment" cols="100" rows="6"></textarea></p>
+
+<button  (click)="MoveResult()">Отправить</button>
+
+</div>
+
+
+
+-->
+

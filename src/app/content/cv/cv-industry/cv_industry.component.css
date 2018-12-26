@@ -1,11 +1,29 @@
-.top{
+.wrapper{
   position: relative;
-  margin-top: 21px;
-  margin-left: 15px;
+  font-family: "ProximaNovaRg";
+  font-size: 1em;
+  width: 100%;
+   margin: 0 auto;
+  padding-right: 0;
+  padding-left: 0;
+}
+.top{
+  width: 1170px;
+  height: 42px;
+  margin: 0 auto;
+  font-size: 1.2em;
+  font-family: "Proxima Nova";
+}
+label{
+
+  font-size: 1.1em;
+  font-family: "Proxima Nova";
+  color: rgb(2, 98, 210);
+  text-align: left;
 }
 .box{
   width: 1170px;
-  margin: 0 auto;
+  margin: 10px auto;
   position: relative;
 }
 span{
@@ -14,14 +32,11 @@ span{
   text-align: left;
   padding-left: 0.2%;
 }
-
-.check-input{
+.checkInput{
   background-color: #F74933;
   width: 20px;
   height: 20px;
-
 }
-
-.check-input:hover{
+.checkInput:hover{
   cursor: pointer;
 }

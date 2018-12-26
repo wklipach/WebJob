@@ -1,5 +1,12 @@
 import {Guide} from './guide';
 
+export const GenderList: Guide[] = [
+  { id: 1, order: 1, name: '' },
+  { id: 2, order: 2, name: 'Мужской' },
+  { id: 3, order: 3, name: 'Женский' }
+];
+
+
 export const IndustryList: Guide[] = [
   { id: 2, order: 2, name: 'Гостиницы, рестораны, общепит, кейтеринг' },
   { id: 1, order: 1, name: 'Автомобильный бизнес' },

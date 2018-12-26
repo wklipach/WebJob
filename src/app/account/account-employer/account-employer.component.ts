@@ -10,6 +10,7 @@ import {unescape} from 'querystring';
 import {DomSanitizer} from '@angular/platform-browser';
 import {UserTable} from '../../class/UserTable';
 import {isUndefined} from "util";
+import {Guide} from '../../class/guide';
 
 @Component({
   selector: 'app-accountemployer',
@@ -22,7 +23,7 @@ export class AccountEmployerComponent implements OnInit {
 
 
   base64textString = [];
-
+  genderList: Guide[];
   accountEmployerForm: FormGroup;
   listCity: City[] = [];
   private cveditCityTable: Subscription;
@@ -139,8 +140,13 @@ createAccountEmployerForm() {
       Validators.required,
       Validators.email
     ], [this.userEmailAsyncValidator.bind(this)]
-    )
+    ),
+    'inputGender': new FormControl('', []),
+    'inputBirth': new FormControl('', [])
+
   });
+
+  this.genderList = this.gs.getGenderList();
 
   this.accountEmployerForm.controls['inputUserName'].disable();
 }
@@ -207,8 +213,18 @@ createAccountEmployerForm() {
           this._sEmail = item.EMail;
           this.accountEmployerForm.controls['inputEmail'].setValue(item.EMail);
         }
-        if (typeof item.Password !== 'undefined') this._sPassword =
-          item.Password;
+        if (typeof item.Password !== 'undefined') this._sPassword =item.Password;
+
+        if (typeof item.Gender !== 'undefined') {
+          this.accountEmployerForm.controls['inputGender'].setValue(this.genderList.find((value) => value.id == item.Gender).name);
+        }
+
+        if (typeof item.DateBirth !== 'undefined') {
+          let birthDate = new Date(item.DateBirth);
+          this.accountEmployerForm.controls['inputBirth'].setValue(birthDate.toISOString().substring(0,10));
+        }
+
+
       }
 
     );
@@ -242,7 +258,7 @@ createAccountEmployerForm() {
     var id_city = -1;
 
     const {inputUserName, inputName, inputLastName, inputZip, inputAddress,
-      inputPhone, inputCity, inputEmail} = this.accountEmployerForm.value;
+      inputPhone, inputCity, inputEmail, inputGender, inputBirth} = this.accountEmployerForm.value;
 
 
     this.gs.getCityId(inputCity).subscribe( (value: City) => {
@@ -253,7 +269,9 @@ createAccountEmployerForm() {
         this._sPassword,
 
         true, id_city, inputZip, inputName, inputLastName, inputAddress,
-        inputPhone);
+        inputPhone,                                     this.genderList.find((value)=>value.name == inputGender).id,
+        Date.parse(inputBirth)
+    );
 
       return this.auth.updateDataUserTable(AddUser, this.id_user).subscribe(
 

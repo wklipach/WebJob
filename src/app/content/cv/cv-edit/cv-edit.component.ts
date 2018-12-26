@@ -60,6 +60,7 @@ export class CvEditComponent implements OnInit, OnDestroy {
       'inputSalaryFrom': new FormControl('',[]),
       'position': new FormControl('',[]),
       'inputCity' : new FormControl('',[]),
+      'industry' : new FormControl('',[])
     });
 
   }

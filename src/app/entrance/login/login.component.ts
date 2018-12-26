@@ -58,9 +58,6 @@ export class LoginComponent implements OnInit {
 
   submit() {
 
-
-    console.log('SUBMIT');
-
     const sUserOrEmail = this.loginForm.controls['nameOrEmail'].value;
     const sPassword = this.loginForm.controls['password'].value;
 
@@ -80,7 +77,6 @@ export class LoginComponent implements OnInit {
           window.localStorage.setItem('id_user', JSON.stringify(curRes.id_user));
           window.localStorage.setItem('bEmployer', JSON.stringify(curRes.bEmployer));
 
-          console.log('НАЖАЛИ ЛОГИН', curRes.uName);
           this.showSucc = true;
           this.showErr = false;
           this.router.navigate(['/home']);

@@ -71,7 +71,7 @@ export class RegisterEmployerComponent implements OnInit {
     }
 
 
-    const AddUser  = new UserType(userName,userEmail,userPassword1,true, -1,'','','','','');
+    const AddUser  = new UserType(userName,userEmail,userPassword1,true, -1,'','','','','',0, 0);
 
     console.log(AddUser);
 

@@ -72,7 +72,7 @@ export class RegisterEmployeeComponent implements OnInit {
       return -1;
     }
 
-    const AddUser  = new UserType(userName,userEmail,userPassword1,false, -1,'','','','','');
+    const AddUser  = new UserType(userName,userEmail,userPassword1,false, -1,'','','','','', 0,0);
 
     console.log(AddUser);
 

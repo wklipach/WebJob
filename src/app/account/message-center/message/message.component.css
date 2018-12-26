@@ -15,7 +15,7 @@
   text-align: left;
   padding-bottom: 15px;
 }
-.box-row{
+.box{
   position: relative;
   width: 1170px;
   height:500px;
@@ -32,7 +32,7 @@
   display: inline-block;
   width: 900px;
   height: 300px;
- }
+}
 .message{
   width: 1170px;
   margin: 0 auto;
