@@ -349,6 +349,88 @@
         ]
       },
       "id": 2
+    },
+    {
+      "cv": {
+        "bChecked": false,
+        "bInvisible": true,
+        "id_user": 2,
+        "SalaryFrom": "1500",
+        "Position": "Шахтер",
+        "City": 1,
+        "Industry": [
+          11
+        ],
+        "Schedule": [
+          1
+        ],
+        "Employment": [
+          1,
+          2
+        ],
+        "Education": [
+          3
+        ],
+        "Experience": [
+          3
+        ]
+      },
+      "id": 3
+    },
+    {
+      "cv": {
+        "bChecked": false,
+        "bInvisible": true,
+        "id_user": 2,
+        "SalaryFrom": "1500",
+        "Position": "Шахтер",
+        "City": 1,
+        "Industry": [
+          11
+        ],
+        "Schedule": [
+          1
+        ],
+        "Employment": [
+          1,
+          2
+        ],
+        "Education": [
+          3
+        ],
+        "Experience": [
+          3
+        ]
+      },
+      "id": 4
+    },
+    {
+      "cv": {
+        "bChecked": false,
+        "bInvisible": false,
+        "id_user": 2,
+        "SalaryFrom": "2500",
+        "Position": "Шахтер X",
+        "City": 2,
+        "Industry": [
+          1,
+          11
+        ],
+        "Schedule": [
+          1
+        ],
+        "Employment": [
+          1,
+          2
+        ],
+        "Education": [
+          3
+        ],
+        "Experience": [
+          3
+        ]
+      },
+      "id": 5
     }
   ],
   "CV_Previous": [
@@ -369,6 +451,18 @@
     {
       "previous": [],
       "id": 2
+    },
+    {
+      "previous": [],
+      "id": 3
+    },
+    {
+      "previous": [],
+      "id": 4
+    },
+    {
+      "previous": [],
+      "id": 5
     }
   ]
 }

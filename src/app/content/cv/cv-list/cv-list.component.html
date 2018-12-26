@@ -21,28 +21,35 @@
       <li class="city">{{item.CityName}}</li>
       <li class="salary">{{item.cv.SalaryFrom}} &#x20BD;</li>
       <li class="position">{{item.cv.Position}}</li>
-      <li><select class="selectChoice" title="Выбрать действие"  (change)= "brokerSelected($event)">
-        <option>...</option>
-        <option [value]="1">Просмотр</option>
-        <option [value]="2">Редактировать</option>
-        <option [value]="3">Создать копию</option>
-        <option [value]="4">Удалить</option>
+      <li><select class="selectChoice" title="Выбрать действие"
+                  (change)= "brokerSelected($event,item, i)"
+                  [(ngModel)]="contactMethods[i].id">>
+
+        <option [value]="0" [selected]="contactMethods[i].id === 0">...</option>
+        <option [value]="1" [selected]="contactMethods[i].id === 1">Просмотр</option>
+        <option [value]="2" [selected]="contactMethods[i].id === 2">Редактировать</option>
+        <option [value]="3" [selected]="contactMethods[i].id === 3">Создать копию</option>
+        <option [value]="4" [selected]="contactMethods[i].id === 4">Удалить</option>
       </select>
       </li>
     </ul>
 
 
-    <div class="alert alert-primary" *ngIf="item.cv.bInvisible === true && item.bChecked">
+    <div class="alert alert-primary" *ngIf="contactMethods[i].bDelete === true">
       Вы желаете удалить данное резюме?
-      <button type="button" class="btn btn-outline-danger" (click)="DeleteElement(item)">Да</button>
-      <button type="button" class="btn btn-outline-success" (click)="UnDeleteElement(item)">Нет</button>
+      <button type="button" class="btn btn-outline-danger" (click)="DeleteElement(item,i)">Да</button>
+      <button type="button" class="btn btn-outline-success" (click)="UnDeleteElement(item,i)">Нет</button>
 
     </div>
 
     <br>
-    <input class="editCheck" type="checkbox" [(ngModel)]="item.bChecked" title="Check">
-    <button type="button" class="btn-delete" [disabled]="!item.bChecked" (click)="CheckDeleteElement(item)">Удалить</button>
-    <button type="button" class="btn-edit" [disabled]="!item.bChecked" (click)="EditElement(item)">Редактировать</button>
+
+
+    <!--
+        <input class="editCheck" type="checkbox" [(ngModel)]="item.bChecked" title="Check">
+        <button type="button" class="btn-delete" [disabled]="!item.bChecked" (click)="CheckDeleteElement(item)">Удалить</button>
+        <button type="button" class="btn-edit" [disabled]="!item.bChecked" (click)="EditElement(item)">Редактировать</button>
+    -->
 
 
 
