@@ -43,17 +43,21 @@ export class VacancyEditComponent implements OnInit {
 
     this.editVacancyForm  = new FormGroup({
       'inputVacancyShortTitle': new FormControl('',
-        [Validators.required, Validators.maxLength(30)]),
+        [Validators.required, Validators.maxLength(90)]),
       'inputVacancyDescription': new FormControl('',
-        [Validators.required, Validators.maxLength(400)]),
-      'inputVacancyBigDescription': new FormControl('',
-        [Validators.required, Validators.maxLength(2000)]),
+        [Validators.required, Validators.maxLength(1000)]),
+      'inputConditions': new FormControl('',
+        [Validators.required, Validators.maxLength(1000)]),
       'inputSalaryFrom' : new FormControl('',
         [Validators.required, Validators.pattern(/[0-9]/)]),
       'inputSalary' : new FormControl('',
         [Validators.required, Validators.pattern(/[0-9]/)]),
       'displayPeriod' : new FormControl( this.myDisplayPeriod,
         []),
+      'inputjobFunction': new FormControl('',
+        [Validators.required, Validators.maxLength(3000)]),
+      'inputVacancyRequirements': new FormControl('',
+        [Validators.required, Validators.maxLength(3000)]),
       'inputCity' : new FormControl('',[])
     });
 
@@ -104,9 +108,19 @@ loadCurrentVacancy(item: any) {
     }
 
     //полное описание вакансии
-    if (typeof item.VacancyBigDescription !== 'undefined') {
-      this.editVacancyForm.controls['inputVacancyBigDescription'].setValue(item.VacancyBigDescription);
+    if (typeof item.Conditions !== 'undefined') {
+      this.editVacancyForm.controls['inputConditions'].setValue(item.Conditions);
     }
+
+    // должностные обязанности
+    if (typeof item.JobFunction !== 'undefined') {
+      this.editVacancyForm.controls['inputjobFunction'].setValue(item.JobFunction);
+    }
+
+   // Требования
+   if (typeof item.VacancyRequirements !== 'undefined') {
+     this.editVacancyForm.controls['inputVacancyRequirements'].setValue(item.VacancyRequirements);
+   }
 
     // устанавливаем город
     this.is.getCityTable().subscribe(
@@ -206,9 +220,16 @@ loadCurrentVacancy(item: any) {
 
     MyVacancy.VacancyShortTitle = this.editVacancyForm.controls['inputVacancyShortTitle'].value;
     MyVacancy.VacancyDescription = this.editVacancyForm.controls['inputVacancyDescription'].value;
-    MyVacancy.VacancyBigDescription = this.editVacancyForm.controls['inputVacancyBigDescription'].value;
+    MyVacancy.Conditions = this.editVacancyForm.controls['inputConditions'].value;
     MyVacancy.SalaryFrom = this.editVacancyForm.controls['inputSalaryFrom'].value;
     MyVacancy.Salary = this.editVacancyForm.controls['inputSalary'].value;
+    // должностные обязанности
+    MyVacancy.JobFunction = this.editVacancyForm.controls['inputjobFunction'].value;
+    // Требования
+    MyVacancy.VacancyRequirements = this.editVacancyForm.controls['inputVacancyRequirements'].value;
+
+
+
 
     MyVacancy.Industry = MyIndustry;
     MyVacancy.DisplayPeriod = period.id;

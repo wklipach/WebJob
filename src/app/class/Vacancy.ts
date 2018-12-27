@@ -2,7 +2,8 @@
 export class Vacancy{
   VacancyShortTitle: string;
   VacancyDescription: string;
-  VacancyBigDescription: string;
+  //условия (текстовое поле)
+  Conditions: string;
   SalaryFrom: number;
   Salary: number;
   // отрасль
@@ -26,6 +27,10 @@ export class Vacancy{
   bChecked : boolean = false;
   // признак удаленного резюме
   bInvisible : boolean = false;
+  // должностные обязанности
+  JobFunction: string;
+  // Требования
+  VacancyRequirements: string;
 
 }
 

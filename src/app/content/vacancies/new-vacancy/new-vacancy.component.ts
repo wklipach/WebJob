@@ -40,20 +40,24 @@ export class NewVacancyComponent implements OnInit {
 
     this.newVacancyForm  = new FormGroup({
     'inputVacancyShortTitle': new FormControl('',
-        [Validators.required, Validators.maxLength(30)]),
+        [Validators.required, Validators.maxLength(90)]),
     'inputVacancyDescription': new FormControl('',
-      [Validators.required, Validators.maxLength(400)]),
-    'inputVacancyBigDescription': new FormControl('',
-      [Validators.required, Validators.maxLength(2000)]),
+      [Validators.required, Validators.maxLength(1000)]),
+    'inputConditions': new FormControl('',
+      [Validators.required, Validators.maxLength(1000)]),
      'inputSalaryFrom' : new FormControl('',
        [Validators.required, Validators.pattern(/[0-9]/)]),
       'inputSalary' : new FormControl('',
         [Validators.required, Validators.pattern(/[0-9]/)]),
       'displayPeriod' : new FormControl( this.myDisplayPeriod,
         []),
+      'inputjobFunction': new FormControl('',
+        [Validators.required, Validators.maxLength(3000)]),
+      'inputVacancyRequirements': new FormControl('',
+        [Validators.required, Validators.maxLength(3000)]),
       'inputCity' : new FormControl('',[])
-    });
 
+    });
 
 /*
     this.listExperience = is.getExperienceList();
@@ -157,9 +161,15 @@ export class NewVacancyComponent implements OnInit {
 
     MyVacancy.VacancyShortTitle = this.newVacancyForm.controls['inputVacancyShortTitle'].value;
     MyVacancy.VacancyDescription = this.newVacancyForm.controls['inputVacancyDescription'].value;
-    MyVacancy.VacancyBigDescription = this.newVacancyForm.controls['inputVacancyBigDescription'].value;
+    MyVacancy.Conditions = this.newVacancyForm.controls['inputConditions'].value;
     MyVacancy.SalaryFrom = this.newVacancyForm.controls['inputSalaryFrom'].value;
     MyVacancy.Salary = this.newVacancyForm.controls['inputSalary'].value;
+
+    // должностные обязанности
+    MyVacancy.JobFunction = this.newVacancyForm.controls['inputjobFunction'].value;
+
+    // Требования
+    MyVacancy.VacancyRequirements = this.newVacancyForm.controls['inputVacancyRequirements'].value;
 
     MyVacancy.Industry = MyIndustry;
     MyVacancy.DisplayPeriod = period.id;

@@ -41,7 +41,7 @@ label{
   margin-left: 15px;
   margin-top: 11px;
 }
-.vacancyDescription{
+.vacancyConditions{
   display: block;
   width: 90%;
   margin-left: 15px;
@@ -105,7 +105,7 @@ input, textarea, select{
   margin-left: 15px;
   margin-top: 11px;
 }
-.inputVacancyBigDescription{
+.Conditions{
   display: block;
   width: 828px;
   height: 243px;
