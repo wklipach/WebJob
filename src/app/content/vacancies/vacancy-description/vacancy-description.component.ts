@@ -12,10 +12,9 @@ import {Subscription} from 'rxjs';
 })
 export class VacancyDescriptionComponent implements OnInit {
 
-
   descrDataVacancy: dataVacancy;
 
-  //отрасль
+  // отрасль
   sIndusrtry: string[] = [];
   // график работы
   sSchedule: string[] = [];
@@ -23,7 +22,7 @@ export class VacancyDescriptionComponent implements OnInit {
   sEmployment: string[] = [];
   // образование
   sEducation: string[] = [];
-  //опыт работы
+  // опыт работы
   sExperience: string[] = [];
 
   private dvSubscription: Subscription;
@@ -59,7 +58,7 @@ export class VacancyDescriptionComponent implements OnInit {
           this.descrDataVacancy['vacancy'].Education.forEach( intEducation => this.sEducation.push(this.sGuide.getEducationName(intEducation) ) );
         }
 
-        //опыт работы
+        // опыт работы
         if (typeof this.descrDataVacancy['vacancy'].Experience !== 'undefined') {
           this.descrDataVacancy['vacancy'].Experience.forEach( intExperience => this.sExperience.push(this.sGuide.getExperienceName(intExperience) ) );
         }

@@ -2,7 +2,48 @@
 <div class="wrapper">
   <div class="top">Просмотр резюме</div>
 
-  <div class="box-row"></div>
+  <div class="box">
+
+  <form [formGroup]="form">
+    <div *ngIf="base64textString.length>0;then contentLoadAvatar else contentDefault">условия выполнить невозможно</div>
+    <ng-template #contentLoadAvatar>
+      <img class="logotype" *ngFor="let item of base64textString"  src={{item}} alt="Посмотреть профиль" id="img" (click) = "onProfileClick($event)">
+    </ng-template>
+
+    <ng-template #contentDefault>
+      <img src="/assets/img/usernull.png" class="img-thumbnail" onclick="">
+    </ng-template>
+  </form>
+
+    <label class="fio">Петров Иван Иванович</label>
+    <img class="city" src="/assets/img/city.png" alt="Город">
+    <span class="city-name">Санкт-Петербург</span>
+
+    <label class="label-position">Желаемая должность</label>
+    <span class="position" id="position"></span>
+
+    <label class="location">Город</label>
+
+    <label class="salary">Заработная плата</label>
+
+    <label class="From">Заработная плата</label>
 
 
+  <label class="label-position">Желаемая должность</label>
+  <label class="label-position">Желаемая должность</label>
+
+  <div class="cv-box">
+    <!-- Отрасль -->
+    <app-cv_industry></app-cv_industry>
+    <!-- Занятость -->
+    <app-cv-employment></app-cv-employment>
+    <!-- график работы -->
+    <app-cv-schedule></app-cv-schedule>
+    <!-- Опыт работы -->
+    <app-cv-experience></app-cv-experience>
+    <!-- Образование -->
+    <app-cv-education></app-cv-education>
+
+   </div>
+  </div>
 </div>
