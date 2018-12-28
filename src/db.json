@@ -168,7 +168,7 @@
   "Correspondence": [
     {
       "letter": {
-        "bOld": true,
+        "bOld": false,
         "bReadByRecipient": false,
         "id_user_from": 2,
         "id_cv": 1,
@@ -181,7 +181,7 @@
     },
     {
       "letter": {
-        "bOld": true,
+        "bOld": false,
         "bReadByRecipient": false,
         "id_user_from": 2,
         "id_cv": 1,
@@ -194,7 +194,7 @@
     },
     {
       "letter": {
-        "bOld": true,
+        "bOld": false,
         "bReadByRecipient": false,
         "id_user_from": 2,
         "id_cv": 1,
@@ -244,6 +244,19 @@
         "DateTimeCreate": "20/12/2018 02:01"
       },
       "id": 6
+    },
+    {
+      "letter": {
+        "bOld": false,
+        "bReadByRecipient": false,
+        "id_user_from": 2,
+        "id_cv": 5,
+        "id_vc": 2,
+        "id_user_to": 1,
+        "letterText": "А я хочу стать икс-шахтером!!!!!",
+        "DateTimeCreate": "28/12/2018 01:25"
+      },
+      "id": 7
     }
   ],
   "UserFavoritesUnit": [

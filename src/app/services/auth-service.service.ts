@@ -141,6 +141,12 @@ export class AuthService {
   return {htUserName: htUserName,bConnected: bConnected, id_user: id_user, bEmployer: bEmployer};
 }
 
+  getCountNotReadLetter(id_user: number){
+    return this.http.get('http://localhost:3000/Correspondence?letter.id_user_to='+id_user+'&letter.bOld=false');
+  }
+
+
+
 ////
 
 }
