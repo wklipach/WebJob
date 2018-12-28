@@ -50,9 +50,6 @@ export class MessagesComponent implements OnInit {
       window.localStorage.setItem('_letterid', JSON.stringify(lid));
 
       this.letterSubscription = this.httpLetter.setLetter(letter).subscribe( ()=> this.router.navigate(['/message']));
-
-
-
     }
   }
 

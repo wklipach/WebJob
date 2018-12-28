@@ -4,38 +4,29 @@
   </div>
 
 
-  <div class="message">
 
 
-    <ul class="headline">
-      <li class="date">Дата</li>
-      <li class="from">От</li>
-      <li class="subject">Тема</li>
-    </ul>
+  <div class="message" id="message" *ngFor="let curInfo of myDataInfo; let i = index" (click)="curInfoClick(curInfo.id, $event)">
 
-    <ul class="bline">
-      <li class="date">12.09.2018</li>
-      <li class="from">MUCV</li>
-      <li class="subject">Выгодные предложения по рекламе</li>
-    </ul>
+    <div [class.boldInfo]="curInfo.bOld === false">
 
+      <div class="v-line"></div>
+      <ul class="headline">
+        <li class="date">Дата</li>
+        <li class="from">От</li>
+        <li class="subject">Тема</li>
+      </ul>
+
+      <ul class="bline">
+        <li class="date">{{curInfo.DateInfo}}</li>
+        <li class="from">MYCV</li>
+        <li class="subject">{{curInfo.infotheme}} </li>
+      </ul>
+
+    </div>
 
 
   </div>
-  <div class="message">
 
 
-    <ul class="headline">
-      <li class="date">Дата</li>
-      <li class="from">От</li>
-      <li class="subject">Тема</li>
-    </ul>
-
-    <ul class="bline">
-      <li class="date">06.11.2018</li>
-      <li class="from">MUCV</li>
-      <li class="subject">Большой баннер всего за 100$</li>
-    </ul>
-
-  </div>
 </div>

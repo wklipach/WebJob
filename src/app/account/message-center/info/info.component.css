@@ -50,3 +50,7 @@ li{
 .subject{
   width:700px;
 }
+
+.boldInfo {
+  font-weight: bold;
+}

@@ -56,6 +56,8 @@ import {NgbModule, NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-b
 import { AboutComponent } from './about/about.component';
 import { FavoritesComponent } from './account/favorites/favorites.component';
 import { CvViewComponent } from './content/cv/cv-view/cv-view.component';
+import {InfoService} from './services/info.service';
+import { InfoPageComponent } from './account/message-center/info-page/info-page.component';
 
 
 
@@ -88,6 +90,7 @@ const appRoutes: Routes = [
   {path: 'messages', component: MessagesComponent},
   {path: 'message', component: MessageComponent},
   {path: 'info', component: InfoComponent},
+  {path: 'info_page', component: InfoPageComponent},
   {path: 'response', component: ResponseComponent},
   {path: 'page-count', component: PageCountComponent},
   {path: 'about', component: AboutComponent},
@@ -141,13 +144,14 @@ const appRoutes: Routes = [
     AboutComponent,
     FavoritesComponent,
     CvViewComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    InfoPageComponent
    ],
   entryComponents: [
     CvPreviousComponent
   ],
   providers: [AuthService, GuideService, NewVacancyService, TableVacancyService,
-              MoveService, PreviousService, NewcvService, CvListService, CvEditService, VacanciesListService, LetterService],
+              MoveService, PreviousService, NewcvService, CvListService, CvEditService, VacanciesListService, LetterService, InfoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

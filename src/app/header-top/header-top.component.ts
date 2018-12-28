@@ -19,6 +19,7 @@ export class HeaderTopComponent implements OnInit {
   id_user: number;
   bEmployer : boolean;
   numberCountNotReadLetter: number = 0;
+  numberCountNotReadBell: number = 0;
 
   sNullValueFind : string = '';
 
@@ -62,8 +63,22 @@ export class HeaderTopComponent implements OnInit {
     // обнуляем сервис после вывода предупреждающего сообщения об неуспешном поиске
     this.moveS.setNullValueFind('');
     this.countNotReadLetter();
+    this.countCountNotReadBell();
+
   }
 
+  //numberCountNotReadBell
+  countCountNotReadBell() {
+    if (this.bConnected) {
+      //TODO подсчет количества непрочитанных писем
+      this.httpService.getCountNotReadBell(this.id_user).subscribe(
+        (value: any[]) => {
+          console.log('Bell value.length', value.length, 'this.id_user', this.id_user);
+          this.numberCountNotReadBell = value.length;
+        }
+      )} else
+      this.numberCountNotReadBell = -1;
+  }
 
   countNotReadLetter() {
     if (this.bConnected) {

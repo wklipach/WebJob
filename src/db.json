@@ -168,7 +168,7 @@
   "Correspondence": [
     {
       "letter": {
-        "bOld": true,
+        "bOld": false,
         "bReadByRecipient": false,
         "id_user_from": 2,
         "id_cv": 1,
@@ -181,7 +181,7 @@
     },
     {
       "letter": {
-        "bOld": true,
+        "bOld": false,
         "bReadByRecipient": false,
         "id_user_from": 2,
         "id_cv": 1,
@@ -538,6 +538,72 @@
     {
       "previous": [],
       "id": 7
+    }
+  ],
+  "Info": [
+    {
+      "id": 1,
+      "id_user_to": 1,
+      "infotheme": "некая тема первого сообщения",
+      "infotext": "некий текст первого сообщения",
+      "DateInfo": "20/12/2018 02:01",
+      "bOld": false
+    },
+    {
+      "id": 2,
+      "id_user_to": 1,
+      "infotheme": "некая тема второго сообщения",
+      "infotext": "некий текст второго сообщения",
+      "DateInfo": "21/12/2018 03:02",
+      "bOld": false
+    },
+    {
+      "id": 3,
+      "id_user_to": 1,
+      "infotheme": "некая тема третьего сообщения",
+      "infotext": "некий текст третьего сообщения",
+      "DateInfo": "22/12/2018 04:03",
+      "bOld": false
+    },
+    {
+      "id": 4,
+      "id_user_to": 1,
+      "infotheme": "некая тема четвертого сообщения",
+      "infotext": "некий текст четвертого сообщения",
+      "DateInfo": "23/12/2018 05:04",
+      "bOld": false
+    },
+    {
+      "id": 5,
+      "id_user_to": 1,
+      "infotheme": "некая тема пятого сообщения",
+      "infotext": "некий текст пятого сообщения",
+      "DateInfo": "24/12/2018 06:05",
+      "bOld": false
+    },
+    {
+      "id": 6,
+      "id_user_to": -1,
+      "infotheme": "тема первого общего сообщения",
+      "infotext": "некий текст первого общего сообщения",
+      "DateInfo": "24/12/2018 06:05",
+      "bOld": false
+    },
+    {
+      "id": 7,
+      "id_user_to": -1,
+      "infotheme": "тема второго общего сообщения",
+      "infotext": "некий текст второго общего сообщения",
+      "DateInfo": "24/12/2018 06:05",
+      "bOld": false
+    },
+    {
+      "id": 8,
+      "id_user_to": -1,
+      "infotheme": "некое типа прочитанное общее сообщение",
+      "infotext": "некий текст типа прочитанного общего сообщения",
+      "DateInfo": "24/12/2018 06:05",
+      "bOld": true
     }
   ]
 }
