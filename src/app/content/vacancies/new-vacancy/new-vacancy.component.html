@@ -16,26 +16,14 @@
       </div>
 
       <label class="vacancyDescription">Краткое описание вакансии</label>
-      <textarea class="vacancyDescription" maxlength="1000" aria-label="Описание вакансии до 1000 знаков"
+      <textarea class="inputVacancyDescription" maxlength="1000" aria-label="Описание вакансии до 1000 знаков"
                 formControlName="inputVacancyDescription" id="inputVacancyDescription" placeholder="Описание вакансии до 1000 знаков"></textarea>
 
       <div class="alert alert-danger" *ngIf="newVacancyForm.controls['inputVacancyDescription'].invalid && newVacancyForm.controls['inputVacancyDescription'].touched">
         Количество знаков не должно превышать 1000.
       </div>
 
-
-      <!--  -->  <p>Должностные обязанности Требования Условия</p>
-
-
-
-      <!-- Наименование вакансии до 90 знаков.
-Краткое описание вакансии до 1000 знаков.
-Должностные обязанности до 3000 знаков. (Нужен обработчик)
-Требования до 3000 знаков. (Нужен обработчик)
-Условия до 3000 знаков. (Поменять название обработчика с  "inputVacancyBigDescription"  на "inputConditions" -->
-
-      <!-- Нет обработчика -->
-      <label class="jobFunction">Должностные обязанности</label>
+        <label class="jobFunction">Должностные обязанности</label>
       <textarea class="inputjobFunction" maxlength="3000" aria-label="Должностные обязанности до 3000 знаков"
                 formControlName="inputjobFunction" id="inputjobFunction" placeholder="Должностные обязанности до 3000 знаков"></textarea>
 
@@ -43,7 +31,7 @@
         Количество знаков не должно превышать 3000.
       </div>
 
-      <!-- Нет обработчика -->
+
       <label class="vacancyRequirements">Требования</label>
       <textarea class="inputVacancyRequirements" maxlength="3000" aria-label="Требования до 3000 знаков"
           formControlName="inputVacancyRequirements" id="inputVacancyRequirements" placeholder="Требования до 3000 знаков"></textarea>

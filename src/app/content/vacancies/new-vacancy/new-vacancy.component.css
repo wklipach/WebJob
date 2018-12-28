@@ -17,6 +17,7 @@
   text-align: left;
 }
 .box{
+  position: relative;
   width: 1170px;
   height: auto;
   margin: 30px auto;
@@ -36,10 +37,23 @@ label{
   text-align: left;
 }
 .shortTitle{
-  position: relative;
   width: 90%;
   margin-left: 15px;
   margin-top: 11px;
+}
+.inputVacancyDescription{
+  display: block;
+  width: 828px;
+  height: 190px;
+  margin-left: 15px;
+  margin-top: 31px;
+}
+.inputjobFunction{
+  display: block;
+  width: 828px;
+  height: 190px;
+  margin-left: 15px;
+  margin-top: 31px;
 }
 .vacancyConditions{
   display: block;
@@ -50,16 +64,9 @@ label{
 .inputVacancyRequirements{
   display: block;
   width: 828px;
-  height: 243px;
+  height: 190px;
   margin-left: 15px;
   margin-top: 11px;
-}
-.inputVacancyDescription{
-  display: block;
-  width: 828px;
-  height: 243px;
-  margin-left: 15px;
-  margin-top: 31px;
 }
 .city{
   display: block;
