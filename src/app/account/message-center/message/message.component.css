@@ -15,43 +15,63 @@
   text-align: left;
   padding-bottom: 15px;
 }
-.box{
+.box-row{
   position: relative;
   width: 1170px;
-  height:500px;
+  height:900px;
 }
 .left-side{
   display: inline-block;
-  width:250px;
-  height:300px;
-  border-right: solid;
-  border-color: #b8b8b8;
-  border-width: 1px;
+  width:180px;
+  min-height:380px;
 }
 .right-side{
-  display: inline-block;
-  width: 900px;
-  height: 300px;
-}
-.message{
-  width: 1170px;
-  margin: 0 auto;
-  position: relative;
-}
-.v-line{
-  position: relative;
-  width:1px;
-  height: 300px;
-  background-color: #b8b8b8;
-  margin-left: 250px;
-  margin-top: -150px;
-}
-ul{
-  list-style: none;
-}
-li{
   position: relative;
   display: inline-block;
+  width: 986px;
+  height: auto;
+  min-height:380px;
+  border-left: solid;
+  border-color: #b8b8b8;
+  border-width: 1px;
+  margin-top: 2px;
+}
+.zero{
+  position: absolute;
+}
+.logotype{
+  border-width: 1px;
+  border-color: rgb(188, 188, 188);
+  border-style: solid;
+  border-radius: 3px;
+  background-color: rgb(220, 220, 220);
+  position: relative;
+  width: 103px;
+  height: 103px;
+  margin-left: 22px;
+  margin-top: 45px;
+}
+.logotype:hover{
+  cursor: pointer;
+}
+.logotype-company{
+  position: absolute;
+  border-width: 1px;
+  border-color: rgb(188, 188, 188);
+  border-style: solid;
+  border-radius: 3px;
+  background-color: rgb(220, 220, 220);
+  width: 130px;
+  height: 40px;
+  margin-left: 10px;
+  margin-top: 242px;
+}
+label{
+  position: absolute;
+  font-size: 15px;
+  font-family: "Proxima Nova";
+  color: rgb(2, 98, 210);
+  text-align: left;
 }
 .headline{
   font-family: "Proxima Nova";
@@ -66,38 +86,74 @@ li{
 }
 .date{
   width:100px;
-  margin-top:20px;
-  margin-left:30px;
+  margin-left:800px;
 }
+.labelFrom{}
 .from{
   position: absolute;
   width:250px;
-  margin-top:20px;
-  margin-left:30px;
+  margin-left:38px;
 }
 .move{
-  margin-top:20px;
-  margin-left:30px;
+  font-size: 12px;
+  margin-left:22px;
+  margin-top: 160px;
+  text-decoration: underline;
+}
+.move:hover{
+  cursor: pointer;
+}
+.labelTo{
+  margin-top: 196px;
+}
+.UserTo{
+  position: absolute;
+  margin-left:40px;
+  margin-top:196px;
+}
+.topline{
+  width:100%;
+  height: 30px;
+}
+.dateTime{
+  position: absolute;
+  font-size: 15px;
+  margin-left:860px;
+  margin-top:2px;
+}
+.labelSubject{
+  margin-left: 20px;
+  width:600px;
 }
 .subject{
-  width:700px;
-}
-.logotype{
-  border-width: 1px;
-  border-color: rgb(188, 188, 188);
-  border-style: solid;
-  border-radius: 3px;
-  background-color: rgb(220, 220, 220);
-  position: relative;
-  width: 103px;
-  height: 103px;
-  margin-left: 22px;
-  margin-top: 25px;
-}
-label{
   position: absolute;
-  font-size: 16px;
-  font-family: "Proxima Nova";
-  color: rgb(2, 98, 210);
-  text-align: left;
+  margin-left: 60px;
+  width:600px;
+}
+.labelText{
+  margin-left: 20px;
+  margin-top: 70px;
+}
+.text{
+  position: absolute;
+  font-size: 13px;
+  padding: 6px 20px;
+  border-style: solid;
+  border-color: #b8b8b8;
+  border-width: 1px;
+  border-radius: 5px;
+  margin: 0 0 20px 20px;
+  width: 92%;
+}
+.answer{
+  position: absolute;
+  font-size: 13px;
+  padding: 1px 20px;
+  border-style: solid;
+  border-color: #b8b8b8;
+  border-width: 2px;
+  border-radius: 5px;
+  margin: 285px 0 0 20px;
+  width: 92%;
+  height: 50px;
 }

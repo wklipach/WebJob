@@ -163,12 +163,54 @@
         "DateTimeCreate": "11/12/2018 02:45"
       },
       "id": 3
+    },
+    {
+      "vacancy": {
+        "bChecked": false,
+        "bInvisible": false,
+        "VacancyShortTitle": "Web-разработчик (Web-программист)",
+        "VacancyDescription": "Создание новых сервисов, развитие, модернизация CRM-системы. Поддержка и модернизация существующих веб-проектов.\nУверенные знания PHP, JavaScript (Ajax, jQuery), HTML, XML. Опыт разработки систем на основе БД MySQL. Опыт реализации сложных запросов",
+        "Conditions": "Создание новых сервисов, развитие, модернизация CRM-системы. Поддержка и модернизация существующих веб-проектов.\nУверенные знания PHP, JavaScript (Ajax, jQuery), HTML, XML. Опыт разработки систем на основе БД MySQL. Опыт реализации сложных запросов",
+        "SalaryFrom": "250",
+        "Salary": "2000",
+        "JobFunction": "Создание новых сервисов, развитие, модернизация CRM-системы. Поддержка и модернизация существующих веб-проектов.\nУверенные знания PHP, JavaScript (Ajax, jQuery), HTML, XML. Опыт разработки систем на основе БД MySQL. Опыт реализации сложных запросов",
+        "VacancyRequirements": "Создание новых сервисов, развитие, модернизация CRM-системы. Поддержка и модернизация существующих веб-проектов.\nУверенные знания PHP, JavaScript (Ajax, jQuery), HTML, XML. Опыт разработки систем на основе БД MySQL. Опыт реализации сложных запросов",
+        "Industry": [
+          1,
+          2,
+          3,
+          25,
+          26
+        ],
+        "DisplayPeriod": 2,
+        "City": 2,
+        "Schedule": [
+          1,
+          2
+        ],
+        "Employment": [
+          1,
+          2
+        ],
+        "Education": [
+          2,
+          3,
+          4
+        ],
+        "Experience": [
+          2,
+          3
+        ],
+        "id_user": 1,
+        "DateTimeCreate": "28/12/2018 10:17"
+      },
+      "id": 4
     }
   ],
   "Correspondence": [
     {
       "letter": {
-        "bOld": false,
+        "bOld": true,
         "bReadByRecipient": false,
         "id_user_from": 2,
         "id_cv": 1,
@@ -257,6 +299,19 @@
         "DateTimeCreate": "28/12/2018 01:25"
       },
       "id": 7
+    },
+    {
+      "letter": {
+        "bOld": false,
+        "bReadByRecipient": false,
+        "id_user_from": 2,
+        "id_cv": 5,
+        "id_vc": 4,
+        "id_user_to": 1,
+        "letterText": "Мой комментарий",
+        "DateTimeCreate": "28/12/2018 10:51"
+      },
+      "id": 8
     }
   ],
   "UserFavoritesUnit": [
@@ -269,6 +324,11 @@
       "id_user": 2,
       "id_vc": 3,
       "id": 2
+    },
+    {
+      "id_user": 2,
+      "id_vc": 4,
+      "id": 3
     }
   ],
   "City": [
