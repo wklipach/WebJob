@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {Previous} from '../../../class/Previous';
 import {Subscription} from 'rxjs';
@@ -9,37 +9,35 @@ import {PreviousService} from '../../../services/previous.service';
   templateUrl: './cv-previous.component.html',
   styleUrls: ['./cv-previous.component.css']
 })
-export class CvPreviousComponent implements OnInit {
+export class CvPreviousComponent implements OnInit, OnDestroy {
 
-  public iIndex: number = 0;
+  public iIndex = 0;
   formPrevious: FormGroup;
   private previousSubscription: Subscription;
   private previousLoadSubscription: Subscription;
 
   constructor(private ps: PreviousService) {
     this.formPrevious = new FormGroup({
-      'startDate': new FormControl('',[]),
-      'completionDate': new FormControl('',[]),
-      'company': new FormControl('',[]),
-      'previousPosition': new FormControl('',[]),
-      'inputPositionDescription': new FormControl('',[]),
-      'inputSkillsAbilities': new FormControl('',[])
+      'startDate': new FormControl('', []),
+      'completionDate': new FormControl('', []),
+      'company': new FormControl('', []),
+      'previousPosition': new FormControl('', []),
+      'inputPositionDescription': new FormControl('', []),
+      'inputSkillsAbilities': new FormControl('', [])
     });
 
 
 
     /* возвращаем данные по событию в отбельной переменной. Для каждого блока свое событие, в итоге они суммируются в списке */
 
-    this.previousSubscription = this.ps.onCheckPrevious.subscribe((value: number) =>
-      {
+    this.previousSubscription = this.ps.onCheckPrevious.subscribe((value: number) => {
         this.ps.setPrevious(this.accumulationOfData());
       }
     );
 
 
-    this.previousLoadSubscription = this.ps.onLoadPrevious.subscribe((value: Previous) =>
-      {
-        console.log('this.iIndex='+this.iIndex);
+    this.previousLoadSubscription = this.ps.onLoadPrevious.subscribe((value: Previous) => {
+        console.log('this.iIndex=' + this.iIndex);
         this.loaddata(value);
       }
     );
@@ -88,8 +86,7 @@ export class CvPreviousComponent implements OnInit {
   }
 
 
-  accumulationOfData(): Previous
-  {
+  accumulationOfData(): Previous  {
      const t = new Previous();
       t.id_cv = -1;
       t.dStartDate = this.formPrevious.controls['startDate'].value;

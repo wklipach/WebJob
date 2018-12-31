@@ -223,7 +223,7 @@
     },
     {
       "letter": {
-        "bOld": false,
+        "bOld": true,
         "bReadByRecipient": false,
         "id_user_from": 2,
         "id_cv": 1,
@@ -312,6 +312,32 @@
         "DateTimeCreate": "28/12/2018 10:51"
       },
       "id": 8
+    },
+    {
+      "letter": {
+        "bOld": false,
+        "bReadByRecipient": false,
+        "id_user_from": 1,
+        "id_cv": 1,
+        "id_vc": 1,
+        "id_user_to": 2,
+        "letterText": "второй пробный ответ работодателя",
+        "DateTimeCreate": "31/12/2018 02:30"
+      },
+      "id": 9
+    },
+    {
+      "letter": {
+        "bOld": false,
+        "bReadByRecipient": false,
+        "id_user_from": 2,
+        "id_cv": 1,
+        "id_vc": 1,
+        "id_user_to": 1,
+        "letterText": "Я ищу работу!!! Хватит слать мне пробные ответы!!!!!",
+        "DateTimeCreate": "31/12/2018 02:33"
+      },
+      "id": 10
     }
   ],
   "UserFavoritesUnit": [

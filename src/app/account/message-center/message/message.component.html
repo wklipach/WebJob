@@ -19,7 +19,7 @@
           <img src="/assets/img/usernull.png" class="img-thumbnail" onclick="">
         </ng-template>
       </form>
-      <label class="move">Перейти к резюме</label>
+      <label class="move" (click)="moveCV()">Перейти к резюме</label>
 
       <label class="labelTo">Кому</label>
       <div  *ngIf="_letter != undefined; else UT">
@@ -30,29 +30,43 @@
     </div>
 
 
+
+
     <div class="right-side">
       <div class="topline">
-        <label class="date">Дата</label>
-        <label class="labelSubject">Тема</label>
-        <span class="subject">Отклик на вакансию</span>
-        <span class="dateTime"  *ngIf="_letter != undefined; else DTC">
-          {{_letter.letter.DateTimeCreate}}
-        </span>
-        <ng-template #DTC></ng-template>
-
+        <label class="labelSubject">Вакансия
+        <span class="subject">{{responseVC}}</span>
+        </label>
       </div>
 
-      <div class="text"   *ngIf="_letter != undefined;else LT">
-        {{_letter.letter.letterText}}
+
+<!-- НАЧАЛО ЦИКЛА -->
+<div *ngFor="let lc of listLetter; let i = index">
+
+
+      <div class="text"   *ngIf="lc != undefined;else LT">
+        <div *ngIf="lc.letter.id_user_from===this.id_user"><= {{lc.letter.letterText}}</div>
+        <div *ngIf="lc.letter.id_user_to===this.id_user">=> {{lc.letter.letterText}}</div>
       </div>
       <ng-template #LT></ng-template>
 
-      <textarea class="answer" id="answer" placeholder="Введите ответ" cols="100" rows="6"></textarea>
+  <div class="topline">
+    <span class="dateTime"  *ngIf="lc != undefined; else DTC">
+          {{lc.letter.DateTimeCreate}}
+        </span>
+    <ng-template #DTC></ng-template>
+  </div>
+
+</div>
+<!-- КОНЕЦ ЦИКЛА -->
+      <form [formGroup]="formResponse">
+         <textarea formControlName="textCommentValue" class="answer" id="answer" placeholder="Введите ответ" cols="100" rows="6"></textarea>
+      </form>
+      <button (click)="responseLetter()">Откликнуться</button>
 
     </div>
-
-
   </div>
+
 </div>
 
 

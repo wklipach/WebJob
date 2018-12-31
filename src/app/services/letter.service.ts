@@ -13,15 +13,14 @@ export class LetterService {
   constructor(private http: HttpClient) { }
 
   // получение корреспонденции данного юзера
-  getListLetter(id_user: number)
-  {
+  getListLetter(id_user: number) {
     // let sUrl = 'http://localhost:3000/Correspondence?letter.id_user_to='+id_user;
 
-    let sUrlTo ='http://localhost:3000/Correspondence?letter.id_user_to='+id_user;
-    let sUrlFrom ='http://localhost:3000/Correspondence?letter.id_user_from='+id_user;
+    const sUrlTo = 'http://localhost:3000/Correspondence?letter.id_user_to=' + id_user;
+    const sUrlFrom = 'http://localhost:3000/Correspondence?letter.id_user_from=' + id_user;
 
-    let charUrlFrom = this.http.get(sUrlFrom);
-    let charUrlTo = this.http.get(sUrlTo);
+    const charUrlFrom = this.http.get(sUrlFrom);
+    const charUrlTo = this.http.get(sUrlTo);
 
 
     return forkJoin([charUrlFrom, charUrlTo]);
@@ -31,12 +30,12 @@ export class LetterService {
 //    return this.http.get(sUrl);
   }
 
-  //помечаем письмо как прочитанное
+  // помечаем письмо как прочитанное
   public setLetter(oLetter: Letter) {
     this._letter = oLetter;
-    let postObj: any = this._letter;
+    const postObj: any = this._letter;
     postObj.letter.bOld = true;
-    let sUrl = 'http://localhost:3000/Correspondence/'+this._letter.id;
+    const sUrl = 'http://localhost:3000/Correspondence/' + this._letter.id;
     return this.http.patch(sUrl, postObj);
   }
 
@@ -46,21 +45,30 @@ export class LetterService {
   }
 
   // получение ФИО данного юзера От кого и кому (два объекта на выходе)
-  getUserName(id_user_from: number, id_user_to: number)
-  {
-
-    let sUrl = 'http://localhost:3000/UserTable?id='+id_user_from+'&id='+id_user_to;
+  getUserName(id_user_from: number, id_user_to: number) {
+    const sUrl = 'http://localhost:3000/UserTable?id=' + id_user_from + '&id=' + id_user_to;
     return this.http.get(sUrl);
   }
 
 
   // получение одного письма по номеру
-  getAnyLetter(id_letter: number)
-  {
-    let sUrl ='http://localhost:3000/Correspondence?id='+id_letter;
+  getAnyLetter(id_letter: number) {
+    const sUrl = 'http://localhost:3000/Correspondence?id=' + id_letter;
     return this.http.get(sUrl);
   }
 
+
+  // получение списка писем
+  getThreadLetter(id_cv, id_vc: number) {
+    const sUrl = 'http://localhost:3000/Correspondence?letter.id_cv=' + id_cv + '&letter.id_vc=' + id_vc;
+    return this.http.get(sUrl);
+  }
+
+  // получение вакансии
+  getAnyVC(id_vc: number) {
+    const sUrl = 'http://localhost:3000/Vacancy?id=' + id_vc;
+    return this.http.get(sUrl);
+  }
 
 
 }

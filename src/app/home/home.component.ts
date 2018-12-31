@@ -419,7 +419,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     this.httpService.getNumberResponse(this.id_user, vcid).subscribe((value: Letter[]) => {
 
-        if (value.length>0) {
+        if (value.length > 0) {
             this.sNoUserValueFind = 'Вы уже откликались на данную вакансию. Дождитесь ответа';
             this.myDataVacancy[index].sErrorText = this.sNoUserValueFind;
             } else {

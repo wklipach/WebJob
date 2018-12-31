@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {TableVacancyService} from '../../services/table-vacancy.service';
 import {City} from '../../class/City';
 import {CvListService} from '../../services/cv-list.service';
@@ -18,14 +18,14 @@ import {DatePipe} from '@angular/common';
   templateUrl: './response.component.html',
   styleUrls: ['./response.component.css']
 })
-export class ResponseComponent implements OnInit {
+export class ResponseComponent implements OnInit, OnDestroy {
 
   private curVc: any;
   private _id_user: number;
   private _id_vc: number;
   protected cvList: any;
   protected cityList: City[];
-  protected modelResumeFromCheck = {resumeFromCheck: ""};
+  protected modelResumeFromCheck = {resumeFromCheck: ''};
   protected bErrorResumeCheck = false;
   protected bErrorResumeLetter = false;
 
@@ -37,7 +37,7 @@ export class ResponseComponent implements OnInit {
   constructor(
               private router: Router,
               private  gs: GuideService,
-              private cls : CvListService,
+              private cls: CvListService,
               private cvEditSrv: CvEditService,
               private authService: AuthService,
               private fb: FormBuilder,
@@ -45,46 +45,46 @@ export class ResponseComponent implements OnInit {
 
     this.formResponse = this.fb.group({
       textCommentValue: new FormControl('')
-    })
+    });
 
 
   }
 
   ngOnInit() {
 
-    var Res =  this.authService.loginStorage();
+    const Res =  this.authService.loginStorage();
     this._id_user =  Res.id_user;
     this._id_vc = this.cvEditSrv.getCvId();
 
-    //получаем id_user  из вакансии
-    this.vls.getVc(this._id_vc).subscribe((value)=>{
+    // получаем id_user  из вакансии
+    this.vls.getVc(this._id_vc).subscribe((value) => {
       this.curVc = value as Vacancy;
-      console.log('this.curVc',this.curVc);
+      console.log('this.curVc', this.curVc);
     })
 
 
    // console.log('this._id_user',this._id_user);
 
-   //получаем список резюме пользователя в cvList
+   // получаем список резюме пользователя в cvList
     this.cvResponseCity = this.gs.getCityTable().subscribe((value) => {
       this.cityList = value as City[];
-      this.cvResponseGetCvList = this.cls.getCvList(this._id_user).subscribe((value) =>
-        {
-          this.cvList = value;
+      this.cvResponseGetCvList = this.cls.getCvList(this._id_user).subscribe((value0) => {
+          this.cvList = value0;
 
           if (this.cvList.length === 1) {
             this.modelResumeFromCheck.resumeFromCheck = this.cvList[0].id;
           }
 
           this.cvList.forEach( (cvCur, index) => {
-            let sCityName = (this.cityList as City[]).find((value) => (value.id === cvCur.cv.City) ).name;
+            const sCityName = (this.cityList as City[]).find(value1 => (value1.id === cvCur.cv.City) ).name;
             this.cvList[index].CityName = sCityName;
 
-            //this.modelResumeFromCheck.resumeFromCheck = this.cvList[index].id;
+            // this.modelResumeFromCheck.resumeFromCheck = this.cvList[index].id;
 
           });
         }
-      )}
+      );
+    }
     );
   }
 
@@ -112,23 +112,23 @@ export class ResponseComponent implements OnInit {
       return;
     }
 
-    let strLetter = this.formResponse.get('textCommentValue').value;
+    const strLetter = this.formResponse.get('textCommentValue').value;
 
     if (strLetter === '') {
       this.bErrorResumeLetter = true;
       return;
     }
 
-    //отправляем данные в таблицу  correspondence
+    // отправляем данные в таблицу  correspondence
     console.log('textCommentValue', this.formResponse.get('textCommentValue').value);
 
-    var datePipe = new DatePipe("en-US");
-    var currentDate = datePipe.transform(new Date(), 'dd/MM/yyyy hh:mm');
-    let Res: Letter = new Letter();
+    const datePipe = new DatePipe('en-US');
+    const currentDate = datePipe.transform(new Date(), 'dd/MM/yyyy hh:mm');
+    const Res: Letter = new Letter();
     Res.bOld = false;
     Res.bReadByRecipient = false;
     Res.id_user_from = this._id_user;
-    Res.id_cv =  parseInt(this.modelResumeFromCheck.resumeFromCheck);
+    Res.id_cv =  parseInt(this.modelResumeFromCheck.resumeFromCheck, 10);
     Res.id_vc = this._id_vc;
     Res.id_user_to = this.curVc.vacancy.id_user;
     Res.letterText = strLetter;

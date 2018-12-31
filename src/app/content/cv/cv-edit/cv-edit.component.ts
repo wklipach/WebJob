@@ -26,9 +26,9 @@ export class CvEditComponent implements OnInit, OnDestroy {
 
 
   editCVForm: FormGroup;
-  listCity : City[] =[];
-  index: number = 0;
-  cv_id: number = 0;
+  listCity: City[] = [];
+  index = 0;
+  cv_id = 0;
   private _cvitem: any;
   private _myDisplayCity: string;
 
@@ -36,7 +36,7 @@ export class CvEditComponent implements OnInit, OnDestroy {
   componentsReferences = [];
 
 
-  //подписки
+  // подписки
   private sbCvID: Subscription;
   private cveditCityTable: Subscription;
   private subscrCvEditServ: Subscription;
@@ -51,16 +51,15 @@ export class CvEditComponent implements OnInit, OnDestroy {
               private router: Router,
               private ps: PreviousService,
               private cveditserv: CvEditService,
-              private cls : CvListService,
-              private httpService: NewcvService)
-   {
+              private cls: CvListService,
+              private httpService: NewcvService) {
 
     this.factoryPreviousComponent =  this.componentFactoryResolver.resolveComponentFactory(CvPreviousComponent);
     this.editCVForm = new FormGroup({
-      'inputSalaryFrom': new FormControl('',[]),
-      'position': new FormControl('',[]),
-      'inputCity' : new FormControl('',[]),
-      'industry' : new FormControl('',[])
+      'inputSalaryFrom': new FormControl('', []),
+      'position': new FormControl('', []),
+      'inputCity' : new FormControl('', []),
+      'industry' : new FormControl('', [])
     });
 
   }
@@ -73,7 +72,9 @@ export class CvEditComponent implements OnInit, OnDestroy {
 
       this.cv_id =  this.cveditserv.getCvId();
 
-      if (this.cv_id>-1) this._cvitem = this.cveditserv.getCvItem();
+      if (this.cv_id > -1) {
+        this._cvitem = this.cveditserv.getCvItem();
+      }
 
       console.log('получили _cvitem', this._cvitem);
 
@@ -101,13 +102,16 @@ export class CvEditComponent implements OnInit, OnDestroy {
           this.listCity = data;
 
           if (typeof item.City !== 'undefined') {
-            if (this.listCity.length > 0) this._myDisplayCity = this.listCity[item.City - 1].name;
+            if (this.listCity.length > 0) {
+              this._myDisplayCity = this.listCity[item.City - 1].name;
+            }
           } else {
-            if (this.listCity.length > 0) this._myDisplayCity = this.listCity[0].name;
-          }
+            if (this.listCity.length > 0) {
+              this._myDisplayCity = this.listCity[0].name;
+            }
+            }
           this.editCVForm.controls['inputCity'].setValue(this._myDisplayCity);
-        }
-      );
+        });
 
     // ставим чек-боксы в элементах ОТРАСЛЬ
      this.is.startCheckedElementIndustryList(item.Industry);
@@ -121,11 +125,11 @@ export class CvEditComponent implements OnInit, OnDestroy {
     this.is.startCheckedElementEducationList(item.Education);
 
 
-    this.subscrCvEditServ = this.cveditserv.getCvPrevious(this.cv_id).subscribe((value: any)=>{
+    this.subscrCvEditServ = this.cveditserv.getCvPrevious(this.cv_id).subscribe((value: any) => {
        if (typeof value.previous !== 'undefined') {
-           if (value.previous.length>0) {
+           if (value.previous.length > 0) {
                value.previous.forEach((curPrevious) => {
-                     console.log('curPrevious',curPrevious);
+                     console.log('curPrevious', curPrevious);
                      this.createNewBlock(curPrevious);
                      // this.ps.startLoadPrevious(curPrevious);
              });
@@ -181,13 +185,13 @@ export class CvEditComponent implements OnInit, OnDestroy {
     console.log(item);
     item.bInvisible = true;
 
-    this.cvDeleteCv = this.cls.setDeleteCv(this.cv_id, item).subscribe( ()=> {
+    this.cvDeleteCv = this.cls.setDeleteCv(this.cv_id, item).subscribe( () => {
         console.log('удалили элемент', this.cv_id);
         this.newcv();
 
         // this.router.navigate(['/cv-list']);
       },
-      err => console.log('при удалении элемента возникла нештатная ситуация ',err));
+      err => console.log('при удалении элемента возникла нештатная ситуация ', err));
   }
 
 
@@ -195,12 +199,12 @@ export class CvEditComponent implements OnInit, OnDestroy {
   newcv() {
 
     // получаем изначальные данные без динамических блоков
-    let MyCv: CV = this.loadMainCV();
-    return this.previousPostNewCV =this.httpService.postNewCV(MyCv).subscribe(
+    const MyCv: CV = this.loadMainCV();
+    return this.previousPostNewCV = this.httpService.postNewCV(MyCv).subscribe(
       (value) => {
         // из возвращенного результата забираем новое ID
-        let id = value['id'];
-        let mPrevious = this.getPreviousData();
+        const id = value['id'];
+        const mPrevious = this.getPreviousData();
         // присваиваем полученный id_cv внутрь каждого блока
         mPrevious.forEach((cPrevious, ih) => {
             cPrevious.id_cv = id;
@@ -209,8 +213,8 @@ export class CvEditComponent implements OnInit, OnDestroy {
         );
 
         // записываем массив блоков Previous[] в базу
-        this.previousPostPrevious =this.httpService.postPrevious(mPrevious).subscribe(
-          (value) => {
+        this.previousPostPrevious = this.httpService.postPrevious(mPrevious).subscribe(
+          (value1) => {
             console.log('Данные успешно занесены.');
             this.router.navigate(['/cv-list']); }
         );
@@ -221,7 +225,7 @@ export class CvEditComponent implements OnInit, OnDestroy {
 
   /* сохраняем резюме без динамических блоков, возвращаем номер сохраненного резюме */
   loadMainCV(): CV {
-    let MyCv: CV = new CV();
+    const MyCv: CV = new CV();
     let MyIndustry: number[];
     let MySchedule: number[];
     let MyEmployment: number[];
@@ -229,19 +233,24 @@ export class CvEditComponent implements OnInit, OnDestroy {
     let MyExperience: number[];
 
 
-    var Res =  this.authService.loginStorage();
-    if (Res.bConnected) MyCv.id_user = Res.id_user; else MyCv.id_user = -1;
+    const Res =  this.authService.loginStorage();
+    if (Res.bConnected) {
+      MyCv.id_user = Res.id_user;
+    } else {
+      MyCv.id_user = -1;
+    }
+
 
 
 
 
     MyIndustry = this.is.startCheckIndustryList('! startCheckIndustryList !');
-    MyEmployment= this.is.startCheckEmploymentList('! startCheckEmploymentList !');
-    MySchedule= this.is.startCheckScheduleList('! startCheckScheduleList !');
+    MyEmployment = this.is.startCheckEmploymentList('! startCheckEmploymentList !');
+    MySchedule = this.is.startCheckScheduleList('! startCheckScheduleList !');
     MyEducation = this.is.startCheckEducationList('! startCheckEducationList !');
     MyExperience = this.is.startCheckExperienceList('! startCheckExperienceList !');
 
-    let city = this.listCity.find(x=>x.name===this.editCVForm.controls['inputCity'].value);
+    const city = this.listCity.find(x => x.name === this.editCVForm.controls['inputCity'].value);
 
     MyCv.SalaryFrom = this.editCVForm.controls['inputSalaryFrom'].value;
     MyCv.Position = this.editCVForm.controls['position'].value;
@@ -258,7 +267,7 @@ export class CvEditComponent implements OnInit, OnDestroy {
     MyCv.Experience = MyExperience;
     // признак удаленного
     MyCv.bInvisible = false;
-    return MyCv
+    return MyCv;
   }
 
   /* посылаем событие собрать данные, которое одновременно принимает каждый из
