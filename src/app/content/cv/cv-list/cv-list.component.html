@@ -44,18 +44,7 @@
 
     <br>
 
-
-    <!--
-        <input class="editCheck" type="checkbox" [(ngModel)]="item.bChecked" title="Check">
-        <button type="button" class="btn-delete" [disabled]="!item.bChecked" (click)="CheckDeleteElement(item)">Удалить</button>
-        <button type="button" class="btn-edit" [disabled]="!item.bChecked" (click)="EditElement(item)">Редактировать</button>
-    -->
-
-
-
   </div>
-
-
 
 
   <div class="cvlist">
@@ -63,41 +52,3 @@
   </div>
 </div>
 
-
-<!--
-
-
-
-<app-header-top></app-header-top>
-
-<div class="wrapper">
-  <div class="top">Мои резюме</div>
-
-  <div class="box" *ngFor="let item of cvList; let i = index;">
-
-    <input class="editCheck" type="checkbox" [(ngModel)]="item.bChecked" title="Check">
-
-  <label class="tt">  Должность "{{item.cv.Position}}"  </label>
-  <label class="col-2 tt">  Зарплата "{{item.cv.SalaryFrom}}"  </label>
-  <label class="col-2 tt">  Город "{{item.CityName}}"  </label>
-
-
-  <button type="button" class="btn-delete" [disabled]="!item.bChecked" (click)="CheckDeleteElement(item)">Удалить</button>
-  <button type="button" class="btn-edit" [disabled]="!item.bChecked" (click)="EditElement(item)">Редактировать</button>
-
-
-  <div class="alert alert-primary" *ngIf="item.cv.bInvisible === true && item.bChecked">
-    Вы желаете удалить данное резюме?
-    <button type="button" class="btn btn-outline-danger" (click)="DeleteElement(item)">Да</button>
-    <button type="button" class="btn btn-outline-success" (click)="UnDeleteElement(item)">Нет</button>
-  </div>
-
-
-
-</div>
-
-  <button class="btn-newcv" (click)="newcv()">Новое резюме</button>
-
-  </div>
-
- -->

@@ -24,10 +24,10 @@ export class NewVacancyComponent implements OnInit {
   listEducation: Guide[];
 
   displayPeriodList: Guide[];
-  listCity : City[] =[];
-  myDisplayPeriod: string = '';
-  myDisplayCity: string = '';
-  private id_user: number = -1;
+  listCity: City[] = [];
+  myDisplayPeriod = '';
+  myDisplayCity = '';
+  private id_user = -1;
 
 
   constructor(private is: GuideService,
@@ -36,7 +36,9 @@ export class NewVacancyComponent implements OnInit {
               private auth: AuthService) {
 
     this.displayPeriodList = is.getDisplayPeriodList();
-    if (this.displayPeriodList.length>0) this.myDisplayPeriod = this.displayPeriodList[0].name;
+    if (this.displayPeriodList.length > 0) {
+      this.myDisplayPeriod = this.displayPeriodList[0].name;
+    }
 
     this.newVacancyForm  = new FormGroup({
     'inputVacancyShortTitle': new FormControl('',
@@ -55,7 +57,7 @@ export class NewVacancyComponent implements OnInit {
         [Validators.required, Validators.maxLength(3000)]),
       'inputVacancyRequirements': new FormControl('',
         [Validators.required, Validators.maxLength(3000)]),
-      'inputCity' : new FormControl('',[])
+      'inputCity' : new FormControl('', [])
 
     });
 
@@ -76,7 +78,9 @@ export class NewVacancyComponent implements OnInit {
     is.getCityTable().subscribe(
       (data: City[]) => {
            this.listCity = data;
-           if (this.listCity.length > 0) this.myDisplayCity = this.listCity[0].name;
+           if (this.listCity.length > 0) {
+             this.myDisplayCity = this.listCity[0].name;
+           }
            this.newVacancyForm.setControl('inputCity', new FormControl(this.myDisplayCity, []));
       }
     );
@@ -85,22 +89,24 @@ export class NewVacancyComponent implements OnInit {
 
 
   // controlPrefics "industryCheck"
-  CheckMassive(bigMassive: Guide[], controlPrefics: string) : number[] {
+  CheckMassive(bigMassive: Guide[], controlPrefics: string): number[] {
 
-    let MyResult: number[] = [];
-    let bChecked: boolean = false;
+    const MyResult = [];
+    let bChecked = false;
 
     for (let i = 0; i < bigMassive.length; i++) {
       bChecked = false;
-      let ss: string = controlPrefics + (bigMassive[i].id).toString();
+      const ss: string = controlPrefics + (bigMassive[i].id).toString();
 
       if (!(this.newVacancyForm.controls[ss].value === '')) {
         bChecked = this.newVacancyForm.controls[ss].value;
-      } else bChecked = false;
+      } else {
+        bChecked = false;
+      }
 
       if (bChecked) {
         // заполняем таблицу industry
-        MyResult.push(bigMassive[i].id)
+        MyResult.push(bigMassive[i].id);
       }
     }
 
@@ -110,32 +116,38 @@ export class NewVacancyComponent implements OnInit {
 
   ngOnInit() {
 
-    var Res =  this.auth.loginStorage();
-    if (Res.bConnected) this.id_user = Res.id_user; else this.id_user = -1;
+    const Res =  this.auth.loginStorage();
+    if (Res.bConnected) {
+      this.id_user = Res.id_user;
+    } else {
+      this.id_user = -1;
+    }
 
 
   }
 
   submit() {
 
-    if (this.id_user <= 0) return;
+    if (this.id_user <= 0) {
+      return;
+    }
 
     let MyIndustry: number[];
-    let MyVacancy: Vacancy = new Vacancy();
+    const MyVacancy: Vacancy = new Vacancy();
     let MySchedule: number[];
     let MyEmployment: number[];
     let MyEducation: number[];
     let MyExperience: number[];
 
 
-    var datePipe = new DatePipe("en-US");
-    var currentDate = datePipe.transform(new Date(), 'dd/MM/yyyy hh:mm');
+    const datePipe = new DatePipe('en-US');
+    const currentDate = datePipe.transform(new Date(), 'dd/MM/yyyy hh:mm');
 
 
     // controlPrefics "industryCheck"
     MyIndustry = this.is.startCheckIndustryList('! startCheckIndustryList !');
-    MyEmployment= this.is.startCheckEmploymentList('! startCheckEmploymentList !');
-    MySchedule= this.is.startCheckScheduleList('! startCheckScheduleList !');
+    MyEmployment = this.is.startCheckEmploymentList('! startCheckEmploymentList !');
+    MySchedule = this.is.startCheckScheduleList('! startCheckScheduleList !');
     MyEducation = this.is.startCheckEducationList('! startCheckEducationList !');
     MyExperience = this.is.startCheckExperienceList('! startCheckExperienceList !');
 
@@ -156,8 +168,8 @@ export class NewVacancyComponent implements OnInit {
     console.log(MyExperience);
 
 
-    let period = this.displayPeriodList.find((x)=>x.name===this.newVacancyForm.controls['displayPeriod'].value);
-    let city = this.listCity.find(x=>x.name===this.newVacancyForm.controls['inputCity'].value);
+    const period = this.displayPeriodList.find((x) => x.name === this.newVacancyForm.controls['displayPeriod'].value);
+    const city = this.listCity.find(x => x.name === this.newVacancyForm.controls['inputCity'].value);
 
     MyVacancy.VacancyShortTitle = this.newVacancyForm.controls['inputVacancyShortTitle'].value;
     MyVacancy.VacancyDescription = this.newVacancyForm.controls['inputVacancyDescription'].value;
@@ -180,13 +192,13 @@ export class NewVacancyComponent implements OnInit {
     MyVacancy.Employment = MyEmployment;
     // образование
     MyVacancy.Education = MyEducation;
-    //опыт работы
+    // опыт работы
     MyVacancy.Experience = MyExperience;
 
-    //пользователь
+    // пользователь
     MyVacancy.id_user = this.id_user;
 
-    //дата создания вакансии
+    // дата создания вакансии
     MyVacancy.DateTimeCreate = currentDate;
 
     return this.httpService.postNewVacancy(MyVacancy).subscribe(

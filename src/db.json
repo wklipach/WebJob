@@ -209,6 +209,115 @@
         "DateTimeCreate": "28/12/2018 10:17"
       },
       "id": 4
+    },
+    {
+      "vacancy": {
+        "bChecked": false,
+        "bInvisible": true,
+        "VacancyShortTitle": "Web-разработчик (Web-программист)",
+        "VacancyDescription": "Создание новых сервисов, развитие, модернизация CRM-системы. Поддержка и модернизация существующих веб-проектов.\nУверенные знания PHP, JavaScript (Ajax, jQuery), HTML, XML. Опыт разработки систем на основе БД MySQL. Опыт реализации сложных запросов",
+        "Conditions": "Создание новых сервисов, развитие, модернизация CRM-системы. Поддержка и модернизация существующих веб-проектов.\nУверенные знания PHP, JavaScript (Ajax, jQuery), HTML, XML. Опыт разработки систем на основе БД MySQL. Опыт реализации сложных запросов",
+        "SalaryFrom": "250",
+        "Salary": "2000",
+        "JobFunction": "Создание новых сервисов, развитие, модернизация CRM-системы. Поддержка и модернизация существующих веб-проектов.\nУверенные знания PHP, JavaScript (Ajax, jQuery), HTML, XML. Опыт разработки систем на основе БД MySQL. Опыт реализации сложных запросов",
+        "VacancyRequirements": "Создание новых сервисов, развитие, модернизация CRM-системы. Поддержка и модернизация существующих веб-проектов.\nУверенные знания PHP, JavaScript (Ajax, jQuery), HTML, XML. Опыт разработки систем на основе БД MySQL. Опыт реализации сложных запросов",
+        "Industry": [
+          1,
+          2,
+          3,
+          25,
+          26
+        ],
+        "DisplayPeriod": 2,
+        "City": 2,
+        "Schedule": [
+          1,
+          2
+        ],
+        "Employment": [
+          1,
+          2
+        ],
+        "Education": [
+          2,
+          3,
+          4
+        ],
+        "Experience": [
+          2,
+          3
+        ],
+        "id_user": 1,
+        "DateTimeCreate": "28/12/2018 10:17"
+      },
+      "id": 5
+    },
+    {
+      "vacancy": {
+        "bChecked": false,
+        "bInvisible": true,
+        "VacancyShortTitle": "Senior Software Developer",
+        "VacancyDescription": "Job Description\n\nWorking in GrabCAD you will be:\n- Responsible for great user experience for industry leaders like NASA, Airbus, F1, BMW, Adidas\n- Designing and developing innovative solutions for 3D printers\n- Develop desktop applications using web technologies\n- Writing automated tests to ensure your code works\n- Deploying your own code to production\n- Responsible for product",
+        "Conditions": "Job Description\n\nWorking in GrabCAD you will be:\n- Responsible for great user experience for industry leaders like NASA, Airbus, F1, BMW, Adidas\n- Designing and developing innovative solutions for 3D printers\n- Develop desktop applications using web technologies\n- Writing automated tests to ensure your code works\n- Deploying your own code to production\n- Responsible for product quality\n- Working with modern stack React, AngularJS, NodeJS, Electron, C#, Redis,\nRuby on Rails, PostgreSQL, Chef and AWS Stack\n\nRequirements\n\nWe expect you to have:\n- 3+ years experience in software development\n- Willingness to work on all aspects up and down the dev stack\n- Experience in using some of the following technologies: React, AngularJS, NodeJS, Electron, Redis, Ruby on Rails, PostgreSQL, Chef and AWS Stack\n- Ability to learn new skills and languages\n- Desire to work with bright minds\n- Opinions and ideas\n\nCompany offers\n\n- Get to know the latest 3D printing solutions\n- Lots of 3D printers for development and personal usage\n- Possibility to participate in work-related conferences\n\nModern technologies and ways of working:\n- Our stack: React, Angular, NodeJS, Electron, C#, Rails, PostgreSQL, Redis\n- CI – Chef, Berkshelf, Terraform, Jenkins, TeamCity\n- Our environments are running on AWS\n- Our developers also own product quality\n- One-Click deployment\n- We use Scrum\n\nFriendly and inspiring environment\n- Open-space office in the city center at Rotermanni Kvartal\n- Fun team-building events and daily foosball matches\n- Fridge stocked with chilled brews, snacks, fruits\n- Competitive salary\n- International working experience\n- Cross-site teams in Estonia, UK, USA, Israel\n- A team of highly skilled developers\n- Opportunity to learn and grow in different areas",
+        "SalaryFrom": "1000",
+        "Salary": "1200",
+        "Industry": [
+          6
+        ],
+        "DisplayPeriod": 3,
+        "City": 1,
+        "Schedule": [
+          1
+        ],
+        "Employment": [
+          1,
+          2
+        ],
+        "Education": [
+          1,
+          2
+        ],
+        "Experience": [
+          4
+        ],
+        "id_user": 1,
+        "DateTimeCreate": "03/01/2019 09:56"
+      },
+      "id": 6
+    },
+    {
+      "vacancy": {
+        "bChecked": false,
+        "bInvisible": true,
+        "VacancyShortTitle": "Программист/Администратор базы",
+        "VacancyDescription": "Оперативная поддержка базы 1С/УНФ/Бухгалтерия, обеспечение бесперебойной работы учетной системы;\nОтслеживание правильности ввода данных сотрудниками, корректировка допущенных ошибок;\nИсполнение задач руководства по доработке и настройке 1С;\nОптимизация и автоматизация работы УНФ/1С-Бухгалтерия;\nКонсультация пользователей;\n",
+        "Conditions": "Оперативная поддержка базы 1С/УНФ/Бухгалтерия, обеспечение бесперебойной работы учетной системы;\nОтслеживание правильности ввода данных сотрудниками, корректировка допущенных ошибок;\nИсполнение задач руководства по доработке и настройке 1С;\nОптимизация и автоматизация работы УНФ/1С-Бухгалтерия;\nКонсультация пользователей;\nВедение оперативного учета компании в 1С-УНФ\nТребования:\nВниманию соискателей!!!\nРешение о приеме на работу принимается после исполнения тестового задания!!!\nРешение об окончательном уровне дохода принимается по результатам собеседования и исполнению\nтестового задания!!!\n\n- наличие опыта по доработке и администрированию 1С/УНФ/Бухгалтерия- от 3-х лет;\n- базовые знания принципов бухгалтерского и управленческого учета;\n- фин.анализ;\n- профильное профессиональное образование;\n- ответственность, скрупулезность и исполнительность.\n\n    • Высшее образование",
+        "SalaryFrom": "1000",
+        "Salary": "3000",
+        "Industry": [
+          11,
+          15
+        ],
+        "DisplayPeriod": 2,
+        "City": 2,
+        "Schedule": [
+          2,
+          4
+        ],
+        "Employment": [
+          2,
+          4
+        ],
+        "Education": [
+          4
+        ],
+        "Experience": [
+          3
+        ],
+        "id_user": 1,
+        "DateTimeCreate": "03/01/2019 10:02"
+      },
+      "id": 7
     }
   ],
   "Correspondence": [
@@ -640,6 +749,33 @@
         ]
       },
       "id": 7
+    },
+    {
+      "cv": {
+        "bChecked": false,
+        "bInvisible": true,
+        "id_user": 2,
+        "SalaryFrom": "3000",
+        "Position": "Шахтер",
+        "City": 1,
+        "Industry": [
+          11
+        ],
+        "Schedule": [
+          1
+        ],
+        "Employment": [
+          1,
+          2
+        ],
+        "Education": [
+          3
+        ],
+        "Experience": [
+          3
+        ]
+      },
+      "id": 8
     }
   ],
   "CV_Previous": [
@@ -680,6 +816,10 @@
     {
       "previous": [],
       "id": 7
+    },
+    {
+      "previous": [],
+      "id": 8
     }
   ],
   "Info": [
