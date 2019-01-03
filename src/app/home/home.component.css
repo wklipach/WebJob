@@ -196,7 +196,6 @@
   background-color:#f26100;
   color: white;
   font-weight:600;
-
 }
 .line{
   position: relative;
@@ -207,12 +206,10 @@
   background-color: #d46117;
   margin-top: auto;
 }
-
 .number{
   position: absolute;
   visibility:hidden;
 }
-
 .counter-line{
   position: relative;
   width: 1170px;

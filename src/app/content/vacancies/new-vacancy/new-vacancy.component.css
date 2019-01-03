@@ -37,33 +37,42 @@ label{
   text-align: left;
 }
 .shortTitle{
+  display: block;
   width: 90%;
+  margin-left: 15px;
+  margin-top: 11px;
+  margin-top: 20px;
+}
+.conditions{
+  display: block;
+  width: 72.4%;
   margin-left: 15px;
   margin-top: 11px;
 }
 .inputVacancyDescription{
   display: block;
-  width: 828px;
+  width: 848px;
   height: 190px;
   margin-left: 15px;
   margin-top: 31px;
 }
 .inputjobFunction{
   display: block;
-  width: 828px;
+  width: 848px;
   height: 190px;
   margin-left: 15px;
   margin-top: 31px;
 }
 .vacancyConditions{
   display: block;
-  width: 90%;
+  width: 72.4%;
+  height: 190px;
   margin-left: 15px;
   margin-top: 11px;
 }
 .inputVacancyRequirements{
   display: block;
-  width: 828px;
+  width: 848px;
   height: 190px;
   margin-left: 15px;
   margin-top: 11px;
@@ -76,14 +85,14 @@ label{
 }
 .salary{
   display: block;
-  width: 828px;
+  width: 848px;
   height: 43px;
   margin-left: 15px;
   margin-top: 11px;
 }
 .displayPeriod{
   display: block;
-  width: 828px;
+  width: 848px;
   height: 43px;
   margin-left: 15px;
   margin-top: 11px;
@@ -100,21 +109,21 @@ input, textarea, select{
 }
 .inputVacancyShortTitle{
   display: block;
-  width: 828px;
+  width: 848px;
   height: 43px;
   margin-left: 15px;
   margin-top: 11px;
 }
 .inputVacancyDescription{
   display: block;
-  width: 828px;
+  width: 848px;
   height: 243px;
   margin-left: 15px;
   margin-top: 11px;
 }
 .Conditions{
   display: block;
-  width: 828px;
+  width: 848px;
   height: 243px;
   margin-left: 15px;
   margin-top: 11px;

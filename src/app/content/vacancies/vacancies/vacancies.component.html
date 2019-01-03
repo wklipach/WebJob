@@ -1,43 +1,77 @@
 <app-header-top></app-header-top>
 
-<div class="container-fluid">
-  <h3>Все вакансии</h3>
-  <div class="row" *ngFor="let item of vacanciesList; let i = index;">
+<div class="wrapper">
+  <div class="top">Все вакансии</div>
+
+  <div class="box" *ngFor="let item of vacanciesList; let i = index;">
+
+       <ul class="head-line">
+
+      <li class="date">Дата</li>
+      <li class="city">Город</li>
+      <li class="salary">Зарплата</li>
+      <li class="position">Должность</li>
+      <li class="choice">Выбрать действие</li>
+
+    </ul>
+
+    <ul class="botom-line">
+      <li class="date">22.10.2018</li>
+      <li class="city">{{item.CityName}}</li>
+      <li class="salary">1500 &#x20BD;</li>
+ <!--     <li class="salary">{{item.cv.SalaryFrom}} &#x20BD;</li>       -->
+      <li class="position">{{item.vacancy.VacancyShortTitle}}</li>
+      <li><select class="selectChoice" title="Выбрать действие"
+                  (change)= "brokerSelected($event,item, i)"
+                  [(ngModel)]="contactMethods[i].id">>
+
+        <option [value]="0" [selected]="contactMethods[i].id === 0">...</option>
+        <option [value]="1" [selected]="contactMethods[i].id === 1">Просмотр</option>
+        <option [value]="2" [selected]="contactMethods[i].id === 2">Редактировать</option>
+        <option [value]="3" [selected]="contactMethods[i].id === 3">Создать копию</option>
+        <option [value]="4" [selected]="contactMethods[i].id === 4">Удалить</option>
+      </select>
+      </li>
+    </ul>
 
 
-    <div class="col-1 tt">
-      <input type="checkbox" [(ngModel)]="item.bChecked" title="Check">
+    <div class="alert alert-primary" *ngIf="contactMethods[i].bDelete === true">
+      Вы желаете удалить данное резюме?
+      <button type="button" class="btn btn-outline-danger" (click)="DeleteElement(item,i)">Да</button>
+      <button type="button" class="btn btn-outline-success" (click)="UnDeleteElement(item,i)">Нет</button>
+
     </div>
 
-    <div class="col-2 tt">
+  </div>
+  <div class="vacList">
+  <button class="btn-newVac" (click)="newVac()">Новая вакансия</button>
+  </div>
+</div>
+
+
+
+
+  <!-- Старый код
+   Описание "{{item.vacancy.VacancyDescription}}"
+     Город "{{item.CityName}}"
       Должность "{{item.vacancy.VacancyShortTitle}}"
-    </div>
-    <div class="col-2 tt">
-      Описание "{{item.vacancy.VacancyDescription}}"
-    </div>
-    <div class="col-2 tt">
-      Город "{{item.CityName}}"
-    </div>
-    <div class="col-1 tt">
+
+
+
+
+
       <button type="button" class="btn btn-primary" [disabled]="!item.bChecked" (click)="CheckDeleteElement(item)">Удалить</button>
-    </div>
 
-
-    <div class="col-1 tt">
       <button type="button" class="btn-success" [disabled]="!item.bChecked" (click)="EditElement(item)">Редактировать</button>
-    </div>
 
 
+  <input type="checkbox" [(ngModel)]="item.bChecked" title="Check">
     <div class="alert alert-primary" *ngIf="item.vacancy.bInvisible === true && item.bChecked">
       Вы желаете удалить данную вакансию?
       <button type="button" class="btn btn-outline-danger" (click)="DeleteElement(item)">Да</button>
       <button type="button" class="btn btn-outline-success" (click)="UnDeleteElement(item)">Нет</button>
     </div>
-  </div>
-</div>
-<div class="row">
-  <button class="btn btn-primary" (click)="newVac()">Новая вакансия</button>
-  <br>
-  <br>
-</div>
+-->
+
+
 

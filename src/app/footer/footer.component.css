@@ -8,7 +8,7 @@
 .logo{
   position: absolute;
   font-size: 36px;
-  font-family: "Arial Rounded MT Bold";
+  font-family: Arial Rounded MT Bold ,sans-serif;
   color: rgb(255, 255, 255);
   text-align: center;
   margin-left: 22px;
@@ -17,7 +17,7 @@
 .copyright {
   position: absolute;
   font-size: 16px;
-  font-family: "Proxima Nova";
+  font-family: Proxima Nova,sans-serif;
   color: rgb(255, 255, 255);
   text-align: left;
   margin-left: 209px;
@@ -27,7 +27,7 @@
   float: right;
   font-size: 16px;
   padding-right: 30px;
-  font-family: "Proxima Nova";
+  font-family: Proxima Nova,sans-serif;
   color: rgb(255, 255, 255);
   text-align: left;
   margin-left: 350px;

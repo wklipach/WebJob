@@ -1,0 +1,28 @@
+.inputStartDate{
+  border-width: 1px;
+  border-color: rgb(68, 75, 84);
+  text-align: center;
+  border-style: solid;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  width: 20%;
+  height: 41px;
+  margin-left: 444px;
+  margin-top: 218px;
+  background:none;
+}
+.input-completionDate{
+  border-width: 1px;
+  border-color: rgb(68, 75, 84);
+  text-align: center;
+  border-style: solid;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  width: 20%;
+  height: 41px;
+  margin-left: 644px;
+  margin-top: 218px;
+  background:none;
+}
