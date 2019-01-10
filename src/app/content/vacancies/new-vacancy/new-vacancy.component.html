@@ -16,11 +16,11 @@
       </div>
 
       <label class="vacancyDescription">Краткое описание вакансии</label>
-      <textarea class="inputVacancyDescription" maxlength="1000" aria-label="Описание вакансии до 1000 знаков"
-                formControlName="inputVacancyDescription" id="inputVacancyDescription" placeholder="Описание вакансии до 1000 знаков"></textarea>
+      <textarea class="inputVacancyDescription" maxlength="3000" aria-label="Описание вакансии до 3000 знаков"
+                formControlName="inputVacancyDescription" id="inputVacancyDescription" placeholder="Описание вакансии до 3000 знаков"></textarea>
 
       <div class="alert alert-danger" *ngIf="newVacancyForm.controls['inputVacancyDescription'].invalid && newVacancyForm.controls['inputVacancyDescription'].touched">
-        Количество знаков не должно превышать 1000.
+        Количество знаков не должно превышать 3000.
       </div>
 
         <label class="jobFunction">Должностные обязанности</label>
