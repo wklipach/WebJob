@@ -41,7 +41,7 @@
 
 
       <label class="vacancyConditions">Условия</label>
-      <textarea class="vacancyConditions" maxlength="3000" aria-label="Условия до 3000 знаков"
+      <textarea class="inputVacancyConditions" maxlength="3000" aria-label="Условия до 3000 знаков"
                 formControlName="inputConditions" id="inputConditions" placeholder="Условия до 3000 знаков"></textarea>
 
       <div class="alert alert-danger" *ngIf="editVacancyForm.controls['inputConditions'].invalid && editVacancyForm.controls['inputConditions'].touched">
