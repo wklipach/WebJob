@@ -246,8 +246,10 @@ loadCurrentVacancy(item: any) {
     //пользователь
     MyVacancy.id_user = this.id_user;
 
-    //дата создания вакансии
-    MyVacancy.DateTimeCreate = currentDate;
+    //дата создания вакансии оставляем старую
+    // MyVacancy.DateTimeCreate = currentDate;
+    MyVacancy.DateTimeCreate = this._vacitem.DateTimeCreate;
+
 
     return this.httpService.postNewVacancy(MyVacancy).subscribe(
       () => {

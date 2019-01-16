@@ -192,6 +192,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 
         let curRemDay: {numberMonth, errorDay} = {numberMonth: -1, errorDay: true};
 
+
+
         data.forEach(  (curVacancy, index, arrCurValue) => {
           // base64textString = [];
           this.onLoadFromBaseAvatar(curVacancy['vacancy']);
@@ -230,9 +232,8 @@ export class HomeComponent implements OnInit, OnDestroy {
                 ///// высчитываем дату окончания
                 // dd/MM/yyyy hh:mm локаль en-US
                 if (!curRemDay.errorDay) {
-                  var reggie = /(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2})/;
-                  var dateArray = reggie.exec(curVacancy['vacancy'].DateTimeCreate);
-                  var dateObject = new Date(+dateArray[3], +dateArray[2] - 1, +dateArray[1], +dateArray[4], +dateArray[5], 0, 0);
+
+                  var dateObject = this.StrToDate(curVacancy['vacancy'].DateTimeCreate);
                   let DateEnd = new Date(dateObject.setMonth(dateObject.getMonth() + curRemDay.numberMonth));
                   var datePipe = new DatePipe("en-US");
                   curVacancy['vacancy'].sDateEnd =  datePipe.transform(DateEnd, 'dd.MM.yyyy');
@@ -243,7 +244,19 @@ export class HomeComponent implements OnInit, OnDestroy {
         }
         );
 
+
+        //const SSS  = data.sort( (a, b)=> b['vacancy'].DateTimeCreate - a['vacancy'].DateTimeCreate );
+
+
+        //data = data.sort( (a, b)=> a['vacancy'].DateTimeCreate - b['vacancy'].DateTimeCreate );
+//        console.log('sort',data);
+
+
+
         this.myDataVacancy = data;
+        this.sortByDueDate();
+        console.log('sort',this.myDataVacancy);
+
         this.allDataVacancy = data;
         this.recordsPerAll = data.length;
         this.is.startCheckPaginator({value1: this.recordsPerAll, value2: this.rowPerPage});
@@ -256,6 +269,24 @@ export class HomeComponent implements OnInit, OnDestroy {
     );
   }
 
+
+  public StrToDate(curStrDate: string): Date {
+    const reggie = /(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2})/;
+    const dateArray = reggie.exec(curStrDate);
+    const dateObject = new Date(+dateArray[3], +dateArray[2] - 1, +dateArray[1], +dateArray[4], +dateArray[5], 0, 0);
+    return dateObject;
+  }
+
+
+
+  public sortByDueDate(): void {
+    this.myDataVacancy.sort((a, b) => {
+      const d1 = this.StrToDate(a['vacancy'].DateTimeCreate);
+      const d2 = this.StrToDate(b['vacancy'].DateTimeCreate);
+      console.log('d1',d1,'d2',d2, 'a', a['vacancy'].DateTimeCreate, 'b', b['vacancy'].DateTimeCreate);
+      return d2.getTime() - d1.getTime();
+    });
+  }
 
   // получаем из массива кол. записей и кусок записей на данной странице
   reloadPAge(data: dataVacancy[], sMask: string) {
@@ -275,7 +306,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
         );
 
-        this.myDataVacancy = data;
+        //this.myDataVacancy = data.sort( (a, b)=> b['vacancy'].DateTimeCreate - a['vacancy'].DateTimeCreate );;
 
         if (this.allDataVacancy.length === 0) {
 

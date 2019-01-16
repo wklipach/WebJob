@@ -35,7 +35,8 @@
     <span class="description">{{curVacancy['vacancy'].Conditions}}</span>
 
     <div *ngIf="!curVacancy['vacancy'].errorEndDay">
-          <span class="final-date">Размещено до {{curVacancy['vacancy'].sDateEnd}}</span>
+          <span class="final-date">Размещено до {{curVacancy['vacancy'].sDateEnd}}</span><br>
+         <span class="final-date">Дата размещения {{curVacancy['vacancy'].DateTimeCreate}}</span>
     </div>
 
 
