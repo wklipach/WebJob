@@ -21,13 +21,7 @@
 
        <label>Должностные обязанности</label>
        <div class="jobFunction">
-         Разработка и сопровождение систем (на базе MS SQL Server);
-         Работа с хранилищами данных, отчетность, самописные и приобретенные продукты;
-         Интеграция с внешними и внутренними системами.
-         Обязателен опыт работы с: * Microsoft SQL Server, T-SQL. (От 3-х лет)
-         * Microsoft SQL Server Reporting Services (От 1 года) * ETL, DWH, OLAP, Bl (От года)
-         * Delphi (Клиентские приложения, Сервисы, Многопоточность, Интеграционные решения) (От 3-х лет)
-         * Навыки использования CVS (От года) * Высшее техническое образование обязательно!
+         <div *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy['vacancy'].JobFunction }}</div>
        </div>
 
     <!--
@@ -36,23 +30,14 @@
 
     <label>Требования</label>
     <div class="vacancyRequirements">
-      Здесь требования ! Разработка и сопровождение систем (на базе MS SQL Server);
-      Работа с хранилищами данных, отчетность, самописные и приобретенные продукты;
-      Интеграция с внешними и внутренними системами.
+      <div *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy['vacancy'].VacancyRequirements }}</div>
     </div>
 
 
     <label>Условия</label>
     <div class="vacancyConditions">
-      Здесь условия ! Разработка и сопровождение систем (на базе MS SQL Server);
-      Работа с хранилищами данных, отчетность, самописные и приобретенные продукты;
-      Интеграция с внешними и внутренними системами.
+      <div *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy['vacancy'].Conditions }}</div>
     </div>
-
-
-    <label>Подробности</label>
-
-    <div *ngIf="this.descrDataVacancy" class="descVac">{{ this.descrDataVacancy['vacancy'].Conditions}}</div>
 
     <br><br><br><br><br><br>
 

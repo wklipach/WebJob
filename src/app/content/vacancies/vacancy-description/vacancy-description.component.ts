@@ -32,6 +32,10 @@ export class VacancyDescriptionComponent implements OnInit {
 
   ngOnInit() {
 
+
+
+
+
       this.dvSubscription = this.moveS.getDataVacancy()
       .subscribe (curDataVacancy =>
       {
@@ -62,7 +66,21 @@ export class VacancyDescriptionComponent implements OnInit {
         if (typeof this.descrDataVacancy['vacancy'].Experience !== 'undefined') {
           this.descrDataVacancy['vacancy'].Experience.forEach( intExperience => this.sExperience.push(this.sGuide.getExperienceName(intExperience) ) );
         }
-      }
+
+
+          console.log('JobFunction', this.descrDataVacancy['vacancy'].JobFunction);
+          console.log('!!!', '');
+
+          console.log('VacancyRequirements', this.descrDataVacancy['vacancy'].VacancyRequirements);
+          console.log('!!!', '');
+
+          console.log('Conditions', this.descrDataVacancy['vacancy'].Conditions);
+
+          console.log('Conditions закончено!!!', '');
+
+
+
+        }
 
       }, error => {this.router.navigate(['/home']); } );
 
