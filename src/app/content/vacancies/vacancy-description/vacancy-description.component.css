@@ -100,6 +100,8 @@
   position: absolute;
   margin-top: 25px;
   margin-left: 15px;
+  width: 130px;
+  height: 40px;
 }
 .company-name{
   display: inline-block;

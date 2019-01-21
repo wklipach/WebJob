@@ -172,7 +172,7 @@ private loadUser: UserType;
 
   ResizeImage(tempImg: HTMLImageElement): string {
     var MAX_WIDTH = 400;
-      var MAX_HEIGHT = 300;
+      var MAX_HEIGHT = 123;
       var tempW = tempImg.width;
       var tempH = tempImg.height;
       if (tempW > tempH) {
