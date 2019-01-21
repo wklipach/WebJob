@@ -255,7 +255,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
         this.myDataVacancy = data;
         this.sortByDueDate();
-        console.log('sort',this.myDataVacancy);
+        //console.log('sort',this.myDataVacancy);
 
         this.allDataVacancy = data;
         this.recordsPerAll = data.length;
@@ -283,7 +283,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.myDataVacancy.sort((a, b) => {
       const d1 = this.StrToDate(a['vacancy'].DateTimeCreate);
       const d2 = this.StrToDate(b['vacancy'].DateTimeCreate);
-      console.log('d1',d1,'d2',d2, 'a', a['vacancy'].DateTimeCreate, 'b', b['vacancy'].DateTimeCreate);
+     // console.log('d1',d1,'d2',d2, 'a', a['vacancy'].DateTimeCreate, 'b', b['vacancy'].DateTimeCreate);
       return d2.getTime() - d1.getTime();
     });
   }

@@ -4,6 +4,7 @@ import {dataVacancy} from '../../../class/Vacancy';
 import {MoveService} from '../../../services/move.service';
 import {GuideService} from '../../../services/guide-service.service';
 import {Subscription} from 'rxjs';
+import {AuthService} from '../../../services/auth-service.service';
 
 @Component({
   selector: 'app-vacancy-description',
@@ -13,6 +14,10 @@ import {Subscription} from 'rxjs';
 export class VacancyDescriptionComponent implements OnInit {
 
   descrDataVacancy: dataVacancy;
+
+  //адрес вакансии
+  sAddress: string = '';
+  sEmployerUserName: string = '';
 
   // отрасль
   sIndusrtry: string[] = [];
@@ -27,21 +32,28 @@ export class VacancyDescriptionComponent implements OnInit {
 
   private dvSubscription: Subscription;
 
-  constructor(private activatedRoute: ActivatedRoute, private moveS: MoveService, private sGuide: GuideService, private router: Router) { }
+  constructor(private activatedRoute: ActivatedRoute,
+              private moveS: MoveService,
+              private sGuide: GuideService,
+              private router: Router,
+              private authService: AuthService) { }
 
 
   ngOnInit() {
 
 
-
-
-
       this.dvSubscription = this.moveS.getDataVacancy()
       .subscribe (curDataVacancy =>
       {
-        this.descrDataVacancy = curDataVacancy;
 
-        if (typeof this.descrDataVacancy !== 'undefined') {
+        console.log('curDataVacancy', curDataVacancy);
+
+        if (curDataVacancy !== undefined) {
+
+          this.descrDataVacancy = curDataVacancy;
+
+         this.onLoadUserData(this.descrDataVacancy['vacancy']);
+
         // отрасль
         if (typeof this.descrDataVacancy['vacancy'].Industry !== 'undefined') {
         this.descrDataVacancy['vacancy'].Industry.forEach( intIndustry => this.sIndusrtry.push(this.sGuide.getIndustryName(intIndustry) ) );
@@ -68,30 +80,40 @@ export class VacancyDescriptionComponent implements OnInit {
         }
 
 
-          console.log('JobFunction', this.descrDataVacancy['vacancy'].JobFunction);
-          console.log('!!!', '');
-
-          console.log('VacancyRequirements', this.descrDataVacancy['vacancy'].VacancyRequirements);
-          console.log('!!!', '');
-
-          console.log('Conditions', this.descrDataVacancy['vacancy'].Conditions);
-
-          console.log('Conditions закончено!!!', '');
-
-
-
         }
 
-      }, error => {this.router.navigate(['/home']); } );
-
+      }, error => { this.router.navigate(['/home']); } );
 
     if (typeof this.descrDataVacancy === 'undefined') {
       this.router.navigate(['/home']);
     }
+
   }
 
+  onLoadUserData(k: any) {
+    if (typeof k.id_user !== 'undefined') {
+      this.authService.getDataUserFromId(k.id_user).subscribe((aRes) => {
+        if (aRes!= undefined) {
+          this.sAddress = aRes['Address'];
+          this.sEmployerUserName = aRes['UserName'];
+
+          console.log('this.sAddress',this.sAddress);
+          console.log('this.sEmployerUserName',this.sEmployerUserName);
+
+        }
+      });
+    }
+
+  }
+
+
+
   ngOnDestroy() {
-    this.dvSubscription.unsubscribe();
+
+    if (typeof this.dvSubscription !== 'undefined') {
+      this.dvSubscription.unsubscribe();
+    }
+
   }
 
 
