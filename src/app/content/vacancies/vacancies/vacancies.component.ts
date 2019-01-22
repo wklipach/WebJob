@@ -8,6 +8,7 @@ import {Router} from '@angular/router';
 import {NewVacancyService} from '../../../services/new-vacancy.service';
 import {Vacancy} from '../../../class/Vacancy';
 import {DatePipe} from '@angular/common';
+import {MoveService} from '../../../services/move.service';
 
 @Component({
   selector: 'app-vacancies',
@@ -24,6 +25,7 @@ export class VacanciesComponent implements OnInit, OnDestroy {
   protected  cityList: City[];
   private sbVacanciesGetList: Subscription;
   private sbDeleteVac: Subscription;
+  private dvMoveSubscription: Subscription;
 
   private _numberModel: number;
 
@@ -35,8 +37,21 @@ export class VacanciesComponent implements OnInit, OnDestroy {
     this._numberModel = a;
   }
 
+  onLoadFromBaseAvatar(k: any) {
+    k.base64textString = [];
+    if (typeof k.id_user !== 'undefined') {
+      this.authService.getDataUserFromId(k.id_user).subscribe((aRes) => {
+        if (aRes['Avatar'] != undefined) {
+          const S = aRes['Avatar'].Avatar;
+          k.base64textString = [];
+          k.base64textString.push('data:image/png;base64,' + JSON.parse(S).value);
+        }
+      });
+    }
+  }
 
   constructor(private authService: AuthService,
+              private moveS: MoveService,
               private  gs: GuideService,
               private router: Router,
               private gls: VacanciesListService,
@@ -82,6 +97,11 @@ export class VacanciesComponent implements OnInit, OnDestroy {
     if (typeof  this.sbDeleteVac !== 'undefined') {
       this.sbDeleteVac.unsubscribe();
     }
+
+    if (typeof this.dvMoveSubscription !== 'undefined') {
+      this.dvMoveSubscription.unsubscribe();
+    }
+
   }
 
 
@@ -108,6 +128,12 @@ export class VacanciesComponent implements OnInit, OnDestroy {
     this.router.navigate(['/vacancy-edit']);
   }
 
+  // просмотр элемента
+  DescriptionElement(item: any) {
+    this.onLoadFromBaseAvatar(item.vacancy);
+    this.dvMoveSubscription = this.moveS.setDataVacancy(item).subscribe( ()=> this.router.navigate(['/vacancy-description']));
+  }
+
 
 
   UnDeleteElement(item: any) {
@@ -118,7 +144,6 @@ export class VacanciesComponent implements OnInit, OnDestroy {
   DeleteElement(item: any) {
     item.vacancy.bInvisible = true;
     this.sbDeleteVac = this.gls.setDeleteVac(item.id, item.vacancy).subscribe( () => {
-        console.log('удалили элемент', item.id);
         this.RouterReload();
       },
       err => console.log('при удалении элемента возникла нештатная ситуация ', err));
@@ -137,7 +162,6 @@ export class VacanciesComponent implements OnInit, OnDestroy {
         this.contactMethods[i].bDelete = false;
         this.CvVacanciesItem = 0;
         this.contactMethods[i].id = 0;
-        console.log('!!!!this.contactMethods', this.contactMethods);
         break;
       }
 
@@ -145,15 +169,13 @@ export class VacanciesComponent implements OnInit, OnDestroy {
         this.contactMethods[i].bDelete = false;
         this.CvVacanciesItem = 1;
         this.contactMethods[i].id = 1;
-        console.log('!!!!this.contactMethods', this.contactMethods);
-        console.log('просмотр');
+        this.DescriptionElement(item);
         break;
       }
       case '2': {
         this.CvVacanciesItem = 2;
         this.contactMethods[i].bDelete = false;
         this.contactMethods[i].id = 2;
-        console.log('!!!!this.contactMethods', this.contactMethods);
         this.EditElement(item);
         break;
       }
@@ -162,7 +184,6 @@ export class VacanciesComponent implements OnInit, OnDestroy {
         this.CvVacanciesItem = 3;
         this.contactMethods[i].id = 3;
         this.copyVAC(item);
-        console.log('Создать копию');
         break;
       }
       case '4': {

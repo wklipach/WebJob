@@ -46,8 +46,6 @@ export class VacancyDescriptionComponent implements OnInit {
       .subscribe (curDataVacancy =>
       {
 
-        console.log('curDataVacancy', curDataVacancy);
-
         if (curDataVacancy !== undefined) {
 
           this.descrDataVacancy = curDataVacancy;
