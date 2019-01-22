@@ -6,8 +6,9 @@
 
     <div class="title" *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy['vacancy'].VacancyShortTitle}}</div>
  <div class="income">
-      <span *ngIf="this.descrDataVacancy" class="salaryFrom">{{ this.descrDataVacancy['vacancy'].SalaryFrom}} - </span>
-   <span *ngIf="this.descrDataVacancy" class="salaryMax">{{ this.descrDataVacancy['vacancy'].Salary}}</span>Р
+      <span *ngIf="this.descrDataVacancy" class="salaryFrom">{{ this.descrDataVacancy['vacancy'].SalaryFrom}} -
+     </span>
+   <span *ngIf="this.descrDataVacancy" class="salaryMax">{{ this.descrDataVacancy['vacancy'].Salary}}</span> Р
  </div>
 
 <div class="city-line">
@@ -33,8 +34,6 @@
 
     <div class="company-name">{{this.sEmployerUserName}}</div>
 
-
-
        <label>Должностные обязанности</label>
        <div class="jobFunction">
          <div *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy['vacancy'].JobFunction }}</div>
@@ -55,9 +54,7 @@
       <div *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy['vacancy'].Conditions }}</div>
     </div>
 
-    <br><br><br><br><br><br>
-
-    <label>Отрасль</label>
+   <label>Отрасль</label>
 
     <div *ngFor="let sI of sIndusrtry" class="descVac"> {{sI}}</div>
 
