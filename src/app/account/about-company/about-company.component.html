@@ -1,3 +1,91 @@
-<p>
-  about-company works!
-</p>
+<app-header-top></app-header-top>
+
+<div class="wrapper">
+  <div class="top">Описание вакансии</div>
+  <div class="vacancy-box">
+
+  </div>
+      </div>
+
+
+
+<!--
+
+  <a class="nav-link" routerLink="/about-company" routerLinkActive="active">О компании</a>
+
+    <div class="title" *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy['vacancy'].VacancyShortTitle}}</div>
+    <div class="income">
+      <span *ngIf="this.descrDataVacancy" class="salaryFrom">{{ this.descrDataVacancy['vacancy'].SalaryFrom}} -
+     </span>
+      <span *ngIf="this.descrDataVacancy" class="salaryMax">{{ this.descrDataVacancy['vacancy'].Salary}}</span> Р
+    </div>
+
+    <div class="city-line">
+      <img class="city" src="/assets/img/city.png" alt="Город">
+      <span *ngIf="this.descrDataVacancy" class="city-name"> {{this.descrDataVacancy?.CityName}}</span>
+      <span *ngIf="this.descrDataVacancy" class="address">{{this.sAddress}}</span>
+    </div>
+
+
+    <!-- ////////////////////////// >
+
+    <div *ngIf="this.descrDataVacancy">
+      <div *ngIf="this.descrDataVacancy['vacancy'].base64textString.length>0; then contentLoadAvatar else contentDefault">условия выполнить невозможно</div>
+      <ng-template #contentLoadAvatar>
+        <img class="logotype-company" *ngFor="let item of this.descrDataVacancy['vacancy'].base64textString"  src={{item}} alt="Логотип компании" id="img">
+      </ng-template>
+      <ng-template #contentDefault>
+        <img class="logotype-company" src="/assets/img/no-photo.png" alt="Логотип компании">
+      </ng-template>
+    </div>
+    <!-- ////////////////////////// >
+
+
+    <div class="company-name">{{this.sEmployerUserName}}</div>
+
+    <label>Должностные обязанности</label>
+    <div class="jobFunction">
+      <div *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy['vacancy'].JobFunction }}</div>
+    </div>
+
+    <!--
+       <div *ngIf="this.descrDataVacancy" class="descVac">{{ this.descrDataVacancy['vacancy'].VacancyDescription}}</div>
+     ->
+
+    <label>Требования</label>
+    <div class="vacancyRequirements">
+      <div *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy['vacancy'].VacancyRequirements }}</div>
+    </div>
+
+
+    <label>Условия</label>
+    <div class="vacancyConditions">
+      <div *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy['vacancy'].Conditions }}</div>
+    </div>
+
+    <label>Отрасль</label>
+
+    <div *ngFor="let sI of sIndusrtry" class="descVac"> {{sI}}</div>
+
+    <label class="labelDescr">График работы</label>
+
+    <div *ngFor="let sS of sSchedule" class="descVac"> {{sS}}</div>
+
+    <label class="labelDescr">Занятость</label>
+
+    <div *ngFor="let sEmp of sEmployment" class="descVac"> {{sEmp}}</div>
+
+    <label class="labelDescr">Образование</label>
+
+    <div *ngFor="let sEd of sEducation" class="descVac"> {{sEd}}</div>
+
+    <label class="labelDescr">Опыт работы</label>
+
+    <div *ngFor="let sExp of sExperience" class="descVac"> {{sExp}}</div>
+
+
+-->
+
+
+
+<app-footer></app-footer>
