@@ -6,8 +6,7 @@
 
     <div class="title" *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy['vacancy'].VacancyShortTitle}}</div>
  <div class="income">
-      <span *ngIf="this.descrDataVacancy" class="salaryFrom">{{ this.descrDataVacancy['vacancy'].SalaryFrom}} -
-     </span>
+      <span *ngIf="this.descrDataVacancy" class="salaryFrom">{{ this.descrDataVacancy['vacancy'].SalaryFrom}}&nbsp;-&nbsp;</span>
    <span *ngIf="this.descrDataVacancy" class="salaryMax">{{ this.descrDataVacancy['vacancy'].Salary}}</span> Р
  </div>
 
