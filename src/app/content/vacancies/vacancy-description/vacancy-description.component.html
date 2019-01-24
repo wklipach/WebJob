@@ -23,7 +23,7 @@
     <div *ngIf="this.descrDataVacancy">
         <div *ngIf="this.descrDataVacancy['vacancy'].base64textString.length>0; then contentLoadAvatar else contentDefault">условия выполнить невозможно</div>
         <ng-template #contentLoadAvatar>
-          <img class="logotype-company" *ngFor="let item of this.descrDataVacancy['vacancy'].base64textString"  src={{item}} alt="Логотип компании" id="img">
+          <img class="logotype-company" *ngFor="let item of this.descrDataVacancy['vacancy'].base64textString"  (click)="clickAboutCompany()" src={{item}} alt="Логотип компании" id="img">
         </ng-template>
         <ng-template #contentDefault>
           <img class="logotype-company" src="/assets/img/no-photo.png" alt="Логотип компании">

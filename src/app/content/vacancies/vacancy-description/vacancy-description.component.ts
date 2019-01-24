@@ -105,6 +105,11 @@ export class VacancyDescriptionComponent implements OnInit {
   }
 
 
+  clickAboutCompany() {
+    window.localStorage.setItem('about_user', this.descrDataVacancy['vacancy'].id_user);
+    this.router.navigate(['/about-company']);
+  }
+
 
   ngOnDestroy() {
 

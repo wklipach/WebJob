@@ -10,6 +10,11 @@ export class AboutCompanyComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+    const id_user = window.localStorage.getItem('about_user');
+    console.log('описываем лицо №', id_user);
+
+
   }
 
 }
