@@ -53,9 +53,7 @@
       <div *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy['vacancy'].Conditions }}</div>
     </div>
 
-   <label>Отрасль</label>
 
-    <div *ngFor="let sI of sIndusrtry" class="descVac"> {{sI}}</div>
 
     <label class="labelDescr">График работы</label>
 
@@ -72,6 +70,10 @@
     <label class="labelDescr">Опыт работы</label>
 
     <div *ngFor="let sExp of sExperience" class="descVac"> {{sExp}}</div>
+
+    <label>Отрасль</label>
+
+    <div *ngFor="let sI of sIndusrtry" class="descVac"> {{sI}}</div>
 
   </div>
 
