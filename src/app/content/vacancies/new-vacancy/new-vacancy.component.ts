@@ -48,9 +48,9 @@ export class NewVacancyComponent implements OnInit {
     'inputConditions': new FormControl('',
       [Validators.required, Validators.maxLength(3000)]),
      'inputSalaryFrom' : new FormControl('',
-       [Validators.required, Validators.pattern(/[0-9]/)]),
+       [Validators.required, Validators.pattern(/[0-9]/)], [this.salaryFromAsyncValidator.bind(this)]),
       'inputSalary' : new FormControl('',
-        [Validators.required, Validators.pattern(/[0-9]/)]),
+        [Validators.required, Validators.pattern(/[0-9]/)], [this.salaryAsyncValidator.bind(this)]),
       'displayPeriod' : new FormControl( this.myDisplayPeriod,
         []),
       'inputjobFunction': new FormControl('',
@@ -86,6 +86,41 @@ export class NewVacancyComponent implements OnInit {
     );
 
   }
+
+
+
+  // валидатор по оплате минимальной
+  salaryFromAsyncValidator(control: FormControl): Promise<{[s:string]: boolean}> {
+    return new Promise(
+      (resolve, reject)=>{
+        if (this.newVacancyForm.controls['inputSalary'].value < control.value) {
+          this.newVacancyForm.controls['inputSalary'].setValue(control.value);
+          resolve(null);
+        }
+        else {
+          resolve(null);
+        }
+      }
+    );
+  }
+
+
+  // валидатор по оплате максимальной
+  salaryAsyncValidator(control: FormControl): Promise<{[s:string]: boolean}> {
+    return new Promise(
+      (resolve, reject)=>{
+        if (this.newVacancyForm.controls['inputSalaryFrom'].value > control.value) {
+          this.newVacancyForm.controls['inputSalaryFrom'].setValue(control.value);
+          resolve(null);
+        }
+        else {
+          resolve(null);
+        }
+      }
+    );
+  }
+
+
 
 
   // controlPrefics "industryCheck"
