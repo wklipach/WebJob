@@ -102,6 +102,7 @@
   margin-left: 15px;
   width: 130px;
   height: 40px;
+  cursor: pointer;
 }
 .company-name{
   display: inline-block;
@@ -113,6 +114,7 @@
   margin-top: 36px;
   margin-left: 209px;
   overflow: hidden;
+  cursor: pointer;
 }
 .jobFunction{
 }

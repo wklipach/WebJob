@@ -14,7 +14,7 @@
 
       <div *ngIf="base64textString.length>0; then contentLoadAvatar else contentDefault">условия выполнить невозможно</div>
       <ng-template #contentLoadAvatar>
-        <img class="logotype" title="Загрузить логотип" *ngFor="let item of base64textString"  src={{item}} alt="Загрузить логотип" id="img" onclick="document.getElementById('avatar').click()">
+        <img class="logotype" title="Загрузить логотип.Отношение ширины к высоте 3 к 1." *ngFor="let item of base64textString"  src={{item}} alt="Загрузить логотип.Отношение ширины к высоте 3 к 1" id="img" onclick="document.getElementById('avatar').click()">
       </ng-template>
 
       <ng-template #contentDefault>

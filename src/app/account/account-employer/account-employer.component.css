@@ -86,6 +86,7 @@ label{
   margin-top: 65px;
   width: 130px;
   height: 40px;
+  cursor: pointer;
 }
 .upload-logo{
   position: absolute;

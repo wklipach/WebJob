@@ -17,7 +17,7 @@
         "Name": "20180302_184547.jpg"
       },
       "Gender": 1,
-      "DateBirth": null
+      "DateBirth": 0
     },
     {
       "UserName": "Employee_1",
@@ -600,7 +600,7 @@
     },
     {
       "letter": {
-        "bOld": false,
+        "bOld": true,
         "bReadByRecipient": false,
         "id_user_from": 1,
         "id_cv": 1,

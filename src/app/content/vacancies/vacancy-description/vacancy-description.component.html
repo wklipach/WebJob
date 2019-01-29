@@ -25,7 +25,7 @@
           <img class="logotype-company" *ngFor="let item of this.descrDataVacancy['vacancy'].base64textString"  (click)="clickAboutCompany()" src={{item}} alt="Логотип компании" id="img">
         </ng-template>
         <ng-template #contentDefault>
-          <img class="logotype-company" src="/assets/img/no-photo.png" alt="Логотип компании" (click)="clickAboutCompany()" >
+          <img class="logotype-company" src="/assets/img/no-photo.png" alt="Логотип компании" (click)="clickAboutCompany()" title="Перейти к описанию компании" >
         </ng-template>
     </div>
         <!-- ////////////////////////// -->

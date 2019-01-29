@@ -38,6 +38,7 @@ li{
   display: inline-block;
 }
 .headline{
+ margin-bottom: 2px;
  font-family: "Proxima Nova";
   background-color: #DFDFDF;
 }
@@ -47,12 +48,18 @@ li{
   border-color: #b7b7b7;
   font-size: 16px;
   font-family: "Proxima Nova";
+  margin-top: 2px;
 }
 .date{
-  width:100px;
+  width:130px;
+}
+.txt{
+  width:100%;
+  font-size: 14px;
+  font-family: "Proxima Nova";
 }
 .from{
-  width:250px;
+  width:210px;
 }
 .subject{
   width:700px;
