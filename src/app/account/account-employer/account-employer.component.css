@@ -109,12 +109,12 @@ label{
 .img-lock{
   position: absolute;
   margin-left: 180px;
-  margin-top: 675px;
+  margin-top: 1175px;
 }
 .changePass{
   position: absolute;
   margin-left: 211px;
-  margin-top: 675px;
+  margin-top: 1175px;
   cursor: pointer;
   text-decoration: underline;
 }
@@ -252,6 +252,10 @@ label{
   margin-left: 180px;
   margin-top: 563px;
 }
+.phone2{
+  margin-left: 444px;
+  margin-top: 563px;
+}
 .inputPhone{
   border-width: 1px;
   border-color: rgb(68, 75, 84);
@@ -264,6 +268,53 @@ label{
   height: 43px;
   margin-left: 180px;
   margin-top: 599px;
+}
+.inputPhone2{
+  border-width: 1px;
+  border-color: rgb(68, 75, 84);
+  border-style: solid;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  text-align: center;
+  width: 228px;
+  height: 43px;
+  margin-left: 444px;
+  margin-top: 599px;
+}
+.web{
+  margin-left: 180px;
+  margin-top: 691px;
+}
+.inputWeb{
+  border-width: 1px;
+  border-color: rgb(68, 75, 84);
+  border-style: solid;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  text-align: center;
+  width: 228px;
+  height: 43px;
+  margin-left: 180px;
+  margin-top: 721px;
+}
+.contact-person{
+  margin-left: 444px;
+  margin-top: 691px;
+}
+.inputContact-person{
+  border-width: 1px;
+  border-color: rgb(68, 75, 84);
+  border-style: solid;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  text-align: center;
+  width: 228px;
+  height: 43px;
+  margin-left: 444px;
+  margin-top: 721px;
 }
 .btn-save{
   display: inline-block;
@@ -278,7 +329,7 @@ label{
   line-height: 2.25;
   width: 228px;
   height: 48px;
-  margin-top:750px;
+  margin-top:1050px;
   margin-left: 180px;
 }
 .btn-save:hover{
@@ -304,7 +355,7 @@ label{
   border-radius: 3px;
   line-height: 2;
   text-align: center;
-  margin-top: 750px;
+  margin-top: 1050px;
   margin-left: 444px;
 }
 .btn-cancel:hover{
@@ -327,7 +378,7 @@ label{
   width: 489px;
   height: 199px;
   margin-left: 180px;
-  margin-top: 720px;
+  margin-top: 1120px;
   z-index: 10;
 }
 .inputNewPassword1 {
@@ -361,7 +412,7 @@ label{
   line-height: 2.25;
   width: 190px;
   height: 48px;
-  margin-top:78px;
+  margin-top:1120px;
   margin-left: -322px;
 }
 .alert-pass{

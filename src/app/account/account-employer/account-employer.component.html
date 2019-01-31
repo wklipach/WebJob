@@ -12,7 +12,7 @@
     <form [formGroup]="form">
 
 
-      <div *ngIf="base64textString.length>0; then contentLoadAvatar else contentDefault">условия выполнить невозможно</div>
+      <div *ngIf="base64textString.length>0; then contentLoadAvatar else contentDefault">Условия выполнить невозможно</div>
       <ng-template #contentLoadAvatar>
         <img class="logotype" title="Загрузить логотип.Отношение ширины к высоте 3 к 1." *ngFor="let item of base64textString"  src={{item}} alt="Загрузить логотип.Отношение ширины к высоте 3 к 1" id="img" onclick="document.getElementById('avatar').click()">
       </ng-template>
@@ -96,6 +96,18 @@
       <label class="phone">Телефон</label>
       <input type="text" class="inputPhone" id="inputPhone" formControlName="inputPhone" placeholder="Телефон">
 
+      <label class="phone2">Телефон 2</label>
+      <input type="text" class="inputPhone2" id="inputPhone2" formControlName="inputPhone2" placeholder="Телефон 2">
+
+      <label class="web">Web-site</label>
+      <input type="text" class="inputWeb" id="inputWeb" formControlName="inputWeb" placeholder="Web-site">
+
+      <label class="contact-person">Контактное лицо</label>
+      <input type="text" class="inputContact-person" id="inputContact-person" formControlName="inputContact-person" placeholder="Контактное лицо">
+
+
+
+
 
       <img class="img-lock" src="/assets/img/lock.png" alt="Смена пароля" title="Смена пароля">
       <label class="changePass" (click)="accessPassword()"> Изменить пароль </label>
@@ -132,4 +144,8 @@
   </div>
 </div>
 
+
+
+<!--
 <app-footer></app-footer>
+-->

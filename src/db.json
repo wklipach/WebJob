@@ -587,7 +587,7 @@
     },
     {
       "letter": {
-        "bOld": false,
+        "bOld": true,
         "bReadByRecipient": false,
         "id_user_from": 1,
         "id_cv": 5,
