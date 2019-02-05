@@ -8,7 +8,6 @@
     <label class="personal">Данные компании</label>
 
 
-
     <form [formGroup]="form">
 
 
@@ -105,7 +104,9 @@
       <label class="contact-person">Контактное лицо</label>
       <input type="text" class="inputContact-person" id="inputContact-person" formControlName="inputContact-person" placeholder="Контактное лицо">
 
-
+      <label class="about">О компании</label>
+      <textarea class="inputAbout" maxlength="3000" aria-label="О компании. До 1000 знаков"
+                formControlName="inputAbout" id="inputAbout" placeholder="О компании. До 1000 знаков"></textarea>
 
 
 

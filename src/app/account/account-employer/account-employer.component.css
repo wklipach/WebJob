@@ -316,6 +316,18 @@ label{
   margin-left: 444px;
   margin-top: 721px;
 }
+.about{
+  margin-left: 180px;
+  margin-top: 820px;
+}
+.inputAbout{
+  width: 848px;
+  height: 190px;
+  margin-left: 180px;
+  margin-top: 860px;
+}
+
+
 .btn-save{
   display: inline-block;
   position: absolute;
