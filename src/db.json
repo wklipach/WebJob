@@ -17,7 +17,11 @@
         "Name": "20180302_184547.jpg"
       },
       "Gender": 1,
-      "DateBirth": 0
+      "DateBirth": 0,
+      "ContactPerson": "Пробное КЛ",
+      "About": "Пробное О Компании",
+      "Web": "Пробный сайт",
+      "Phone2": "Пробный тел.  2"
     },
     {
       "UserName": "Employee_1",

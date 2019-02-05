@@ -302,7 +302,7 @@ private loadUser: UserType;
       const AddUser  = new UserType(inputUserName, inputEmail, this._sPassword,
                                    false, id_city, inputZip, inputName, inputLastName, inputAddress, inputPhone,
                                     this.genderList.find((value)=>value.name == inputGender).id,
-       Date.parse(inputBirth));
+       Date.parse(inputBirth), '','','','');
 
 
       return this.auth.updateDataUserTable(AddUser, this.id_user).subscribe(

@@ -58,8 +58,7 @@ export class AccountEmployerComponent implements OnInit {
     }
 
 
-constructor(private is: GuideService,
-
+constructor(  private is: GuideService,
               private auth: AuthService,
               private router: Router,
               private gs: GuideService,
@@ -142,8 +141,12 @@ createAccountEmployerForm() {
     ], [this.userEmailAsyncValidator.bind(this)]
     ),
     'inputGender': new FormControl('', []),
-    'inputBirth': new FormControl('', [])
+    'inputBirth': new FormControl('', []),
 
+    'inputPhone2': new FormControl(),
+    'inputWeb': new FormControl(),
+    'inputAbout': new FormControl(),
+    'inputContactPerson': new FormControl()
   });
 
   this.genderList = this.gs.getGenderList();
@@ -157,15 +160,10 @@ createAccountEmployerForm() {
     if (typeof  this.subscrDataUserFromId !== 'undefined') {
       this.subscrDataUserFromId.unsubscribe();
     }
-
-
   }
 
   loadCurrentUserInfo(item: any) {
-
     // редактируемый список городов по подписке с выбранным ранее городом в    качестве выбранного
-
-
     this.cveditCityTable = this.is.getCityTable().subscribe(
 
       (data: City[]) => {
@@ -224,9 +222,22 @@ createAccountEmployerForm() {
           this.accountEmployerForm.controls['inputBirth'].setValue(birthDate.toISOString().substring(0,10));
         }
 
+        if (typeof item.Phone2 !== 'undefined') {
+          this.accountEmployerForm.controls['inputPhone2'].setValue(item.Phone2);
+        }
 
+        if (typeof item.Web !== 'undefined') {
+          this.accountEmployerForm.controls['inputWeb'].setValue(item.Web);
+        }
+
+        if (typeof item.About !== 'undefined') {
+          this.accountEmployerForm.controls['inputAbout'].setValue(item.About);
+        }
+
+        if (typeof item.ContactPerson !== 'undefined') {
+          this.accountEmployerForm.controls['inputContactPerson'].setValue(item.ContactPerson);
+        }
       }
-
     );
   }
 
@@ -258,8 +269,8 @@ createAccountEmployerForm() {
     var id_city = -1;
 
     const {inputUserName, inputName, inputLastName, inputZip, inputAddress,
-      inputPhone, inputCity, inputEmail, inputGender, inputBirth} = this.accountEmployerForm.value;
-
+      inputPhone, inputCity, inputEmail, inputGender, inputBirth,
+      inputContactPerson, inputAbout, inputWeb, inputPhone2} = this.accountEmployerForm.value;
 
     this.gs.getCityId(inputCity).subscribe( (value: City) => {
 
@@ -267,10 +278,13 @@ createAccountEmployerForm() {
 
       const AddUser  = new UserType(inputUserName, inputEmail,
         this._sPassword,
-
         true, id_city, inputZip, inputName, inputLastName, inputAddress,
         inputPhone,                                     this.genderList.find((value)=>value.name == inputGender).id,
-        Date.parse(inputBirth)
+        Date.parse(inputBirth),
+        inputContactPerson,
+        inputAbout,
+        inputWeb,
+        inputPhone2
     );
 
       return this.auth.updateDataUserTable(AddUser, this.id_user).subscribe(

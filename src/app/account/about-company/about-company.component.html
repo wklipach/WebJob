@@ -7,27 +7,39 @@
 
 
 <label>Логотип</label><br>
-    <div>Сюда вставить картинку с логотипом компании</div><br>
+
+
+
+    <div *ngIf="base64textString.length>0; then contentLoadAvatar else contentDefault">Условия выполнить невозможно</div>
+    <ng-template #contentLoadAvatar>
+      <img class="logotype" title="Логотип." *ngFor="let item of base64textString"  src={{item}} alt="Логотип." id="img">
+    </ng-template>
+
+    <ng-template #contentDefault>
+      <img src="/assets/img/no-photo.png"  title="Логотип." alt="Логотип." class="img-thumbnail">
+    </ng-template>
+
+
 <label>Email</label><br>
-    <div>Сюда вывести Email</div><br>
+    <div>{{_myEmail}}</div><br>
 <label>Web-site</label><br>
-    <div>Сюда вывести Web-site</div><br>
+    <div>{{_myWeb}}</div><br>
 <label>Название компании</label><br>
-    <div>Сюда вывести Название компании</div><br>
+    <div>{{_myUserName}}</div><br>
 <label>Город</label>
-    <div>Сюда вывести Город</div><br>
+    <div>{{this._myDisplayCity}}</div><br>
     <label>Почтовый индекс</label><br>
-    <div>Сюда вывести Почтовый индекс</div><br>
+    <div>{{_myZip}}</div><br>
 <label>Адрес</label><br>
-    <div>Сюда вывести Адрес</div><br>
+    <div>{{_myAddress}}</div><br>
 <label>Телефон</label><br>
-    <div>Сюда вывести Телефон</div><br>
+    <div>{{_myPhone}}</div><br>
 <label>Телефон2</label><br>
-    <div>Сюда вывести Телефон2</div><br>
+    <div>{{_myPhone2}}</div><br>
 <label>О компании - текст</label><br>
-    <div>Сюда вывести О компании - текст</div><br>
+    <div>{{_myAbout}}</div><br>
 <label>Контактное лицо </label><br>
-    <div>Сюда вывести Контактное лицо</div><br>
+    <div>{{_myContactPerson}}</div><br>
 
  <!--
     <label>Место на карте</label><br>

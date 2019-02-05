@@ -15,10 +15,16 @@ export class UserType{
   Avatar: any;
   Gender: number;
   DateBirth: number;
+  ContactPerson: string;
+  About: string;
+  Web: string;
+  Phone2: string;
 
   constructor(UserName: string, EMail: string, Password: string, bEmployer: boolean,
               City: number, Zip: string, Name: string,
-              LastName: string, Address: string, Phone: string, Gender: number, DateBirth: number) {
+              LastName: string, Address: string, Phone: string, Gender: number, DateBirth: number,
+              ContactPerson: string, About: string, Web: string, Phone2: string
+) {
     this.UserName = UserName;
     this.EMail = EMail;
     this.Password = Password;
@@ -31,6 +37,10 @@ export class UserType{
     this.Phone = Phone;
     this.Gender= Gender;
     this.DateBirth = DateBirth;
+    this.ContactPerson = ContactPerson;
+    this.About = About;
+    this.Web = Web;
+    this.Phone2 = Phone2;
   }
 
 }

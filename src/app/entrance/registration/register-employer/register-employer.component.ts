@@ -48,7 +48,6 @@ export class RegisterEmployerComponent implements OnInit {
       'userPassword1': new FormControl('', Validators.required),
       'userPassword2': new FormControl('', [Validators.required], [this.password2AsyncValidator.bind(this)]),
       'cbLicense': new FormControl('', Validators.requiredTrue),
-
       'surname': new FormControl({}),
       'dateBirth': new FormControl({}),
       'name': new FormControl({})
@@ -65,13 +64,17 @@ export class RegisterEmployerComponent implements OnInit {
     const {userName, userEmail, userPassword1, userPassword2} = this.formRegisterEmployer.value;
 
     if (userPassword1.trim() !== userPassword2.trim()) {
-      console.log('Пароли не совподают');
+      console.log(' Пароли не совподают ');
       this.bPassword = true;
       return -1;
     }
 
 
-    const AddUser  = new UserType(userName,userEmail,userPassword1,true, -1,'','','','','',0, 0);
+    const AddUser  = new UserType(userName,userEmail,userPassword1,true, -1,'','','','','',0, 0,
+      '',
+      '',
+      '',
+      '');
 
     console.log(AddUser);
 
