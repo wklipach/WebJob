@@ -49,7 +49,7 @@ export class VacancyEditComponent implements OnInit {
       'inputConditions': new FormControl('',
         [Validators.required, Validators.maxLength(3000)]),
       'inputSalaryFrom' : new FormControl('',
-        [Validators.required, Validators.pattern(/[0-9]/)]),
+        [Validators.required, Validators.pattern(/[0-9]/)], [this.salaryFromAsyncValidator.bind(this)]),
       'inputSalary' : new FormControl('',
         [Validators.required, Validators.pattern(/[0-9]/)]),
       'displayPeriod' : new FormControl( this.myDisplayPeriod,
@@ -61,8 +61,24 @@ export class VacancyEditComponent implements OnInit {
       'inputCity' : new FormControl('',[])
     });
 
-
   }
+
+
+  // валидатор по оплате минимальной
+  salaryFromAsyncValidator(control: FormControl): Promise<{[s:string]: boolean}> {
+    return new Promise(
+      (resolve, reject)=>{
+        if (this.editVacancyForm.controls['inputSalary'].value < control.value) {
+          this.editVacancyForm.controls['inputSalary'].setValue(control.value);
+          resolve(null);
+        }
+        else {
+          resolve(null);
+        }
+      }
+    );
+  }
+
 
   ngOnInit() {
     var Res =  this.auth.loginStorage();

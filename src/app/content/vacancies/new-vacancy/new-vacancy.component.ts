@@ -50,7 +50,7 @@ export class NewVacancyComponent implements OnInit {
      'inputSalaryFrom' : new FormControl('',
        [Validators.required, Validators.pattern(/[0-9]/)], [this.salaryFromAsyncValidator.bind(this)]),
       'inputSalary' : new FormControl('',
-        [Validators.required, Validators.pattern(/[0-9]/)], [this.salaryAsyncValidator.bind(this)]),
+        [Validators.required, Validators.pattern(/[0-9]/)], []),
       'displayPeriod' : new FormControl( this.myDisplayPeriod,
         []),
       'inputjobFunction': new FormControl('',
