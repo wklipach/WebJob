@@ -5,7 +5,7 @@
   <div class="box">
 
   <form [formGroup]="form">
-    <div *ngIf="base64textString.length>0;then contentLoadAvatar else contentDefault">условия выполнить невозможно</div>
+    <div *ngIf="base64textString.length>0;then contentLoadAvatar else contentDefault">Условия выполнить невозможно</div>
     <ng-template #contentLoadAvatar>
       <img class="logotype" *ngFor="let item of base64textString"  src={{item}} alt="Посмотреть профиль" id="img" (click) = "onProfileClick($event)">
     </ng-template>
@@ -14,6 +14,7 @@
       <img src="/assets/img/usernull.png" class="img-thumbnail" onclick="">
     </ng-template>
   </form>
+
 
     <label class="fio">Петров Иван Иванович</label>
     <img class="city" src="/assets/img/city.png" alt="Город">
@@ -33,8 +34,7 @@
   <label class="label-position">Желаемая должность</label>
 
   <div class="cv-box">
-    <!-- Отрасль -->
-    <app-cv_industry></app-cv_industry>
+
     <!-- Занятость -->
     <app-cv-employment></app-cv-employment>
     <!-- график работы -->
@@ -43,6 +43,8 @@
     <app-cv-experience></app-cv-experience>
     <!-- Образование -->
     <app-cv-education></app-cv-education>
+    <!-- Отрасль -->
+    <app-cv_industry></app-cv_industry>
 
    </div>
   </div>

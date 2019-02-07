@@ -7,7 +7,7 @@
       "bEmployer": true,
       "City": 4,
       "Zip": "194292",
-      "Name": "A-Number",
+      "Name": "A-Number Software",
       "LastName": "",
       "Address": "Лесной, 12",
       "Phone": "+7 812 3202462",
@@ -18,10 +18,10 @@
       },
       "Gender": 1,
       "DateBirth": 0,
-      "ContactPerson": "Пробное КЛ",
-      "About": "Пробное О Компании",
-      "Web": "Пробный сайт",
-      "Phone2": "Пробный тел.  2"
+      "ContactPerson": "Владимир",
+      "About": "Наша компания разрабатывает офигенный софт",
+      "Web": "http//a-number.com",
+      "Phone2": "+7 812 3202470"
     },
     {
       "UserName": "Employee_1",
