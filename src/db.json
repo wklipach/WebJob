@@ -282,7 +282,7 @@
     },
     {
       "letter": {
-        "bOld": false,
+        "bOld": true,
         "bReadByRecipient": false,
         "id_user_from": 1,
         "id_cv": 1,
@@ -361,6 +361,54 @@
         ]
       },
       "id": 1
+    },
+    {
+      "cv": {
+        "bChecked": false,
+        "bInvisible": true,
+        "id_user": 2,
+        "SalaryFrom": "",
+        "Position": "",
+        "City": 1,
+        "Industry": [],
+        "Schedule": [],
+        "Employment": [],
+        "Education": [],
+        "Experience": []
+      },
+      "id": 2
+    },
+    {
+      "cv": {
+        "bChecked": false,
+        "bInvisible": true,
+        "id_user": 2,
+        "SalaryFrom": "",
+        "Position": "",
+        "City": 1,
+        "Industry": [],
+        "Schedule": [],
+        "Employment": [],
+        "Education": [],
+        "Experience": []
+      },
+      "id": 3
+    },
+    {
+      "cv": {
+        "bChecked": false,
+        "bInvisible": true,
+        "id_user": 2,
+        "SalaryFrom": "",
+        "Position": "",
+        "City": 1,
+        "Industry": [],
+        "Schedule": [],
+        "Employment": [],
+        "Education": [],
+        "Experience": []
+      },
+      "id": 4
     }
   ],
   "CV_Previous": [
@@ -386,6 +434,18 @@
         }
       ],
       "id": 1
+    },
+    {
+      "previous": [],
+      "id": 2
+    },
+    {
+      "previous": [],
+      "id": 3
+    },
+    {
+      "previous": [],
+      "id": 4
     }
   ],
   "Info": []

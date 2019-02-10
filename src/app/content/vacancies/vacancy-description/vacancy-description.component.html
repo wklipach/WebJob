@@ -7,7 +7,7 @@
     <div class="title" *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy['vacancy'].VacancyShortTitle}}</div>
  <div class="income">
       <span *ngIf="this.descrDataVacancy" class="salaryFrom">{{ this.descrDataVacancy['vacancy'].SalaryFrom}}&nbsp;-&nbsp;</span>
-   <span *ngIf="this.descrDataVacancy" class="salaryMax">{{ this.descrDataVacancy['vacancy'].Salary}}</span> Р
+   <span *ngIf="this.descrDataVacancy" class="salaryMax">{{ this.descrDataVacancy['vacancy'].Salary}}</span> &#x20BD;
  </div>
 
 <div class="city-line">
@@ -17,19 +17,15 @@
   </div>
 
 
-    <!-- ////////////////////////// -->
-
     <div *ngIf="this.descrDataVacancy">
         <div *ngIf="this.descrDataVacancy['vacancy'].base64textString.length>0; then contentLoadAvatar else contentDefault">условия выполнить невозможно</div>
         <ng-template #contentLoadAvatar>
           <img class="logotype-company" *ngFor="let item of this.descrDataVacancy['vacancy'].base64textString"  (click)="clickAboutCompany()" src={{item}} alt="Логотип компании" id="img">
         </ng-template>
         <ng-template #contentDefault>
-          <img class="logotype-company" src="/assets/img/no-photo.png" alt="Логотип компании" (click)="clickAboutCompany()" title="Перейти к описанию компании" >
+          <img class="logotype-company" src="/assets/img/no-photo.png"  title="Перейти к описанию компании" alt="Логотип компании" (click)="clickAboutCompany()">
         </ng-template>
     </div>
-        <!-- ////////////////////////// -->
-
 
     <div class="company-name">{{this.sEmployerUserName}}</div>
 
@@ -37,10 +33,6 @@
        <div class="jobFunction">
          <div *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy['vacancy'].JobFunction }}</div>
        </div>
-
-    <!--
-       <div *ngIf="this.descrDataVacancy" class="descVac">{{ this.descrDataVacancy['vacancy'].VacancyDescription}}</div>
-     -->
 
     <label>Требования</label>
     <div class="vacancyRequirements">
@@ -55,7 +47,7 @@
 
 
 
-    <label class="labelDescr">График работы</label>
+    <label>График работы</label>
 
     <div *ngFor="let sS of sSchedule" class="descVac"> {{sS}}</div>
 
@@ -74,6 +66,12 @@
     <label>Отрасль</label>
 
     <div *ngFor="let sI of sIndusrtry" class="descVac"> {{sI}}</div>
+
+
+    <button class="btn-response" type="button" id="vcresponse" title="Откликнуться">Откликнуться</button>
+    <button class="btn-favorites" type="button" id="vcfavorites" title="В избранное">В избранное</button>
+    <button class="btn-hide" type="button" id="vchide" title="Не показывать">Не показывать</button>
+
 
   </div>
 

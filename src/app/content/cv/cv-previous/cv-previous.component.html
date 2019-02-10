@@ -1,8 +1,8 @@
-<label>Предыдущее место работы</label>
+<br>
 
 <form [formGroup]="formPrevious">
 
-  <button (click)="checkNumberPrevious()">Удалить данное место работы</button>
+  <button class="btn-delete"  (click)="checkNumberPrevious()">Удалить данное место работы</button><br>
 
   <label class="startDate">Начальная дата</label>
 
@@ -11,23 +11,26 @@
 
 
   <label class="completionDate">Конечная дата</label>
+  <br>
   <input type="date" class="input-completionDate" formControlName="completionDate" id="completionDate" placeholder="Конечная дата">
+  <br>
 
-
-  <label class="labelDescr">Компания</label>
-
+  <label class="company-name">Компания</label>
+  <br>
   <input type="text" class="form-control" formControlName="company" id="company" placeholder="Компания">
-
-
+  <br>
   <label class="labelDescr">Должность</label>
+  <br>
   <input type="text" class="form-control" formControlName="previousPosition" id="previousPosition" placeholder="Должность">
-
+  <br>
   <label class="labelDescr">Должностные обязанности и достижения</label>
+  <br>
   <textarea class="form-control" aria-label="Должностные обязанности и достижения до 800 знаков" formControlName="inputPositionDescription" id="inputPositionDescription" placeholder="Должностные обязанности и достижения до 800 знаков"></textarea>
-
+  <br>
   <label class="labelDescr">Основные навыки и умения</label>
+  <br>
   <textarea class="form-control" aria-label="Основные навыки и умения до 4000 знаков" formControlName="inputSkillsAbilities" id="inputSkillsAbilities" placeholder="Основные навыки и умения до 4000 знаков"></textarea>
-
+  <br>
 </form>
 
 

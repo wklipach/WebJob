@@ -214,3 +214,77 @@ label{
 .number{
   position: absolute;
 }
+
+.btn-response {
+  display: inline-block;
+  position: absolute;
+  border-radius: 3px;
+  background-color: #3366ff;
+  width: 155px;
+  height: 50px;
+  color: rgb(255, 255, 255);
+  border-color: #054086;
+  border-width: 1px;
+  border-style: solid;
+  margin-top: 22px;
+  margin-left: 15px;
+}
+.btn-response:hover{
+  background-color: #0066cc;
+  font-weight:600;
+}
+.btn-response:active{
+  border-color: #3399ff;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 3px;
+  font-weight: 600;
+}
+.btn-favorites{
+  display: inline-block;
+  position: absolute;
+  color: rgb(255, 255, 255);
+  background-color: #3366ff;
+  border-color: #054086;
+  border-radius: 3px;
+  border-width: 1px;
+  border-style: solid;
+  text-align: center;
+  width: 156px;
+  height: 48px;
+  margin-top: 22px;
+  margin-left: 172px;
+}
+.btn-favorites:hover{
+  background-color: #0066cc;
+  color: white;
+  font-weight:600;
+}
+.btn-favorites:active{
+  border-color: #3399ff;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 3px;
+  font-weight: 600;
+}
+.btn-hide{
+  display: inline-block;
+  position: relative;
+  color: #484d55;
+  background-color: #ffffff;
+  border-color: rgb(242, 97, 0);
+  border-radius: 3px;
+  border-width: 1px;
+  border-style: solid;
+  text-align: center;
+  width: 156px;
+  height: 48px;
+  margin-top: 22px;
+  margin-bottom:22px;
+  margin-left: 330px;
+}
+.btn-hide:hover{
+  background-color:#f26100;
+  color: white;
+  font-weight:600;
+}

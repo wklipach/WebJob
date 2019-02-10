@@ -26,3 +26,31 @@
   margin-top: 218px;
   background:none;
 }
+label{
+  position: absolute;
+  font-size: 1.1em;
+  font-family: "Proxima Nova";
+  color: rgb(2, 98, 210);
+  text-align: left;
+}
+.btn-delete {
+  display: inline-block;
+  position: relative;
+  color: #484d55;
+  background-color: #ffffff;
+  border-color: rgb(242, 97, 0);
+  border-radius: 3px;
+  border-width: 1px;
+  border-style: solid;
+  text-align: center;
+  width: 256px;
+  height: 48px;
+  margin-top: 2px;
+  margin-bottom:20px;
+  margin-left: 15px;
+}
+.btn-delete:hover{
+  background-color:#f26100;
+  color: white;
+  font-weight:600;
+}
