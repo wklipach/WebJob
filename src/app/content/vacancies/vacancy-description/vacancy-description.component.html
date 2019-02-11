@@ -68,10 +68,10 @@
     <div *ngFor="let sI of sIndusrtry" class="descVac"> {{sI}}</div>
 
 
-    <button class="btn-response" type="button" id="vcresponse" title="Откликнуться">Откликнуться</button>
-    <button class="btn-favorites" type="button" id="vcfavorites" title="В избранное">В избранное</button>
-    <button class="btn-hide" type="button" id="vchide" title="Не показывать">Не показывать</button>
-
+    <button class="btn-response" type="button" id="vcresponse" title="Откликнуться" (click)="vcResponse()">Откликнуться</button>
+    <button class="btn-favorites" type="button" id="vcfavorites" title="В избранное" (click)="vcFavour()">В избранное</button>
+    <button class="btn-hide" type="button" id="vchide" title="Не показывать" (click)="vcDontShow()">Не показывать</button>
+    <div *ngIf="this.descrDataVacancy">{{this.descrDataVacancy.sErrorText}}</div>
 
   </div>
 
