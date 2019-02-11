@@ -59,6 +59,7 @@ import { CvViewComponent } from './content/cv/cv-view/cv-view.component';
 import {InfoService} from './services/info.service';
 import { AboutCompanyComponent } from './account/about-company/about-company.component';
 import { InfoPageComponent } from './account/message-center/info-page/info-page.component';
+import { SchoolComponent } from './content/cv/school/school.component';
 
 
 
@@ -98,6 +99,7 @@ const appRoutes: Routes = [
   {path: 'about-company', component: AboutCompanyComponent},
   {path: 'favorites', component: FavoritesComponent},
   {path: 'cv-view', component: CvViewComponent},
+  {path: 'school', component: SchoolComponent},
   {path: '**', component: NotFoundComponent }
 ];
 
@@ -148,7 +150,9 @@ const appRoutes: Routes = [
     CvViewComponent,
     InfoPageComponent,
     AboutCompanyComponent,
-    NotFoundComponent
+    SchoolComponent,
+    NotFoundComponent,
+    SchoolComponent
 
    ],
   entryComponents: [
