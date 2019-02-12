@@ -85,7 +85,13 @@ label{
   margin-top: 132px;
   margin-left: 15px;
 }
-
+.inputExperience{
+  display: block;
+  width: 848px;
+  height: 90px;
+  margin-left: 15px;
+  margin-top: 31px;
+}
 .btn-save {
   display: inline-block;
   position: absolute;
