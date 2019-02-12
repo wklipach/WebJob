@@ -23,5 +23,7 @@ export class CV{
   bChecked : boolean = false;
   // признак удаленного резюме
   bInvisible : boolean = false;
+  //описание образования словами
+  sExperience: string = '';
 
 }

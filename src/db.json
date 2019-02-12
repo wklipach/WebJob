@@ -422,6 +422,25 @@
         "Experience": []
       },
       "id": 4
+    },
+    {
+      "cv": {
+        "bChecked": false,
+        "bInvisible": false,
+        "sExperience": "Пробное описание бакалавра!",
+        "id_user": 2,
+        "SalaryFrom": "",
+        "Position": "",
+        "City": 1,
+        "Industry": [],
+        "Schedule": [],
+        "Employment": [],
+        "Education": [
+          1
+        ],
+        "Experience": []
+      },
+      "id": 5
     }
   ],
   "CV_Previous": [
@@ -459,6 +478,10 @@
     {
       "previous": [],
       "id": 4
+    },
+    {
+      "previous": [],
+      "id": 5
     }
   ],
   "Info": []

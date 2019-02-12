@@ -1,5 +1,5 @@
 import {Component, ComponentFactoryResolver, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {City} from '../../../class/City';
 import {GuideService} from '../../../services/guide-service.service';
 import {CvPreviousComponent} from '../cv-previous/cv-previous.component';
@@ -7,12 +7,9 @@ import {ComponentFactory} from '@angular/core/src/linker/component_factory';
 import {Previous} from '../../../class/Previous';
 import {PreviousService} from '../../../services/previous.service';
 import {Subscription} from 'rxjs';
-import {Vacancy} from '../../../class/Vacancy';
 import {CV} from '../../../class/CV';
-import {NewVacancyService} from '../../../services/new-vacancy.service';
 import {NewcvService} from '../../../services/newcv.service';
 import {AuthService} from '../../../services/auth-service.service';
-import {isNullOrUndefined} from 'util';
 import {Router} from '@angular/router';
 
 @Component({
@@ -50,8 +47,8 @@ export class NewcvComponent implements OnInit {
       'inputSalaryFrom': new FormControl('',[]),
       'position': new FormControl('',[]),
       'inputCity' : new FormControl('',[]),
+      'inputExperience': new FormControl('',[Validators.maxLength(1000)])
     });
-
 
     this.previousCityTable =  is.getCityTable().subscribe(
       (data: City[]) => {
@@ -138,6 +135,8 @@ export class NewcvComponent implements OnInit {
 
     let city = this.listCity.find(x=>x.name===this.newCVForm.controls['inputCity'].value);
 
+
+    MyCv.sExperience = this.newCVForm.controls['inputExperience'].value;
     MyCv.SalaryFrom = this.newCVForm.controls['inputSalaryFrom'].value;
     MyCv.Position = this.newCVForm.controls['position'].value;
     MyCv.City = city.id;
