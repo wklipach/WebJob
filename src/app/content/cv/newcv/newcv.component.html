@@ -10,6 +10,8 @@
       <label class="location">Город</label>
       <label class="salary">Заработная плата</label>
 
+      <div style="width:100%; height:1px; clear:both;"></div> <!-- выравниваем без обтекания -->
+
       <select id="inputCity" formControlName="inputCity" class="inputCity" title="Город">
         <option  *ngFor="let lc of listCity" [value]="lc.name">
           {{lc.name}}
@@ -17,6 +19,8 @@
       </select>
 
       <input type="text" class="inputSalaryFrom" formControlName="inputSalaryFrom" id="inputSalaryFrom" placeholder="от">
+
+      <div style="width:100%; height:1px; clear:both;"></div>
 
       <label class="position">Желаемая должность</label>
 
@@ -33,20 +37,10 @@
       <br><br><br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br>
 
 
-
-
-
-
-
-
-
-
-
-
     </div>
 
-
     <div class="cv-box">
+
 
       <!-- Занятость -->
       <app-cv-employment></app-cv-employment>

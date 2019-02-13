@@ -21,7 +21,6 @@
   position: relative;
 }
 label{
-  position: absolute;
   font-size: 1.1em;
   font-family: "Proxima Nova";
   color: rgb(2, 98, 210);
@@ -33,7 +32,7 @@ label{
   width: 600px;
 }
 .inputCity{
-  position: absolute;
+
   font-size: 1em;
   font-family: "Proxima Nova";
   text-align: center;
@@ -48,13 +47,13 @@ label{
   margin-left: 15px;
 }
 .salary{
-  display: inline-block;
+
   margin-top: 13px;
   margin-left: 344px;
 }
 .inputSalaryFrom{
-  position: absolute;
-  display: inline-block;
+
+
   font-size: 1em;
   font-family: "Proxima Nova";
   text-align: center;
@@ -73,7 +72,7 @@ label{
   margin-left: 15px;
 }
 .inputPosition{
-  position: relative;
+
   font-size: 1em;
   font-family: "Proxima Nova";
   text-align: center;
@@ -92,14 +91,14 @@ label{
   margin-top: 2px;
 }
 .inputSkillsAbilities{
-  display: block;
+
   width: 848px;
   height: 90px;
   margin-left: 15px;
   margin-top: 45px;
 }
 .inputExperience{
-  display: block;
+
   width: 848px;
   height: 90px;
   margin-left: 15px;
