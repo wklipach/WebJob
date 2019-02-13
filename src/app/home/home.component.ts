@@ -336,9 +336,9 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   MyMethod(zid: number, $event) {
 
-    if ($event.explicitOriginalTarget.id === 'vcresponse' ||
-        $event.explicitOriginalTarget.id === 'vcfavorites' ||
-        $event.explicitOriginalTarget.id === 'vchide')
+    if ($event.target.id === 'vcresponse' ||
+      $event.target.id === 'vcfavorites' ||
+      $event.target.id === 'vchide')
     return;
 
     let vacancy = this.myDataVacancy.find(vacancy =>  vacancy.id===zid);
@@ -433,31 +433,34 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   }
 
-  response($event, index: number, vcid: number) {
+  response(index: number, vcid: number) {
 
-    this.sNoUserValueFind = '';
-    this.myDataVacancy[index].sErrorText = '';
-    if  (!this.bConnected)  {
-      this.sNoUserValueFind = 'Для использования функции "Откликнуться" пройдите верификацию.';
-      this.myDataVacancy[index].sErrorText = this.sNoUserValueFind;
-      return;
-    }
-    if (this.bEmployer) {
-      this.sNoUserValueFind = 'Работодателям функция "Откликнуться" для вакансий недоступна.';
-      this.myDataVacancy[index].sErrorText = this.sNoUserValueFind;
-      return;
-    }
+        this.sNoUserValueFind = '';
+        this.myDataVacancy[index].sErrorText = '';
+        if  (!this.bConnected)  {
+          this.sNoUserValueFind = 'Для использования функции "Откликнуться" пройдите верификацию.';
+          this.myDataVacancy[index].sErrorText = this.sNoUserValueFind;
+          return;
+        }
 
-    this.httpService.getNumberResponse(this.id_user, vcid).subscribe((value: Letter[]) => {
+        if (this.bEmployer) {
+          this.sNoUserValueFind = 'Работодателям функция "Откликнуться" для вакансий недоступна.';
+          this.myDataVacancy[index].sErrorText = this.sNoUserValueFind;
+          return;
+        }
 
-        if (value.length > 0) {
-            this.sNoUserValueFind = 'Вы уже откликались на данную вакансию. Дождитесь ответа';
-            this.myDataVacancy[index].sErrorText = this.sNoUserValueFind;
-            } else {
-              this.cvEditSrv.setCvId(vcid);
-              this.router.navigate(['/response']);
-            }
-      }) ;
+        this.httpService.getNumberResponse(this.id_user, vcid).subscribe((value: Letter[]) => {
+
+            if (value.length > 0) {
+                this.sNoUserValueFind = 'Вы уже откликались на данную вакансию. Дождитесь ответа';
+                this.myDataVacancy[index].sErrorText = this.sNoUserValueFind;
+                } else {
+                  this.cvEditSrv.setCvId(vcid);
+                  this.router.navigate(['/response']);
+                }
+          }) ;
+
+
   }
 
   RouterReload() {

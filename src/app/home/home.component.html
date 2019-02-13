@@ -40,7 +40,7 @@
     </div>
 
 
-    <button class="btn-response" type="button" id="vcresponse" title="Откликнуться" (click)="response($event,i, curVacancy.id)" >Откликнуться</button>
+    <button class="btn-response" type="button" id="vcresponse" title="Откликнуться" (click)="response(i, curVacancy.id)" >Откликнуться</button>
     <button class="btn-favorites" type="button" id="vcfavorites" title="В избранное" (click)="favorites($event,i, curVacancy.id)" >В избранное</button>
     <button class="btn-hide" type="button" id="vchide" title="Не показывать" (click)="unshow($event,i, curVacancy.id)" >Не показывать</button>
     {{curVacancy.sErrorText}}

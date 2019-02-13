@@ -312,6 +312,11 @@
       "id_user": 2,
       "id_vc": 1,
       "id": 1
+    },
+    {
+      "id_user": 2,
+      "id_vc": 5,
+      "id": 2
     }
   ],
   "City": [
