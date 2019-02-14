@@ -18,6 +18,10 @@
 .cv-box{
   width: 1170px;
   margin: 0 auto;
+}
+.line{
+  width: 100%;
+  margin-top: 1%;
   position: relative;
 }
 label{
@@ -27,12 +31,12 @@ label{
   text-align: left;
 }
 .location{
-  margin-top: 13px;
-  margin-left: 15px;
-  width: 600px;
+ margin-left: 15px;
+}
+.salary{
+  margin-left: 344px;
 }
 .inputCity{
-
   font-size: 1em;
   font-family: "Proxima Nova";
   text-align: center;
@@ -43,17 +47,9 @@ label{
   background-color: rgb(255, 255, 255);
   width: 275px;
   height: 43px;
-  margin-top: 41px;
   margin-left: 15px;
 }
-.salary{
-
-  margin-top: 13px;
-  margin-left: 344px;
-}
 .inputSalaryFrom{
-
-
   font-size: 1em;
   font-family: "Proxima Nova";
   text-align: center;
@@ -64,15 +60,12 @@ label{
   background-color: rgb(255, 255, 255);
   width: 138px;
   height: 40px;
-  margin-top: 41px;
-  margin-left: 345px;
+  margin-left: 116px;
 }
 .position{
-  margin-top: 103px;
   margin-left: 15px;
 }
 .inputPosition{
-
   font-size: 1em;
   font-family: "Proxima Nova";
   text-align: center;
@@ -81,32 +74,24 @@ label{
   border-style: solid;
   border-radius: 3px;
   background-color: rgb(255, 255, 255);
-  width: 467px;
+  width: 529px;
   height: 40px;
-  margin-top: 132px;
   margin-left: 15px;
 }
 .labelSkillsAbilities{
   margin-left: 13px;
-  margin-top: 2px;
 }
 .inputSkillsAbilities{
-
   width: 848px;
   height: 90px;
   margin-left: 15px;
-  margin-top: 45px;
 }
 .inputExperience{
-
   width: 848px;
   height: 90px;
   margin-left: 15px;
-  margin-top: 31px;
 }
 .btn-save {
-  display: inline-block;
-  position: absolute;
   border-radius: 3px;
   background-color: #3366ff;
   width: 255px;
@@ -115,8 +100,7 @@ label{
   border-color: #054086;
   border-width: 1px;
   border-style: solid;
-  margin-top: 42px;
-  margin-left: 550px;
+  margin-left: 15px;
 }
 .btn-save:hover{
   background-color: #0066cc;
@@ -130,9 +114,7 @@ label{
   font-weight: 600;
 }
 .btn-add {
-  display: inline-block;
-  position: absolute;
-  border-radius: 3px;
+ border-radius: 3px;
   background-color: #3366ff;
   width: 255px;
   height: 50px;
@@ -140,7 +122,6 @@ label{
   border-color: #054086;
   border-width: 1px;
   border-style: solid;
-  margin-top: 42px;
   margin-left: 2px;
 }
 .btn-add:hover{

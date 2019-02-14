@@ -6,12 +6,13 @@
   <form [formGroup]="newCVForm">
 
     <div class="cv-box">
-
+      <div class="line">
       <label class="location">Город</label>
       <label class="salary">Заработная плата</label>
+    </div>
+      <!--   <div style="width:100%; height:1px; clear:both;"></div>    выравниваем без обтекания -->
 
-      <div style="width:100%; height:1px; clear:both;"></div> <!-- выравниваем без обтекания -->
-
+      <div class="line">
       <select id="inputCity" formControlName="inputCity" class="inputCity" title="Город">
         <option  *ngFor="let lc of listCity" [value]="lc.name">
           {{lc.name}}
@@ -19,58 +20,63 @@
       </select>
 
       <input type="text" class="inputSalaryFrom" formControlName="inputSalaryFrom" id="inputSalaryFrom" placeholder="от">
-
-      <div style="width:100%; height:1px; clear:both;"></div>
-
+      </div>
+      <div class="line">
       <label class="position">Желаемая должность</label>
-
-      <input type="text" class="inputPosition" formControlName="inputPosition" id="inputPosition" placeholder="Желаемая должность">
-
-
-      <label class="labelSkillsAbilities">Основные навыки и умения</label>
-      <textarea class="inputSkillsAbilities" aria-label="Основные навыки и умения до 1000 знаков" formControlName="inputSkillsAbilities" id="inputSkillsAbilities" placeholder="Основные навыки и умения до 1000 знаков"></textarea>
-
-
-
-
-
-      <br><br><br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br>
-
-
-    </div>
-
-    <div class="cv-box">
-
-
-      <!-- Занятость -->
-      <app-cv-employment></app-cv-employment>
-      <!-- график работы -->
-      <app-cv-schedule></app-cv-schedule>
-      <!-- Опыт работы -->
-      <app-cv-experience></app-cv-experience>
-      <!-- Образование -->
+      </div>
+      <div class="line">
+        <input type="text" class="inputPosition" formControlName="inputPosition" id="inputPosition" placeholder="Желаемая должность">
+      </div>
+      <div class="line">
+           <label class="labelSkillsAbilities">Основные навыки и умения</label>
+      </div>
+      <div class="line">
+            <textarea class="inputSkillsAbilities" aria-label="Основные навыки и умения до 1000 знаков" formControlName="inputSkillsAbilities" id="inputSkillsAbilities" placeholder="Основные навыки и умения до 1000 знаков"></textarea>
+      </div>
+      <div class="line">
       <app-cv-education></app-cv-education>
-
+       </div>
+      <div class="line">
       <textarea class="inputExperience" aria-label="Учебное заведение. До 1000 знаков"
                 formControlName="inputExperience" id="inputExperience" placeholder="Учебное заведение. До 1000 знаков"></textarea>
+    </div>
 
+      <div class="line">
+        <!-- Опыт работы -->
+        <app-cv-experience></app-cv-experience>
+      </div>
+      <div class="line">
+        <ng-container #spot></ng-container>
+
+        <button class="btn-add"  (click)="createNewBlock()">Добавить место работы</button>
+      </div>
+      <div class="line">
+      <!-- Занятость -->
+      <app-cv-employment></app-cv-employment>
+      </div>
+      <div class="line">
+      <!-- график работы -->
+      <app-cv-schedule></app-cv-schedule>
+    </div>
+      <!-- Образование -->
 
 
       <!-- Отрасль -->
       <app-cv_industry></app-cv_industry>
 
-      <ng-container #spot></ng-container>
-
-      <button class="btn-add"  (click)="createNewBlock()">Добавить место работы</button>
-
-
+    <div class="line">
       <button class="btn-save"  (click)="newcv()">Сохранить резюме</button>
-
-
     </div>
-
+</div>
   </form>
+
 
 </div>
 
 
+<!--
+
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+-->

@@ -431,7 +431,7 @@
     {
       "cv": {
         "bChecked": false,
-        "bInvisible": false,
+        "bInvisible": true,
         "sExperience": "Пробное описание бакалавра!",
         "id_user": 2,
         "SalaryFrom": "",
@@ -446,6 +446,23 @@
         "Experience": []
       },
       "id": 5
+    },
+    {
+      "cv": {
+        "bChecked": false,
+        "bInvisible": true,
+        "sExperience": "",
+        "id_user": 2,
+        "SalaryFrom": "",
+        "Position": "",
+        "City": 1,
+        "Industry": [],
+        "Schedule": [],
+        "Employment": [],
+        "Education": [],
+        "Experience": []
+      },
+      "id": 6
     }
   ],
   "CV_Previous": [
@@ -487,6 +504,10 @@
     {
       "previous": [],
       "id": 5
+    },
+    {
+      "previous": [],
+      "id": 6
     }
   ],
   "Info": []

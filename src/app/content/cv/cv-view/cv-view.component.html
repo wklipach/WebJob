@@ -4,7 +4,13 @@
 
   <div class="box">
 
+
   <form [formGroup]="form">
+
+    <label>ФОТО</label> <br>
+    <!--    Фото не отображается.
+     Сюда вставить ФОТО, если нет - заглушку              -->
+
     <div *ngIf="base64textString.length>0;then contentLoadAvatar else contentDefault">Условия выполнить невозможно</div>
     <ng-template #contentLoadAvatar>
       <img class="logotype" *ngFor="let item of base64textString"  src={{item}} alt="Посмотреть профиль" id="img" (click) = "onProfileClick($event)">
@@ -16,22 +22,40 @@
   </form>
 
 
-    <label class="fio">Петров Иван Иванович</label>
+
+
+    <label class="fio">Ф.И.О.</label> <br>
+    <!--     Сюда вставить ФИО              --> <br>
+
+
     <img class="city" src="/assets/img/city.png" alt="Город">
-    <span class="city-name">Санкт-Петербург</span>
+    <span class="city-name"> <!--     Сюда вставить Город              --> </span>   <br>
 
-    <label class="label-position">Желаемая должность</label>
-    <span class="position" id="position"></span>
+    <label class="label-position">Желаемая должность</label> <br>
+    <span class="position" id="position"><!--     Сюда вставить Желательную должность      --></span>      <br>
 
-    <label class="location">Город</label>
-
-    <label class="salary">Заработная плата</label>
-
-    <label class="From">Заработная плата</label>
+    <label class="From">Заработная плата</label> <br>
+    <span><!--     Сюда вставить цифру из   inputSalaryFrom    --></span><br>
 
 
-  <label class="label-position">Желаемая должность</label>
-  <label class="label-position">Желаемая должность</label>
+    <label class="labelSkillsAbilities">Основные навыки и умения</label><br>
+
+    <span><!--     Сюда вставить текст из   inputSkillsAbilities    --></span><br>
+
+
+    <label class="labelEducation">Образование</label> <br>
+
+    <span><!-- Сюда вставить выбранное из  <app-cv-education> и за ним текст из inputExperience  (Хотя странно названо, ведь должно быть education ??? Проверить)  --></span><br>
+
+
+    <br> <br> <br> <br> <br> <br>
+
+    <label class="labelEducation">Образование</label> <br>
+
+    <span><!-- Сюда вставить выбранное из  <app-cv-education> и за ним текст из inputExperience  (Хотя странно названо, ведь должно быть education ??? Проверить)  --></span><br>
+
+
+    <!--    Короче, выводить всё что есть дальше в newcv              -->
 
   <div class="cv-box">
 
