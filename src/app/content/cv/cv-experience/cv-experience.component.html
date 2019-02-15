@@ -1,10 +1,15 @@
-<h3>Опыт работы</h3>
+<div class="wrapper">
+
+  <label class="top">Опыт работы</label>
+
 <form [formGroup]="formExperience">
-<div class="row align-items-start">
-  <div class="form-group form-check">
-    <div class="row" *ngFor="let item of listExperience">
-      <input type="checkbox" class="form-check-input" formControlName="experienceCheck{{item.id}}" id="experienceCheck{{item.id}}" title={{item.name}}> {{item.name}}
+
+  <div class="box">
+    <div *ngFor="let item of listExperience">
+      <input type="checkbox" class="checkInput" formControlName="experienceCheck{{item.id}}"
+             id="experienceCheck{{item.id}}" title={{item.name}}> <span>{{item.name}}</span>
     </div>
   </div>
-</div>
 </form>
+
+</div>
