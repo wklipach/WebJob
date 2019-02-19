@@ -35,39 +35,38 @@
     <div class="right-side">
       <div class="topline">
         <label class="labelSubject">Вакансия
-        <span class="subject">{{responseVC}}</span>
+          <span class="subject">{{responseVC}}</span>
         </label>
       </div>
 
 
-<!-- НАЧАЛО ЦИКЛА -->
-<div *ngFor="let lc of listLetter; let i = index">
+      <!-- НАЧАЛО ЦИКЛА -->
+      <div class="correspondence" *ngFor="let lc of listLetter; let i = index">
 
 
-      <div class="text" *ngIf="lc != undefined;else LT">
-        <div *ngIf="lc.letter.id_user_from===this.id_user"><= {{lc.letter.letterText}}</div>
-        <div *ngIf="lc.letter.id_user_to===this.id_user">=> {{lc.letter.letterText}}</div>
-      </div>
-      <ng-template #LT></ng-template>
+        <div class="text" *ngIf="lc != undefined;else LT">
+          <div *ngIf="lc.letter.id_user_from===this.id_user"><= {{lc.letter.letterText}}</div>
+          <div *ngIf="lc.letter.id_user_to===this.id_user">=> {{lc.letter.letterText}}</div>
+        </div>
+        <ng-template #LT></ng-template>
 
-  <div class="topline">
+        <div class="topline">
     <span class="dateTime"  *ngIf="lc != undefined; else DTC">
           {{lc.letter.DateTimeCreate}}
         </span>
-    <ng-template #DTC></ng-template>
-  </div>
+          <ng-template #DTC></ng-template>
+        </div>
 
-</div>
-<!-- КОНЕЦ ЦИКЛА -->
+      </div>
+      <!-- КОНЕЦ ЦИКЛА -->
 
       <form [formGroup]="formResponse">
-         <textarea formControlName="textCommentValue" class="answer" id="answer" placeholder="Введите ответ" cols="100" rows="6"></textarea>
+        <textarea formControlName="textCommentValue" class="answer" id="answer" placeholder="Введите ответ" cols="100" rows="6"></textarea>
+        <button (click)="responseLetter()">Отправить</button>
       </form>
-      <button (click)="responseLetter()">Отправить</button>
+
 
     </div>
   </div>
 
 </div>
-
-

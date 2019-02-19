@@ -21,7 +21,7 @@
   height:900px;
 }
 .left-side{
-  display: inline-block;
+  float: left;
   width:180px;
   min-height:380px;
 }
@@ -88,7 +88,9 @@ label{
   width:100px;
   margin-left:800px;
 }
-.labelFrom{}
+.labelFrom{
+  font-size: 14px;
+}
 .from{
   position: absolute;
   width:250px;
@@ -105,6 +107,7 @@ label{
 }
 .labelTo{
   margin-top: 196px;
+  font-size: 14px;
 }
 .UserTo{
   position: absolute;
@@ -147,14 +150,13 @@ label{
 
 }
 .answer{
-  position: absolute;
   font-size: 13px;
   padding: 1px 20px;
   border-style: solid;
   border-color: #b8b8b8;
   border-width: 2px;
   border-radius: 5px;
-  margin: 285px 0 0 20px;
+  margin: 235px 0 0 20px;
   width: 92%;
   height: 50px;
 }
@@ -166,5 +168,7 @@ form{
   margin: 30px;
   overflow: auto;
   background-color: yellow;
+}
+.correspondence{
 
 }
