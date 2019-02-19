@@ -1,0 +1,23 @@
+<form [formGroup]="formLanguage">
+
+  <label>Язык</label>
+  <div class="line">
+    <select id="inputLanguage" formControlName="inputLanguage" class="inputLanguage" title="Язык">
+      <option  *ngFor="let LL of listLanguage" [value]="LL.name">
+        {{LL.name}}
+      </option>
+    </select>
+  </div>
+
+  <label>Уровень владения</label>
+    <div class="line">
+      <select id="inputLevelLanguage" formControlName="inputLevelLanguage" class="inputLevelLanguage" title="Уровень владения">
+        <option  *ngFor="let LLL of listLevelLanguage" [value]="LLL.name">
+          {{LLL.name}}
+        </option>
+      </select>
+    </div>
+
+      <button (click)="deleteLanguage()">Удалить данные об языке</button><br>
+
+</form>

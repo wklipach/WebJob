@@ -1,4 +1,21 @@
 {
+  "CV_Language": [
+    {
+      "language": [
+        {
+          "id_cv": 7,
+          "id_language": 7,
+          "id_level": 2
+        },
+        {
+          "id_cv": 7,
+          "id_language": 3,
+          "id_level": 3
+        }
+      ],
+      "id": 1
+    }
+  ],
   "UserTable": [
     {
       "UserName": "employer_1",
@@ -463,6 +480,23 @@
         "Experience": []
       },
       "id": 6
+    },
+    {
+      "cv": {
+        "bChecked": false,
+        "bInvisible": false,
+        "sExperience": "",
+        "id_user": 2,
+        "SalaryFrom": "",
+        "Position": "",
+        "City": 1,
+        "Industry": [],
+        "Schedule": [],
+        "Employment": [],
+        "Education": [],
+        "Experience": []
+      },
+      "id": 7
     }
   ],
   "CV_Previous": [
@@ -508,6 +542,10 @@
     {
       "previous": [],
       "id": 6
+    },
+    {
+      "previous": [],
+      "id": 7
     }
   ],
   "Info": []

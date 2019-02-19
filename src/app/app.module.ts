@@ -60,6 +60,8 @@ import {InfoService} from './services/info.service';
 import { AboutCompanyComponent } from './account/about-company/about-company.component';
 import { InfoPageComponent } from './account/message-center/info-page/info-page.component';
 import { SchoolComponent } from './content/cv/school/school.component';
+import { CvLanguageComponent } from './content/cv/cv-language/cv-language.component';
+import {CvLanguageService} from './services/cv-language.service';
 
 
 
@@ -152,14 +154,16 @@ const appRoutes: Routes = [
     AboutCompanyComponent,
     SchoolComponent,
     NotFoundComponent,
-    SchoolComponent
-
+    SchoolComponent,
+    CvLanguageComponent
    ],
   entryComponents: [
-    CvPreviousComponent
+    CvPreviousComponent,
+    CvLanguageComponent
   ],
   providers: [AuthService, GuideService, NewVacancyService, TableVacancyService,
-              MoveService, PreviousService, NewcvService, CvListService, CvEditService, VacanciesListService, LetterService, InfoService],
+              MoveService, PreviousService, NewcvService, CvListService, CvEditService,
+              VacanciesListService, LetterService, InfoService, CvLanguageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

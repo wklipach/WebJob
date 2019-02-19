@@ -17,7 +17,7 @@
 
 
     <label class="label-position">Желаемая должность</label>
-    <input type="text" class="position" formControlName="position" id="position" placeholder="Желаемая должность">
+    <input type="text" class="position" formControlName="inputPosition" id="inputPosition" placeholder="Желаемая должность">
 
     <!-- Отрасль-->
     <app-cv_industry></app-cv_industry>
@@ -34,6 +34,14 @@
 
     <ng-container #spot></ng-container>
     <button (click)="createNewBlock()">Предыдущее место работы</button>
+
+
+    <div class="line">
+      <ng-container #spotLanguage></ng-container>
+      <button class="btn-add"  (click)="createNewLanguageBlock()">Добавить знание языка</button>
+    </div>
+
+
 
 
     <button class="btn-save" (click)="savecv()">Сохранить резюме</button>

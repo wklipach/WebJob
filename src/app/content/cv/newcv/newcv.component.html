@@ -45,11 +45,20 @@
         <!-- Опыт работы -->
         <app-cv-experience></app-cv-experience>
       </div>
+
+
       <div class="line">
         <ng-container #spot></ng-container>
-
         <button class="btn-add"  (click)="createNewBlock()">Добавить место работы</button>
       </div>
+
+      <div class="line">
+        <ng-container #spotLanguage></ng-container>
+        <button class="btn-add"  (click)="createNewLanguageBlock()">Добавить знание языка</button>
+      </div>
+
+
+
       <div class="line">
       <!-- Занятость -->
       <app-cv-employment></app-cv-employment>
@@ -70,6 +79,8 @@
 </div>
   </form>
 
+
+  <button class="btn-save"  (click)="chf()">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</button>
 
 </div>
 

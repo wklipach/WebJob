@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Guide} from '../class/guide';
 import {
-  DisplayPeriodList, EducationList, EmploymentList, ExperienceList, GenderList, IndustryList, ScheduleList,
+  DisplayPeriodList, EducationList, EmploymentList, ExperienceList, GenderList, IndustryList, LanguageList, LevelLanguageList, ScheduleList,
   TimePlacementList
 } from '../class/GuideList';
 import {Observable, Subject} from 'rxjs';
@@ -24,6 +24,8 @@ export class GuideService {
   private employmentList: Guide[];
   private experienceList: Guide[];
   private timePlacementList: Guide[];
+  private LanguageList: Guide[];
+  private LevelLanguageList: Guide[];
 
   private displayPeriodList: Guide[];
   private genderList: Guide[];
@@ -201,6 +203,18 @@ export class GuideService {
     this.timePlacementList = TimePlacementList;
     return this.timePlacementList.sort( ((a, b) => a.order - b.order ) );
   }
+
+
+  getLanguageList(): Guide[] {
+    this.LanguageList = LanguageList;
+    return this.LanguageList.sort( ((a, b) => a.order - b.order ) );
+  }
+
+  getLevelLanguageList(): Guide[] {
+    this.LevelLanguageList = LevelLanguageList;
+    return this.LevelLanguageList.sort( ((a, b) => a.order - b.order ) );
+  }
+
 
 //
 

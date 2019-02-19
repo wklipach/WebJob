@@ -13,6 +13,9 @@ import {CvListService} from '../../../services/cv-list.service';
 import {CV} from '../../../class/CV';
 import {AuthService} from '../../../services/auth-service.service';
 import {NewcvService} from '../../../services/newcv.service';
+import {Language} from '../../../class/Language';
+import {CvLanguageService} from '../../../services/cv-language.service';
+import {CvLanguageComponent} from '../cv-language/cv-language.component';
 
 @Component({
   selector: 'app-cv-edit',
@@ -24,22 +27,28 @@ export class CvEditComponent implements OnInit, OnDestroy {
   @ViewChild('spot', {read: ViewContainerRef}) vc;
   factoryPreviousComponent: ComponentFactory<CvPreviousComponent>;
 
+  @ViewChild('spotLanguage', {read: ViewContainerRef}) vcLanguage;
+  factoryLanguageComponent: ComponentFactory<CvLanguageComponent>;
+
 
   editCVForm: FormGroup;
   listCity: City[] = [];
   index = 0;
+  indexLang = 0;
   cv_id = 0;
   private _cvitem: any;
   private _myDisplayCity: string;
 
   /*  ссылки на созданные компоненты */
   componentsReferences = [];
-
+  componentsLanguageReferences = [];
 
   // подписки
   private sbCvID: Subscription;
   private cveditCityTable: Subscription;
   private subscrCvEditServ: Subscription;
+  private subscrCvEditLanguage: Subscription;
+  private sbscrSaveLanguage: Subscription;
   private cvDeleteCv: Subscription;
   private previousPostNewCV: Subscription;
   private previousPostPrevious: Subscription;
@@ -52,12 +61,17 @@ export class CvEditComponent implements OnInit, OnDestroy {
               private ps: PreviousService,
               private cveditserv: CvEditService,
               private cls: CvListService,
+              private cLangS: CvLanguageService,
               private httpService: NewcvService) {
 
     this.factoryPreviousComponent =  this.componentFactoryResolver.resolveComponentFactory(CvPreviousComponent);
+
+    this.factoryLanguageComponent =  this.componentFactoryResolver.resolveComponentFactory(CvLanguageComponent);
+
+
     this.editCVForm = new FormGroup({
       'inputSalaryFrom': new FormControl('', []),
-      'position': new FormControl('', []),
+      'inputPosition': new FormControl('', []),
       'inputCity' : new FormControl('', []),
       'industry' : new FormControl('', [])
     });
@@ -93,7 +107,7 @@ export class CvEditComponent implements OnInit, OnDestroy {
 
     // редактируемая должность (она же позиция)
     if (typeof item.Position !== 'undefined') {
-      this.editCVForm.controls['position'].setValue(item.Position);
+      this.editCVForm.controls['inputPosition'].setValue(item.Position);
     }
 
     // редактируемый список городов по подписке с выбранным ранее городом в качестве выбранного
@@ -125,6 +139,7 @@ export class CvEditComponent implements OnInit, OnDestroy {
     this.is.startCheckedElementEducationList(item.Education);
 
 
+    //динамические блоки с предыдущими местами работы
     this.subscrCvEditServ = this.cveditserv.getCvPrevious(this.cv_id).subscribe((value: any) => {
        if (typeof value.previous !== 'undefined') {
            if (value.previous.length > 0) {
@@ -135,9 +150,24 @@ export class CvEditComponent implements OnInit, OnDestroy {
              });
             }
        }
-
-
     });
+
+
+    //динамические блоки со знанием языков
+    this.subscrCvEditLanguage = this.cveditserv.getCvLanguage(this.cv_id).subscribe((value: any) => {
+      // console.log('value', value[0].language);
+      if (typeof value[0].language !== 'undefined') {
+        if (value[0].language.length > 0) {
+          value[0].language.forEach((curLanguage) => {
+            console.log('curLanguage', curLanguage);
+            this.createNewLanguageBlock(curLanguage);
+          });
+        }
+      }
+    });
+
+
+
 
   }
 
@@ -162,6 +192,22 @@ export class CvEditComponent implements OnInit, OnDestroy {
       this.previousPostNewCV.unsubscribe();
     }
 
+    if (typeof  this.sbscrSaveLanguage !== 'undefined') {
+      this.sbscrSaveLanguage.unsubscribe();
+    }
+
+    if (typeof  this.subscrCvEditLanguage !== 'undefined') {
+      this.subscrCvEditLanguage.unsubscribe();
+    }
+  }
+
+
+  createNewLanguageBlock(curLanguage: Language) {
+    //TODO NEW LANGUAGE BLOCK
+    const componentLangRef =  this.vcLanguage.createComponent(this.factoryLanguageComponent);
+    componentLangRef.instance.setIndex(++this.indexLang);
+    componentLangRef.instance.loadLanguageData(curLanguage);
+    this.componentsLanguageReferences.push(componentLangRef);
   }
 
   createNewBlock(curPrevious: Previous) {
@@ -208,19 +254,33 @@ export class CvEditComponent implements OnInit, OnDestroy {
         // присваиваем полученный id_cv внутрь каждого блока
         mPrevious.forEach((cPrevious, ih) => {
             cPrevious.id_cv = id;
-            // console.log('cPrevious=',cPrevious);
-          }
-        );
+          });
+
+        const mLanguage = this.getLanguageData();
+        // присваиваем полученный id_cv внутрь каждого блока
+        mLanguage.forEach((cLanguage, ih) => {
+          cLanguage.id_cv = id;
+        });
+
+
 
         // записываем массив блоков Previous[] в базу
         this.previousPostPrevious = this.httpService.postPrevious(mPrevious).subscribe(
           (value1) => {
-            console.log('Данные успешно занесены.');
-            this.router.navigate(['/cv-list']); }
-        );
+            this.saveLanguage(mLanguage);
+          });
+      });
+ }
+
+  saveLanguage(mLanguage: Language[]) {
+    // записываем массив блоков Language[] в базу
+    this.sbscrSaveLanguage = this.httpService.postLanguage(mLanguage).subscribe(
+      (value) => {
+        console.log('Данные успешно занесены.');
+        this.router.navigate(['/cv-list']);
       }
     );
- }
+  }
 
 
   /* сохраняем резюме без динамических блоков, возвращаем номер сохраненного резюме */
@@ -253,7 +313,7 @@ export class CvEditComponent implements OnInit, OnDestroy {
     const city = this.listCity.find(x => x.name === this.editCVForm.controls['inputCity'].value);
 
     MyCv.SalaryFrom = this.editCVForm.controls['inputSalaryFrom'].value;
-    MyCv.Position = this.editCVForm.controls['position'].value;
+    MyCv.Position = this.editCVForm.controls['inputPosition'].value;
     MyCv.City = city.id;
     // отрасль
     MyCv.Industry = MyIndustry;
@@ -278,7 +338,13 @@ export class CvEditComponent implements OnInit, OnDestroy {
     this.ps.clearPrevious(-1);
     const curPrevious: Previous[] = this.ps.startCheckPrevious(1);
     return curPrevious;
-
   }
+
+  getLanguageData(): Language[] {
+    this.cLangS.clearLanguage(-1);
+    const curLanguage: Language[] = this.cLangS.startCheckLanguage(1);
+    return curLanguage;
+  }
+
 
 }

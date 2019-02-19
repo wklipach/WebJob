@@ -7,6 +7,34 @@ export const GenderList: Guide[] = [
 ];
 
 
+export const LanguageList: Guide[] = [
+  { id: 1, order: 1, name: '' },
+  { id: 2, order: 2, name: 'Русский' },
+  { id: 3, order: 3, name: 'Английский' },
+  { id: 4, order: 4, name: 'Арабский' },
+  { id: 5, order: 5, name: 'Испанский' },
+  { id: 6, order: 6, name: 'Китайский' },
+  { id: 7, order: 7, name: 'Немецкий' },
+  { id: 8, order: 8, name: 'Португальский' },
+  { id: 9, order: 9, name: 'Турецкий' },
+  { id: 10, order: 10, name: 'Финский' },
+  { id: 11, order: 11, name: 'Французский' },
+  { id: 12, order: 12, name: 'Шведский' },
+  { id: 13, order: 13, name: 'Японский' }
+];
+
+export const LevelLanguageList: Guide[] = [
+  { id: 1, order: 1, name: '' },
+  { id: 2, order: 2, name: 'Родной' },
+  { id: 3, order: 3, name: 'А1' },
+  { id: 4, order: 4, name: 'А2' },
+  { id: 5, order: 5, name: 'В1' },
+  { id: 6, order: 6, name: 'В2' },
+  { id: 7, order: 7, name: 'С1' },
+  { id: 8, order: 8, name: 'С2' },
+];
+
+
 export const IndustryList: Guide[] = [
   { id: 2, order: 2, name: 'Гостиницы, рестораны, общепит, кейтеринг' },
   { id: 1, order: 1, name: 'Автомобильный бизнес' },

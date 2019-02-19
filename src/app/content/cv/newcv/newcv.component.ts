@@ -11,6 +11,9 @@ import {CV} from '../../../class/CV';
 import {NewcvService} from '../../../services/newcv.service';
 import {AuthService} from '../../../services/auth-service.service';
 import {Router} from '@angular/router';
+import {CvLanguageComponent} from '../cv-language/cv-language.component';
+import {CvLanguageService} from '../../../services/cv-language.service';
+import {Language} from '../../../class/Language';
 
 @Component({
   selector: 'app-newcv',
@@ -22,9 +25,15 @@ export class NewcvComponent implements OnInit {
   @ViewChild('spot', {read: ViewContainerRef}) vc;
   factoryPreviousComponent: ComponentFactory<CvPreviousComponent>;
 
+
+  @ViewChild('spotLanguage', {read: ViewContainerRef}) vcLanguage;
+  factoryLanguageComponent: ComponentFactory<CvLanguageComponent>;
+
   private previousCityTable: Subscription;
   private previousDelete: Subscription;
+  private scrLanguageDelete: Subscription;
   private previousPostPrevious: Subscription;
+  private sbscrSaveLanguage: Subscription;
   private previousPostNewCV: Subscription;
 
   newCVForm: FormGroup;
@@ -34,10 +43,12 @@ export class NewcvComponent implements OnInit {
 
   /*  ссылки на созданные компоненты */
   componentsReferences = [];
+  componentsLanguageReferences = [];
 
   constructor(private is: GuideService,
               private componentFactoryResolver: ComponentFactoryResolver,
               private ps: PreviousService,
+              private cls: CvLanguageService,
               private httpService: NewcvService,
               private authService: AuthService,
               private router: Router) {
@@ -45,8 +56,9 @@ export class NewcvComponent implements OnInit {
 
     this.newCVForm = new FormGroup({
       'inputSalaryFrom': new FormControl('',[]),
-      'position': new FormControl('',[]),
+      'inputPosition': new FormControl('',[]),
       'inputCity' : new FormControl('',[]),
+      'inputSkillsAbilities' : new FormControl('',[Validators.maxLength(1000)]),
       'inputExperience': new FormControl('',[Validators.maxLength(1000)])
     });
 
@@ -60,6 +72,12 @@ export class NewcvComponent implements OnInit {
 
     this.factoryPreviousComponent =  this.componentFactoryResolver.resolveComponentFactory(CvPreviousComponent);
 
+
+    console.log('aa1');
+    this.factoryLanguageComponent =  this.componentFactoryResolver.resolveComponentFactory(CvLanguageComponent);
+    console.log('aa2');
+
+
     /* подписка на удаление блока "предыдущее место работы" */
     this.previousDelete =
       this.ps.onDeletePrevious.subscribe(
@@ -71,6 +89,19 @@ export class NewcvComponent implements OnInit {
           this.vc.remove(vcrIndex);
       }
     );
+
+    /* подписка на удаление блока "знание языков" */
+    this.scrLanguageDelete =
+      this.cls.onDeleteLanguage.subscribe(
+        (value: number) => {
+          if (this.vcLanguage.length < 1) return;
+          const componentLanguageRef = this.componentsLanguageReferences.filter(x => x.instance.getIndex() === value)[0];
+          const vcrLangIndex: number = this.vcLanguage.indexOf(componentLanguageRef)
+          // removing component from container
+          this.vcLanguage.remove(vcrLangIndex);
+        }
+      );
+
 
   }
 
@@ -88,6 +119,11 @@ export class NewcvComponent implements OnInit {
     this.componentsReferences.push(componentRef);
   }
 
+  createNewLanguageBlock() {
+    const componentLanguageRef =  this.vcLanguage.createComponent(this.factoryLanguageComponent);
+    componentLanguageRef.instance.setIndex(++this.index);
+    this.componentsLanguageReferences.push(componentLanguageRef);
+  }
 
 
   ngOnDestroy() {
@@ -107,6 +143,13 @@ export class NewcvComponent implements OnInit {
       this.previousPostPrevious.unsubscribe();
     }
 
+    if (typeof this.scrLanguageDelete !== 'undefined') {
+      this.scrLanguageDelete.unsubscribe();
+    }
+
+    if (typeof this.sbscrSaveLanguage !== 'undefined') {
+      this.sbscrSaveLanguage.unsubscribe();
+    }
 
   }
 
@@ -125,8 +168,6 @@ export class NewcvComponent implements OnInit {
     if (Res.bConnected) MyCv.id_user = Res.id_user; else MyCv.id_user = -1;
 
 
-
-
     MyIndustry = this.is.startCheckIndustryList('! startCheckIndustryList !');
     MyEmployment= this.is.startCheckEmploymentList('! startCheckEmploymentList !');
     MySchedule= this.is.startCheckScheduleList('! startCheckScheduleList !');
@@ -138,7 +179,7 @@ export class NewcvComponent implements OnInit {
 
     MyCv.sExperience = this.newCVForm.controls['inputExperience'].value;
     MyCv.SalaryFrom = this.newCVForm.controls['inputSalaryFrom'].value;
-    MyCv.Position = this.newCVForm.controls['position'].value;
+    MyCv.Position = this.newCVForm.controls['inputPosition'].value;
     MyCv.City = city.id;
     // отрасль
     MyCv.Industry = MyIndustry;
@@ -168,6 +209,23 @@ export class NewcvComponent implements OnInit {
   }
 
 
+  /* посылаем событие собрать данные, которое одновременно принимает каждый из
+     динамических компонентов Language и запиcsвает свои данные в плоской переменной  типа Language, далее они складываются в массив Language[]
+     через вызов setLanguage
+     то есть собираем данные из множащихся блоков и возвращаем их в виде единого массива */
+  getLanguageData(): Language[] {
+    this.cls.clearLanguage(-1);
+    const curLanguage: Language[] = this.cls.startCheckLanguage(1);
+    return curLanguage;
+
+  }
+
+chf() {
+  let mLanguage = this.getLanguageData();
+  console.log('mLanguage',mLanguage);
+  let mPrevious = this.getPreviousData();
+  console.log('mPrevious',mPrevious);
+}
 
   /* сохранение данных */
   newcv() {
@@ -178,7 +236,8 @@ export class NewcvComponent implements OnInit {
       (value) => {
         // из возвращенного результата забираем новое ID
         let id = value['id'];
-        let mPrevious = this.getPreviousData();
+        const mPrevious = this.getPreviousData();
+        const mLanguage = this.getLanguageData();
         // присваиваем полученный id_cv внутрь каждого блока
         mPrevious.forEach((cPrevious, ih) => {
           cPrevious.id_cv = id;
@@ -186,18 +245,35 @@ export class NewcvComponent implements OnInit {
           }
         );
 
+        // присваиваем полученный id_cv внутрь каждого блока
+        mLanguage.forEach((cLanguage, ih) => {
+          cLanguage.id_cv = id;
+          // console.log('cPrevious=',cPrevious);
+        });
+
         // записываем массив блоков Previous[] в базу
         this.previousPostPrevious =this.httpService.postPrevious(mPrevious).subscribe(
           (value) => {
-            console.log('Данные успешно занесены.');
-            this.router.navigate(['/cv-list']); }
+            this.saveLanguage(mLanguage);
+            }
         );
-      }
-    );
-
-
-
+      });
   }
 
 
+
+  saveLanguage(mLanguage: Language[]) {
+    // записываем массив блоков Language[] в базу
+    this.sbscrSaveLanguage = this.httpService.postLanguage(mLanguage).subscribe(
+      (value) => {
+        console.log('Данные успешно занесены.');
+        this.router.navigate(['/cv-list']);
+      }
+    );
+  }
+
+
+
 }
+
+

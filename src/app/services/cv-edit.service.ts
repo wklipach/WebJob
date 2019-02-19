@@ -42,6 +42,10 @@ export class CvEditService {
     return this.http.get(sUrl);
   }
 
+  getCvLanguage(id_cv: number) {
+    let sUrl = 'http://localhost:3000/CV_Language?id_cv='+id_cv;
+    return this.http.get(sUrl);
+  }
 
 
 
