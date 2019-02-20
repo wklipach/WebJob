@@ -44,9 +44,9 @@
       <div class="correspondence" *ngFor="let lc of listLetter; let i = index">
 
 
-        <div class="text" *ngIf="lc != undefined;else LT">
-          <div *ngIf="lc.letter.id_user_from===this.id_user"><= {{lc.letter.letterText}}</div>
-          <div *ngIf="lc.letter.id_user_to===this.id_user">=> {{lc.letter.letterText}}</div>
+        <div  *ngIf="lc != undefined;else LT">
+          <div class="textline" *ngIf="lc.letter.id_user_from===this.id_user"><= {{lc.letter.letterText}}</div>
+          <div class="textline" *ngIf="lc.letter.id_user_to===this.id_user">=> {{lc.letter.letterText}}</div>
         </div>
         <ng-template #LT></ng-template>
 
