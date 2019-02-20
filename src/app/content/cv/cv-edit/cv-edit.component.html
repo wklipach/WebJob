@@ -5,6 +5,7 @@
 
 <form [formGroup]="editCVForm">
   <div class="cv-box">
+
     <label for="inputCity" class="location">Город</label>
     <select id="inputCity" formControlName="inputCity" class="inputCity" title="Город">
       <option  *ngFor="let lc of listCity" [value]="lc.name">
@@ -23,12 +24,12 @@
     <app-cv_industry></app-cv_industry>
     <!-- Занятость -->
      <app-cv-employment></app-cv-employment>
-    <!-- график работы
-    <app-cv-schedule></app-cv-schedule>-->
-    <!-- Опыт работы
-    <app-cv-experience></app-cv-experience>-->
-    <!-- Образование
-    <app-cv-education></app-cv-education>-->
+    <!-- график работы-->
+    <app-cv-schedule></app-cv-schedule>
+    <!-- Опыт работы-->
+    <app-cv-experience></app-cv-experience>
+    <!-- Образование-->
+    <app-cv-education></app-cv-education>
 
   <br>
 

@@ -1,0 +1,78 @@
+.wrapper{
+  position: relative;
+  font-family: "ProximaNovaRg";
+  font-size: 1em;
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+  margin-left: 13px;
+}
+label{
+  font-size: 1.1em;
+  font-family: "Proxima Nova";
+  color: rgb(2, 98, 210);
+  text-align: left;
+}
+.labelInputLevelLanguage{
+  margin-left: 277px;
+}
+.line{
+  width: 100%;
+  margin-top: 1%;
+  position: relative;
+}
+.inputLanguage{
+  font-size: 1em;
+  font-family: "Proxima Nova";
+  text-align: center;
+  border-width: 1px;
+  border-color: rgb(68, 75, 84);
+  border-style: solid;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  width: 275px;
+  height: 43px;
+}
+.inputLevelLanguage{
+  font-size: 1em;
+  font-family: "Proxima Nova";
+  text-align: center;
+  border-width: 1px;
+  border-color: rgb(68, 75, 84);
+  border-style: solid;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  width: 155px;
+  height: 43px;
+  margin-left: 43px;
+}
+span{
+  font-size: 1.1em;
+  color: rgb(0, 0, 0);
+  text-align: left;
+  padding-left: 0.2%;
+  font-family: "Proxima Nova";
+  vertical-align: middle;
+  margin-left: 0.1%;
+}
+.btn-delete {
+  display: inline-block;
+  position: relative;
+  color: #484d55;
+  background-color: #ffffff;
+  border-color: rgb(242, 97, 0);
+  border-radius: 3px;
+  border-width: 1px;
+  border-style: solid;
+  text-align: center;
+  width: 256px;
+  height: 48px;
+  margin-top: 2px;
+  margin-bottom:20px;
+  margin-left: 35px;
+}
+.btn-delete:hover{
+  background-color:#f26100;
+  color: white;
+  font-weight:600;
+}

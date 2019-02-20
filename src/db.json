@@ -14,6 +14,21 @@
         }
       ],
       "id": 1
+    },
+    {
+      "language": [
+        {
+          "id_cv": 8,
+          "id_language": 10,
+          "id_level": 4
+        },
+        {
+          "id_cv": 8,
+          "id_language": 3,
+          "id_level": 6
+        }
+      ],
+      "id": 2
     }
   ],
   "UserTable": [
@@ -484,7 +499,7 @@
     {
       "cv": {
         "bChecked": false,
-        "bInvisible": false,
+        "bInvisible": true,
         "sExperience": "",
         "id_user": 2,
         "SalaryFrom": "",
@@ -497,6 +512,33 @@
         "Experience": []
       },
       "id": 7
+    },
+    {
+      "cv": {
+        "bChecked": false,
+        "bInvisible": false,
+        "sExperience": "Проверка - учебное заведение",
+        "id_user": 2,
+        "SalaryFrom": "1000",
+        "Position": "Проверка - Желаемая должность",
+        "City": 6,
+        "Industry": [
+          1
+        ],
+        "Schedule": [
+          1
+        ],
+        "Employment": [
+          1
+        ],
+        "Education": [
+          2
+        ],
+        "Experience": [
+          4
+        ]
+      },
+      "id": 8
     }
   ],
   "CV_Previous": [
@@ -546,6 +588,29 @@
     {
       "previous": [],
       "id": 7
+    },
+    {
+      "previous": [
+        {
+          "id_cv": 8,
+          "dStartDate": "1994-06-08",
+          "dCompletionDate": "2019-02-20",
+          "sCompany": "Проверка - Компания",
+          "sPreviousPosition": "Проверка - Занимаемая должность",
+          "sInputPositionDescription": "Проверка - должностные обязанности",
+          "sInputSkillsAbilities": "Проверка - основные навыки и умения"
+        },
+        {
+          "id_cv": 8,
+          "dStartDate": "2019-01-02",
+          "dCompletionDate": "2019-02-20",
+          "sCompany": "123",
+          "sPreviousPosition": "123",
+          "sInputPositionDescription": "123",
+          "sInputSkillsAbilities": "123"
+        }
+      ],
+      "id": 8
     }
   ],
   "Info": []
