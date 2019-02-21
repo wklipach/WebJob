@@ -5,7 +5,7 @@
   <div class="box">
 
 
-  <form [formGroup]="form">
+  <form [formGroup]="formView">
 
     <label>ФОТО</label> <br>
     <!--    Фото не отображается.
@@ -25,50 +25,81 @@
 
 
     <label class="fio">Ф.И.О.</label> <br>
-    <!--     Сюда вставить ФИО              --> <br>
+    <div  *ngIf="loadUser!= undefined">
+      {{this.loadUser.Name}} <br>
+      {{this.loadUser.LastName}} <br>
+      {{this.loadUser.UserName}} <br>
+    </div>
+    <br>
 
 
     <img class="city" src="/assets/img/city.png" alt="Город">
     <span class="city-name"> <!--     Сюда вставить Город              --> </span>   <br>
 
     <label class="label-position">Желаемая должность</label> <br>
-    <span class="position" id="position"><!--     Сюда вставить Желательную должность      --></span>      <br>
+    <span class="position" id="position">
+          <div  *ngIf="_cvitem!= undefined">
+            {{_cvitem.Position}} </div>
+      <br>
+    </span>
+    <br>
 
     <label class="From">Заработная плата</label> <br>
-    <span><!--     Сюда вставить цифру из   inputSalaryFrom    --></span><br>
-
+    <br>
+    <span><div  *ngIf="_cvitem!= undefined">{{_cvitem.SalaryFrom}}</div></span><br>
+    <br>
 
     <label class="labelSkillsAbilities">Основные навыки и умения</label><br>
 
-    <span><!--     Сюда вставить текст из   inputSkillsAbilities    --></span><br>
+    <span>
+      <div  *ngIf="_cvitem.sSkills!= undefined">{{_cvitem.sSkills}}</div>
+    </span><br>
 
 
     <label class="labelEducation">Образование</label> <br>
+    <span>
+      <div class="correspondence" *ngFor="let le of this._listEducation; let i = index">
+        {{le}}
+      </div>
+    </span><br>
+    <label class="labelEducation">Образование</label> <br>
+    <span><div  *ngIf="_cvitem.sEducation!= undefined">{{_cvitem.sEducation}}</div>
+    </span><br>
 
-    <span><!-- Сюда вставить выбранное из  <app-cv-education> и за ним текст из inputExperience  (Хотя странно названо, ведь должно быть education ??? Проверить)  --></span><br>
-
+    <label class="labelEducation">Опыт работы</label> <br>
+    <span><div  *ngIf="_cvitem.sExperience!= undefined">{{_cvitem.sExperience}}</div>
+    </span><br>
 
     <br> <br> <br> <br> <br> <br>
 
-    <label class="labelEducation">Образование</label> <br>
+    <!--    Короче, выводить всё что есть дальше в newcv            -->
 
-    <span><!-- Сюда вставить выбранное из  <app-cv-education> и за ним текст из inputExperience  (Хотя странно названо, ведь должно быть education ??? Проверить)  --></span><br>
+    <label>Опыт</label> <br>
+    <div *ngFor="let lep of this._listExperience; let i = index">
+      {{lep}}
+    </div>
+
+    <label>Сфера деятельности</label> <br>
+    <div *ngFor="let liI of this._listIndustry; let i = index">
+      {{liI}}
+    </div>
+
+    <label>Желаемый график</label> <br>
+    <div *ngFor="let lS of this._listSchedule; let i = index">
+      {{lS}}
+    </div>
+
+    <label>Занятость</label> <br>
+    <div *ngFor="let Elm of this._listEmployment; let i = index">
+      {{Elm}}
+    </div>
 
 
-    <!--    Короче, выводить всё что есть дальше в newcv              -->
+    <div class="cv-box">
 
-  <div class="cv-box">
 
-    <!-- Занятость -->
-    <app-cv-employment></app-cv-employment>
-    <!-- график работы -->
-    <app-cv-schedule></app-cv-schedule>
-    <!-- Опыт работы -->
-    <app-cv-experience></app-cv-experience>
-    <!-- Образование -->
-    <app-cv-education></app-cv-education>
-    <!-- Отрасль -->
-    <app-cv_industry></app-cv_industry>
+
+
     <!-- Язык <app-cv_language></app-cv_language> -->
 
 

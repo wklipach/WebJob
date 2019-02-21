@@ -48,14 +48,14 @@ export class MessageComponent implements OnInit, OnDestroy {
   }
 
 
-  loadPicture(id_user: number) {
-        this.subscrDataUserFromId = this.auth.getDataUserFromId(id_user).subscribe(value => {
-        // вытаскиваем из базы картинку аватара
-        this.loadUser = value as UserType;
-        const S = this.loadUser['Avatar'].Avatar;
-        if (typeof S !== 'undefined') {
-              if (S.length > 0) { this.base64textString.push('data:image/png;base64,' + JSON.parse(S).value); }
-        }
+          loadPicture(id_user: number) {
+            this.subscrDataUserFromId = this.auth.getDataUserFromId(id_user).subscribe(value => {
+              // вытаскиваем из базы картинку аватара
+              this.loadUser = value as UserType;
+              const S = this.loadUser['Avatar'].Avatar;
+              if (typeof S !== 'undefined') {
+                if (S.length > 0) { this.base64textString.push('data:image/png;base64,' + JSON.parse(S).value); }
+              }
 
         // TODO вставляем вызов прочих сообщений для данного пользователя (первое сообщение следует не печатать при начальной загрузке)
           this.httpLetter.getThreadLetter(this._letter.letter.id_cv, this._letter.letter.id_vc).subscribe(

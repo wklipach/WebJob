@@ -25,4 +25,7 @@ export class CV{
   bInvisible : boolean = false;
   //описание образования словами
   sExperience: string = '';
+  //описание умений словами
+  sSkills: string = '';
+  sEducation: string = '';
 }

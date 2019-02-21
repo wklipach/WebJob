@@ -59,6 +59,7 @@ export class NewcvComponent implements OnInit {
       'inputPosition': new FormControl('',[]),
       'inputCity' : new FormControl('',[]),
       'inputSkillsAbilities' : new FormControl('',[Validators.maxLength(1000)]),
+      'inputEducation' : new FormControl('',[Validators.maxLength(1000)]),
       'inputExperience': new FormControl('',[Validators.maxLength(1000)])
     });
 
@@ -178,6 +179,10 @@ export class NewcvComponent implements OnInit {
 
 
     MyCv.sExperience = this.newCVForm.controls['inputExperience'].value;
+    MyCv.sEducation = this.newCVForm.controls['inputEducation'].value;
+    MyCv.sSkills = this.newCVForm.controls['iinputSkillsAbilities'].value;
+    MyCv.sEducation = this.newCVForm.controls['iinputSkillsAbilities'].value;
+
     MyCv.SalaryFrom = this.newCVForm.controls['inputSalaryFrom'].value;
     MyCv.Position = this.newCVForm.controls['inputPosition'].value;
     MyCv.City = city.id;

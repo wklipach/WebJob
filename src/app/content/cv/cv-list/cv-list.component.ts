@@ -100,7 +100,7 @@ export class CvListComponent implements OnInit, OnDestroy {
         this.CvListItem = 1;
         this.contactMethods[i].id = 1;
         console.log('!!!!this.contactMethods', this.contactMethods);
-        console.log('просмотр');
+        this.ViewElement(item);
         break;
       }
       case '2': {
@@ -164,6 +164,14 @@ export class CvListComponent implements OnInit, OnDestroy {
     this.cveditserv.setCvItem(item.cv);
     this.router.navigate(['/cv-edit']);
   }
+
+  // просмотр резюме
+  ViewElement(item: any) {
+    this.cveditserv.setCvId(item.id);
+    this.cveditserv.setCvItem(item.cv);
+    this.router.navigate(['/cv-view']);
+  }
+
 
 
   CheckDeleteElement(item: any) {
