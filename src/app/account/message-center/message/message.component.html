@@ -29,43 +29,39 @@
       <img class="logotype-company" alt="Логотип компании" src="/assets/img/iport-logo.png">
     </div>
 
-
-
-
-    <div class="right-side">
-      <div class="topline">
-        <label class="labelSubject">Вакансия
-          <span class="subject">{{responseVC}}</span>
-        </label>
-      </div>
-
-
-      <!-- НАЧАЛО ЦИКЛА -->
-      <div class="correspondence" *ngFor="let lc of listLetter; let i = index">
-
-
-        <div  *ngIf="lc != undefined;else LT">
-          <div class="textline" *ngIf="lc.letter.id_user_from===this.id_user"><= {{lc.letter.letterText}}</div>
-          <div class="textline" *ngIf="lc.letter.id_user_to===this.id_user">=> {{lc.letter.letterText}}</div>
-        </div>
-        <ng-template #LT></ng-template>
-
+      <div class="right-side">
         <div class="topline">
-    <span class="dateTime"  *ngIf="lc != undefined; else DTC">
+          <label class="labelSubject">Вакансия
+            <span class="subject">{{responseVC}}</span>
+          </label>
+        </div>
+
+<div class="correspondence">
+      <!-- НАЧАЛО ЦИКЛА -->
+  <div *ngFor="let lc of listLetter; let i = index">
+
+     <span class="dateTime"  *ngIf="lc != undefined; else DTC">
           {{lc.letter.DateTimeCreate}}
         </span>
-          <ng-template #DTC></ng-template>
-        </div>
+    <ng-template #DTC></ng-template>
 
+    <div  *ngIf="lc != undefined;else LT">
+      <div class="textline" *ngIf="lc.letter.id_user_from===this.id_user">
+        <div class="leter"> <= {{lc.letter.letterText}}</div>
       </div>
-      <!-- КОНЕЦ ЦИКЛА -->
+      <div class="textline" *ngIf="lc.letter.id_user_to===this.id_user">
+        <div class="leter">  => {{lc.letter.letterText}}</div> </div>
+    </div>
+    <ng-template #LT></ng-template>
 
+  </div>
+  <!-- КОНЕЦ ЦИКЛА -->
+</div>
       <form [formGroup]="formResponse">
-        <textarea formControlName="textCommentValue" class="answer" id="answer" placeholder="Введите ответ" cols="100" rows="6"></textarea>
+        <textarea formControlName="textCommentValue" class="answer" id="answer"
+                  placeholder="Введите ответ" cols="100" rows="6"></textarea>
         <button (click)="responseLetter()">Отправить</button>
       </form>
-
-
     </div>
   </div>
 

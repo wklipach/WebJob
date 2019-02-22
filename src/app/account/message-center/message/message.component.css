@@ -119,7 +119,6 @@ label{
   height: 30px;
 }
 .dateTime{
-  position: absolute;
   font-size: 15px;
   margin-left:860px;
   margin-top:2px;
@@ -138,20 +137,16 @@ label{
   margin-top: 70px;
 }
 .textline{
-  position: absolute;
   display: block;
-  font-size: 13px;
+  font-size: 14px;
   padding: 6px 20px;
   border-style: solid;
   border-color: #b8b8b8;
   border-width: 1px;
   border-radius: 5px;
-  margin: 0 0 20px 20px;
+  margin: 25px 20px 0 20px;
   width: 92%;
-  height: 50px;
-  overflow: auto;
-  background-color: #F74933;
-
+  height: auto;
 }
 .answer{
   font-size: 13px;
@@ -174,5 +169,13 @@ form{
   background-color: yellow;
 }
 .correspondence{
+ min-height: 300px;
+  max-height: 600px;
+  overflow: auto;
+  margin-top: 10px;
+}
+.leter1{
+  color: red;
 
 }
+
