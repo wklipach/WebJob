@@ -62,6 +62,8 @@ import { InfoPageComponent } from './account/message-center/info-page/info-page.
 import { SchoolComponent } from './content/cv/school/school.component';
 import { CvLanguageComponent } from './content/cv/cv-language/cv-language.component';
 import {CvLanguageService} from './services/cv-language.service';
+import { AdUnitComponent } from './ad-unit/ad-unit.component';
+import { AdUnit2Component } from './ad-unit2/ad-unit2.component';
 
 
 
@@ -102,6 +104,8 @@ const appRoutes: Routes = [
   {path: 'favorites', component: FavoritesComponent},
   {path: 'cv-view', component: CvViewComponent},
   {path: 'school', component: SchoolComponent},
+  {path: 'ad-unit', component: AdUnitComponent},
+  {path: 'ad-unit2', component: AdUnit2Component},
   {path: '**', component: NotFoundComponent }
 ];
 
@@ -155,7 +159,9 @@ const appRoutes: Routes = [
     SchoolComponent,
     NotFoundComponent,
     SchoolComponent,
-    CvLanguageComponent
+    CvLanguageComponent,
+    AdUnitComponent,
+    AdUnit2Component
    ],
   entryComponents: [
     CvPreviousComponent,

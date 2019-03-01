@@ -340,7 +340,7 @@
     },
     {
       "letter": {
-        "bOld": false,
+        "bOld": true,
         "bReadByRecipient": false,
         "id_user_from": 2,
         "id_cv": 1,
@@ -353,7 +353,7 @@
     },
     {
       "letter": {
-        "bOld": false,
+        "bOld": true,
         "bReadByRecipient": false,
         "id_user_from": 2,
         "id_cv": 1,
@@ -363,6 +363,19 @@
         "DateTimeCreate": "21/02/2019 04:58"
       },
       "id": 6
+    },
+    {
+      "letter": {
+        "bOld": false,
+        "bReadByRecipient": false,
+        "id_user_from": 1,
+        "id_cv": 1,
+        "id_vc": 2,
+        "id_user_to": 2,
+        "letterText": "Я приглашаю тебя на собеседование к Employer_1 Я приглашаю тебя на собеседование к Employer_1 Я приглашаю тебя на собеседование к Employer_1 Я приглашаю тебя на собеседование к Employer_1 Я приглашаю тебя на собеседование к Employer_1 Я приглашаю тебя на собеседование к Employer_1 Я приглашаю тебя на собеседование к Employer_1 ",
+        "DateTimeCreate": "27/02/2019 02:32"
+      },
+      "id": 7
     }
   ],
   "UserFavoritesUnit": [

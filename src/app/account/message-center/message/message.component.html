@@ -47,10 +47,10 @@
 
     <div  *ngIf="lc != undefined;else LT">
       <div class="textline" *ngIf="lc.letter.id_user_from===this.id_user">
-        <div class="leter"> <= {{lc.letter.letterText}}</div>
+        <div class="leter"><img class="out" alt="Отправленное сообщение" src="/assets/img/left-arrow.png"> {{lc.letter.letterText}}</div>
       </div>
       <div class="textline" *ngIf="lc.letter.id_user_to===this.id_user">
-        <div class="leter">  => {{lc.letter.letterText}}</div> </div>
+        <div class="leter"> <img class="in" alt="Входящее сообщение" src="/assets/img/right-arrow.png"> {{lc.letter.letterText}}</div> </div>
     </div>
     <ng-template #LT></ng-template>
 

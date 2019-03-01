@@ -121,7 +121,7 @@ label{
 .dateTime{
   font-size: 15px;
   margin-left:860px;
-  margin-top:2px;
+  margin-top:-26px;
 }
 .labelSubject{
   margin-left: 20px;
@@ -146,6 +146,7 @@ label{
   border-radius: 5px;
   margin: 25px 20px 0 20px;
   width: 92%;
+  min-height: 67px;
   height: auto;
 }
 .answer{
@@ -176,6 +177,9 @@ form{
 }
 .leter1{
   color: red;
-
+}
+.in, .out{
+  float: left;
+  margin-right: 12px;
 }
 
