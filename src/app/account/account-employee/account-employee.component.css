@@ -82,15 +82,24 @@ label{
 .logotype:hover{
   cursor: pointer;
 }
+.clear{
+  position: absolute;
+  margin-left: 36px;
+  margin-top: 210px;
+  font-size: 14px;
+}
+.clear:hover{
+  cursor: pointer;
+}
 .img-lock{
   position: absolute;
   margin-left: 180px;
-  margin-top: 675px;
+  margin-top: 794px;
 }
 .changePass{
   position: absolute;
   margin-left: 211px;
-  margin-top: 675px;
+  margin-top: 794px;
   cursor: pointer;
   text-decoration: underline;
 }
@@ -169,7 +178,7 @@ label{
 }
 .name{
   margin-left: 180px;
-  margin-top: 487px;
+  margin-top: 306px;
 }
 .input-name{
   position: absolute;
@@ -184,11 +193,11 @@ label{
   width: 20%;
   height: 43px;
   margin-left: 180px;
-  margin-top: 421px;
+  margin-top: 340px;
 }
 .lastname{
   margin-left: 444px;
-  margin-top: 586px;
+  margin-top: 306px;
 }
 .inputLastname{
   position: absolute;
@@ -203,15 +212,15 @@ label{
   width: 20%;
   height: 43px;
   margin-left: 444px;
-  margin-top: 621px;
+  margin-top: 340px;
 }
 .location{
   margin-left: 180px;
-  margin-top: 713px;
+  margin-top: 428px;
 }
 .zip{
   margin-left: 444px;
-  margin-top: 713px;
+  margin-top: 428px;
 }
 .inputCity{
   border-width: 1px;
@@ -224,7 +233,7 @@ label{
   width: 20%;
   height: 43px;
   margin-left: 180px;
-  margin-top: 748px;
+  margin-top: 462px;
 }
 .inputZip{
   position: absolute;
@@ -240,11 +249,11 @@ label{
   width: 20%;
   height: 43px;
   margin-left: 444px;
-  margin-top: 748px;
+  margin-top: 462px;
 }
 .home-address{
   margin-left: 180px;
-  margin-top: 835px;
+  margin-top: 550px;
 }
 .inputHomeAddress{
   border-width: 1px;
@@ -257,11 +266,11 @@ label{
   width: 492px;
   height: 43px;
   margin-left: 180px;
-  margin-top: 871px;
+  margin-top: 584px;
 }
 .phone{
   margin-left: 180px;
-  margin-top: 963px;
+  margin-top: 672px;
 }
 .inputPhone{
   border-width: 1px;
@@ -274,7 +283,7 @@ label{
   width: 20%;
   height: 43px;
   margin-left: 180px;
-  margin-top: 999px;
+  margin-top: 706px;
 }
 .btn-save{
   display: inline-block;
@@ -289,7 +298,7 @@ label{
   line-height: 2.25;
   width: 20%;
   height: 48px;
-  margin-top:1150px;
+  margin-top:870px;
   margin-left: 180px;
 }
 .btn-save:hover{
@@ -315,7 +324,7 @@ label{
   border-radius: 3px;
   line-height: 2;
   text-align: center;
-  margin-top: 1150px;
+  margin-top: 870px;
   margin-left: 444px;
 }
 .btn-cancel:hover{
@@ -335,10 +344,10 @@ label{
   border-radius: 3px;
   background-color: rgb(247, 247, 247);
   position: absolute;
-  width: 489px;
+  width: 530px;
   height: 199px;
-  margin-left: 580px;
-  margin-top: 820px;
+  margin-left: 150px;
+  margin-top: 770px;
   z-index: 10;
 }
 .inputNewPassword1 {
