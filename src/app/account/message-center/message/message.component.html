@@ -57,10 +57,10 @@
   </div>
   <!-- КОНЕЦ ЦИКЛА -->
 </div>
-      <form [formGroup]="formResponse">
+      <form class="formResponse" [formGroup]="formResponse">
         <textarea formControlName="textCommentValue" class="answer" id="answer"
                   placeholder="Введите ответ" cols="100" rows="6"></textarea>
-        <button (click)="responseLetter()">Отправить</button>
+        <button class="btn-send" (click)="responseLetter()">Отправить</button>
       </form>
     </div>
   </div>

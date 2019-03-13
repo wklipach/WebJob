@@ -366,7 +366,7 @@
     },
     {
       "letter": {
-        "bOld": false,
+        "bOld": true,
         "bReadByRecipient": false,
         "id_user_from": 1,
         "id_cv": 1,
@@ -376,6 +376,45 @@
         "DateTimeCreate": "27/02/2019 02:32"
       },
       "id": 7
+    },
+    {
+      "letter": {
+        "bOld": true,
+        "bReadByRecipient": false,
+        "id_user_from": 2,
+        "id_cv": 1,
+        "id_vc": 5,
+        "id_user_to": 1,
+        "letterText": "Отклик от соискателя.",
+        "DateTimeCreate": "13/03/2019 02:22"
+      },
+      "id": 8
+    },
+    {
+      "letter": {
+        "bOld": true,
+        "bReadByRecipient": false,
+        "id_user_from": 1,
+        "id_cv": 1,
+        "id_vc": 5,
+        "id_user_to": 2,
+        "letterText": "Ответ от работодателя",
+        "DateTimeCreate": "13/03/2019 02:28"
+      },
+      "id": 9
+    },
+    {
+      "letter": {
+        "bOld": false,
+        "bReadByRecipient": false,
+        "id_user_from": 2,
+        "id_cv": 1,
+        "id_vc": 5,
+        "id_user_to": 1,
+        "letterText": "Сортировка писем в обратную сторону.\nПереход к резюме.\nПроверить вывод картинок в message. Что-то не то в выводе.",
+        "DateTimeCreate": "13/03/2019 02:39"
+      },
+      "id": 10
     }
   ],
   "UserFavoritesUnit": [
