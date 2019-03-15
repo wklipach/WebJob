@@ -155,10 +155,10 @@ a:visited {
   color: rgb(68, 75, 84);
   margin-left: -15px;
   padding-right: 5px;
-
+  vertical-align: middle;
 }
 .flag-list{
-  vertical-align: center;
+  vertical-align: middle;
 }
 .bottom{
   position: relative;
