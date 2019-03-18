@@ -1,7 +1,7 @@
 .wrapper{
   display: inline-block;
   position: relative;
-  font-family: "ProximaNovaRg";
+  font-family: "ProximaNovaRg","sans-serif";
   font-size: 16px;
   width: 100%;
   height: 180px;
@@ -55,7 +55,7 @@
 }
 h1 {
   font-size: 48px;
-  font-family: "ArialRoundedMTBold";
+  font-family: "ArialRoundedMTBold","sans-serif";
   color: #484c54;
   padding:0 18px ;
 }
