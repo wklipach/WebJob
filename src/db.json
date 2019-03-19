@@ -428,7 +428,7 @@
     },
     {
       "letter": {
-        "bOld": false,
+        "bOld": true,
         "bReadByRecipient": false,
         "id_user_from": 2,
         "id_cv": 1,
@@ -640,6 +640,33 @@
         ]
       },
       "id": 8
+    },
+    {
+      "cv": {
+        "bChecked": false,
+        "bInvisible": false,
+        "sExperience": "Проверка - учебное заведение",
+        "id_user": 2,
+        "SalaryFrom": "1000",
+        "Position": "Проверка - Желаемая должность",
+        "City": 6,
+        "Industry": [
+          1
+        ],
+        "Schedule": [
+          1
+        ],
+        "Employment": [
+          1
+        ],
+        "Education": [
+          2
+        ],
+        "Experience": [
+          4
+        ]
+      },
+      "id": 9
     }
   ],
   "CV_Previous": [
@@ -712,6 +739,10 @@
         }
       ],
       "id": 8
+    },
+    {
+      "previous": [],
+      "id": 9
     }
   ],
   "Info": []

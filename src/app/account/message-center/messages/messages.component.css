@@ -18,10 +18,15 @@
 .message{
  width: 1170px;
   margin: 0 auto;
+
 }
 .message:hover{
   cursor: pointer;
   background-color: #f8f8f8;
+}
+.messages-box{
+  height: 700px;
+  overflow: auto;
 }
 .v-line{
   display: inline-block;

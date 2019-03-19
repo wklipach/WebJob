@@ -1,5 +1,5 @@
 .wrapper{
-  font-family: "ProximaNovaRg";
+  font-family: "ProximaNovaRg","sans-serif";
   font-size: 16px;
   width: 1170px;
   height: auto;
@@ -14,7 +14,7 @@
   height: 42px;
   margin: 0 auto;
   font-size: 36px;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova","sans-serif";
 }
 .v-line{
   display: inline-block;
@@ -35,7 +35,7 @@
 label{
   position: absolute;
   font-size: 16px;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova","sans-serif";
   color: rgb(2, 98, 210);
   text-align: left;
 }
@@ -110,7 +110,7 @@ label{
 .inputUserName{
   position: absolute;
   font-size: 14px;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova","sans-serif";
   text-align: center;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
@@ -129,7 +129,7 @@ label{
 .inputEmail{
   position: absolute;
   font-size: 14px;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova","sans-serif";
   text-align: center;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
@@ -183,7 +183,7 @@ label{
 .input-name{
   position: absolute;
   font-size: 14px;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova","sans-serif";
   text-align: center;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
@@ -202,7 +202,7 @@ label{
 .inputLastname{
   position: absolute;
   font-size: 13px;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova","sans-serif";
   text-align: center;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
@@ -238,14 +238,13 @@ label{
 .inputZip{
   position: absolute;
   font-size: 13px;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova","sans-serif";
   text-align: center;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
   border-style: solid;
   border-radius: 3px;
   background-color: rgb(255, 255, 255);
-  text-align: center;
   width: 20%;
   height: 43px;
   margin-left: 444px;
@@ -313,7 +312,7 @@ label{
 }
 .btn-cancel{
   font-size: 18px;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova","sans-serif";
   width: 20%;
   height: 48px;
   color: rgb(68, 75, 84);
@@ -347,7 +346,7 @@ label{
   width: 530px;
   height: 199px;
   margin-left: 150px;
-  margin-top: 770px;
+  margin-top: 760px;
   z-index: 10;
 }
 .inputNewPassword1 {
