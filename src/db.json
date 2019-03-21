@@ -44,7 +44,7 @@
       "Address": "ул. Круская, 21",
       "Phone": "+7(812)320-2462",
       "Gender": 1,
-      "DateBirth": null,
+      "DateBirth": 0,
       "ContactPerson": "Владимир Пешков",
       "About": "Contact information, relationships, business opportunities, orders, sales activities, marketing campaigns, planning, reporting and more can be handled by A-Number CRM helping you make the right business decisions. Featuring flexible contact database structure and highly customizable presentation and reporting with e-mail integration and multi-user operation support, A-Number CRM scales painlessly from a single workstation to a server-based enterprise-wide system, which is still easy to use out-of-the-box.\n\nContact information, relationships, business opportunities, orders, sales activities, marketing campaigns, planning, reporting and more can be handled by A-Number CRM helping you make the right business decisions. Featuring flexible contact database structure and highly customizable presentation and reporting with e-mail integration and multi-user operation support, A-Number CRM scales painlessly from a single workstation to a server-based enterprise-wide system, which is still easy ",
       "Web": "http://a-number.com",
@@ -438,6 +438,240 @@
         "DateTimeCreate": "13/03/2019 02:39"
       },
       "id": 10
+    },
+    {
+      "letter": {
+        "bOld": true,
+        "bReadByRecipient": false,
+        "id_user_from": 2,
+        "id_cv": 1,
+        "id_vc": 1,
+        "id_user_to": 1,
+        "letterText": "Это ответ !",
+        "DateTimeCreate": "20/03/2019 01:12"
+      },
+      "id": 11
+    },
+    {
+      "letter": {
+        "bOld": true,
+        "bReadByRecipient": false,
+        "id_user_from": 2,
+        "id_cv": 1,
+        "id_vc": 1,
+        "id_user_to": 1,
+        "letterText": " Это ответ !",
+        "DateTimeCreate": "20/03/2019 01:12"
+      },
+      "id": 12
+    },
+    {
+      "letter": {
+        "bOld": false,
+        "bReadByRecipient": false,
+        "id_user_from": 2,
+        "id_cv": 1,
+        "id_vc": 1,
+        "id_user_to": 1,
+        "letterText": " Это ответ !",
+        "DateTimeCreate": "20/03/2019 01:13"
+      },
+      "id": 13
+    },
+    {
+      "letter": {
+        "bOld": true,
+        "bReadByRecipient": false,
+        "id_user_from": 2,
+        "id_cv": 1,
+        "id_vc": 1,
+        "id_user_to": 1,
+        "letterText": " Это ответ !",
+        "DateTimeCreate": "20/03/2019 01:13"
+      },
+      "id": 14
+    },
+    {
+      "letter": {
+        "bOld": true,
+        "bReadByRecipient": false,
+        "id_user_from": 2,
+        "id_cv": 1,
+        "id_vc": 1,
+        "id_user_to": 1,
+        "letterText": "",
+        "DateTimeCreate": "20/03/2019 01:14"
+      },
+      "id": 15
+    },
+    {
+      "letter": {
+        "bOld": true,
+        "bReadByRecipient": false,
+        "id_user_from": 2,
+        "id_cv": 1,
+        "id_vc": 1,
+        "id_user_to": 1,
+        "letterText": "",
+        "DateTimeCreate": "20/03/2019 01:15"
+      },
+      "id": 16
+    },
+    {
+      "letter": {
+        "bOld": false,
+        "bReadByRecipient": false,
+        "id_user_from": 2,
+        "id_cv": 1,
+        "id_vc": 1,
+        "id_user_to": 1,
+        "letterText": "",
+        "DateTimeCreate": "20/03/2019 01:15"
+      },
+      "id": 17
+    },
+    {
+      "letter": {
+        "bOld": false,
+        "bReadByRecipient": false,
+        "id_user_from": 1,
+        "id_cv": 1,
+        "id_vc": 1,
+        "id_user_to": 2,
+        "letterText": "Нам такие олухи не нужны 1.",
+        "DateTimeCreate": "20/03/2019 01:22"
+      },
+      "id": 18
+    },
+    {
+      "letter": {
+        "bOld": true,
+        "bReadByRecipient": false,
+        "id_user_from": 1,
+        "id_cv": 1,
+        "id_vc": 1,
+        "id_user_to": 2,
+        "letterText": "Нам такие олухи не нужны 2.",
+        "DateTimeCreate": "20/03/2019 01:22"
+      },
+      "id": 19
+    },
+    {
+      "letter": {
+        "bOld": false,
+        "bReadByRecipient": false,
+        "id_user_from": 1,
+        "id_cv": 1,
+        "id_vc": 1,
+        "id_user_to": 2,
+        "letterText": "Нам такие олухи не нужны 3.",
+        "DateTimeCreate": "20/03/2019 01:22"
+      },
+      "id": 20
+    },
+    {
+      "letter": {
+        "bOld": false,
+        "bReadByRecipient": false,
+        "id_user_from": 1,
+        "id_cv": 1,
+        "id_vc": 1,
+        "id_user_to": 2,
+        "letterText": "Нам такие олухи не нужны 4.",
+        "DateTimeCreate": "20/03/2019 01:22"
+      },
+      "id": 21
+    },
+    {
+      "letter": {
+        "bOld": false,
+        "bReadByRecipient": false,
+        "id_user_from": 1,
+        "id_cv": 1,
+        "id_vc": 1,
+        "id_user_to": 2,
+        "letterText": "Нам такие олухи не нужны 5.",
+        "DateTimeCreate": "20/03/2019 01:23"
+      },
+      "id": 22
+    },
+    {
+      "letter": {
+        "bOld": false,
+        "bReadByRecipient": false,
+        "id_user_from": 1,
+        "id_cv": 1,
+        "id_vc": 1,
+        "id_user_to": 2,
+        "letterText": "Нам такие олухи не нужны 6\n.",
+        "DateTimeCreate": "20/03/2019 01:23"
+      },
+      "id": 23
+    },
+    {
+      "letter": {
+        "bOld": true,
+        "bReadByRecipient": false,
+        "id_user_from": 1,
+        "id_cv": 1,
+        "id_vc": 1,
+        "id_user_to": 2,
+        "letterText": "Нам такие олухи не нужны 7.",
+        "DateTimeCreate": "20/03/2019 01:23"
+      },
+      "id": 24
+    },
+    {
+      "letter": {
+        "bOld": false,
+        "bReadByRecipient": false,
+        "id_user_from": 1,
+        "id_cv": 1,
+        "id_vc": 1,
+        "id_user_to": 2,
+        "letterText": "Нам такие олухи не нужны 8.",
+        "DateTimeCreate": "20/03/2019 01:23"
+      },
+      "id": 25
+    },
+    {
+      "letter": {
+        "bOld": false,
+        "bReadByRecipient": false,
+        "id_user_from": 1,
+        "id_cv": 1,
+        "id_vc": 1,
+        "id_user_to": 2,
+        "letterText": "Нам такие олухи не нужны 9.",
+        "DateTimeCreate": "20/03/2019 01:23"
+      },
+      "id": 26
+    },
+    {
+      "letter": {
+        "bOld": false,
+        "bReadByRecipient": false,
+        "id_user_from": 1,
+        "id_cv": 1,
+        "id_vc": 1,
+        "id_user_to": 2,
+        "letterText": "Нам такие олухи не нужны 10.",
+        "DateTimeCreate": "20/03/2019 01:23"
+      },
+      "id": 27
+    },
+    {
+      "letter": {
+        "bOld": true,
+        "bReadByRecipient": false,
+        "id_user_from": 1,
+        "id_cv": 1,
+        "id_vc": 1,
+        "id_user_to": 2,
+        "letterText": "Нам такие олухи не нужны 11.",
+        "DateTimeCreate": "20/03/2019 01:23"
+      },
+      "id": 28
     }
   ],
   "UserFavoritesUnit": [

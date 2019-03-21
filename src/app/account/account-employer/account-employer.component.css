@@ -1,5 +1,5 @@
 .wrapper{
-  font-family: "ProximaNovaRg";
+  font-family: "ProximaNovaRg","sans-serif";
   font-size: 16px;
   width: 1170px;
   height: auto;
@@ -14,7 +14,7 @@
   height: 42px;
   margin: 0 auto;
   font-size: 36px;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova","sans-serif";
 }
 .v-line{
   display: inline-block;
@@ -35,7 +35,7 @@
 label{
   position: absolute;
   font-size: 16px;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova","sans-serif";
   color: rgb(2, 98, 210);
   text-align: left;
 }
@@ -60,8 +60,6 @@ label{
   height: 40px;
   margin-left: 12px;
   margin-top: 65px;
-  /* max-width: 100%;
-  box-sizing: border-box; */
 }
 .img-thumbnail:hover{
   cursor: pointer;
@@ -107,14 +105,13 @@ label{
   cursor: pointer;
 }
 .img-lock{
-  position: absolute;
   margin-left: 180px;
-  margin-top: 1175px;
+  margin-top: 60px;
 }
 .changePass{
   position: absolute;
-  margin-left: 211px;
-  margin-top: 1175px;
+  margin-left: 20px;
+  margin-top: 60px;
   cursor: pointer;
   text-decoration: underline;
 }
@@ -125,7 +122,7 @@ label{
 .inputUserName{
   position: absolute;
   font-size: 14px;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova","sans-serif";
   text-align: center;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
@@ -144,7 +141,7 @@ label{
 .inputEmail{
   position: absolute;
   font-size: 14px;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova","sans-serif";
   text-align: center;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
@@ -163,7 +160,7 @@ label{
 .input-name{
   position: absolute;
   font-size: 14px;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova","sans-serif";
   text-align: center;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
@@ -182,7 +179,7 @@ label{
 .inputLastname{
   position: absolute;
   font-size: 13px;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova","sans-serif";
   text-align: center;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
@@ -218,14 +215,13 @@ label{
 .inputZip{
   position: absolute;
   font-size: 13px;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova","sans-serif";
   text-align: center;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
   border-style: solid;
   border-radius: 3px;
   background-color: rgb(255, 255, 255);
-  text-align: center;
   width: 228px;
   height: 43px;
   margin-left: 444px;
@@ -321,13 +317,12 @@ label{
   margin-top: 820px;
 }
 .inputAbout{
+  position: relative;
   width: 848px;
   height: 190px;
   margin-left: 180px;
   margin-top: 860px;
 }
-
-
 .btn-save{
   display: inline-block;
   position: absolute;
@@ -341,7 +336,7 @@ label{
   line-height: 2.25;
   width: 228px;
   height: 48px;
-  margin-top:1050px;
+  margin-top:49px;
   margin-left: 180px;
 }
 .btn-save:hover{
@@ -356,7 +351,7 @@ label{
 }
 .btn-cancel{
   font-size: 18px;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova","sans-serif";
   width:228px;
   height: 48px;
   color: rgb(68, 75, 84);
@@ -367,7 +362,7 @@ label{
   border-radius: 3px;
   line-height: 2;
   text-align: center;
-  margin-top: 1050px;
+  margin-top: 49px;
   margin-left: 444px;
 }
 .btn-cancel:hover{
@@ -387,10 +382,9 @@ label{
   border-radius: 3px;
   background-color: rgb(247, 247, 247);
   position: absolute;
-  width: 489px;
+  width: 530px;
   height: 199px;
-  margin-left: 180px;
-  margin-top: 1120px;
+  margin: -80px 0 0 180px ;
   z-index: 10;
 }
 .inputNewPassword1 {
@@ -424,8 +418,26 @@ label{
   line-height: 2.25;
   width: 190px;
   height: 48px;
-  margin-top:1120px;
-  margin-left: -322px;
+  margin-top: 72px;
+  margin-left: -445px;
 }
-.alert-pass{
+.btn-newPassword2{
+  display: inline-block;
+  position: absolute;
+  font-size: 18px;
+  background-color: #3366ff;
+  color: rgb(255, 255, 255);
+  border-color: #054086;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px;
+  line-height: 2.25;
+  width: 190px;
+  height: 48px;
+  margin-top: 72px;
+  margin-left: -192px;
+}
+.alert-pass-danger{
+  position: absolute;
+  z-index: 20;
 }
