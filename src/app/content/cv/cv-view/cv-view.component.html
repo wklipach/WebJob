@@ -4,14 +4,10 @@
 
   <div class="box">
 
-
   <form [formGroup]="formView">
 
-    <label>ФОТО</label> <br>
-    <!--    Фото не отображается.
-     Сюда вставить ФОТО, если нет - заглушку              -->
 
-    <div *ngIf="base64textString.length>0;then contentLoadAvatar else contentDefault">Условия выполнить невозможно</div>
+   <div *ngIf="base64textString.length>0;then contentLoadAvatar else contentDefault">Условия выполнить невозможно</div>
     <ng-template #contentLoadAvatar>
       <img class="logotype" *ngFor="let item of base64textString"  src={{item}} alt="Посмотреть профиль" id="img" (click) = "onProfileClick($event)">
     </ng-template>
@@ -19,6 +15,7 @@
     <ng-template #contentDefault>
       <img src="/assets/img/usernull.png" class="img-thumbnail" onclick="">
     </ng-template>
+
   </form>
 
 
@@ -26,7 +23,7 @@
 
     <label class="fio">Ф.И.О.</label> <br>
     <div  *ngIf="loadUser!= undefined">
-      {{this.loadUser.Name}} <br>
+      {{this.loadUser.Name}}
       {{this.loadUser.LastName}} <br>
       {{this.loadUser.UserName}} <br>
     </div>
@@ -37,14 +34,12 @@
     <span class="city-name"> <!--     Сюда вставить Город              --> </span>   <br>
 
     <label class="label-position">Желаемая должность</label> <br>
-    <span class="position" id="position">
+    <span class="position" id="position"></span>
           <div  *ngIf="_cvitem!= undefined">
             {{_cvitem.Position}} </div>
       <br>
-    </span>
-    <br>
 
-    <label class="From">Заработная плата</label> <br>
+       <label class="From">Заработная плата</label> <br>
     <br>
     <span><div  *ngIf="_cvitem!= undefined">{{_cvitem.SalaryFrom}}</div></span><br>
     <br>

@@ -1,10 +1,13 @@
 .wrapper{
-  display: inline-block;
+/*  display: inline-block;
+ font-size: 16px;
+ height: 180px;
+ */
   position: relative;
   font-family: "ProximaNovaRg","sans-serif";
-  font-size: 16px;
+
   width: 100%;
-  height: 180px;
+
   margin: 0 auto;
   padding-right: 0;
   padding-left: 0;
