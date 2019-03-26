@@ -1,5 +1,5 @@
 .wrapper{
-  font-family: "ProximaNovaRg ,sans-serif";
+  font-family: "ProximaNovaRg" ,"sans-serif";
   font-size: 16px;
   width: 1170px;
   height: auto;
@@ -11,7 +11,7 @@
   height: 36px;
   margin: 0 auto;
   font-size: 22px;
-  font-family: "Proxima Nova ,sans-serif";
+  font-family: "Proxima Nova" ,"sans-serif";
   text-align: left;
   padding-bottom: 15px;
 }
@@ -69,12 +69,12 @@
 label{
   position: absolute;
   font-size: 15px;
-  font-family: "Proxima Nova ,sans-serif";
+  font-family: "Proxima Nova" ,"sans-serif";
   color: rgb(2, 98, 210);
   text-align: left;
 }
 .headline{
-  font-family: "Proxima Nova ,sans-serif";
+  font-family: "Proxima Nova" ,"sans-serif";
   background-color: #DFDFDF;
 }
 .bline{
@@ -82,7 +82,7 @@ label{
   height: auto;
   border-color: #b7b7b7;
   font-size: 16px;
-  font-family: "Proxima Nova, sans-serif";
+  font-family: "Proxima Nova" ,"sans-serif";
 }
 .date{
   width:100px;

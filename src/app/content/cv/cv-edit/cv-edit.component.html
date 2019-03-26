@@ -31,18 +31,13 @@
     <!-- Образование-->
     <app-cv-education></app-cv-education>
 
-  <br>
-
     <ng-container #spot></ng-container>
-    <button (click)="createNewBlock()">Предыдущее место работы</button>
-
+    <button class="btn-add"  (click)="createNewBlock()">Добавить место работы</button>
 
     <div class="line">
       <ng-container #spotLanguage></ng-container>
       <button class="btn-add"  (click)="createNewLanguageBlock()">Добавить знание языка</button>
     </div>
-
-
 
 
     <button class="btn-save" (click)="savecv()">Сохранить резюме</button>

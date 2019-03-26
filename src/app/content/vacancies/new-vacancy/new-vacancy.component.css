@@ -1,5 +1,5 @@
 .wrapper{
-  font-family: "ProximaNovaRg";
+  font-family: "ProximaNovaRg","sans-serif";
   font-size: 16px;
   width: 100%;
   margin: 0 auto;
@@ -12,7 +12,7 @@
   margin: 0 auto;
   border-color: #b7b7b7;
   font-size: 30px;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova","sans-serif";
   color: rgb(68, 75, 84);
   text-align: left;
 }
@@ -25,13 +25,13 @@
   border-color: #b7b7b7;
   /*vertical-align: middle; */
   font-size: 16px;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova","sans-serif";
   color: rgb(68, 75, 84);
   text-align: left;
 }
 label{
   font-size: 18px;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova","sans-serif";
   color: rgb(2, 98, 210);
   line-height: 2;
   text-align: left;
@@ -40,7 +40,6 @@ label{
   display: block;
   width: 90%;
   margin-left: 15px;
-  margin-top: 11px;
   margin-top: 20px;
 }
 .conditions{
@@ -99,7 +98,7 @@ label{
 }
 input, textarea, select{
   font-size: 16px;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova","sans-serif";
   text-align: left;
   border-width: 1px;
   border-color: rgb(68, 75, 84);

@@ -1,5 +1,5 @@
 .wrapper{
-  font-family: "ProximaNovaRg";
+  font-family: "ProximaNovaRg","sans-serif";
   font-size: 16px;
   width: 100%;
   margin: 0 auto;
@@ -12,7 +12,7 @@
   margin: 0 auto;
   border-color: #b7b7b7;
   font-size: 30px;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova","sans-serif";
   color: rgb(68, 75, 84);
   text-align: left;
 }
@@ -25,13 +25,13 @@
   border-color: #b7b7b7;
   /*vertical-align: middle; */
   font-size: 16px;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova","sans-serif";
   color: rgb(68, 75, 84);
   text-align: left;
 }
 label{
   font-size: 18px;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova","sans-serif";
   color: rgb(2, 98, 210);
   line-height: 2;
   text-align: left;
@@ -40,7 +40,6 @@ label{
   display: block;
   width: 90%;
   margin-left: 15px;
-  margin-top: 11px;
   margin-top: 20px;
 }
 .vacancyDescription{
@@ -92,7 +91,7 @@ label{
 }
 input, textarea, select{
   font-size: 16px;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova","sans-serif";
   text-align: left;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
@@ -166,21 +165,20 @@ input, textarea, select{
   text-align: center;
 }
 .btn-save{
-  font-size: 16px;
   background-color: #3366ff;
   color: rgb(255, 255, 255);
   border-color: #054086;
   border-width: 1px;
   border-style: solid;
   border-radius: 3px;
-  line-height: 2.25;
   width: 218px;
   height: 48px;
-  margin-top:20px;
+  margin-top:50px;
   margin-left: 15px;
 }
 .btn-save:hover{
   background-color: #0066cc;
+  font-weight: bold;
 }
 .btn-save:active{
   border-color: #3399ff;
@@ -192,4 +190,29 @@ input, textarea, select{
 .btn-save:disabled{
   color: white;
   background-color: rgb( 145, 175, 209 );
+}
+.btn-cancel{
+  font-family: "Proxima Nova","sans-serif";
+  width:228px;
+  height: 48px;
+  color: rgb(68, 75, 84);
+  background-color: rgb(255, 255, 255);
+  border-width: 1px;
+  border-color: rgb(68, 75, 84);
+  border-style: solid;
+  border-radius: 3px;
+  line-height: 2;
+  text-align: center;
+  margin-top: 50px;
+  margin-left: 2px;
+}
+.btn-cancel:hover{
+  background-color: rgb(240, 240, 240);
+  font-weight: 600;
+}
+.btn-cancel:active{
+  border-color: #3399ff;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 3px;
 }
