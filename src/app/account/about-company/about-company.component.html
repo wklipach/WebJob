@@ -1,11 +1,12 @@
 <app-header-top></app-header-top>
 
 <div class="wrapper">
-  <div class="top">О компании</div>
+  <h1>О компании</h1>
   <div class="vacancy-box">
+    <div class="company-name">{{_myName}}</div>
 
-    <div>{{_myName}}</div><br>
 
+    <div class="top">
     <div *ngIf="base64textString.length>0; then contentLoadAvatar else contentDefault">Условия выполнить невозможно</div>
     <ng-template #contentLoadAvatar>
       <img class="logotype" title="Логотип." *ngFor="let item of base64textString"  src={{item}} alt="Логотип." id="img">
@@ -15,29 +16,20 @@
       <img src="/assets/img/no-photo.png"  title="Логотип." alt="Логотип." class="img-thumbnail">
     </ng-template>
 
-
-<label>Email</label> <a href="mailto:{{_myEmail}}">{{_myEmail}}</a><br>
-
-
-
-<label>Web-site</label><br>
-    <div>{{_myWeb}}</div><br>
-<label>Название компании</label><br>
-    <div>{{_myUserName}}</div><br>
-<label>Город</label>
-    <div>{{this._myDisplayCity}}</div><br>
-    <label>Почтовый индекс</label><br>
-    <div>{{_myZip}}</div><br>
-<label>Адрес</label><br>
-    <div>{{_myAddress}}</div><br>
-<label>Телефон</label><br>
-    <div>{{_myPhone}}</div><br>
-<label>Телефон2</label><br>
-    <div>{{_myPhone2}}</div><br>
-<label>О компании - текст</label><br>
-    <div>{{_myAbout}}</div><br>
-<label>Контактное лицо </label><br>
-    <div>{{_myContactPerson}}</div><br>
+      <div class="valueTxt">{{_myAbout}}</div>
+  </div>
+      <ul>
+    <li><label>Email</label><div class="value"><a href="mailto:{{_myEmail}}">{{_myEmail}}</a></div></li>
+    <li><label>Web-site</label><div class="value">{{_myWeb}}</div></li>
+    <li><label>Название компании</label> <div class="value">{{_myUserName}}</div></li>
+    <li><label>Город</label><div class="value">{{this._myDisplayCity}}</div></li>
+    <li><label>Почтовый индекс</label><div class="value">{{_myZip}}</div></li>
+    <li><label>Адрес</label><div class="value">{{_myAddress}}</div></li>
+    <li> <label>Телефон</label><div class="value">{{_myPhone}}</div></li>
+    <li><label>Телефон2</label><div class="value">{{_myPhone2}}</div></li>
+    <li><label>Контактное лицо </label><div class="value">{{_myContactPerson}}</div></li>
+    <li><label>О компании - текст</label><div class="value">{{_myAbout}}</div></li>
+  </ul>
 
  <!--
     <label>Место на карте</label><br>
