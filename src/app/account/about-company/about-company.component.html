@@ -4,7 +4,7 @@
   <div class="top">О компании</div>
   <div class="vacancy-box">
 
-<label>Логотип</label><br>
+    <div>{{_myName}}</div><br>
 
     <div *ngIf="base64textString.length>0; then contentLoadAvatar else contentDefault">Условия выполнить невозможно</div>
     <ng-template #contentLoadAvatar>
@@ -14,10 +14,12 @@
     <ng-template #contentDefault>
       <img src="/assets/img/no-photo.png"  title="Логотип." alt="Логотип." class="img-thumbnail">
     </ng-template>
-<a href="http://qwe.ru"></a>
 
-<label>Email</label><br>
-    <div>{{_myEmail}}</div><br>
+
+<label>Email</label> <a href="mailto:{{_myEmail}}">{{_myEmail}}</a><br>
+
+
+
 <label>Web-site</label><br>
     <div>{{_myWeb}}</div><br>
 <label>Название компании</label><br>
