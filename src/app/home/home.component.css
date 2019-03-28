@@ -47,7 +47,7 @@
   position: absolute;
   font-size: 20px;
   font-family: Proxima Nova,sans-serif;
-  color: rgb(2, 98, 210);
+  color: #0262d2;
   text-align: left;
   width: 900px;
   margin-top: 16px;
@@ -131,7 +131,7 @@
   display: inline-block;
   position: absolute;
   border-radius: 3px;
-  background-color: #3366ff;
+  background-color: #0262d2;
   width: 155px;
   height: 48px;
   color: rgb(255, 255, 255);
@@ -171,6 +171,7 @@
   background-color: #0066cc;
   color: white;
   font-weight:600;
+  vertical-align: middle;
 }
 .btn-favorites:active{
   border-color: #3399ff;
@@ -178,6 +179,10 @@
   border-width: 3px;
   border-radius: 3px;
   font-weight: 600;
+}
+.favor-star{
+  vertical-align: middle;
+  z-index: 5;
 }
 .btn-hide{
   display: inline-block;
@@ -193,6 +198,10 @@
   height: 48px;
   margin-top: 243px;
   margin-left: 330px;
+  vertical-align: middle;
+}
+.crossed-eye{
+  vertical-align: middle;
 }
 .btn-hide:hover{
   background-color:#f26100;

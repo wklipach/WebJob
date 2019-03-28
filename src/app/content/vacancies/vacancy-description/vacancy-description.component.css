@@ -41,7 +41,7 @@
   display: inline-block;
   font-size: 20px;
   font-family: "Proxima Nova";
-  color: rgb(2, 98, 210);
+  color: #0262d2;
   text-align: left;
   width: 900px;
   margin-top: 16px;
@@ -135,7 +135,7 @@ label{
   display: block;
   font-size: 18px;
   font-family: "Proxima Nova";
-  color: rgb(2, 98, 210);
+  color: #0262d2;
   text-align: left;
   margin-top: 28px;
   margin-bottom: 10px;

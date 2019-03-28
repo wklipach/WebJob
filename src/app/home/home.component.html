@@ -41,8 +41,12 @@
 
 
     <button class="btn-response" type="button" id="vcresponse" title="Откликнуться" (click)="response(i, curVacancy.id)" >Откликнуться</button>
-    <button class="btn-favorites" type="button" id="vcfavorites" title="В избранное" (click)="favorites($event,i, curVacancy.id)" >В избранное</button>
-    <button class="btn-hide" type="button" id="vchide" title="Не показывать" (click)="unshow($event,i, curVacancy.id)" >Не показывать</button>
+    <button class="btn-favorites" type="button" id="vcfavorites" title="В избранное" (click)="favorites($event,i, curVacancy.id)" >
+      <img class="favor-star" src="/assets/img/favor-star.png" alt="Не показывать" title="Не показывать">
+      В избранное</button>
+    <button class="btn-hide" type="button" id="vchide" title="Не показывать" (click)="unshow($event,i, curVacancy.id)">
+      <img class="crossed-eye" src="/assets/img/crossed-eye.png" alt="Не показывать" title="Не показывать">
+      Не показывать</button>
     {{curVacancy.sErrorText}}
      </div>
 
