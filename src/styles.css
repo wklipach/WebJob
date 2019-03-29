@@ -2,7 +2,7 @@
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 @import "../node_modules/bootstrap/dist/css/bootstrap-grid.css";
 
-body {margin: 0 !important; padding: 0 !important;}
+
 
 @font-face {
   font-family: 'ArialRoundedMTBold';
@@ -27,3 +27,9 @@ body {margin: 0 !important; padding: 0 !important;}
 */
 
 @import "../fonts/fonts.css";
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 16px;
+}
+
