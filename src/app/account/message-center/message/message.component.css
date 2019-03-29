@@ -1,5 +1,5 @@
 .wrapper{
-  font-family: "ProximaNovaRg";
+  font-family: "ProximaNovaRg" ,"sans-serif";
   font-size: 16px;
   width: 1170px;
   height: auto;
@@ -11,7 +11,7 @@
   height: 36px;
   margin: 0 auto;
   font-size: 22px;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova" ,"sans-serif";
   text-align: left;
   padding-bottom: 15px;
 }
@@ -69,12 +69,12 @@
 label{
   position: absolute;
   font-size: 15px;
-  font-family: "Proxima Nova";
-  color: rgb(2, 98, 210);
+  font-family: "Proxima Nova" ,"sans-serif";
+  color: #0262d2;
   text-align: left;
 }
 .headline{
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova" ,"sans-serif";
   background-color: #DFDFDF;
 }
 .bline{
@@ -82,7 +82,7 @@ label{
   height: auto;
   border-color: #b7b7b7;
   font-size: 16px;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova" ,"sans-serif";
 }
 .date{
   width:100px;
@@ -119,10 +119,10 @@ label{
   height: 30px;
 }
 .dateTime{
-  position: absolute;
-  font-size: 15px;
+  font-size: 13px;
+  font-weight: 300;
   margin-left:860px;
-  margin-top:2px;
+
 }
 .labelSubject{
   margin-left: 20px;
@@ -131,41 +131,38 @@ label{
 .subject{
   position: absolute;
   margin-left: 60px;
-  width:600px;
+  width:800px;
 }
 .labelText{
   margin-left: 20px;
   margin-top: 70px;
 }
 .textline{
-  position: absolute;
   display: block;
-  font-size: 13px;
+  font-size: 14px;
   padding: 6px 20px;
   border-style: solid;
   border-color: #b8b8b8;
   border-width: 1px;
   border-radius: 5px;
-  margin: 0 0 20px 20px;
+  margin: 25px 20px 0 20px;
   width: 92%;
-  height: 50px;
-  overflow: auto;
-  background-color: #F74933;
-
+  min-height: 67px;
+  height: auto;
 }
 .answer{
   font-size: 13px;
-  padding: 1px 20px;
   border-style: solid;
   border-color: #b8b8b8;
   border-width: 2px;
   border-radius: 5px;
-  margin: 235px 0 0 20px;
-  width: 92%;
-  height: 50px;
+  margin: 35px 0 0 30px;
+  width: 94.5%;
+  height: 120px;
 }
-form{
+.formResponse{
   position: absolute;
+  width: 100%;
 }
 .test{
   height: auto;
@@ -174,5 +171,35 @@ form{
   background-color: yellow;
 }
 .correspondence{
-
+  min-height: 300px;
+  max-height: 600px;
+  overflow: auto;
+  margin-top: 10px;
+}
+.in, .out{
+  float: left;
+  margin-right: 12px;
+}
+.btn-send {
+  border-radius: 3px;
+  background-color: #3366ff;
+  width: 155px;
+  height: 48px;
+  color: rgb(255, 255, 255);
+  border-color: #054086;
+  border-width: 1px;
+  border-style: solid;
+  float: right;
+  margin: 12px 18px 0 0;
+}
+.btn-send:hover{
+  background-color: #0066cc;
+  font-weight:600;
+}
+.btn-send:active{
+  border-color: #3399ff;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 3px;
+  font-weight: 600;
 }

@@ -6,32 +6,32 @@
   <form [formGroup]="newCVForm">
     <div class="cv-box">
       <div class="line">
-      <label class="location">Город</label>
-      <label class="salary">Заработная плата</label>
-      <label class="position">Желаемая должность</label>
-    </div>
+        <label class="location">Город</label>
+        <label class="salary">Заработная плата</label>
+        <label class="position">Желаемая должность</label>
+      </div>
       <!--   <div style="width:100%; height:1px; clear:both;"></div>    выравниваем без обтекания -->
 
       <div class="line">
-      <select id="inputCity" formControlName="inputCity" class="inputCity" title="Город">
-        <option  *ngFor="let lc of listCity" [value]="lc.name">
-          {{lc.name}}
-        </option>
-      </select>
+        <select id="inputCity" formControlName="inputCity" class="inputCity" title="Город">
+          <option  *ngFor="let lc of listCity" [value]="lc.name">
+            {{lc.name}}
+          </option>
+        </select>
 
-      <input type="text" class="inputSalaryFrom" formControlName="inputSalaryFrom" id="inputSalaryFrom" placeholder="от">
+        <input type="text" class="inputSalaryFrom" formControlName="inputSalaryFrom" id="inputSalaryFrom" placeholder="от  &#8364;  ">
         <input type="text" class="inputPosition" formControlName="inputPosition" id="inputPosition" placeholder="Желаемая должность">
       </div>
 
       <div class="line">
-           <label class="labelSkillsAbilities">Основные навыки и умения</label>
+        <label class="labelSkillsAbilities">Основные навыки и умения</label>
       </div>
       <div class="line">
-            <textarea class="inputSkillsAbilities" aria-label="Основные навыки и умения до 1000 знаков" formControlName="inputSkillsAbilities" id="inputSkillsAbilities" placeholder="Основные навыки и умения до 1000 знаков"></textarea>
+        <textarea class="inputSkillsAbilities" aria-label="Основные навыки и умения до 1000 знаков" formControlName="inputSkillsAbilities" id="inputSkillsAbilities" placeholder="Основные навыки и умения до 1000 знаков"></textarea>
       </div>
       <div class="line">
-      <app-cv-education></app-cv-education>
-       </div>
+        <app-cv-education></app-cv-education>
+      </div>
 
       <div class="line">
       <textarea class="inputEducation" aria-label="Учебное заведение. До 1000 знаков"
@@ -59,23 +59,23 @@
         <button class="btn-add"  (click)="createNewBlock()">Добавить место работы</button>
       </div>
 
-     <div class="line">
-      <!-- Занятость -->
-      <app-cv-employment></app-cv-employment>
+      <div class="line">
+        <!-- Занятость -->
+        <app-cv-employment></app-cv-employment>
       </div>
       <div class="line">
-      <!-- график работы -->
-      <app-cv-schedule></app-cv-schedule>
-    </div>
+        <!-- график работы -->
+        <app-cv-schedule></app-cv-schedule>
+      </div>
       <!-- Образование -->
 
       <!-- Отрасль -->
       <app-cv_industry></app-cv_industry>
 
-    <div class="line">
-      <button class="btn-save"  (click)="newcv()">Сохранить резюме</button>
+      <div class="line">
+        <button class="btn-save"  (click)="newcv()">Сохранить резюме</button>
+      </div>
     </div>
-</div>
   </form>
 
 </div>

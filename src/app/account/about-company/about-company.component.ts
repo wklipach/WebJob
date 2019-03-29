@@ -36,17 +36,14 @@ export class AboutCompanyComponent implements OnInit, OnDestroy {
   constructor(private auth: AuthService, private is: GuideService) { }
 
   ngOnInit() {
-
     const id_user = parseInt(window.localStorage.getItem('about_user'));
-    console.log('описываем лицо №', id_user);
-
     this.subscrAboutCompanyFromId =
       this.auth.getDataUserFromId(id_user).subscribe(value =>
         {
-          this.loadCurrentUserInfo(value);
-          this.loadUser = value as UserType;
+          this.loadCurrentUserInfo(value[0]);
+          this.loadUser = value[0] as UserType;
           // вытаскиваем из базы картинку аватара
-          const S = this.loadUser['Avatar'].Avatar;
+          const S = this.loadUser.Avatar;
           if (S.toString().length>0) {
             this.base64textString.push('data:image/png;base64,' + JSON.parse(S).value);
           }

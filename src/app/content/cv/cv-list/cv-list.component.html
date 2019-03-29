@@ -19,8 +19,8 @@
     <ul class="botom-line">
       <li class="date">22.10.2018</li>
       <li class="city">{{item.CityName}}</li>
-      <li class="salary">{{item.cv.SalaryFrom}} &#x20BD;</li>
-      <li class="position">{{item.cv.Position}}</li>
+      <li class="salary">{{item.SalaryFrom}} &#x20BD;</li>
+      <li class="position">{{item.Position}}</li>
       <li><select class="selectChoice" title="Выбрать действие"
                   (change)= "brokerSelected($event,item, i)"
                   [(ngModel)]="contactMethods[i].id">>

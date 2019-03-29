@@ -7,9 +7,9 @@
   <div class="vacancy-box" id="vacancy-box" *ngFor="let curVacancy of myDataVacancy; let i = index" (click)="MyMethod(curVacancy.id, $event)">
     <div class="v-line"></div>
     <div class="number">{{i+1}}</div>
-    <div class="title">{{curVacancy['vacancy'].VacancyShortTitle}}</div>
+    <div class="title">{{curVacancy.VacancyShortTitle}}</div>
     <div class="income">
-      {{curVacancy['vacancy'].SalaryFrom}}-{{curVacancy['vacancy'].Salary}} &#x20BD;</div>
+      {{curVacancy.SalaryFrom}}-{{curVacancy.Salary}} &#x20BD;</div>
 
 
 
@@ -19,9 +19,9 @@
 
 
     <!-- ////////////////////////// -->
-    <div *ngIf="curVacancy['vacancy'].base64textString.length>0; then contentLoadAvatar else contentDefault">условия выполнить невозможно</div>
+    <div *ngIf="curVacancy.base64textString.length>0; then contentLoadAvatar else contentDefault">условия выполнить невозможно</div>
     <ng-template #contentLoadAvatar>
-      <img class="logotype" *ngFor="let item of curVacancy['vacancy'].base64textString"  src={{item}} alt="Логотип компании" id="img">
+      <img class="logotype" *ngFor="let item of curVacancy.base64textString"  src={{item}} alt="Логотип компании" id="img">
     </ng-template>
 
     <ng-template #contentDefault>
@@ -31,18 +31,22 @@
 
 
 
-    <span class="company-name">{{curVacancy['vacancy'].id_user}}</span>
-    <span class="description">{{curVacancy['vacancy'].Conditions}}</span>
+    <span class="company-name">{{curVacancy.id_user}}</span>
+    <span class="description">{{curVacancy.Conditions}}</span>
 
-    <div *ngIf="!curVacancy['vacancy'].errorEndDay">
-          <span class="final-date">Размещено до {{curVacancy['vacancy'].sDateEnd}}</span>
-         <span class="number">Дата размещения {{curVacancy['vacancy'].DateTimeCreate}}</span>
+    <div *ngIf="!curVacancy.errorEndDay">
+          <span class="final-date">Размещено до {{curVacancy.sDateEnd}}</span>
+         <span class="number">Дата размещения {{curVacancy.DateTimeCreate}}</span>
     </div>
 
 
     <button class="btn-response" type="button" id="vcresponse" title="Откликнуться" (click)="response(i, curVacancy.id)" >Откликнуться</button>
-    <button class="btn-favorites" type="button" id="vcfavorites" title="В избранное" (click)="favorites($event,i, curVacancy.id)" >В избранное</button>
-    <button class="btn-hide" type="button" id="vchide" title="Не показывать" (click)="unshow($event,i, curVacancy.id)" >Не показывать</button>
+    <button class="btn-favorites" type="button" id="vcfavorites" title="В избранное" (click)="favorites($event,i, curVacancy.id)" >
+      <img class="favor-star" src="/assets/img/favor-star.png" title="Не показывать">
+      В избранное</button>
+    <button class="btn-hide" type="button" id="vchide" title="Не показывать" (click)="unshow($event,i, curVacancy.id)">
+      <img class="crossed-eye" src="/assets/img/crossed-eye.png"  title="Не показывать">
+      Не показывать</button>
     {{curVacancy.sErrorText}}
      </div>
 

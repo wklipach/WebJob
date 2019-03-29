@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import {Observable, Subject, Subscription} from 'rxjs';
 import {HomeComponent} from '../home/home.component';
 import {dataVacancy} from '../class/Vacancy';
@@ -67,21 +67,27 @@ export class TableVacancyService {
   GET /posts?q=internet
   */
 
+
+  getTableVacancyAdvanced(findObject: any)
+  {
+    let sUrl = 'http://localhost:3000/advanced-search';
+    let Result = this.http.post(sUrl,  findObject);
+    return Result;
+  }
+
+
+
+
   getTableVacancy(sMask: string, rowPerPage: number, currentPage: number, isFavorites: boolean, isAdvancedFind: boolean)
   {
 
-    let sUrl = 'http://localhost:3000/vacancy';
 
-    if (!isFavorites) {
-          if (sMask !== '') sUrl = sUrl +'?q='+sMask;
-          } else {
-          let s = window.localStorage.getItem('stringFavorites');
-          sUrl = sUrl + s;
-    }
 
-    // вставить запрос типа select top 10 * from Vacancy по маске или еще что такое же
-    let Result = this.http.get(sUrl);
-    return Result;
+    let sUrl = 'http://localhost:3000/Vacancy';
+    let params = new HttpParams()
+      .set('sMask', sMask);
+
+    return this.http.get(sUrl, {params: params});
 
   }
 

@@ -38,6 +38,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   private dvSubscription: Subscription;
   private getTableVacancy: Subscription;
+  private getTableVacancyAdvanced: Subscription;
   private sbReopenVacancyAdvanced: Subscription;
   private sMask: string = ''
 
@@ -91,21 +92,18 @@ export class HomeComponent implements OnInit, OnDestroy {
 
 
   onPageChanged(pageNumber: number) {
+
+    console.log('сработало');
+
     this.reloadPAge(this.allDataVacancy, this.sMask);
   }
 
   onLoadFromBaseAvatar(k: any) {
-
+  //TODO точка 2
     k.base64textString = [];
-    if (typeof k.id_user !== 'undefined') {
-          this.authService.getDataUserFromId(k.id_user).subscribe((aRes) => {
-          if (aRes['Avatar'] != undefined) {
-            const S = aRes['Avatar'].Avatar;
-            k.base64textString = [];
-            k.base64textString.push('data:image/png;base64,' + JSON.parse(S).value);
-          }
-          });
-    }
+
+    if (k.Avatar.toString().length>0)
+    k.base64textString.push('data:image/png;base64,' + JSON.parse(k.Avatar).value);
   }
 
 
@@ -182,7 +180,18 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   getVacancyAdvanced(advancedFindObj: any) {
     // выводим всю таблицу по сути это заглушка вместо продвинутого поиска
-    this.getVacancy('', false, true);
+
+    console.log('СРАБОТАЛО ТУТ');
+    console.log('advancedFindObj', advancedFindObj);
+
+
+    //TODO ЭТО ПРОДВИНУТЫЙ ПОИСК
+
+    return this.getTableVacancyAdvanced = this.httpService.getTableVacancyAdvanced(advancedFindObj).subscribe(
+      (data: any) => {
+      console.log('!!!ЭТО ПРОДВИНУТЫЙ ПОИСК!!!');
+        this.data_show(data);
+      });
   }
 
    getVacancy(sMask: string,isFavorites: boolean, isAdvancedFind: boolean) {
@@ -190,99 +199,115 @@ export class HomeComponent implements OnInit, OnDestroy {
     return this.getTableVacancy = this.httpService.getTableVacancy(sMask, this.rowPerPage, this.page, isFavorites, isAdvancedFind).subscribe(
       (data: dataVacancy[]) => {
 
-        let curRemDay: {numberMonth, errorDay} = {numberMonth: -1, errorDay: true};
-
-
-
-        data.forEach(  (curVacancy, index, arrCurValue) => {
-          // base64textString = [];
-          this.onLoadFromBaseAvatar(curVacancy['vacancy']);
-          // ДАТА ОКОНЧАНИЯ ЗАЯВКИ
-            curVacancy['vacancy'].sDateEnd = "";
-            curVacancy['vacancy'].errorEndDay = true;
-
-            if (typeof curVacancy['vacancy'].DateTimeCreate !== 'undefined') {
-              if (typeof curVacancy['vacancy'].DisplayPeriod !== 'undefined') {
-
-                switch(curVacancy['vacancy'].DisplayPeriod) {
-                  case 1: {
-                    curRemDay.errorDay = false;
-                    curRemDay.numberMonth = 1;
-                    break;
-                  }
-                  case 2: {
-                    curRemDay.errorDay = false;
-                    curRemDay.numberMonth = 2;
-                    break;
-                  }
-
-                  case 3: {
-                    curRemDay.errorDay = false;
-                    curRemDay.numberMonth = 3;
-                    break;
-                  }
-
-                  default: {
-                    curRemDay.errorDay = false;
-                    curRemDay.numberMonth = 999999;
-                    break;
-                  }
-                }
-
-                ///// высчитываем дату окончания
-                // dd/MM/yyyy hh:mm локаль en-US
-                if (!curRemDay.errorDay) {
-
-                  var dateObject = this.StrToDate(curVacancy['vacancy'].DateTimeCreate);
-                  let DateEnd = new Date(dateObject.setMonth(dateObject.getMonth() + curRemDay.numberMonth));
-                  var datePipe = new DatePipe("en-US");
-                  curVacancy['vacancy'].sDateEnd =  datePipe.transform(DateEnd, 'dd.MM.yyyy');
-                  curVacancy['vacancy'].errorEndDay = false;
-                }
-              }
-            }
-        }
-        );
-
-
-        //const SSS  = data.sort( (a, b)=> b['vacancy'].DateTimeCreate - a['vacancy'].DateTimeCreate );
-
-
-        //data = data.sort( (a, b)=> a['vacancy'].DateTimeCreate - b['vacancy'].DateTimeCreate );
-//        console.log('sort',data);
-
-
-
-        this.myDataVacancy = data;
-        this.sortByDueDate();
-        //console.log('sort',this.myDataVacancy);
-
-        this.allDataVacancy = data;
-        this.recordsPerAll = data.length;
-        this.is.startCheckPaginator({value1: this.recordsPerAll, value2: this.rowPerPage});
-        this.reloadPAge(this.allDataVacancy, sMask);
-
-        if (isFavorites) this.sVacancy = 'Избранные вакансии'; else this.sVacancy = 'Вакансии';
-
-
-     }
-    );
+      //TODO точка 1
+      this.data_show(data);
+      this.reloadPAge(this.allDataVacancy, sMask);
+      if (isFavorites) this.sVacancy = 'Избранные вакансии'; else this.sVacancy = 'Вакансии';
+      });
   }
 
 
+//TODO показ данных после поиска
+  data_show(data: dataVacancy[]) {
+
+
+
+    console.log('point 1');
+    let curRemDay: {numberMonth, errorDay} = {numberMonth: -1, errorDay: true};
+
+    console.log('point 2');
+
+
+    data.forEach(  (curVacancy, index, arrCurValue) => {
+        // base64textString = [];
+
+      console.log('point 3');
+
+        this.onLoadFromBaseAvatar(curVacancy);
+        // ДАТА ОКОНЧАНИЯ ЗАЯВКИ
+        curVacancy.sDateEnd = "";
+        curVacancy.errorEndDay = true;
+
+        if (typeof curVacancy.DateTimeCreate !== 'undefined') {
+          if (typeof curVacancy.DisplayPeriod !== 'undefined') {
+
+            switch(curVacancy.DisplayPeriod) {
+              case 1: {
+                curRemDay.errorDay = false;
+                curRemDay.numberMonth = 1;
+                break;
+              }
+              case 2: {
+                curRemDay.errorDay = false;
+                curRemDay.numberMonth = 2;
+                break;
+              }
+
+              case 3: {
+                curRemDay.errorDay = false;
+                curRemDay.numberMonth = 3;
+                break;
+              }
+
+              default: {
+                curRemDay.errorDay = false;
+                curRemDay.numberMonth = 12;
+                break;
+              }
+            }
+
+            ///// высчитываем дату окончания
+            // dd/MM/yyyy hh:mm локаль en-US
+            if (!curRemDay.errorDay) {
+
+              console.log('curRemDay', curRemDay);
+
+              var dateObject = this.StrToDate(curVacancy.DateTimeCreate);
+              let DateEnd = new Date(dateObject.setMonth(dateObject.getMonth() + curRemDay.numberMonth));
+              var datePipe = new DatePipe("en-US");
+              curVacancy.sDateEnd =  datePipe.transform(DateEnd, 'dd.MM.yyyy');
+              curVacancy.errorEndDay = false;
+            }
+          }
+        }
+
+
+      console.log('point 4');
+      }
+    );
+
+    this.myDataVacancy = data;
+    this.sortByDueDate();
+
+    this.allDataVacancy = data;
+    this.recordsPerAll = data.length;
+    this.is.startCheckPaginator({value1: this.recordsPerAll, value2: this.rowPerPage});
+
+
+  }
+
+
+
+
   public StrToDate(curStrDate: string): Date {
-    const reggie = /(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2})/;
-    const dateArray = reggie.exec(curStrDate);
-    const dateObject = new Date(+dateArray[3], +dateArray[2] - 1, +dateArray[1], +dateArray[4], +dateArray[5], 0, 0);
+
+
+//    const reggie = /(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2})/;
+//    const dateArray = reggie.exec(curStrDate);
+//    const dateObject = new Date(+dateArray[3], +dateArray[2] - 1, +dateArray[1], +dateArray[4], +dateArray[5], 0, 0);
+
+    const dateObject = new Date(curStrDate);
+
     return dateObject;
   }
 
 
 
   public sortByDueDate(): void {
+
     this.myDataVacancy.sort((a, b) => {
-      const d1 = this.StrToDate(a['vacancy'].DateTimeCreate);
-      const d2 = this.StrToDate(b['vacancy'].DateTimeCreate);
+      const d1 = this.StrToDate(a.DateTimeCreate);
+      const d2 = this.StrToDate(b.DateTimeCreate);
      // console.log('d1',d1,'d2',d2, 'a', a['vacancy'].DateTimeCreate, 'b', b['vacancy'].DateTimeCreate);
       return d2.getTime() - d1.getTime();
     });
@@ -291,13 +316,19 @@ export class HomeComponent implements OnInit, OnDestroy {
   // получаем из массива кол. записей и кусок записей на данной странице
   reloadPAge(data: dataVacancy[], sMask: string) {
 
+
+    console.log('старая data', data);
+    console.log('this.rowPerPage', this.rowPerPage, 'this.page', this.page);
     data = data.slice(this.rowPerPage*(this.page-1),this.rowPerPage*(this.page-1)+this.rowPerPage);
+    console.log('новая data', data);
+
+
     // это получаем город из нового вызываемого сервиса
     this.httpService.getCity().subscribe((city: City[]) => {
 
         data.forEach((eekey, ih) => {
 
-            let idCity = eekey['vacancy'].City;
+            let idCity = eekey.City;
             if (isNullOrUndefined(idCity) === false) {
               let CurCity = city.find(city => city.id === idCity);
               eekey.CityName = CurCity.name;
@@ -327,6 +358,10 @@ export class HomeComponent implements OnInit, OnDestroy {
         }
         window.localStorage.removeItem('backPage');
 
+
+// TODO добавили в новом коде
+      this.myDataVacancy = data;
+
       }
 
     );
@@ -342,6 +377,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     return;
 
     let vacancy = this.myDataVacancy.find(vacancy =>  vacancy.id===zid);
+
      this.dvSubscription = this.moveS.setDataVacancy(vacancy).subscribe( ()=> this.router.navigate(['/vacancy-description']));
   }
 
@@ -358,6 +394,10 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     if (typeof this.sbReopenVacancyAdvanced !== 'undefined') {
       this.sbReopenVacancyAdvanced.unsubscribe();
+    }
+
+    if (typeof this.getTableVacancyAdvanced !== 'undefined') {
+      this.getTableVacancyAdvanced.unsubscribe();
     }
 
   }

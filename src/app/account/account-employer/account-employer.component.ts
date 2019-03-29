@@ -6,7 +6,6 @@ import {Subscription} from 'rxjs';
 import {AuthService} from '../../services/auth-service.service';
 import {UserType} from '../../class/UserType';
 import {Router} from '@angular/router';
-import {unescape} from 'querystring';
 import {DomSanitizer} from '@angular/platform-browser';
 import {UserTable} from '../../class/UserTable';
 import {isUndefined} from "util";
@@ -81,7 +80,8 @@ constructor(  private is: GuideService,
     return new Promise(
       (resolve, reject)=>{
 
-        return this.auth.getDataUserTableWithoutCurrentUser(this.loadUser.UserName).subscribe(
+        console.log('userEmailAsyncValidator',this.loadUser[0].UserName);
+        return this.auth.getDataUserTableWithoutCurrentUser(this.loadUser[0].UserName).subscribe(
           (data: UserTable) => {
             if (this.getCheckEmail (data,control.value) === true) {
               resolve( {'errorEmailExists': true});
@@ -110,10 +110,15 @@ constructor(  private is: GuideService,
     this.subscrDataUserFromId =
       this.auth.getDataUserFromId(this.id_user).subscribe(value =>
        {
-         this.loadCurrentUserInfo(value);
+         this.loadCurrentUserInfo(value[0]);
          this.loadUser = value as UserType;
          // вытаскиваем из базы картинку аватара
-         const S = this.loadUser['Avatar'].Avatar;
+         console.log('this.loadUser', this.loadUser);
+
+         let S = this.loadUser[0].Avatar;
+
+         if (S===null) {S = '';}
+
          if (S.toString().length>0) {
            this.base64textString.push('data:image/png;base64,' + JSON.parse(S).value);
          }
@@ -151,7 +156,7 @@ createAccountEmployerForm() {
 
   this.genderList = this.gs.getGenderList();
 
-  this.accountEmployerForm.controls['inputUserName'].disable();
+   this.accountEmployerForm.controls['inputUserName'].disable();
 }
 
 
@@ -163,6 +168,11 @@ createAccountEmployerForm() {
   }
 
   loadCurrentUserInfo(item: any) {
+
+
+console.log('ITEM', item);
+    console.log('ITEMUserName', item.UserName);
+
     // редактируемый список городов по подписке с выбранным ранее городом в    качестве выбранного
     this.cveditCityTable = this.is.getCityTable().subscribe(
 
@@ -259,18 +269,45 @@ createAccountEmployerForm() {
 
   savecv() {
 
+    console.log('R1');
 
     if (this.accountEmployerForm.invalid) {
-      console.log('ошибки во вводе данных для формы');
+      console.log('ошибки во вводе данных для формы', this.accountEmployerForm);
       return -1;
     }
 
+    console.log('R2');
 
     var id_city = -1;
 
-    const {inputUserName, inputName, inputLastName, inputZip, inputAddress,
+
+    console.log('R3');
+
+    let {inputUserName, inputName, inputLastName, inputZip, inputAddress,
       inputPhone, inputCity, inputEmail, inputGender, inputBirth,
       inputContactPerson, inputAbout, inputWeb, inputPhone2} = this.accountEmployerForm.value;
+
+    inputUserName = this.accountEmployerForm.controls['inputUserName'].value;
+
+    console.log('inputUserName', inputUserName);
+
+
+/*
+    console.log('inputName', inputName);
+    console.log('inputLastName', inputLastName);
+    console.log('inputZip', inputZip);
+    console.log('inputAddress', inputAddress);
+    console.log('inputPhone', inputPhone);
+    console.log('inputCity', inputCity);
+    console.log('inputEmail', inputEmail);
+    console.log('inputGender', inputGender);
+    console.log('inputBirth', inputBirth);
+
+    console.log('inputContactPerson',inputContactPerson);
+    console.log('inputAbout', inputAbout);
+    console.log('inputWeb', inputWeb);
+    console.log('inputPhone2', inputPhone2);
+*/
 
     this.gs.getCityId(inputCity).subscribe( (value: City) => {
 
@@ -279,13 +316,14 @@ createAccountEmployerForm() {
       const AddUser  = new UserType(inputUserName, inputEmail,
         this._sPassword,
         true, id_city, inputZip, inputName, inputLastName, inputAddress,
-        inputPhone,                                     this.genderList.find((value)=>value.name == inputGender).id,
+        inputPhone, this.genderList.find((value)=>value.name == inputGender).id,
         Date.parse(inputBirth),
         inputContactPerson,
         inputAbout,
         inputWeb,
         inputPhone2
     );
+
 
       return this.auth.updateDataUserTable(AddUser, this.id_user).subscribe(
 
@@ -380,7 +418,10 @@ createAccountEmployerForm() {
 
     this.auth.getDataUserFromId(this.id_user).subscribe((aRes)=>
     {
-      const S = aRes['Avatar'].Avatar;
+
+      console.log('aRes', aRes);
+
+      const S = aRes[0].Avatar;
       this.base64textString = [];
       if (S !== '""') {
         if (typeof S !== 'undefined') {

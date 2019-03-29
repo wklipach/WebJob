@@ -283,6 +283,29 @@
         "DateTimeCreate": "07/02/2019 04:55"
       },
       "id": 6
+    },
+    {
+      "vacancy": {
+        "bChecked": false,
+        "bInvisible": false,
+        "VacancyShortTitle": "44",
+        "VacancyDescription": "44",
+        "Conditions": "44",
+        "SalaryFrom": "44",
+        "Salary": "4444",
+        "JobFunction": "44",
+        "VacancyRequirements": "44",
+        "Industry": [],
+        "DisplayPeriod": 1,
+        "City": 1,
+        "Schedule": [],
+        "Employment": [],
+        "Education": [],
+        "Experience": [],
+        "id_user": 1,
+        "DateTimeCreate": "11/03/2019 02:05"
+      },
+      "id": 7
     }
   ],
   "Correspondence": [

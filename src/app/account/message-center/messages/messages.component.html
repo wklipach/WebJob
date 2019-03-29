@@ -1,14 +1,15 @@
+<app-header-top></app-header-top>
 <div class="wrapper">
   <div class="top">
-  Сообщения
+    Сообщения
   </div>
 
+  <div class="messages-box"title="Перейти к переписке.">
+    <div class="message" id="message" *ngFor="let curLetter of myDataLetter; let i = index" (click)="curLetterClick(curLetter.id, $event)">
 
-  <div class="message" id="message" *ngFor="let curLetter of myDataLetter; let i = index" (click)="curLetterClick(curLetter.id, $event)">
+      <div [class.boldletter]="(curLetter.letter.id_user_from !== this.id_user) && (curLetter.letter.bOld === false)">
 
-    <div [class.boldletter]="(curLetter.letter.id_user_from !== this.id_user) && (curLetter.letter.bOld === false)">
-
-        <div class="v-line"></div>
+        <div class="v-line"> </div>
         <ul class="headline">
           <li class="date">Дата</li>
           <li class="from">От</li>
@@ -21,74 +22,11 @@
           <li class="subject">Отклик на вакансию: {{curLetter.letter.id_vc}} </li>
         </ul>
 
-      <div class="txt">Отклик на вакансию: {{curLetter.letter.letterText}} </div>
+        <div class="txt">Отклик на вакансию: {{curLetter.letter.letterText}} </div>
 
+      </div>
     </div>
   </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-<!--
-<div class="wrapper">
-
-  <div class="box1">
-
-    <p></p>
-  </div>
-  <div class="box2">
-
-    <p>Программист С++</p>
-  </div>
-
-  <div class="box3">
-
-    <p>01.06.2018</p>
-  </div>
-
-  <div class="box4">
-
-    <p><a href="">Открыть</a> </p>
-  </div>
-
-  <div class="box5">
-
-    <p><a href="">Удалить</a> </p>
-  </div>
-
-<div class="wrapper">
-
-  <div class="box">
-
-    <p>Грызлова С.И.</p>
-  </div>
-  <div class="box">
-
-    <p></p>
-  </div>
-
-  <div class="box">
-
-    <p>01.06.2018</p>
-  </div>
-
-  <div class="box">
-
-    <p><a href="">Открыть</a> </p>
-  </div>
-
-  <div class="box">
-
-    <p><a href="">Удалить</a> </p>
-  </div>
 
 </div>
-  </div>
--->
+<app-footer></app-footer>

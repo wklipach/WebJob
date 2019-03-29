@@ -1,10 +1,13 @@
 .wrapper{
-  display: inline-block;
+  /*  display: inline-block;
+   font-size: 16px;
+   height: 180px;
+   */
   position: relative;
-  font-family: "ProximaNovaRg";
-  font-size: 16px;
+  font-family: "ProximaNovaRg","sans-serif";
+
   width: 100%;
-  height: 180px;
+
   margin: 0 auto;
   padding-right: 0;
   padding-left: 0;
@@ -49,13 +52,12 @@
 .arrow-down-lang{
   position: absolute;
   display: inline-block;
-  margin-top: 1px;
   margin-top:14px;
   margin-left: -13px;
 }
 h1 {
   font-size: 48px;
-  font-family: "ArialRoundedMTBold";
+  font-family: "ArialRoundedMTBold","sans-serif";
   color: #484c54;
   padding:0 18px ;
 }
@@ -143,10 +145,10 @@ a:visited {
 }
 
 .langchoice{
-  font-size: 14px;
-  color: rgb(68, 75, 84);
   position: absolute;
   display: inline-block;
+  font-size: 14px;
+  color: rgb(68, 75, 84);
   margin-top: 8px;
   margin-left:-80px;
 }
@@ -155,6 +157,10 @@ a:visited {
   color: rgb(68, 75, 84);
   margin-left: -15px;
   padding-right: 5px;
+  vertical-align: middle;
+}
+.flag-list{
+  vertical-align: middle;
 }
 .bottom{
   position: relative;
@@ -183,8 +189,8 @@ a:visited {
 .btn-search{
   display: inline-block;
   position: absolute;
-  background-color: #3366ff;
- color: rgb(255, 255, 255);
+  background-color: #0262d2;
+  color: rgb(255, 255, 255);
   border-color: #054086;
   border-width: 1px;
   border-style: solid;
@@ -204,7 +210,7 @@ a:visited {
   border-style: solid;
   border-width: 3px;
   border-radius: 3px;
-  font-width: 15px;
+  font-weight: bold;
 }
 .btn-advsearch{
   display: inline-block;
@@ -246,7 +252,7 @@ a:visited {
 }
 ul.user-list{
   position: absolute;
-  margin-top: 41px;
+  margin-top: 50px;
   margin-left: 105px;
   display: none;
   z-index: 2;
@@ -261,6 +267,9 @@ li{
   font-family: "ProximaNovaLt";
   padding-left: 20px;
   text-decoration: none;
+  border-color: #dddddd;
+  border-style: solid;
+  border-width:1px;
 }
 li:hover{
   background: #e8f1fb;
@@ -294,27 +303,27 @@ ul:hover{
 .menu-header-lang:hover{
   background: #FFF;
 }
-ul.lang-list{
+.lang-list{
   position: absolute;
-  margin-top: 41px;
+  margin-top: 50px;
+  float: right;
+  z-index: 2;
   margin-left: 905px;
   display: none;
-  z-index: 2;
 }
 ul.lang-list li{
   position: relative;
   display: block;
-  width: 90px;
+  width: 55px;
   height: 45px;
-  line-height: 45px;
   text-align: left;
   background: #FFF;
   cursor: pointer;
-  /**/border-color: #dddddd;
+  border-color: #dddddd;
   border-style: solid;
   border-width:1px;
   margin-left:150px;
-  top: auto;
+
 }
 .lang-list li:hover{
   background: #e8f1fb;

@@ -39,15 +39,7 @@ export class VacanciesComponent implements OnInit, OnDestroy {
 
   onLoadFromBaseAvatar(k: any) {
     k.base64textString = [];
-    if (typeof k.id_user !== 'undefined') {
-      this.authService.getDataUserFromId(k.id_user).subscribe((aRes) => {
-        if (aRes['Avatar'] != undefined) {
-          const S = aRes['Avatar'].Avatar;
-          k.base64textString = [];
-          k.base64textString.push('data:image/png;base64,' + JSON.parse(S).value);
-        }
-      });
-    }
+    if (k.Avatar!= undefined) k.base64textString.push('data:image/png;base64,' + JSON.parse(k.Avatar).value);
   }
 
   constructor(private authService: AuthService,
@@ -67,19 +59,28 @@ export class VacanciesComponent implements OnInit, OnDestroy {
     this.sbVacCity = this.gs.getCityTable().subscribe((value) => {
       this.cityList = value as City[];
 
-      console.log('this.id_user',  this.id_user);
-      console.log('this.cityList', this.cityList);
+
+
+      console.log('ss1');
 
       this.sbVacanciesGetList = this.gls.getVacanciesList(this.id_user).subscribe((valueVL) => {
           this.vacanciesList = valueVL;
 
 
-
+        console.log('ss2');
 
           this.vacanciesList.forEach( (vacCur, index) => {
             this.contactMethods.push({'id' : 0, value : 0, 'bDelete': false});
-            const sCityName = (this.cityList as City[]).find((valueC) => (valueC.id === vacCur.vacancy.City) ).name;
+
+
+            console.log('ss3');
+
+            const sCityName = (this.cityList as City[]).find((valueC) => (valueC.id === vacCur.City) ).name;
             this.vacanciesList[index].CityName = sCityName;
+
+
+            console.log('ss4');
+
           });
         });
     });
@@ -123,27 +124,30 @@ export class VacanciesComponent implements OnInit, OnDestroy {
   // редактируем - по факту будем удалять пометкой "удаленное" но оставляя в базе и вписывая новое значение
   EditElement(item: any) {
 
+
+    console.log('EditElement item any', item);
+
     this.gls.setVacId(item.id);
-    this.gls.setVacItem(item.vacancy);
+    this.gls.setVacItem(item);
     this.router.navigate(['/vacancy-edit']);
   }
 
   // просмотр элемента
   DescriptionElement(item: any) {
-    this.onLoadFromBaseAvatar(item.vacancy);
+    this.onLoadFromBaseAvatar(item);
     this.dvMoveSubscription = this.moveS.setDataVacancy(item).subscribe( ()=> this.router.navigate(['/vacancy-description']));
   }
 
 
 
   UnDeleteElement(item: any) {
-    item.vacancy.bInvisible = false;
+    item.bInvisible = false;
   }
 
   // удаляем - по факту ставим признак невидимости элемента
   DeleteElement(item: any) {
-    item.vacancy.bInvisible = true;
-    this.sbDeleteVac = this.gls.setDeleteVac(item.id, item.vacancy).subscribe( () => {
+    item.bInvisible = true;
+    this.sbDeleteVac = this.gls.setDeleteVac(item.id, item).subscribe( () => {
         this.RouterReload();
       },
       err => console.log('при удалении элемента возникла нештатная ситуация ', err));
@@ -156,6 +160,10 @@ export class VacanciesComponent implements OnInit, OnDestroy {
 
   brokerSelected ($event, item, i) {
 // TODO СОБЫТИЕ СПИСКА
+
+
+    console.log('item brokerSelected',item);
+
     switch ($event.target.value) {
 
       case '0': {
@@ -202,12 +210,40 @@ export class VacanciesComponent implements OnInit, OnDestroy {
   /* сохранение данных */
   copyVAC(item) {
 
-    // получаем изначальные данные без динамических блоков
-    const MyVac: Vacancy = item.vacancy;
 
-    const datePipe = new DatePipe('en-US');
-    const currentDate = datePipe.transform(new Date(), 'dd/MM/yyyy hh:mm');
-    MyVac.DateTimeCreate = currentDate;
+    console.log('MyVac item', item);
+
+    // получаем изначальные данные без динамических блоков
+    let MyVac: Vacancy = item;
+
+    let nProm = [];
+
+    if (MyVac.Industry !== null) {
+    nProm = MyVac.Industry.toString().split(',');
+    MyVac.Industry = nProm;}
+
+    if (MyVac.Schedule !== null) {
+    nProm = MyVac.Schedule.toString().split(',');
+    MyVac.Schedule = nProm;}
+
+    if (MyVac.Education !== null) {
+    nProm = MyVac.Education.toString().split(',');
+    MyVac.Education = nProm; }
+
+    if (MyVac.Employment !== null) {
+    nProm = MyVac.Employment.toString().split(',');
+    MyVac.Employment = nProm;}
+
+    if (MyVac.Experience !== null) {
+    nProm = MyVac.Experience.toString().split(',');
+    MyVac.Experience = nProm;}
+
+    //const datePipe = new DatePipe('en-US');
+    //const currentDate = datePipe.transform(new Date(), 'dd/MM/yyyy hh:mm');
+    //MyVac.DateTimeCreate = currentDate;
+
+
+
     this.nvs.postNewVacancy(MyVac).subscribe(
       (value) => {
             this.RouterReload();

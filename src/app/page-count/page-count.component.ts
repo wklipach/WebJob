@@ -50,6 +50,10 @@ export class PageCountComponent implements OnInit {
 
   onCurrentPageChange(pageNumber: number){
 
+
+// TODO ПЫТАЕМСЯ ЧТО_ТО СДВИНУТЬ
+    // console.log('ПЫТАЕМСЯ ЧТО_ТО СДВИНУТЬ pageNumber', pageNumber);
+
     if (this.moveLeftBlockPages(pageNumber) === false)
         this.moveRightBlockPages(pageNumber);
 
@@ -61,11 +65,13 @@ export class PageCountComponent implements OnInit {
 
   moveRightBlockPages(pageNumber: number) {
 
+
     var bMove: boolean = false;
     var bLastMove: boolean = false;
 
     var curIndex = this.numberOfPage.indexOf(pageNumber.toString());
     var curValuePage = this.numberOfPage[curIndex];
+
 
     // страница должна быть больше чем 1
     if (parseInt(curValuePage)>1) {
@@ -99,16 +105,21 @@ export class PageCountComponent implements OnInit {
   moveLeftBlockPages(pageNumber: number): boolean {
     var curIndex = this.numberOfPage.indexOf(pageNumber.toString());
     var curValuePage = this.numberOfPage[curIndex];
+
     //если это не последняя страница смотрим следующую, если это '...' сдвигаем пагинатор
      if (parseInt(curValuePage) <this._numberOfPage) {
+
        if (this.numberOfPage[curIndex+1] ==='...') {
                //если это последний промежуток, ничего не двигаем
                if (parseInt(this.numberOfPage[curIndex]) === parseInt(this.numberOfPage[curIndex+2])-1) {
                  return true;
                }
+
                // сдвигаем влево на 1/2 от numberOfVisiblePages
                var leftMove = Math.floor(this.numberOfVisiblePages/2);
                var newFirstPage = pageNumber - leftMove;
+
+//               console.log('newFirstPage', newFirstPage);
                this.RepeatInitializePages(newFirstPage);
                return true;
        } else return false;
@@ -117,6 +128,8 @@ export class PageCountComponent implements OnInit {
 
 
   RepeatInitializePages(newFirstPage: number) {
+
+
     this.numberOfPage = [];
 
     for (var i = 0; i < this.numberOfVisiblePages; i++) {

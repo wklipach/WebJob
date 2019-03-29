@@ -8,6 +8,7 @@ import {AuthService} from '../../../services/auth-service.service';
 import {Letter} from '../../../class/Letter';
 import {CvEditService} from '../../../services/cv-edit.service';
 import {TableVacancyService} from '../../../services/table-vacancy.service';
+import {Guide} from '../../../class/guide';
 
 @Component({
   selector: 'app-vacancy-description',
@@ -17,7 +18,6 @@ import {TableVacancyService} from '../../../services/table-vacancy.service';
 export class VacancyDescriptionComponent implements OnInit {
 
   descrDataVacancy: dataVacancy;
-
   private bConnected = false;
   private id_user = -1;
   private bEmployer = false;
@@ -25,6 +25,8 @@ export class VacancyDescriptionComponent implements OnInit {
 
 
 
+  //период показа
+  displayPeriodList: Guide[];
   //адрес вакансии
   sAddress: string = '';
   sEmployerUserName: string = '';
@@ -39,6 +41,9 @@ export class VacancyDescriptionComponent implements OnInit {
   sEducation: string[] = [];
   // опыт работы
   sExperience: string[] = [];
+
+  //период показа
+  sDisplayPeriod: string[] = [];
 
   private dvSubscription: Subscription;
 
@@ -59,6 +64,8 @@ export class VacancyDescriptionComponent implements OnInit {
       this.bEmployer = Res.bEmployer;
 
 
+      this.displayPeriodList = this.sGuide.getDisplayPeriodList();
+
       this.dvSubscription = this.moveS.getDataVacancy()
       .subscribe (curDataVacancy =>
       {
@@ -67,32 +74,44 @@ export class VacancyDescriptionComponent implements OnInit {
 
           this.descrDataVacancy = curDataVacancy;
 
-         this.onLoadUserData(this.descrDataVacancy['vacancy']);
+         this.onLoadUserData(this.descrDataVacancy);
 
         // отрасль
-        if (typeof this.descrDataVacancy['vacancy'].Industry !== 'undefined') {
-        this.descrDataVacancy['vacancy'].Industry.forEach( intIndustry => this.sIndusrtry.push(this.sGuide.getIndustryName(intIndustry) ) );
+        if (typeof this.descrDataVacancy.Industry !== 'undefined' && this.descrDataVacancy.Industry !== null) {
+          const sInd = this.descrDataVacancy.Industry.toString().split(',');
+          sInd.forEach( intIndustry => this.sIndusrtry.push(this.sGuide.getIndustryName(Number(intIndustry)) ) );
         }
 
         // график работы
-        if (typeof this.descrDataVacancy['vacancy'].Schedule !== 'undefined') {
-        this.descrDataVacancy['vacancy'].Schedule.forEach( intSchedule => this.sSchedule.push(this.sGuide.getScheduleName(intSchedule) ) );
+        if (typeof this.descrDataVacancy.Schedule !== 'undefined' && this.descrDataVacancy.Schedule !== null) {
+          const sSch = this.descrDataVacancy.Schedule.toString().split(',');
+          sSch.forEach( intSchedule => this.sSchedule.push(this.sGuide.getScheduleName(Number(intSchedule)) ) );
         }
 
         // занятость
-        if (typeof this.descrDataVacancy['vacancy'].Employment !== 'undefined') {
-          this.descrDataVacancy['vacancy'].Employment.forEach( intEmployment => this.sEmployment.push(this.sGuide.getEmploymentName(intEmployment) ) );
+        if (typeof this.descrDataVacancy.Employment !== 'undefined' && this.descrDataVacancy.Employment !== null) {
+          const sEmpl = this.descrDataVacancy.Employment.toString().split(',');
+          sEmpl.forEach( intEmployment => this.sEmployment.push(this.sGuide.getEmploymentName(Number(intEmployment))) );
         }
 
         // образование
-        if (typeof this.descrDataVacancy['vacancy'].Education !== 'undefined') {
-          this.descrDataVacancy['vacancy'].Education.forEach( intEducation => this.sEducation.push(this.sGuide.getEducationName(intEducation) ) );
+        if (typeof this.descrDataVacancy.Education !== 'undefined' && this.descrDataVacancy.Education !== null) {
+          const sEduc = this.descrDataVacancy.Education.toString().split(',');
+          sEduc.forEach( intEducation => this.sEducation.push(this.sGuide.getEducationName(Number(intEducation)) ) );
         }
 
         // опыт работы
-        if (typeof this.descrDataVacancy['vacancy'].Experience !== 'undefined') {
-          this.descrDataVacancy['vacancy'].Experience.forEach( intExperience => this.sExperience.push(this.sGuide.getExperienceName(intExperience) ) );
+        if (typeof this.descrDataVacancy.Experience !== 'undefined' && this.descrDataVacancy.Experience !== null) {
+          const sExper = this.descrDataVacancy.Experience.toString().split(',');
+          sExper.forEach( intExperience => this.sExperience.push(this.sGuide.getExperienceName(Number(intExperience))));
         }
+
+          // период показа
+          if (typeof this.descrDataVacancy.DisplayPeriod !== 'undefined' && this.descrDataVacancy.DisplayPeriod !== null) {
+            const sDPeriod = this.descrDataVacancy.DisplayPeriod.toString().split(',');
+            sDPeriod.forEach( intDisplayPeriod => this.sDisplayPeriod.push(this.sGuide.getExperienceName(Number(intDisplayPeriod))));
+          }
+
 
 
         }
@@ -109,12 +128,8 @@ export class VacancyDescriptionComponent implements OnInit {
     if (typeof k.id_user !== 'undefined') {
       this.authService.getDataUserFromId(k.id_user).subscribe((aRes) => {
         if (aRes!= undefined) {
-          this.sAddress = aRes['Address'];
-          this.sEmployerUserName = aRes['UserName'];
-
-          console.log('this.sAddress',this.sAddress);
-          console.log('this.sEmployerUserName',this.sEmployerUserName);
-
+          this.sAddress = aRes[0].Address;
+          this.sEmployerUserName = aRes[0].UserName;
         }
       });
     }
@@ -123,7 +138,7 @@ export class VacancyDescriptionComponent implements OnInit {
 
 
   clickAboutCompany() {
-    window.localStorage.setItem('about_user', this.descrDataVacancy['vacancy'].id_user);
+    window.localStorage.setItem('about_user', this.descrDataVacancy.id_user.toString());
     this.router.navigate(['/about-company']);
   }
 

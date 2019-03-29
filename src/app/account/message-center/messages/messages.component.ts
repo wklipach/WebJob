@@ -34,8 +34,12 @@ export class MessagesComponent implements OnInit {
 
     return this.sbscTableLetter = this.httpLetter.getListLetter(this.id_user).subscribe(
       (data: any) => {
-        this.myDataLetter = [];
-        this.myDataLetter = data[0].concat(data[1]);
+
+        if (data.length>0) {
+          this.myDataLetter = [];
+          this.myDataLetter = data[0].concat(data[1]);
+        }
+
       });
   }
 

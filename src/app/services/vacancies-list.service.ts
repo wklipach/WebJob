@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import {RequestOptions} from '@angular/http';
 
 @Injectable({
   providedIn: 'root'
@@ -14,19 +15,20 @@ export class VacanciesListService {
 
   getVacanciesList(id_user: number) {
 
-        let sUrl = 'http://localhost:3000/Vacancy?vacancy.id_user='+id_user+'&vacancy.bInvisible=false';
-        console.log('sUrl =', sUrl);
-    return this.http.get(sUrl);
+    let sUrl = 'http://localhost:3000/Vacancy';
+    let params = new HttpParams()
+    .set('id', id_user.toString())
+    .set('id_user', id_user.toString())
+
+    return this.http.get(sUrl, {params: params});
+
+    // return this.http.get(sUrl, myParams);
   }
 
   setDeleteVac(id_vac: number, vacbody) {
-    let sUrl = 'http://localhost:3000/Vacancy/'+id_vac;
+    let sUrl = 'http://localhost:3000/Vacancy/'+id_vac+'/'+vacbody.bInvisible+'/false';
 
-    return this.http.patch(sUrl,
-      {
-        vacancy: vacbody
-      }
-    );
+    return this.http.post(sUrl,'');
   }
 
   public  setVacId(vac_id: number) {
@@ -35,10 +37,12 @@ export class VacanciesListService {
   }
 
   public  getVacId(): number {
+
     if (window.localStorage.getItem('_vacid') !== '') {
       return this._vacid = JSON.parse(window.localStorage.getItem('_vacid'));
-    } else
+    } else {
       return this._vacid;
+    }
   }
 
   public  setVacItem(vac_item: any) {
@@ -47,7 +51,9 @@ export class VacanciesListService {
   }
 
   public  getVacItem(): any {
+
     if (window.localStorage.getItem('_vacitem') !== '') {
+      console.log('df1111dfffff', window.localStorage.getItem('_vacitem'));
       return this._vacitem = JSON.parse(window.localStorage.getItem('_vacitem'));
     } else
       return this._vacitem;

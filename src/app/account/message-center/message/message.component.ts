@@ -4,7 +4,6 @@ import {LetterService} from '../../../services/letter.service';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../../services/auth-service.service';
 import {UserType} from '../../../class/UserType';
-import {City} from '../../../class/City';
 import {Letter} from '../../../class/Letter';
 import {DatePipe} from '@angular/common';
 import {CvListService} from '../../../services/cv-list.service';
@@ -47,10 +46,12 @@ export class MessageComponent implements OnInit, OnDestroy {
 
   }
 
-
           loadPicture(id_user: number) {
             this.subscrDataUserFromId = this.auth.getDataUserFromId(id_user).subscribe(value => {
               // вытаскиваем из базы картинку аватара
+
+
+
               this.loadUser = value as UserType;
               const S = this.loadUser['Avatar'].Avatar;
               if (typeof S !== 'undefined') {

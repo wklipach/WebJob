@@ -1,7 +1,7 @@
 form{
   position: relative;
   border-width: 1px;
-  border-color: rgb(2, 98, 210);
+  border-color: #0262d2;
   border-style: solid;
   border-radius: 3px;
   margin-bottom: 10px;
@@ -29,7 +29,7 @@ form{
   margin-top: 13px;
 }
 .input-completionDate{
- display: block;
+  display: block;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
   text-align: center;
@@ -68,7 +68,7 @@ label{
   position: absolute;
   font-size: 1.1em;
   font-family: "Proxima Nova";
-  color: rgb(2, 98, 210);
+  color: #0262d2;
   text-align: left;
 }
 .labelPreviousPosition{

@@ -35,7 +35,7 @@
       <label class="dropdownTimePlacement" id="dropdownTimePlacement">Искать вакансии не старше  {{resFind.timePlacement}}</label>
 
       <select id="timePlacement" class="timePlacement" title="Срок" formControlName="timePlacement">
-        <option  *ngFor="let item of listTimePlacement; let i = index;" [value]="item.name" (click)="timePlacement(item.name, i+1)">
+        <option  *ngFor="let item of listTimePlacement; let i = index;" [value]="item.name" (click)="timePlacement(item.name, i+1,item.comment )">
           {{item.name}}
         </option>
         <option  [value]="" (click)="timePlacement('',-1)">

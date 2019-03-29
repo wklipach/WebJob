@@ -31,6 +31,8 @@ export class AdvancedSearchComponent implements OnInit {
     Education: number[];
     Experience: number[];
     City: number;
+    Salary: string;
+    timePlacementComment: string;
   }
 
   constructor(private gs: GuideService,
@@ -40,6 +42,7 @@ export class AdvancedSearchComponent implements OnInit {
     this.resFind = {stringFind: '',
                     timePlacement: '',
                     timePlacementIndex: -1,
+                    timePlacementComment: '',
                     findOnlyName: false,
                     findOnlyShortDescription: false,
                     Industry: [],
@@ -47,7 +50,8 @@ export class AdvancedSearchComponent implements OnInit {
                     Employment: [],
                     Education: [],
                     Experience: [],
-                    City: -1
+                    City: -1,
+                    Salary: ''
     };
 
 
@@ -80,9 +84,10 @@ export class AdvancedSearchComponent implements OnInit {
 
   }
 
-  timePlacement(sTime: string, sTimeIndex: number) {
+  timePlacement(sTime: string, sTimeIndex: number, sTimeComment: string) {
     this.resFind.timePlacement = sTime;
     this.resFind.timePlacementIndex = sTimeIndex;
+    this.resFind.timePlacementComment = sTimeComment;
   }
 
   findOnly(bName: boolean, bShortDescription: boolean) {
@@ -112,6 +117,9 @@ export class AdvancedSearchComponent implements OnInit {
     this.resFind.Experience = MyExperience;
     this.resFind.City = city.id;
     this.resFind.stringFind = this.advancedSearchForm.controls['stringFind'].value;
+    this.resFind.Salary = this.advancedSearchForm.controls['inputSalary'].value;
+
+
 
     //отправляем событие, словит его app-component
     this.httpTvsService.triggerReopenVacancyAdvanced(this.resFind);

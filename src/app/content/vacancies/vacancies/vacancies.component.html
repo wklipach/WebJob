@@ -16,10 +16,10 @@
     </ul>
 
     <ul class="botom-line">
-      <li class="date">{{item.vacancy.DateTimeCreate}}</li>
+      <li class="date">{{item.DateTimeCreate | date: 'dd-MM-yyyy'}}</li>
       <li class="city">{{item.CityName}}</li>
-      <li class="salary">{{item.vacancy.Salary}} &#x20BD;</li>
-       <li class="position">{{item.vacancy.VacancyShortTitle}}</li>
+      <li class="salary">{{item.Salary}} &#x20BD;</li>
+       <li class="position">{{item.VacancyShortTitle}}</li>
       <li><select class="selectChoice" title="Выбрать действие"
                   (change)= "brokerSelected($event,item, i)"
                   [(ngModel)]="contactMethods[i].id">>

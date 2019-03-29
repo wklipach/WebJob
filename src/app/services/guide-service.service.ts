@@ -235,7 +235,10 @@ export class GuideService {
   getCityId(city: string)
   {
     // вставить запрос типа select Name from City where name='Пярну'
-    return this.http.get('http://localhost:3000/City?name='+city);
+
+    console.log('city=',city);
+
+    return this.http.get('http://localhost:3000/City/-1/'+city);
   }
 
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import {forkJoin, Observable, of} from 'rxjs';
 import {Letter} from '../class/Letter';
 
@@ -14,20 +14,14 @@ export class LetterService {
 
   // получение корреспонденции данного юзера
   getListLetter(id_user: number) {
-    // let sUrl = 'http://localhost:3000/Correspondence?letter.id_user_to='+id_user;
 
-    const sUrlTo = 'http://localhost:3000/Correspondence?letter.id_user_to=' + id_user;
-    const sUrlFrom = 'http://localhost:3000/Correspondence?letter.id_user_from=' + id_user;
+    let sUrl = 'http://localhost:3000/Correspondence';
+    let params = new HttpParams()
+      .set('id_user_to', id_user.toString())
+      .set('id_user_from', id_user.toString())
 
-    const charUrlFrom = this.http.get(sUrlFrom);
-    const charUrlTo = this.http.get(sUrlTo);
+    return this.http.get(sUrl, {params: params});
 
-
-    return forkJoin([charUrlFrom, charUrlTo]);
-
-
-
-//    return this.http.get(sUrl);
   }
 
   // помечаем письмо как прочитанное
@@ -70,5 +64,20 @@ export class LetterService {
     return this.http.get(sUrl);
   }
 
+  getCountNotReadLetter(id_user: number){
+  let sUrl = 'http://localhost:3000/Correspondence';
+    let params = new HttpParams()
+      .set('newletter', id_user.toString())
+   return this.http.get(sUrl, {params: params});
+
+  }
+
+  getCountNotReadBell(id_user: number){
+    let sUrl = 'http://localhost:3000/Correspondence';
+    let params = new HttpParams()
+      .set('newbell', id_user.toString())
+    return this.http.get(sUrl, {params: params});
+
+  }
 
 }

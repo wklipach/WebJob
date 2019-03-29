@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {FormControl, FormGroup} from '@angular/forms';
 import {TableVacancyService} from '../services/table-vacancy.service';
 import {MoveService} from '../services/move.service';
+import {LetterService} from '../services/letter.service';
 
 @Component({
   selector: 'app-header-top',
@@ -25,7 +26,7 @@ export class HeaderTopComponent implements OnInit {
 
   constructor(private httpService: AuthService, private router: Router,
                       private httpTvsService: TableVacancyService, private moveS: MoveService,
-                      private curRoute: ActivatedRoute  ) {
+                      private curRoute: ActivatedRoute, private letServ: LetterService  ) {
 
     this.headerTopForm = new FormGroup({
       'inputSearch': new FormControl('',[])
@@ -58,12 +59,30 @@ export class HeaderTopComponent implements OnInit {
     this.id_user =  Res.id_user;
     this.bEmployer =  Res.bEmployer;
 
+
+
+    //console.log('ht1',this.id_user);
+
     this.sElementMask  = this.moveS.getStringFind();
+
+    console.log('ht2');
+
     this.sNullValueFind = this.moveS.getNullValueFind();
+
+    console.log('ht3');
+
     // обнуляем сервис после вывода предупреждающего сообщения об неуспешном поиске
     this.moveS.setNullValueFind('');
+
+    console.log('ht4');
+
     this.countNotReadLetter();
+
+    console.log('ht5');
+
     this.countCountNotReadBell();
+
+    console.log('ht6');
 
   }
 
@@ -71,22 +90,28 @@ export class HeaderTopComponent implements OnInit {
   countCountNotReadBell() {
     if (this.bConnected) {
       //TODO подсчет количества непрочитанных писем
-      this.httpService.getCountNotReadBell(this.id_user).subscribe(
-        (value: any[]) => {
-          console.log('Bell value.length', value.length, 'this.id_user', this.id_user);
-          this.numberCountNotReadBell = value.length;
-        }
-      )} else
+
+        this.letServ.getCountNotReadBell(this.id_user).subscribe(
+          (value: any[]) => {
+
+
+            if (value !== null) {
+              console.log('Bell value.length', value.length, 'this.id_user', this.id_user);
+              this.numberCountNotReadBell = value.length;
+            }
+          }
+        );
+    } else
       this.numberCountNotReadBell = -1;
   }
 
   countNotReadLetter() {
     if (this.bConnected) {
           //TODO подсчет количества непрочитанных писем
-      this.httpService.getCountNotReadLetter(this.id_user).subscribe(
+      this.letServ.getCountNotReadLetter(this.id_user).subscribe(
         (value: any[]) => {
           //console.log('value.length', value.length, 'this.id_user', this.id_user);
-             this.numberCountNotReadLetter = value.length;
+          if (value !== null) this.numberCountNotReadLetter = value.length; else this.numberCountNotReadLetter = -1;
         }
       )} else
       this.numberCountNotReadLetter = -1;

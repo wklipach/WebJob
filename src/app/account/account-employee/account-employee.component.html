@@ -22,12 +22,12 @@
       </ng-template>
 
       <input type="file" id="avatar" (change)="onFileChange($event)" #fileInput style="display:none">
+      <label class="clear" (click)="clearFile()">Очистить</label>
     </form>
 
     <form class="employee-form" [formGroup]="accountEmployeeForm">
 
-      <!---->
-      <label class="photo-upload" onclick="document.getElementById('avatar').click()">Загрузить фото</label>
+     <label class="photo-upload" onclick="document.getElementById('avatar').click()">Загрузить фото</label>
 
       <label class="user-name">Имя пользователя</label>
       <input type="text" class="inputUserName" id="inputUserName" formControlName="inputUserName" placeholder="введите имя пользователя" maxlength="100">
@@ -147,21 +147,6 @@
 
 <button (click)="checkinputGender()">Дата</button>
 
-<!--
 
-<label class="select-gender">Выберите пол</label>
-
-<input  class="radio-man" (change)="newFunction()" type="radio" name="manRadios" id="manRadios" >
-<label class="label-man" for="manRadios">
-  Соискатель
-</label>
-
-<input class="radio-woman"  (change)="newFunction()" type="radio" name="womanRadios" id="womanRadios" >
-<label class="label-woman" for="womanRadios">
-  Работодатель
-</label>
--->
-
-<!--Рубль  &#x20BD; Евро &#8364;  ©  знак copyright  &#169;  $  знак доллара   &#36; Пробел &nbsp; -->
 
 <app-footer></app-footer>

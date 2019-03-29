@@ -84,6 +84,9 @@ export class VacancyEditComponent implements OnInit {
     var Res =  this.auth.loginStorage();
     if (Res.bConnected) this.id_user = Res.id_user; else this.id_user = -1;
     this.vac_id =  this.vls.getVacId();
+
+
+    // TODO getVacItem
     if (this.vac_id>-1) this._vacitem = this.vls.getVacItem();
 
     console.log('this._vacitem',this._vacitem);
@@ -154,7 +157,10 @@ loadCurrentVacancy(item: any) {
     );
 
     //устанавливаем срок показа
-    if (typeof item.DisplayPeriod !== 'undefined') {
+
+  //console.log('item.DisplayPeriod', item.DisplayPeriod);
+
+    if (typeof item.DisplayPeriod !== 'undefined' && item.DisplayPeriod !==  null) {
       console.log('DisplayPeriod',this.displayPeriodList);
       this.myDisplayPeriod = this.displayPeriodList[item.DisplayPeriod-1].name;
       this.editVacancyForm.setControl('displayPeriod', new FormControl(this.myDisplayPeriod, []));
@@ -162,36 +168,44 @@ loadCurrentVacancy(item: any) {
 
 
     //ставим чек-боксы в элементах ОТРАСЛЬ
-    this.is.startCheckedElementIndustryList(item.Industry);
+
+  if (typeof item.Industry !== 'undefined' && item.Industry !==  null) {
+      const arrIndustry = item.Industry.split(',');
+      this.is.startCheckedElementIndustryList(arrIndustry);}
     //ставим чек-боксы в элементах  ЗАНЯТОСТЬ
-    this.is.startCheckedElementEmploymentList(item.Employment);
+  if (typeof item.Employment !== 'undefined' && item.Employment !==  null) {
+    const arrEmployment = item.Employment.split(',');
+    this.is.startCheckedElementEmploymentList(arrEmployment);}
     //ставим чек-боксы в элементах  график работы
-    this.is.startCheckedElementScheduleList(item.Schedule);
+  if (typeof item.Schedule !== 'undefined' && item.Schedule !==  null) {
+    const arrSchedule = item.Schedule.split(',');
+    this.is.startCheckedElementScheduleList(arrSchedule);}
     //ставим чек-боксы в элементах  Опыт работы
-    this.is.startCheckedElementExperienceList(item.Experience);
+  if (typeof item.Experience !== 'undefined' && item.Experience !==  null) {
+    const arrExperience = item.Experience.split(',');
+    this.is.startCheckedElementExperienceList(arrExperience);}
     //ставим чек-боксы в элементах  Образование
-    this.is.startCheckedElementEducationList(item.Education);
+  if (typeof item.Education !== 'undefined' && item.Education !==  null) {
+    const arrEducation = item.Education.split(',');
+    this.is.startCheckedElementEducationList(arrEducation);}
   }
 
 
   submit() {
-    console.log('submit');
     this.UpdateVac(this._vacitem);
   }
 
   UpdateVac(item: any) {
-    console.log('Смотрим строку ниже');
-    console.log(item);
-    item.bInvisible = true;
-    this.cvDeleteVac = this.vls.setDeleteVac(this.vac_id, item).subscribe( ()=> {
-        console.log('удалили элемент', this.vac_id);
-        this.newcv();
-      },
-      err => console.log('при удалении элемента возникла нештатная ситуация ',err));
+
+    if (this.id_user <= 0) return;
+
+    this.newcv(item.id);
+
+
   }
 
 
-  newcv() {
+  newcv(id: number) {
 
     if (this.id_user <= 0) return;
 
@@ -231,7 +245,16 @@ loadCurrentVacancy(item: any) {
     console.log(MyExperience);
 
 
-    let period = this.displayPeriodList.find(x=>x.name===this.editVacancyForm.controls['displayPeriod'].value);
+
+    let sPeriod = '';
+    if (this.editVacancyForm.controls['displayPeriod'].value !== '')
+      sPeriod = this.editVacancyForm.controls['displayPeriod'].value;
+
+    let period : Guide;
+    if (sPeriod !== '')
+     period = this.displayPeriodList.find(x=>x.name===sPeriod); else
+     period = this.displayPeriodList[0];
+
     let city = this.listCity.find(x=>x.name===this.editVacancyForm.controls['inputCity'].value);
 
     MyVacancy.VacancyShortTitle = this.editVacancyForm.controls['inputVacancyShortTitle'].value;
@@ -246,14 +269,24 @@ loadCurrentVacancy(item: any) {
 
 
 
+    console.log('sssssss111111111');
+
 
     MyVacancy.Industry = MyIndustry;
+
+    console.log('sssssss22222222222222');
+
     MyVacancy.DisplayPeriod = period.id;
+
+    console.log('sssssss33333333333');
     MyVacancy.City = city.id;
+    console.log('sssssss444444444444444444');
     // график работы
     MyVacancy.Schedule = MySchedule;
+    console.log('sssssss5555555555555555555');
     // занятость
     MyVacancy.Employment = MyEmployment;
+    console.log('sssssss6666666666666666666');
     // образование
     MyVacancy.Education = MyEducation;
     //опыт работы
@@ -267,7 +300,9 @@ loadCurrentVacancy(item: any) {
     MyVacancy.DateTimeCreate = this._vacitem.DateTimeCreate;
 
 
-    return this.httpService.postNewVacancy(MyVacancy).subscribe(
+    MyVacancy.id = id;
+
+    return this.httpService.postVacancy(MyVacancy).subscribe(
       () => {
         this.router.navigate(['/vacancies']);
       }

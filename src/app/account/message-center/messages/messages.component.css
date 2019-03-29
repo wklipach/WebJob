@@ -1,13 +1,13 @@
 .wrapper{
   font-family: ProximaNovaRg,sans-serif;
   font-size: 16px;
-  width: 100%;
+  width: 1170px;
   height: auto;
   margin: 0 auto;
   color: rgb(68, 75, 84);
 }
 .top{
-  width: 1170px;
+
   height: 36px;
   margin: 0 auto;
   font-size: 22px;
@@ -15,21 +15,28 @@
   text-align: left;
   padding-bottom: 15px;
 }
+.messages-box{
+  width: 1170px;
+  height: 700px;
+  overflow: auto;
+
+}
 .message{
- width: 1170px;
+
   margin: 0 auto;
 }
 .message:hover{
   cursor: pointer;
   background-color: #f8f8f8;
 }
-.v-line{
+
+/*.v-line{
   display: inline-block;
   position: relative;
   width:6px;
   height:auto;
   background-color: #b8b8b8;
-}
+}*/
 ul{
   list-style: none;
 }
@@ -38,8 +45,8 @@ li{
   display: inline-block;
 }
 .headline{
- margin-bottom: 2px;
- font-family: "Proxima Nova";
+  margin-bottom: 2px;
+  font-family: "Proxima Nova","sans-serif";
   background-color: #DFDFDF;
 }
 .bline{
@@ -47,7 +54,7 @@ li{
   height: auto;
   border-color: #b7b7b7;
   font-size: 16px;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova","sans-serif";
   margin-top: 2px;
 }
 .date{
@@ -56,7 +63,7 @@ li{
 .txt{
   width:100%;
   font-size: 14px;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova","sans-serif";
 }
 .from{
   width:210px;
@@ -64,7 +71,6 @@ li{
 .subject{
   width:700px;
 }
-
 .boldletter {
   font-weight: bold;
 }

@@ -1,6 +1,6 @@
 .wrapper{
   position: relative;
-  font-family: "ProximaNovaRg";
+  font-family: "ProximaNovaRg","sans-serif";
   font-size: 1em;
   width: 100%;
   height: 180px;
@@ -13,7 +13,7 @@
   height: 42px;
   margin: 0 auto;
   font-size: 2em;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova","sans-serif";
 }
 .cv-box{
   width: 1170px;
@@ -23,8 +23,8 @@
 label{
   position: absolute;
   font-size: 1.1em;
-  font-family: "Proxima Nova";
-  color: rgb(2, 98, 210);
+  font-family: "Proxima Nova","sans-serif";
+  color: #0262d2;
   text-align: left;
 }
 .location{
@@ -34,7 +34,7 @@ label{
 .inputCity{
   position: absolute;
   font-size: 1em;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova","sans-serif";
   text-align: center;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
@@ -53,7 +53,7 @@ label{
 .inputSalaryFrom{
   position: absolute;
   font-size: 1em;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova","sans-serif";
   text-align: center;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
@@ -72,7 +72,7 @@ label{
 .position{
   position: relative;
   font-size: 1em;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova","sans-serif";
   text-align: center;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
@@ -84,11 +84,31 @@ label{
   margin-top: 132px;
   margin-left: 15px;
 }
-
+.btn-add {
+  border-radius: 3px;
+  background-color: #3366ff;
+  width: 255px;
+  height: 50px;
+  color: rgb(255, 255, 255);
+  border-color: #054086;
+  border-width: 1px;
+  border-style: solid;
+  margin-left: 2px;
+}
+.btn-add:hover{
+  background-color: #0066cc;
+  font-weight:600;
+}
+.btn-add:active{
+  border-color: #3399ff;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 3px;
+  font-weight: 600;
+}
 .btn-save{
   display: inline-block;
   position: absolute;
-  font-size: 18px;
   background-color: #3366ff;
   color: rgb(255, 255, 255);
   border-color: #054086;
@@ -99,7 +119,7 @@ label{
   width: 228px;
   height: 48px;
   margin-top:50px;
-  margin-left: 180px;
+  margin-left: 15px;
 }
 .btn-save:hover{
   background-color: #0066cc;
@@ -113,8 +133,7 @@ label{
 
 }
 .btn-cancel{
-  font-size: 18px;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova","sans-serif";
   width:228px;
   height: 48px;
   color: rgb(68, 75, 84);
@@ -126,7 +145,7 @@ label{
   line-height: 2;
   text-align: center;
   margin-top: 50px;
-  margin-left: 444px;
+  margin-left: 250px;
 }
 .btn-cancel:hover{
   background-color: rgb(240, 240, 240);

@@ -72,8 +72,8 @@
       <img class="arrow-down-lang" src="/assets/img/arrow-down.png" alt="Выбор языка" title="Выбор языка">
     </div>
     <ul class="lang-list">
-      <li><span class="langchoice-tumb">RU</span><img src="/assets/img/flag-russia.png" alt="Русский" title="Руский"></li>
-      <li><span class="langchoice-tumb">EN</span><img src="/assets/img/flag-english.png" alt="Английский" title="Английский"></li>
+      <li><span class="langchoice-tumb">RU</span><img class="flag-list" src="/assets/img/flag-russia.png" alt="Русский" title="Руский"></li>
+      <li><span class="langchoice-tumb">EN</span><img class="flag-list" src="/assets/img/flag-english.png" alt="Английский" title="Английский"></li>
     </ul>
     </div>
 
@@ -86,7 +86,7 @@
 
 
     <form [formGroup]="headerTopForm">
-        <input type="search" class="inputSearch" formControlName="inputSearch" id="inputSearch" placeholder="&nbsp;Поиск вакансий.." [value]="sElementMask">
+        <input type="search" class="inputSearch" formControlName="inputSearch" id="inputSearch" placeholder="Поиск вакансий.." [value]="sElementMask">
         <button class="btn-search" type="submit" (click)="find()">
         <img src="/assets/img/icon-search.png" alt="Найти" title="Поиск">&nbsp;Найти
         </button>

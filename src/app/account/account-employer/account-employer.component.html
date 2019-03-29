@@ -104,7 +104,7 @@
       <label class="contact-person">Контактное лицо</label>
       <input type="text" class="inputContactPerson" id="inputContactPerson" formControlName="inputContactPerson" placeholder="Контактное лицо">
 
-      <label class="about">--О компании</label>
+      <label class="about">О компании</label>
       <textarea class="inputAbout" maxlength="1000" aria-label="О компании. До 1000 знаков"
                 formControlName="inputAbout" id="inputAbout" placeholder="О компании. До 1000 знаков"></textarea>
 
@@ -120,7 +120,7 @@
 
           <div *ngIf="accountEmployerForm.controls['inputNewPassword2'].value.length > 0">
             <div *ngIf="accountEmployerForm.controls['inputNewPassword2'].invalid; else truePassword2Template">
-              <div class="alert alert-danger">Повторный пароль не совпадает</div>
+              <div>Пароли не совпадают</div>
             </div>
           </div>
 
@@ -129,12 +129,12 @@
           </ng-template>
 
 
-
           <button type="submit" class="btn-newPassword" (click)="NewPassword()">Изменить пароль</button>
           <ng-container *ngIf="bPasswordNew">Пароль изменен</ng-container>
           <div class="alert-pass" *ngIf="bErrorRepeatPassword">Пароли не совпадают</div>
+          <button class="btn-newPassword2" (click)="DisappearFrame()">Отмена</button>
         </div>
-        <button class="btn-newPassword" (click)="DisappearFrame()">Отмена</button>
+
       </ng-container>
 
     </form>
@@ -146,7 +146,5 @@
 </div>
 
 
-
-<!--
 <app-footer></app-footer>
--->
+

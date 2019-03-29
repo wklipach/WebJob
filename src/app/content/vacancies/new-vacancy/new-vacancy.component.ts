@@ -77,7 +77,9 @@ export class NewVacancyComponent implements OnInit {
 
     is.getCityTable().subscribe(
       (data: City[]) => {
+
            this.listCity = data;
+
            if (this.listCity.length > 0) {
              this.myDisplayCity = this.listCity[0].name;
            }
@@ -238,6 +240,8 @@ export class NewVacancyComponent implements OnInit {
 
     return this.httpService.postNewVacancy(MyVacancy).subscribe(
       () => {
+
+        console.log('ПЕРЕХОДИТЬ НА ВАКАНСИИ');
         this.router.navigate(['/vacancies']);
       }
     );

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import {UserType} from '../class/UserType';
 import {Subject} from 'rxjs';
 
@@ -72,8 +72,12 @@ export class AuthService {
 
 
   getDataUserTableWithoutCurrentUser(UserName: string) {
-    // вставить запрос типа select top 10 * from UserTable where UserName<>:@UserName
-    return this.http.get('http://localhost:3000/UserTable?UserName_ne='+UserName);
+    let sUrl = 'http://localhost:3000/UserTable';
+    console.log('sUrl, UserName =', sUrl,UserName);
+    let params = new HttpParams()
+      .set('UserName', UserName);
+    return this.http.get(sUrl, {params: params});
+
   }
 
 
@@ -84,7 +88,11 @@ export class AuthService {
   }
 
   getDataUserFromId(id_user: number) {
-    let S = 'http://localhost:3000/UserTable/'+id_user.toString();
+
+    //TODO НЕ ПОНИМАЮ ПОЧЕМУ МЫ ТУТ
+    console.log('ОПТИМИЗАЦИЯ: ТУТ ГРУЗИМ КАРТИНКУ');
+    //
+    const S = 'http://localhost:3000/UserTable/'+id_user.toString();
     return this.http.get(S);
    }
 
@@ -101,16 +109,17 @@ export class AuthService {
   updateDataUserTable(user: UserType, id_user: number){
     // вставить запрос по добавлению пользователя в базу
 
-    return this.http.patch('http://localhost:3000/UserTable/'+id_user, user);
+    console.log('!!!!!!!!!!!!!!!!!!22222222222222222222222222222');
+
+    return this.http.post('http://localhost:3000/UserTable/'+id_user, user);
   }
 
 
   updateAvatarUserTable(curAvatar: any, id_user: number){
 
-
     console.log('curAvatar',curAvatar);
 
-    return this.http.patch('http://localhost:3000/UserTable/'+id_user, {"Avatar": curAvatar});
+    return this.http.post('http://localhost:3000/UserTable/'+id_user+'/avatar', {"Avatar": curAvatar});
   }
 
 
@@ -140,16 +149,6 @@ export class AuthService {
 
   return {htUserName: htUserName,bConnected: bConnected, id_user: id_user, bEmployer: bEmployer};
 }
-
-  getCountNotReadLetter(id_user: number){
-    return this.http.get('http://localhost:3000/Correspondence?letter.id_user_to='+id_user+'&letter.bOld=false');
-  }
-
-  getCountNotReadBell(id_user: number){
-    return this.http.get('http://localhost:3000/Info?id_user_to='+id_user+'&id_user_to=-1'+'&bOld=false');
-  }
-
-
 
 ////
 

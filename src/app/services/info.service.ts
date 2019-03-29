@@ -13,7 +13,7 @@ export class InfoService {
   // получение корреспонденции данного юзера
   getListInfo(id_user: number)
   {
-    let sUrl ='http://localhost:3000/Info?id_user_to='+id_user+'&id_user_to=-1';
+    let sUrl ='http://localhost:3000/Info/'+id_user+'/-1';
     return this.http.get(sUrl);
 
   }

@@ -38,4 +38,7 @@ export class  dataVacancy extends Vacancy {
   CityName: string;
   EmployerName: string;
   sErrorText: string;
+  sDateEnd: string;
+  errorEndDay: boolean;
+  base64textString = [];
 }

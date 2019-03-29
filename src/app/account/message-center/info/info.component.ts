@@ -51,7 +51,9 @@ export class InfoComponent implements OnInit {
   }
 
   curInfoClick(Iid: number, $event) {
+
     console.log('нажали строку',Iid);
+
     let info: Info = this.myDataInfo.find(curInfo => curInfo.id===Iid);
     if (typeof info !== 'undefined') {
           console.log('info', info);
