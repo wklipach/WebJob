@@ -65,12 +65,14 @@ import {CvLanguageService} from './services/cv-language.service';
 import { AdUnitComponent } from './ad-unit/ad-unit.component';
 import { AdUnit2Component } from './ad-unit2/ad-unit2.component';
 import {GlobalRef} from './services/globalref';
+import {CvHomeComponent} from './content/cv/cv-home/cv-home.component';
 
 
 
 // определение маршрутов
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
+  {path: 'cv-home', component: CvHomeComponent},
   {path: 'home', component: HomeComponent},
   { path: 'header-top', component: HeaderTopComponent },
   { path: 'login', component: LoginComponent },
@@ -162,6 +164,7 @@ const appRoutes: Routes = [
     SchoolComponent,
     CvLanguageComponent,
     AdUnitComponent,
+    CvHomeComponent,
     AdUnit2Component
    ],
   entryComponents: [
