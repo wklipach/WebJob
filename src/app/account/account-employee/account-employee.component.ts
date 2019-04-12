@@ -124,14 +124,20 @@ private loadUser: UserType;
     var Res =  this.auth.loginStorage();
     if (Res.bConnected) this.id_user = Res.id_user; else this.id_user = -1;
 
+
     this.subscrDataUserFromId = this.auth.getDataUserFromId(this.id_user).subscribe(value=> {
 
-      this.loadCurrentUserInfo(value);
-      this.loadUser = value as UserType;
+      this.loadCurrentUserInfo(value[0]);
+      this.loadUser = value[0] as UserType;
 
       // вытаскиваем из базы картинку аватара
-      let S = this.loadUser['Avatar'].Avatar;
-      if (typeof S !== 'undefined') {
+
+      console.log('this.loadUser', this.loadUser);
+
+      let S = this.loadUser.Avatar;
+
+
+      if (typeof S !== 'undefined' && S !== null && S !== 'null') {
         if (S.length>0) {
           this.base64textString.push('data:image/png;base64,' + JSON.parse(S).value);
         }
@@ -148,10 +154,12 @@ private loadUser: UserType;
 
       let file = event.target.files[0];
 
+
       reader.readAsDataURL(file);
       reader.onloadend = () => {
         var tempImg = new Image();
         tempImg.src = reader.result;
+
         tempImg.onload =() => {
           var dataURL = this.ResizeImage(tempImg);
           console.log('dataURL', dataURL);
@@ -162,6 +170,7 @@ private loadUser: UserType;
           });
 
           this.form.get('name').setValue(file.name);
+
           this.onPostImageAvatar();
         };
       };
@@ -205,6 +214,11 @@ private loadUser: UserType;
   }
 
   loadCurrentUserInfo(item: any) {
+
+
+
+    console.log('item: any',item);
+
     // редактируемый список городов по подписке с выбранным ранее городом в качестве выбранного
     this.cveditCityTable = this.is.getCityTable().subscribe(
       (data: City[]) => {
@@ -253,7 +267,11 @@ private loadUser: UserType;
 
 
         if (typeof item.Gender !== 'undefined') {
-          this.accountEmployeeForm.controls['inputGender'].setValue(this.genderList.find((value) => value.id == item.Gender).name);
+
+          let IdGender = item.Gender;
+          if (item.Gender<1) IdGender = 1;
+
+          this.accountEmployeeForm.controls['inputGender'].setValue(this.genderList.find((value) => value.id == IdGender).name);
         }
 
         if (typeof item.DateBirth !== 'undefined') {
@@ -293,7 +311,12 @@ private loadUser: UserType;
 
 
     var id_city = -1;
-    const {inputUserName, inputName, inputLastName, inputZip, inputAddress, inputPhone, inputCity, inputEmail, inputGender, inputBirth} = this.accountEmployeeForm.value;
+    let {inputUserName, inputName, inputLastName, inputZip, inputAddress, inputPhone, inputCity, inputEmail, inputGender, inputBirth} = this.accountEmployeeForm.value;
+
+    inputUserName = this.accountEmployeeForm.controls['inputUserName'].value;
+    console.log('inputUserName', inputUserName);
+
+
     this.gs.getCityId(inputCity).subscribe( (value: City) => {
 
 
@@ -303,6 +326,10 @@ private loadUser: UserType;
                                    false, id_city, inputZip, inputName, inputLastName, inputAddress, inputPhone,
                                     this.genderList.find((value)=>value.name == inputGender).id,
        Date.parse(inputBirth), '','','','');
+
+
+
+      console.log('AddUser',AddUser);
 
 
       return this.auth.updateDataUserTable(AddUser, this.id_user).subscribe(
@@ -356,10 +383,13 @@ private loadUser: UserType;
 
   onLoadFromBaseAvatar() {
 
+    console.log('11','22','33');
+
+
     this.auth.getDataUserFromId(this.id_user).subscribe((aRes)=>
     {
       this.base64textString = [];
-      const S = aRes['Avatar'].Avatar;
+      const S = aRes[0].Avatar;
       if (S !== '""') {
         if (typeof S !== 'undefined') {
           if (S.length > 0) {
@@ -391,7 +421,6 @@ private loadUser: UserType;
 
 
   onPostImageAvatar() {
-
     const formModel = this.prepareSave();
     this.loading = true;
     this.auth.updateAvatarUserTable( {'Avatar': formModel.get('avatar'), 'Name': formModel.get('name') }, this.id_user).subscribe(()=> {

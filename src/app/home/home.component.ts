@@ -56,6 +56,7 @@ export class HomeComponent implements OnInit, OnDestroy {
               private authService: AuthService,
               private cvEditSrv: CvEditService,
               private is: GuideService) {
+
   }
 
 
@@ -92,8 +93,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
 
   onPageChanged(pageNumber: number) {
-
-    console.log('сработало');
 
     this.reloadPAge(this.allDataVacancy, this.sMask);
   }
@@ -159,7 +158,6 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.getVacancy(value, bFavorites, bAdvancedFind);
     });
 
-
     // если не было расширенного поиска вакансий делаем обычный поиск, иначе расширенный запускается из advanced-search.component
     if ( this.httpService.getMessageAdvancedFindObj() === null ) {
 
@@ -174,29 +172,24 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.getVacancyAdvanced(advancedFindObj);
     }
 
-
-
   }
 
   getVacancyAdvanced(advancedFindObj: any) {
     // выводим всю таблицу по сути это заглушка вместо продвинутого поиска
 
-    console.log('СРАБОТАЛО ТУТ');
     console.log('advancedFindObj', advancedFindObj);
-
 
     //TODO ЭТО ПРОДВИНУТЫЙ ПОИСК
 
     return this.getTableVacancyAdvanced = this.httpService.getTableVacancyAdvanced(advancedFindObj).subscribe(
       (data: any) => {
-      console.log('!!!ЭТО ПРОДВИНУТЫЙ ПОИСК!!!');
         this.data_show(data);
       });
   }
 
    getVacancy(sMask: string,isFavorites: boolean, isAdvancedFind: boolean) {
 
-    return this.getTableVacancy = this.httpService.getTableVacancy(sMask, this.rowPerPage, this.page, isFavorites, isAdvancedFind).subscribe(
+    return this.getTableVacancy = this.httpService.getTableVacancy(sMask, this.rowPerPage, this.page, isFavorites, isAdvancedFind, this.id_user).subscribe(
       (data: dataVacancy[]) => {
 
       //TODO точка 1
@@ -210,18 +203,11 @@ export class HomeComponent implements OnInit, OnDestroy {
 //TODO показ данных после поиска
   data_show(data: dataVacancy[]) {
 
-
-
-    console.log('point 1');
     let curRemDay: {numberMonth, errorDay} = {numberMonth: -1, errorDay: true};
-
-    console.log('point 2');
 
 
     data.forEach(  (curVacancy, index, arrCurValue) => {
         // base64textString = [];
-
-      console.log('point 3');
 
         this.onLoadFromBaseAvatar(curVacancy);
         // ДАТА ОКОНЧАНИЯ ЗАЯВКИ
@@ -271,8 +257,6 @@ export class HomeComponent implements OnInit, OnDestroy {
           }
         }
 
-
-      console.log('point 4');
       }
     );
 

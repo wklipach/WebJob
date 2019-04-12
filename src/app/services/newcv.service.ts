@@ -1,26 +1,45 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {CV} from '../class/CV';
-import {Previous} from '../class/Previous';
-import {Language} from '../class/Language';
+import {AdvancedPrevious} from '../class/Previous';
+import {AdvancedLanguage, Language} from '../class/Language';
+import {GlobalRef} from './globalref';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class NewcvService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private gr: GlobalRef) { }
 
   postNewCV(cv: CV) {
-    return this.http.post('http://localhost:3000/CV', {cv});
+    cv['InsertCV'] = 'true';
+    return this.http.post(this.gr.sUrlGlobal+'CV', {cv});
   }
 
-  postPrevious(previous: Previous[]) {
-    return this.http.post('http://localhost:3000/CV_Previous', {previous});
+  postCopyCV(cv: CV) {
+    cv['CopyCV'] = 'true';
+    return this.http.post(this.gr.sUrlGlobal+'CV', {cv});
   }
 
-  postLanguage(language: Language[]) {
-    return this.http.post('http://localhost:3000/CV_Language', {language});
+
+  postUpdateCV(cv: CV) {
+    cv['UpdateCV'] = 'true';
+
+    console.log(cv);
+
+    return this.http.post(this.gr.sUrlGlobal+'CV', {cv});
+  }
+
+
+  postPrevious(previous: AdvancedPrevious) {
+
+      return this.http.post(this.gr.sUrlGlobal+'cv_previous', {previous});
+  }
+
+  postLanguage(language: AdvancedLanguage) {
+     return this.http.post(this.gr.sUrlGlobal+'cv_language', {language});
   }
 
 

@@ -1,6 +1,4 @@
 .wrapper{
-  font-family: "ProximaNovaRg" ,"sans-serif";
-  font-size: 16px;
   width: 1170px;
   height: auto;
   margin: 0 auto;
@@ -11,7 +9,6 @@
   height: 36px;
   margin: 0 auto;
   font-size: 22px;
-  font-family: "Proxima Nova" ,"sans-serif";
   text-align: left;
   padding-bottom: 15px;
 }
@@ -69,12 +66,10 @@
 label{
   position: absolute;
   font-size: 15px;
-  font-family: "Proxima Nova" ,"sans-serif";
   color: #0262d2;
   text-align: left;
 }
 .headline{
-  font-family: "Proxima Nova" ,"sans-serif";
   background-color: #DFDFDF;
 }
 .bline{
@@ -82,7 +77,6 @@ label{
   height: auto;
   border-color: #b7b7b7;
   font-size: 16px;
-  font-family: "Proxima Nova" ,"sans-serif";
 }
 .date{
   width:100px;
@@ -121,8 +115,7 @@ label{
 .dateTime{
   font-size: 13px;
   font-weight: 300;
-  margin-left:860px;
-
+  margin-left:850px;
 }
 .labelSubject{
   margin-left: 20px;
@@ -145,7 +138,7 @@ label{
   border-color: #b8b8b8;
   border-width: 1px;
   border-radius: 5px;
-  margin: 25px 20px 0 20px;
+  margin: 5px 20px 10px 20px;
   width: 92%;
   min-height: 67px;
   height: auto;
@@ -156,13 +149,13 @@ label{
   border-color: #b8b8b8;
   border-width: 2px;
   border-radius: 5px;
-  margin: 35px 0 0 30px;
-  width: 94.5%;
+  margin: 35px 0 0 18px;
+  width: 945px;
   height: 120px;
 }
 .formResponse{
   position: absolute;
-  width: 100%;
+  width: 970px;
 }
 .test{
   height: auto;
@@ -171,10 +164,10 @@ label{
   background-color: yellow;
 }
 .correspondence{
-  min-height: 300px;
+ min-height: 300px;
   max-height: 600px;
   overflow: auto;
-  margin-top: 10px;
+  box-sizing: border-box;
 }
 .in, .out{
   float: left;

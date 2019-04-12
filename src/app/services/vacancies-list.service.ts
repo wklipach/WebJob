@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
-import {RequestOptions} from '@angular/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
+import {GlobalRef} from './globalref';
 
 @Injectable({
   providedIn: 'root'
@@ -11,11 +11,11 @@ export class VacanciesListService {
   private _vacitem: any;
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private gr: GlobalRef) { }
 
   getVacanciesList(id_user: number) {
 
-    let sUrl = 'http://localhost:3000/Vacancy';
+    let sUrl = this.gr.sUrlGlobal+'Vacancy';
     let params = new HttpParams()
     .set('id', id_user.toString())
     .set('id_user', id_user.toString())
@@ -26,7 +26,7 @@ export class VacanciesListService {
   }
 
   setDeleteVac(id_vac: number, vacbody) {
-    let sUrl = 'http://localhost:3000/Vacancy/'+id_vac+'/'+vacbody.bInvisible+'/false';
+    let sUrl = this.gr.sUrlGlobal+'Vacancy/'+id_vac+'/'+vacbody.bInvisible+'/false';
 
     return this.http.post(sUrl,'');
   }
@@ -53,15 +53,16 @@ export class VacanciesListService {
   public  getVacItem(): any {
 
     if (window.localStorage.getItem('_vacitem') !== '') {
-      console.log('df1111dfffff', window.localStorage.getItem('_vacitem'));
-      return this._vacitem = JSON.parse(window.localStorage.getItem('_vacitem'));
+        return this._vacitem = JSON.parse(window.localStorage.getItem('_vacitem'));
     } else
       return this._vacitem;
   }
 
   getVc(id_vc: number) {
-    let sUrl = 'http://localhost:3000/Vacancy?id='+id_vc;
-    return this.http.get(sUrl);
+    let sUrl = this.gr.sUrlGlobal+'Vacancy';
+    let params = new HttpParams()
+      .set('id_vc', id_vc.toString())
+    return this.http.get(sUrl, {params: params});
   }
 
 

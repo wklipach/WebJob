@@ -57,12 +57,19 @@ export class CvPreviousComponent implements OnInit, OnDestroy {
 
   loaddata(p: Previous) {
 
+
+
+
+    if (p === undefined) return;
+
     if (typeof p.dStartDate !== 'undefined') {
-      this.formPrevious.controls['startDate'].setValue(p.dStartDate);
+      const d = (new Date(p.dStartDate));
+      this.formPrevious.controls['startDate'].setValue(d.toISOString().substring(0,10));
     }
 
     if (typeof p.dCompletionDate !== 'undefined') {
-      this.formPrevious.controls['completionDate'].setValue(p.dCompletionDate);
+      const d = (new Date(p.dCompletionDate));
+      this.formPrevious.controls['completionDate'].setValue(d.toISOString().substring(0,10));
     }
 
     if (typeof p.sCompany !== 'undefined') {
@@ -92,6 +99,9 @@ export class CvPreviousComponent implements OnInit, OnDestroy {
       t.sPreviousPosition = this.formPrevious.controls['inputpPreviousPosition'].value;
       t.sInputPositionDescription = this.formPrevious.controls['inputPositionDescription'].value;
       t.sInputSkillsAbilities = this.formPrevious.controls['inputSkillsAbilities'].value;
+      t.nStartDate = Date.parse(this.formPrevious.controls['startDate'].value);
+      t.nCompletionDate = Date.parse(this.formPrevious.controls['completionDate'].value);
+    //onCheckPrevious
     return t;
   }
 

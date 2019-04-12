@@ -63,16 +63,20 @@ export class VacancyDescriptionComponent implements OnInit {
       this.id_user =  Res.id_user;
       this.bEmployer = Res.bEmployer;
 
-
       this.displayPeriodList = this.sGuide.getDisplayPeriodList();
 
       this.dvSubscription = this.moveS.getDataVacancy()
       .subscribe (curDataVacancy =>
       {
 
+        console.log('curDataVacancy', curDataVacancy);
+
         if (curDataVacancy !== undefined) {
 
           this.descrDataVacancy = curDataVacancy;
+
+
+
 
          this.onLoadUserData(this.descrDataVacancy);
 
@@ -200,12 +204,15 @@ export class VacancyDescriptionComponent implements OnInit {
       return;
     }
 
+
     this.httpService.getNumberResponse(this.id_user, this.descrDataVacancy.id).subscribe((value: Letter[]) => {
 
       if (value.length > 0) {
+
         this.sNoUserValueFind = 'Вы уже откликались на данную вакансию. Дождитесь ответа';
         this.descrDataVacancy.sErrorText = this.sNoUserValueFind;
       } else {
+
         this.cvEditSrv.setCvId(this.descrDataVacancy.id);
         this.router.navigate(['/response']);
       }

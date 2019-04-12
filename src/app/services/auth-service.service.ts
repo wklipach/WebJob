@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpParams} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {UserType} from '../class/UserType';
 import {Subject} from 'rxjs';
+import {GlobalRef} from './globalref';
+import {RequestOptions} from '@angular/http';
 
 @Injectable()
 export class AuthService {
@@ -16,7 +18,7 @@ export class AuthService {
 
 
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private gr: GlobalRef) {
 
   }
 
@@ -53,26 +55,26 @@ export class AuthService {
   // получаем список соискателей
   getOnlyUser(UserName: string)  {
     // вставить запрос типа select top 10 * from UserTable where UserName=:@UserName
-    return this.http.get('http://localhost:3000/UserTable?bEmployer=false');
+    return this.http.get(this.gr.sUrlGlobal+'UserTable?bEmployer=false');
   }
 
   //получаем список работодателей
   getOnlyEmployer(UserName: string)  {
     // вставить запрос типа select top 10 * from UserTable where UserName=:@UserName
-    return this.http.get('http://localhost:3000/UserTable?bEmployer=true');
+    return this.http.get(this.gr.sUrlGlobal+'UserTable?bEmployer=true');
   }
 
 
 
   getDataUserTable(UserName: string) {
     // вставить запрос типа select top 10 * from UserTable where UserName=:@UserName
-    return this.http.get('http://localhost:3000/UserTable');
+    return this.http.get(this.gr.sUrlGlobal+'UserTable');
     // http://localhost:3000/UserTable?bEmployer=false
  }
 
 
   getDataUserTableWithoutCurrentUser(UserName: string) {
-    let sUrl = 'http://localhost:3000/UserTable';
+    let sUrl = this.gr.sUrlGlobal+'UserTable';
     console.log('sUrl, UserName =', sUrl,UserName);
     let params = new HttpParams()
       .set('UserName', UserName);
@@ -84,42 +86,42 @@ export class AuthService {
   getDataUserOrEmailTable(sUserOrEmail: string)
   {
     // вставить запрос типа select top 10 * from UserTable where UserName=:@UserOrEmail or UserName=:@UserOrEmail
-    return this.http.get('http://localhost:3000/UserTable');
+    return this.http.get(this.gr.sUrlGlobal+'UserTable');
   }
 
   getDataUserFromId(id_user: number) {
 
-    //TODO НЕ ПОНИМАЮ ПОЧЕМУ МЫ ТУТ
     console.log('ОПТИМИЗАЦИЯ: ТУТ ГРУЗИМ КАРТИНКУ');
     //
-    const S = 'http://localhost:3000/UserTable/'+id_user.toString();
+    const S = this.gr.sUrlGlobal+'UserTable/'+id_user.toString();
     return this.http.get(S);
    }
 
 
   postDataUserTable(user: UserType){
     // вставить запрос по добавлению пользователя в базу
-    return this.http.post('http://localhost:3000/UserTable',user);
+
+    //TODO ТУТ ПРАВИМ!!!!!
+
+
+    let nUser: any = user;
+    nUser.NewUser = 'new_user';
+
+    return this.http.post(this.gr.sUrlGlobal+'UserTable', nUser);
   }
 
 
-  //  Запрос типа PATCH
-  //  Для того чтобы обновить уже существующую запись необходимо отправить PATCH запрос с указанием новых значений для уже существующей записи.
-  //  К примеру, чтобы обновить пользователя с Id 2, отправьте PATCH запрос по адресу http://localhost:3000/UserTable/2:
   updateDataUserTable(user: UserType, id_user: number){
     // вставить запрос по добавлению пользователя в базу
-
-    console.log('!!!!!!!!!!!!!!!!!!22222222222222222222222222222');
-
-    return this.http.post('http://localhost:3000/UserTable/'+id_user, user);
+   return this.http.post(this.gr.sUrlGlobal+'UserTable/'+id_user, user);
   }
 
 
   updateAvatarUserTable(curAvatar: any, id_user: number){
 
-    console.log('curAvatar',curAvatar);
+    console.log('curAvatar', this.gr.sUrlGlobal+'UserTable/'+id_user+'/avatar');
 
-    return this.http.post('http://localhost:3000/UserTable/'+id_user+'/avatar', {"Avatar": curAvatar});
+    return this.http.post(this.gr.sUrlGlobal+'UserTable/'+id_user+'/avatar', {"Avatar": curAvatar});
   }
 
 

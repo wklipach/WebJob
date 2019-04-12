@@ -35,16 +35,18 @@ export class CvEducationComponent implements OnInit {
       {
         // this.is.industryNumber=this.CheckMassive(this.listIndustry);
         console.log('получили событие onCheckedElementEducationList', curMass);
-
-
-        if (curMass.length>0) {
-          curMass.forEach( (value)=>{
-            let sEducationElement = 'educationCheck'+value;
-            this.formEducation.controls[sEducationElement].setValue('true');
-          });
+        if (curMass!==null) {
+          if (curMass.length > 0) {
+            // гарантированное преобразование в массив с разделителем из запятых
+            const arrCurMass = curMass.toString().split(',');
+            arrCurMass.forEach((value) => {
+              let sEducationElement = 'educationCheck' + value;
+              this.formEducation.controls[sEducationElement].setValue('true');
+            });
+          }
         }
-      }
-    );
+      });
+
 
   }
 

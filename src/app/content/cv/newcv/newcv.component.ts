@@ -4,7 +4,7 @@ import {City} from '../../../class/City';
 import {GuideService} from '../../../services/guide-service.service';
 import {CvPreviousComponent} from '../cv-previous/cv-previous.component';
 import {ComponentFactory} from '@angular/core/src/linker/component_factory';
-import {Previous} from '../../../class/Previous';
+import {AdvancedPrevious, Previous} from '../../../class/Previous';
 import {PreviousService} from '../../../services/previous.service';
 import {Subscription} from 'rxjs';
 import {CV} from '../../../class/CV';
@@ -13,7 +13,7 @@ import {AuthService} from '../../../services/auth-service.service';
 import {Router} from '@angular/router';
 import {CvLanguageComponent} from '../cv-language/cv-language.component';
 import {CvLanguageService} from '../../../services/cv-language.service';
-import {Language} from '../../../class/Language';
+import {AdvancedLanguage, Language} from '../../../class/Language';
 
 @Component({
   selector: 'app-newcv',
@@ -180,8 +180,7 @@ export class NewcvComponent implements OnInit {
 
     MyCv.sExperience = this.newCVForm.controls['inputExperience'].value;
     MyCv.sEducation = this.newCVForm.controls['inputEducation'].value;
-    MyCv.sSkills = this.newCVForm.controls['iinputSkillsAbilities'].value;
-    MyCv.sEducation = this.newCVForm.controls['iinputSkillsAbilities'].value;
+    MyCv.sSkills = this.newCVForm.controls['inputSkillsAbilities'].value;
 
     MyCv.SalaryFrom = this.newCVForm.controls['inputSalaryFrom'].value;
     MyCv.Position = this.newCVForm.controls['inputPosition'].value;
@@ -240,9 +239,18 @@ chf() {
     return this.previousPostNewCV =this.httpService.postNewCV(MyCv).subscribe(
       (value) => {
         // из возвращенного результата забираем новое ID
-        let id = value['id'];
+
+        let id = value['insertId'];
+
         const mPrevious = this.getPreviousData();
+
+        console.log('mPrevious', mPrevious);
+
         const mLanguage = this.getLanguageData();
+
+        console.log('mLanguage', mLanguage);
+
+
         // присваиваем полученный id_cv внутрь каждого блока
         mPrevious.forEach((cPrevious, ih) => {
           cPrevious.id_cv = id;
@@ -256,8 +264,13 @@ chf() {
           // console.log('cPrevious=',cPrevious);
         });
 
+
         // записываем массив блоков Previous[] в базу
-        this.previousPostPrevious =this.httpService.postPrevious(mPrevious).subscribe(
+        let apPrevious = new AdvancedPrevious();
+        apPrevious.m  =  mPrevious;
+        apPrevious.InsertPrevious = true;
+
+        this.previousPostPrevious =this.httpService.postPrevious(apPrevious).subscribe(
           (value) => {
             this.saveLanguage(mLanguage);
             }
@@ -269,7 +282,13 @@ chf() {
 
   saveLanguage(mLanguage: Language[]) {
     // записываем массив блоков Language[] в базу
-    this.sbscrSaveLanguage = this.httpService.postLanguage(mLanguage).subscribe(
+
+    let apLanguage = new AdvancedLanguage();
+    apLanguage.m  =  mLanguage;
+    apLanguage.InsertLanguage = true;
+
+
+    this.sbscrSaveLanguage = this.httpService.postLanguage(apLanguage).subscribe(
       (value) => {
         console.log('Данные успешно занесены.');
         this.router.navigate(['/cv-list']);
@@ -278,7 +297,9 @@ chf() {
   }
 
 
-
 }
+
+
+
 
 

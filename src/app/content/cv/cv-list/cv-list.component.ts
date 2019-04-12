@@ -64,13 +64,32 @@ export class CvListComponent implements OnInit, OnDestroy {
     this.id_user =  Res.id_user;
 
 
+    console.log('a0');
+
     this.cvCity = this.gs.getCityTable().subscribe((value) => {
+
+      console.log('a1');
+
         this.cityList = value as City[];
+
+      console.log('a2');
+
         this.cvlistGetCvList = this.cls.getCvList(this.id_user).subscribe((valueCL) => {
+
+          console.log('a3');
+
+
                 this.cvList = valueCL;
                 this.cvList.forEach( (cvCur, index) => {
                   this.contactMethods.push({'id' : 0, value : 0, 'bDelete': false});
-                    const sCityName = (this.cityList as City[]).find((valueC) => (valueC.id === cvCur.cv.City) ).name;
+
+
+                  console.log('cvCur',cvCur);
+
+                    const sCityName = (this.cityList as City[]).find((valueC) => (valueC.id === cvCur.City) ).name;
+
+
+
                     this.cvList[index].CityName = sCityName;
                 });
 
@@ -159,16 +178,15 @@ export class CvListComponent implements OnInit, OnDestroy {
   // редактируем - по факту будем удалять пометкой "удаленное" но оставляя в базе и вписывая новое значение
   EditElement(item: any) {
    // this.router.navigate(['/cv-edit'],{ queryParams:{'cv_id': item.id,}});
-
     this.cveditserv.setCvId(item.id);
-    this.cveditserv.setCvItem(item.cv);
+    this.cveditserv.setCvItem(item);
     this.router.navigate(['/cv-edit']);
   }
 
   // просмотр резюме
   ViewElement(item: any) {
     this.cveditserv.setCvId(item.id);
-    this.cveditserv.setCvItem(item.cv);
+    this.cveditserv.setCvItem(item);
     this.router.navigate(['/cv-view']);
   }
 
@@ -199,8 +217,10 @@ export class CvListComponent implements OnInit, OnDestroy {
   // удаляем - по факту ставим признак невидимости элемента
   DeleteElement(item: any, i: number) {
     this.contactMethods[i].bDelete = true;
-    item.cv.bInvisible = true;
-    this.cvDeleteCv = this.cls.setDeleteCv(item.id, item.cv).subscribe( () => {
+
+
+    item.bInvisible = true;
+    this.cvDeleteCv = this.cls.setDeleteCv(item.id, item).subscribe( () => {
                                                                         console.log('удалили элемент', item.id);
                                                                         this.RouterReload();
                                                                         },
@@ -213,22 +233,10 @@ export class CvListComponent implements OnInit, OnDestroy {
   copyCV(item) {
 
     // получаем изначальные данные без динамических блоков
-    const MyCv: CV = item.cv;
-    this.newcvserv.postNewCV(MyCv).subscribe(
+    const MyCv: CV = item;
+    this.newcvserv.postCopyCV(MyCv).subscribe(
       (value) => {
-        console.log('a1');
-        const id = value['id'];
-        console.log('a1', id);
-        const curPrevious:  Previous[] = [];
-        const cPrevious: any = curPrevious;
-        cPrevious.id_cv = id;
-        console.log('cPrevious', cPrevious);
-        this.newcvserv.postPrevious(cPrevious).subscribe(
-          () => {
             this.RouterReload();
-            }
-        );
-
       });
   }
 

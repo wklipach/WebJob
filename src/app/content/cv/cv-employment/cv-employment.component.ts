@@ -34,15 +34,17 @@ export class CvEmploymentComponent implements OnInit {
         // this.is.industryNumber=this.CheckMassive(this.listIndustry);
         console.log('получили событие onCheckedElemntEmploymentList', curMass);
 
-
-        if (curMass.length>0) {
-          curMass.forEach( (value)=>{
-            let sEmploymentElement = 'employmentCheck'+value;
-            this.formEmployment.controls[sEmploymentElement].setValue('true');
-          });
+        if (curMass!==null) {
+          if (curMass.length > 0) {
+            // гарантированное преобразование в массив с разделителем из запятых
+            const arrCurMass = curMass.toString().split(',');
+            arrCurMass.forEach((value) => {
+              let sEmploymentElement = 'employmentCheck' + value;
+              this.formEmployment.controls[sEmploymentElement].setValue('true');
+            });
+          }
         }
-      }
-    );
+      });
 
 
   }

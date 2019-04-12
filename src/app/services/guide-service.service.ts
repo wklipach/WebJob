@@ -6,6 +6,7 @@ import {
   TimePlacementList
 } from '../class/GuideList';
 import {Observable, Subject} from 'rxjs';
+import {GlobalRef} from './globalref';
 
 @Injectable()
 
@@ -48,7 +49,7 @@ export class GuideService {
   private _onCheckPaginator= new Subject<{value1: number, value2: number}>();
 
 
-  constructor( private http: HttpClient) {}
+  constructor( private http: HttpClient, private gr: GlobalRef) {}
 
   public get onCheckEducationList(): Observable<string> { return this._onCheckEducationList.asObservable(); }
   public startCheckEducationList(value: string): number[] {
@@ -220,15 +221,16 @@ export class GuideService {
 
   getCityTable()
   {
+
     // вставить запрос типа select top 10 * from City
-    return this.http.get('http://localhost:3000/City');
+    return this.http.get(this.gr.sUrlGlobal+'City');;
   }
 
 
   getCityName(id_city: number)
   {
     // вставить запрос типа select Name from City where id=21
-    return this.http.get('http://localhost:3000/City?id='+id_city);
+    return this.http.get(this.gr.sUrlGlobal+'City?id='+id_city);
   }
 
 
@@ -238,7 +240,7 @@ export class GuideService {
 
     console.log('city=',city);
 
-    return this.http.get('http://localhost:3000/City/-1/'+city);
+    return this.http.get(this.gr.sUrlGlobal+'City/-1/'+city);
   }
 
 

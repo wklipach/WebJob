@@ -1,6 +1,4 @@
 .wrapper{
-  font-family: "ProximaNovaRg","sans-serif";
-  font-size: 16px;
   width: 1170px;
   height: auto;
   margin: 0 auto;
@@ -31,6 +29,9 @@
   position: relative;
 }
 .employee-form{
+}
+input{
+  font-size: 0.93em;
 }
 label{
   position: absolute;

@@ -64,6 +64,7 @@ import { CvLanguageComponent } from './content/cv/cv-language/cv-language.compon
 import {CvLanguageService} from './services/cv-language.service';
 import { AdUnitComponent } from './ad-unit/ad-unit.component';
 import { AdUnit2Component } from './ad-unit2/ad-unit2.component';
+import {GlobalRef} from './services/globalref';
 
 
 
@@ -169,7 +170,7 @@ const appRoutes: Routes = [
   ],
   providers: [AuthService, GuideService, NewVacancyService, TableVacancyService,
               MoveService, PreviousService, NewcvService, CvListService, CvEditService,
-              VacanciesListService, LetterService, InfoService, CvLanguageService],
+              VacanciesListService, LetterService, InfoService, CvLanguageService,GlobalRef],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

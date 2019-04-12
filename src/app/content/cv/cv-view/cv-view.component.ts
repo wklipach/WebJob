@@ -45,8 +45,22 @@ export class CvViewComponent implements OnInit {
       this._cvitem = this.cveditserv.getCvItem();
     }
 
+
+/*
+Education: "5,1"
+​Employment: "5,1"
+Experience: "1,4"
+Industry: "1,30"
+Schedule: "1,5"
+const arrEmployment = item.Employment.split(',');
+*/
+
+
+    console.log('this._cvitem', this._cvitem);
+
     if (this._cvitem.Education !== undefined) {
-      this._cvitem.Education.forEach(
+      const arrEducation = this._cvitem.Education.split(',');
+      arrEducation.forEach(
         (value)=> {
           this._listEducation.push(EducationList[value-1].name);
         })
@@ -54,28 +68,32 @@ export class CvViewComponent implements OnInit {
 
 
     if (this._cvitem.Experience !== undefined) {
-      this._cvitem.Experience.forEach(
+      const arrExperience = this._cvitem.Experience.split(',');
+      arrExperience.forEach(
         (value)=> {
           this._listExperience.push(ExperienceList[value-1].name);
         })
     }
 
     if (this._cvitem.Industry !== undefined) {
-      this._cvitem.Industry.forEach(
+      const arrIndustry = this._cvitem.Industry.split(',');
+      arrIndustry.forEach(
         (value)=> {
           this._listIndustry.push(IndustryList[value-1].name);
         })
     }
 
     if (this._cvitem.Schedule !== undefined) {
-      this._cvitem.Schedule.forEach(
+      const arrSchedule = this._cvitem.Schedule.split(',');
+      arrSchedule.forEach(
         (value)=> {
           this._listSchedule.push(ScheduleList[value-1].name);
         })
     }
 
     if (this._cvitem.Employment !== undefined) {
-      this._cvitem.Employment.forEach(
+      const arrEmployment = this._cvitem.Employment.split(',');
+      arrEmployment.forEach(
         (value)=> {
           this._listEmployment.push(EmploymentList[value-1].name);
         })
@@ -119,7 +137,10 @@ export class CvViewComponent implements OnInit {
   loadPicture(id_user: number) {
     this.subscrDataUserFromId = this.auth.getDataUserFromId(id_user).subscribe(value => {
       // вытаскиваем из базы картинку аватара
-      this.loadUser = value as UserType;
+
+//       console.log(value);
+
+      this.loadUser = value[0] as UserType;
       console.log('this.loadUser',this.loadUser);
       const S = this.loadUser['Avatar'].Avatar;
       if (typeof S !== 'undefined') {

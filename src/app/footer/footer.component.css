@@ -1,7 +1,7 @@
 #footer {
   width: 1170px;
   height: 90px;
-  margin: 0 auto;
+  margin: 30px auto 0;
   color: white;
   background-color: #444b54;
 }
@@ -37,4 +37,4 @@
 li{
   display: inline-block;
   padding-left: 32px;
-}
+  }

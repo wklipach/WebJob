@@ -35,16 +35,16 @@ export class CvExperienceComponent implements OnInit {
       {
         // this.is.industryNumber=this.CheckMassive(this.listIndustry);
         console.log('получили событие onCheckedElementExperienceList', curMass);
-
-
-        if (curMass.length>0) {
-          curMass.forEach( (value)=>{
-            let sExperienceElement = 'experienceCheck'+value;
-            this.formExperience.controls[sExperienceElement].setValue('true');
-          });
+        if (curMass!==null) {
+          if (curMass.length > 0) {
+            const arrCurMass = curMass.toString().split(',');
+            arrCurMass.forEach((value) => {
+              let sExperienceElement = 'experienceCheck' + value;
+              this.formExperience.controls[sExperienceElement].setValue('true');
+            });
+          }
         }
-      }
-    );
+      });
 
 
   }

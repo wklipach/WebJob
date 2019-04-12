@@ -56,30 +56,38 @@ export class ResponseComponent implements OnInit, OnDestroy {
     this._id_user =  Res.id_user;
     this._id_vc = this.cvEditSrv.getCvId();
 
+
     // получаем id_user  из вакансии
     this.vls.getVc(this._id_vc).subscribe((value) => {
-      this.curVc = value as Vacancy;
+      this.curVc = value[0] as Vacancy;
       console.log('this.curVc', this.curVc);
     })
 
+console.log('this._id_user','!!!!!');
 
-   // console.log('this._id_user',this._id_user);
+console.log('this._id_user',this._id_user);
 
    // получаем список резюме пользователя в cvList
     this.cvResponseCity = this.gs.getCityTable().subscribe((value) => {
       this.cityList = value as City[];
+console.log('this a1');
       this.cvResponseGetCvList = this.cls.getCvList(this._id_user).subscribe((value0) => {
           this.cvList = value0;
+
+console.log('this a2');
 
           if (this.cvList.length === 1) {
             this.modelResumeFromCheck.resumeFromCheck = this.cvList[0].id;
           }
+
+console.log('this a3');
 
           this.cvList.forEach( (cvCur, index) => {
             const sCityName = (this.cityList as City[]).find(value1 => (value1.id === cvCur.cv.City) ).name;
             this.cvList[index].CityName = sCityName;
 
             // this.modelResumeFromCheck.resumeFromCheck = this.cvList[index].id;
+console.log('this a4');
 
           });
         }
@@ -103,9 +111,6 @@ export class ResponseComponent implements OnInit, OnDestroy {
 
     this.bErrorResumeCheck = false;
     this.bErrorResumeLetter = false;
-
-    console.log('cvList', this.cvList);
-    console.log('modelResumeFromCheck.resumeFromCheck', this.modelResumeFromCheck.resumeFromCheck);
 
     if (this.modelResumeFromCheck.resumeFromCheck === '') {
       this.bErrorResumeCheck = true;

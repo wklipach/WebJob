@@ -1,37 +1,4 @@
-<!--
-<h3>Отправка отклика на вакансию</h3>
-
-<div class="row" *ngFor="let item of cvList; let i = index;">
-
-
-  <input type="radio" name="cv" [(ngModel)]="modelResumeFromCheck.resumeFromCheck" [value] = "item.id">
-
-    <div class="col-2 tt">
-      Должность "{{item.cv.Position}}"
-    </div>
-  <div class="col-2 tt">
-    Зарплата "{{item.cv.SalaryFrom}}"
-  </div>
-  <div class="col-2 tt">
-    Город "{{item.CityName}}"
-  </div>
-</div>
-<br>
-<div *ngIf="bErrorResumeCheck">Вы не выбрали резюме, прикрепляемое к отклику</div>
-<div *ngIf="bErrorResumeLetter">Вы не внесли текст сообщения</div>
-
-<div [formGroup]="formResponse">
-
-<p>Комментарий к отклику<Br>
-  <textarea formControlName="textCommentValue" name="comment" cols="100" rows="6"></textarea></p>
-<button  (click)="MoveResult()">Отправить</button>
-</div>
-
--->
-
-
 <app-header-top></app-header-top>
-
 
 
 <div class="wrapper">

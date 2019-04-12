@@ -8,12 +8,12 @@ import {Router} from '@angular/router';
 import {Subscription} from 'rxjs';
 import {CvEditService} from '../../../services/cv-edit.service';
 import {GuideService} from '../../../services/guide-service.service';
-import {Previous} from '../../../class/Previous';
+import {AdvancedPrevious, Previous} from '../../../class/Previous';
 import {CvListService} from '../../../services/cv-list.service';
 import {CV} from '../../../class/CV';
 import {AuthService} from '../../../services/auth-service.service';
 import {NewcvService} from '../../../services/newcv.service';
-import {Language} from '../../../class/Language';
+import {AdvancedLanguage, Language} from '../../../class/Language';
 import {CvLanguageService} from '../../../services/cv-language.service';
 import {CvLanguageComponent} from '../cv-language/cv-language.component';
 
@@ -52,7 +52,8 @@ export class CvEditComponent implements OnInit, OnDestroy {
   private cvDeleteCv: Subscription;
   private previousPostNewCV: Subscription;
   private previousPostPrevious: Subscription;
-
+  private scrLanguageDelete: Subscription;
+  private previousDelete: Subscription;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver,
               private is: GuideService,
@@ -75,6 +76,33 @@ export class CvEditComponent implements OnInit, OnDestroy {
       'inputCity' : new FormControl('', []),
       'industry' : new FormControl('', [])
     });
+
+
+    /* подписка на удаление блока "предыдущее место работы" */
+    this.previousDelete =
+      this.ps.onDeletePrevious.subscribe(
+        (value: number) => {
+          if (this.vc.length < 1) return;
+          let componentRef = this.componentsReferences.filter(x => x.instance.getIndex() === value)[0];
+          let vcrIndex: number = this.vc.indexOf(componentRef)
+          // removing component from container
+          this.vc.remove(vcrIndex);
+        }
+      );
+
+
+    /* подписка на удаление блока "знание языков" */
+    this.scrLanguageDelete =
+      this.cLangS.onDeleteLanguage.subscribe(
+        (value: number) => {
+          if (this.vcLanguage.length < 1) return;
+          const componentLanguageRef = this.componentsLanguageReferences.filter(x => x.instance.getIndex() === value)[0];
+          const vcrLangIndex: number = this.vcLanguage.indexOf(componentLanguageRef)
+          // removing component from container
+          this.vcLanguage.remove(vcrLangIndex);
+        }
+      );
+
 
   }
 
@@ -127,6 +155,9 @@ export class CvEditComponent implements OnInit, OnDestroy {
           this.editCVForm.controls['inputCity'].setValue(this._myDisplayCity);
         });
 
+    //
+    // console.log('отдельно получаем Industry, Employment, Schedule, Experience, Education')
+
     // ставим чек-боксы в элементах ОТРАСЛЬ
      this.is.startCheckedElementIndustryList(item.Industry);
      // ставим чек-боксы в элементах  ЗАНЯТОСТЬ
@@ -141,29 +172,30 @@ export class CvEditComponent implements OnInit, OnDestroy {
 
     //динамические блоки с предыдущими местами работы
     this.subscrCvEditServ = this.cveditserv.getCvPrevious(this.cv_id).subscribe((value: any) => {
-       if (typeof value.previous !== 'undefined') {
-           if (value.previous.length > 0) {
-               value.previous.forEach((curPrevious) => {
+
+           if (value.length > 0) {
+               value.forEach((curPrevious) => {
                      console.log('curPrevious', curPrevious);
                      this.createNewBlock(curPrevious);
                      // this.ps.startLoadPrevious(curPrevious);
              });
             }
-       }
+
     });
 
 
     //динамические блоки со знанием языков
     this.subscrCvEditLanguage = this.cveditserv.getCvLanguage(this.cv_id).subscribe((value: any) => {
-      // console.log('value', value[0].language);
-      if (typeof value[0].language !== 'undefined') {
-        if (value[0].language.length > 0) {
-          value[0].language.forEach((curLanguage) => {
-            console.log('curLanguage', curLanguage);
-            this.createNewLanguageBlock(curLanguage);
-          });
-        }
+        console.log('value', value);
+
+      if (value.length>0) {
+            value.forEach((curLanguage) => {
+              console.log('curLanguage', curLanguage);
+              this.createNewLanguageBlock(curLanguage);
+            });
+
       }
+
     });
 
 
@@ -172,6 +204,15 @@ export class CvEditComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
+
+    if (typeof this.scrLanguageDelete !== 'undefined') {
+      this.scrLanguageDelete.unsubscribe();
+    }
+
+    if (typeof this.previousDelete !== 'undefined') {
+      this.previousDelete.unsubscribe();
+    }
+
     if (typeof  this.sbCvID !== 'undefined') {
       this.sbCvID.unsubscribe();
     }
@@ -218,39 +259,27 @@ export class CvEditComponent implements OnInit, OnDestroy {
   }
 
   savecv() {
-    // сохранение редактированного
-    // 1-вый шаг помечаем данные таблицы  CV как удаленные, 2-вый шаг сохраняем заново
-    this.UpdateCv(this._cvitem);
+      this.updateCvContinue();
   }
 
 
-  UpdateCv(item: any) {
-
-
-    console.log('Смотрим строку ниже');
-    console.log(item);
-    item.bInvisible = true;
-
-    this.cvDeleteCv = this.cls.setDeleteCv(this.cv_id, item).subscribe( () => {
-        console.log('удалили элемент', this.cv_id);
-        this.newcv();
-
-        // this.router.navigate(['/cv-list']);
-      },
-      err => console.log('при удалении элемента возникла нештатная ситуация ', err));
-  }
 
 
   /* сохранение данных */
-  newcv() {
+  updateCvContinue() {
 
     // получаем изначальные данные без динамических блоков
-    const MyCv: CV = this.loadMainCV();
-    return this.previousPostNewCV = this.httpService.postNewCV(MyCv).subscribe(
+    let MyCv: CV = this.loadMainCV();
+    MyCv.id = this.cv_id;
+
+    console.log('MyCv до=',MyCv);
+
+    return this.previousPostNewCV = this.httpService.postUpdateCV(MyCv).subscribe(
       (value) => {
-        // из возвращенного результата забираем новое ID
-        const id = value['id'];
+        // снов аполучаем MyCv.id
+        const id = MyCv.id;
         const mPrevious = this.getPreviousData();
+
         // присваиваем полученный id_cv внутрь каждого блока
         mPrevious.forEach((cPrevious, ih) => {
             cPrevious.id_cv = id;
@@ -262,19 +291,32 @@ export class CvEditComponent implements OnInit, OnDestroy {
           cLanguage.id_cv = id;
         });
 
-
-
         // записываем массив блоков Previous[] в базу
-        this.previousPostPrevious = this.httpService.postPrevious(mPrevious).subscribe(
+        let apPrevious = new AdvancedPrevious();
+        apPrevious.m  =  mPrevious;
+        apPrevious.InsertPrevious = true;
+        apPrevious.id_cv = id;
+
+        this.previousPostPrevious = this.httpService.postPrevious(apPrevious).subscribe(
           (value1) => {
-            this.saveLanguage(mLanguage);
+            this.saveLanguage(mLanguage, id);
           });
       });
  }
 
-  saveLanguage(mLanguage: Language[]) {
+  saveLanguage(mLanguage: Language[], id: number) {
     // записываем массив блоков Language[] в базу
-    this.sbscrSaveLanguage = this.httpService.postLanguage(mLanguage).subscribe(
+
+
+    // записываем массив блоков Previous[] в базу
+    let apLanguage = new AdvancedLanguage();
+    apLanguage.m  =  mLanguage;
+    apLanguage.InsertLanguage = true;
+    apLanguage.id_cv = id;
+
+    console.log('apLanguage',apLanguage);
+
+    this.sbscrSaveLanguage = this.httpService.postLanguage(apLanguage).subscribe(
       (value) => {
         console.log('Данные успешно занесены.');
         this.router.navigate(['/cv-list']);

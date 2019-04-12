@@ -32,18 +32,18 @@
 
        <label>Должностные обязанности</label>
        <div class="jobFunction">
-         <div *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy['vacancy'].JobFunction }}</div>
+         <div *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy.JobFunction }}</div>
        </div>
 
     <label>Требования</label>
     <div class="vacancyRequirements">
-      <div *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy['vacancy'].VacancyRequirements }}</div>
+      <div *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy.VacancyRequirements }}</div>
     </div>
 
 
     <label>Условия</label>
     <div class="vacancyConditions">
-      <div *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy['vacancy'].Conditions }}</div>
+      <div *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy.Conditions }}</div>
     </div>
 
     <label>Срок размещения</label>

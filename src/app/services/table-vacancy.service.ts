@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {Observable, Subject, Subscription} from 'rxjs';
-import {HomeComponent} from '../home/home.component';
-import {dataVacancy} from '../class/Vacancy';
+import {GlobalRef} from './globalref';
 
 @Injectable({
   providedIn: 'root'
@@ -39,7 +38,7 @@ export class TableVacancyService {
   //onReopenVacancyAdvanced - продвинутый поиск вакансий, запускается из advanced-search.component, подписан в  HomeComponent
   private _onReopenVacancyAdvanced = new Subject<any>();
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private gr: GlobalRef) {
 
     //расширенный поиск вакансий, запускается из advanced-search.component
     this.sbReopenVacancyAdvanced = this.onReopenVacancyAdvanced.subscribe((value: any) => {this._messageAdvancedFindObj = value; });
@@ -70,7 +69,7 @@ export class TableVacancyService {
 
   getTableVacancyAdvanced(findObject: any)
   {
-    let sUrl = 'http://localhost:3000/advanced-search';
+    let sUrl = this.gr.sUrlGlobal+'advanced-search';
     let Result = this.http.post(sUrl,  findObject);
     return Result;
   }
@@ -78,14 +77,24 @@ export class TableVacancyService {
 
 
 
-  getTableVacancy(sMask: string, rowPerPage: number, currentPage: number, isFavorites: boolean, isAdvancedFind: boolean)
+  getTableVacancy(sMask: string, rowPerPage: number, currentPage: number, isFavorites: boolean, isAdvancedFind: boolean, id_user?: number)
   {
 
+    let sUrl = this.gr.sUrlGlobal+'Vacancy';
 
+    let params: any;
 
-    let sUrl = 'http://localhost:3000/Vacancy';
-    let params = new HttpParams()
-      .set('sMask', sMask);
+    if (isFavorites) {
+      params = new HttpParams()
+        .set('sMask', sMask)
+        .set('isFavorites', 'true')
+        .set('id_user_favorites', id_user.toString());
+    }
+
+    if (!isFavorites) {
+      params = new HttpParams()
+        .set('sMask', sMask);
+    }
 
     return this.http.get(sUrl, {params: params});
 
@@ -94,7 +103,7 @@ export class TableVacancyService {
   getCity()
   {
     // вставить запрос типа select top 10 * from City или еще что такое же
-    return this.http.get('http://localhost:3000/City');
+    return this.http.get(this.gr.sUrlGlobal+'City');
   }
 
   ngOnDestroy(): void {
@@ -108,21 +117,21 @@ export class TableVacancyService {
 
   getFavoritesVacancy(id_user: number)
   {
-    let sUrl = 'http://localhost:3000/UserFavoritesUnit?id_user='+id_user;
+    let sUrl = this.gr.sUrlGlobal+'UserFavoritesUnit?id_user='+id_user;
     return this.http.get(sUrl);
   }
 
 
   postFavoritesVacancy(id_user: number, id_vc: number)
   {
-    let sUrl = 'http://localhost:3000/UserFavoritesUnit';
+    let sUrl = this.gr.sUrlGlobal+'UserFavoritesUnit';
     let sRs = {id_user: id_user, id_vc: id_vc}
     return this.http.post(sUrl, sRs);
   }
 
   checkFavoritesVacancy(id_user: number, id_vc: number)
   {
-    let sUrl = 'http://localhost:3000/UserFavoritesUnit?id_user='+id_user+'&id_vc='+id_vc;
+    let sUrl = this.gr.sUrlGlobal+'UserFavoritesUnit?id_user='+id_user+'&id_vc='+id_vc;
     return this.http.get(sUrl);
   }
 
@@ -130,7 +139,7 @@ export class TableVacancyService {
 
   postUnshowVacancy(id_user: number, id_vc: number)
   {
-    let sUrl = 'http://localhost:3000/UserDontShowUnit';
+    let sUrl = this.gr.sUrlGlobal+'UserDontShowUnit';
     let sRs = {id_user: id_user, id_vc: id_vc}
     return this.http.post(sUrl, sRs);
   }
@@ -150,9 +159,13 @@ export class TableVacancyService {
 
   // проверяем наличие откликов данного юзера на данную вакансию
   getNumberResponse(id_user_from: number, id_vc: number) {
-    // http://localhost:3000/Correspondence?letter.id_user_from=2&letter.id_vc=1
-    let sUrl = 'http://localhost:3000/Correspondence?letter.id_user_from='+id_user_from.toString()+'&letter.id_vc='+id_vc.toString();
-    return this.http.get(sUrl);
+
+    let sUrl = this.gr.sUrlGlobal+'Correspondence';
+    let params = new HttpParams()
+      .set('id_user_from', id_user_from.toString())
+      .set('id_vc', id_vc.toString())
+    return this.http.get(sUrl, {params: params});
+
   }
 
 

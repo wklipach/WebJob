@@ -35,17 +35,16 @@ export class CvScheduleComponent implements OnInit {
       {
         // this.is.industryNumber=this.CheckMassive(this.listIndustry);
         console.log('получили событие onCheckedElementScheduleList', curMass);
-
-
-        if (curMass.length>0) {
-          curMass.forEach( (value)=>{
-            let sScheduleElement = 'scheduleCheck'+value;
-            this.formSchedule.controls[sScheduleElement].setValue('true');
-          });
+        if (curMass!==null) {
+          if (curMass.length > 0) {
+            const arrCurMass = curMass.toString().split(',');
+            arrCurMass.forEach((value) => {
+              let sScheduleElement = 'scheduleCheck' + value;
+              this.formSchedule.controls[sScheduleElement].setValue('true');
+            });
+          }
         }
-      }
-    );
-
+      });
 
   }
 

@@ -1,9 +1,4 @@
 /*
-@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-@import "../node_modules/bootstrap/dist/css/bootstrap-grid.css";
-
-
-
 @font-face {
   font-family: 'ArialRoundedMTBold';
   src: local('ArialRoundedMTBold'),
@@ -24,12 +19,19 @@
 
 ;}
 @import "../node_modules/font-awesome/css/font-awesome.css";
+
+font-family: "Proxima Nova","sans-serif";
 */
 
 @import "../fonts/fonts.css";
 body {
+  font-family: "Proxima Nova","sans-serif";
   margin: 0 !important;
   padding: 0 !important;
   font-size: 16px;
+  text-decoration: none;
 }
-
+button, input, textarea, select, label{
+  font-family: "Proxima Nova","sans-serif";
+  font-size: 16px;
+}

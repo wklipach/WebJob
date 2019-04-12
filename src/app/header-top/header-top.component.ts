@@ -65,24 +65,15 @@ export class HeaderTopComponent implements OnInit {
 
     this.sElementMask  = this.moveS.getStringFind();
 
-    console.log('ht2');
 
     this.sNullValueFind = this.moveS.getNullValueFind();
-
-    console.log('ht3');
 
     // обнуляем сервис после вывода предупреждающего сообщения об неуспешном поиске
     this.moveS.setNullValueFind('');
 
-    console.log('ht4');
-
     this.countNotReadLetter();
 
-    console.log('ht5');
-
     this.countCountNotReadBell();
-
-    console.log('ht6');
 
   }
 
@@ -108,9 +99,12 @@ export class HeaderTopComponent implements OnInit {
   countNotReadLetter() {
     if (this.bConnected) {
           //TODO подсчет количества непрочитанных писем
+
+      console.log('header-top component countNotReadLetter()');
+
       this.letServ.getCountNotReadLetter(this.id_user).subscribe(
         (value: any[]) => {
-          //console.log('value.length', value.length, 'this.id_user', this.id_user);
+          console.log('value', value);
           if (value !== null) this.numberCountNotReadLetter = value.length; else this.numberCountNotReadLetter = -1;
         }
       )} else
@@ -134,6 +128,9 @@ export class HeaderTopComponent implements OnInit {
 
   favorites() {
     // TODO ПОКАЗ ФАВОРИТов 2
+
+    console.log('FAVORITS');
+
     this.httpTvsService.getFavoritesVacancy(this.id_user).subscribe((favor) =>{
       let s='?&id=-1'; //-1 чтобы иметь пустой курсор в случае отсутствия избранных
       for (let curFavor in favor) {
@@ -179,12 +176,16 @@ export class HeaderTopComponent implements OnInit {
     // если домашняя страница запускаем событие, если нет переходим на нее и маску передаем через Экстракт
     // событие инициализируется фактом запуска компонента Home и наличием маски
     if ( (this.router.isActive('home',true)===false)  && (this.router.isActive('',true) ===false)  ) {
+
       window.localStorage.setItem('keyFind', sMask);
       this.router.navigate(['/']);
 
      } else {
       window.localStorage.removeItem('keyFind');
+
       this.httpTvsService.triggerReopenVacancy({sMask, isFavorites, isAdvancedFind});
+
+
     }
 
   }

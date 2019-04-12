@@ -32,18 +32,19 @@ export class CvIndustryComponent implements OnInit {
 
     this.industryCheckedElementSubscription = this.is.onCheckedElementIndustryList.subscribe((curMass: number[]) =>
       {
-        // this.is.industryNumber=this.CheckMassive(this.listIndustry);
-        console.log('получили событие onCheckedElementIndustryList', curMass);
-
-
-        if (curMass.length>0) {
-          curMass.forEach( (value)=>{
-            let sIndustryElement = 'industryCheck'+value;
-            this.formIndustry.controls[sIndustryElement].setValue('true');
-          });
+        if (curMass!==null) {
+          console.log('получили событие onCheckedElementIndustryList', curMass);
+          // гарантированное преобразование в массив с разделителем из запятых
+          const arrCurMass = curMass.toString().split(',');
+          // this.is.industryNumber=this.CheckMassive(this.listIndustry);
+          if (arrCurMass.length > 0) {
+            arrCurMass.forEach((value) => {
+              let sIndustryElement = 'industryCheck' + value;
+              this.formIndustry.controls[sIndustryElement].setValue('true');
+            });
+          }
         }
-      }
-    );
+      });
 
   }
 

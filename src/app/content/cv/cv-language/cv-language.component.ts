@@ -40,6 +40,9 @@ export class CvLanguageComponent implements OnInit, OnDestroy {
   }
 
   loadLanguageData(L: Language) {
+
+    if (L === undefined) return;
+
     if (typeof L.id_level !== 'undefined') {
       const curLevelLanguage = LevelLanguageList.find(Language => Language.id === L.id_level);
       this.formLanguage.controls['inputLevelLanguage'].setValue(curLevelLanguage.name);
