@@ -101,9 +101,10 @@ export class HomeComponent implements OnInit, OnDestroy {
   //TODO точка 2
     k.base64textString = [];
 
-    if (k.Avatar.toString().length>0 && k.Avatar !== null)
-    k.base64textString.push('data:image/png;base64,' + JSON.parse(k.Avatar).value);
-  }
+    if (k.Avatar !== null) {
+        if (k.Avatar.toString().length > 0) k.base64textString.push('data:image/png;base64,' + JSON.parse(k.Avatar).value);
+      }
+    }
 
 
    private funcCheckedFind(nPageNumber: number)   {
