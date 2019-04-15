@@ -83,7 +83,7 @@ console.log('this a2');
 console.log('this a3');
 
           this.cvList.forEach( (cvCur, index) => {
-            const sCityName = (this.cityList as City[]).find(value1 => (value1.id === cvCur.cv.City) ).name;
+            const sCityName = (this.cityList as City[]).find(value1 => (value1.id === cvCur.City) ).name;
             this.cvList[index].CityName = sCityName;
 
             // this.modelResumeFromCheck.resumeFromCheck = this.cvList[index].id;
@@ -135,7 +135,13 @@ console.log('this a4');
     Res.id_user_from = this._id_user;
     Res.id_cv =  parseInt(this.modelResumeFromCheck.resumeFromCheck, 10);
     Res.id_vc = this._id_vc;
-    Res.id_user_to = this.curVc.vacancy.id_user;
+
+
+    console.log('this.curVc', this.curVc);
+
+    Res.id_user_to = this.curVc.id_user;
+
+
     Res.letterText = strLetter;
     Res.DateTimeCreate = currentDate;
 

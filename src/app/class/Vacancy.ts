@@ -41,4 +41,5 @@ export class  dataVacancy extends Vacancy {
   sDateEnd: string;
   errorEndDay: boolean;
   base64textString = [];
+  UserName: string;
 }

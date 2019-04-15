@@ -45,6 +45,9 @@ export class CvListService {
 
   setCorrespondence(letter: Letter) {
     const sUrl = this.gr.sUrlGlobal+'Correspondence';
+
+    console.log('letter', letter);
+
     return this.http.post(sUrl, {letter});
   }
 
