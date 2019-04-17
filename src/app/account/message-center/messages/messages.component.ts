@@ -37,7 +37,7 @@ export class MessagesComponent implements OnInit {
 
         if (data.length>0) {
           this.myDataLetter = [];
-          this.myDataLetter = data[0].concat(data[1]);
+          this.myDataLetter = data; //data[0].concat(data[1]);
         }
 
       });
@@ -45,16 +45,38 @@ export class MessagesComponent implements OnInit {
 
 
   curLetterClick(lid: number, $event) {
+
     console.log('нажали строку',lid);
-    let letter: Letter = this.myDataLetter.find(curLetter => curLetter.id===lid);
+    console.log('this.myDataLetter', this.myDataLetter);
 
-    if (typeof letter !== 'undefined') {
-      console.log('letter',letter);
-      //заодно закидываем идентификатор письма в хранилище
-      window.localStorage.setItem('_letterid', JSON.stringify(lid));
+    //ищем первое письмо в общении данных пользователей
 
-      this.letterSubscription = this.httpLetter.setLetter(letter).subscribe( ()=> this.router.navigate(['/message']));
-    }
+//...................
+
+    this.httpLetter.getFirstLetter(lid).subscribe(
+      (data: any) => {
+        let letter: Letter = data[0];
+
+        console.log('первое письмо',letter);
+
+        if (typeof letter !== 'undefined') {
+          console.log('letter',letter);
+          //заодно закидываем идентификатор письма в хранилище
+          window.localStorage.setItem('_letterid', JSON.stringify(lid));
+          this.letterSubscription = this.httpLetter.setLetter(letter).subscribe( ()=> this.router.navigate(['/message']));
+        }
+      });
+
+
+
+
+
+//................
+    //let letter: Letter = this.myDataLetter.find(curLetter => curLetter.id===lid);
+
+
+
+
   }
 
   ngOnDestroy() {

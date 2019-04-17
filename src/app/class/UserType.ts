@@ -5,7 +5,7 @@ export class UserType{
   public UserName: string;
   private EMail: string;
   Password: string;
-  private bEmployer: boolean;
+  public bEmployer: boolean;
   City: number;
   Zip: string;
   Name: string;

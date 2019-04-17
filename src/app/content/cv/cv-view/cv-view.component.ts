@@ -142,10 +142,12 @@ const arrEmployment = item.Employment.split(',');
 
       this.loadUser = value[0] as UserType;
       console.log('this.loadUser',this.loadUser);
-      const S = this.loadUser['Avatar'].Avatar;
+      const S = this.loadUser.Avatar;
       if (typeof S !== 'undefined') {
-        if (S.length > 0) {
-          this.base64textString.push('data:image/png;base64,' + JSON.parse(S).value);
+        if (S !== null) {
+          if (S.length > 0) {
+            this.base64textString.push('data:image/png;base64,' + JSON.parse(S).value);
+          }
         }
       }
     });

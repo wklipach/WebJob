@@ -8,6 +8,8 @@ import {Letter} from '../../../class/Letter';
 import {DatePipe} from '@angular/common';
 import {CvListService} from '../../../services/cv-list.service';
 import {Router} from '@angular/router';
+import {MoveService} from '../../../services/move.service';
+import {CvEditService} from '../../../services/cv-edit.service';
 
 @Component({
   selector: 'app-message',
@@ -28,12 +30,18 @@ export class MessageComponent implements OnInit, OnDestroy {
   listLetter: any[] = [];
   protected responseVC: string;
   protected anyLetter: any;
+  _sNameUserResp: string = '';
+  _bEmployer: boolean = false;
+  private dvMoveSubscription: Subscription;
+  public anyVC: any
 
 
   constructor(private router: Router,
               private httpLetter: LetterService,
+              private cveditserv: CvEditService,
               private auth: AuthService,
               private fb: FormBuilder,
+              private moveS: MoveService,
               private cls: CvListService) {
 
     const Res =  this.auth.loginStorage();
@@ -46,38 +54,55 @@ export class MessageComponent implements OnInit, OnDestroy {
 
   }
 
-          loadPicture(id_user: number) {
+          loadPictureAndListLetter(id_user: number) {
+
+    console.log('loadPictureAndListLetter', id_user);
+            // loadPictureAndListLetter 5
+
             this.subscrDataUserFromId = this.auth.getDataUserFromId(id_user).subscribe(value => {
               // вытаскиваем из базы картинку аватара
+              this.loadUser = value[0] as UserType;
+              //console.log('getDataUserFromId value', this.loadUser);
+              const S = this.loadUser.Avatar;
+
+              if (this.loadUser.bEmployer == true)
+                this._bEmployer = true; else this._bEmployer = false;
 
 
 
-              this.loadUser = value as UserType;
-              const S = this.loadUser['Avatar'].Avatar;
               if (typeof S !== 'undefined') {
-                if (S.length > 0) { this.base64textString.push('data:image/png;base64,' + JSON.parse(S).value); }
+                if (S !== null) {
+                  if (S.length > 0) {
+                    this.base64textString.push('data:image/png;base64,' + JSON.parse(S).value); }
+                }
               }
 
-        // TODO вставляем вызов прочих сообщений для данного пользователя (первое сообщение следует не печатать при начальной загрузке)
-          this.httpLetter.getThreadLetter(this._letter.letter.id_cv, this._letter.letter.id_vc).subscribe(
+        // TODO вставляем вызов всех сообщений для данного пользователя
+          this.httpLetter.getThreadLetter(this._letter.id_cv, this._letter.id_vc).subscribe(
             curList => {
+
+
+              console.log('curList1', curList);
+
               this.listLetter =
                   (curList as any[]).sort(
                   (a, b) => {
-                    const DD1 = new Date(a.letter.DateTimeCreate);
-                    const DD2 = new Date(b.letter.DateTimeCreate);
+                    const DD1 = new Date(a.DateTimeCreate);
+                    const DD2 = new Date(b.DateTimeCreate);
                     return +DD1 - +DD2;
                   });
+
+              console.log('curList2', curList);
 
               // если есть список писем, из первого берем номер вакансии и ищем описание вакансии
 
               if (this.listLetter.length > 0) {
-                this.httpLetter.getAnyVC(this.listLetter[0].letter.id_vc).subscribe(
+                this.httpLetter.getAnyVC(this.listLetter[0].id_vc).subscribe(
                   anyValueVC => {
-                    const anyVC: any = anyValueVC;
-                    if (typeof anyVC !== undefined) {
-                      console.log('anyVC', anyVC);
-                      this.responseVC = anyVC.vacancy.VacancyShortTitle;
+                    this.anyVC = anyValueVC;
+                    if (typeof this.anyVC !== undefined) {
+                      console.log('this.anyVC', this.anyVC);
+                      this.responseVC = this.anyVC.VacancyShortTitle;
                     } else {
                       this.responseVC = '';
                     }
@@ -103,19 +128,42 @@ export class MessageComponent implements OnInit, OnDestroy {
 
 
   parseLetter(anyLetter: any) {
-      this.httpLetter.getUserName(anyLetter.letter.id_user_from, anyLetter.letter.id_user_to).subscribe((value) => {
+
+//
+// СМОТРИМ НА ПИСЬМО
+//
+
+      this.httpLetter.getUserName(anyLetter.id_user_from, anyLetter.id_user_to).subscribe((value) => {
         const arr = Object.values(value);
-        anyLetter.UserFrom = arr.find(x => x.id === anyLetter.letter.id_user_from).UserName;
-        anyLetter.UserTo = arr.find(x => x.id === anyLetter.letter.id_user_to).UserName;
+
+        anyLetter.UserFrom = arr.find(x => x.id === anyLetter.id_user_from).UserName;
+        anyLetter.UserTo = arr.find(x => x.id === anyLetter.id_user_to).UserName;
+
+
+        //идет показ собеседника
+        if (this.id_user == anyLetter.id_user_from) {
+          this._sNameUserResp = anyLetter.UserTo;
+          this.loadPictureAndListLetter(anyLetter.id_user_to);
+        } else {
+          this._sNameUserResp = anyLetter.UserFrom;
+          this.loadPictureAndListLetter(anyLetter.id_user_from);
+        }
+
         this._letter = anyLetter;
-        this.loadPicture(anyLetter.letter.id_user_from);
+
       });
+
+
+//
+//
+//
+
+
   }
 
   ngOnInit() {
 
     this.base64textString = [];
-
     this.messageSubscription = this.httpLetter.getLetter()
       .subscribe (oLetter => {
         if (typeof oLetter !== 'undefined') {
@@ -127,7 +175,6 @@ export class MessageComponent implements OnInit, OnDestroy {
               this.httpLetter.getAnyLetter(lid).subscribe(curLetter => {
                   if (typeof curLetter[0] !== 'undefined') {
                     this.anyLetter = curLetter[0];
-                    console.log('anyLetter', this.anyLetter);
                     this.parseLetter(this.anyLetter);
                   }
                 }
@@ -147,6 +194,11 @@ export class MessageComponent implements OnInit, OnDestroy {
     if (typeof this.messageSubscription !== 'undefined') {
       this.messageSubscription.unsubscribe();
     }
+
+    if (typeof this.dvMoveSubscription !== 'undefined') {
+      this.dvMoveSubscription.unsubscribe();
+    }
+
   }
 
   responseLetter() {
@@ -160,14 +212,30 @@ export class MessageComponent implements OnInit, OnDestroy {
     const Res: Letter = new Letter();
     Res.bOld = false;
     Res.bReadByRecipient = false;
-    Res.id_user_from = this.id_user;
-    Res.id_cv =  this.anyLetter.letter.id_cv;
-    Res.id_vc = this.anyLetter.letter.id_vc;
-    if (this.id_user !== this.anyLetter.letter.id_user_to) {
-      Res.id_user_to = this.anyLetter.letter.id_user_to;
+
+
+    console.log('anyletter', this.anyLetter);
+    console.log('this.id_user',this.id_user,this.anyLetter.id_user_from);
+
+    if (this.id_user === this.anyLetter.id_user_from) {
+      console.log('РАВНО');
     } else {
-      Res.id_user_to = this.anyLetter.letter.id_user_from;
+      console.log('НЕ РАВНО');
     }
+
+
+    if (this.id_user !== this.anyLetter.id_user_from) {
+      Res.id_user_from = this.anyLetter.id_user_to;
+      Res.id_user_to = this.anyLetter.id_user_from;
+    } else {
+      Res.id_user_from = this.anyLetter.id_user_from;
+      Res.id_user_to = this.anyLetter.id_user_to;
+    }
+
+    Res.id_cv =  this.anyLetter.id_cv;
+    Res.id_vc = this.anyLetter.id_vc;
+
+
     Res.letterText = resResponse;
     Res.DateTimeCreate = currentDate;
 
@@ -190,8 +258,27 @@ export class MessageComponent implements OnInit, OnDestroy {
   }
 
 
-  moveCV() {
+  onLoadFromBaseAvatar(k: any) {
+    k.base64textString = [];
+    if (k.Avatar!= undefined) k.base64textString.push('data:image/png;base64,' + JSON.parse(k.Avatar).value);
+  }
+
+  public moveVC () {
+    console.log('Переходим к вакансии!!!!');
+    this.onLoadFromBaseAvatar(this.anyVC[0]);
+    this.dvMoveSubscription = this.moveS.setDataVacancy(this.anyVC[0]).subscribe( ()=> this.router.navigate(['/vacancy-description']));
+  }
+
+
+  public moveCV() {
     console.log('Переходим к резюме!!!!');
+    this.cveditserv.getAnyCv(this.anyLetter.id_cv).subscribe(item =>{
+      this.cveditserv.setCvId(item[0].id);
+      this.cveditserv.setCvItem(item[0]);
+      this.router.navigate(['/cv-view']);
+    });
+
+
   }
 
 }

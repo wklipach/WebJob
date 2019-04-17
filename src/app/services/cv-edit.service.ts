@@ -14,7 +14,24 @@ export class CvEditService {
   constructor(private http: HttpClient, private gr: GlobalRef) { }
 
 
-  public  setCvId(cv_id: number) {
+  public  getAnyCv(id_cv: number) {
+
+    let sUrl = this.gr.sUrlGlobal+'cv';
+    let params = new HttpParams()
+      .set('anycv', 'true')
+      .set('id', id_cv.toString())
+
+    console.log('params',params);
+
+    return this.http.get(sUrl, {params: params} );
+  }
+
+
+
+
+
+
+public  setCvId(cv_id: number) {
     window.localStorage.setItem('_cvid', JSON.stringify(cv_id));
     this._cvid = cv_id;
   }
