@@ -25,6 +25,18 @@ export class LetterService {
 
   }
 
+
+  // помечаем письмо как прочитанное в БД MySql
+  public setOldLetter(lid: number) {
+    const sUrl = this.gr.sUrlGlobal+'Correspondence';
+    let postObj: any = new Object();
+    postObj.bOld = true;
+    postObj['bOldLetterTrue'] = 'true';
+    postObj['id_letter'] = lid;
+    return this.http.post(sUrl, postObj);
+  }
+
+
   // помечаем письмо как прочитанное
   public setLetter(oLetter: Letter) {
 
@@ -108,7 +120,8 @@ export class LetterService {
   getCountNotReadLetter(id_user: number){
   let sUrl = this.gr.sUrlGlobal+'Correspondence';
     let params = new HttpParams()
-      .set('newletter', id_user.toString())
+      .set('newletter', 'true')
+      .set('id', id_user.toString())
    return this.http.get(sUrl, {params: params});
 
   }

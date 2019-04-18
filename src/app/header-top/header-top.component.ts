@@ -104,7 +104,7 @@ export class HeaderTopComponent implements OnInit {
 
       this.letServ.getCountNotReadLetter(this.id_user).subscribe(
         (value: any[]) => {
-          console.log('value', value);
+          console.log('value', value, 'value.length', value.length);
           if (value !== null) this.numberCountNotReadLetter = value.length; else this.numberCountNotReadLetter = -1;
         }
       )} else

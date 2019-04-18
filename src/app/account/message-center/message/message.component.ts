@@ -28,12 +28,13 @@ export class MessageComponent implements OnInit, OnDestroy {
   private subscrDataUserFromId: Subscription;
   private loadUser: UserType;
   listLetter: any[] = [];
-  protected responseVC: string;
+  public responseVC: string;
   protected anyLetter: any;
   _sNameUserResp: string = '';
   _bEmployer: boolean = false;
   private dvMoveSubscription: Subscription;
-  public anyVC: any
+  public anyVC: any;
+  protected sErrorResponse = '';
 
 
   constructor(private router: Router,
@@ -56,9 +57,6 @@ export class MessageComponent implements OnInit, OnDestroy {
 
           loadPictureAndListLetter(id_user: number) {
 
-    console.log('loadPictureAndListLetter', id_user);
-            // loadPictureAndListLetter 5
-
             this.subscrDataUserFromId = this.auth.getDataUserFromId(id_user).subscribe(value => {
               // вытаскиваем из базы картинку аватара
               this.loadUser = value[0] as UserType;
@@ -67,8 +65,6 @@ export class MessageComponent implements OnInit, OnDestroy {
 
               if (this.loadUser.bEmployer == true)
                 this._bEmployer = true; else this._bEmployer = false;
-
-
 
               if (typeof S !== 'undefined') {
                 if (S !== null) {
@@ -81,9 +77,6 @@ export class MessageComponent implements OnInit, OnDestroy {
           this.httpLetter.getThreadLetter(this._letter.id_cv, this._letter.id_vc).subscribe(
             curList => {
 
-
-              console.log('curList1', curList);
-
               this.listLetter =
                   (curList as any[]).sort(
                   (a, b) => {
@@ -92,8 +85,6 @@ export class MessageComponent implements OnInit, OnDestroy {
                     return +DD1 - +DD2;
                   });
 
-              console.log('curList2', curList);
-
               // если есть список писем, из первого берем номер вакансии и ищем описание вакансии
 
               if (this.listLetter.length > 0) {
@@ -101,8 +92,9 @@ export class MessageComponent implements OnInit, OnDestroy {
                   anyValueVC => {
                     this.anyVC = anyValueVC;
                     if (typeof this.anyVC !== undefined) {
-                      console.log('this.anyVC', this.anyVC);
-                      this.responseVC = this.anyVC.VacancyShortTitle;
+                      if (typeof this.anyVC[0] !== undefined) {
+                        this.responseVC = this.anyVC[0].VacancyShortTitle;
+                      } else this.responseVC = '';
                     } else {
                       this.responseVC = '';
                     }
@@ -121,7 +113,7 @@ export class MessageComponent implements OnInit, OnDestroy {
     });
 
     this.formResponse = this.fb.group({
-      textCommentValue: new FormControl('')
+      textCommentValue: new FormControl('', [Validators.required, Validators.maxLength(3000)])
     });
 
   }
@@ -152,12 +144,6 @@ export class MessageComponent implements OnInit, OnDestroy {
         this._letter = anyLetter;
 
       });
-
-
-//
-//
-//
-
 
   }
 
@@ -202,27 +188,22 @@ export class MessageComponent implements OnInit, OnDestroy {
   }
 
   responseLetter() {
-    console.log('response');
     // отправляем данные в таблицу  correspondence
-    console.log('textCommentValue', this.formResponse.get('textCommentValue').value);
-    const resResponse = this.formResponse.get('textCommentValue').value;
 
+    this.sErrorResponse = '';
+
+  if (this.formResponse.invalid) {
+      console.log('');
+      if (this.formResponse.get('textCommentValue').value.length>3000) this.sErrorResponse = 'Слишком длинный тект.'; else this.sErrorResponse = 'Проверьте отсылаемое сообщение.';
+      return;
+  }
+
+    const resResponse = this.formResponse.get('textCommentValue').value;
     const datePipe = new DatePipe('en-US');
     const currentDate = datePipe.transform(new Date(), 'dd/MM/yyyy hh:mm');
     const Res: Letter = new Letter();
     Res.bOld = false;
     Res.bReadByRecipient = false;
-
-
-    console.log('anyletter', this.anyLetter);
-    console.log('this.id_user',this.id_user,this.anyLetter.id_user_from);
-
-    if (this.id_user === this.anyLetter.id_user_from) {
-      console.log('РАВНО');
-    } else {
-      console.log('НЕ РАВНО');
-    }
-
 
     if (this.id_user !== this.anyLetter.id_user_from) {
       Res.id_user_from = this.anyLetter.id_user_to;
@@ -240,12 +221,12 @@ export class MessageComponent implements OnInit, OnDestroy {
     Res.DateTimeCreate = currentDate;
 
 
-
     this.cls.setCorrespondence(Res).subscribe(
       () => {
         this.RouterReload();
       }
     );
+
   }
 
   RouterReload() {
@@ -264,14 +245,12 @@ export class MessageComponent implements OnInit, OnDestroy {
   }
 
   public moveVC () {
-    console.log('Переходим к вакансии!!!!');
     this.onLoadFromBaseAvatar(this.anyVC[0]);
     this.dvMoveSubscription = this.moveS.setDataVacancy(this.anyVC[0]).subscribe( ()=> this.router.navigate(['/vacancy-description']));
   }
 
 
   public moveCV() {
-    console.log('Переходим к резюме!!!!');
     this.cveditserv.getAnyCv(this.anyLetter.id_cv).subscribe(item =>{
       this.cveditserv.setCvId(item[0].id);
       this.cveditserv.setCvItem(item[0]);
