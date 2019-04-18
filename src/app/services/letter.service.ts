@@ -77,11 +77,15 @@ export class LetterService {
 
 
   // получение самого первого в общении письма по случайному письму
-  getFirstLetter(id_letter: number) {
+  getFirstLetter(id_cv: number, id_vc: number) {
     const sUrl = this.gr.sUrlGlobal+'Correspondence';
     let params = new HttpParams()
       .set('firstletter', 'true')
-      .set('id', id_letter.toString())
+      .set('id_cv', id_cv.toString())
+      .set('id_vc', id_vc.toString())
+
+
+// req.query['id_cv'], req.query['id_vc']
     console.log('sUrl',sUrl);
     return this.http.get(sUrl,{params: params});
   }

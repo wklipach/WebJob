@@ -48,8 +48,12 @@ export class MessagesComponent implements OnInit {
 
       //делаем данное письмо прочитанным (ставим признак bOld)
       this.httpLetter.setOldLetter(lid).subscribe(value => {
+
         //ищем первое письмо в общении данных пользователей
-        this.httpLetter.getFirstLetter(lid).subscribe(
+
+        console.log('value[0]', value);
+
+        this.httpLetter.getFirstLetter(value[0].id_cv, value[0].id_vc).subscribe(
           (data: any) => {
             let letter: Letter = data[0];
 
