@@ -31,7 +31,9 @@
 
 
     <img class="city" src="/assets/img/city.png" alt="Город">
-    <span class="city-name"> <!--     Сюда вставить Город              --> </span>   <br>
+    <span class="city-name">
+        <div  *ngIf="_cvitem!= undefined">{{_cvitem.CityName}}</div>
+    </span>   <br>
 
     <label class="label-position">Желаемая должность</label> <br>
     <span class="position" id="position"></span>
@@ -47,7 +49,7 @@
     <label class="labelSkillsAbilities">Основные навыки и умения</label><br>
 
     <span>
-      <div  *ngIf="_cvitem.sSkills!= undefined">{{_cvitem.sSkills}}</div>
+      <div  *ngIf="_cvitem.Skills!= undefined">{{_cvitem.Skills}}</div>
     </span><br>
 
 
@@ -93,11 +95,19 @@
     <div class="cv-box">
 
 
+      <label>Языки</label> <br>
+     <div class="correspondence" *ngFor="let lL of this._listLanguage; let i = index">
+       {{lL['language_name']}} ==== {{lL['language_level']}}
+     </div>
 
 
-      <!-- Язык <app-cv_language></app-cv_language> -->
-
-
+      <label>Места работы</label> <br>
+      <div class="correspondence" *ngFor="let lP of this._listPrevious; let i = index">
+        Период работы: {{lP['dStartDate'] | date:'dd.MM.yyyy'}} ==== {{lP['dCompletionDate'] | date:'dd.MM.yyyy'}}<br>
+        Организация: {{lP['sCompany']}}<br>
+        Должность: {{lP['sPreviousPosition']}}<br>
+        Описание: {{lP['sInputPositionDescription']}}<br>
+      </div>
 
     </div>
   </div>

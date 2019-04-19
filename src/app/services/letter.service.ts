@@ -117,8 +117,10 @@ export class LetterService {
 
   // получение вакансии
   getAnyVC(id_vc: number) {
-    const sUrl = this.gr.sUrlGlobal+'Vacancy?id=' + id_vc;
-    return this.http.get(sUrl);
+    const sUrl = this.gr.sUrlGlobal+'Vacancy';
+    let params = new HttpParams()
+      .set('id_vc', id_vc.toString())
+    return this.http.get(sUrl, {params: params});
   }
 
   getCountNotReadLetter(id_user: number){

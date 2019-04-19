@@ -4,7 +4,11 @@ import {AuthService} from '../../../services/auth-service.service';
 import {Subscription} from 'rxjs';
 import {CvEditService} from '../../../services/cv-edit.service';
 import {FormBuilder,  FormGroup, Validators} from '@angular/forms';
-import {EducationList, EmploymentList, ExperienceList, IndustryList, ScheduleList} from '../../../class/GuideList';
+import {
+  EducationList, EmploymentList, ExperienceList, IndustryList, LanguageList, LevelLanguageList,
+  ScheduleList
+} from '../../../class/GuideList';
+import {AdvancedLanguage, Language} from '../../../class/Language';
 
 @Component({
   selector: 'app-cv-view',
@@ -22,6 +26,8 @@ export class CvViewComponent implements OnInit {
   protected _listIndustry: string[] = [];
   protected _listSchedule: string[] = [];
   protected _listEmployment: string[] = [];
+  protected _listLanguage: any = [];
+  protected _listPrevious: any = [];
 
   cv_id = -1;
   protected formView: FormGroup;
@@ -99,26 +105,60 @@ const arrEmployment = item.Employment.split(',');
         })
     }
 
-/*
-    // employment
-    if (this._cvitem.Education !== undefined) {
-      this._cvitem.Education.forEach(
-        (value)=> {
-          this._listEducation.push(EducationList[value-1].name);
-        })
-    }
-*/
-
-
     if (this._cvitem !== undefined) {
       this.loadPicture(this._cvitem.id_user);
     }
 
+
+    //языки
+    if (this._cvitem !== undefined) {
+      this.loadLanguage(this._cvitem.id);
+    }
+
+     //предыдущие места работы
+    if (this._cvitem !== undefined) {
+      this.loadPrevious(this._cvitem.id);
+    }
     console.log('получили _cvitem', this._cvitem);
 
 
+  }
 
 
+  loadPrevious(id_cv: number) {
+
+
+
+
+
+    this.cveditserv.getCvPrevious(id_cv).subscribe(curValue => {
+
+      let cvP: any  = curValue;
+      cvP.forEach((cvP, ih) => {
+        this._listPrevious.push({dStartDate: cvP.dStartDate,
+              dCompletionDate: cvP.dCompletionDate,
+              sCompany: cvP.sCompany,
+              sPreviousPosition: cvP.sPreviousPosition,
+              sInputPositionDescription: cvP.sInputPositionDescription});
+              });
+
+    });
+
+  }
+
+  loadLanguage(id_cv: number) {
+
+
+
+
+    this.cveditserv.getCvLanguage(id_cv).subscribe(curValue => {
+
+        let cvL: any  = curValue;
+        cvL.forEach((cvL, ih) => {
+          this._listLanguage.push({id_cv: cvL.id_cv, id_language: cvL.id_language, id_level: cvL.id_level, language_name: LanguageList[cvL.id_language].name, language_level: LevelLanguageList[cvL.id_level].name});
+      });
+
+      });
   }
 
   onProfileClick($event) {

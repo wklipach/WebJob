@@ -77,23 +77,30 @@ export class MessageComponent implements OnInit, OnDestroy {
           this.httpLetter.getThreadLetter(this._letter.id_cv, this._letter.id_vc).subscribe(
             curList => {
 
-              this.listLetter =
+              this.listLetter = curList as any[];
+
+/*
                   (curList as any[]).sort(
                   (a, b) => {
                     const DD1 = new Date(a.DateTimeCreate);
                     const DD2 = new Date(b.DateTimeCreate);
                     return +DD1 - +DD2;
                   });
+*/
 
               // если есть список писем, из первого берем номер вакансии и ищем описание вакансии
 
               if (this.listLetter.length > 0) {
+
+                console.log('this.listLetter[0].id_vc',this.listLetter[0].id_vc);
+
                 this.httpLetter.getAnyVC(this.listLetter[0].id_vc).subscribe(
                   anyValueVC => {
                     this.anyVC = anyValueVC;
                     if (typeof this.anyVC !== undefined) {
                       if (typeof this.anyVC[0] !== undefined) {
                         this.responseVC = this.anyVC[0].VacancyShortTitle;
+                        console.log('this.responseVC',this.anyVC);
                       } else this.responseVC = '';
                     } else {
                       this.responseVC = '';
