@@ -311,11 +311,14 @@ export class HomeComponent implements OnInit, OnDestroy {
     // это получаем город из нового вызываемого сервиса
     this.httpService.getCity().subscribe((city: City[]) => {
 
+
+      console.log('CITY', city);
+
         data.forEach((eekey, ih) => {
 
             let idCity = eekey.City;
             if (isNullOrUndefined(idCity) === false) {
-              let CurCity = city.find(city => city.id === idCity);
+              let CurCity = city.find(x => x.id === parseInt(idCity.toString()));
               eekey.CityName = CurCity.name;
             }
           }

@@ -127,6 +127,9 @@ private loadUser: UserType;
 
     this.subscrDataUserFromId = this.auth.getDataUserFromId(this.id_user).subscribe(value=> {
 
+      console.log('this.id_user', this.id_user);
+
+
       this.loadCurrentUserInfo(value[0]);
       this.loadUser = value[0] as UserType;
 
