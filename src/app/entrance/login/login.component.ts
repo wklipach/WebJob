@@ -79,7 +79,7 @@ export class LoginComponent implements OnInit {
 
           this.showSucc = true;
           this.showErr = false;
-          this.router.navigate(['/home']);
+          this.router.navigate(['/smain']);
         }
         else {
           this.httpService.IsUserLoggedIn.next({connect : false, name : '', id_user: -1, bEmployer: false});

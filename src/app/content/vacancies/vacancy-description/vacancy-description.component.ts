@@ -120,10 +120,10 @@ export class VacancyDescriptionComponent implements OnInit {
 
         }
 
-      }, error => { this.router.navigate(['/home']); } );
+      }, error => { this.router.navigate(['/smain']); } );
 
     if (typeof this.descrDataVacancy === 'undefined') {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/smain']);
     }
 
   }

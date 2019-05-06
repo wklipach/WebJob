@@ -112,8 +112,9 @@ export class AuthService {
 
 
   updateDataUserTable(user: UserType, id_user: number){
-    // вставить запрос по добавлению пользователя в базу
-   return this.http.post(this.gr.sUrlGlobal+'UserTable/'+id_user, user);
+    //запрос изменения пользователя в базу
+    let nUser: any = user;
+    return this.http.post(this.gr.sUrlGlobal+'UserTable/'+id_user, nUser);
   }
 
 

@@ -80,6 +80,10 @@ export class TableVacancyService {
   getTableVacancy(sMask: string, rowPerPage: number, currentPage: number, isFavorites: boolean, isAdvancedFind: boolean, id_user?: number)
   {
 
+
+    let curId_User = -1;
+    if (id_user != null) curId_User = id_user;
+
     let sUrl = this.gr.sUrlGlobal+'Vacancy';
 
     let params: any;
@@ -88,11 +92,13 @@ export class TableVacancyService {
       params = new HttpParams()
         .set('sMask', sMask)
         .set('isFavorites', 'true')
+        .set('id_user_current', curId_User.toString())
         .set('id_user_favorites', id_user.toString());
     }
 
     if (!isFavorites) {
       params = new HttpParams()
+        .set('id_user_current', curId_User.toString())
         .set('sMask', sMask);
     }
 
@@ -140,7 +146,8 @@ export class TableVacancyService {
   postUnshowVacancy(id_user: number, id_vc: number)
   {
     let sUrl = this.gr.sUrlGlobal+'UserDontShowUnit';
-    let sRs = {id_user: id_user, id_vc: id_vc}
+    let sRs = {id_user: id_user, id_vc: id_vc};
+
     return this.http.post(sUrl, sRs);
   }
 

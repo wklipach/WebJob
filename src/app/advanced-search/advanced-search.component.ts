@@ -59,7 +59,8 @@ export class AdvancedSearchComponent implements OnInit {
       'inputSalary' : new FormControl('',
         [Validators.required, Validators.pattern(/[0-9]/)]),
       'inputCity' : new FormControl('',[]),
-      'stringFind' : new FormControl('',[])
+      'stringFind' : new FormControl('',[]),
+      'timePlacement' : new FormControl('',[])
     });
 
 

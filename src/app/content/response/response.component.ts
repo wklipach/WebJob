@@ -149,7 +149,7 @@ console.log('this a4');
 
     this.cls.setCorrespondence(Res).subscribe(
       () => {
-        this.router.navigate(['/home']);
+        this.router.navigate(['/smain']);
       }
     );
 

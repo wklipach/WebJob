@@ -124,7 +124,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit() {
 
     var Res =  this.authService.loginStorage();
-
     this.bConnected = Res.bConnected;
     this.id_user =  Res.id_user;
     this.bEmployer = Res.bEmployer;
@@ -456,7 +455,17 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
 
     this.httpService.postUnshowVacancy(this.id_user, vcid).subscribe( ()=> {
-      this.showFavorites(this.id_user);
+
+
+      console.log('this.httpService', '111111111111111111111111111111111111111111111111111111111');
+
+      let CurVacancy = this.myDataVacancy.find(x => x.id === parseInt(vcid.toString()));
+      this.myDataVacancy.splice(this.myDataVacancy.indexOf(CurVacancy), 1);
+
+      //TODO this.showFavorites
+     // this.showFavorites(this.id_user);
+
+
     });
 
   }
