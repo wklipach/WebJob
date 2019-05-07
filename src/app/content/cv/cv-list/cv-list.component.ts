@@ -80,7 +80,7 @@ export class CvListComponent implements OnInit, OnDestroy {
                         this.cvList.forEach( (cvCur, index) => {
                         this.contactMethods.push({'id' : 0, value : 0, 'bDelete': false});
                         console.log('cvCur',cvCur);
-                        const sCityName = (this.cityList as City[]).find((valueC) => (valueC.id === cvCur.City) ).name;
+                        const sCityName = (this.cityList as City[]).find((valueC) => (valueC.id === parseInt(cvCur.City.toString())) ).name;
                         this.cvList[index].CityName = sCityName;
                         });
                 }

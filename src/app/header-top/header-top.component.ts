@@ -100,7 +100,7 @@ export class HeaderTopComponent implements OnInit {
     if (this.bConnected) {
           //TODO подсчет количества непрочитанных писем
 
-      console.log('header-top component countNotReadLetter()');
+      console.log('header-top component countNotReadLetter()!');
 
       this.letServ.getCountNotReadLetter(this.id_user).subscribe(
         (value: any[]) => {

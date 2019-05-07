@@ -3,15 +3,15 @@
 </p>
 <div class="wrapper">
   <div class="top">
-    {{sVacancy}}
+    {{sCV}}
   </div>
 
   <div class="vacancy-box" id="vacancy-box" *ngFor="let curCV of myDataCV; let i = index" (click)="MyMethod(curCV.id, $event)">
     <div class="v-line"></div>
     <div class="number">{{i+1}}</div>
-    <div class="title">{{curCV.CvShortTitle}}</div>
+    <div class="title">{{curCV.Position}}</div>
     <div class="income">
-      {{curCV.SalaryFrom}}-{{curCV.Salary}} &#x20BD;</div>
+      {{curCV.SalaryFrom}} &#x20BD;</div>
 
 
 
@@ -34,22 +34,12 @@
 
 
     <span class="company-name">{{curCV.UserName}}</span>
-    <span class="description">{{curCV.Conditions}}</span>
 
     <div *ngIf="!curCV.errorEndDay">
       <span class="final-date">Размещено до {{curCV.sDateEnd}}</span>
-      <span class="number">Дата размещения {{curCV.DateTimeCreate}}</span>
     </div>
 
-
     <button class="btn-response" type="button" id="vcresponse" title="Откликнуться" (click)="response(i, curCV.id)" >Откликнуться</button>
-    <button class="btn-favorites" type="button" id="vcfavorites" title="В избранное" (click)="favorites($event,i, curCV.id)" >
-      <img class="favor-star" src="/assets/img/favor-star.png" title="Не показывать">
-      В избранное</button>
-    <button class="btn-hide" type="button" id="vchide" title="Не показывать" (click)="unshow($event,i, curCV.id)">
-      <img class="crossed-eye" src="/assets/img/crossed-eye.png"  title="Не показывать">
-      Не показывать</button>
-    {{curCV.sErrorText}}
   </div>
 
 

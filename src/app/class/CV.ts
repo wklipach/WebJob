@@ -1,3 +1,5 @@
+import {Vacancy} from './Vacancy';
+
 export class CV{
   // пользователь
   id_user: number;
@@ -28,4 +30,14 @@ export class CV{
   //описание умений словами
   sSkills: string = '';
   sEducation: string = '';
+}
+
+export class  dataCV extends CV {
+  CityName: string;
+  EmployerName: string;
+  sErrorText: string;
+  sDateEnd: string;
+  errorEndDay: boolean;
+  base64textString = [];
+  UserName: string;
 }
