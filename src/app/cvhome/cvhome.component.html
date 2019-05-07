@@ -1,3 +1,95 @@
 <p>
   cvhome works!
 </p>
+<div class="wrapper">
+  <div class="top">
+    {{sVacancy}}
+  </div>
+
+  <div class="vacancy-box" id="vacancy-box" *ngFor="let curCV of myDataCV; let i = index" (click)="MyMethod(curCV.id, $event)">
+    <div class="v-line"></div>
+    <div class="number">{{i+1}}</div>
+    <div class="title">{{curCV.CvShortTitle}}</div>
+    <div class="income">
+      {{curCV.SalaryFrom}}-{{curCV.Salary}} &#x20BD;</div>
+
+
+
+    <img class="city" src="/assets/img/city.png" alt="Город">
+
+    <span class="city-name">{{curCV.CityName}}</span>
+
+
+    <!-- ////////////////////////// -->
+    <div *ngIf="curCV.base64textString.length>0; then contentLoadAvatar else contentDefault">условия выполнить невозможно</div>
+    <ng-template #contentLoadAvatar>
+      <img class="logotype" *ngFor="let item of curCV.base64textString"  src={{item}} alt="Логотип компании" id="img">
+    </ng-template>
+
+    <ng-template #contentDefault>
+      <img class="logotype-company" src="/assets/img/no-photo.png" alt="Логотип компании">
+    </ng-template>
+    <!-- ////////////////////////// -->
+
+
+
+    <span class="company-name">{{curCV.UserName}}</span>
+    <span class="description">{{curCV.Conditions}}</span>
+
+    <div *ngIf="!curCV.errorEndDay">
+      <span class="final-date">Размещено до {{curCV.sDateEnd}}</span>
+      <span class="number">Дата размещения {{curCV.DateTimeCreate}}</span>
+    </div>
+
+
+    <button class="btn-response" type="button" id="vcresponse" title="Откликнуться" (click)="response(i, curCV.id)" >Откликнуться</button>
+    <button class="btn-favorites" type="button" id="vcfavorites" title="В избранное" (click)="favorites($event,i, curCV.id)" >
+      <img class="favor-star" src="/assets/img/favor-star.png" title="Не показывать">
+      В избранное</button>
+    <button class="btn-hide" type="button" id="vchide" title="Не показывать" (click)="unshow($event,i, curCV.id)">
+      <img class="crossed-eye" src="/assets/img/crossed-eye.png"  title="Не показывать">
+      Не показывать</button>
+    {{curCV.sErrorText}}
+  </div>
+
+
+<!--
+
+
+  <div class="counter-line">
+    <div class="left-box">
+      <app-page-count [numberOfRecordsPerPage] = "rowPerPage" [numberOfVisiblePages]="7"
+                      [(currentPage)] = "page" [numberOfRecordsPerAll] = "recordsPerAll" (currentPageChange)="onPageChanged($event)"></app-page-count>
+    </div>
+
+
+    <ul>
+      <label class="form-check-input">Выводить по:</label>
+      <li>
+        <label class="form-check-input">
+          <input   (click) = "OnClickRowPerPage(5)" type="radio" name="rRow" id="rRow5" [value]="5" [checked]="bChecked5">5
+        </label></li>
+
+      <li><label class="form-check-input">
+        <input  (click) = "OnClickRowPerPage(10)" type="radio" name="rRow" id="rRow10" [value]="10" [checked]="bChecked10">10
+      </label></li>
+
+      <li><label class="form-check-input">
+        <input  (click) = "OnClickRowPerPage(20)" type="radio" name="rRow" id="rRow20" [value]="20" [checked]="bChecked20">20
+      </label></li>
+
+      <li><label class="form-check-input">
+        <input   (click) = "OnClickRowPerPage(50)" type="radio" name="rRow" id="rRow50" [value]="50" [checked]="bChecked50">50
+      </label></li>
+      <label class="nPage">{{page}}</label>
+    </ul>
+
+
+  </div>
+
+
+</div>
+
+-->
+
+
