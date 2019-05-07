@@ -64,35 +64,26 @@ export class CvListComponent implements OnInit, OnDestroy {
     this.id_user =  Res.id_user;
 
 
-    console.log('a0');
-
     this.cvCity = this.gs.getCityTable().subscribe((value) => {
-
-      console.log('a1');
 
         this.cityList = value as City[];
 
-      console.log('a2');
-
         this.cvlistGetCvList = this.cls.getCvList(this.id_user).subscribe((valueCL) => {
 
-          console.log('a3');
+          console.log('a3', valueCL);
 
 
                 this.cvList = valueCL;
-                this.cvList.forEach( (cvCur, index) => {
-                  this.contactMethods.push({'id' : 0, value : 0, 'bDelete': false});
 
+                if (!this.cvList.undefined) {
 
-                  console.log('cvCur',cvCur);
-
-                    const sCityName = (this.cityList as City[]).find((valueC) => (valueC.id === cvCur.City) ).name;
-
-
-
-                    this.cvList[index].CityName = sCityName;
-                });
-
+                        this.cvList.forEach( (cvCur, index) => {
+                        this.contactMethods.push({'id' : 0, value : 0, 'bDelete': false});
+                        console.log('cvCur',cvCur);
+                        const sCityName = (this.cityList as City[]).find((valueC) => (valueC.id === cvCur.City) ).name;
+                        this.cvList[index].CityName = sCityName;
+                        });
+                }
 
             console.log('this.cvList', this.cvList);
           });

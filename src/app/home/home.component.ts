@@ -174,12 +174,23 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   }
 
+
+  //TODO getVacancyAdvanced  ЭТО ПРОДВИНУТЫЙ ПОИСК
   getVacancyAdvanced(advancedFindObj: any) {
+
+
+    //если есть id_user вствавляем его
+
+    advancedFindObj['id_user']=-1;
+    if (this.bConnected) {
+      advancedFindObj['id_user'] = this.id_user;
+    }
+
     // выводим всю таблицу по сути это заглушка вместо продвинутого поиска
 
     console.log('advancedFindObj', advancedFindObj);
 
-    //TODO ЭТО ПРОДВИНУТЫЙ ПОИСК
+
 
     return this.getTableVacancyAdvanced = this.httpService.getTableVacancyAdvanced(advancedFindObj).subscribe(
       (data: any) => {
