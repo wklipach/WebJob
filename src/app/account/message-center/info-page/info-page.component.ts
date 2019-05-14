@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../../services/auth-service.service';
 import {FormBuilder} from '@angular/forms';
 import {InfoService} from '../../../services/info.service';
-import {Info} from '../../../class/Info';
+import {LetterService} from '../../../services/letter.service';
 
 @Component({
   selector: 'app-info-page',
@@ -12,9 +12,10 @@ import {Info} from '../../../class/Info';
 export class InfoPageComponent implements OnInit {
 
   private id_user: number = -1;
-  anyInfo: Info = null;
+  anyInfo: any = null;
 
   constructor(private httpInfo: InfoService,
+              private httpLetter: LetterService,
               private auth: AuthService,
               private fb: FormBuilder) {
 
@@ -28,12 +29,22 @@ export class InfoPageComponent implements OnInit {
 
       let Iid = parseInt(window.localStorage.getItem('_infoid'));
 
-      this.httpInfo.getAnyInfo(Iid).subscribe(curInfo => {
-          if (typeof curInfo[0] !== 'undefined') {
-            this.anyInfo = curInfo[0];
+      console.log('ip', Iid);
+
+      this.httpLetter.setOldLetter(Iid).subscribe(postInfo => {
+        console.log('ip postInfo', postInfo);
+          if (typeof postInfo !== 'undefined') {
+                this.httpLetter.getAnyLetter(Iid).subscribe(curInfo => {
+
+                  console.log('ip curInfo', curInfo);
+
+                  if (typeof curInfo[0] !== 'undefined') {this.anyInfo = curInfo[0];}
+                });
           }
         }
       );
+
+
     }
 
 

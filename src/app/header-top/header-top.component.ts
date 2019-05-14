@@ -153,39 +153,52 @@ export class HeaderTopComponent implements OnInit {
 
   }
 
-
-
-
+//TODO FindComponent
   find() {
-
-    console.log('нажали обычный поиск!!!!!');
-
+    console.log('нажали обычный поиск');
     const sInputSearch = this.headerTopForm.controls['inputSearch'].value;
-    this.getVacancy(sInputSearch, false, false);
-  }
+
+    if (this.bConnected && this.bEmployer) {
+      console.log('нажали обычный поиск getCV');
+      this.getCV(sInputSearch, false, false);
+    } else {
+      console.log('нажали обычный поиск getVacancy');
+      this.getVacancy(sInputSearch, false, false);
+    }
+
+  } //find()
 
 
   //
   // запускаем триггер события
   //
   getVacancy(sMask: string,isFavorites: boolean, isAdvancedFind: boolean) {
-
     this.sNullValueFind = '';
-
     window.localStorage.setItem('backPage', this.router.url);
     // если домашняя страница запускаем событие, если нет переходим на нее и маску передаем через Экстракт
     // событие инициализируется фактом запуска компонента Home и наличием маски
-    if ( (this.router.isActive('home',true)===false)  && (this.router.isActive('',true) ===false)  ) {
-
+    if ( (this.router.isActive('smain',true)===false)  && (this.router.isActive('',true) ===false)  ) {
       window.localStorage.setItem('keyFind', sMask);
       this.router.navigate(['/']);
-
      } else {
       window.localStorage.removeItem('keyFind');
-
       this.httpTvsService.triggerReopenVacancy({sMask, isFavorites, isAdvancedFind});
+    }
+  }
 
+  getCV(sMask: string,isFavorites: boolean, isAdvancedFind: boolean) {
 
+    this.sNullValueFind = '';
+    window.localStorage.setItem('backPage', this.router.url);
+    // если домашняя страница запускаем событие, если нет переходим на нее и маску передаем через Экстракт
+    // событие инициализируется фактом запуска компонента Home и наличием маски
+    if ( (this.router.isActive('smain',true)===false)  && (this.router.isActive('',true) ===false)  ) {
+      window.localStorage.setItem('keyFind', sMask);
+      console.log('hetCV input1')
+      this.router.navigate(['/']);
+    } else {
+      window.localStorage.removeItem('keyFind');
+      this.httpTvsService.triggerReopenCV({sMask, isFavorites, isAdvancedFind});
     }
 
   }

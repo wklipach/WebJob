@@ -21,7 +21,7 @@ export class InfoComponent implements OnInit {
   private sbscTableInfo: Subscription;
   private infoSubscription: Subscription;
 
-  constructor(private authService: AuthService, private httpInfo: InfoService, private router: Router) {
+  constructor(private authService: AuthService, private httpLetter: LetterService, private router: Router) {
     var Res =  this.authService.loginStorage();
     this.bConnected = Res.bConnected;
     this.id_user =  Res.id_user;
@@ -30,7 +30,7 @@ export class InfoComponent implements OnInit {
   }
 
   ngOnInit() {
-    return this.sbscTableInfo = this.httpInfo.getListInfo(this.id_user).subscribe(
+    return this.sbscTableInfo = this.httpLetter.getListInfo(this.id_user).subscribe(
       (data: any) => {
         this.myDataInfo = [];
         this.myDataInfo = data;
@@ -56,7 +56,6 @@ export class InfoComponent implements OnInit {
 
     let info: Info = this.myDataInfo.find(curInfo => curInfo.id===Iid);
     if (typeof info !== 'undefined') {
-          console.log('info', info);
           //заодно закидываем идентификатор Info в хранилище
          window.localStorage.setItem('_infoid', JSON.stringify(Iid));
          this.router.navigate(['/info_page']);

@@ -1,12 +1,12 @@
 
     <div *ngIf="this.anyInfo">
       <p>
-      {{this.anyInfo.DateInfo}}
+      {{this.anyInfo.DateTimeCreate | date :'dd.MM.yyyy'}}
       </p>
       <p>
-        {{this.anyInfo.infotheme}}
+        {{this.anyInfo.UserNameFrom}}
       </p>
       <p>
-      {{this.anyInfo.infotext}}
+      {{this.anyInfo.letterText}}
       </p>
     </div>

@@ -8,7 +8,8 @@
 
   <div class="message" id="message" *ngFor="let curInfo of myDataInfo; let i = index" (click)="curInfoClick(curInfo.id, $event)">
 
-    <div [class.boldInfo]="curInfo.bOld === false">
+
+    <div [class.boldletter]="curInfo.bOld !== 1">
 
       <div class="v-line"></div>
       <ul class="headline">
@@ -18,9 +19,9 @@
       </ul>
 
       <ul class="bline">
-        <li class="date">{{curInfo.DateInfo}}</li>
-        <li class="from">MYCV</li>
-        <li class="subject">{{curInfo.infotheme}} </li>
+        <li class="date">{{curInfo.DateTimeCreate  | date :'dd.MM.yyyy' }}</li>
+        <li class="from">{{curInfo.UserNameFrom}}</li>
+        <li class="subject">{{curInfo.letterText}} </li>
       </ul>
 
     </div>

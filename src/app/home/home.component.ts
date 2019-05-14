@@ -119,6 +119,7 @@ export class HomeComponent implements OnInit, OnDestroy {
      if (nPageNumber===20)  this.bChecked20 = true;
      if (nPageNumber===50)  this.bChecked50 = true;
      if (!this.bChecked5 && !this.bChecked10 && !this.bChecked20 && !this.bChecked50) this.bChecked5 = true;
+
    }
 
   ngOnInit() {
@@ -177,24 +178,17 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   //TODO getVacancyAdvanced  ЭТО ПРОДВИНУТЫЙ ПОИСК
   getVacancyAdvanced(advancedFindObj: any) {
-
-
     //если есть id_user вствавляем его
-
     advancedFindObj['id_user']=-1;
     if (this.bConnected) {
       advancedFindObj['id_user'] = this.id_user;
     }
-
     // выводим всю таблицу по сути это заглушка вместо продвинутого поиска
-
     console.log('advancedFindObj', advancedFindObj);
-
-
-
     return this.getTableVacancyAdvanced = this.httpService.getTableVacancyAdvanced(advancedFindObj).subscribe(
       (data: any) => {
         this.data_show(data);
+        this.sVacancy = 'Вакансии';
       });
   }
 

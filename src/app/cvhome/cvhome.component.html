@@ -1,6 +1,3 @@
-<p>
-  cvhome works!
-</p>
 <div class="wrapper">
   <div class="top">
     {{sCV}}
@@ -35,15 +32,21 @@
 
     <span class="company-name">{{curCV.UserName}}</span>
 
+
+    <span class="city-name">{{curCV.Skills}}</span>
+
+
     <div *ngIf="!curCV.errorEndDay">
       <span class="final-date">Размещено до {{curCV.sDateEnd}}</span>
     </div>
+
+
+
 
     <button class="btn-response" type="button" id="vcresponse" title="Откликнуться" (click)="response(i, curCV.id)" >Откликнуться</button>
   </div>
 
 
-<!--
 
 
   <div class="counter-line">
@@ -80,6 +83,6 @@
 
 </div>
 
--->
+
 
 

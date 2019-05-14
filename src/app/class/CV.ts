@@ -40,4 +40,5 @@ export class  dataCV extends CV {
   errorEndDay: boolean;
   base64textString = [];
   UserName: string;
+  Skills: string = '';
 }

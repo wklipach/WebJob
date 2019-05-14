@@ -13,6 +13,22 @@ export class LetterService {
 
   constructor(private http: HttpClient, private gr: GlobalRef) { }
 
+
+  // получение корреспонденции для данного юзера от Adnmin
+  getListInfo(id_user: number) {
+
+    let sUrl = this.gr.sUrlGlobal+'Correspondence';
+    let params = new HttpParams()
+      .set('Info', 'true')
+      .set('id_user_to', id_user.toString())
+      .set('id_user_from', '1')
+
+    return this.http.get(sUrl, {params: params});
+
+  }
+
+
+
   // получение корреспонденции данного юзера
   getListLetter(id_user: number) {
 

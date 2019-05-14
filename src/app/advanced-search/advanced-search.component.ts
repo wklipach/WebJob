@@ -6,6 +6,7 @@ import {City} from '../class/City';
 import {Vacancy} from '../class/Vacancy';
 import {TableVacancyService} from '../services/table-vacancy.service';
 import {Router} from '@angular/router';
+import {AuthService} from '../services/auth-service.service';
 
 @Component({
   selector: 'app-advanced-search',
@@ -14,10 +15,18 @@ import {Router} from '@angular/router';
 })
 export class AdvancedSearchComponent implements OnInit {
 
+  private bConnected = false;
+  private id_user = -1;
+  protected bEmployer = false;
   protected advancedSearchForm: FormGroup;
   protected myDisplayCity: string = '';
   protected listTimePlacement: Guide[];
   protected listCity : City[] =[];
+  protected advSearchV = '';
+  protected advSearchVX = '';
+  protected advSearchTOP = '';
+  protected advSearchOlder = '';
+
 
   protected resFind: {
     stringFind: string;
@@ -37,7 +46,8 @@ export class AdvancedSearchComponent implements OnInit {
 
   constructor(private gs: GuideService,
               private router: Router,
-              private httpTvsService: TableVacancyService) {
+              private httpTvsService: TableVacancyService,
+              private authService: AuthService) {
     this.listTimePlacement = gs.getTimePlacementList();
     this.resFind = {stringFind: '',
                     timePlacement: '',
@@ -68,6 +78,25 @@ export class AdvancedSearchComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    var Res =  this.authService.loginStorage();
+    this.bConnected = Res.bConnected;
+    this.id_user =  Res.id_user;
+    this.bEmployer = Res.bEmployer;
+
+    if (!this.bEmployer) {
+      this.advSearchV =  'Искать только в названии вакансии';
+      this.advSearchVX =  'Искать только в кратком описании вакансии';
+      this.advSearchTOP = 'Расширенный поиск вакансий';
+      this.advSearchOlder ='Искать вакансии не старше';
+    } else {
+      this.advSearchV = 'Искать только в названии резюме';
+      this.advSearchVX =  'Искать только в кратком описании резюме';
+      this.advSearchTOP =  'Расширенный поиск резюме';
+      this.advSearchOlder =  'Искать резюме не старше';
+    }
+
+
     // устанавливаем город
     this.gs.getCityTable().subscribe(
       (data: City[]) => {
@@ -123,7 +152,10 @@ export class AdvancedSearchComponent implements OnInit {
 
 
     //отправляем событие, словит его app-component
-    this.httpTvsService.triggerReopenVacancyAdvanced(this.resFind);
+    if (!this.bEmployer) {
+    this.httpTvsService.triggerReopenVacancyAdvanced(this.resFind);} else
+    this.httpTvsService.triggerReopenCVAdvanced(this.resFind);
+
     this.router.navigate(['/']);
 
 

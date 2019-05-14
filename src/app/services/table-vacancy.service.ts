@@ -30,18 +30,27 @@ export class TableVacancyService {
 
 
   private sbReopenVacancyAdvanced: Subscription;
+  private sbReopenCVAdvanced: Subscription;
 
 
 
   private _onReopenVacancy = new Subject<{sMask: string, isFavorites: boolean, isAdvancedFind: boolean}>();
 
+
+  private _onReopenCV = new Subject<{sMask: string, isFavorites: boolean, isAdvancedFind: boolean}>();
+
   //onReopenVacancyAdvanced - продвинутый поиск вакансий, запускается из advanced-search.component, подписан в  HomeComponent
   private _onReopenVacancyAdvanced = new Subject<any>();
+
+  private _onReopenCVAdvanced = new Subject<any>();
 
   constructor(private http: HttpClient, private gr: GlobalRef) {
 
     //расширенный поиск вакансий, запускается из advanced-search.component
     this.sbReopenVacancyAdvanced = this.onReopenVacancyAdvanced.subscribe((value: any) => {this._messageAdvancedFindObj = value; });
+
+    //расширенный поиск резюме, запускается из advanced-search.component
+    this.sbReopenCVAdvanced = this.onReopenCVAdvanced.subscribe((value: any) => {this._messageAdvancedFindObj = value; });
 
   }
 
@@ -59,6 +68,16 @@ export class TableVacancyService {
   }
 
 
+  public get onReopenCVAdvanced(): Observable<any> { return this._onReopenCVAdvanced.asObservable(); }
+  public triggerReopenCVAdvanced(value: any): void {
+    this._onReopenVacancyAdvanced.next(value);
+  }
+
+
+  public get onReopenCV(): Observable<{sMask: string, isFavorites: boolean, isAdvancedFind: boolean}> { return this._onReopenCV.asObservable(); }
+  public triggerReopenCV({sMask, isFavorites, isAdvancedFind}) {
+    this._onReopenCV.next({sMask, isFavorites, isAdvancedFind});
+  }
 
   /*
   Full-text search
@@ -74,6 +93,14 @@ export class TableVacancyService {
     return Result;
   }
 
+  getTableCVAdvanced(findObject: any)
+  {
+
+    console.log('cvadvanced-search');
+    let sUrl = this.gr.sUrlGlobal+'cvadvanced-search';
+    let Result = this.http.post(sUrl,  findObject);
+    return Result;
+  }
 
 
 
@@ -106,6 +133,38 @@ export class TableVacancyService {
 
   }
 
+  getTableCV(sMask: string, rowPerPage: number, currentPage: number, isFavorites: boolean, isAdvancedFind: boolean, id_user?: number)
+  {
+
+
+    let curId_User = -1;
+    if (id_user != null) curId_User = id_user;
+
+    let sUrl = this.gr.sUrlGlobal+'CV';
+
+    let params: any;
+
+    if (isFavorites) {
+      params = new HttpParams()
+        .set('sMask', sMask)
+        .set('isFavorites', 'true')
+        .set('id_user_current', curId_User.toString())
+        .set('id_user_favorites', id_user.toString());
+    }
+
+    if (!isFavorites) {
+      params = new HttpParams()
+        .set('id_user_current', curId_User.toString())
+        .set('isFind', 'true')
+        .set('sMask', sMask);
+    }
+
+    console.log('sUrl=', sUrl, params);
+    return this.http.get(sUrl, {params: params});
+
+  }
+
+
   getCity()
   {
     // вставить запрос типа select top 10 * from City или еще что такое же
@@ -116,6 +175,10 @@ export class TableVacancyService {
 
     if (typeof this.sbReopenVacancyAdvanced !== 'undefined') {
       this.sbReopenVacancyAdvanced.unsubscribe();
+    }
+
+    if (typeof this.sbReopenCVAdvanced !== 'undefined') {
+      this.sbReopenCVAdvanced.unsubscribe();
     }
 
   }
