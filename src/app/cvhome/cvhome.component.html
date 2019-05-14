@@ -1,3 +1,15 @@
+<!--
+vacancy-box  переименовать в cv-box
+
+Добавить:
+
+sEducation
+Skills (Выводятся)
+sExperience
+
+-->
+
+
 <div class="wrapper">
   <div class="top">
     {{sCV}}
@@ -30,10 +42,10 @@
 
 
 
-    <span class="company-name">{{curCV.UserName}}</span>
+    <span class="user-name">{{curCV.UserName}}</span>
 
 
-    <span class="city-name">{{curCV.Skills}}</span>
+    <span class="city-name">{{curCV.city}}</span>
 
 
     <div *ngIf="!curCV.errorEndDay">
@@ -41,6 +53,9 @@
     </div>
 
 
+    <span class="experience">{{curCV.Experience}}</span>
+    <span class="skills">{{curCV.Skills}}</span>
+    <span class="education">{{curCV.Education}}</span>
 
 
     <button class="btn-response" type="button" id="vcresponse" title="Откликнуться" (click)="response(i, curCV.id)" >Откликнуться</button>

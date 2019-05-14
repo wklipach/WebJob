@@ -20,7 +20,7 @@
 }
 .vacancy-box{
   width: 1170px;
-  height: 315px;
+  height: 415px;
   margin: 30px auto;
   border-top: solid 1px;
   border-bottom: solid 1px;
@@ -91,7 +91,7 @@
   margin-left: 15px;
   font-size: 12px;
   width: 130px;
-  height: 40px;
+  height: 130px;
 }
 .logotype-company{
   display: inline-block;
@@ -102,7 +102,7 @@
   width: 130px;
   height: 40px;
 }
-.company-name{
+.user-name{
   display: inline-block;
   position: absolute;
   font-size: 18px;
@@ -114,7 +114,8 @@
   margin-left: 208px;
   overflow: hidden;
 }
-.description{
+
+.experience, .skills, .education{
   display: inline-block;
   position: absolute;
   font-size: 16px;
@@ -122,11 +123,22 @@
   width: 1130px;
   height: 80px;
   text-align: left;
-  margin-top: 143px;
-  margin-left: 15px;
   padding-right: 20px;
   overflow: auto;
 }
+.experience{
+  margin-top: 150px;
+  margin-left: 150px ;
+}
+.skills{
+  margin-top: 180px;
+  margin-left: 150px ;
+}
+.education{
+  margin-top: 210px;
+  margin-left: 150px ;
+}
+
 .btn-response {
   display: inline-block;
   position: absolute;
