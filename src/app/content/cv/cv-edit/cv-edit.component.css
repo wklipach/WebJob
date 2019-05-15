@@ -84,6 +84,19 @@ label{
   margin-top: 132px;
   margin-left: 15px;
 }
+.labelSkillsAbilities{
+  margin-left: 13px;
+}
+.inputSkillsAbilities{
+  width: 1149px;
+  height: 90px;
+  margin-left: 15px;
+}
+.inputExperience{
+  width: 1149px;
+  height: 90px;
+  margin-left: 15px;
+}
 .btn-add {
   border-radius: 3px;
   background-color: #3366ff;
