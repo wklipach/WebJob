@@ -155,7 +155,7 @@ const arrEmployment = item.Employment.split(',');
 
         let cvL: any  = curValue;
         cvL.forEach((cvL, ih) => {
-          this._listLanguage.push({id_cv: cvL.id_cv, id_language: cvL.id_language, id_level: cvL.id_level, language_name: LanguageList[cvL.id_language].name, language_level: LevelLanguageList[cvL.id_level].name});
+          this._listLanguage.push({id_cv: cvL.id_cv, id_language: cvL.id_language-1, id_level: cvL.id_level-1, language_name: LanguageList[cvL.id_language-1].name, language_level: LevelLanguageList[cvL.id_level-1].name});
       });
 
       });
