@@ -206,8 +206,6 @@ export class CvhomeComponent implements OnInit {
 
         );
 
-        //this.myDataVacancy = data.sort( (a, b)=> b['vacancy'].DateTimeCreate - a['vacancy'].DateTimeCreate );;
-
         if (this.allDataCV === undefined)  this.allDataCV = [];
 
         if (this.allDataCV.length === 0) {

@@ -15,7 +15,7 @@ sExperience
     {{sCV}}
   </div>
 
-  <div class="vacancy-box" id="vacancy-box" *ngFor="let curCV of myDataCV; let i = index" (click)="MyMethod(curCV.id, $event)">
+  <div class="cv-box" id="cv-box" *ngFor="let curCV of myDataCV; let i = index" (click)="MyMethod(curCV.id, $event)">
     <div class="v-line"></div>
     <div class="number">{{i+1}}</div>
     <div class="title">{{curCV.Position}}</div>
@@ -45,7 +45,7 @@ sExperience
     <span class="user-name">{{curCV.UserName}}</span>
 
 
-    <span class="city-name">{{curCV.city}}</span>
+    <span class="city-name">{{curCV.CityName}}</span>
 
 
     <div *ngIf="!curCV.errorEndDay">
@@ -53,9 +53,9 @@ sExperience
     </div>
 
 
-    <span class="experience">{{curCV.Experience}}</span>
+    <span class="experience">{{curCV.sExperience}}</span>
     <span class="skills">{{curCV.Skills}}</span>
-    <span class="education">{{curCV.Education}}</span>
+    <span class="education">{{curCV.sEducation}}</span>
 
 
     <button class="btn-response" type="button" id="vcresponse" title="Откликнуться" (click)="response(i, curCV.id)" >Откликнуться</button>
