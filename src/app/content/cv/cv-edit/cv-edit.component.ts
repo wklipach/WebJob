@@ -72,6 +72,9 @@ export class CvEditComponent implements OnInit, OnDestroy {
 
     this.editCVForm = new FormGroup({
       'inputSalaryFrom': new FormControl('', []),
+      'inputExperience': new FormControl('', []),
+      'inputEducation': new FormControl('', []),
+      'inputSkillsAbilities': new FormControl('', []),
       'inputPosition': new FormControl('', []),
       'inputCity' : new FormControl('', []),
       'industry' : new FormControl('', [])
@@ -136,6 +139,21 @@ export class CvEditComponent implements OnInit, OnDestroy {
     // редактируемая должность (она же позиция)
     if (typeof item.Position !== 'undefined') {
       this.editCVForm.controls['inputPosition'].setValue(item.Position);
+    }
+
+    // редактируемая "навыки"
+    if (typeof item.Skills !== 'undefined') {
+      this.editCVForm.controls['inputSkillsAbilities'].setValue(item.Skills);
+    }
+
+    // редактируемая "образование"
+    if (typeof item.sEducation !== 'undefined') {
+      this.editCVForm.controls['inputEducation'].setValue(item.sEducation);
+    }
+
+    // редактируемая "опыт"
+    if (typeof item.sExperience !== 'undefined') {
+      this.editCVForm.controls['inputExperience'].setValue(item.sExperience);
     }
 
     // редактируемый список городов по подписке с выбранным ранее городом в качестве выбранного
@@ -357,6 +375,13 @@ export class CvEditComponent implements OnInit, OnDestroy {
     MyCv.SalaryFrom = this.editCVForm.controls['inputSalaryFrom'].value;
     MyCv.Position = this.editCVForm.controls['inputPosition'].value;
     MyCv.City = city.id;
+    //опыт словами
+    MyCv.sExperience = this.editCVForm.controls['inputExperience'].value;
+    //описание умений словами
+    MyCv.sSkills = this.editCVForm.controls['inputSkillsAbilities'].value;
+    //описание образования словами
+    MyCv.sEducation = this.editCVForm.controls['inputEducation'].value;
+
     // отрасль
     MyCv.Industry = MyIndustry;
     // график работы
