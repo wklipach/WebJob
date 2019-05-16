@@ -102,24 +102,17 @@ export class AuthService {
     // вставить запрос по добавлению пользователя в базу
 
     //TODO ТУТ ПРАВИМ!!!!!
-
-
     let nUser: any = user;
     nUser.NewUser = 'new_user';
-
     return this.http.post(this.gr.sUrlGlobal+'UserTable', nUser);
   }
 
 
-  postUpdatePassword(user: UserType, id_user: number){
+  postUpdatePassword(NewPassword: string, id_user: number){
     // вставить запрос по добавлению пользователя в базу
-    let nUser: any = user;
-    nUser.new_password = 'new_password';
-    nUser.id_user = id_user.toString();
-    return this.http.post(this.gr.sUrlGlobal+'UserTable', nUser);
+    let ut = { NPassword : 'new_password', NewPassword: NewPassword, id_user: id_user};
+    return this.http.post(this.gr.sUrlGlobal+'UserTable', ut);
   }
-
-
 
   updateDataUserTable(user: UserType, id_user: number){
     //запрос изменения пользователя в базу

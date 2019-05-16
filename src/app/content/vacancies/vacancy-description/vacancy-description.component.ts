@@ -75,6 +75,7 @@ export class VacancyDescriptionComponent implements OnInit {
         //получаем объект из кэша, если неполный - делаем запрос к серверу и получаем новый getVacAny(id_vc: number)
         if (curDataVacancy === undefined) {
           this.router.navigate(['/smain']);
+          return;
         }
 
         //получаем объект из кэша, если неполный - делаем запрос к серверу и получаем новый getVacAny(id_vc: number)
@@ -89,9 +90,10 @@ export class VacancyDescriptionComponent implements OnInit {
             this.descrDataVacancy = qcurDataVacancy[0];
             this.onLoadUserData(this.descrDataVacancy);
             this.LoadAdvData();
-            console.log('asRES', this.descrDataVacancy);
-            if (qcurDataVacancy[0].Avatar === null) this.descrDataVacancy.base64textString = [];
-                 else this.descrDataVacancy.base64textString = qcurDataVacancy[0].Avatar;
+            this.onLoadFromBaseAvatar(this.descrDataVacancy);
+            //console.log('asRES', this.descrDataVacancy);
+            //if (qcurDataVacancy[0].Avatar === null) this.descrDataVacancy.base64textString = [];
+            //  else this.descrDataVacancy.base64textString = qcurDataVacancy[0].Avatar;
           });
         }
 
@@ -102,6 +104,16 @@ export class VacancyDescriptionComponent implements OnInit {
 //      this.router.navigate(['/smain']);
 //    }
 
+  }
+
+
+  onLoadFromBaseAvatar(k: any) {
+    //TODO точка 2
+    k.base64textString = [];
+
+    if (k.Avatar !== null) {
+      if (k.Avatar.toString().length > 0) k.base64textString.push('data:image/png;base64,' + JSON.parse(k.Avatar).value);
+    }
   }
 
   onLoadUserData(k: any) {

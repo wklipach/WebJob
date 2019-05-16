@@ -366,7 +366,7 @@ private loadUser: UserType;
             if (inputNewPassword1 === inputNewPassword2) {
                 this.loadUser.Password = inputNewPassword1;
                 console.log('this.loadUser',this.loadUser);
-                return this.auth.postUpdatePassword(this.loadUser, this.id_user).subscribe(
+                return this.auth.postUpdatePassword(inputNewPassword2, this.id_user).subscribe(
                     () => {
                       this.bPasswordNew = true; }
                 );
