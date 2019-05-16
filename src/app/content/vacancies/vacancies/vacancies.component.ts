@@ -128,8 +128,11 @@ export class VacanciesComponent implements OnInit, OnDestroy {
 
 
 
-  UnDeleteElement(item: any) {
+  UnDeleteElement(item: any, i: number) {
+
+    console.log('item', item);
     item.bInvisible = false;
+    this.contactMethods[i].bDelete = false;
   }
 
   // удаляем - по факту ставим признак невидимости элемента
