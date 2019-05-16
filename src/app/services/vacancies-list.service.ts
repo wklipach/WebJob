@@ -25,6 +25,19 @@ export class VacanciesListService {
     // return this.http.get(sUrl, myParams);
   }
 
+
+  getVacAny(id_vc: number) {
+
+    let sUrl = this.gr.sUrlGlobal+'Vacancy';
+    let params = new HttpParams()
+      .set('AnyVacancy', id_vc.toString())
+
+    return this.http.get(sUrl, {params: params});
+
+    // return this.http.get(sUrl, myParams);
+  }
+
+
   setDeleteVac(id_vac: number, vacbody) {
     let sUrl = this.gr.sUrlGlobal+'Vacancy/'+id_vac+'/'+vacbody.bInvisible+'/false';
 

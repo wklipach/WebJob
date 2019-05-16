@@ -9,6 +9,7 @@ import {Letter} from '../../../class/Letter';
 import {CvEditService} from '../../../services/cv-edit.service';
 import {TableVacancyService} from '../../../services/table-vacancy.service';
 import {Guide} from '../../../class/guide';
+import {VacanciesListService} from '../../../services/vacancies-list.service';
 
 @Component({
   selector: 'app-vacancy-description',
@@ -53,7 +54,8 @@ export class VacancyDescriptionComponent implements OnInit {
               private router: Router,
               private authService: AuthService,
               private httpService: TableVacancyService,
-              private cvEditSrv: CvEditService) { }
+              private cvEditSrv: CvEditService,
+              private vcListServ: VacanciesListService) { }
 
 
   ngOnInit() {
@@ -68,63 +70,37 @@ export class VacancyDescriptionComponent implements OnInit {
       this.dvSubscription = this.moveS.getDataVacancy()
       .subscribe (curDataVacancy =>
       {
-
         console.log('curDataVacancy', curDataVacancy);
 
-        if (curDataVacancy !== undefined) {
+        //получаем объект из кэша, если неполный - делаем запрос к серверу и получаем новый getVacAny(id_vc: number)
+        if (curDataVacancy === undefined) {
+          this.router.navigate(['/smain']);
+        }
 
+        //получаем объект из кэша, если неполный - делаем запрос к серверу и получаем новый getVacAny(id_vc: number)
+        if (curDataVacancy.Industry || curDataVacancy.Education || curDataVacancy.Employment || curDataVacancy.Experience)
+        {
           this.descrDataVacancy = curDataVacancy;
-
-
-
-
-         this.onLoadUserData(this.descrDataVacancy);
-
-        // отрасль
-        if (typeof this.descrDataVacancy.Industry !== 'undefined' && this.descrDataVacancy.Industry !== null) {
-          const sInd = this.descrDataVacancy.Industry.toString().split(',');
-          sInd.forEach( intIndustry => this.sIndusrtry.push(this.sGuide.getIndustryName(Number(intIndustry)) ) );
+          this.onLoadUserData(this.descrDataVacancy);
+          this.LoadAdvData();
+        } else
+        {
+          this.vcListServ.getVacAny(curDataVacancy.id).subscribe(qcurDataVacancy => {
+            this.descrDataVacancy = qcurDataVacancy[0];
+            this.onLoadUserData(this.descrDataVacancy);
+            this.LoadAdvData();
+            console.log('asRES', this.descrDataVacancy);
+            if (qcurDataVacancy[0].Avatar === null) this.descrDataVacancy.base64textString = [];
+                 else this.descrDataVacancy.base64textString = qcurDataVacancy[0].Avatar;
+          });
         }
 
-        // график работы
-        if (typeof this.descrDataVacancy.Schedule !== 'undefined' && this.descrDataVacancy.Schedule !== null) {
-          const sSch = this.descrDataVacancy.Schedule.toString().split(',');
-          sSch.forEach( intSchedule => this.sSchedule.push(this.sGuide.getScheduleName(Number(intSchedule)) ) );
-        }
+      }, error => { console.log('DescriptionError', error); this.router.navigate(['/smain']); } );
 
-        // занятость
-        if (typeof this.descrDataVacancy.Employment !== 'undefined' && this.descrDataVacancy.Employment !== null) {
-          const sEmpl = this.descrDataVacancy.Employment.toString().split(',');
-          sEmpl.forEach( intEmployment => this.sEmployment.push(this.sGuide.getEmploymentName(Number(intEmployment))) );
-        }
-
-        // образование
-        if (typeof this.descrDataVacancy.Education !== 'undefined' && this.descrDataVacancy.Education !== null) {
-          const sEduc = this.descrDataVacancy.Education.toString().split(',');
-          sEduc.forEach( intEducation => this.sEducation.push(this.sGuide.getEducationName(Number(intEducation)) ) );
-        }
-
-        // опыт работы
-        if (typeof this.descrDataVacancy.Experience !== 'undefined' && this.descrDataVacancy.Experience !== null) {
-          const sExper = this.descrDataVacancy.Experience.toString().split(',');
-          sExper.forEach( intExperience => this.sExperience.push(this.sGuide.getExperienceName(Number(intExperience))));
-        }
-
-          // период показа
-          if (typeof this.descrDataVacancy.DisplayPeriod !== 'undefined' && this.descrDataVacancy.DisplayPeriod !== null) {
-            const sDPeriod = this.descrDataVacancy.DisplayPeriod.toString().split(',');
-            sDPeriod.forEach( intDisplayPeriod => this.sDisplayPeriod.push(this.sGuide.getExperienceName(Number(intDisplayPeriod))));
-          }
-
-
-
-        }
-
-      }, error => { this.router.navigate(['/smain']); } );
-
-    if (typeof this.descrDataVacancy === 'undefined') {
-      this.router.navigate(['/smain']);
-    }
+//    if (typeof this.descrDataVacancy === 'undefined') {
+//      console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+//      this.router.navigate(['/smain']);
+//    }
 
   }
 
@@ -140,6 +116,45 @@ export class VacancyDescriptionComponent implements OnInit {
 
   }
 
+
+  LoadAdvData() {
+    // отрасль
+    if (typeof this.descrDataVacancy.Industry !== 'undefined' && this.descrDataVacancy.Industry !== null) {
+      const sInd = this.descrDataVacancy.Industry.toString().split(',');
+      sInd.forEach( intIndustry => this.sIndusrtry.push(this.sGuide.getIndustryName(Number(intIndustry)) ) );
+    }
+
+    // график работы
+    if (typeof this.descrDataVacancy.Schedule !== 'undefined' && this.descrDataVacancy.Schedule !== null) {
+      const sSch = this.descrDataVacancy.Schedule.toString().split(',');
+      sSch.forEach( intSchedule => this.sSchedule.push(this.sGuide.getScheduleName(Number(intSchedule)) ) );
+    }
+
+    // занятость
+    if (typeof this.descrDataVacancy.Employment !== 'undefined' && this.descrDataVacancy.Employment !== null) {
+      const sEmpl = this.descrDataVacancy.Employment.toString().split(',');
+      sEmpl.forEach( intEmployment => this.sEmployment.push(this.sGuide.getEmploymentName(Number(intEmployment))) );
+    }
+
+    // образование
+    if (typeof this.descrDataVacancy.Education !== 'undefined' && this.descrDataVacancy.Education !== null) {
+      const sEduc = this.descrDataVacancy.Education.toString().split(',');
+      sEduc.forEach( intEducation => this.sEducation.push(this.sGuide.getEducationName(Number(intEducation)) ) );
+    }
+
+    // опыт работы
+    if (typeof this.descrDataVacancy.Experience !== 'undefined' && this.descrDataVacancy.Experience !== null) {
+      const sExper = this.descrDataVacancy.Experience.toString().split(',');
+      sExper.forEach( intExperience => this.sExperience.push(this.sGuide.getExperienceName(Number(intExperience))));
+    }
+
+    // период показа
+    if (typeof this.descrDataVacancy.DisplayPeriod !== 'undefined' && this.descrDataVacancy.DisplayPeriod !== null) {
+      const sDPeriod = this.descrDataVacancy.DisplayPeriod.toString().split(',');
+      sDPeriod.forEach( intDisplayPeriod => this.sDisplayPeriod.push(this.sGuide.getExperienceName(Number(intDisplayPeriod))));
+    }
+
+  }
 
   clickAboutCompany() {
     window.localStorage.setItem('about_user', this.descrDataVacancy.id_user.toString());
