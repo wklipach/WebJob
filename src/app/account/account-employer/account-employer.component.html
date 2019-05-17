@@ -120,7 +120,8 @@
 
           <div *ngIf="accountEmployerForm.controls['inputNewPassword2'].value.length > 0">
             <div *ngIf="accountEmployerForm.controls['inputNewPassword2'].invalid; else truePassword2Template">
-              <div>Пароли не совпадают</div>
+              <!-- <div>Пароли не совпадают</div> -->
+              <app-dialogminimum name="Пароли не совпадают"></app-dialogminimum>
             </div>
           </div>
 
@@ -131,7 +132,17 @@
 
           <button type="submit" class="btn-newPassword" (click)="NewPassword()">Изменить пароль</button>
           <ng-container *ngIf="bPasswordNew">Пароль изменен</ng-container>
+
+          <!--
           <div class="alert-pass" *ngIf="bErrorRepeatPassword">Пароли не совпадают</div>
+          -->
+
+          <div class="alert-pass" *ngIf="bErrorRepeatPassword">
+            <app-dialogminimum name="Пароли не совпадают"></app-dialogminimum>
+          </div>
+
+
+
           <button class="btn-newPassword2" (click)="DisappearFrame()">Отмена</button>
         </div>
 

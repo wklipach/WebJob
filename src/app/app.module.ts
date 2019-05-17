@@ -68,6 +68,8 @@ import {GlobalRef} from './services/globalref';
 import {CvHomeComponent} from './content/cv/cv-home/cv-home.component';
 import { SmainComponent } from './smain/smain.component';
 import { CvhomeComponent } from './cvhome/cvhome.component';
+import { DialogminimumComponent } from './dialogs/dialogminimum/dialogminimum.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 
@@ -115,11 +117,10 @@ const appRoutes: Routes = [
   {path: '**', component: NotFoundComponent }
 ];
 
-
-
 @NgModule({
   imports:
    [ BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule, AngularFontAwesomeModule,
+     BrowserAnimationsModule,
      NgbModule, NgbPaginationModule, NgbAlertModule, RouterModule.forRoot(appRoutes)],
   declarations: [
     AppComponent,
@@ -170,7 +171,8 @@ const appRoutes: Routes = [
     CvHomeComponent,
     AdUnit2Component,
     SmainComponent,
-    CvhomeComponent
+    CvhomeComponent,
+    DialogminimumComponent
    ],
   entryComponents: [
     CvPreviousComponent,
