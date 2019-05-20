@@ -5,6 +5,7 @@ import {AuthService} from '../../../services/auth-service.service';
 import {isUndefined} from 'util';
 import {UserType} from '../../../class/UserType';
 import {Router} from '@angular/router';
+import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-register-employee',
@@ -72,7 +73,9 @@ export class RegisterEmployeeComponent implements OnInit {
       return -1;
     }
 
-    const AddUser  = new UserType(userName,userEmail,userPassword1,false, -1,'','','','','', 0,0,'','','','');
+    const AddUser  = new UserType(userName,userEmail,
+      CryptoJS.SHA256(userPassword1.trim().toLowerCase()).toString().toLowerCase(),
+      false, -1,'','','','','', 0,0,'','','','');
 
     console.log(AddUser);
 

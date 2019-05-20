@@ -11,6 +11,7 @@ import {CvEditService} from '../services/cv-edit.service';
 import {GuideService} from '../services/guide-service.service';
 import {DatePipe} from '@angular/common';
 import {Letter} from '../class/Letter';
+import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-home',
@@ -123,6 +124,10 @@ export class HomeComponent implements OnInit, OnDestroy {
    }
 
   ngOnInit() {
+
+//    var encrypted = CryptoJS.SHA256('1234567890');
+//    console.log('encrypted',encrypted.toString());
+
 
     var Res =  this.authService.loginStorage();
     this.bConnected = Res.bConnected;

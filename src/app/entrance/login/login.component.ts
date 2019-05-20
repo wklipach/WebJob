@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {UserTable} from '../../class/UserTable';
 import {AuthService} from '../../services/auth-service.service';
 import {Router} from '@angular/router';
+import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-login',
@@ -37,8 +38,7 @@ export class LoginComponent implements OnInit {
 
     var ResUser = Object(ListUser)
                  .filter( x => x.UserName.trim().toLowerCase() === tUser.sUserOrEmail.trim().toLowerCase() || x.EMail.trim().toLowerCase() === tUser.sUserOrEmail.trim().toLowerCase())
-                 .filter(y => y.Password.trim().toLowerCase() === tUser.sPassword.trim().toLowerCase());
-
+                 .filter(y => y.Password.trim().toLowerCase() === CryptoJS.SHA256(tUser.sPassword.trim().toLowerCase()).toString().toLowerCase());
 
     //console.log('ResUser[id]', ResUser);
     //console.log('ResUser[id]', ResUser, ResUser[0].id);
