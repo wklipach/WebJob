@@ -9,6 +9,7 @@ import {Router} from '@angular/router';
 import {UserTable} from '../../class/UserTable';
 import {isUndefined} from "util";
 import {Guide} from '../../class/guide';
+import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-accountemployee',
@@ -32,6 +33,7 @@ export class AccountEmployeeComponent implements OnInit {
   public bPasswordNew: boolean = false;
   public bShowChangePassword: boolean = false;
   public bErrorRepeatPassword: boolean = false;
+  public bErrorEmptyPassword: boolean = false;
 
 private loadUser: UserType;
 
@@ -65,8 +67,8 @@ private loadUser: UserType;
       'inputAddress': new FormControl('', []),
       'inputPhone': new FormControl('', []),
       'inputCity': new FormControl('', []),
-      'inputNewPassword1': new FormControl('', []),
-      'inputNewPassword2': new FormControl('', [], [this.password2AsyncValidator.bind(this)]),
+      'inputNewPassword1': new FormControl('', [Validators.required, Validators.minLength(1)]),
+      'inputNewPassword2': new FormControl('', [Validators.required, Validators.minLength(1)], [this.password2AsyncValidator.bind(this)]),
       'inputEmail': new FormControl(null, [
         Validators.required,
         Validators.email
@@ -356,7 +358,18 @@ private loadUser: UserType;
 
     NewPassword() {
 
+      this.bErrorRepeatPassword = false;
+      this.bErrorEmptyPassword = false;
+
             const {inputNewPassword1, inputNewPassword2} = this.accountEmployeeForm.value;
+
+
+
+              if (inputNewPassword1.length==0 || inputNewPassword2.length==0) {
+                this.bErrorEmptyPassword = true;
+                return;
+              }
+              else this.bErrorEmptyPassword = false;
 
 
 
@@ -366,7 +379,7 @@ private loadUser: UserType;
             if (inputNewPassword1 === inputNewPassword2) {
                 this.loadUser.Password = inputNewPassword1;
                 console.log('this.loadUser',this.loadUser);
-                return this.auth.postUpdatePassword(inputNewPassword2, this.id_user).subscribe(
+                return this.auth.postUpdatePassword(CryptoJS.SHA256(inputNewPassword2.trim().toLowerCase()).toString().toLowerCase(), this.id_user).subscribe(
                     () => {
                       this.bPasswordNew = true; }
                 );

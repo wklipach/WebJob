@@ -130,6 +130,7 @@
           <button type="submit" class="btn-newPassword" (click)="NewPassword()">Изменить пароль</button>
           <ng-container *ngIf="bPasswordNew">Пароль изменен</ng-container>
           <div class="alert-pass" *ngIf="bErrorRepeatPassword">Пароли не совпадают</div>
+          <div class="alert-pass" *ngIf="bErrorEmptyPassword">Пароли не должны быть пустыми</div>
           <button class="btn-newPasswordCancel" (click)="DisappearFrame()">Отмена</button>
         </div>
 

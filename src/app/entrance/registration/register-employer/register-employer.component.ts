@@ -46,8 +46,8 @@ export class RegisterEmployerComponent implements OnInit {
           Validators.email
         ], [this.employerEmailAsyncValidator.bind(this)]
       ),
-      'userPassword1': new FormControl('', Validators.required),
-      'userPassword2': new FormControl('', [Validators.required], [this.password2AsyncValidator.bind(this)]),
+      'userPassword1': new FormControl('', [Validators.required, Validators.minLength(1)]),
+      'userPassword2': new FormControl('', [Validators.required, Validators.minLength(1)], [this.password2AsyncValidator.bind(this)]),
       'cbLicense': new FormControl('', Validators.requiredTrue),
       'surname': new FormControl({}),
       'dateBirth': new FormControl({}),

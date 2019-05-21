@@ -10,6 +10,7 @@ import {DomSanitizer} from '@angular/platform-browser';
 import {UserTable} from '../../class/UserTable';
 import {isUndefined} from "util";
 import {Guide} from '../../class/guide';
+import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-accountemployer',
@@ -37,6 +38,7 @@ export class AccountEmployerComponent implements OnInit {
 
   public bShowChangePassword: boolean = false;
   public bErrorRepeatPassword: boolean = false;
+  public bErrorEmptyPassword: boolean = false;
 
   public imagePath: any;
   form: FormGroup;
@@ -339,6 +341,16 @@ console.log('ITEM', item);
   NewPassword() {
     const {inputNewPassword1: inputNewPassword1, inputNewPassword2: inputNewPassword2} = this.accountEmployerForm.value;
 
+    this.bErrorEmptyPassword = false;
+    this.bErrorRepeatPassword = false;
+
+    if (inputNewPassword1.length==0 || inputNewPassword2.length==0) {
+      this.bErrorEmptyPassword = true;
+      return;
+    }
+    else this.bErrorEmptyPassword = false;
+
+
 
     if (inputNewPassword1 === inputNewPassword2) this.bErrorRepeatPassword = false;
     else this.bErrorRepeatPassword = true;
@@ -346,7 +358,9 @@ console.log('ITEM', item);
     if (inputNewPassword1 === inputNewPassword2) {
       this.loadUser.Password = inputNewPassword1;
 
-      return this.auth.postUpdatePassword(inputNewPassword2, this.id_user).subscribe(
+
+      return this.auth.postUpdatePassword(CryptoJS.SHA256(inputNewPassword2.trim().toLowerCase()).toString().toLowerCase(),
+                                                                                                          this.id_user).subscribe(
         () => {
           this.bPasswordNew = true;
         }

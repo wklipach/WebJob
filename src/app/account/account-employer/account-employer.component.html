@@ -141,7 +141,9 @@
             <app-dialogminimum name="Пароли не совпадают"></app-dialogminimum>
           </div>
 
-
+          <div class="alert-pass" *ngIf="bErrorEmptyPassword">
+            <app-dialogminimum name="Пароли не должны быть пустыми"></app-dialogminimum>
+          </div>
 
           <button class="btn-newPassword2" (click)="DisappearFrame()">Отмена</button>
         </div>
