@@ -1,21 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {UserTable} from '../../class/UserTable';
 import {AuthService} from '../../services/auth-service.service';
 import {Router} from '@angular/router';
 import * as CryptoJS from 'crypto-js';
+import { timer } from 'rxjs/observable/timer';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
 
   loginForm : FormGroup;
   public showErr : boolean = false;
   public showSucc : boolean = false;
   public sResTrouble : string = '';
+  public stopCondition: boolean = false;
+  private subscribeTimer:  Subscription;
 
   constructor(private httpService: AuthService, private router: Router) {
 
@@ -32,6 +36,11 @@ export class LoginComponent implements OnInit {
 
   }
 
+  ngOnDestroy() {
+  if (typeof this.subscribeTimer !== 'undefined') {
+    this.subscribeTimer.unsubscribe();
+  }
+  }
 
   getCheckNameOrEmailAndPassword (ListUser: UserTable, tUser : {sUserOrEmail : string, sPassword : string} ): {bCheck: boolean, uName: string, id_user: number, bEmployer: boolean}
   {
@@ -82,16 +91,21 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/smain']);
         }
         else {
-          this.httpService.IsUserLoggedIn.next({connect : false, name : '', id_user: -1, bEmployer: false});
+           this.httpService.IsUserLoggedIn.next({connect : false, name : '', id_user: -1, bEmployer: false});
           this.httpService.logout();
           this.showSucc = false;
           this.showErr = true;
+          //блокируем кнопку 5 секунд
+          this.stopCondition = true;
+
+          this.subscribeTimer =  timer(5000).subscribe(()=>
+            this.stopCondition = false );
         }
-      }
-    );
-
-
+      });
   }
 
 
 }
+
+
+

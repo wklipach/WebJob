@@ -39,6 +39,7 @@
     "path": "^0.12.7",
     "popper.js": "^1.14.4",
     "rxjs": "^6.3.3",
+    "rxjs-compat": "^6.5.2",
     "zone.js": "^0.8.24"
   },
   "devDependencies": {

@@ -70,6 +70,7 @@ import { SmainComponent } from './smain/smain.component';
 import { CvhomeComponent } from './cvhome/cvhome.component';
 import { DialogminimumComponent } from './dialogs/dialogminimum/dialogminimum.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ForgotpasswordService} from './services/forgotpassword.service';
 
 
 
@@ -180,7 +181,7 @@ const appRoutes: Routes = [
   ],
   providers: [AuthService, GuideService, NewVacancyService, TableVacancyService,
               MoveService, PreviousService, NewcvService, CvListService, CvEditService,
-              VacanciesListService, LetterService, InfoService, CvLanguageService,GlobalRef],
+              VacanciesListService, LetterService, InfoService, CvLanguageService,GlobalRef, ForgotpasswordService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

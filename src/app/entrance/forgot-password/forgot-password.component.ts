@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {isUndefined} from "util";
 import {UserTable} from '../../class/UserTable';
 import {AuthService} from '../../services/auth-service.service';
+import {ForgotpasswordService} from '../../services/forgotpassword.service';
 
 @Component({
   selector: 'app-forgot-password',
@@ -16,7 +17,7 @@ export class ForgotPasswordComponent implements OnInit {
   public showSucc : boolean = false;
   public showErr : boolean = false;
 
-  constructor(private httpService: AuthService) {
+  constructor(private httpService: AuthService, private fps: ForgotpasswordService) {
 
     this.forgotForm  = new FormGroup({
       'nameOrEmail': new FormControl('',
@@ -46,6 +47,11 @@ export class ForgotPasswordComponent implements OnInit {
         if (this.getCheckNameOrEmail (data,sUserOrEmail) === true) {
            this.showSucc = true;
           this.showErr = false;
+          this.fps.sendPassword('Email').subscribe(
+            value=> {
+              console.log('результат отправки письма', value);
+            }
+          );
         }
         else {
           this.showSucc = false;

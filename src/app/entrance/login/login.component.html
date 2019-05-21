@@ -6,6 +6,8 @@
 
 <!--
    начали модель
+   [disabled]="loginForm.invalid"
+   <button type="submit" class="btn-signin" id="btnPwd" formControlName="btnPwd">Войти</button>
 -->
 
 <div class="box">
@@ -21,7 +23,10 @@
   <label class="password" for="inputPassword">Пароль</label>
   <input type="password" class="inputPassword" id="inputPassword" formControlName="password"  placeholder="Пароль">
 
-   <button type="submit" class="btn-signin" [disabled]="loginForm.invalid">Войти</button><br>
+
+    <button type="submit" class="btn-signin" role="button" id="btnpwd" [disabled]="loginForm.invalid || stopCondition">Войти</button>
+
+    <br>
 
     <a class="forgot-password" routerLink="/forgot-password" routerLinkActive="active">Забыли пароль или логин?</a>
     <a class="register" routerLink="/register" routerLinkActive="active">Зарегистрироваться</a>
