@@ -9,9 +9,9 @@ export class ForgotpasswordService {
 
   constructor(private http: HttpClient, private gr: GlobalRef) { }
 
-  sendPassword(email: string) {
+  sendPassword(email: string, pwd: string, hash: string) {
     const sUrl = this.gr.sUrlGlobal+'forgotpassword';
-    return this.http.post(sUrl, {email});
+    return this.http.post(sUrl, {email, pwd, hash});
   }
 
 
