@@ -70,6 +70,7 @@ import { SmainComponent } from './smain/smain.component';
 import { CvhomeComponent } from './cvhome/cvhome.component';
 import { DialogminimumComponent } from './dialogs/dialogminimum/dialogminimum.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { InvitationComponent } from './content/invitation/invitation.component';
 import {ForgotpasswordService} from './services/forgotpassword.service';
 
 
@@ -115,6 +116,7 @@ const appRoutes: Routes = [
   {path: 'ad-unit', component: AdUnitComponent},
   {path: 'ad-unit2', component: AdUnit2Component},
   {path: 'smain', component: SmainComponent},
+   {path: 'invitation', component: InvitationComponent},
   {path: '**', component: NotFoundComponent }
 ];
 
@@ -173,7 +175,8 @@ const appRoutes: Routes = [
     AdUnit2Component,
     SmainComponent,
     CvhomeComponent,
-    DialogminimumComponent
+    DialogminimumComponent,
+    InvitationComponent
    ],
   entryComponents: [
     CvPreviousComponent,
@@ -181,7 +184,7 @@ const appRoutes: Routes = [
   ],
   providers: [AuthService, GuideService, NewVacancyService, TableVacancyService,
               MoveService, PreviousService, NewcvService, CvListService, CvEditService,
-              VacanciesListService, LetterService, InfoService, CvLanguageService,GlobalRef, ForgotpasswordService],
+              VacanciesListService, LetterService, InfoService, CvLanguageService, GlobalRef, ForgotpasswordService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
