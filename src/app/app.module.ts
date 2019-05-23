@@ -118,7 +118,7 @@ const appRoutes: Routes = [
   {path: 'ad-unit', component: AdUnitComponent},
   {path: 'ad-unit2', component: AdUnit2Component},
   {path: 'smain', component: SmainComponent},
-   {path: 'invitation', component: InvitationComponent},
+  {path: 'invitation', component: InvitationComponent},
   {path: '**', component: NotFoundComponent }
 ];
 

@@ -33,6 +33,7 @@ export class CvhomeComponent implements OnInit {
   private sMask: string = '';
   private getTableCV: Subscription;
   private getTableCVAdvanced: Subscription;
+  private dvSubscVacancy: Subscription;
   // текущая страница
   public page = 1;
   // записей на странице
@@ -121,8 +122,22 @@ export class CvhomeComponent implements OnInit {
     this.reloadPAge(this.allDataCV, this.sMask);
   }
 
-  response(index: number, vcid: number) {
-    console.log('response');
+  response(index: number, cvid: number) {
+
+   this.myDataCV[index].sErrorText = '';
+    this.httpService.getCheckInvite(cvid, this.id_user, this.id_user).subscribe( (res) => {
+
+      if (res[0].Res === 0) {
+        this.dvSubscVacancy = this.moveS.setInvestCVID(cvid).subscribe(() => {
+          this.router.navigate(['/invitation']);
+        });
+      } else {
+        this.myDataCV[index].sErrorText = 'Вы уже общаетесь по данному CV.';
+      }
+    }
+  );
+
+    console.log('invitation');
   }
 
   MyMethod(zid: number, $event) {
@@ -267,6 +282,10 @@ export class CvhomeComponent implements OnInit {
 
 
   ngOnDestroy() {
+
+    if (typeof this.dvSubscVacancy !== 'undefined') {
+      this.dvSubscVacancy.unsubscribe();
+    }
 
      if (typeof this.getTableCV !== 'undefined') {
           this.getTableCV.unsubscribe();

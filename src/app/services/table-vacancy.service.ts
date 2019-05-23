@@ -133,6 +133,22 @@ export class TableVacancyService {
 
   }
 
+
+  getCheckInvite(id_cv : number, id_user_from : number, id_user_to : number) {
+
+      let sUrl = this.gr.sUrlGlobal+'checkelement';
+      let params: any;
+
+      params = new HttpParams()
+        .set('checkInvite', 'true')
+        .set('id_cv', id_cv.toString())
+        .set('id_user_from', id_user_from.toString())
+        .set('id_user_to', id_user_to.toString());
+
+    return this.http.get(sUrl, {params: params});
+
+  }
+
   getTableCV(sMask: string, rowPerPage: number, currentPage: number, isFavorites: boolean, isAdvancedFind: boolean, id_user?: number)
   {
 

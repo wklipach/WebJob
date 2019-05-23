@@ -8,6 +8,7 @@ import {Observable, of, Subject} from 'rxjs';
 export class MoveService {
 
   public oDataVacancy: dataVacancy;
+  public cvidInvest: number;
   public sFind: string;
   public sNull: string;
 
@@ -19,6 +20,18 @@ export class MoveService {
   public getDataVacancy(): Observable<dataVacancy> {
     return of (this.oDataVacancy);
   }
+
+
+  public getInvestCVID(): Observable<number> {
+    return of (this.cvidInvest);
+  }
+
+
+  public setInvestCVID(cvid: number): Observable<boolean> {
+    this.cvidInvest = cvid;
+    return of (true);
+  }
+
 
   public setDataVacancy(oDataVacancy: dataVacancy): Observable<boolean> {
     this.oDataVacancy = oDataVacancy;

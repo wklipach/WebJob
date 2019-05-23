@@ -42,6 +42,15 @@
 
 
     <button class="btn-response" type="button" id="vcresponse" title="Пригласить" (click)="response(i, curCV.id)" >Пригласить</button>
+
+    <div *ngIf="curCV.sErrorText">
+      <span class="education">{{curCV.sErrorText}}</span>
+    </div>
+
+
+
+
+
   </div>
 
 
