@@ -1,6 +1,4 @@
 .wrapper{
-  font-family: "ProximaNovaRg";
-  font-size: 16px;
   width: 100%;
   height: auto;
   margin: 0 auto;
@@ -11,47 +9,12 @@
   height: 36px;
   margin: 0 auto;
   font-size: 26px;
-  font-family: "Proxima Nova";
+  font-family: "ProximaNovaRg";
   text-align: left;
   padding-bottom: 15px;
+  padding-top: 10px;
   border-bottom: solid 1px;
   border-color: #b7b7b7;
-}
-.message{
-  width: 1170px;
-  margin: 0 auto;
-}
-/*
-.message:hover{
-  cursor: pointer;
-  background-color: #f8f8f8;
-} */
-ul{
-  list-style: none;
-}
-li{
-  position: relative;
-  display: inline-block;
-}
-.headline{
-  font-family: "Proxima Nova";
-  background-color: #DFDFDF;
-}
-.bline{
-  width: 100%;
-  height: auto;
-  border-color: #b7b7b7;
-  font-size: 16px;
-  font-family: "Proxima Nova";
-}
-.date{
-  width:100px;
-}
-.from{
-  width:250px;
-}
-.subject{
-  width:700px;
 }
 
 

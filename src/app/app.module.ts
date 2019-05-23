@@ -67,7 +67,7 @@ import { AdUnit2Component } from './ad-unit2/ad-unit2.component';
 import {GlobalRef} from './services/globalref';
 import {CvHomeComponent} from './content/cv/cv-home/cv-home.component';
 import { SmainComponent } from './smain/smain.component';
-import { CvhomeComponent } from './cvhome/cvhome.component';
+import { CvhomeComponent } from './content/cv/cvhome/cvhome.component';
 import { DialogminimumComponent } from './dialogs/dialogminimum/dialogminimum.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { InvitationComponent } from './content/invitation/invitation.component';

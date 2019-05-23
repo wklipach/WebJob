@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from '../services/auth-service.service';
-import {dataCV} from '../class/CV';
-import {TableVacancyService} from '../services/table-vacancy.service';
-import {dataVacancy} from '../class/Vacancy';
+import {AuthService} from '../../../services/auth-service.service';
+import {dataCV} from '../../../class/CV';
+import {TableVacancyService} from '../../../services/table-vacancy.service';
+import {dataVacancy} from '../../../class/Vacancy';
 import {Subscription} from 'rxjs';
-import {GuideService} from '../services/guide-service.service';
+import {GuideService} from '../../../services/guide-service.service';
 import {isNullOrUndefined} from "util";
-import {City} from '../class/City';
+import {City} from '../../../class/City';
 import {Router} from '@angular/router';
-import {MoveService} from '../services/move.service';
+import {MoveService} from '../../../services/move.service';
 import {DatePipe} from '@angular/common';
 
 @Component({

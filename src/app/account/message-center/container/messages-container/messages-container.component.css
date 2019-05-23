@@ -17,12 +17,11 @@
 }
 .messages-box{
   width: 1170px;
-  height: 700px;
+  min-height: 300px;
+  max-height: 650px;
   overflow: auto;
-
 }
 .message{
-
   margin: 0 auto;
 }
 .message:hover{
