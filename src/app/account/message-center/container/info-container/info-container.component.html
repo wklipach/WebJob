@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <div class="top">
+    Информация
+  </div>
+
+
+
+
+  <div class="message" id="message" *ngFor="let curInfo of myDataInfo; let i = index" (click)="curInfoClick(curInfo.id, $event)">
+
+
+    <div [class.boldletter]="curInfo.bOld !== 1">
+
+      <div class="v-line"></div>
+      <ul class="headline">
+        <li class="date">Дата</li>
+        <li class="from">От</li>
+        <li class="subject">Тема</li>
+      </ul>
+
+      <ul class="bline">
+        <li class="date">{{curInfo.DateTimeCreate  | date :'dd.MM.yyyy' }}</li>
+        <li class="from">{{curInfo.UserNameFrom}}</li>
+        <li class="subject">{{curInfo.letterText}} </li>
+      </ul>
+
+    </div>
+
+
+  </div>
+
+
+</div>

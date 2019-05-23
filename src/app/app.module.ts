@@ -72,6 +72,8 @@ import { DialogminimumComponent } from './dialogs/dialogminimum/dialogminimum.co
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { InvitationComponent } from './content/invitation/invitation.component';
 import {ForgotpasswordService} from './services/forgotpassword.service';
+import { MessagesContainerComponent } from './account/message-center/container/messages-container/messages-container.component';
+import { InfoContainerComponent } from './account/message-center/container/info-container/info-container.component';
 
 
 
@@ -176,7 +178,9 @@ const appRoutes: Routes = [
     SmainComponent,
     CvhomeComponent,
     DialogminimumComponent,
-    InvitationComponent
+    InvitationComponent,
+    MessagesContainerComponent,
+    InfoContainerComponent
    ],
   entryComponents: [
     CvPreviousComponent,
