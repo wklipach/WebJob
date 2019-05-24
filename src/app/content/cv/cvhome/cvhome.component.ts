@@ -103,12 +103,18 @@ export class CvhomeComponent implements OnInit {
       });
   }
 
-
+//todo GETCV
   getCV(sMask: string,isFavorites: boolean, isAdvancedFind: boolean) {
     return this.getTableCV = this.httpService.getTableCV(sMask, this.rowPerPage, this.page, isFavorites, isAdvancedFind, this.id_user).subscribe(
       (data: any) => {
 
-        console.log('ответ');
+        //если поиск не дал результатов вызываем сами себя с пустой маской
+        if (sMask !== '' && data.length === 0) {
+          console.log('ПОИСК ПО РЕЗЮМЕ НЕ ДАЛ РЕЗУЛЬТАТОВ');
+          this.moveS.startNullFind('Поиск не дал результатов.');
+          this.getCV('',false, false);
+          return;
+        }
 
         this.data_show(data);
         this.reloadPAge(this.allDataCV, sMask);
@@ -223,29 +229,33 @@ export class CvhomeComponent implements OnInit {
 
         if (this.allDataCV === undefined)  this.allDataCV = [];
 
+/*
         if (this.allDataCV.length === 0) {
-
-          // console.log('ЕСЛИ НИЧЕГО НЕ НАШЛИ');
+//todo ПОИСК не нашли
           if (window.localStorage.getItem('backPage') !== null) {
             let sBack = window.localStorage.getItem('backPage');
             window.localStorage.removeItem('backPage');
-            if (sBack !== '/') {
+            if (sBack !== '/' && sBack !== '/smain') {
               this.router.navigateByUrl(sBack);
               this.moveS.setNullValueFind('Поиск не дал результатов.');
             }
-            if (sBack === '/' && sMask !== '')  {
+            if ((sBack === '/' || sBack === '/smain') && sMask !== '')  {
+
               this.sMask = '';
-              this.getCV('',false,false);
+              //this.getCV('',false,false);
+              console.log('перед navigateByUrl', sBack);
+              //this.router.navigateByUrl(sBack);
+              this.router.navigate(['/']);
+              console.log('после navigateByUrl', sBack);
               this.moveS.startNullFind('Поиск не дал результатов.');
             }
           }
+          return;
         }
+*/
+
         window.localStorage.removeItem('backPage');
-
-
-// TODO добавили в новом коде
         this.myDataCV = data;
-
       }
 
     );

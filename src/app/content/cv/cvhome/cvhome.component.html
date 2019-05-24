@@ -3,7 +3,8 @@
     {{sCV}}
   </div>
 
-  <div class="cv-box" id="cv-box" *ngFor="let curCV of myDataCV; let i = index" (click)="MyMethod(curCV.id, $event)">
+
+    <div class="cv-box" id="cv-box" *ngFor="let curCV of myDataCV; let i = index" (click)="MyMethod(curCV.id, $event)">
     <div class="v-line"></div>
     <div class="number">{{i+1}}</div>
     <div class="title">{{curCV.Position}}</div>

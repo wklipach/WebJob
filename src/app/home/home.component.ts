@@ -202,7 +202,14 @@ export class HomeComponent implements OnInit, OnDestroy {
     return this.getTableVacancy = this.httpService.getTableVacancy(sMask, this.rowPerPage, this.page, isFavorites, isAdvancedFind, this.id_user).subscribe(
       (data: dataVacancy[]) => {
 
-      //TODO точка 1
+        //если поиск не дал результатов вызываем сами себя с пустой маской
+        if (sMask !== '' && data.length === 0) {
+          console.log('ПОИСК ПО ВАКАНСИЯМ НЕ ДАЛ РЕЗУЛЬТАТОВ');
+          this.moveS.startNullFind('Поиск не дал результатов.');
+          this.getVacancy('',false, false);
+          return;
+        }
+
       this.data_show(data);
       this.reloadPAge(this.allDataVacancy, sMask);
       if (isFavorites) this.sVacancy = 'Избранные вакансии'; else this.sVacancy = 'Вакансии';
@@ -335,7 +342,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         );
 
         //this.myDataVacancy = data.sort( (a, b)=> b['vacancy'].DateTimeCreate - a['vacancy'].DateTimeCreate );;
-
+/*
         if (this.allDataVacancy.length === 0) {
 
           // console.log('ЕСЛИ НИЧЕГО НЕ НАШЛИ');
@@ -353,6 +360,7 @@ export class HomeComponent implements OnInit, OnDestroy {
             }
           }
         }
+*/
         window.localStorage.removeItem('backPage');
 
 

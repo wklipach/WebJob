@@ -34,7 +34,7 @@ export class HeaderTopComponent implements OnInit {
 
 
     this.moveS.onNullFind.subscribe((value) => {
-      console.log('event', value);
+      console.log('event onNullFind', value);
       this.sNullValueFind = value;
       this.headerTopForm.controls['inputSearch'].setValue('');
     });
