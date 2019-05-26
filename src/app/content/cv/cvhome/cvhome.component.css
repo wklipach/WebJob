@@ -1,13 +1,12 @@
 .wrapper{
-  display: inline-block;
   position: relative;
-  width: 100%;
+  width: 1170px;
   margin: 0 auto;
   padding-right: 0;
   padding-left: 0;
 }
 .top{
-  width: 1170px;
+  width: 100%;
   height: 36px;
   margin: 0 auto;
   border-color: #b7b7b7;
@@ -16,13 +15,12 @@
   text-align: left;
 }
 .cv-box{
-  width: 1170px;
+  width:  100%;
   height: 415px;
   margin: 30px auto;
   border-top: solid 1px;
   border-bottom: solid 1px;
   border-color: #b7b7b7;
-  font-size: 30px;
   color: rgb(68, 75, 84);
   text-align: left;
 }
@@ -109,7 +107,6 @@
 .experience, .skills, .education{
   display: inline-block;
   position: relative;
-  font-size: 16px;
   color: rgb(68, 75, 84);
   width: 1130px;
   height: 80px;
@@ -132,7 +129,6 @@
 
 .btn-response {
   display: inline-block;
-  position: absolute;
   border-radius: 3px;
   background-color: #0262d2;
   width: 155px;
@@ -141,7 +137,7 @@
   border-color: #054086;
   border-width: 1px;
   border-style: solid;
-  margin-top: 242px;
+  margin-top: 42px;
   margin-left: 15px;
 }
 .btn-response:hover{
@@ -225,24 +221,25 @@
   visibility:hidden;
 }
 .counter-line{
+
+  padding: 20px 10px;
+  /*
   position: relative;
-  width: 1170px;
+  width: 100%;
   height: auto;
   margin: 0 auto;
-  padding: 20px 10px;
-  /*border-color: #b7b7b7;
+  border-color: #b7b7b7;
   border-style: solid;
   border-width: 1px;*/
 }
 label{
-  color: #484c54;
-  font-size:16px;
+
+
 }
-
 ul{
-
   width: 500px;
   margin-left: 750px;
+  color: #484c54;
 }
 li{
   display: inline-block;

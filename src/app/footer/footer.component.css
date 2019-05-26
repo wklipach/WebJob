@@ -20,8 +20,6 @@
 }
 .copyright {
   position: absolute;
-  font-size: 16px;
-  font-family: Proxima Nova,sans-serif;
   color: rgb(255, 255, 255);
   text-align: left;
   margin-left: 209px;
@@ -29,9 +27,7 @@
 }
 .info {
   float: right;
-  font-size: 16px;
   padding-right: 30px;
-  font-family: Proxima Nova,sans-serif;
   color: rgb(255, 255, 255);
   text-align: left;
   margin-left: 350px;

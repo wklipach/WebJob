@@ -1,27 +1,23 @@
 .wrapper{
   position: relative;
-  font-family: "ProximaNovaRg";
-  font-size: 1em;
-  width: 100%;
+  width: 1170px;
   padding-right: 0;
   padding-left: 0;
   margin-left: 13px;
 }
 .top{
-  width: 1170px;
+  width: 100%;
 
   margin: 0 auto;
   font-size: 1.1em;
-  font-family: "Proxima Nova";
 }
 label{
   font-size: 1.1em;
-  font-family: "Proxima Nova";
   color: #0262d2;
   text-align: left;
 }
 .box{
-  width: 1170px;
+  width: 100%;
 
   position: relative;
 }

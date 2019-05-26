@@ -1,16 +1,12 @@
 .wrapper{
-/*  display: inline-block;
- font-size: 16px;
- height: 180px;
- */
   position: relative;
-  width: 100%;
+  width: 1170px;
   margin: 0 auto;
   padding-right: 0;
   padding-left: 0;
 }
 .top{
-  width: 1170px;
+  width: 100%;
   height: 59px;
   margin: 0 auto;
   border-bottom: solid 1px;
@@ -165,7 +161,7 @@ a:visited {
 }
 .bottom{
   position: relative;
-  width: 1170px;
+  width: 100%;
   height: 120px;
   margin: 0 auto;
 }
@@ -186,9 +182,6 @@ a:visited {
   margin-top:35px;
   margin-left: 185px;
   padding-left: 15px;
-}
-button{
-  font-family: "Proxima Nova","sans-serif";
 }
 .btn-search{
   display: inline-block;
@@ -243,7 +236,6 @@ button{
   position: absolute;
   width: 150px;
   height: 45px;
-  font-size: 16px;
   color: #484c54;
   text-align: left;
   cursor: pointer;
@@ -294,7 +286,6 @@ ul:hover{
   display: inline-block;
   width: 120px;
   height: 45px;
-  font-size: 16px;
   color: #484c54;
   float: right;
   text-align: right;

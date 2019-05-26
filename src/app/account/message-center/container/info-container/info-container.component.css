@@ -1,6 +1,4 @@
 .wrapper{
-  font-family: ProximaNovaRg,sans-serif;
-  font-size: 16px;
   width: 1170px;
   min-height: 300px;
   max-height: 500px;
@@ -11,12 +9,11 @@
   height: 36px;
   margin: 15px auto 0;
   font-size: 22px;
-  font-family: Proxima Nova,sans-serif;
   text-align: left;
   padding-bottom: 15px;
 }
 .messages-box{
-  width: 1170px;
+  width: 100%;
   min-height: 300px;
   max-height: 650px;
   overflow: auto;
@@ -53,8 +50,6 @@ li{
   width: 95%;
   height: auto;
   border-color: #b7b7b7;
-  font-size: 16px;
-  font-family: "Proxima Nova","sans-serif";
   margin-top: 2px;
 }
 .date{

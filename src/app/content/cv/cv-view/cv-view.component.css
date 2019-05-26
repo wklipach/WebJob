@@ -1,7 +1,5 @@
 .wrapper{
-  font-family: "ProximaNovaRg";
-  font-size: 16px;
-  width: 100%;
+  width: 1170px;
   height: auto;
   margin: 0 auto;
   color: rgb(68, 75, 84);
@@ -11,7 +9,6 @@
   height: 36px;
   margin: 0 auto;
   font-size: 22px;
-  font-family: "Proxima Nova";
   text-align: left;
   padding-bottom: 15px;
 }
@@ -21,8 +18,6 @@
 }
 label{
   position: absolute;
-  font-size: 16px;
-  font-family: "Proxima Nova","sans-serif";
   color: #0262d2;
   text-align: left;
 }

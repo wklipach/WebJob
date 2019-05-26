@@ -5,7 +5,7 @@
   color: rgb(68, 75, 84);
 }
 .top{
-  width: 1170px;
+  width: 100%;
   height: 36px;
   margin: 0 auto;
   font-size: 22px;
@@ -14,7 +14,7 @@
 }
 .box-row{
   position: relative;
-  width: 1170px;
+  width: 100%;
   height:900px;
 }
 .left-side{
@@ -76,7 +76,6 @@ label{
   width: 100%;
   height: auto;
   border-color: #b7b7b7;
-  font-size: 16px;
 }
 .date{
   width:100px;

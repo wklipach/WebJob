@@ -1,13 +1,11 @@
 .wrapper{
-  font-family: "ProximaNovaRg","sans-serif";
-  font-size: 16px;
-  width: 100%;
+  width: 1170px;
   margin: 0 auto;
   padding-right: 0;
   padding-left: 0;
 }
 .top{
-  width: 1170px;
+  width: 100%;
   height: 36px;
   margin: 0 auto;
   border-color: #b7b7b7;
@@ -18,20 +16,17 @@
 }
 .box{
   position: relative;
-  width: 1170px;
+  width: 100%;
   height: auto;
   margin: 30px auto;
   border-top: solid 1px;
   border-color: #b7b7b7;
   /*vertical-align: middle; */
-  font-size: 16px;
-  font-family: "Proxima Nova","sans-serif";
   color: rgb(68, 75, 84);
   text-align: left;
 }
 label{
   font-size: 18px;
-  font-family: "Proxima Nova","sans-serif";
   color: #0262d2;
   line-height: 2;
   text-align: left;
@@ -97,8 +92,6 @@ label{
   margin-top: 11px;
 }
 input, textarea, select{
-  font-size: 16px;
-  font-family: "Proxima Nova","sans-serif";
   text-align: left;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
@@ -158,7 +151,6 @@ input, textarea, select{
   text-align: center;
 }
 .btn-save{
-  font-size: 16px;
   background-color: #3366ff;
   color: rgb(255, 255, 255);
   border-color: #054086;

@@ -1,15 +1,14 @@
 .wrapper{
-  width: 100%;
+  width: 1170px;
   height: auto;
   margin: 0 auto;
   color: rgb(68, 75, 84);
 }
 .top{
-  width: 1170px;
+  width: 100%;
   height: 36px;
   margin: 0 auto;
   font-size: 26px;
-  font-family: "ProximaNovaRg";
   text-align: left;
   padding-bottom: 15px;
   padding-top: 10px;
