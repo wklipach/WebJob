@@ -18,7 +18,7 @@ import {DatePipe} from '@angular/common';
 })
 export class CvhomeComponent implements OnInit {
 
-  //заголовок вакансий
+  // заголовок вакансий
   public sCV: string;
   private bConnected = false;
   private id_user = -1;
@@ -68,7 +68,7 @@ export class CvhomeComponent implements OnInit {
 
 
 
-    //_messageAdvancedFindObj
+    // _messageAdvancedFindObj
     // если не было расширенного поиска вакансий делаем обычный поиск, иначе расширенный запускается из advanced-search.component
     if ( this.httpService.getMessageAdvancedFindObj() === null ) {
 
@@ -87,9 +87,9 @@ export class CvhomeComponent implements OnInit {
   }
 
 
-  //TODO getVacancyAdvanced  ЭТО ПРОДВИНУТЫЙ ПОИСК
+  // TODO getVacancyAdvanced  ЭТО ПРОДВИНУТЫЙ ПОИСК
   getCVAdvanced(advancedFindObj: any) {
-    //если есть id_user вствавляем его
+    // если есть id_user вствавляем его
     advancedFindObj['id_user']=-1;
     if (this.bConnected) {
       advancedFindObj['id_user'] = this.id_user;
@@ -103,12 +103,12 @@ export class CvhomeComponent implements OnInit {
       });
   }
 
-//todo GETCV
-  getCV(sMask: string,isFavorites: boolean, isAdvancedFind: boolean) {
+// todo GETCV
+  getCV(sMask: string, isFavorites: boolean, isAdvancedFind: boolean) {
     return this.getTableCV = this.httpService.getTableCV(sMask, this.rowPerPage, this.page, isFavorites, isAdvancedFind, this.id_user).subscribe(
       (data: any) => {
 
-        //если поиск не дал результатов вызываем сами себя с пустой маской
+        // если поиск не дал результатов вызываем сами себя с пустой маской
         if (sMask !== '' && data.length === 0) {
           console.log('ПОИСК ПО РЕЗЮМЕ НЕ ДАЛ РЕЗУЛЬТАТОВ');
           this.moveS.startNullFind('Поиск не дал результатов.');
@@ -138,7 +138,7 @@ export class CvhomeComponent implements OnInit {
           this.router.navigate(['/invitation']);
         });
       } else {
-        this.myDataCV[index].sErrorText = 'Вы уже общаетесь по данному CV.';
+        this.myDataCV[index].sErrorText = 'Вы уже посылали приглашение на данное резюме.';
       }
     }
   );
@@ -158,10 +158,10 @@ export class CvhomeComponent implements OnInit {
     this.bChecked20 = false;
     this.bChecked50 = false;
 
-    if (nPageNumber===5)   this.bChecked5 = true;
-    if (nPageNumber===10)  this.bChecked10 = true;
-    if (nPageNumber===20)  this.bChecked20 = true;
-    if (nPageNumber===50)  this.bChecked50 = true;
+    if (nPageNumber === 5)   this.bChecked5 = true;
+    if (nPageNumber === 10)  this.bChecked10 = true;
+    if (nPageNumber === 20)  this.bChecked20 = true;
+    if (nPageNumber === 50)  this.bChecked50 = true;
     if (!this.bChecked5 && !this.bChecked10 && !this.bChecked20 && !this.bChecked50) this.bChecked5 = true;
   }
 
@@ -282,7 +282,7 @@ export class CvhomeComponent implements OnInit {
   }
 
   onLoadFromBaseAvatar(k: any) {
-    //TODO точка 2
+    // TODO точка 2
     k.base64textString = [];
 
     if (k.Avatar !== null) {
