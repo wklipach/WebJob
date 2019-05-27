@@ -2,6 +2,7 @@
   <div class="top">{{sCV}}</div>
 
     <div class="cv-box" id="cv-box" *ngFor="let curCV of myDataCV; let i = index" (click)="MyMethod(curCV.id, $event)">
+
     <div class="v-line"></div>
     <div class="number">{{i+1}}</div>
     <div class="title">{{curCV.Position}}</div>
@@ -13,6 +14,7 @@
 
     <!-- ////////////////////////// -->
     <div *ngIf="curCV.base64textString.length>0; then contentLoadAvatar else contentDefault">Невозможно выполнить условия</div>
+
     <ng-template #contentLoadAvatar>
       <img class="logotype" *ngFor="let item of curCV.base64textString"  src={{item}} alt="Фото" id="img">
     </ng-template>
@@ -34,6 +36,7 @@
 
       <!-- -->
       <button class="btn-response" type="button" id="vcresponse" title="Пригласить" (click)="response(i, curCV.id)" >Пригласить</button>
+
 
     </div>
 
