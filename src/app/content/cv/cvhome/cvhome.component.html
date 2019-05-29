@@ -1,18 +1,25 @@
 <div class="wrapper">
   <div class="top">{{sCV}}</div>
 
-    <div class="cv-box" id="cv-box" *ngFor="let curCV of myDataCV; let i = index" (click)="MyMethod(curCV.id, $event)">
+
+  <div class="cv-box" *ngFor="let curCV of myDataCV; let i = index" (click)="MyMethod(curCV.id, $event)" id="cv-box" >
 
     <div class="v-line"></div>
+      <div class="line">
     <div class="number">{{i+1}}</div>
     <div class="title">{{curCV.Position}}</div>
     <div class="income">{{curCV.SalaryFrom}} &#x20BD;</div>
+      </div>
 
 
+    <div class="line">
     <img class="city" src="/assets/img/city.png" alt="Город">
     <span class="city-name">{{curCV.CityName}}</span>
+    </div>
 
-    <!-- ////////////////////////// -->
+    <span class="user-name">{{curCV.UserName}}</span>
+
+    <div class="line">
     <div *ngIf="curCV.base64textString.length>0; then contentLoadAvatar else contentDefault">Невозможно выполнить условия</div>
 
     <ng-template #contentLoadAvatar>
@@ -23,25 +30,29 @@
       <img class="logotype-company" src="/assets/img/no-photo.png" alt="Фото">
     </ng-template>
     <!-- ////////////////////////// -->
-
-    <span class="user-name">{{curCV.UserName}}</span>
-
-    <div class="final-date" *ngIf="!curCV.errorEndDay">Размещено до{{curCV.sDateEnd}}</div>
-
     <span class="experience">{{curCV.sExperience}}</span>
+
+  </div>
+
     <span class="skills">{{curCV.Skills}}</span>
     <span class="education">{{curCV.sEducation}}</span>
 
-    <div class="education" *ngIf="curCV.sErrorText">{{curCV.sErrorText}} </div>
 
-      <!-- -->
+
+
+    <div class="line">
       <button class="btn-response" type="button" id="vcresponse" title="Пригласить" (click)="response(i, curCV.id)" >Пригласить</button>
+      <div class="final-date" *ngIf="!curCV.errorEndDay">Размещено до{{curCV.sDateEnd}}</div>
+     </div>
 
+    <div class="alerSend" *ngIf="curCV.sErrorText">{{curCV.sErrorText}} </div>
 
 
     </div>
 
-  <div class="counter-line">
+
+
+<div class="counter-line">
     <div class="left-box">
       <app-page-count [numberOfRecordsPerPage] = "rowPerPage" [numberOfVisiblePages]="7"
                       [(currentPage)] = "page" [numberOfRecordsPerAll] = "recordsPerAll" (currentPageChange)="onPageChanged($event)"></app-page-count>
