@@ -43,6 +43,7 @@ export class CvListComponent implements OnInit, OnDestroy {
   private cvlistGetCvList: Subscription;
   private cvCity: Subscription;
   private cvDeleteCv: Subscription;
+  private cvUpdateDateCv: Subscription;
 
   constructor( private cls: CvListService,
                private authService: AuthService,
@@ -135,6 +136,15 @@ export class CvListComponent implements OnInit, OnDestroy {
         this.CvListItem = 4;
         break;
       }
+
+      case '5': {
+        this.contactMethods[i].bDelete = false;
+        this.contactMethods[i].id = 5;
+        this.CvListItem = 5;
+        this.UpdateDate(item);
+        break;
+      }
+
       default: {
         break;
       }
@@ -158,11 +168,32 @@ export class CvListComponent implements OnInit, OnDestroy {
       this.cvDeleteCv.unsubscribe();
     }
 
+    if (typeof  this.cvUpdateDateCv !== 'undefined') {
+      this.cvUpdateDateCv.unsubscribe();
+    }
+
   }
 
 
   newcv() {
     this.router.navigate(['/newcv']);
+  }
+
+
+  //todo UpdateDate
+  UpdateDate(item: any) {
+
+    // this.cvDeleteCv
+    console.log('обновляем дату для item.id', item.id);
+    this.cvUpdateDateCv = this.cls.setUpdateDateCv(item.id).subscribe( () => {
+
+        this.RouterReload();
+      },
+      err => console.log('при обновлении даты CV возникла нештатная ситуация ', err));
+
+
+
+
   }
 
 

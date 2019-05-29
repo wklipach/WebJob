@@ -13,8 +13,8 @@ import {DatePipe} from '@angular/common';
 
 @Component({
   selector: 'app-cvhome',
-  templateUrl: './cvhome.component.html',
-  styleUrls: ['./cvhome.component.css']
+  templateUrl: './cvhome.component.html'
+  // styleUrls: ['./cvhome.component.css']
 })
 export class CvhomeComponent implements OnInit {
 

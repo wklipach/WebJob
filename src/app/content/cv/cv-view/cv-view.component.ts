@@ -65,44 +65,54 @@ const arrEmployment = item.Employment.split(',');
     console.log('this._cvitem', this._cvitem);
 
     if (this._cvitem.Education !== undefined) {
-      const arrEducation = this._cvitem.Education.split(',');
-      arrEducation.forEach(
-        (value)=> {
-          this._listEducation.push(EducationList[value-1].name);
-        })
+      if (this._cvitem.Education !== null) {
+        const arrEducation = this._cvitem.Education.split(',');
+        arrEducation.forEach(
+          (value) => {
+            this._listEducation.push(EducationList[value - 1].name);
+          })
+      }
     }
 
 
     if (this._cvitem.Experience !== undefined) {
-      const arrExperience = this._cvitem.Experience.split(',');
-      arrExperience.forEach(
-        (value)=> {
-          this._listExperience.push(ExperienceList[value-1].name);
-        })
+      if (this._cvitem.Experience !== null) {
+        const arrExperience = this._cvitem.Experience.split(',');
+        arrExperience.forEach(
+          (value) => {
+            this._listExperience.push(ExperienceList[value - 1].name);
+          })
+      }
     }
 
     if (this._cvitem.Industry !== undefined) {
-      const arrIndustry = this._cvitem.Industry.split(',');
-      arrIndustry.forEach(
-        (value)=> {
-          this._listIndustry.push(IndustryList[value-1].name);
-        })
+      if (this._cvitem.Industry !== null) {
+        const arrIndustry = this._cvitem.Industry.split(',');
+        arrIndustry.forEach(
+          (value) => {
+            this._listIndustry.push(IndustryList[value - 1].name);
+          })
+      }
     }
 
     if (this._cvitem.Schedule !== undefined) {
-      const arrSchedule = this._cvitem.Schedule.split(',');
-      arrSchedule.forEach(
-        (value)=> {
-          this._listSchedule.push(ScheduleList[value-1].name);
-        })
+      if (this._cvitem.Schedule !== null) {
+        const arrSchedule = this._cvitem.Schedule.split(',');
+        arrSchedule.forEach(
+          (value) => {
+            this._listSchedule.push(ScheduleList[value - 1].name);
+          })
+      }
     }
 
     if (this._cvitem.Employment !== undefined) {
-      const arrEmployment = this._cvitem.Employment.split(',');
-      arrEmployment.forEach(
-        (value)=> {
-          this._listEmployment.push(EmploymentList[value-1].name);
-        })
+      if (this._cvitem.Employment !== null) {
+        const arrEmployment = this._cvitem.Employment.split(',');
+        arrEmployment.forEach(
+          (value) => {
+            this._listEmployment.push(EmploymentList[value - 1].name);
+          })
+      }
     }
 
     if (this._cvitem !== undefined) {
