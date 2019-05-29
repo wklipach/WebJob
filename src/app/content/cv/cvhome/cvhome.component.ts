@@ -10,11 +10,12 @@ import {City} from '../../../class/City';
 import {Router} from '@angular/router';
 import {MoveService} from '../../../services/move.service';
 import {DatePipe} from '@angular/common';
+import {CvEditService} from '../../../services/cv-edit.service';
 
 @Component({
   selector: 'app-cvhome',
-  templateUrl: './cvhome.component.html'
-  // styleUrls: ['./cvhome.component.css']
+  templateUrl: './cvhome.component.html',
+  styleUrls: ['./cvhome.component.css']
 })
 export class CvhomeComponent implements OnInit {
 
@@ -46,6 +47,7 @@ export class CvhomeComponent implements OnInit {
               private is: GuideService,
               private router: Router,
               private moveS: MoveService,
+              private cveditserv: CvEditService,
               private httpTvsService: TableVacancyService) { }
 
   ngOnInit() {
@@ -148,6 +150,15 @@ export class CvhomeComponent implements OnInit {
 
   MyMethod(zid: number, $event) {
     console.log('MyMethod', $event);
+
+    // если это кнопка Пригласить запрещаем открывать просмотр
+    if ($event.target.id === 'cvresponse')   return;
+
+    let cv = this.myDataCV.find(cv =>  cv.id===zid);
+
+    this.cveditserv.setCvId(cv.id);
+    this.cveditserv.setCvItem(cv);
+    this.router.navigate(['/cv-view']);
   }
 
 
