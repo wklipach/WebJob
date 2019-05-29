@@ -54,6 +54,27 @@ export class CvhomeComponent implements OnInit {
 
     console.log('constructor cvhome');
 
+    this.rowPerPage = 5;
+    if (window.localStorage.getItem('rowPerPage') !== '') {
+
+      this.rowPerPage = JSON.parse(window.localStorage.getItem('rowPerPage'));
+
+      if (this.rowPerPage === null) {
+        if (this.bChecked5) this.rowPerPage = 5;
+        if (this.bChecked10) this.rowPerPage = 10;
+        if (this.bChecked20) this.rowPerPage = 20;
+        if (this.bChecked50) this.rowPerPage = 50;
+
+        if (this.rowPerPage === null) {
+          this.rowPerPage = 5;
+        }
+      }
+
+    }
+
+    this.funcCheckedFind(this.rowPerPage);
+
+
     var Res =  this.authService.loginStorage();
     this.bConnected = Res.bConnected;
     this.id_user =  Res.id_user;
