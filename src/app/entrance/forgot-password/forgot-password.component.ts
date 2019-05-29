@@ -1,22 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {isUndefined} from "util";
 import {UserTable} from '../../class/UserTable';
 import {AuthService} from '../../services/auth-service.service';
 import {ForgotpasswordService} from '../../services/forgotpassword.service';
 import * as CryptoJS from 'crypto-js';
+import {timer} from 'rxjs/observable/timer';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-forgot-password',
   templateUrl: './forgot-password.component.html',
   styleUrls: ['./forgot-password.component.css']
 })
-export class ForgotPasswordComponent implements OnInit {
+export class ForgotPasswordComponent implements OnInit, OnDestroy {
 
   forgotForm : FormGroup;
 
   public showSucc : boolean = false;
   public showErr : boolean = false;
+  public stopCondition: boolean = false;
+
+  subscribeTimer: Subscription;
 
   constructor(private httpService: AuthService, private fps: ForgotpasswordService) {
 
@@ -30,6 +35,12 @@ export class ForgotPasswordComponent implements OnInit {
 
 
   ngOnInit() {
+  }
+
+  ngOnDestroy() {
+    if (typeof this.subscribeTimer !== 'undefined') {
+      this.subscribeTimer.unsubscribe();
+    }
   }
 
 
@@ -74,21 +85,28 @@ export class ForgotPasswordComponent implements OnInit {
           this.fps.sendPassword(email, newpwd, hash).subscribe(
             value=> {
               console.log('результат отправки письма', value);
+              this.Block5Sec();
+
             });
 
         }
         else {
           this.showSucc = false;
           this.showErr = true;
+          this.Block5Sec();
         }
       }
     );
 
+  }
 
 
 
-
-
+  Block5Sec() {
+    //блокируем кнопку 5 секунд
+    this.stopCondition = true;
+    this.subscribeTimer =  timer(5000).subscribe(()=>
+      this.stopCondition = false );
   }
 
 
