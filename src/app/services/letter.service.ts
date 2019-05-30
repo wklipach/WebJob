@@ -3,6 +3,7 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 import {forkJoin, Observable, of} from 'rxjs';
 import {Letter} from '../class/Letter';
 import {GlobalRef} from './globalref';
+import {isBoolean} from 'util';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,31 @@ export class LetterService {
       .set('id_user_from', '1')
 
     return this.http.get(sUrl, {params: params});
+
+  }
+
+
+//корреспонденция данного юзерв с учетом группировок и без нее
+  getListLetterGroup(id_user: number, isGroup: boolean) {
+
+    let sUrl = this.gr.sUrlGlobal+'Correspondence';
+
+    console.log('внутри сервиса  isGroup', isGroup );
+
+    if (isGroup.toString() === 'true') {
+      let params = new HttpParams()
+        .set('id_user_to', id_user.toString())
+        .set('id_user_from', id_user.toString())
+        .set('isGroup', 'true')
+        console.log('isGroup');
+        return this.http.get(sUrl, {params: params});
+    } else {
+      let params = new HttpParams()
+        .set('id_user_to', id_user.toString())
+        .set('id_user_from', id_user.toString())
+       console.log('без isGroup')
+       return this.http.get(sUrl, {params: params});
+    }
 
   }
 

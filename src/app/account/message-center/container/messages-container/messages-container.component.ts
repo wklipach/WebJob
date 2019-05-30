@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {AuthService} from '../../../../services/auth-service.service';
 import {LetterService} from '../../../../services/letter.service';
 import {Router} from '@angular/router';
@@ -12,7 +12,7 @@ import {Letter} from '../../../../class/Letter';
 })
 export class MessagesContainerComponent implements OnInit {
 
-
+  @Input() public  isGroup: boolean = false;
   private bConnected = false;
   protected id_user = -1;
   private bEmployer = false;
@@ -31,7 +31,7 @@ export class MessagesContainerComponent implements OnInit {
 
   ngOnInit() {
 
-    return this.sbscTableLetter = this.httpLetter.getListLetter(this.id_user).subscribe(
+    return this.sbscTableLetter = this.httpLetter.getListLetterGroup(this.id_user, this.isGroup).subscribe(
       (data: any) => {
 
         if (data.length>0) {

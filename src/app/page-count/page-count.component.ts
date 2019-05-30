@@ -157,6 +157,10 @@ export class PageCountComponent implements OnInit {
   //в подписке число страниц Infinity
 
   ngOnInit() {
+
+
+    console.log('PAGINATOR');
+
     this._numberOfPage = Math.ceil(this.numberOfRecordsPerAll / this.numberOfRecordsPerPage);
     this.InitializePages();
     this.paginatorSubscription = this.is.onCheckPaginator.subscribe((value) => {
