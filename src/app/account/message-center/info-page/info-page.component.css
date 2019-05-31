@@ -1,0 +1,42 @@
+.wrapper{
+  width: 1170px;
+  min-height: 300px;
+  max-height: 500px;
+  margin: 0 auto;
+  color: rgb(68, 75, 84);
+}
+.top{
+  height: 36px;
+  margin: 15px auto 0;
+  font-size: 22px;
+  text-align: left;
+  padding-bottom: 15px;
+}
+.messages-box{
+  width: 100%;
+  min-height: 300px;
+  max-height: 650px;
+  overflow: auto;
+}
+.message{
+  margin: 0 auto;
+}
+.date{
+  color: #F74933;
+}
+.from{
+  float: right;
+color: blue;
+}
+.txt{
+  display: block;
+  width: 100%;
+  margin-top: 2%;
+  color: rgb(68, 75, 84);
+}
+.subject{
+  display: block;
+  width: 100%;
+  margin-top: 2%;
+  color: rgb(68, 75, 84);
+}
