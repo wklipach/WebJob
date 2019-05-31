@@ -1,17 +1,17 @@
+<app-header-top></app-header-top>
 
-    <div *ngIf="this.anyInfo">
-      <p>
-      {{this.anyInfo.DateTimeCreate | date :'dd.MM.yyyy'}}
-      </p>
-      <p>
-        {{this.anyInfo.UserNameFrom}}
-      </p>
+<div class="wrapper">
+  <div class="messages-box" *ngIf="this.anyInfo">
 
-      <p>
-      {{this.anyInfo.Subject}}
-      </p>
+      <span class="date"> {{this.anyInfo.DateTimeCreate | date :'dd.MM.yyyy'}}</span>
+      <span class="from">{{this.anyInfo.UserNameFrom}}</span>
+      <span class="from">{{this.anyInfo.Subject}}</span>
+      <span class="txt">{{this.anyInfo.letterText}}</span>
+      <span class="subject">Тема</span>
 
-      <p>
-      {{this.anyInfo.letterText}}
-      </p>
-    </div>
+
+  </div>
+</div>
+
+<app-footer></app-footer>
+
