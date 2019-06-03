@@ -21,7 +21,6 @@ import * as CryptoJS from 'crypto-js';
 })
 export class AccountEmployerComponent implements OnInit {
 
-
   base64textString = [];
   genderList: Guide[];
   accountEmployerForm: FormGroup;

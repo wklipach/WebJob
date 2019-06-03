@@ -38,6 +38,7 @@ export class CvEditComponent implements OnInit, OnDestroy {
   cv_id = 0;
   private _cvitem: any;
   private _myDisplayCity: string;
+  public promPer: string;
 
   /*  ссылки на созданные компоненты */
   componentsReferences = [];
@@ -154,6 +155,9 @@ export class CvEditComponent implements OnInit, OnDestroy {
     // редактируемая "опыт"
     if (typeof item.sExperience !== 'undefined') {
       this.editCVForm.controls['inputExperience'].setValue(item.sExperience);
+
+      this.promPer = item.sExperience;
+
     }
 
     // редактируемый список городов по подписке с выбранным ранее городом в качестве выбранного

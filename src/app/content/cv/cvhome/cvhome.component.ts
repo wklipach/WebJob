@@ -298,10 +298,10 @@ export class CvhomeComponent implements OnInit {
   data_show(data: any) {
 
     // dataCV[]
+  if (data !== null) {
+    data.forEach((curCV, index, arrCurValue) => {
 
-    data.forEach(  (curCV, index, arrCurValue) => {
-
-      console.log('curCV', curCV);
+      //console.log('curCV', curCV);
 
       this.onLoadFromBaseAvatar(curCV);
     });
@@ -310,6 +310,7 @@ export class CvhomeComponent implements OnInit {
     this.myDataCV = data;
     this.allDataCV = data;
     this.recordsPerAll = data.length;
+  }
     this.is.startCheckPaginator({value1: this.recordsPerAll, value2: this.rowPerPage});
   }
 

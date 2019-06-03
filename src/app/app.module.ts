@@ -74,6 +74,7 @@ import { InvitationComponent } from './content/invitation/invitation.component';
 import {ForgotpasswordService} from './services/forgotpassword.service';
 import { MessagesContainerComponent } from './account/message-center/container/messages-container/messages-container.component';
 import { InfoContainerComponent } from './account/message-center/container/info-container/info-container.component';
+import {TextToHtmlDirective} from './direct/text-to-html-directive';
 
 
 
@@ -180,7 +181,8 @@ const appRoutes: Routes = [
     DialogminimumComponent,
     InvitationComponent,
     MessagesContainerComponent,
-    InfoContainerComponent
+    InfoContainerComponent,
+    TextToHtmlDirective
    ],
   entryComponents: [
     CvPreviousComponent,
