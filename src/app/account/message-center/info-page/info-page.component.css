@@ -26,7 +26,8 @@
 }
 .from{
   float: right;
-color: blue;
+  color: #0262d2;
+  font-size: 1.05em;
 }
 .txt{
   display: block;

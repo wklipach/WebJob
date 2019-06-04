@@ -18,9 +18,6 @@
 
     </form>
 
-
-
-
     <label class="fio">Ф.И.О.</label> <br>
     <div  *ngIf="loadUser!= undefined">
       {{this.loadUser.Name}}
@@ -48,9 +45,11 @@
 
     <label class="labelSkillsAbilities">Основные навыки и умения</label><br>
 
-    <span>
-      <div  *ngIf="_cvitem.Skills!= undefined">{{_cvitem.Skills}}</div>
-    </span><br>
+
+      <div  *ngIf="_cvitem.Skills!= undefined">
+       <div appTextToHtml [sourceText]="_cvitem.Skills">
+       </div> </div>
+   <br>
 
 
     <label class="labelEducation">Образование</label> <br>
@@ -59,7 +58,8 @@
         {{le}}
       </div>
     </span><br>
-    <label class="labelEducation">Образование</label> <br>
+    <label class="labelEducation">Образование</label>
+    <br>
     <span><div  *ngIf="_cvitem.sEducation!= undefined">{{_cvitem.sEducation}}</div>
     </span><br>
 
@@ -67,7 +67,7 @@
     <span><div  *ngIf="_cvitem.sExperience!= undefined">{{_cvitem.sExperience}}</div>
     </span><br>
 
-    <br> <br> <br> <br> <br> <br>
+    <br> <br> <br> <br> <br>
 
     <!--    Короче, выводить всё что есть дальше в newcv            -->
 

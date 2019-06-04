@@ -54,7 +54,7 @@ h1 {
  letter-spacing: 2px;
   */
   padding:0 18px ;
-  font-family: "Arial Rounded MT Bold","sans-serif";
+  font-family: "Arial Rounded MT Bold", "Calibri", "sans-serif";
   color: rgb(68, 75, 84);
   font-weight: 900;
 }
