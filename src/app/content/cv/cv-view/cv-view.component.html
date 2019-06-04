@@ -2,35 +2,44 @@
 <div class="wrapper">
   <div class="top">Просмотр резюме</div>
 
-  <div class="box">
-
     <form [formGroup]="formView">
+      <div class="v-line"></div>
 
 
-      <div *ngIf="base64textString.length>0;then contentLoadAvatar else contentDefault">Условия выполнить невозможно</div>
-      <ng-template #contentLoadAvatar>
-        <img class="logotype" *ngFor="let item of base64textString"  src={{item}} alt="Посмотреть профиль" id="img" (click) = "onProfileClick($event)">
-      </ng-template>
-
-      <ng-template #contentDefault>
-        <img src="/assets/img/usernull.png" class="img-thumbnail" onclick="">
-      </ng-template>
-
-    </form>
-
-    <label class="fio">Ф.И.О.</label> <br>
-    <div  *ngIf="loadUser!= undefined">
-      {{this.loadUser.Name}}
-      {{this.loadUser.LastName}} <br>
-      {{this.loadUser.UserName}} <br>
-    </div>
-    <br>
+      <div class="line">   </div>
+        <div  *ngIf="loadUser!= undefined">
+          <span class="name"> {{this.loadUser.Name}}
+ {{this.loadUser.LastName}}</span>
 
 
-    <img class="city" src="/assets/img/city.png" alt="Город">
-    <span class="city-name">
-        <div  *ngIf="_cvitem!= undefined">{{_cvitem.CityName}}</div>
-    </span>   <br>
+
+      </div>
+
+      <div class="line">
+        <div *ngIf="base64textString.length>0;then contentLoadAvatar else contentDefault">Условия выполнить невозможно</div>
+        <ng-template #contentLoadAvatar>
+          <img class="logotype" *ngFor="let item of base64textString"  src={{item}} alt="Посмотреть профиль" id="img" (click) = "onProfileClick($event)">
+        </ng-template>
+
+        <ng-template #contentDefault>
+          <img src="/assets/img/usernull.png" class="img-thumbnail" onclick="">
+        </ng-template>
+      </div>
+
+
+      <span class="name"> {{this.loadUser.UserName}} </span>
+
+
+
+
+      <div class="line">
+        <img class="city" src="/assets/img/city.png" alt="Город">
+        <div class="city-name" *ngIf="_cvitem!= undefined">{{_cvitem.CityName}}</div>
+      </div>
+
+
+
+
 
     <label class="label-position">Желаемая должность</label> <br>
     <span class="position" id="position"></span>
@@ -38,55 +47,51 @@
       {{_cvitem.Position}} </div>
     <br>
 
-    <label class="From">Заработная плата</label> <br>
-    <br>
-    <span><div  *ngIf="_cvitem!= undefined">{{_cvitem.SalaryFrom}}</div></span><br>
+    <label class="From">Заработная плата</label>
+
+    <span><div  *ngIf="_cvitem!= undefined">{{_cvitem.SalaryFrom}}</div></span>
     <br>
 
-    <label class="labelSkillsAbilities">Основные навыки и умения</label><br>
+    <label class="labelSkillsAbilities">Основные навыки и умения</label>
 
 
       <div  *ngIf="_cvitem.Skills!= undefined">
        <div appTextToHtml [sourceText]="_cvitem.Skills">
        </div> </div>
-   <br>
 
 
-    <label class="labelEducation">Образование</label> <br>
+
+    <label class="labelEducation">Образование</label>
     <span>
       <div class="correspondence" *ngFor="let le of this._listEducation; let i = index">
         {{le}}
       </div>
-    </span><br>
-    <label class="labelEducation">Образование</label>
-    <br>
+    </span>
+  <label class="labelEducation">Образование</label>
+
     <span><div  *ngIf="_cvitem.sEducation!= undefined">{{_cvitem.sEducation}}</div>
     </span><br>
 
     <label class="labelEducation">Опыт работы</label> <br>
     <span><div  *ngIf="_cvitem.sExperience!= undefined">{{_cvitem.sExperience}}</div>
-    </span><br>
+    </span>
 
-    <br> <br> <br> <br> <br>
-
-    <!--    Короче, выводить всё что есть дальше в newcv            -->
-
-    <label>Опыт</label> <br>
+       <label>Опыт</label>
     <div *ngFor="let lep of this._listExperience; let i = index">
       {{lep}}
     </div>
 
-    <label>Сфера деятельности</label> <br>
+    <label>Сфера деятельности</label>
     <div *ngFor="let liI of this._listIndustry; let i = index">
       {{liI}}
     </div>
 
-    <label>Желаемый график</label> <br>
+    <label>Желаемый график</label>
     <div *ngFor="let lS of this._listSchedule; let i = index">
       {{lS}}
     </div>
 
-    <label>Занятость</label> <br>
+    <label>Занятость</label>
     <div *ngFor="let Elm of this._listEmployment; let i = index">
       {{Elm}}
     </div>
@@ -95,13 +100,13 @@
     <div class="cv-box">
 
 
-      <label>Языки</label> <br>
+      <label>Языки</label>
      <div class="correspondence" *ngFor="let lL of this._listLanguage; let i = index">
        {{lL['language_name']}} ==== {{lL['language_level']}}
      </div>
 
 
-      <label>Места работы</label> <br>
+      <label>Места работы</label>
       <div class="correspondence" *ngFor="let lP of this._listPrevious; let i = index">
         Период работы: {{lP['dStartDate'] | date:'dd.MM.yyyy'}} ==== {{lP['dCompletionDate'] | date:'dd.MM.yyyy'}}<br>
         Организация: {{lP['sCompany']}}<br>
@@ -110,5 +115,7 @@
       </div>
 
     </div>
+
+  </form>
+
   </div>
-</div>
