@@ -1,6 +1,5 @@
 {
-  "HOME": {
-    "TITLE": "Estonia Angular with ngx-translate!",
-    "SELECT": "Estonia Change language"
-  }
+  "HOME.TITLE": "Estonia Angular with ngx-translate!",
+  "HOME.SELECT": "Estonia Change language",
+  "home.value1": "ESTONIAN VALUE"
 }

@@ -12,6 +12,7 @@ import {GuideService} from '../services/guide-service.service';
 import {DatePipe} from '@angular/common';
 import {Letter} from '../class/Letter';
 import * as CryptoJS from 'crypto-js';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
@@ -56,7 +57,8 @@ export class HomeComponent implements OnInit, OnDestroy {
               private moveS: MoveService,
               private authService: AuthService,
               private cvEditSrv: CvEditService,
-              private is: GuideService) {
+              private is: GuideService,
+              private translate: TranslateService) {
 
   }
 
@@ -131,6 +133,10 @@ export class HomeComponent implements OnInit, OnDestroy {
 
 //    var encrypted = CryptoJS.SHA256('1234567890');
 //    console.log('encrypted',encrypted.toString());
+
+
+    console.log('home this.translate.currentLang', this.translate.currentLang);
+    this.translate.onLangChange.subscribe(value=> console.log('this.translate.onLangChange', value));
 
 
     var Res =  this.authService.loginStorage();

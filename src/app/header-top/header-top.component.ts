@@ -23,8 +23,8 @@ export class HeaderTopComponent implements OnInit {
   numberCountNotReadLetter: number = 0;
   numberCountNotReadBell: number = 0;
 
-  protected currentSwitch: number = 1;
-  private arrLangs: any = ['ru', 'ee'];
+  protected currentLangSwitch: number = 1;
+  private arrLangs: any = ['ru', 'ee', 'en'];
 
   sNullValueFind : string = '';
 
@@ -35,14 +35,17 @@ export class HeaderTopComponent implements OnInit {
                       ) {
 
 
-    console.log('TH');
     translate.addLangs(this.arrLangs);
     translate.setDefaultLang('ee');
     //const browserLang = translate.getBrowserLang();
     const browserLang = translate.getDefaultLang();
     console.log('browserLang', browserLang);
-    translate.use(browserLang.match(/ee|ru/) ? browserLang : 'ee');
+    translate.use(browserLang.match(/ru|ee|en/) ? browserLang : 'ee');
 
+    console.log('home.value1');
+    this.translate.get('home.value1').subscribe(
+      value => console.log(value)
+    );
 
     this.headerTopForm = new FormGroup({
       'inputSearch': new FormControl('',[])
@@ -69,10 +72,8 @@ export class HeaderTopComponent implements OnInit {
 
   myClickLang (item: number) {
     console.log(item);
-    this.currentSwitch = item;
-    if (this.translate.getLangs() !== this.arrLangs[this.currentSwitch]) {
-      this.translate.use(this.arrLangs[this.currentSwitch]);
-    }
+    this.currentLangSwitch = item;
+      this.translate.use(this.arrLangs[this.currentLangSwitch]);
   }
 
 

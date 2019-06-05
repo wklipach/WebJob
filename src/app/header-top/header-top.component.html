@@ -71,16 +71,20 @@
         <div class="menu-header-lang">
 
 
-<div *ngIf = "this.currentSwitch == 0">
-          <span class="langchoice">RU</span>
-          <img  class="flag-menu" src="/assets/img/russian.png" alt="Русский" title="Руский">
+<div *ngIf = "this.currentLangSwitch == 0">
+            <span class="langchoice">RU</span>
+            <img  class="flag-menu" src="/assets/img/russian.png" alt="Русский" title="Руский">
 </div>
 
-<div *ngIf = "this.currentSwitch == 1">
+<div *ngIf = "this.currentLangSwitch == 1">
             <span class="langchoice">EE</span>
             <img  class="flag-menu" src="/assets/img/flag-english.png" alt="Эстонский" title="Эстонский">
 </div>
 
+<div *ngIf = "this.currentLangSwitch == 2">
+            <span class="langchoice">EN</span>
+            <img  class="flag-menu" src="/assets/img/flag-english.png" alt="Английский" title="Английский">
+</div>
 
 
 
@@ -94,6 +98,7 @@
     <ul class="lang-list">
       <li class="langchoice-tumb" (click)="myClickLang(1)">EE<img class="flag-list" src="/assets/img/flag-english.png" alt="Эстонский" title="Эстонский"></li>
       <li><a class="langchoice-tumb" (click)="myClickLang(0)">RU<img class="flag-list" src="/assets/img/flag-russia.png" alt="Русский" title="Руский"></a></li>
+      <li><a class="langchoice-tumb" (click)="myClickLang(2)">EN<img class="flag-list" src="/assets/img/flag-english.png" alt="Английский" title="Английский"></a></li>
     </ul>
 
 
