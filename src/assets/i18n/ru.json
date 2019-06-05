@@ -1,6 +1,5 @@
 {
-  "HOME.TITLE":  "Russian Angular with ngx-translate!",
-  "HOME.TITLE": "Russian Change language",
-  "home.value1": "Русская строка"
-
+  "HOME.TITLE": "РУССКИЙ ЯЗЫК",
+  "header-top.hello": "Здравствуйте",
+  "header-top.profile": "Профиль работодателя"
 }

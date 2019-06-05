@@ -6,13 +6,13 @@
   <div *ngIf="bConnected">
 
       <img class="user" src="/assets/img/user.png" alt="Welcome" title="Welcome">
-      <span class="hello">Здравствуйте,&nbsp;</span>
+      <span class="hello">{{ 'header-top.hello' | translate }},&nbsp;</span>
 
       <div class="menu-header">{{ htUserName }}
       <img class="arrow-down" src="/assets/img/arrow-down.png" alt="Открыть меню пользователя" title="Mеню пользователя">
       </div>
       <ul class="user-list">
-        <a routerLink="/account-employer" routerLinkActive="active"><li *ngIf = "bEmployer">Профиль работодателя</li></a>
+        <a routerLink="/account-employer" routerLinkActive="active"><li *ngIf = "bEmployer">{{ 'header-top.profile' | translate }}</li></a>
         <a routerLink="/new-vacancy" routerLinkActive="active"><li *ngIf = "bEmployer">Новая вакансия</li></a>
         <a routerLink="/vacancies" routerLinkActive="active"><li *ngIf = "bEmployer">Наши вакансии</li></a>
         <a routerLink="/advanced-search" routerLinkActive="active"><li *ngIf = "bEmployer">Поиск сотрудников</li></a>

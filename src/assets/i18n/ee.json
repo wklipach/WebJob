@@ -1,5 +1,5 @@
 {
-  "HOME.TITLE": "Estonia Angular with ngx-translate!",
-  "HOME.SELECT": "Estonia Change language",
-  "home.value1": "ESTONIAN VALUE"
+  "HOME.TITLE": "ЭСТОНСКИЙ ЯЗЫК",
+  "header-top.hello": "Teretulnud",
+  "header-top.profile": "Tööandja profiil"
 }
