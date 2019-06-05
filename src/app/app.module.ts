@@ -11,7 +11,7 @@ import { ForgotPasswordComponent } from './entrance/forgot-password/forgot-passw
 import { LoginComponent } from './entrance/login/login.component';
 import { RouterModule, Routes } from '@angular/router';
 import {AuthService} from './services/auth-service.service';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { RegisterEmployerComponent } from './entrance/registration/register-employer/register-employer.component';
 import { RegisterEmployeeComponent } from './entrance/registration/register-employee/register-employee.component';
 import { RulesComponent } from './rules/rules.component';
@@ -75,6 +75,8 @@ import {ForgotpasswordService} from './services/forgotpassword.service';
 import { MessagesContainerComponent } from './account/message-center/container/messages-container/messages-container.component';
 import { InfoContainerComponent } from './account/message-center/container/info-container/info-container.component';
 import {TextToHtmlDirective} from './direct/text-to-html-directive';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 
 
@@ -123,11 +125,27 @@ const appRoutes: Routes = [
   {path: '**', component: NotFoundComponent }
 ];
 
+
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient) {
+    return new TranslateHttpLoader(http);
+}
+
+
 @NgModule({
   imports:
    [ BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule, AngularFontAwesomeModule,
      BrowserAnimationsModule,
-     NgbModule, NgbPaginationModule, NgbAlertModule, RouterModule.forRoot(appRoutes)],
+     NgbModule, NgbPaginationModule, NgbAlertModule,
+
+     TranslateModule.forRoot({
+       loader: {
+         provide: TranslateLoader,
+         useFactory: HttpLoaderFactory,
+         deps: [HttpClient]
+       }
+     }),
+     RouterModule.forRoot(appRoutes)],
   declarations: [
     AppComponent,
     HeaderTopComponent,

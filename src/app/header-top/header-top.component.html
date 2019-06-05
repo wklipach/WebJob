@@ -1,5 +1,7 @@
 <div class="wrapper">
 
+  <h2>{{ 'HOME.TITLE' | translate }}</h2>
+
   <div class="top">
   <div *ngIf="bConnected">
 
@@ -66,16 +68,36 @@
     </div>
 
 
-    <div class="menu-header-lang">
-      <span class="langchoice">RU</span>
-      <img  class="flag-menu" src="/assets/img/russian.png" alt="Русский" title="Руский">
-      <img class="arrow-down-lang" src="/assets/img/arrow-down.png" alt="Выбор языка" title="Выбор языка">
-    </div>
+        <div class="menu-header-lang">
+
+
+<div *ngIf = "this.currentSwitch == 0">
+          <span class="langchoice">RU</span>
+          <img  class="flag-menu" src="/assets/img/russian.png" alt="Русский" title="Руский">
+</div>
+
+<div *ngIf = "this.currentSwitch == 1">
+            <span class="langchoice">EE</span>
+            <img  class="flag-menu" src="/assets/img/flag-english.png" alt="Эстонский" title="Эстонский">
+</div>
+
+
+
+
+          <img class="arrow-down-lang" src="/assets/img/arrow-down.png" alt="Выбор языка" title="Выбор языка">
+        </div>
+
+<!--
+    [ngClass]="{'active': this.currentSwitch == 0}
+-->
+
     <ul class="lang-list">
-      <li><span class="langchoice-tumb">RU</span><img class="flag-list" src="/assets/img/flag-russia.png" alt="Русский" title="Руский"></li>
-      <li><span class="langchoice-tumb">EN</span><img class="flag-list" src="/assets/img/flag-english.png" alt="Английский" title="Английский"></li>
+      <li><a class="langchoice-tumb" (click)="myClickLang(0)">RU</a><img class="flag-list" src="/assets/img/flag-russia.png" alt="Русский" title="Руский"></li>
+      <li><a class="langchoice-tumb" (click)="myClickLang(1)">EE</a><img class="flag-list" src="/assets/img/flag-english.png" alt="Эстонский" title="Эстонский"></li>
     </ul>
-    </div>
+
+
+  </div>
 
 
   <div class="bottom">

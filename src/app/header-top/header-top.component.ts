@@ -5,6 +5,7 @@ import {FormControl, FormGroup} from '@angular/forms';
 import {TableVacancyService} from '../services/table-vacancy.service';
 import {MoveService} from '../services/move.service';
 import {LetterService} from '../services/letter.service';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header-top',
@@ -22,11 +23,26 @@ export class HeaderTopComponent implements OnInit {
   numberCountNotReadLetter: number = 0;
   numberCountNotReadBell: number = 0;
 
+  protected currentSwitch: number = 1;
+  private arrLangs: any = ['ru', 'ee'];
+
   sNullValueFind : string = '';
 
   constructor(private httpService: AuthService, private router: Router,
                       private httpTvsService: TableVacancyService, private moveS: MoveService,
-                      private curRoute: ActivatedRoute, private letServ: LetterService  ) {
+                      private curRoute: ActivatedRoute, private letServ: LetterService,
+                      public translate: TranslateService
+                      ) {
+
+
+    console.log('TH');
+    translate.addLangs(this.arrLangs);
+    translate.setDefaultLang('ee');
+    //const browserLang = translate.getBrowserLang();
+    const browserLang = translate.getDefaultLang();
+    console.log('browserLang', browserLang);
+    translate.use(browserLang.match(/ee|ru/) ? browserLang : 'ee');
+
 
     this.headerTopForm = new FormGroup({
       'inputSearch': new FormControl('',[])
@@ -50,6 +66,15 @@ export class HeaderTopComponent implements OnInit {
 
 
   }
+
+  myClickLang (item: number) {
+    console.log(item);
+    this.currentSwitch = item;
+    if (this.translate.getLangs() !== this.arrLangs[this.currentSwitch]) {
+      this.translate.use(this.arrLangs[this.currentSwitch]);
+    }
+  }
+
 
   ngOnInit() {
 
