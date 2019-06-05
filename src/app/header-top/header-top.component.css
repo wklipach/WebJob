@@ -320,6 +320,10 @@ ul.lang-list li{
 .lang-list li:hover{
   background: #e8f1fb;
 }
+.lang-list li:after {
+  display: none;
+ /* clear: both; */
+}
 .menu-header-lang:hover{
   background: #FFF;
 }
