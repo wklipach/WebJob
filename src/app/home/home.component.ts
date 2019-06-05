@@ -11,7 +11,6 @@ import {CvEditService} from '../services/cv-edit.service';
 import {GuideService} from '../services/guide-service.service';
 import {DatePipe} from '@angular/common';
 import {Letter} from '../class/Letter';
-import * as CryptoJS from 'crypto-js';
 import {TranslateService} from '@ngx-translate/core';
 
 @Component({
