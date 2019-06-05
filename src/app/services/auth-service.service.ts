@@ -131,6 +131,22 @@ export class AuthService {
 
 ///
 
+  public getLangStorage(): number {
+
+    let idLang: number = 1;
+
+    if (window.localStorage.getItem('LangStorage') !== '') {
+      idLang = parseInt(JSON.parse(window.localStorage.getItem('LangStorage')));
+    }
+
+    return idLang;
+  }
+
+  public setLangStorage(idLang: number) {
+         window.localStorage.setItem('LangStorage', idLang.toString());
+  }
+
+
  public loginStorage(): {htUserName: string; bConnected: boolean; id_user: number; bEmployer: boolean} {
 
   let htUserName = '';

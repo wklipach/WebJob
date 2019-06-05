@@ -37,11 +37,10 @@ export class HeaderTopComponent implements OnInit {
 
     translate.addLangs(this.arrLangs);
     translate.setDefaultLang('ee');
-    //const browserLang = translate.getBrowserLang();
     const browserLang = translate.getDefaultLang();
-    console.log('browserLang', browserLang);
-    translate.use(browserLang.match(/ru|ee|en/) ? browserLang : 'ee');
-
+    this.currentLangSwitch = this.httpService.getLangStorage();
+    translate.use(this.arrLangs[this.currentLangSwitch]);
+    //translate.use(browserLang.match(/ru|ee|en/) ? browserLang : 'ee');
     console.log('home.value1');
     this.translate.get('home.value1').subscribe(
       value => console.log(value)
@@ -74,6 +73,7 @@ export class HeaderTopComponent implements OnInit {
     console.log(item);
     this.currentLangSwitch = item;
       this.translate.use(this.arrLangs[this.currentLangSwitch]);
+    this.httpService.setLangStorage(this.currentLangSwitch);
   }
 
 
