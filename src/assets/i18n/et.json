@@ -95,5 +95,7 @@
   "staticGuideList.TimePlacement_val2" : "2 weeks",
   "staticGuideList.TimePlacement_val3" : "1 month",
   "staticGuideList.TimePlacement_val4" : "2 months",
-  "staticGuideList.TimePlacement_val5" : "3 months"
+  "staticGuideList.TimePlacement_val5" : "3 months",
+  "header-top.hello": "Hello",
+  "header-top.profile": "Employer profile"
 }

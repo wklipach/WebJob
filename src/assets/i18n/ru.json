@@ -95,5 +95,7 @@
   "staticGuideList.TimePlacement_val2" : "2 недели",
   "staticGuideList.TimePlacement_val3" : "1 месяц",
   "staticGuideList.TimePlacement_val4" : "2 месяца",
-  "staticGuideList.TimePlacement_val5" : "3 месяца"
+  "staticGuideList.TimePlacement_val5" : "3 месяца",
+  "header-top.hello": "Здравствуйте",
+  "header-top.profile": "Профиль работодателя"
 }

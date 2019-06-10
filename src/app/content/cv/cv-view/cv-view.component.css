@@ -1,8 +1,8 @@
 .wrapper{
   width: 1170px;
-  height: auto;
   margin: 0 auto;
   color: rgb(68, 75, 84);
+  font-size: 0.9em;
 }
 .top{
   width: 100%;
@@ -16,72 +16,110 @@ form{
 .userName{
   visibility: hidden;
 }
+
 .name{
+
   width: 260px;
-  font-size:1.1em;
-text-align: center;
+
+  font-size:1.3em;
+
 }
+
 label{
   color: #0262d2;
-  text-align: left;
+  margin: 13% 0;
+
 }
+
 .logotype{
+
   width: 190px;
+
   height: 190px;
+
   margin: 0 0 18px 23px;
+
 }
+
+.contact{
+
+  width: 120px;
+
+  font-size:1.2em;
+
+  border-bottom: solid 1px #b8b8b8;
+
+}
+
 .city{
+
   display: inline-block;
+
   width:12px;
-  margin-left: 15px;
+
 }
 .city-name{
   display: inline-block;
-  font-size: 18px;
+  font-size: 1em;
   color: rgb(68, 75, 84);
   min-width: 10%;
   max-width: 60%;
   margin-top: 0;
   margin-left: 12px;
   overflow: hidden;
-
 }
-.line {
+.tempo{
+  font-size:1em;
+  margin: 12px 0;
+}
+.contactsLang, .contactsEmail, .contactsPhone{
+  margin: 2px 22px;
+  overflow: auto;
+}
+
+.cv-box{
+  position: relative;
   width: 100%;
-  margin-top: 0.1%;
-
 }
 
-.v-line{
-  position: absolute;
-  width: 1px;
-  height: 780px;
-  background-color: #b8b8b8;
-  margin-left: 260px;
-  margin-top: 1%;
-}
-
-/*
-
-display: inline-block;
- background-color: red;
-*/
 .leftBox{
-  width: 30%;
-  height: 600px;
+
+  width: 20%;
+
   display: inline-block;
-  margin-bottom: 20px;
+
+
+
+  min-height: 730px;
+
 }
+
 .rightBox{
-  width: 68%;
-  height: 600px;
+  width: 80%;
   position: absolute;
   display: inline-block;
-  margin-bottom: 20px;
+  min-height: 730px;
+  padding-left: 3%;
+  border-left: solid 1px #b8b8b8;
 }
 
+.skills{
+  color: rgb(68, 75, 84);
+  height: 80px;
+  text-align: left;
+  margin-top: 1px;
+  margin-left: 1px;
+  padding-right: 10px;
+  overflow: auto;
+}
 
+.valueTxt{
 
+  height: auto;
 
+  font-size:1.1em;
 
+  word-break: break-all;
+
+}
 
