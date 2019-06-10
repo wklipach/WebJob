@@ -3,6 +3,7 @@ import {Guide} from '../../../class/guide';
 import {FormControl, FormGroup} from '@angular/forms';
 import {GuideService} from '../../../services/guide-service.service';
 import {Subscription} from 'rxjs';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-cv_industry',
@@ -16,7 +17,14 @@ export class CvIndustryComponent implements OnInit {
   private industrySubscription: Subscription;
   private industryCheckedElementSubscription: Subscription;
 
-  constructor(private is: GuideService) {
+  constructor(private is: GuideService, public translate: TranslateService) {
+
+
+    this.translate.onLangChange.subscribe( value => {
+      this.listIndustry = is.getIndustryList();
+      console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!', this.listIndustry);
+    });
+
     this.formIndustry  = new FormGroup({});
     this.listIndustry = is.getIndustryList();
     for (let p in this.listIndustry) {

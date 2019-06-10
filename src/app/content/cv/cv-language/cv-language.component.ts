@@ -5,7 +5,9 @@ import {GuideService} from '../../../services/guide-service.service';
 import {CvLanguageService} from '../../../services/cv-language.service';
 import {Subscription} from 'rxjs';
 import {Language} from '../../../class/Language';
-import {LanguageList, LevelLanguageList} from '../../../class/GuideList';
+import {staticGuideList} from '../../../class/GuideList';
+import {TranslateService} from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-cv-language',
@@ -23,7 +25,12 @@ export class CvLanguageComponent implements OnInit, OnDestroy {
   private sbscrLanguage : Subscription;
 
 
-  constructor(private is: GuideService, private cls: CvLanguageService) {
+  constructor(private is: GuideService, private cls: CvLanguageService, public translate: TranslateService) {
+
+    this.translate.onLangChange.subscribe( value => {
+      this.listLanguage = is.getLanguageList();
+    });
+
     this.formLanguage = new FormGroup({});
 
     this.listLanguage =  is.getLanguageList();
@@ -44,12 +51,12 @@ export class CvLanguageComponent implements OnInit, OnDestroy {
     if (L === undefined) return;
 
     if (typeof L.id_level !== 'undefined') {
-      const curLevelLanguage = LevelLanguageList.find(Language => Language.id === L.id_level);
+      const curLevelLanguage = staticGuideList.LevelLanguageList.find(Language => Language.id === L.id_level);
       this.formLanguage.controls['inputLevelLanguage'].setValue(curLevelLanguage.name);
     }
 
     if (typeof L.id_language !== 'undefined') {
-      const curLanguage = LanguageList.find(Language => Language.id === L.id_language);
+      const curLanguage = staticGuideList.LanguageList.find(Language => Language.id === L.id_language);
       this.formLanguage.controls['inputLanguage'].setValue(curLanguage.name);
     }
   }
@@ -59,9 +66,9 @@ export class CvLanguageComponent implements OnInit, OnDestroy {
     const t = new Language();
     t.id_cv = -1;
     /* TODO ТУТ ПИШЕМ */
-    const curLanguage = LanguageList.find(Language => Language.name === this.formLanguage.controls['inputLanguage'].value);
+    const curLanguage = staticGuideList.LanguageList.find(Language => Language.name === this.formLanguage.controls['inputLanguage'].value);
     t.id_language = curLanguage.id;
-    const curLanguageLevel = LevelLanguageList.find(Language => Language.name === this.formLanguage.controls['inputLevelLanguage'].value);
+    const curLanguageLevel = staticGuideList.LevelLanguageList.find(Language => Language.name === this.formLanguage.controls['inputLevelLanguage'].value);
     t.id_level = curLanguageLevel.id;
     return t;
   }

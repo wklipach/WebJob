@@ -290,15 +290,10 @@ private loadUser: UserType;
 
   checkinputGender() {
     const {inputBirth} = this.accountEmployeeForm.value;
-    console.log('inputBirth',inputBirth,Date.parse(inputBirth));
+
     let nDate = Date.parse(inputBirth);
-    console.log('nDate',nDate);
+
     let date = new Date(nDate);
-    console.log('date',date);
-
-
-
-
 
   }
 
@@ -310,7 +305,6 @@ private loadUser: UserType;
 
 
     if (this.accountEmployeeForm.invalid) {
-      console.log('ошибки во вводе данных для формы');
       return -1;
     }
 
@@ -319,8 +313,6 @@ private loadUser: UserType;
     let {inputUserName, inputName, inputLastName, inputZip, inputAddress, inputPhone, inputCity, inputEmail, inputGender, inputBirth} = this.accountEmployeeForm.value;
 
     inputUserName = this.accountEmployeeForm.controls['inputUserName'].value;
-    console.log('inputUserName', inputUserName);
-
 
     this.gs.getCityId(inputCity).subscribe( (value: City) => {
 

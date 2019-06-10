@@ -77,6 +77,7 @@ import { InfoContainerComponent } from './account/message-center/container/info-
 import {TextToHtmlDirective} from './direct/text-to-html-directive';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {ConfJDirective} from '../directive/conf-j.directive';
 
 
 
@@ -200,7 +201,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     InvitationComponent,
     MessagesContainerComponent,
     InfoContainerComponent,
-    TextToHtmlDirective
+    TextToHtmlDirective,
+    ConfJDirective
    ],
   entryComponents: [
     CvPreviousComponent,

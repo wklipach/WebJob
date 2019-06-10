@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Guide} from '../class/guide';
 import {
-  DisplayPeriodList, EducationList, EmploymentList, ExperienceList, GenderList, IndustryList, LanguageList, LevelLanguageList, ScheduleList,
-  TimePlacementList
+  staticGuideList,
 } from '../class/GuideList';
 import {Observable, Subject} from 'rxjs';
 import {GlobalRef} from './globalref';
@@ -130,89 +129,89 @@ export class GuideService {
 
 
   getIndustryName(i: number): string {
-    this.industryList = IndustryList;
+    this.industryList = staticGuideList.IndustryList;
     return this.industryList.find(value => value.id === i ).name;
   }
 
 
 
   getIndustryList(): Guide[] {
-   this.industryList = IndustryList;
+   this.industryList = staticGuideList.IndustryList;
    return this.industryList.sort( ((a, b) => a.order - b.order ) );
   }
 
   getDisplayPeriodList(): Guide[] {
-    this.displayPeriodList = DisplayPeriodList;
+    this.displayPeriodList = staticGuideList.DisplayPeriodList;
     return this.displayPeriodList.sort( ((a, b) => a.order - b.order ) );
   }
 
   getGenderList(): Guide[] {
-    this.genderList = GenderList;
+    this.genderList = staticGuideList.GenderList;
     return this.genderList.sort( ((a, b) => a.order - b.order ) );
   }
 
 
 
   getScheduleName(i: number): string {
-    this.scheduleList = ScheduleList;
+    this.scheduleList = staticGuideList.ScheduleList;
     return this.scheduleList.find(value => value.id === i ).name;
   }
 
   getScheduleList(): Guide[] {
-    this.scheduleList = ScheduleList;
+    this.scheduleList = staticGuideList.ScheduleList;
     return this.scheduleList.sort( ((a, b) => a.order - b.order ) );
   }
 
 //
   getEmploymentName(i: number): string {
-    this.employmentList = EmploymentList;
+    this.employmentList = staticGuideList.EmploymentList;
     return this.employmentList.find(value => value.id === i ).name;
   }
 
   getEmploymentList(): Guide[] {
-    this.employmentList = EmploymentList;
+    this.employmentList = staticGuideList.EmploymentList;
     return this.employmentList.sort( ((a, b) => a.order - b.order ) );
   }
 
   getEducationName(i: number): string {
-    this.educationList = EducationList;
+    this.educationList = staticGuideList.EducationList;
     return this.educationList.find(value => value.id === i ).name;
   }
 
   getEducationList(): Guide[] {
-    this.educationList = EducationList;
+    this.educationList = staticGuideList.EducationList;
     return this.educationList.sort( ((a, b) => a.order - b.order ) );
   }
 
   getExperienceName(i: number): string {
-    this.experienceList = ExperienceList;
+    this.experienceList = staticGuideList.ExperienceList;
     return this.experienceList.find(value => value.id === i ).name;
   }
 
   getExperienceList(): Guide[] {
-    this.experienceList = ExperienceList;
+    this.experienceList = staticGuideList.ExperienceList;
     return this.experienceList.sort( ((a, b) => a.order - b.order ) );
   }
 
 
   getTimePlacementName(i: number): string {
-    this.timePlacementList = TimePlacementList;
+    this.timePlacementList = staticGuideList.TimePlacementList;
     return this.timePlacementList.find(value => value.id === i ).name;
   }
 
   getTimePlacementList(): Guide[] {
-    this.timePlacementList = TimePlacementList;
+    this.timePlacementList = staticGuideList.TimePlacementList;
     return this.timePlacementList.sort( ((a, b) => a.order - b.order ) );
   }
 
 
   getLanguageList(): Guide[] {
-    this.LanguageList = LanguageList;
+    this.LanguageList = staticGuideList.LanguageList;
     return this.LanguageList.sort( ((a, b) => a.order - b.order ) );
   }
 
   getLevelLanguageList(): Guide[] {
-    this.LevelLanguageList = LevelLanguageList;
+    this.LevelLanguageList = staticGuideList.LevelLanguageList;
     return this.LevelLanguageList.sort( ((a, b) => a.order - b.order ) );
   }
 

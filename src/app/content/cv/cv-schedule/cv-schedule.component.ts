@@ -3,6 +3,7 @@ import {GuideService} from '../../../services/guide-service.service';
 import {FormControl, FormGroup} from '@angular/forms';
 import {Guide} from '../../../class/guide';
 import {Subscription} from 'rxjs';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-cv-schedule',
@@ -16,7 +17,11 @@ export class CvScheduleComponent implements OnInit {
   private scheduleSubscription: Subscription;
   private scheduleCheckedElementSubscription: Subscription;
 
-  constructor(private is: GuideService) {
+  constructor(private is: GuideService, public translate: TranslateService) {
+
+    this.translate.onLangChange.subscribe( value => {
+      this.listSchedule = is.getScheduleList();
+    });
 
     this.formSchedule  = new FormGroup({});
 

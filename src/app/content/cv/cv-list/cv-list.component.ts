@@ -10,6 +10,7 @@ import {FormGroup} from '@angular/forms';
 import {CV} from '../../../class/CV';
 import {NewcvService} from '../../../services/newcv.service';
 import {Previous} from '../../../class/Previous';
+import {staticGuideList} from '../../../class/GuideList';
 
 
 @Component({
@@ -59,6 +60,8 @@ export class CvListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
 
+
+    console.log('staticGuideList.GenderList',staticGuideList.GenderList);
 
     const Res =  this.authService.loginStorage();
     this.bConnected = Res.bConnected;

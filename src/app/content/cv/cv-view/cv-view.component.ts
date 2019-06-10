@@ -5,8 +5,7 @@ import {Subscription} from 'rxjs';
 import {CvEditService} from '../../../services/cv-edit.service';
 import {FormBuilder,  FormGroup, Validators} from '@angular/forms';
 import {
-  EducationList, EmploymentList, ExperienceList, IndustryList, LanguageList, LevelLanguageList,
-  ScheduleList
+  staticGuideList
 } from '../../../class/GuideList';
 import {AdvancedLanguage, Language} from '../../../class/Language';
 
@@ -69,7 +68,7 @@ const arrEmployment = item.Employment.split(',');
         const arrEducation = this._cvitem.Education.split(',');
         arrEducation.forEach(
           (value) => {
-            this._listEducation.push(EducationList[value - 1].name);
+            this._listEducation.push(staticGuideList.EducationList[value - 1].name);
           })
       }
     }
@@ -80,7 +79,7 @@ const arrEmployment = item.Employment.split(',');
         const arrExperience = this._cvitem.Experience.split(',');
         arrExperience.forEach(
           (value) => {
-            this._listExperience.push(ExperienceList[value - 1].name);
+            this._listExperience.push(staticGuideList.ExperienceList[value - 1].name);
           })
       }
     }
@@ -90,7 +89,7 @@ const arrEmployment = item.Employment.split(',');
         const arrIndustry = this._cvitem.Industry.split(',');
         arrIndustry.forEach(
           (value) => {
-            this._listIndustry.push(IndustryList[value - 1].name);
+            this._listIndustry.push(staticGuideList.IndustryList[value - 1].name);
           })
       }
     }
@@ -100,7 +99,7 @@ const arrEmployment = item.Employment.split(',');
         const arrSchedule = this._cvitem.Schedule.split(',');
         arrSchedule.forEach(
           (value) => {
-            this._listSchedule.push(ScheduleList[value - 1].name);
+            this._listSchedule.push(staticGuideList.ScheduleList[value - 1].name);
           })
       }
     }
@@ -110,7 +109,7 @@ const arrEmployment = item.Employment.split(',');
         const arrEmployment = this._cvitem.Employment.split(',');
         arrEmployment.forEach(
           (value) => {
-            this._listEmployment.push(EmploymentList[value - 1].name);
+            this._listEmployment.push(staticGuideList.EmploymentList[value - 1].name);
           })
       }
     }
@@ -165,7 +164,7 @@ const arrEmployment = item.Employment.split(',');
 
         let cvL: any  = curValue;
         cvL.forEach((cvL, ih) => {
-          this._listLanguage.push({id_cv: cvL.id_cv, id_language: cvL.id_language-1, id_level: cvL.id_level-1, language_name: LanguageList[cvL.id_language-1].name, language_level: LevelLanguageList[cvL.id_level-1].name});
+          this._listLanguage.push({id_cv: cvL.id_cv, id_language: cvL.id_language-1, id_level: cvL.id_level-1, language_name: staticGuideList.LanguageList[cvL.id_language-1].name, language_level: staticGuideList.LevelLanguageList[cvL.id_level-1].name});
       });
 
       });

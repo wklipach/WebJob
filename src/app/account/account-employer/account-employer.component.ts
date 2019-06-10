@@ -273,16 +273,10 @@ console.log('ITEM', item);
     console.log('R1');
 
     if (this.accountEmployerForm.invalid) {
-      console.log('ошибки во вводе данных для формы', this.accountEmployerForm);
       return -1;
     }
 
-    console.log('R2');
-
     var id_city = -1;
-
-
-    console.log('R3');
 
     let {inputUserName, inputName, inputLastName, inputZip, inputAddress,
       inputPhone, inputCity, inputEmail, inputGender, inputBirth,

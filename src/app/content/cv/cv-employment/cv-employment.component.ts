@@ -3,6 +3,7 @@ import {GuideService} from '../../../services/guide-service.service';
 import {FormControl, FormGroup} from '@angular/forms';
 import {Guide} from '../../../class/guide';
 import {Subscription} from 'rxjs';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-cv-employment',
@@ -16,9 +17,19 @@ export class CvEmploymentComponent implements OnInit {
   private employmentSubscription: Subscription;
   private employmentCheckedElementSubscription: Subscription;
 
-  constructor(private is: GuideService) {
+  constructor(private is: GuideService, public translate: TranslateService) {
+
+    this.translate.onLangChange.subscribe( value => {
+      this.listEmployment = is.getEmploymentList()
+    });
+
+
+
     this.formEmployment  = new FormGroup({});
     this.listEmployment = is.getEmploymentList();
+
+    console.log('this.listEmployment',this.listEmployment);
+
     for (let p in this.listEmployment) {
       this.formEmployment.addControl('employmentCheck'+(this.listEmployment[p].id).toString(), new FormControl(''));
     }

@@ -11,6 +11,7 @@ import {Router} from '@angular/router';
 import {MoveService} from '../../../services/move.service';
 import {DatePipe} from '@angular/common';
 import {CvEditService} from '../../../services/cv-edit.service';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-cvhome',
@@ -18,6 +19,14 @@ import {CvEditService} from '../../../services/cv-edit.service';
   styleUrls: ['./cvhome.component.css']
 })
 export class CvhomeComponent implements OnInit {
+
+  //cvhome.ts.
+  sUseResp = ''; // 'Вы уже посылали приглашение на данное резюме.'
+  sNullFund = ''; // 'Поиск не дал результатов.'
+  sFavCV = ''; //  'Избранные резюме'
+  sCV_Tr = ''; //  'Резюме'
+
+
 
   // заголовок вакансий
   public sCV: string;
@@ -48,9 +57,28 @@ export class CvhomeComponent implements OnInit {
               private router: Router,
               private moveS: MoveService,
               private cveditserv: CvEditService,
-              private httpTvsService: TableVacancyService) { }
+              private httpTvsService: TableVacancyService,
+              private translate: TranslateService) { }
 
   ngOnInit() {
+
+
+    this.translate.onLangChange.subscribe(value=> {
+
+      this.translate.get('cvhome.ts.sUseResp').subscribe(
+        value => this.sUseResp = value);
+
+      this.translate.get('cvhome.ts.sNullFund').subscribe(
+        value => this.sNullFund = value);
+
+      this.translate.get('cvhome.ts.sFavCV').subscribe(
+        value => this.sFavCV = value);
+
+      this.translate.get('cvhome.ts.sCV_Tr').subscribe(
+        value => this.sCV_Tr = value);
+
+    });
+
 
     console.log('constructor cvhome');
 
@@ -109,7 +137,6 @@ export class CvhomeComponent implements OnInit {
 
   }
 
-
   // TODO getVacancyAdvanced  ЭТО ПРОДВИНУТЫЙ ПОИСК
   getCVAdvanced(advancedFindObj: any) {
     // если есть id_user вствавляем его
@@ -122,7 +149,7 @@ export class CvhomeComponent implements OnInit {
     return this.getTableCVAdvanced = this.httpService.getTableCVAdvanced(advancedFindObj).subscribe(
       (data: any) => {
         this.data_show(data);
-        this.sCV = 'Резюме';
+        this.sCV = this.sCV_Tr;
       });
   }
 
@@ -133,18 +160,16 @@ export class CvhomeComponent implements OnInit {
 
         // если поиск не дал результатов вызываем сами себя с пустой маской
         if (sMask !== '' && data.length === 0) {
-          console.log('ПОИСК ПО РЕЗЮМЕ НЕ ДАЛ РЕЗУЛЬТАТОВ');
-          this.moveS.startNullFind('Поиск не дал результатов.');
+          this.moveS.startNullFind(this.sNullFund);
           this.getCV('',false, false);
           return;
         }
 
         this.data_show(data);
         this.reloadPAge(this.allDataCV, sMask);
-        if (isFavorites) this.sCV = 'Избранные резюме'; else this.sCV = 'Резюме';
+        if (isFavorites) this.sCV = this.sFavCV; else this.sCV = this.sCV_Tr;
       });
   }
-
 
   onPageChanged(pageNumber: number) {
 
@@ -161,7 +186,7 @@ export class CvhomeComponent implements OnInit {
           this.router.navigate(['/invitation']);
         });
       } else {
-        this.myDataCV[index].sErrorText = 'Вы уже посылали приглашение на данное резюме.';
+        this.myDataCV[index].sErrorText = this.sUseResp;
       }
     }
   );

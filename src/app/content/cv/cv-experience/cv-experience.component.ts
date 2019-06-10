@@ -3,6 +3,7 @@ import {FormControl, FormGroup} from '@angular/forms';
 import {Guide} from '../../../class/guide';
 import {GuideService} from '../../../services/guide-service.service';
 import {Subscription} from 'rxjs';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-cv-experience',
@@ -16,7 +17,11 @@ export class CvExperienceComponent implements OnInit {
   private experienceSubscription: Subscription;
   private experienceCheckedElementSubscription: Subscription;
 
-  constructor(private is: GuideService) {
+  constructor(private is: GuideService, public translate: TranslateService) {
+
+    this.translate.onLangChange.subscribe( value => {
+      this.listExperience = is.getExperienceList()
+    });
 
     this.formExperience = new FormGroup({});
 

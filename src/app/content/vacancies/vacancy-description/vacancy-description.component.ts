@@ -10,6 +10,7 @@ import {CvEditService} from '../../../services/cv-edit.service';
 import {TableVacancyService} from '../../../services/table-vacancy.service';
 import {Guide} from '../../../class/guide';
 import {VacanciesListService} from '../../../services/vacancies-list.service';
+import {staticGuideList} from '../../../class/GuideList';
 
 @Component({
   selector: 'app-vacancy-description',
@@ -60,7 +61,12 @@ export class VacancyDescriptionComponent implements OnInit {
 
   ngOnInit() {
 
-      var Res =  this.authService.loginStorage();
+
+//    let genderList = staticGuideList.GenderList;
+//    console.log('genderList', genderList);
+
+
+    var Res =  this.authService.loginStorage();
       this.bConnected = Res.bConnected;
       this.id_user =  Res.id_user;
       this.bEmployer = Res.bEmployer;

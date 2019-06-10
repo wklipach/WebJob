@@ -20,6 +20,22 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
+
+  //home.ts
+  sFindNull = ''; //'Поиск не дал результатов.
+  sVacF = ''; //'Избранные вакансии'
+  sVacEasy = ''; // 'Вакансии'
+  sReqVerif = ''; // 'Для использования функции "В избранное" пройдите верификацию.'
+  sDeniedFavor = ''; // 'Работодателям функция "В избранное" для вакансий недоступна.'
+  sOldInputVac = ''; // 'Данная вакансия была занесена ранее.'
+  sUnsowVer = ''; // 'Для использования функции "Не показывать" пройдите верификацию.'
+  sEmploeerDeniedUnshow = ''; // 'Работодателям функция "Не показывать" для вакансий недоступна.'
+  sResponseVer = ''; // 'Для использования функции "Откликнуться" пройдите верификацию.'
+  sEmpoyeerResponseDeny = ''; // 'Работодателям функция "Откликнуться" для вакансий недоступна.'
+  sRespSucc = ''; // 'Вы уже откликались на данную вакансию. Дождитесь ответа'
+
+
+
   //заголовок вакансий
   public sVacancy: string;
   // текущая страница
@@ -135,7 +151,55 @@ export class HomeComponent implements OnInit, OnDestroy {
 
 
     console.log('home this.translate.currentLang', this.translate.currentLang);
-    this.translate.onLangChange.subscribe(value=> console.log('this.translate.onLangChange', value));
+
+
+    this.translate.onTranslationChange.subscribe(value =>
+      console.log('OnTranslations Change')
+    );
+
+    this.translate.onLangChange.subscribe(value=> {
+
+      console.log('onLangChange');
+
+      this.translate.get('home.ts.sFindNull').subscribe(
+        value => this.sFindNull = value);
+
+      this.translate.get('home.ts.sVacF').subscribe(
+        value => {
+          this.sVacF = value;
+          console.log('onLangChange this.sVacF', this.sVacF, value);
+        }
+        );
+
+      this.translate.get('home.ts.sVacEasy').subscribe(
+        value => this.sVacEasy = value);
+
+      this.translate.get('home.ts.sReqVerif').subscribe(
+        value => this.sReqVerif = value);
+
+      this.translate.get('home.ts.sDeniedFavor').subscribe(
+        value => this.sDeniedFavor = value);
+
+      this.translate.get('home.ts.sOldInputVac').subscribe(
+        value => this.sOldInputVac = value);
+
+      this.translate.get('home.ts.sUnsowVer').subscribe(
+        value => this.sUnsowVer = value);
+
+      this.translate.get('home.ts.sEmploeerDeniedUnshow').subscribe(
+        value => this.sEmploeerDeniedUnshow = value);
+
+      this.translate.get('home.ts.sResponseVer').subscribe(
+        value => this.sResponseVer = value);
+
+      this.translate.get('home.ts.sEmpoyeerResponseDeny').subscribe(
+        value => this.sEmpoyeerResponseDeny = value);
+
+      this.translate.get('home.ts.sRespSucc').subscribe(
+        value => this.sRespSucc = value);
+
+      }
+    );
 
 
     var Res =  this.authService.loginStorage();
@@ -213,15 +277,15 @@ export class HomeComponent implements OnInit, OnDestroy {
 
         //если поиск не дал результатов вызываем сами себя с пустой маской
         if (sMask !== '' && data.length === 0) {
-          console.log('ПОИСК ПО ВАКАНСИЯМ НЕ ДАЛ РЕЗУЛЬТАТОВ');
-          this.moveS.startNullFind('Поиск не дал результатов.');
+          this.moveS.startNullFind(this.sFindNull);
           this.getVacancy('',false, false);
           return;
         }
 
+
       this.data_show(data);
       this.reloadPAge(this.allDataVacancy, sMask);
-      if (isFavorites) this.sVacancy = 'Избранные вакансии'; else this.sVacancy = 'Вакансии';
+      if (isFavorites) this.sVacancy = this.sVacF; else this.sVacancy = this.sVacEasy;
       });
   }
 
@@ -432,20 +496,21 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   }
 
+
   favorites($event, index: number, vcid: number) {
 
     // TODO ПОСТИНГ ФАВОРИТОВ
-    this.sVacancy = 'Вакансии';
+    this.sVacancy = this.sVacEasy;
 
    this.sNoUserValueFind = '';
     this.myDataVacancy[index].sErrorText = '';
    if  (!this.bConnected) {
-     this.sNoUserValueFind = 'Для использования функции "В избранное" пройдите верификацию.';
+     this.sNoUserValueFind = this.sReqVerif;
      this.myDataVacancy[index].sErrorText = this.sNoUserValueFind;
      return;
    }
    if (this.bEmployer) {
-     this.sNoUserValueFind = 'Работодателям функция "В избранное" для вакансий недоступна.';
+     this.sNoUserValueFind = this.sDeniedFavor;
      this.myDataVacancy[index].sErrorText = this.sNoUserValueFind;
      return;
    }
@@ -459,32 +524,31 @@ export class HomeComponent implements OnInit, OnDestroy {
             // this.RouterReload()
         });
       } else {
-        this.sNoUserValueFind = 'Данная вакансия была занесена ранее.';
+        this.sNoUserValueFind = this.sOldInputVac;
         this.myDataVacancy[index].sErrorText = this.sNoUserValueFind;
       }
       });
 
   }
 
+
+
   unshow($event, index: number, vcid: number) {
 
     this.sNoUserValueFind = '';
     this.myDataVacancy[index].sErrorText = '';
     if  (!this.bConnected)  {
-      this.sNoUserValueFind = 'Для использования функции "Не показывать" пройдите верификацию.';
+      this.sNoUserValueFind = this.sUnsowVer;
       this.myDataVacancy[index].sErrorText = this.sNoUserValueFind;
       return;
     }
     if (this.bEmployer) {
-      this.sNoUserValueFind = 'Работодателям функция "Не показывать" для вакансий недоступна.';
+      this.sNoUserValueFind = this.sEmploeerDeniedUnshow;
       this.myDataVacancy[index].sErrorText = this.sNoUserValueFind;
       return;
     }
 
     this.httpService.postUnshowVacancy(this.id_user, vcid).subscribe( ()=> {
-
-
-      console.log('this.httpService', '111111111111111111111111111111111111111111111111111111111');
 
       let CurVacancy = this.myDataVacancy.find(x => x.id === parseInt(vcid.toString()));
       this.myDataVacancy.splice(this.myDataVacancy.indexOf(CurVacancy), 1);
@@ -497,18 +561,19 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   }
 
+
   response(index: number, vcid: number) {
 
         this.sNoUserValueFind = '';
         this.myDataVacancy[index].sErrorText = '';
         if  (!this.bConnected)  {
-          this.sNoUserValueFind = 'Для использования функции "Откликнуться" пройдите верификацию.';
+          this.sNoUserValueFind = this.sResponseVer;
           this.myDataVacancy[index].sErrorText = this.sNoUserValueFind;
           return;
         }
 
         if (this.bEmployer) {
-          this.sNoUserValueFind = 'Работодателям функция "Откликнуться" для вакансий недоступна.';
+          this.sNoUserValueFind = this.sEmpoyeerResponseDeny;
           this.myDataVacancy[index].sErrorText = this.sNoUserValueFind;
           return;
         }
@@ -516,7 +581,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.httpService.getNumberResponse(this.id_user, vcid).subscribe((value: Letter[]) => {
 
             if (value.length > 0) {
-                this.sNoUserValueFind = 'Вы уже откликались на данную вакансию. Дождитесь ответа';
+                this.sNoUserValueFind = this.sRespSucc;
                 this.myDataVacancy[index].sErrorText = this.sNoUserValueFind;
                 } else {
                   this.cvEditSrv.setCvId(vcid);
