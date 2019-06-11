@@ -35,10 +35,10 @@
         </div>
 
         <label>Email</label>
-        <div class="contactsEmail">yal2@mail.ru</div>
+        <div class="contactsEmail" *ngIf="_cvitem!= undefined">{{ _cvitem.EMail }}</div>
 
         <label> Телефон</label>
-        <div class="contactsPhone">+7 (812) 611-26-90</div>
+        <div class="contactsPhone" *ngIf="_cvitem!= undefined">{{ _cvitem.Phone }}</div>
 
       </form>
 
@@ -48,7 +48,7 @@
     <div class="rightBox">
 
       <label>Дата рождения</label>
-      <div class="tempo">01.10.1966</div>
+      <div class="tempo" *ngIf="_cvitem!= undefined">{{ _cvitem.DateBirth  | date:'dd.MM.yyyy'}}</div>
 
       <label class="label-position">Желаемая должность</label>
       <div class="position" id="position"></div>

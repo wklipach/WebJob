@@ -135,11 +135,6 @@ const arrEmployment = item.Employment.split(',');
 
 
   loadPrevious(id_cv: number) {
-
-
-
-
-
     this.cveditserv.getCvPrevious(id_cv).subscribe(curValue => {
 
       let cvP: any  = curValue;
@@ -152,14 +147,9 @@ const arrEmployment = item.Employment.split(',');
               });
 
     });
-
   }
 
   loadLanguage(id_cv: number) {
-
-
-
-
     this.cveditserv.getCvLanguage(id_cv).subscribe(curValue => {
 
         let cvL: any  = curValue;
@@ -170,10 +160,9 @@ const arrEmployment = item.Employment.split(',');
       });
   }
 
+
   onProfileClick($event) {
-    //
     console.log('profile');
-    //
   }
 
   ngOnDestroy() {
@@ -186,9 +175,6 @@ const arrEmployment = item.Employment.split(',');
   loadPicture(id_user: number) {
     this.subscrDataUserFromId = this.auth.getDataUserFromId(id_user).subscribe(value => {
       // вытаскиваем из базы картинку аватара
-
-//       console.log(value);
-
       this.loadUser = value[0] as UserType;
       console.log('this.loadUser',this.loadUser);
       const S = this.loadUser.Avatar;
