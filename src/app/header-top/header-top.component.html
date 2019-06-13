@@ -26,7 +26,6 @@
         <span class="logout" (click)="logout()"><li>Выйти</li></span>
       </ul>
 
-
     <a routerLink="/messages" routerLinkActive="active">
     <img class="img-envelop" src="/assets/img/envelope.png" alt="Новые сообщения" title="Новые сообщения">
         <div *ngIf="this.numberCountNotReadLetter > 0">
@@ -38,7 +37,6 @@
                 <span class="number-env">{{this.numberCountNotReadLetter}}</span>
               </div>
          </div>
-
     </a>
 
      <a routerLink="/info" routerLinkActive="active">
@@ -56,9 +54,6 @@
      </a>
   </div>
 
-
-
-
     <div class="menu-top" *ngIf="!bConnected">
       <img class="user" src="/assets/img/user-login.png" alt="Войти" title="Войти">
            <!-- <button class="btn btn-primary" (click)="login()">Войти</button> -->
@@ -68,26 +63,22 @@
 
     </div>
 
-
         <div class="menu-header-lang">
-
 
 <div *ngIf = "this.currentLangSwitch == 0">
             <span class="langchoice">RU</span>
-            <img  class="flag-menu" src="/assets/img/russian.png" alt="Русский" title="Руский">
+            <img  class="flag-menu" src="/assets/img/rus.png" alt="Русский" title="Руский">
 </div>
 
 <div *ngIf = "this.currentLangSwitch == 1">
             <span class="langchoice">EE</span>
-            <img  class="flag-menu" src="/assets/img/flag-english.png" alt="Эстонский" title="Эстонский">
+            <img  class="flag-menu" src="/assets/img/est.png" alt="Эстонский" title="Эстонский">
 </div>
 
 <div *ngIf = "this.currentLangSwitch == 2">
             <span class="langchoice">EN</span>
-            <img  class="flag-menu" src="/assets/img/flag-english.png" alt="Английский" title="Английский">
+            <img  class="flag-menu" src="/assets/img/eng.png" alt="Английский" title="Английский">
 </div>
-
-
 
           <img class="arrow-down-lang" src="/assets/img/arrow-down.png" alt="Выбор языка" title="Выбор языка">
         </div>
@@ -97,14 +88,12 @@
 -->
 
     <ul class="lang-list">
-      <li class="langchoice-tumb" (click)="myClickLang(1)">ET<img class="flag-list" src="/assets/img/flag-english.png" alt="Эстонский" title="Эстонский"></li>
-      <li><a class="langchoice-tumb" (click)="myClickLang(0)">RU<img class="flag-list" src="/assets/img/flag-russia.png" alt="Русский" title="Руский"></a></li>
-      <li><a class="langchoice-tumb" (click)="myClickLang(2)">EN<img class="flag-list" src="/assets/img/flag-english.png" alt="Английский" title="Английский"></a></li>
+      <li class="langchoice-tumb" (click)="myClickLang(1)">ET<img src="/assets/img/est-flag.png" alt="Эстонский" title="Эстонский"></li>
+      <li class="langchoice-tumb" (click)="myClickLang(0)">RU<img src="/assets/img/rus-flag.png" alt="Русский" title="Руский"></li>
+      <li class="langchoice-tumb" (click)="myClickLang(2)">EN<img src="/assets/img/eng-flag.png" alt="Английский" title="Английский"></li>
     </ul>
 
-
   </div>
-
 
   <div class="bottom">
     <div class="box">
@@ -125,14 +114,10 @@
   </div>
    </div>
 
-
 <div class="notfound">
 
   <div *ngIf="this.sNullValueFind.length>0">
         <app-dialogminimum name={{sNullValueFind}}></app-dialogminimum>
   </div>
 
-
  </div>
-
-
