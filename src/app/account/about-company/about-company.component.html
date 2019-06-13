@@ -6,8 +6,7 @@
   <div class="box">
     <div class="company-name">{{_myName}}</div>
 
-
-    <div class="top">
+   <div class="top">
     <div *ngIf="base64textString.length>0; then contentLoadAvatar else contentDefault">Условия выполнить невозможно</div>
     <ng-template #contentLoadAvatar>
       <img class="logotype" title="Логотип." *ngFor="let item of base64textString"  src={{item}} alt="Логотип." id="img">
@@ -17,8 +16,7 @@
       <img src="/assets/img/no-photo.png"  title="Логотип." alt="Логотип." class="img-thumbnail">
     </ng-template>
 
-      <div class="valueTxt">{{_myAbout}}</div>
-  </div>
+    </div>
   <ul>
     <li><label>Email</label><div class="value"><a href="mailto:{{_myEmail}}">{{_myEmail}}</a></div></li>
     <li><label>Web-site</label><div class="value"> <a href="{{_myWeb}}">{{_myWeb}}</a></div></li>
@@ -30,6 +28,14 @@
     <li><label>Телефон2</label><div class="value">{{_myPhone2}}</div></li>
     <li><label>Контактное лицо </label><div class="value">{{_myContactPerson}}</div></li>
   </ul>
+
+    <div class="valueTxt">{{_myAbout}}</div>
+
+  </div>
+</div>
+
+
+<app-footer></app-footer>
 
 
 
@@ -45,8 +51,7 @@
 -->
 
 
-</div>
-</div>
+
 
 
 
@@ -129,4 +134,4 @@
 
 
 
-<app-footer></app-footer>
+
