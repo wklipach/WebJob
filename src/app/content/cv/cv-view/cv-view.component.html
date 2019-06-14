@@ -35,10 +35,10 @@
         </div>
 
         <label>Email</label>
-        <div class="contactsEmail" *ngIf="_cvitem!= undefined">{{ _cvitem.EMail }}</div>
+        <div class="contactsEmail" *ngIf="_cvitem!= undefined"> <a href="mailto:{{ _cvitem.EMail }}">{{ _cvitem.EMail }}</a></div>
 
         <label> Телефон</label>
-        <div class="contactsPhone" *ngIf="_cvitem!= undefined">{{ _cvitem.Phone }}</div>
+        <div class="contactsPhone" *ngIf="_cvitem!= undefined"> <a href="tel:{{ _cvitem.Phone }}">{{ _cvitem.Phone }}</a></div>
 
       </form>
 

@@ -41,4 +41,19 @@ button, input, textarea, select, label{
 h1,h2,h3,h4,h5,h6 {
   font-family: "Arial Rounded MT Bold", "Calibri", "sans-serif";
 }
-
+a:link{
+  color: rgb(68, 75, 84);
+ }
+a:hover{
+  color: #f26100;
+  font-weight: bold;
+}
+a:active {
+  font-size: 1.2em;
+  color: #f26100;
+  font-weight: bold;
+  background-color: chartreuse;
+}
+a:visited{
+  color: rgb(68, 75, 84);
+}
