@@ -118,7 +118,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   onLoadFromBaseAvatar(k: any) {
   //TODO точка 2
     k.base64textString = [];
-
     if (k.Avatar !== null) {
         if (k.Avatar.toString().length > 0) {
           if (JSON.parse(k.Avatar) !== null) {

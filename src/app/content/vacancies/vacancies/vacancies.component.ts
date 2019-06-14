@@ -62,7 +62,10 @@ export class VacanciesComponent implements OnInit, OnDestroy {
       this.sbVacanciesGetList = this.gls.getVacanciesList(this.id_user).subscribe((valueVL) => {
           this.vacanciesList = valueVL;
 
-          this.vacanciesList.forEach( (vacCur, index) => {
+        //обратная сортировка
+        this.vacanciesList = this.vacanciesList.sort( (b, a) =>   +new Date(a.DateTimeCreate) - +new Date(b.DateTimeCreate));
+
+        this.vacanciesList.forEach( (vacCur, index) => {
             this.contactMethods.push({'id' : 0, value : 0, 'bDelete': false});
 
             const sCityName = (this.cityList as City[]).find((valueC) => (valueC.id === parseInt(vacCur.City.toString()) ) ).name;

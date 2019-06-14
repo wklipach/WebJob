@@ -42,4 +42,5 @@ export class  dataVacancy extends Vacancy {
   errorEndDay: boolean;
   base64textString = [];
   UserName: string;
+  UNAME: string;
 }

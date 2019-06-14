@@ -77,9 +77,13 @@ export class CvListComponent implements OnInit, OnDestroy {
           console.log('a3', valueCL);
 
 
+
                 this.cvList = valueCL;
 
                 if (!this.cvList.undefined) {
+
+                  //обратная сортировка
+                  this.cvList = this.cvList.sort( (b, a) =>   +new Date(a.DateTimeCreate) - +new Date(b.DateTimeCreate));
 
                         this.cvList.forEach( (cvCur, index) => {
                         this.contactMethods.push({'id' : 0, value : 0, 'bDelete': false});

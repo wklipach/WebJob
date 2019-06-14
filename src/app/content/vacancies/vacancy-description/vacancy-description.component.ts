@@ -31,7 +31,7 @@ export class VacancyDescriptionComponent implements OnInit {
   displayPeriodList: Guide[];
   //адрес вакансии
   sAddress: string = '';
-  sEmployerUserName: string = '';
+  sEmployerName: string = '';
 
   // отрасль
   sIndusrtry: string[] = [];
@@ -126,8 +126,9 @@ export class VacancyDescriptionComponent implements OnInit {
     if (typeof k.id_user !== 'undefined') {
       this.authService.getDataUserFromId(k.id_user).subscribe((aRes) => {
         if (aRes!= undefined) {
+
           this.sAddress = aRes[0].Address;
-          this.sEmployerUserName = aRes[0].UserName;
+          this.sEmployerName = aRes[0].Name;
         }
       });
     }
