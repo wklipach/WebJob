@@ -10,6 +10,7 @@ import {DatePipe} from '@angular/common';
 import {Vacancy} from '../../../class/Vacancy';
 import {NewVacancyService} from '../../../services/new-vacancy.service';
 import {Router} from '@angular/router';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-vacancy-edit',
@@ -35,7 +36,8 @@ export class VacancyEditComponent implements OnInit {
               private auth: AuthService,
               private httpService: NewVacancyService,
               private router: Router,
-              private vls: VacanciesListService) {
+              private vls: VacanciesListService,
+              public translate: TranslateService) {
 
     this.displayPeriodList = is.getDisplayPeriodList();
 

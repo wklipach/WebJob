@@ -4,6 +4,7 @@ import {LetterService} from '../../../../services/letter.service';
 import {Router} from '@angular/router';
 import {Subscription} from 'rxjs';
 import {Info} from '../../../../class/Info';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-info-container',
@@ -19,7 +20,8 @@ export class InfoContainerComponent implements OnInit {
   private sbscTableInfo: Subscription;
   private infoSubscription: Subscription;
 
-  constructor(private authService: AuthService, private httpLetter: LetterService, private router: Router) {
+  constructor(private authService: AuthService, private httpLetter: LetterService, private router: Router,
+              public translate: TranslateService) {
     var Res =  this.authService.loginStorage();
     this.bConnected = Res.bConnected;
     this.id_user =  Res.id_user;

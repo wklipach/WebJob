@@ -4,6 +4,7 @@ import {Subscription} from 'rxjs';
 import {AuthService} from '../../services/auth-service.service';
 import {City} from '../../class/City';
 import {GuideService} from '../../services/guide-service.service';
+import {TranslateService} from '@ngx-translate/core';
 
 
 @Component({
@@ -33,7 +34,7 @@ export class AboutCompanyComponent implements OnInit, OnDestroy {
   protected _myLastName: string;
 
 
-  constructor(private auth: AuthService, private is: GuideService) { }
+  constructor(private auth: AuthService, private is: GuideService, public translate: TranslateService) { }
 
   ngOnInit() {
     const id_user = parseInt(window.localStorage.getItem('about_user'));

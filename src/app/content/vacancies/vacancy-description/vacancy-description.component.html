@@ -11,7 +11,7 @@
  </div>
 
 <div class="city-line">
-    <img class="city" src="/assets/img/city.png" alt="Город">
+    <img class="city" src="/assets/img/city.png" alt="'allValue.сity' | translate">
     <span *ngIf="this.descrDataVacancy" class="city-name"> {{this.descrDataVacancy?.CityName}}</span>
     <span *ngIf="this.descrDataVacancy" class="address">{{this.sAddress}}</span>
   </div>
@@ -30,51 +30,51 @@
 
     <div class="company-name" title="Перейти к информации о компании" (click)="clickAboutCompany()">{{this.sEmployerName}}</div>
 
-       <label>Должностные обязанности</label>
+       <label>{{'allValue.jobresponsibilities' | translate}}</label>
        <div class="jobFunction">
          <div *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy.JobFunction }}</div>
        </div>
 
-    <label>Требования</label>
+    <label>{{'allValue.requirementse' | translate}}</label>
     <div class="vacancyRequirements">
       <div *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy.VacancyRequirements }}</div>
     </div>
 
 
-    <label>Условия</label>
+    <label>{{'allValue.if' | translate}}</label>
     <div class="vacancyConditions">
       <div *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy.Conditions }}</div>
     </div>
 
-    <label>Срок размещения</label>
+    <label>{{'allValue.maturity' | translate}}</label>
     <div class="vacancyConditions">
       <div *ngFor="let sDP of sDisplayPeriod" class="descVac"> {{sDP}}</div>
     </div>
 
-    <label>График работы</label>
+    <label>{{'allValue.Schedule' | translate}}</label>
 
     <div *ngFor="let sS of sSchedule" class="descVac"> {{sS}}</div>
 
-    <label class="labelDescr">Занятость</label>
+    <label class="labelDescr">{{'allValue.Employment' | translate}}</label>
 
     <div *ngFor="let sEmp of sEmployment" class="descVac"> {{sEmp}}</div>
 
-    <label class="labelDescr">Образование</label>
+    <label class="labelDescr">{{'allValue.Education' | translate}}</label>
 
     <div *ngFor="let sEd of sEducation" class="descVac"> {{sEd}}</div>
 
-    <label class="labelDescr">Опыт работы</label>
+    <label class="labelDescr">{{'allValue.experience' | translate}}</label>
 
     <div *ngFor="let sExp of sExperience" class="descVac"> {{sExp}}</div>
 
-    <label>Отрасль</label>
+    <label>{{'allValue.Industry' | translate}}</label>
 
     <div *ngFor="let sI of sIndusrtry" class="descVac"> {{sI}}</div>
 
 
-    <button class="btn-response" type="button" id="vcresponse" title="Откликнуться" (click)="vcResponse()">Откликнуться</button>
+    <button class="btn-response" type="button" id="vcresponse" [title]="'allValue.Response' | translate" (click)="vcResponse()">{{'allValue.Response' | translate}}</button>
     <button class="btn-favorites" type="button" id="vcfavorites" title="В избранное" (click)="vcFavour()">В избранное</button>
-    <button class="btn-hide" type="button" id="vchide" title="Не показывать" (click)="vcDontShow()">Не показывать</button>
+    <button class="btn-hide" type="button" id="vchide" [title]="'allValue.DontShow' | translate" (click)="vcDontShow()">{{'allValue.DontShow' | translate}}</button>
     <div *ngIf="this.descrDataVacancy">{{this.descrDataVacancy.sErrorText}}</div>
 
   </div>

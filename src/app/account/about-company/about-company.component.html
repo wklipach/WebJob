@@ -1,7 +1,7 @@
 <app-header-top></app-header-top>
 
 <div class="wrapper">
-  <div class="topic">О компании</div>
+  <div class="topic">{{'allValue.aboutcomp' | translate}}</div>
 
   <div class="box">
     <div class="company-name">{{_myName}}</div>
@@ -20,13 +20,13 @@
   <ul>
     <li><label>Email</label><div class="value"><a href="mailto:{{_myEmail}}">{{_myEmail}}</a></div></li>
     <li><label>Web-site</label><div class="value"> <a href="{{_myWeb}}">{{_myWeb}}</a></div></li>
-    <li><label>Название компании</label> <div class="value">{{_myUserName}}</div></li>
-    <li><label>Город</label><div class="value">{{this._myDisplayCity}}</div></li>
-    <li><label>Почтовый индекс</label><div class="value">{{_myZip}}</div></li>
-    <li><label>Адрес</label><div class="value">{{_myAddress}}</div></li>
-    <li> <label>Телефон</label><div class="value">{{_myPhone}}</div></li>
-    <li><label>Телефон2</label><div class="value">{{_myPhone2}}</div></li>
-    <li><label>Контактное лицо </label><div class="value">{{_myContactPerson}}</div></li>
+    <li><label>{{'allValue.compname' | translate}}</label> <div class="value">{{_myUserName}}</div></li>
+    <li><label>{{'allValue.сity' | translate}}</label><div class="value">{{this._myDisplayCity}}</div></li>
+    <li><label>{{'allValue.postindex' | translate}}</label><div class="value">{{_myZip}}</div></li>
+    <li><label>{{'allValue.address' | translate}}</label><div class="value">{{_myAddress}}</div></li>
+    <li> <label>{{'allValue.tele' | translate}}</label><div class="value">{{_myPhone}}</div></li>
+    <li><label>{{'allValue.tele2' | translate}}</label><div class="value">{{_myPhone2}}</div></li>
+    <li><label>{{'allValue.contactF' | translate}}</label><div class="value">{{_myContactPerson}}</div></li>
   </ul>
 
     <div class="valueTxt">{{_myAbout}}</div>
@@ -89,7 +89,7 @@
 
     <div class="company-name">{{this.sEmployerUserName}}</div>
 
-    <label>Должностные обязанности</label>
+    <label>{{'allValue.jobresponsibilities' | translate}}</label>
     <div class="jobFunction">
       <div *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy['vacancy'].JobFunction }}</div>
     </div>
@@ -98,7 +98,7 @@
        <div *ngIf="this.descrDataVacancy" class="descVac">{{ this.descrDataVacancy['vacancy'].VacancyDescription}}</div>
      ->
 
-    <label>Требования</label>
+    <label>{{'allValue.requirementse' | translate}}</label>
     <div class="vacancyRequirements">
       <div *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy['vacancy'].VacancyRequirements }}</div>
     </div>

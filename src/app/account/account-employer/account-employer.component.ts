@@ -11,6 +11,7 @@ import {UserTable} from '../../class/UserTable';
 import {isUndefined} from "util";
 import {Guide} from '../../class/guide';
 import * as CryptoJS from 'crypto-js';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-accountemployer',
@@ -63,7 +64,8 @@ constructor(  private is: GuideService,
               private router: Router,
               private gs: GuideService,
               private fb: FormBuilder,
-              private _sanitizer: DomSanitizer) {
+              private _sanitizer: DomSanitizer,
+              public translate: TranslateService) {
 
 
     this.loadIdUser();

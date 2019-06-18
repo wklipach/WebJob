@@ -14,6 +14,7 @@ import {Router} from '@angular/router';
 import {CvLanguageComponent} from '../cv-language/cv-language.component';
 import {CvLanguageService} from '../../../services/cv-language.service';
 import {AdvancedLanguage, Language} from '../../../class/Language';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-newcv',
@@ -51,7 +52,8 @@ export class NewcvComponent implements OnInit {
               private cls: CvLanguageService,
               private httpService: NewcvService,
               private authService: AuthService,
-              private router: Router) {
+              private router: Router,
+              public translate: TranslateService) {
 
 
     this.newCVForm = new FormGroup({

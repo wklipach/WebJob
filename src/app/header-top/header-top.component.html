@@ -14,20 +14,20 @@
       </div>
       <ul class="user-list">
         <a routerLink="/account-employer" routerLinkActive="active"><li *ngIf = "bEmployer">{{ 'header-top.profile' | translate }}</li></a>
-        <a routerLink="/new-vacancy" routerLinkActive="active"><li *ngIf = "bEmployer">Новая вакансия</li></a>
+        <a routerLink="/new-vacancy" routerLinkActive="active"><li *ngIf = "bEmployer">{{'allValue.newvc' | translate}}</li></a>
         <a routerLink="/vacancies" routerLinkActive="active"><li *ngIf = "bEmployer">Наши вакансии</li></a>
         <a routerLink="/advanced-search" routerLinkActive="active"><li *ngIf = "bEmployer">Поиск сотрудников</li></a>
         <a routerLink="/account-employee" routerLinkActive="active"><li *ngIf="!bEmployer">Данные соискателя</li></a>
         <a routerLink="/cv-list" routerLinkActive="active"><li *ngIf="!bEmployer">Мои резюме</li></a>
-        <a routerLink="/message-center" routerLinkActive="active"><li *ngIf = "bEmployer">Центр сообщений</li></a>
-        <a routerLink="/message-center" routerLinkActive="active"><li *ngIf = "!bEmployer">Центр сообщений</li></a>
-        <span class="logout" (click)="favorites()"><li *ngIf = "!bEmployer">Избранные вакансии</li></span>
-        <a routerLink="/about" routerLinkActive="active"><li *ngIf = "!bEmployer">О компании</li></a>
+        <a routerLink="/message-center" routerLinkActive="active"><li *ngIf = "bEmployer">{{'allValue.messagecenter' | translate}}</li></a>
+        <a routerLink="/message-center" routerLinkActive="active"><li *ngIf = "!bEmployer">{{'allValue.messagecenter' | translate}}</li></a>
+        <span class="logout" (click)="favorites()"><li *ngIf = "!bEmployer">{{'home.ts.sVacF' | translate}}</li></span>
+        <a routerLink="/about" routerLinkActive="active"><li *ngIf = "!bEmployer">{{'allValue.aboutcomp' | translate}}</li></a>
         <span class="logout" (click)="logout()"><li>Выйти</li></span>
       </ul>
 
     <a routerLink="/messages" routerLinkActive="active">
-    <img class="img-envelop" src="/assets/img/envelope.png" alt="Новые сообщения" title="Новые сообщения">
+    <img class="img-envelop" src="/assets/img/envelope.png" [alt]="'header-top.newmessages' | translate" [title]="'header-top.newmessages' | translate">
         <div *ngIf="this.numberCountNotReadLetter > 0">
               <img class="img-circle" src="/assets/img/circle.png" alt="Всего сообщений" title="Всего сообщений">
               <div *ngIf="this.numberCountNotReadLetter > 9">
@@ -40,7 +40,7 @@
     </a>
 
      <a routerLink="/info" routerLinkActive="active">
-       <img class="img-bell" src="/assets/img/bell.png" alt="Новые события" title="Новые события">
+       <img class="img-bell" src="/assets/img/bell.png" [alt]="'header-top.newevent' | translate" [title]="'header-top.newevent' | translate">
 
        <div *ngIf="this.numberCountNotReadBell > 0">
               <img class="img-circle-bell" src="/assets/img/circle-bell.png" alt="Всего событий" title="Всего событий">
@@ -106,9 +106,9 @@
     <form [formGroup]="headerTopForm">
         <input type="search" class="inputSearch" formControlName="inputSearch" id="inputSearch" placeholder="Поиск вакансий.." [value]="sElementMask">
         <button class="btn-search" type="submit" (click)="find()">
-        <img src="/assets/img/icon-search.png" alt="Найти" title="Поиск">&nbsp;Найти
+        <img src="/assets/img/icon-search.png" [alt]="'allValue.Find' | translate" [title]="'allValue.Find' | translate">&nbsp;{{'allValue.Find' | translate}}
         </button>
-        <button class="btn-advsearch" type="button" id="AdvSearch" title="Расширенный поиск" (click)="toAdvance()" >Расширенный поиск</button>
+        <button class="btn-advsearch" type="button" id="AdvSearch" (click)="toAdvance()" [title]= "'header-top.advsearch' | translate" >{{'header-top.advsearch' | translate}}</button>
     </form>
 
   </div>

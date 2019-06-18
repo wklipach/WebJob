@@ -258,6 +258,8 @@ export class HeaderTopComponent implements OnInit {
 
   loadStaticGuide() {
 
+    this.translate.get('staticGuideList.all_vac1').subscribe(value => staticGuideList.all_vac1 = value);
+
     this.translate.get('staticGuideList.GenderList_val2').subscribe(value => staticGuideList.GenderList_val2 = value);
     this.translate.get('staticGuideList.GenderList_val3').subscribe(value => staticGuideList.GenderList_val3 = value);
 

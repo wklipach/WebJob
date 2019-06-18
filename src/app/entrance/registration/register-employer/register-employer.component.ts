@@ -6,6 +6,7 @@ import {AuthService} from '../../../services/auth-service.service';
 import {Router} from '@angular/router';
 import {UserType} from '../../../class/UserType';
 import * as CryptoJS from 'crypto-js';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-register-employer',
@@ -34,7 +35,9 @@ export class RegisterEmployerComponent implements OnInit {
   }
 
 
-  constructor(private httpService: AuthService, private router: Router) {
+  constructor(private httpService: AuthService,
+              private router: Router,
+              public translate: TranslateService) {
 
     this.formRegisterEmployer  = new FormGroup({
       'userName': new FormControl('',

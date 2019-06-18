@@ -3,6 +3,7 @@ import {FormControl, FormGroup} from '@angular/forms';
 import {Previous} from '../../../class/Previous';
 import {Subscription} from 'rxjs';
 import {PreviousService} from '../../../services/previous.service';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-cv-previous',
@@ -16,7 +17,8 @@ export class CvPreviousComponent implements OnInit, OnDestroy {
   private previousSubscription: Subscription;
   private previousLoadSubscription: Subscription;
 
-  constructor(private ps: PreviousService) {
+  constructor(private ps: PreviousService,
+              public translate: TranslateService) {
     this.formPrevious = new FormGroup({
       'startDate': new FormControl('', []),
       'completionDate': new FormControl('', []),

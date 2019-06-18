@@ -1,11 +1,11 @@
 <app-header-top></app-header-top>
 
 <div class="wrapper">
-  <div class="top">Профиль компании</div>
+  <div class="top">{{'header-top.profcompany' | translate}}</div>
 
   <div class="profile">
     <div class="v-line"></div>
-    <label class="personal">Данные компании</label>
+    <label class="personal">{{'header-top.datacompany' | translate}}</label>
 
 
     <form [formGroup]="form">
@@ -13,7 +13,7 @@
 
       <div *ngIf="base64textString.length>0; then contentLoadAvatar else contentDefault">Условия выполнить невозможно</div>
       <ng-template #contentLoadAvatar>
-        <img class="logotype" title="Загрузить логотип.Отношение ширины к высоте 3 к 1." *ngFor="let item of base64textString"  src={{item}} alt="Загрузить логотип.Отношение ширины к высоте 3 к 1" id="img" onclick="document.getElementById('avatar').click()">
+        <img class="logotype" [title]="'account-employer.loadlogo31' | translate" *ngFor="let item of base64textString"  src={{item}} [alt]="'account-employer.loadlogo31' | translate" id="img" onclick="document.getElementById('avatar').click()">
       </ng-template>
 
       <ng-template #contentDefault>
@@ -22,14 +22,14 @@
 
       <input type="file" id="avatar" (change)="onFileChange($event)" #fileInput style="display:none">
 
-      <label class="upload-logo" onclick="document.getElementById('avatar').click()">Загрузить логотип</label>
-      <label class="clear" (click)="clearFile()">Очистить</label>
+      <label class="upload-logo" onclick="document.getElementById('avatar').click()">{{'account-employer.loadlogo' | translate}}</label>
+      <label class="clear" (click)="clearFile()">{{'account-employer.clear' | translate}}</label>
 
     </form>
 
     <form [formGroup]="accountEmployerForm">
 
-      <label class="user-name">Имя пользователя</label>
+      <label class="user-name">{{'allValue.UserName' | translate }}</label>
       <input type="text" class="inputUserName" id="inputUserName" formControlName="inputUserName" placeholder="введите имя пользователя">
 
       <label class="email">Email</label>
@@ -71,45 +71,45 @@
       <!-- закончили обработку почтовых ошибок -->
 
 
-      <label class="name">Название компании</label>
-      <input type="text" class="input-name" id="inputName" formControlName="inputName" placeholder="Название компании" maxlength="100">
+      <label class="name">{{'allValue.compname' | translate}}</label>
+      <input type="text" class="input-name" id="inputName" formControlName="inputName" placeholder="'allValue.compname' | translate" maxlength="100">
 
       <!--
       <label class="lastname">Фамилия</label>
       <input type="text" class="inputLastname" id="inputLastname" formControlName="inputLastName" placeholder="введите фамилию">
        -->
 
-      <label class="location">Город</label>
-      <select id="inputCity" formControlName="inputCity" class="inputCity" title="Город">
+      <label class="location">{{'allValue.сity' | translate}}</label>
+      <select id="inputCity" formControlName="inputCity" class="inputCity" [title]="'allValue.сity' | translate">
         <option  *ngFor="let lc of listCity" [value]="lc.name">
           {{lc.name}}
         </option>
       </select>
 
-      <label class="zip">Почтовый индекс</label>
+      <label class="zip">{{'allValue.postindex' | translate}}</label>
       <input type="text" class="inputZip" id="inputZip" formControlName="inputZip" placeholder="введите индекс">
 
-      <label class="home-address">Адрес</label>
-      <input type="text" class="inputHomeAddress" id="inputAddress" formControlName="inputAddress" placeholder="Адрес" maxlength="100">
+      <label class="home-address">{{'allValue.address' | translate}}</label>
+      <input type="text" class="inputHomeAddress" id="inputAddress" formControlName="inputAddress" placeholder="'allValue.address' | translate" maxlength="100">
 
-      <label class="phone">Телефон</label>
-      <input type="text" class="inputPhone" id="inputPhone" formControlName="inputPhone" placeholder="Телефон">
+      <label class="phone">{{'allValue.tele' | translate}}</label>
+      <input type="text" class="inputPhone" id="inputPhone" formControlName="inputPhone" placeholder="'allValue.tele' | translate">
 
-      <label class="phone2">Телефон 2</label>
-      <input type="text" class="inputPhone2" id="inputPhone2" formControlName="inputPhone2" placeholder="Телефон 2">
+      <label class="phone2">{{'allValue.tele2' | translate}}</label>
+      <input type="text" class="inputPhone2" id="inputPhone2" formControlName="inputPhone2" placeholder="'allValue.tele2' | translate">
 
       <label class="web">Web-site</label>
       <input type="text" class="inputWeb" id="inputWeb" formControlName="inputWeb" placeholder="Web-site">
 
-      <label class="contact-person">Контактное лицо</label>
-      <input type="text" class="inputContactPerson" id="inputContactPerson" formControlName="inputContactPerson" placeholder="Контактное лицо">
+      <label class="contact-person">{{'allValue.contactF' | translate}}</label>
+      <input type="text" class="inputContactPerson" id="inputContactPerson" formControlName="inputContactPerson" placeholder="'allValue.contactF' | translate">
 
-      <label class="about">О компании</label>
+      <label class="about">{{'allValue.aboutcomp' | translate}}</label>
       <textarea class="inputAbout" maxlength="1000" aria-label="О компании. До 1000 знаков"
                 formControlName="inputAbout" id="inputAbout" placeholder="О компании. До 1000 знаков"></textarea>
 
-      <img class="img-lock" src="/assets/img/lock.png" alt="Смена пароля" title="Смена пароля">
-      <label class="changePass" (click)="accessPassword()"> Изменить пароль </label>
+      <img class="img-lock" src="/assets/img/lock.png" [alt]="'allValue.changepwd' | translate" [title]="'allValue.changepwd' | translate">
+      <label class="changePass" (click)="accessPassword()"> {{'allValue.changepwd2' | translate}} </label>
 
       <ng-container *ngIf="bShowChangePassword">
         <div class="changepassBox">
@@ -128,7 +128,7 @@
           </ng-template>
 
 
-          <button type="submit" class="btn-newPassword" (click)="NewPassword()">Изменить пароль</button>
+          <button type="submit" class="btn-newPassword" (click)="NewPassword()">{{'allValue.changepwd2' | translate}}</button>
           <ng-container *ngIf="bPasswordNew">Пароль изменен</ng-container>
 
           <!--
@@ -143,15 +143,15 @@
             <app-dialogminimum name="Пароли не должны быть пустыми"></app-dialogminimum>
           </div>
 
-          <button class="btn-newPassword2" (click)="DisappearFrame()">Отмена</button>
+          <button class="btn-newPassword2" (click)="DisappearFrame()">{{'allValue.Cancel' | translate}}</button>
         </div>
 
       </ng-container>
 
     </form>
 
-    <button type="submit" class="btn-save" (click)="savecv()" [disabled]="accountEmployerForm.invalid">Сохранить</button>
-    <button type="submit" class="btn-cancel" (click)="back()">Отмена</button>
+    <button type="submit" class="btn-save" (click)="savecv()" [disabled]="accountEmployerForm.invalid">{{'allValue.save' | translate}}</button>
+    <button type="submit" class="btn-cancel" (click)="back()">{{'allValue.Cancel' | translate}}</button>
 
   </div>
 </div>

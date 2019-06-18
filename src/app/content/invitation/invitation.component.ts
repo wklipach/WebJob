@@ -11,6 +11,7 @@ import {DatePipe} from '@angular/common';
 import {Letter} from '../../class/Letter';
 import {CvEditService} from '../../services/cv-edit.service';
 import {CvListService} from '../../services/cv-list.service';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-invitation',
@@ -42,7 +43,8 @@ export class InvitationComponent implements OnInit, OnDestroy {
               private fb: FormBuilder,
               private cves: CvEditService,
               private cls: CvListService,
-              private gls: VacanciesListService) {
+              private gls: VacanciesListService,
+              public translate: TranslateService) {
 
     this.formResponse = this.fb.group({
       textCommentValue: new FormControl('')

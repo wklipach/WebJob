@@ -6,6 +6,7 @@ import {isUndefined} from 'util';
 import {UserType} from '../../../class/UserType';
 import {Router} from '@angular/router';
 import * as CryptoJS from 'crypto-js';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-register-employee',
@@ -33,7 +34,9 @@ export class RegisterEmployeeComponent implements OnInit {
   }
 
 
-  constructor(private httpService: AuthService, private router: Router) {
+  constructor(private httpService: AuthService,
+              private router: Router,
+              public translate: TranslateService) {
 
     this.bPassword = false;
 

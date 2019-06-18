@@ -16,6 +16,7 @@ import {NewcvService} from '../../../services/newcv.service';
 import {AdvancedLanguage, Language} from '../../../class/Language';
 import {CvLanguageService} from '../../../services/cv-language.service';
 import {CvLanguageComponent} from '../cv-language/cv-language.component';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-cv-edit',
@@ -64,7 +65,8 @@ export class CvEditComponent implements OnInit, OnDestroy {
               private cveditserv: CvEditService,
               private cls: CvListService,
               private cLangS: CvLanguageService,
-              private httpService: NewcvService) {
+              private httpService: NewcvService,
+              public translate: TranslateService) {
 
     this.factoryPreviousComponent =  this.componentFactoryResolver.resolveComponentFactory(CvPreviousComponent);
 

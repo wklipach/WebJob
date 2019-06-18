@@ -1,17 +1,17 @@
 <app-header-top></app-header-top>
 
 <div class="wrapper">
-  <div class="top">Все вакансии</div>
+  <div class="top">{{'vacancies.allvac' | translate}}</div>
 
   <div class="box" *ngFor="let item of vacanciesList; let i = index;">
 
        <ul class="head-line">
 
-      <li class="date">Дата</li>
-      <li class="city">Город</li>
-      <li class="salary">Зарплата</li>
+      <li class="date">{{'allValue.date' | translate}}</li>
+      <li class="city">{{'allValue.сity' | translate}}</li>
+      <li class="salary">{{'allValue.salary' | translate}}</li>
       <li class="position">Должность</li>
-      <li class="choice">Выбрать действие</li>
+      <li class="choice">{{'allValue.selectaction' | translate}}</li>
 
     </ul>
 
@@ -20,15 +20,15 @@
       <li class="city">{{item.CityName}}</li>
       <li class="salary">{{item.Salary}} &#x20BD;</li>
        <li class="position">{{item.VacancyShortTitle}}</li>
-      <li><select class="selectChoice" title="Выбрать действие"
+      <li><select class="selectChoice" [title]="'allValue.selectaction' | translate"
                   (change)= "brokerSelected($event,item, i)"
                   [(ngModel)]="contactMethods[i].id">>
 
         <option [value]="0" [selected]="contactMethods[i].id === 0">...</option>
-        <option [value]="1" [selected]="contactMethods[i].id === 1">Просмотр</option>
-        <option [value]="2" [selected]="contactMethods[i].id === 2">Редактировать</option>
-        <option [value]="3" [selected]="contactMethods[i].id === 3">Создать копию</option>
-        <option [value]="4" [selected]="contactMethods[i].id === 4">Удалить</option>
+        <option [value]="1" [selected]="contactMethods[i].id === 1">{{'allValue.view' | translate}}</option>
+        <option [value]="2" [selected]="contactMethods[i].id === 2">{{'allValue.edit' | translate}}</option>
+        <option [value]="3" [selected]="contactMethods[i].id === 3">{{'allValue.createcopy' | translate}}</option>
+        <option [value]="4" [selected]="contactMethods[i].id === 4">{{'allValue.delete' | translate}}</option>
       </select>
       </li>
     </ul>
@@ -43,7 +43,7 @@
 
   </div>
   <div class="vacList">
-  <button class="btn-newVac" (click)="newVac()">Новая вакансия</button>
+  <button class="btn-newVac" (click)="newVac()">{{'allValue.newvc' | translate}}</button>
   </div>
 </div>
 

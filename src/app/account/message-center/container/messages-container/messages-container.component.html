@@ -1,6 +1,6 @@
 <div class="wrapper">
   <div class="top">
-    Сообщения
+    {{'message-container.messages' | translate}}
   </div>
 
   <div class="messages-box"title="Перейти к переписке.">
@@ -11,7 +11,7 @@
 
         <div class="v-line"> </div>
         <ul class="headline">
-          <li class="date">Дата</li>
+          <li class="date">{{'allValue.date' | translate}}</li>
           <li class="from">От</li>
           <li class="subject">Тема</li>
         </ul>
@@ -19,7 +19,7 @@
         <ul class="bline">
           <li class="date">{{curLetter.DateTimeCreate  | date: 'dd-MM-yyyy HH:mm'}}</li>
           <li class="from">{{curLetter.UserNameFrom}}</li>
-          <li class="subject">Отклик на вакансию: {{curLetter.VacancyShortTitle}} </li>
+          <li class="subject">{{'allValue.responsevac' | translate}}: {{curLetter.VacancyShortTitle}} </li>
         </ul>
 
         <div class="txt"> {{curLetter.letterText}} </div>

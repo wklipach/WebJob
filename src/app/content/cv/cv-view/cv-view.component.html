@@ -25,7 +25,7 @@
 
         <div class="contact">Контакты</div>
         <div>
-          <img class="city" src="/assets/img/city.png" alt="Город">
+          <img class="city" src="/assets/img/city.png" alt="'allValue.сity' | translate">
           <div class="city-name" *ngIf="_cvitem!= undefined">{{_cvitem.CityName}}</div>
         </div>
 
@@ -37,7 +37,7 @@
         <label>Email</label>
         <div class="contactsEmail" *ngIf="_cvitem!= undefined"> <a href="mailto:{{ _cvitem.EMail }}">{{ _cvitem.EMail }}</a></div>
 
-        <label> Телефон</label>
+        <label> {{'allValue.tele' | translate}}</label>
         <div class="contactsPhone" *ngIf="_cvitem!= undefined"> <a href="tel:{{ _cvitem.Phone }}">{{ _cvitem.Phone }}</a></div>
 
       </form>
@@ -54,15 +54,15 @@
       <div  *ngIf="_cvitem!= undefined">{{_cvitem.Position}}</div>
 
 
-      <label>Стаж</label>
+      <label>{{'cvview.workexperience'| translate}}</label>
       <div *ngFor="let lep of this._listExperience; let i = index">
         {{lep}}
       </div>
 
-      <label class="From">Заработная плата</label>
+      <label class="From">{{'allValue.salary' | translate}}</label>
       <div  *ngIf="_cvitem!= undefined">{{_cvitem.SalaryFrom}}</div>
 
-      <label>Занятость</label>
+      <label>{{'allValue.Employment' | translate}}</label>
       <div class="end" *ngFor="let Elm of this._listEmployment; let i = index">
         {{Elm}}
       </div>
@@ -74,18 +74,18 @@
         <div class="skills" appTextToHtml [sourceText]="_cvitem.Skills"></div>
       </div>
 
-      <label class="labelEducation">Образование</label>
+      <label class="labelEducation">{{'allValue.Education' | translate}}</label>
 
       <div class="correspondence" *ngFor="let le of this._listEducation; let i = index">
         {{le}}
       </div>
 
-      <label class="labelEducation">Образование</label>
+      <label class="labelEducation">{{'allValue.Education' | translate}}</label>
 
       <div  *ngIf="_cvitem.sEducation!= undefined">{{_cvitem.sEducation}}</div>
 
 
-      <label class="labelEducation2">Опыт работы</label> <br>
+      <label class="labelEducation2">{{'allValue.experience' | translate}}</label> <br>
       <div  *ngIf="_cvitem.sExperience!= undefined">{{_cvitem.sExperience}}</div>
 
       <label>Сфера деятельности</label>

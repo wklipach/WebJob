@@ -8,6 +8,7 @@ import {
   staticGuideList
 } from '../../../class/GuideList';
 import {AdvancedLanguage, Language} from '../../../class/Language';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-cv-view',
@@ -33,7 +34,8 @@ export class CvViewComponent implements OnInit {
 
   constructor(private auth: AuthService,
               private cveditserv: CvEditService,
-              private fb: FormBuilder,) {
+              private fb: FormBuilder,
+              public translate: TranslateService) {
 
     this.formView = this.fb.group({
       name: ['', Validators.required],

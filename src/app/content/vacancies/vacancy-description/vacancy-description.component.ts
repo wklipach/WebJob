@@ -11,6 +11,7 @@ import {TableVacancyService} from '../../../services/table-vacancy.service';
 import {Guide} from '../../../class/guide';
 import {VacanciesListService} from '../../../services/vacancies-list.service';
 import {staticGuideList} from '../../../class/GuideList';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-vacancy-description',
@@ -56,7 +57,8 @@ export class VacancyDescriptionComponent implements OnInit {
               private authService: AuthService,
               private httpService: TableVacancyService,
               private cvEditSrv: CvEditService,
-              private vcListServ: VacanciesListService) { }
+              private vcListServ: VacanciesListService,
+              public translate: TranslateService) { }
 
 
   ngOnInit() {

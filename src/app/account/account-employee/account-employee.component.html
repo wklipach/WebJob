@@ -22,14 +22,14 @@
       </ng-template>
 
       <input type="file" id="avatar" (change)="onFileChange($event)" #fileInput style="display:none">
-      <label class="clear" (click)="clearFile()">Очистить</label>
+      <label class="clear" (click)="clearFile()">{{'account-employer.clear' | translate}}</label>
     </form>
 
     <form class="employee-form" [formGroup]="accountEmployeeForm">
 
      <label class="photo-upload" onclick="document.getElementById('avatar').click()">Загрузить фото</label>
 
-      <label class="user-name">Имя пользователя</label>
+      <label class="user-name">{{'allValue.UserName' | translate}}</label>
       <input type="text" class="inputUserName" id="inputUserName" formControlName="inputUserName" placeholder="введите имя пользователя" maxlength="100">
 
       <label class="email">Email</label>
@@ -89,28 +89,28 @@
       <label class="lastname">Фамилия</label>
       <input type="text" class="inputLastname" id="inputLastname" formControlName="inputLastName" placeholder="введите фамилию">
 
-      <label class="location">Город</label>
-      <select id="inputCity" formControlName="inputCity" class="inputCity" title="Город">
+      <label class="location">{{'allValue.сity' | translate}}</label>
+      <select id="inputCity" formControlName="inputCity" class="inputCity" [title]="'allValue.сity' | translate">
         <option  *ngFor="let lc of listCity" [value]="lc.name">
           {{lc.name}}
         </option>
       </select>
 
-      <label class="zip">Почтовый индекс</label>
+      <label class="zip">{{'allValue.postindex' | translate}}</label>
       <input type="text" class="inputZip" id="inputZip" formControlName="inputZip" placeholder="введите индекс">
 
 
       <label class="home-address">Домашний адрес</label>
       <input type="text" class="inputHomeAddress" id="inputAddress" formControlName="inputAddress" placeholder="Домашний адрес" maxlength="100">
 
-      <label class="phone">Телефон</label>
-      <input type="text" class="inputPhone" id="inputPhone" formControlName="inputPhone" placeholder="Телефон">
+      <label class="phone">{{'allValue.tele' | translate}}</label>
+      <input type="text" class="inputPhone" id="inputPhone" formControlName="inputPhone" placeholder="'allValue.tele' | translate">
 
 
 
-      <img class="img-lock" src="/assets/img/lock.png" alt="Смена пароля" title="Смена пароля">
+      <img class="img-lock" src="/assets/img/lock.png" [alt]="'allValue.changepwd' | translate" [title]="'allValue.changepwd' | translate">
 
-      <label class="changePass" (click)="accessPassword()"> Изменить пароль </label>
+      <label class="changePass" (click)="accessPassword()"> {{'allValue.changepwd2' | translate}} </label>
 
       <ng-container *ngIf="bShowChangePassword">
         <div class="changepassBox">
@@ -127,19 +127,19 @@
             <div class="alert alert-info">Пароль совпал</div>
           </ng-template>
 
-          <button type="submit" class="btn-newPassword" (click)="NewPassword()">Изменить пароль</button>
+          <button type="submit" class="btn-newPassword" (click)="NewPassword()">{{'allValue.changepwd2' | translate}}</button>
           <ng-container *ngIf="bPasswordNew">Пароль изменен</ng-container>
           <div class="alert-pass" *ngIf="bErrorRepeatPassword">Пароли не совпадают</div>
           <div class="alert-pass" *ngIf="bErrorEmptyPassword">Пароли не должны быть пустыми</div>
-          <button class="btn-newPasswordCancel" (click)="DisappearFrame()">Отмена</button>
+          <button class="btn-newPasswordCancel" (click)="DisappearFrame()">{{'allValue.Cancel' | translate}}</button>
         </div>
 
       </ng-container>
     </form>
 
 
-    <button type="submit" class="btn-save" (click)="savecv()" [disabled]="accountEmployeeForm.invalid">Сохранить</button>
-    <button type="submit" class="btn-cancel" (click)="back()">Отмена</button>
+    <button type="submit" class="btn-save" (click)="savecv()" [disabled]="accountEmployeeForm.invalid">{{'allValue.save' | translate}}</button>
+    <button type="submit" class="btn-cancel" (click)="back()">{{'allValue.Cancel' | translate}}</button>
 
 
   </div>

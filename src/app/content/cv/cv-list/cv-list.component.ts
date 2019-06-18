@@ -11,6 +11,7 @@ import {CV} from '../../../class/CV';
 import {NewcvService} from '../../../services/newcv.service';
 import {Previous} from '../../../class/Previous';
 import {staticGuideList} from '../../../class/GuideList';
+import {TranslateService} from '@ngx-translate/core';
 
 
 @Component({
@@ -51,7 +52,8 @@ export class CvListComponent implements OnInit, OnDestroy {
                private  gs: GuideService,
                private router: Router,
                private cveditserv: CvEditService,
-               private newcvserv: NewcvService) {
+               private newcvserv: NewcvService,
+               public translate: TranslateService) {
 
 
     this.CvListItem = 0;

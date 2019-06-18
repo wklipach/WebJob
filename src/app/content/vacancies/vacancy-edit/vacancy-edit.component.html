@@ -6,14 +6,14 @@
 
     <form [formGroup]="editVacancyForm" novalidate (ngSubmit)="submit()">
 
-      <label class="shortTitle">Наименование вакансии</label>
+      <label class="shortTitle">{{'allValue.namevc' | translate}}</label>
       <input type="text" class="inputVacancyShortTitle" formControlName="inputVacancyShortTitle" id="inputVacancyShortTitle" placeholder="Наименование вакансии до 90 знаков.">
       <div class="alert alert-danger" *ngIf="editVacancyForm.controls['inputVacancyShortTitle'].invalid && editVacancyForm.controls['inputVacancyShortTitle'].touched">
         Ошибка в наименовании вакансии
       </div>
 
 
-      <label class="vacancyDescription">Краткое описание вакансии</label>
+      <label class="vacancyDescription">{{'allValue.shortdescrvc' | translate}}</label>
       <textarea class="inputVacancyDescription" aria-label="Описание вакансии до 4000 знаков" formControlName="inputVacancyDescription" id="inputVacancyDescription" placeholder="Описание вакансии до 4000 знаков"></textarea>
 
       <div class="alert alert-danger" *ngIf="editVacancyForm.controls['inputVacancyDescription'].invalid && editVacancyForm.controls['inputVacancyDescription'].touched">
@@ -22,7 +22,7 @@
 
 
       <!-- Нет обработчика -->
-      <label class="jobFunction">Должностные обязанности</label>
+      <label class="jobFunction">{{'allValue.jobresponsibilities' | translate}}</label>
       <textarea class="inputjobFunction" maxlength="3000" aria-label="Должностные обязанности до 3000 знаков"
                 formControlName="inputjobFunction" id="inputjobFunction" placeholder="Должностные обязанности до 3000 знаков"></textarea>
 
@@ -31,7 +31,7 @@
       </div>
 
       <!-- Нет обработчика -->
-      <label class="vacancyRequirements">Требования</label>
+      <label class="vacancyRequirements">{{'allValue.requirementse' | translate}}</label>
       <textarea class="inputVacancyRequirements" maxlength="3000" aria-label="Требования до 3000 знаков"
                 formControlName="inputVacancyRequirements" id="inputVacancyRequirements" placeholder="Требования до 3000 знаков"></textarea>
 
@@ -40,7 +40,7 @@
       </div>
 
 
-      <label class="vacancyConditions">Условия</label>
+      <label class="vacancyConditions">{{'allValue.if' | translate}}</label>
       <textarea class="inputVacancyConditions" maxlength="3000" aria-label="Условия до 3000 знаков"
                 formControlName="inputConditions" id="inputConditions" placeholder="Условия до 3000 знаков"></textarea>
 
@@ -54,7 +54,7 @@
 
 
 
-      <label class="city">Город</label>
+      <label class="city">{{'allValue.сity' | translate}}</label>
       <select id="inputCity" formControlName="inputCity" class="inputCity" title="Локация вакансии">
         <option  *ngFor="let lc of listCity" [value]="lc.name">
           {{lc.name}}
@@ -75,7 +75,7 @@
         Ошибка в "Заработная плата до"
       </div>
 
-      <label class="displayPeriod" for="displayPeriod">Срок размещения</label>
+      <label class="displayPeriod" for="displayPeriod">{{'allValue.maturity' | translate}}</label>
 
       <select class="selectDisplayPeriod" formControlName="displayPeriod" id="displayPeriod">
         <option  *ngFor="let dpl of displayPeriodList" [value]="dpl.name">
@@ -97,8 +97,8 @@
 
       <div>
         <div class="form-group row">
-          <button type="submit" class="btn-save" [disabled]="editVacancyForm.invalid">Сохранить</button>
-          <button class="btn-cancel" routerLink="/vacancies" routerLinkActive="active">Отмена</button>
+          <button type="submit" class="btn-save" [disabled]="editVacancyForm.invalid">{{'allValue.save' | translate}}</button>
+          <button class="btn-cancel" routerLink="/vacancies" routerLinkActive="active">{{'allValue.Cancel' | translate}}</button>
         </div>
       </div>
 

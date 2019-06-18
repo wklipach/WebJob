@@ -9,6 +9,7 @@ import {NewVacancyService} from '../../../services/new-vacancy.service';
 import {Vacancy} from '../../../class/Vacancy';
 import {DatePipe} from '@angular/common';
 import {MoveService} from '../../../services/move.service';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-vacancies',
@@ -47,7 +48,8 @@ export class VacanciesComponent implements OnInit, OnDestroy {
               private  gs: GuideService,
               private router: Router,
               private gls: VacanciesListService,
-              private nvs: NewVacancyService) { }
+              private nvs: NewVacancyService,
+              public translate: TranslateService) { }
 
   ngOnInit() {
 

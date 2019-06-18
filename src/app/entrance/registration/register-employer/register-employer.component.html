@@ -7,7 +7,7 @@
 <form [formGroup]="formRegisterEmployer" novalidate (ngSubmit)="submit()">
 
   <label class="userName">Имя пользователя (Nic)</label>
-  <input type="text" class="form-control" id="userName" formControlName="userName" placeholder="Имя пользователя">
+  <input type="text" class="form-control" id="userName" formControlName="userName" placeholder="'allValue.UserName' | translate">
 
     <div class="form-group col-md-3">
       <!-- Проверяем вносимый логин. Если логин уже есть в базе, показываем лейбл -Имя пользователя занято, или наоборот -->

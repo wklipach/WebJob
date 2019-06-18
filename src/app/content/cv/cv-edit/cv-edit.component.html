@@ -7,14 +7,14 @@
   <form [formGroup]="editCVForm">
     <div class="cv-box">
 
-      <label for="inputCity" class="location">Город</label>
-      <select id="inputCity" formControlName="inputCity" class="inputCity" title="Город">
+      <label for="inputCity" class="location">{{'allValue.сity' | translate}}</label>
+      <select id="inputCity" formControlName="inputCity" class="inputCity" [title]="'allValue.сity' | translate">
         <option  *ngFor="let lc of listCity" [value]="lc.name">
           {{lc.name}}
         </option>
       </select>
 
-      <label class="salary">Заработная плата</label>
+      <label class="salary">{{'allValue.salary' | translate}}</label>
       <input type="text" class="inputSalaryFrom" formControlName="inputSalaryFrom" id="inputSalaryFrom" placeholder="от">
 
       <label class="label-position">Желаемая должность</label>
@@ -28,8 +28,8 @@
       <textarea class="inputEducation" aria-label="Учебное заведение. До 1000 знаков"
                 formControlName="inputEducation" id="inputEducation" placeholder="Учебное заведение. До 1000 знаков"></textarea>
 
-      <textarea class="inputExperience" aria-label="Опыт работы. До 1000 знаков"
-                formControlName="inputExperience" id="inputExperience" placeholder="Опыт работы До 1000 знаков"></textarea>
+      <textarea class="inputExperience" aria-label="'allValue.experience1000' | translate"
+                formControlName="inputExperience" id="inputExperience" placeholder="'allValue.experience1000' | translate"></textarea>
 
 
       <!--
@@ -60,7 +60,7 @@
 
 
       <button class="btn-save" (click)="savecv()">Сохранить резюме</button>
-      <button class="btn-cancel" routerLink="/cv-list" routerLinkActive="active">Отмена</button>
+      <button class="btn-cancel" routerLink="/cv-list" routerLinkActive="active">{{'allValue.Cancel' | translate}}</button>
 
 
     </div>

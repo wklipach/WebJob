@@ -7,6 +7,7 @@ import {Vacancy} from '../class/Vacancy';
 import {TableVacancyService} from '../services/table-vacancy.service';
 import {Router} from '@angular/router';
 import {AuthService} from '../services/auth-service.service';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-advanced-search',
@@ -47,7 +48,8 @@ export class AdvancedSearchComponent implements OnInit {
   constructor(private gs: GuideService,
               private router: Router,
               private httpTvsService: TableVacancyService,
-              private authService: AuthService) {
+              private authService: AuthService,
+              public translate: TranslateService) {
     this.listTimePlacement = gs.getTimePlacementList();
     this.resFind = {stringFind: '',
                     timePlacement: '',

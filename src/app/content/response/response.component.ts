@@ -12,6 +12,7 @@ import {Router} from '@angular/router';
 import {VacanciesListService} from '../../services/vacancies-list.service';
 import {Vacancy} from '../../class/Vacancy';
 import {DatePipe} from '@angular/common';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-response',
@@ -41,7 +42,8 @@ export class ResponseComponent implements OnInit, OnDestroy {
               private cvEditSrv: CvEditService,
               private authService: AuthService,
               private fb: FormBuilder,
-              private vls: VacanciesListService) {
+              private vls: VacanciesListService,
+              public translate: TranslateService) {
 
     this.formResponse = this.fb.group({
       textCommentValue: new FormControl('')

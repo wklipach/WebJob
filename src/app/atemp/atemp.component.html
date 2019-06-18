@@ -38,7 +38,7 @@ json-server src/db.json --routes src/routes.json
 <app-header-top></app-header-top>
 
 <div class="container">
-  <h3>Отрасль</h3>
+  <h3>{{'allValue.Industry' | translate}}</h3>
 
   <div class="row align-items-start">
     <div class="form-group form-check">
@@ -82,12 +82,12 @@ json-server src/db.json --routes src/routes.json
   </div>
   </div>
 
-    <h3>Занятость</h3><br>
+    <h3>{{'allValue.Employment' | translate}}</h3><br>
 
     <div class="row align-items-start">
       <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" id="employmentCheck1" title="Полная занятость">Полная занятость<br>
-        <input type="checkbox" class="form-check-input" id="employmentCheck2" title="Частичная занятость">Частичная занятость<br>
+        <input type="checkbox" class="form-check-input" id="employmentCheck1" [title]="'staticGuideList.Employment_val1' | translate">{{'staticGuideList.Employment_val1' | translate}}<br>
+        <input type="checkbox" class="form-check-input" id="employmentCheck2" [title]="'staticGuideList.Employment_val2' | translate">{{'staticGuideList.Employment_val2' | translate}}<br>
         <input type="checkbox" class="form-check-input" id="employmentCheck3" title="Проектная работа">Проектная работа<br>
         <input type="checkbox" class="form-check-input" id="employmentCheck4" title="Стажировка">Стажировка<br>
         <input type="checkbox" class="form-check-input" id="employmentCheck5" title="Волонтерство">Волонтерство<br>

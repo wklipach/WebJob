@@ -4,6 +4,15 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 
  export class  staticGuideList {
 
+  //вакансии
+   private static _vac1 = '';
+   public static set all_vac1(value) {
+     this._vac1 = value;
+   }
+   public static get vac1(): string {
+     return this._vac1;
+   }
+
    //пол мужской-женский
    private static _GenderList_val2 = '';
    private static _GenderList_val3 = '';

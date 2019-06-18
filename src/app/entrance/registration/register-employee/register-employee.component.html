@@ -6,8 +6,8 @@
 
 <form [formGroup]="myForm" novalidate (ngSubmit)="submit()">
 
-  <label class="userName">Имя пользователя (Nic)</label>
-      <input type="text" class="inputUserName" id="userName" formControlName="userName" placeholder="Имя пользователя">
+  <label class="userName">{{'allValue.UserName' | translate}} (Nic)</label>
+      <input type="text" class="inputUserName" id="userName" formControlName="userName" placeholder="'allValue.UserName' | translate">
   <!-- Проверяем вносимый логин. Если логин уже есть в базе, показываем лейбл -Имя пользователя занято, или наоборот -->
       <div class="alert alert-danger"
            *ngIf="myForm.controls['userName'].touched && myForm.controls['userName'].value.length === 0 ">

@@ -8,6 +8,7 @@ import {NewVacancyService} from '../../../services/new-vacancy.service';
 import {City} from '../../../class/City';
 import {AuthService} from '../../../services/auth-service.service';
 import {DatePipe} from '@angular/common';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-new-vacancy',
@@ -33,7 +34,8 @@ export class NewVacancyComponent implements OnInit {
   constructor(private is: GuideService,
               private httpService: NewVacancyService,
               private router: Router,
-              private auth: AuthService) {
+              private auth: AuthService,
+              public translate: TranslateService) {
 
     this.displayPeriodList = is.getDisplayPeriodList();
     if (this.displayPeriodList.length > 0) {

@@ -12,6 +12,7 @@ import {GuideService} from '../services/guide-service.service';
 import {DatePipe} from '@angular/common';
 import {Letter} from '../class/Letter';
 import {TranslateService} from '@ngx-translate/core';
+import {staticGuideList} from '../class/GuideList';
 
 @Component({
   selector: 'app-home',
@@ -265,7 +266,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     return this.getTableVacancyAdvanced = this.httpService.getTableVacancyAdvanced(advancedFindObj).subscribe(
       (data: any) => {
         this.data_show(data);
-        this.sVacancy = 'Вакансии';
+        this.sVacancy = staticGuideList.all_vac1;
       });
   }
 

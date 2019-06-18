@@ -10,6 +10,7 @@ import {UserTable} from '../../class/UserTable';
 import {isUndefined} from "util";
 import {Guide} from '../../class/guide';
 import * as CryptoJS from 'crypto-js';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-accountemployee',
@@ -43,7 +44,8 @@ private loadUser: UserType;
               private fb: FormBuilder,
               private auth: AuthService,
               private router: Router,
-              private gs: GuideService) {
+              private gs: GuideService,
+              public translate: TranslateService) {
 
 
     this.createForm();

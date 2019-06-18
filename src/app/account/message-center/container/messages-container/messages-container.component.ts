@@ -4,6 +4,7 @@ import {LetterService} from '../../../../services/letter.service';
 import {Router} from '@angular/router';
 import {Subscription} from 'rxjs';
 import {Letter} from '../../../../class/Letter';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-messages-container',
@@ -20,7 +21,10 @@ export class MessagesContainerComponent implements OnInit {
   private sbscTableLetter: Subscription;
   private letterSubscription: Subscription;
 
-  constructor (private authService: AuthService, private httpLetter: LetterService, private router: Router) {
+  constructor (private authService: AuthService,
+               private httpLetter: LetterService,
+               private router: Router,
+               public translate: TranslateService) {
 
     var Res =  this.authService.loginStorage();
     this.bConnected = Res.bConnected;

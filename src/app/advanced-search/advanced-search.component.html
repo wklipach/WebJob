@@ -6,40 +6,40 @@
 
   <form [formGroup]="advancedSearchForm">
 
-    <input class="inputSearch" type="search" placeholder="Поиск" formControlName="stringFind">
+    <input class="inputSearch" type="search" placeholder="'allValue.Find' | translate" formControlName="stringFind">
 
     <button class="btn-search" (click)="submit()">
-      <img src="/assets/img/icon-search.png" alt="Найти" title=" Найти">&nbsp;
-      Найти
+      <img src="/assets/img/icon-search.png" [alt]="'allValue.Find' | translate" [title]="'allValue.Find' | translate">&nbsp;
+      {{'allValue.Find' | translate}}
     </button>
 
-    <span>Выберите дополнительные условия поиска</span>
+    <span>{{'advancedSearch.AdditionalSearchTerms' | translate }}</span>
 
     <input name="typeVac" type="radio" class="check1" id="advSearchCheck1" (click)="findOnly(true,false)">
-    <label class="label-check1" for="advSearchCheck1">{{advSearchV}}</label>
+    <label class="label-check1" for="advSearchCheck1">{{advSearchV | translate}}</label>
     <input name="typeVac" type="radio" class="check2" id="advSearchCheck2" (click)="findOnly(false,true)">
-    <label class="label-check2" for="advSearchCheck2">{{advSearchVX}}</label>
+    <label class="label-check2" for="advSearchCheck2">{{advSearchVX | translate}}</label>
 
 
     <div class="box-city">
-      <label class="label-city" for="inputCity">Город</label>
-      <select id="inputCity" class="inputCity" title="Город" formControlName="inputCity">
+      <label class="label-city" for="inputCity">{{'advancedSearch.city' | translate }}</label>
+      <select id="inputCity" class="inputCity" [title]="'advancedSearch.city' | translate" formControlName="inputCity">
         <option  *ngFor="let lc of listCity" [value]="lc.name">
           {{lc.name}}
         </option>
       </select>
 
-      <label for="inputSalary" class="salary">Заработная плата от</label>
+      <label for="inputSalary" class="salary">{{'advancedSearch.SalaryFrom' | translate}}</label>
       <input type="text" class="inputSalary" id="inputSalary" placeholder="0" formControlName="inputSalary">
 
-      <label class="dropdownTimePlacement" id="dropdownTimePlacement">{{advSearchOlder}}  {{resFind.timePlacement}}</label>
+      <label class="dropdownTimePlacement" id="dropdownTimePlacement">{{advSearchOlder | translate}}  {{resFind.timePlacement}}</label>
 
       <select id="timePlacement" class="timePlacement" title="Срок" formControlName="timePlacement">
         <option  *ngFor="let item of listTimePlacement; let i = index;" [value]="item.name" (click)="timePlacement(item.name, i+1,item.comment )">
           {{item.name}}
         </option>
         <option  [value]="" (click)="timePlacement('',-1)">
-          Отмена
+          {{'allValue.Cancel' | translate}}
         </option>
 
       </select>
