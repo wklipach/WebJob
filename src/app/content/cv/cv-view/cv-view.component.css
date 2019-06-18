@@ -16,21 +16,13 @@ form{
 .userName{
   visibility: hidden;
 }
-
 .name{
-
   width: 260px;
-
   font-size:1.3em;
-
 }
-
 label{
   color: #0262d2;
-  margin: 13% 0;
-
 }
-
 .logotype{
   width: 190px;
   height: 190px;
@@ -60,8 +52,12 @@ label{
   margin: 12px 0;
 }
 .contactsLang, .contactsEmail, .contactsPhone{
-  margin: 2px 22px;
+  margin: 1% 0 2% 8%;
   overflow: auto;
+}
+.position{
+  font-size: 1.5em;
+  width: 90%;
 }
 .cv-box{
   position: relative;
@@ -82,7 +78,7 @@ label{
 }
 .skills{
   color: rgb(68, 75, 84);
-  height: 80px;
+  max-height: 100px;
   text-align: left;
   margin-top: 1px;
   margin-left: 1px;
@@ -93,4 +89,36 @@ label{
   height: auto;
   font-size:1.1em;
   word-break: break-all;
+}
+.langLevel{
+  display: inline-block;
+  margin-right: 20%;
+  float: right;
+}
+
+
+
+
+.message.error {
+  z-index: 1;
+  background: #e94e26;
+  color: #fff !important;
+}
+.message {
+  border-radius: 3px;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  animation-name: slide;
+  animation-duration: .3s;
+  left: 100%;
+  line-height: 1.15;
+  margin-left: 10px;
+  max-width: 300px;
+  padding: 6px 15px;
+  position: absolute;
+  top: 0;
+  width: 1000px;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .4);
+  text-align: left;
 }

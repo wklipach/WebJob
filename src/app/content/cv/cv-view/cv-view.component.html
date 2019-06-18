@@ -29,16 +29,16 @@
           <div class="city-name" *ngIf="_cvitem!= undefined">{{_cvitem.CityName}}</div>
         </div>
 
-        <label>Языки</label>
-        <div class="contactsLang" *ngFor="let lL of this._listLanguage; let i = index">
-          {{lL['language_name']}} - {{lL['language_level']}}
-        </div>
-
-        <label>Email</label>
+       <label>Email</label>
         <div class="contactsEmail" *ngIf="_cvitem!= undefined"> <a href="mailto:{{ _cvitem.EMail }}">{{ _cvitem.EMail }}</a></div>
 
         <label> {{'allValue.tele' | translate}}</label>
         <div class="contactsPhone" *ngIf="_cvitem!= undefined"> <a href="tel:{{ _cvitem.Phone }}">{{ _cvitem.Phone }}</a></div>
+
+        <label>Языки</label>
+        <div class="contactsLang" *ngFor="let lL of this._listLanguage; let i = index">
+          {{lL['language_name']}} - <div class="langLevel">{{lL['language_level']}}</div>
+        </div>
 
       </form>
 
@@ -46,21 +46,26 @@
 
     <div class="rightBox">
 
+      <label class="label-position">Желаемая позиция</label>
+     <!--  <div class="position" id="position"> </div> -->
+      <div class="position"  *ngIf="_cvitem!= undefined">{{_cvitem.Position}}</div>
+
+
+
       <label>Дата рождения</label>
       <div class="tempo" *ngIf="_cvitem!= undefined">{{ _cvitem.DateBirth  | date:'dd.MM.yyyy'}}</div>
-
-      <label class="label-position">Желаемая должность</label>
-      <div class="position" id="position"></div>
-      <div  *ngIf="_cvitem!= undefined">{{_cvitem.Position}}</div>
-
 
       <label>{{'cvview.workexperience'| translate}}</label>
       <div *ngFor="let lep of this._listExperience; let i = index">
         {{lep}}
       </div>
+      <div  *ngIf="this._listExperience.length ===0">Стаж не указан.&nbsp;</div>
+
 
       <label class="From">{{'allValue.salary' | translate}}</label>
       <div  *ngIf="_cvitem!= undefined">{{_cvitem.SalaryFrom}}</div>
+      <div  *ngIf="_cvitem === undefined">Не указана.&nbsp;</div>
+
 
       <label>{{'allValue.Employment' | translate}}</label>
       <div class="end" *ngFor="let Elm of this._listEmployment; let i = index">
@@ -106,13 +111,9 @@
 
       </div>
 
-
-
-
-
-
     </div>
 
+    <div class="message">Это какой-то меседж !</div>
 
   </div>
 </div>
