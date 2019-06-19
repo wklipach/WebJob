@@ -2,7 +2,7 @@
   width: 1170px;
   margin: 0 auto;
   color: rgb(68, 75, 84);
-  font-size: 0.9em;
+  font-size: 1em;
 }
 .top{
   width: 100%;
@@ -22,6 +22,8 @@ form{
 }
 label{
   color: #0262d2;
+  width: 100%;
+  border-bottom: solid 1px #b8b8b8;
 }
 .logotype{
   width: 190px;
@@ -56,8 +58,10 @@ label{
   overflow: auto;
 }
 .position{
-  font-size: 1.5em;
-  width: 90%;
+  font-size: 1.2em;
+  height: 24px;
+  max-width: 95%;
+  overflow: hidden;
 }
 .cv-box{
   position: relative;
@@ -111,9 +115,9 @@ label{
   box-sizing: border-box;
   animation-name: slide;
   animation-duration: .3s;
-  left: 100%;
+  left: -50%;
   line-height: 1.15;
-  margin-left: 10px;
+  margin-left: 100px;
   max-width: 300px;
   padding: 6px 15px;
   position: absolute;

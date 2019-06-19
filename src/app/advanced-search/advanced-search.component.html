@@ -6,7 +6,7 @@
 
   <form [formGroup]="advancedSearchForm">
 
-    <input class="inputSearch" type="search" placeholder="'allValue.Find' | translate" formControlName="stringFind">
+    <input class="inputSearch" type="search" [placeholder]="'allValue.Find' | translate" formControlName="stringFind">
 
     <button class="btn-search" (click)="submit()">
       <img src="/assets/img/icon-search.png" [alt]="'allValue.Find' | translate" [title]="'allValue.Find' | translate">&nbsp;

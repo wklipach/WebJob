@@ -42,6 +42,7 @@ li{
   font-family: Proxima Nova,sans-serif;
   background-color: #DFDFDF;
   margin-left: 30px;
+  width: 94%;
 }
 .botom-line{
   display: inline-block;
@@ -52,16 +53,16 @@ li{
   margin-top: -1px;
 }
 .date{
-  width:90px;
+  width:10%;
 }
 .city{
-  width:120px;
+  width:18%;
 }
 .position{
-  width:570px;
+  width:55%;
 }
 .salary{
-  width:90px;
+  width:11%;
 }
 .choice{
   width: 230px;
