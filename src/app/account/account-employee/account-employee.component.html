@@ -104,7 +104,7 @@
       <input type="text" class="inputHomeAddress" id="inputAddress" formControlName="inputAddress" placeholder="Домашний адрес" maxlength="100">
 
       <label class="phone">{{'allValue.tele' | translate}}</label>
-      <input type="text" class="inputPhone" id="inputPhone" formControlName="inputPhone" placeholder="'allValue.tele' | translate">
+      <input type="text" class="inputPhone" id="inputPhone" formControlName="inputPhone" [placeholder]="'allValue.tele' | translate">
 
 
 
@@ -138,7 +138,9 @@
     </form>
 
 
-    <button type="submit" class="btn-save" (click)="savecv()" [disabled]="accountEmployeeForm.invalid">{{'allValue.save' | translate}}</button>
+    <!-- [disabled]="accountEmployeeForm.invalid" -->
+
+    <button type="submit" class="btn-save" (click)="savecv()" [disabled]="accountEmployeeForm.invalid" >{{'allValue.save' | translate}}</button>
     <button type="submit" class="btn-cancel" (click)="back()">{{'allValue.Cancel' | translate}}</button>
 
 

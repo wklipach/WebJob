@@ -90,13 +90,13 @@
       <input type="text" class="inputZip" id="inputZip" formControlName="inputZip" placeholder="введите индекс">
 
       <label class="home-address">{{'allValue.address' | translate}}</label>
-      <input type="text" class="inputHomeAddress" id="inputAddress" formControlName="inputAddress" placeholder="'allValue.address' | translate" maxlength="100">
+      <input type="text" class="inputHomeAddress" id="inputAddress" formControlName="inputAddress" [placeholder]="'allValue.address' | translate" maxlength="100">
 
       <label class="phone">{{'allValue.tele' | translate}}</label>
-      <input type="text" class="inputPhone" id="inputPhone" formControlName="inputPhone" placeholder="'allValue.tele' | translate">
+      <input type="text" class="inputPhone" id="inputPhone" formControlName="inputPhone" [placeholder]="'allValue.tele' | translate">
 
       <label class="phone2">{{'allValue.tele2' | translate}}</label>
-      <input type="text" class="inputPhone2" id="inputPhone2" formControlName="inputPhone2" placeholder="'allValue.tele2' | translate">
+      <input type="text" class="inputPhone2" id="inputPhone2" formControlName="inputPhone2" [placeholder]="'allValue.tele2' | translate">
 
       <label class="web">Web-site</label>
       <input type="text" class="inputWeb" id="inputWeb" formControlName="inputWeb" placeholder="Web-site">

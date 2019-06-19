@@ -69,8 +69,8 @@ private loadUser: UserType;
       'inputAddress': new FormControl('', []),
       'inputPhone': new FormControl('', []),
       'inputCity': new FormControl('', []),
-      'inputNewPassword1': new FormControl('', [Validators.required, Validators.minLength(1)]),
-      'inputNewPassword2': new FormControl('', [Validators.required, Validators.minLength(1)], [this.password2AsyncValidator.bind(this)]),
+      'inputNewPassword1': new FormControl('', []),
+      'inputNewPassword2': new FormControl('', [], [this.password2AsyncValidator.bind(this)]),
       'inputEmail': new FormControl(null, [
         Validators.required,
         Validators.email
@@ -305,8 +305,11 @@ private loadUser: UserType;
 //    console.log('genderList', this.genderList.find(
 //          (value) => value.id == 1));
 
+    console.log('this.accountEmployeeForm', 'a1');
 
     if (this.accountEmployeeForm.invalid) {
+
+      console.log('this.accountEmployeeForm.invalid',this.accountEmployeeForm);
       return -1;
     }
 
