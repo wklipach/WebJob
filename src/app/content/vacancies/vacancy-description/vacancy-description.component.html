@@ -73,9 +73,18 @@
 
 
     <button class="btn-response" type="button" id="vcresponse" [title]="'allValue.Response' | translate" (click)="vcResponse()">{{'allValue.Response' | translate}}</button>
-    <button class="btn-favorites" type="button" id="vcfavorites" title="В избранное" (click)="vcFavour()">В избранное</button>
-    <button class="btn-hide" type="button" id="vchide" [title]="'allValue.DontShow' | translate" (click)="vcDontShow()">{{'allValue.DontShow' | translate}}</button>
+    <button class="btn-favorites" type="button" id="vcfavorites" title="В избранное" (click)="vcFavour()">
+      <img class="favor-star" src="/assets/img/favor-star.png" [title]="'allValue.DontShow' | translate">
+      В избранное</button>
+
+
+
+    <button class="btn-hide" type="button" id="vchide" [title]="'allValue.DontShow' | translate" (click)="vcDontShow()">
+      <img class="crossed-eye" src="/assets/img/crossed-eye.png"  [title]="'allValue.DontShow' | translate">{{'allValue.DontShow' | translate}}
+    </button>
     <div *ngIf="this.descrDataVacancy">{{this.descrDataVacancy.sErrorText}}</div>
+
+
 
   </div>
 
