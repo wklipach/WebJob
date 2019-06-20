@@ -57,8 +57,9 @@ li{
 }
 .txt{
   width:100%;
-  font-size: 14px;
-  font-family: "Proxima Nova","sans-serif";
+  font-size: 0.9em;
+  max-height: 16vh;
+  overflow: auto;
 }
 .from{
   width:210px;
