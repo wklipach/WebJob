@@ -72,24 +72,24 @@ console.log('this._id_user',this._id_user);
    // получаем список резюме пользователя в cvList
     this.cvResponseCity = this.gs.getCityTable().subscribe((value) => {
       this.cityList = value as City[];
-console.log('this a1');
+// console.log('this a1 value', value);
       this.cvResponseGetCvList = this.cls.getCvList(this._id_user).subscribe((value0) => {
           this.cvList = value0;
 
-console.log('this a2');
+// console.log('this a2',value0);
 
           if (this.cvList.length === 1) {
             this.modelResumeFromCheck.resumeFromCheck = this.cvList[0].id;
           }
 
-console.log('this a3');
+//console.log('this a3');
 
           this.cvList.forEach( (cvCur, index) => {
-            const sCityName = (this.cityList as City[]).find(value1 => (value1.id === cvCur.City) ).name;
+            const sCityName = (this.cityList as City[]).find( value1 =>
+              (value1.id === parseInt(cvCur.City.toString()) )).name;
             this.cvList[index].CityName = sCityName;
 
             // this.modelResumeFromCheck.resumeFromCheck = this.cvList[index].id;
-console.log('this a4');
 
           });
         }

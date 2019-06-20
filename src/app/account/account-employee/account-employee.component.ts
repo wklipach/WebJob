@@ -302,14 +302,7 @@ private loadUser: UserType;
 
   savecv() {
 
-//    console.log('genderList', this.genderList.find(
-//          (value) => value.id == 1));
-
-    console.log('this.accountEmployeeForm', 'a1');
-
     if (this.accountEmployeeForm.invalid) {
-
-      console.log('this.accountEmployeeForm.invalid',this.accountEmployeeForm);
       return -1;
     }
 
