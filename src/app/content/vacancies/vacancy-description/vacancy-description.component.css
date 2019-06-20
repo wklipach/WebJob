@@ -140,7 +140,8 @@ label{
   border-color: #054086;
   border-width: 1px;
   border-style: solid;
-  margin-left: 15px;
+  margin-left: 1.36%;
+  margin-top: 1%;
 }
 .btn-response:hover{
   background-color: #0066cc;
@@ -165,7 +166,8 @@ label{
   text-align: center;
   width: 156px;
   height: 48px;
-  margin-left: 172px;
+  margin-left: 14.75%;
+  margin-top: 1%;
 }
 .btn-favorites:hover{
   background-color:#0066cc;
@@ -178,7 +180,7 @@ label{
   border-style: solid;
   border-width: 3px;
   border-radius: 3px;
-  font-weight: 600;
+  font-weight: bold;
 }
 .favor-star{
   vertical-align: middle;
@@ -196,8 +198,9 @@ label{
   text-align: center;
   width: 160px;
   height: 48px;
-  margin-left: 330px;
+  margin-left: 28.292%;
   vertical-align: middle;
+  margin-top: 1.02%;
 }
 .crossed-eye{
   vertical-align: middle;
@@ -206,7 +209,7 @@ label{
 .btn-hide:hover{
   background-color:#f26100;
   color: white;
-  font-weight:600;
+  font-weight:bold;
 }
 .line{
   position: relative;

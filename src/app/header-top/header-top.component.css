@@ -61,7 +61,6 @@ h1 {
 h1:hover{
   cursor: pointer;
   color: red;
-
 }
 a:link{
   text-decoration: none;
@@ -270,6 +269,7 @@ li:hover{
   background: #e8f1fb;
   box-shadow: 0 0 10px #DFDFDF;
   transition: 0.2s;
+  font-weight: bold;
 }
 
 .menu-header:hover{
