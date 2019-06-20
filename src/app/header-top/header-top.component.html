@@ -26,21 +26,41 @@
         <span class="logout" (click)="logout()"><li>Выйти</li></span>
       </ul>
 
+
+    <div class="cor">
     <a routerLink="/messages" routerLinkActive="active">
     <img class="img-envelop" src="/assets/img/envelope.png" [alt]="'header-top.newmessages' | translate" [title]="'header-top.newmessages' | translate">
-        <div *ngIf="this.numberCountNotReadLetter > 0">
-              <img class="img-circle" src="/assets/img/circle.png" alt="Всего сообщений" title="Всего сообщений">
-              <div *ngIf="this.numberCountNotReadLetter > 9">
-                 <span class="number-env">!</span>
-              </div>
-              <div *ngIf="this.numberCountNotReadLetter <= 9">
-                <span class="number-env">{{this.numberCountNotReadLetter}}</span>
-              </div>
-         </div>
+
+      <div *ngIf="this.numberCountNotReadLetter > 0">
+        <img class="img-circle" src="/assets/img/circle.png" alt="Всего сообщений" title="Всего сообщений">
+        <div *ngIf="this.numberCountNotReadLetter > 9">
+          <span class="number-env">!</span>
+        </div>
+        <div *ngIf="this.numberCountNotReadLetter <= 9">
+          <span class="number-env">{{this.numberCountNotReadLetter}}</span>
+        </div>
+      </div>
+
     </a>
+
+
+
+
+
+
+
+
+
+
 
      <a routerLink="/info" routerLinkActive="active">
        <img class="img-bell" src="/assets/img/bell.png" [alt]="'header-top.newevent' | translate" [title]="'header-top.newevent' | translate">
+
+
+
+
+
+
 
        <div *ngIf="this.numberCountNotReadBell > 0">
               <img class="img-circle-bell" src="/assets/img/circle-bell.png" alt="Всего событий" title="Всего событий">
@@ -52,6 +72,11 @@
              </div>
        </div>
      </a>
+
+
+    </div>
+
+
   </div>
 
     <div class="menu-top" *ngIf="!bConnected">
@@ -88,9 +113,9 @@
 -->
 
     <ul class="lang-list">
-      <li class="langchoice-tumb" (click)="myClickLang(1)">ET<img src="/assets/img/est-flag.png" alt="Эстонский" title="Эстонский"></li>
-      <li class="langchoice-tumb" (click)="myClickLang(0)">RU<img src="/assets/img/rus-flag.png" alt="Русский" title="Руский"></li>
-      <li class="langchoice-tumb" (click)="myClickLang(2)">EN<img src="/assets/img/eng-flag.png" alt="Английский" title="Английский"></li>
+      <li class="langchoice-tumb" (click)="myClickLang(1)">ET<img class="flag" src="/assets/img/est-flag.png" alt="Эстонский" title="Эстонский"></li>
+      <li class="langchoice-tumb" (click)="myClickLang(0)">RU<img class="flag" src="/assets/img/rus-flag.png" alt="Русский" title="Руский"></li>
+      <li class="langchoice-tumb" (click)="myClickLang(2)">EN<img class="flag" src="/assets/img/eng-flag.png" alt="Английский" title="Английский"></li>
     </ul>
 
   </div>

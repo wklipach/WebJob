@@ -12,6 +12,7 @@
   border-bottom: solid 1px;
   border-color: #b7b7b7;
 }
+
 .user{
   position: absolute;
   display: inline-block;
@@ -19,20 +20,19 @@
   margin-left: 1px;
 }
 .hello{
-  position: absolute;
+  position: relative;
   display: inline-block;
   color: #484c54;
   margin-top:22px;
   margin-left: 43px;
   text-decoration: none;
-  width: 116px;
 }
 .register{
   position: absolute;
   display: inline-block;
   color: #484c54;
   margin-top:22px;
-  margin-left: 94px;
+  margin-left: 1px;
   text-decoration: none;
   width: 150px;
 }
@@ -40,7 +40,8 @@
   position: absolute;
   display: inline-block;
   margin-top:7px;
-  margin-left: 9px;
+  padding-left: 9px;
+  padding-bottom: 10px;
 }
 .arrow-down-lang{
   position: absolute;
@@ -156,11 +157,14 @@ a:visited {
   font-size: 14px;
   color: rgb(68, 75, 84);
   margin-left: -15px;
-  padding-right: 5px;
+  padding-right: 18px;
   vertical-align: middle;
 }
 .flag-list{
   vertical-align: middle;
+}
+.flag{
+  padding: 14px 0 0  10px;
 }
 .bottom{
   position: relative;
@@ -237,21 +241,19 @@ a:visited {
 .menu-header{
   display: inline-block;
   position: absolute;
-  width: 150px;
   height: 45px;
   color: #484c54;
   text-align: left;
   cursor: pointer;
   margin-top:22px;
-  margin-left: 152px;
 }
 .menu-header:hover{
   background: #FFF;
 }
 ul.user-list{
   position: absolute;
-  margin-top: 50px;
-  margin-left: 105px;
+  margin-top: 1px;
+  margin-left: 100px;
   display: none;
   z-index: 2;
 }
@@ -294,17 +296,17 @@ ul:hover{
   float: right;
   text-align: right;
   cursor: pointer;
-  margin-top:15px;
+  margin-top: 8px;
 }
 .menu-header-lang:hover{
   background: #FFF;
 }
 .lang-list{
   position: absolute;
-  margin-top: 50px;
+  margin-top: 39px;
   float: right;
   z-index: 2;
-  margin-left: 918px;
+  margin-left: 899px;
   display: none;
 }
 ul.lang-list li{
@@ -319,7 +321,6 @@ ul.lang-list li{
   border-style: solid;
   border-width:1px;
   margin-left:150px;
-
 }
 .lang-list li:hover{
   background: #e8f1fb;
@@ -343,4 +344,8 @@ ul:hover{
   color: #F74933;
   margin: 25px auto;
   text-align: center;
+}
+.cor{
+  margin: -41px 0 10px 100px;
+  width:250px;
 }
