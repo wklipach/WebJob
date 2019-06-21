@@ -148,7 +148,7 @@ a:visited {
   background-color: yellow;
 }
 
-.langchoice{
+.langLetters{
   position: absolute;
   display: inline-block;
   font-size: 14px;
@@ -161,7 +161,6 @@ a:visited {
   color: rgb(68, 75, 84);
   margin-left: -15px;
   padding-right: 18px;
-  vertical-align: middle;
 }
 .flag-list{
   vertical-align: middle;
@@ -248,7 +247,7 @@ a:visited {
   color: #484c54;
   text-align: left;
   cursor: pointer;
-  margin-top:22px;
+  line-height: 4;
 }
 .menu-header:hover{
   background: #FFF;

@@ -11,9 +11,10 @@
       <img class="user" src="/assets/img/user.png" alt="Welcome" title="Welcome">
       <span class="hello">{{ 'header-top.hello' | translate }},&nbsp;</span>
 
-      <div class="menu-header">{{ htUserName }}
-      <img class="arrow-down" src="/assets/img/arrow-down.png" alt="Открыть меню пользователя" title="Mеню пользователя">
+      <div class="menu-header">{{ htUserName }}&nbsp;&nbsp;<img src="/assets/img/arrow-down.png" alt="Открыть меню пользователя" title="Mеню пользователя">
       </div>
+
+
       <ul class="user-list">
         <a routerLink="/account-employer" routerLinkActive="active"><li *ngIf = "bEmployer">{{ 'header-top.profile' | translate }}</li></a>
         <a routerLink="/new-vacancy" routerLinkActive="active"><li *ngIf = "bEmployer">{{'allValue.newvc' | translate}}</li></a>
@@ -93,21 +94,22 @@
         <div class="menu-header-lang">
 
 <div *ngIf = "this.currentLangSwitch == 0">
-            <span class="langchoice">RU</span>
+            <span class="langLetters">RU</span>
             <img  class="flag-menu" src="/assets/img/rus.png" alt="Русский" title="Руский">
 </div>
 
 <div *ngIf = "this.currentLangSwitch == 1">
-            <span class="langchoice">EE</span>
+            <span class="langLetters">EE</span>
             <img  class="flag-menu" src="/assets/img/est.png" alt="Эстонский" title="Эстонский">
 </div>
 
 <div *ngIf = "this.currentLangSwitch == 2">
-            <span class="langchoice">EN</span>
+            <span class="langLetters">EN</span>
             <img  class="flag-menu" src="/assets/img/eng.png" alt="Английский" title="Английский">
 </div>
 
           <img class="arrow-down-lang" src="/assets/img/arrow-down.png" alt="Выбор языка" title="Выбор языка">
+
         </div>
 
 <!--
