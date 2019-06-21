@@ -49,6 +49,9 @@
   margin-top:14px;
   margin-left: -13px;
 }
+.menu-top{
+  position: absolute;
+}
 h1 {
   font-size: 48px;
  /* color: #484c54;
