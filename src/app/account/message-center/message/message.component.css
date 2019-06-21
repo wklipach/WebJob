@@ -45,6 +45,10 @@
   position: relative;
   width: 103px;
   height: 103px;
+
+  /*  width: 130px;
+  height: 40px; */
+
   margin-left: 22px;
   margin-top: 45px;
 }
@@ -124,6 +128,10 @@ label{
   position: absolute;
   margin-left: 60px;
   width:800px;
+  font-size: 1.2em;
+  margin-top: -4px;
+  overflow: hidden;
+
 }
 .labelText{
   margin-left: 20px;
@@ -140,7 +148,7 @@ label{
   margin: 5px 20px 10px 20px;
   width: 92%;
   min-height: 6vh;
-  max-height: 41vh;
+  max-height: 31vh;
   overflow: auto;
 }
 .answer{
