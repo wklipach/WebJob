@@ -27,7 +27,7 @@ export class HeaderTopComponent implements OnInit {
   numberCountNotReadBell: number = 0;
 
   protected currentLangSwitch: number = 1;
-  private arrLangs: any = ['ru', 'et', 'en'];
+  private arrLangs: any = ['ru', 'ee', 'en'];
 
   sNullValueFind : string = '';
 
@@ -39,15 +39,15 @@ export class HeaderTopComponent implements OnInit {
 
 
     translate.addLangs(this.arrLangs);
-    translate.setDefaultLang('et');
-    const browserLang = translate.getDefaultLang();
+    translate.setDefaultLang('ee');
     this.currentLangSwitch = this.httpService.getLangStorage();
     translate.use(this.arrLangs[this.currentLangSwitch]);
-    //translate.use(browserLang.match(/ru|ee|en/) ? browserLang : 'ee');
-    console.log('home.value1');
+
+/*
     this.translate.get('home.value1').subscribe(
       value => console.log(value)
     );
+*/
 
     this.loadStaticGuide();
 

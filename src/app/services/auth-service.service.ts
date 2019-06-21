@@ -33,8 +33,22 @@ export class AuthService {
   }
 
   logout() {
+
+    //вытираем все, но сохраняем idLang
+
     this.isAuthenticated = false;
+
+    let idLang = -1;
+    if (window.localStorage.getItem('LangStorage') !== null) {
+      idLang = parseInt(JSON.parse(window.localStorage.getItem('LangStorage')));
+    }
+
     window.localStorage.clear();
+
+    if (idLang !== -1) {
+      window.localStorage.setItem('LangStorage', idLang.toString());
+    }
+
   }
 
   isLoggedIn(): boolean
@@ -134,8 +148,7 @@ export class AuthService {
   public getLangStorage(): number {
 
     let idLang: number = 1;
-
-    if (window.localStorage.getItem('LangStorage') !== '') {
+    if (window.localStorage.getItem('LangStorage') !== null) {
       idLang = parseInt(JSON.parse(window.localStorage.getItem('LangStorage')));
     }
 
