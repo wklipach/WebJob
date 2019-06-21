@@ -44,6 +44,9 @@ public  setCvId(cv_id: number) {
   }
 
   public  setCvItem(cv_item: any) {
+
+    console.log('ВОТ cv_item',cv_item);
+
     window.localStorage.setItem('_cvitem', JSON.stringify(cv_item));
     this._cvitem  = cv_item;
   }

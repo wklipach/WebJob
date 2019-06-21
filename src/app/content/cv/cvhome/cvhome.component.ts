@@ -200,12 +200,20 @@ export class CvhomeComponent implements OnInit {
     // если это кнопка Пригласить запрещаем открывать просмотр
     if ($event.target.id === 'cvresponse')   return;
 
-    let cv = this.myDataCV.find(cv =>  cv.id===zid);
+//    let cv = this.myDataCV.find(cv =>  cv.id===zid);
 
-    this.cveditserv.setCvId(cv.id);
-    this.cveditserv.setCvItem(cv);
-    this.router.navigate(['/cv-view']);
+    this.cveditserv.getAnyCv(zid).subscribe(item =>{
+      this.cveditserv.setCvId(item[0].id);
+      this.cveditserv.setCvItem(item[0]);
+      this.router.navigate(['/cv-view']);
+    });
+
   }
+
+
+
+
+
 
 
   private funcCheckedFind(nPageNumber: number)   {
