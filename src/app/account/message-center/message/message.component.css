@@ -36,6 +36,20 @@
 .zero{
   position: absolute;
 }
+
+.logotypeEr{
+  border-width: 1px;
+  border-color: rgb(188, 188, 188);
+  border-style: solid;
+  border-radius: 3px;
+  background-color: rgb(220, 220, 220);
+  position: relative;
+  width: 130px;
+  height: 40px;
+  margin-left: 22px;
+  margin-top: 45px;
+}
+
 .logotype{
   border-width: 1px;
   border-color: rgb(188, 188, 188);

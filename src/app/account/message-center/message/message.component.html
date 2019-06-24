@@ -13,35 +13,47 @@
       <form class="zero" [formGroup]="form">
         <div *ngIf="base64textString.length>0;then contentLoadAvatar else contentDefault">условия выполнить невозможно</div>
         <ng-template #contentLoadAvatar>
-          <img class="logotype" *ngFor="let item of base64textString"  src={{item}} alt="Посмотреть профиль" id="img" (click) = "onProfileClick($event)">
-        </ng-template>
-
-        <ng-template #contentDefault>
-          <br><br>
-          <img src="/assets/img/usernull.png" class="img-thumbnail" onclick="">
-        </ng-template>
-      </form>
 
 
-      <div *ngIf="this._bEmployer; else EE">
-
-        <label class="move" (click)="moveVC()">Перейти к вакансии</label>
-
-      </div>
-      <ng-template #EE>
-        <label class="move" (click)="moveCV()">Перейти к резюме</label>
-      </ng-template>
+           <div *ngIf="this._bEmployer">
+              <img class="logotypeEr" *ngFor="let item of base64textString"  src={{item}} alt="Посмотреть профиль" id="img" (click) = "onProfileClick($event)">
+          </div>
 
 
 
-<!--
-      <label class="labelTo">Кому</label>
-      <div  *ngIf="_letter != undefined; else UT">
-        <div class="UserTo">{{_letter.UserTo}}</div>
-      </div>
-      <ng-template #UT></ng-template>
-      <img class="logotype-company" alt="Логотип компании" src="/assets/img/iport-logo.png">
--->
+          <div *ngIf="!this._bEmployer">
+              <img class="logotype" *ngFor="let item of base64textString"  src={{item}} alt="Посмотреть профиль" id="img2" (click) = "onProfileClick($event)">
+          </div>
+
+
+       </ng-template>
+
+                  <ng-template #contentDefault>
+                    <br><br>
+                    <img src="/assets/img/usernull.png" class="img-thumbnail" onclick="">
+                  </ng-template>
+                </form>
+
+
+                <div *ngIf="this._bEmployer; else EE">
+
+                  <label class="move" (click)="moveVC()">Перейти к вакансии</label>
+
+                </div>
+                <ng-template #EE>
+                  <label class="move" (click)="moveCV()">Перейти к резюме</label>
+                </ng-template>
+
+
+
+          <!--
+                <label class="labelTo">Кому</label>
+                <div  *ngIf="_letter != undefined; else UT">
+                  <div class="UserTo">{{_letter.UserTo}}</div>
+                </div>
+                <ng-template #UT></ng-template>
+                <img class="logotype-company" alt="Логотип компании" src="/assets/img/iport-logo.png">
+          -->
     </div>
 
 
