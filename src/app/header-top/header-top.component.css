@@ -342,6 +342,7 @@ ul:hover{
   display: block;
 }
 .notfound{
+  position: absolute;
   font-size: 28px;
   color: #F74933;
   margin: 25px auto;
