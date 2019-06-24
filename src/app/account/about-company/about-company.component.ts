@@ -46,7 +46,9 @@ export class AboutCompanyComponent implements OnInit, OnDestroy {
           // вытаскиваем из базы картинку аватара
           const S = this.loadUser.Avatar;
           if (S.toString().length>0) {
-            this.base64textString.push('data:image/png;base64,' + JSON.parse(S).value);
+            if (S.toString() !== 'null') {
+              this.base64textString.push('data:image/png;base64,' + JSON.parse(S).value);
+            }
           }
         }
       );

@@ -10,7 +10,6 @@ import {CvEditService} from '../../../services/cv-edit.service';
 import {TableVacancyService} from '../../../services/table-vacancy.service';
 import {Guide} from '../../../class/guide';
 import {VacanciesListService} from '../../../services/vacancies-list.service';
-import {staticGuideList} from '../../../class/GuideList';
 import {TranslateService} from '@ngx-translate/core';
 
 @Component({
@@ -119,7 +118,7 @@ export class VacancyDescriptionComponent implements OnInit {
     //TODO точка 2
     k.base64textString = [];
 
-    if (k.Avatar !== null) {
+    if (k.Avatar !== 'null') {
       if (k.Avatar.toString().length > 0) k.base64textString.push('data:image/png;base64,' + JSON.parse(k.Avatar).value);
     }
   }

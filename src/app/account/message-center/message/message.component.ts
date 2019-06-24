@@ -10,6 +10,7 @@ import {CvListService} from '../../../services/cv-list.service';
 import {Router} from '@angular/router';
 import {MoveService} from '../../../services/move.service';
 import {CvEditService} from '../../../services/cv-edit.service';
+import {isNull} from 'util';
 
 @Component({
   selector: 'app-message',
@@ -66,8 +67,10 @@ export class MessageComponent implements OnInit, OnDestroy {
               if (this.loadUser.bEmployer == true)
                 this._bEmployer = true; else this._bEmployer = false;
 
+
+
               if (typeof S !== 'undefined') {
-                if (S !== null) {
+                if (String(S) !== 'null' ) {
                   if (S.length > 0) {
                     this.base64textString.push('data:image/png;base64,' + JSON.parse(S).value); }
                 }
@@ -248,7 +251,11 @@ export class MessageComponent implements OnInit, OnDestroy {
 
   onLoadFromBaseAvatar(k: any) {
     k.base64textString = [];
-    if (k.Avatar!= undefined) k.base64textString.push('data:image/png;base64,' + JSON.parse(k.Avatar).value);
+    if (k.Avatar !== undefined) {
+      if (k.Avatar !== 'null') {
+        k.base64textString.push('data:image/png;base64,' + JSON.parse(k.Avatar).value);
+      }
+    }
   }
 
   public moveVC () {
