@@ -78,19 +78,18 @@
   overflow: hidden;
 }
 .user-name{
+  display: block;
   font-size: 18px;
-  width:90%;
+  width: 100%;
   height: auto;
   color: rgb(68, 75, 84);
   text-align: left;
   margin-top: 2px;
   margin-left: 15px;
-  margin-bottom: 0.1%;
+  margin-bottom: 2vh;
   overflow: hidden;
-  float: left;
 }
 .logotype{
-  position: absolute;
   margin-top: 1px;
   margin-left: 15px;
   font-size: 12px;
@@ -98,48 +97,57 @@
   height: 130px;
 }
 .logotype-company{
-
   margin-top: 85px;
   margin-left: 15px;
   font-size: 12px;
   width: 130px;
   height: 40px;
 }
+.leftSide{
+  display: inline-block;
+  width: 16%;
+  height: 403px;
+  vertical-align: top;
+}
+.photo{
+  width: 100%;
+}
+.rightSide{
+  display: inline-block;
+  width: 84%;
+  height: 403px;
+  vertical-align: top;
+}
 .experience{
- display: block;
+  display: block;
   color: rgb(68, 75, 84);
-  width: 900px;
+  width: 98%;
   height: 80px;
   text-align: left;
   padding-right: 20px;
   overflow: auto;
-  margin-top: 50px;
-  margin-left: 150px ;
-  margin-bottom: 1%;
+  margin-bottom: 2vh;
 }
 .skills{
   display: block;
   color: rgb(68, 75, 84);
-  width: 900px;
+  width: 95%;
   height: 80px;
   text-align: left;
   padding-right: 20px;
   overflow: auto;
-  margin-top: 1px;
-  margin-left: 150px ;
-  margin-bottom: 1%;
+  margin-bottom: 2vh;
 }
 .education{
   display: block;
   color: rgb(68, 75, 84);
-  width: 900px;
+  width: 95%;
   height: 80px;
   text-align: left;
   padding-right: 20px;
   overflow: auto;
-  margin-top: 1px;
-  margin-left: 150px ;
-  margin-bottom: 1%;
+
+  margin-bottom: 2vh;
 }
 .btn-response {
   display: inline-block;
@@ -167,13 +175,11 @@
   font-weight: 600;
 }
 .final-date{
-  display: inline-block;
+  display: block;
   font-size: 15px;
-  width: 330px;
-  height: 30px;
   text-align: left;
   margin-top: 1px;
-  margin-left: 870px;
+  margin-left: 87px;
 
 }
 .alerSend{
