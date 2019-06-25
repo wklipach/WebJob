@@ -5,13 +5,13 @@
   color: rgb(68, 75, 84);
 }
 .top{
-
   height: 36px;
   margin: 0 auto;
   font-size: 22px;
   font-family: Proxima Nova,sans-serif;
   text-align: left;
   padding-bottom: 15px;
+  line-height: 1.6;
 }
 .messages-box{
   width: 1170px;
@@ -70,3 +70,7 @@ li{
 .boldletter {
   font-weight: bold;
 }
+.trash{
+  float: right;
+  padding-top: 5px;
+  }

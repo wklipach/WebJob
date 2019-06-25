@@ -15,8 +15,8 @@
 }
 .cv-box{
   width:  100%;
-  height: 515px;
-  margin: 100px auto;
+  height: 390px;
+  margin: 30px auto;
   border-top: solid 1px;
   border-bottom: solid 1px;
   border-color: #b7b7b7;
@@ -31,7 +31,7 @@
 .v-line{
   position: absolute;
   width:6px;
-  height:515px;
+  height:390px;
   background-color: #b8b8b8;
 }
 .cv-box:hover{
@@ -86,7 +86,7 @@
   text-align: left;
   margin-top: 2px;
   margin-left: 15px;
-  margin-bottom: 2vh;
+  margin-bottom: 10px;
   overflow: hidden;
 }
 .logotype{
@@ -121,33 +121,32 @@
 .experience{
   display: block;
   color: rgb(68, 75, 84);
-  width: 98%;
-  height: 80px;
+  height: 90px;
   text-align: left;
-  padding-right: 20px;
+  padding-left: 2%;
+  margin-bottom: 4px;
   overflow: auto;
-  margin-bottom: 2vh;
+
 }
 .skills{
   display: block;
   color: rgb(68, 75, 84);
-  width: 95%;
-  height: 80px;
+  height: 90px;
   text-align: left;
-  padding-right: 20px;
+  padding-left: 2%;
   overflow: auto;
-  margin-bottom: 2vh;
+  margin-bottom: 4px;
+
 }
 .education{
   display: block;
   color: rgb(68, 75, 84);
-  width: 95%;
-  height: 80px;
+  height: 90px;
   text-align: left;
-  padding-right: 20px;
+  padding-left: 2%;
   overflow: auto;
+  margin-bottom: 4px;
 
-  margin-bottom: 2vh;
 }
 .btn-response {
   display: inline-block;
@@ -159,7 +158,7 @@
   border-color: #054086;
   border-width: 1px;
   border-style: solid;
-  margin-top: 42px;
+  margin-top: 64px;
   margin-left: 15px;
 
 }

@@ -2,6 +2,7 @@
   width: 1170px;
   height: auto;
   margin: 0 auto;
+  font-size: 0.9em;
   color: rgb(68, 75, 84);
   text-align: left;
   background-color: #fdfdfd;
@@ -104,8 +105,6 @@ label{
 }
 .inputUserName{
   position: absolute;
-  font-size: 14px;
-  font-family: "Proxima Nova","sans-serif";
   text-align: center;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
@@ -123,8 +122,6 @@ label{
 }
 .inputEmail{
   position: absolute;
-  font-size: 14px;
-  font-family: "Proxima Nova","sans-serif";
   text-align: center;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
@@ -177,8 +174,6 @@ label{
 }
 .input-name{
   position: absolute;
-  font-size: 14px;
-  font-family: "Proxima Nova","sans-serif";
   text-align: center;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
@@ -196,8 +191,6 @@ label{
 }
 .inputLastname{
   position: absolute;
-  font-size: 13px;
-  font-family: "Proxima Nova","sans-serif";
   text-align: center;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
@@ -232,8 +225,6 @@ label{
 }
 .inputZip{
   position: absolute;
-  font-size: 13px;
-  font-family: "Proxima Nova","sans-serif";
   text-align: center;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
@@ -307,7 +298,6 @@ label{
 }
 .btn-cancel{
   font-size: 18px;
-  font-family: "Proxima Nova","sans-serif";
   width: 20.3%;
   height: 48px;
   color: rgb(68, 75, 84);

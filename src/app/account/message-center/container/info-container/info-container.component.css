@@ -11,6 +11,8 @@
   font-size: 22px;
   text-align: left;
   padding-bottom: 15px;
+  border-top: solid 1px #b7b7b7;
+line-height: 1.8;
 }
 .messages-box{
   width: 100%;

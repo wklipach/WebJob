@@ -72,7 +72,7 @@
 
 
       <label class="name">{{'allValue.compname' | translate}}</label>
-      <input type="text" class="input-name" id="inputName" formControlName="inputName" placeholder="'allValue.compname' | translate" maxlength="100">
+      <input type="text" class="input-name" id="inputName" formControlName="inputName" [placeholder]="'allValue.compname' | translate" maxlength="100">
 
       <!--
       <label class="lastname">Фамилия</label>
@@ -102,7 +102,7 @@
       <input type="text" class="inputWeb" id="inputWeb" formControlName="inputWeb" placeholder="Web-site">
 
       <label class="contact-person">{{'allValue.contactF' | translate}}</label>
-      <input type="text" class="inputContactPerson" id="inputContactPerson" formControlName="inputContactPerson" placeholder="'allValue.contactF' | translate">
+      <input type="text" class="inputContactPerson" id="inputContactPerson" formControlName="inputContactPerson" [placeholder]="'allValue.contactF' | translate">
 
       <label class="about">{{'allValue.aboutcomp' | translate}}</label>
       <textarea class="inputAbout" maxlength="1000" aria-label="О компании. До 1000 знаков"
