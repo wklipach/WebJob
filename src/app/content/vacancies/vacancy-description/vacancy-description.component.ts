@@ -171,7 +171,7 @@ export class VacancyDescriptionComponent implements OnInit {
     // период показа
     if (typeof this.descrDataVacancy.DisplayPeriod !== 'undefined' && this.descrDataVacancy.DisplayPeriod !== null) {
       const sDPeriod = this.descrDataVacancy.DisplayPeriod.toString().split(',');
-      sDPeriod.forEach( intDisplayPeriod => this.sDisplayPeriod.push(this.sGuide.getExperienceName(Number(intDisplayPeriod))));
+      sDPeriod.forEach( intDisplayPeriod => this.sDisplayPeriod.push(this.sGuide.getDisplayPeriodName(Number(intDisplayPeriod))));
     }
 
   }

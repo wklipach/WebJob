@@ -145,6 +145,12 @@ export class GuideService {
     return this.displayPeriodList.sort( ((a, b) => a.order - b.order ) );
   }
 
+  getDisplayPeriodName(i: number): string {
+    this.displayPeriodList = staticGuideList.DisplayPeriodList;
+    return this.displayPeriodList.find(value => value.id === i ).name;
+  }
+
+
   getGenderList(): Guide[] {
     this.genderList = staticGuideList.GenderList;
     return this.genderList.sort( ((a, b) => a.order - b.order ) );
