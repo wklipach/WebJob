@@ -23,7 +23,9 @@
           <li class="date">{{curLetter.DateTimeCreate  | date: 'dd-MM-yyyy HH:mm'}}</li>
           <li class="from">{{curLetter.UserNameFrom}}</li>
           <li class="subject">{{'allValue.responsevac' | translate}}: {{curLetter.VacancyShortTitle}} </li>
-          <li><img class="trash" src="/assets/img/trash.png" title="Удалить переписку"></li>
+
+          <li *ngIf = "this.router.url=== '/message-center'"><img class="trash" id="trash" src="/assets/img/trash.png" title="Удалить переписку" (click)="curDeleteClick(curLetter.id_cv, curLetter.id_vc, $event)"></li>
+
         </ul>
 
         <div class="txt"> {{curLetter.letterText}} </div>

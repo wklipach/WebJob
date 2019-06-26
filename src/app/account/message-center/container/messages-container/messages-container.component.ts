@@ -23,7 +23,7 @@ export class MessagesContainerComponent implements OnInit {
 
   constructor (private authService: AuthService,
                private httpLetter: LetterService,
-               private router: Router,
+               protected router: Router,
                public translate: TranslateService) {
 
     var Res =  this.authService.loginStorage();
@@ -46,8 +46,27 @@ export class MessagesContainerComponent implements OnInit {
       });
   }
 
+  RouterReload() {
+    this.router.routeReuseStrategy.shouldReuseRoute = function () {
+      return false;
+    };
+    this.router.navigated = false;
+
+    this.router.navigate([this.router.url]);
+  }
+
+  curDeleteClick(id_cv: number, id_vc: number, $event) {
+
+    this.httpLetter.setDeleteGroupLetter(id_cv, id_vc).subscribe(value => {
+      this.RouterReload();
+      });
+
+  }
+
 
   curLetterClick(lid: number, $event) {
+
+    if ($event.target.id === 'trash') return;
 
     //делаем данное письмо прочитанным (ставим признак bOld)
     this.httpLetter.setOldLetter(lid).subscribe(value => {
