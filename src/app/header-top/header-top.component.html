@@ -143,10 +143,6 @@
   </div>
    </div>
 
-<div class="notfound">
-
-  <div *ngIf="this.sNullValueFind.length>0">
-        <app-dialogminimum name={{sNullValueFind}}></app-dialogminimum>
-  </div>
-
+ <div class="notfound" *ngIf="this.sNullValueFind.length>0">
+  <app-dialogminimum name={{sNullValueFind}}></app-dialogminimum>
  </div>
