@@ -79,6 +79,20 @@ export class LetterService {
   }
 
 
+  // помечаем группу писем как прочитанные в БД MySql
+  public setOldGroupLetter(id_cv: number, id_vc: number, id_user: number) {
+    const sUrl = this.gr.sUrlGlobal+'Correspondence';
+    let postObj: any = new Object();
+    postObj.bOld = true;
+    postObj['bOldGroupLetterTrue'] = 'true';
+    postObj['id_user_to'] = id_user;
+    postObj['id_cv'] = id_cv;
+    postObj['id_vc'] = id_vc;
+    return this.http.post(sUrl, postObj);
+  }
+
+
+
   // помечаем группу писем как удаленные в БД MySql
   public setDeleteGroupLetter(id_cv: number, id_vc: number) {
     const sUrl = this.gr.sUrlGlobal+'Correspondence';

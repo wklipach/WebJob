@@ -4,7 +4,7 @@
   </div>
 
   <div class="messages-box"title="Перейти к переписке.">
-    <div class="message" id="message" *ngFor="let curLetter of myDataLetter; let i = index" (click)="curLetterClick(curLetter.id, $event)">
+    <div class="message" id="message" *ngFor="let curLetter of myDataLetter; let i = index" (click)="curLetterClick(curLetter.id, curLetter.id_cv, curLetter.id_vc, $event)">
 
       <div [class.boldletter]="(curLetter.id_user_from !== this.id_user) && (curLetter.bOld === 0)">
 
@@ -24,7 +24,7 @@
           <li class="from">{{curLetter.UserNameFrom}}</li>
           <li class="subject">{{'allValue.responsevac' | translate}}: {{curLetter.VacancyShortTitle}} </li>
 
-          <li *ngIf = "this.router.url=== '/message-center'"><img class="trash" id="trash" src="/assets/img/trash.png" title="Удалить переписку" (click)="curDeleteClick(curLetter.id_cv, curLetter.id_vc, $event)"></li>
+          <li *ngIf = "this.router.url=== '/message-center' || this.router.url=== '/messages'"><img class="trash" id="trash" src="/assets/img/trash.png" title="Удалить переписку" (click)="curDeleteClick(curLetter.id_cv, curLetter.id_vc, $event)"></li>
 
         </ul>
 

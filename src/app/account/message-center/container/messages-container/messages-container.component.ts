@@ -41,6 +41,7 @@ export class MessagesContainerComponent implements OnInit {
         if (data.length>0) {
           this.myDataLetter = [];
           this.myDataLetter = data; //data[0].concat(data[1]);
+          console.log('this.myDataLetter',this.myDataLetter);
         }
 
       });
@@ -59,23 +60,20 @@ export class MessagesContainerComponent implements OnInit {
 
     this.httpLetter.setDeleteGroupLetter(id_cv, id_vc).subscribe(value => {
       this.RouterReload();
+
       });
 
   }
 
 
-  curLetterClick(lid: number, $event) {
+  curLetterClick(lid, id_cv, id_vc: number, $event) {
 
     if ($event.target.id === 'trash') return;
 
     //делаем данное письмо прочитанным (ставим признак bOld)
-    this.httpLetter.setOldLetter(lid).subscribe(value => {
-
+    this.httpLetter.setOldGroupLetter(id_cv, id_vc, this.id_user).subscribe(value => {
       //ищем первое письмо в общении данных пользователей
-
-      console.log('value[0]', value);
-
-      this.httpLetter.getFirstLetter(value[0].id_cv, value[0].id_vc).subscribe(
+      this.httpLetter.getFirstLetter(id_cv, id_vc).subscribe(
         (data: any) => {
           let letter: Letter = data[0];
 
