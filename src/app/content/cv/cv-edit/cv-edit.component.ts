@@ -296,6 +296,8 @@ export class CvEditComponent implements OnInit, OnDestroy {
     let MyCv: CV = this.loadMainCV();
     MyCv.id = this.cv_id;
 
+    if (MyCv.SalaryFrom.toString().trim() === '') MyCv.SalaryFrom = 0;
+
     console.log('MyCv до=',MyCv);
 
     return this.previousPostNewCV = this.httpService.postUpdateCV(MyCv).subscribe(

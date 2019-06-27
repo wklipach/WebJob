@@ -41,4 +41,5 @@ export class  dataCV extends CV {
   base64textString = [];
   UserName: string;
   Skills: string = '';
+  UName: string = '';
 }

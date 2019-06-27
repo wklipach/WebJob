@@ -341,9 +341,11 @@ export class CvhomeComponent implements OnInit {
 
 
     this.myDataCV = data;
+    console.log('this.myDataCV',this.myDataCV);
     this.allDataCV = data;
     this.recordsPerAll = data.length;
   }
+
     this.is.startCheckPaginator({value1: this.recordsPerAll, value2: this.rowPerPage});
   }
 

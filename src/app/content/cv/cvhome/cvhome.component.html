@@ -17,8 +17,9 @@
       <span class="city-name">{{curCV.CityName}}</span>
     </div>
 
-    <span class="user-name">{{curCV.UserName}}</span>
 
+    <span class="user-name" *ngIf="curCV.UName ==''">{{curCV.UserName}}</span>
+    <span class="user-name" *ngIf="curCV.UName !==''">{{curCV.UName}}</span>
 
 
     <div class="leftSide">
