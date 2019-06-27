@@ -74,3 +74,13 @@ li{
   float: right;
   padding-top: 5px;
   }
+.deleteCorrespondence{
+  position: absolute;
+  width: 500px;
+  height: 150px;
+  margin: 1px 1px;
+  border: solid 1px blue;
+  background-color: #0066cc;
+  color: white;
+}
+

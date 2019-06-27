@@ -3,7 +3,7 @@
     {{'message-container.messages' | translate}}
   </div>
 
-  <div class="messages-box"title="Перейти к переписке.">
+  <div class="messages-box" title="Перейти к переписке.">
     <div class="message" id="message" *ngFor="let curLetter of myDataLetter; let i = index" (click)="curLetterClick(curLetter.id, curLetter.id_cv, curLetter.id_vc, $event)">
 
       <div [class.boldletter]="(curLetter.id_user_from !== this.id_user) && (curLetter.bOld === 0)">
@@ -23,20 +23,20 @@
           <li class="date">{{curLetter.DateTimeCreate  | date: 'dd-MM-yyyy HH:mm'}}</li>
           <li class="from">{{curLetter.UserNameFrom}}</li>
           <li class="subject">{{'allValue.responsevac' | translate}}: {{curLetter.VacancyShortTitle}} </li>
-
           <li *ngIf = "this.router.url=== '/message-center' || this.router.url=== '/messages'"><img class="trash" id="trash" src="/assets/img/trash.png" title="Удалить переписку" (click)="curDeleteClick(i, curLetter.id_cv, curLetter.id_vc, $event)"></li>
         </ul>
 
-        <div class="alert alert-primary" id="frameDelete" *ngIf="contactMethods[i].bDelete === true">
-          Вы желаете удалить данную беседу?
-          <button type="button" class="btn btn-outline-danger" id="btnDelete" (click)="DeleteElement(curLetter,i)">Да</button>
-          <button type="button" class="btn btn-outline-success" id="btnUnDelete" (click)="UnDeleteElement(curLetter,i)">Нет</button>
+        <div class="txt"> {{curLetter.letterText}} </div>
+
+
+        <div class="deleteCorrespondence" id="frameDelete" *ngIf="contactMethods[i].bDelete === true">
+          Вы уверены, что хотите удалить данную переписку?
+
+          <button type="button" class="yes" id="btnDelete" (click)="DeleteElement(curLetter,i)">Да</button>
+          <button type="button" class="not" id="btnUnDelete" (click)="UnDeleteElement(curLetter,i)">Нет</button>
 
         </div>
 
-
-
-        <div class="txt"> {{curLetter.letterText}} </div>
 
       </div>
     </div>
