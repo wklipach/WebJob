@@ -20,6 +20,7 @@ export class MessagesContainerComponent implements OnInit {
   protected myDataLetter: any;
   private sbscTableLetter: Subscription;
   private letterSubscription: Subscription;
+  contactMethods = [];
 
   constructor (private authService: AuthService,
                private httpLetter: LetterService,
@@ -42,6 +43,11 @@ export class MessagesContainerComponent implements OnInit {
           this.myDataLetter = [];
           this.myDataLetter = data; //data[0].concat(data[1]);
           console.log('this.myDataLetter',this.myDataLetter);
+
+
+          this.myDataLetter.forEach( (cvDL, index) => {
+            this.contactMethods.push({'id': 0, value: 0, 'bDelete': false});
+          });
         }
 
       });
@@ -56,19 +62,22 @@ export class MessagesContainerComponent implements OnInit {
     this.router.navigate([this.router.url]);
   }
 
-  curDeleteClick(id_cv: number, id_vc: number, $event) {
+  curDeleteClick(i, id_cv: number, id_vc: number, $event) {
 
-    this.httpLetter.setDeleteGroupLetter(id_cv, id_vc).subscribe(value => {
-      this.RouterReload();
 
-      });
+    this.contactMethods[i].bDelete = true;
+//
+//    this.httpLetter.setDeleteGroupLetter(id_cv, id_vc).subscribe(value => {
+//      this.RouterReload();
+//      });
 
   }
 
 
   curLetterClick(lid, id_cv, id_vc: number, $event) {
 
-    if ($event.target.id === 'trash') return;
+
+    if (($event.target.id === 'trash') || ($event.target.id === 'btnUnDelete') || ($event.target.id === 'btnDelete') || ($event.target.id === 'frameDelete')) return;
 
     //делаем данное письмо прочитанным (ставим признак bOld)
     this.httpLetter.setOldGroupLetter(id_cv, id_vc, this.id_user).subscribe(value => {
@@ -85,6 +94,17 @@ export class MessagesContainerComponent implements OnInit {
         });
     });
 
+  }
+
+
+  DeleteElement(curLetter,i) {
+    this.httpLetter.setDeleteGroupLetter(curLetter.id_cv, curLetter.id_vc).subscribe(value => {
+      this.RouterReload();
+      });
+  }
+
+  UnDeleteElement(curLetter,i) {
+    this.contactMethods[i].bDelete = false;
   }
 
   ngOnDestroy() {
