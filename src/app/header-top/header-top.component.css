@@ -342,14 +342,14 @@ ul:hover{
   display: block;
 }
 .notfound{
-  position: absolute;
+  position: relative;
   font-size: 28px;
   height: 150px;
   width: 600px;
   color: #F74933;
   text-align: center;
   margin-left: 580px;
-  margin-top: -81px;
+  margin-top: 381px;
 }
 
 .cor{

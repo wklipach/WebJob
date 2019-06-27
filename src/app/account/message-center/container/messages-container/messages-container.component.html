@@ -19,6 +19,14 @@
 
         </ul>
 
+        <div class="deleteCorrespondence" id="frameDelete" *ngIf="contactMethods[i].bDelete === true" title="Вы уверены?">
+          <span class="question">Вы уверены, что хотите удалить данную переписку?</span>
+
+          <button type="button" class="btn" id="btnDelete" (click)="DeleteElement(curLetter,i)" title="Да">Да</button>
+          <button type="button" class="btn" id="btnUnDelete" (click)="UnDeleteElement(curLetter,i)" title="Нет">Нет</button>
+
+        </div>
+
         <ul class="bline">
           <li class="date">{{curLetter.DateTimeCreate  | date: 'dd-MM-yyyy HH:mm'}}</li>
           <li class="from">{{curLetter.UserNameFrom}}</li>
@@ -29,13 +37,7 @@
         <div class="txt"> {{curLetter.letterText}} </div>
 
 
-        <div class="deleteCorrespondence" id="frameDelete" *ngIf="contactMethods[i].bDelete === true">
-          Вы уверены, что хотите удалить данную переписку?
 
-          <button type="button" class="yes" id="btnDelete" (click)="DeleteElement(curLetter,i)">Да</button>
-          <button type="button" class="not" id="btnUnDelete" (click)="UnDeleteElement(curLetter,i)">Нет</button>
-
-        </div>
 
 
       </div>
