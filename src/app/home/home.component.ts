@@ -277,8 +277,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 
         //если поиск не дал результатов вызываем сами себя с пустой маской
         if (sMask !== '' && data.length === 0) {
-          this.moveS.startNullFind(this.sFindNull);
           this.getVacancy('',false, false);
+          this.moveS.startNullFind(this.sFindNull);
           return;
         }
 
