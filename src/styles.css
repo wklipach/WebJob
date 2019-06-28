@@ -53,6 +53,12 @@ body {
   padding: 0 !important;
   text-decoration: none;
 }
+.wrapper{
+  width: 1170px;
+  margin: 0 auto;
+  padding-right: 0;
+  padding-left: 0;
+}
 button, input, textarea, select, label{
   font-family: "Proxima Nova","sans-serif";
   font-size: 16px;

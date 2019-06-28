@@ -1,17 +1,11 @@
-.wrapper{
-  width: 1170px;
-  height: auto;
-  margin: 0 auto;
-  color: rgb(68, 75, 84);
-}
 .top{
   height: 36px;
-  margin: 0 auto;
+  margin: 15px auto 0;
   font-size: 22px;
-  font-family: Proxima Nova,sans-serif;
   text-align: left;
   padding-bottom: 15px;
-  line-height: 1.6;
+  border-top: solid 1px #b7b7b7;
+  line-height: 1.8;
 }
 .messages-box{
   width: 1170px;
