@@ -253,7 +253,7 @@ export class MessageComponent implements OnInit, OnDestroy {
     k.base64textString = [];
     if (k.Avatar !== undefined) {
       if (k.Avatar !== 'null') {
-        k.base64textString.push('data:image/png;base64,' + JSON.parse(k.Avatar).value);
+        if (k.Avatar !== null)  k.base64textString.push('data:image/png;base64,' + JSON.parse(k.Avatar).value);
       }
     }
   }

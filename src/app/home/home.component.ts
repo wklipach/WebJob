@@ -275,8 +275,15 @@ export class HomeComponent implements OnInit, OnDestroy {
     return this.getTableVacancy = this.httpService.getTableVacancy(sMask, this.rowPerPage, this.page, isFavorites, isAdvancedFind, this.id_user).subscribe(
       (data: dataVacancy[]) => {
 
+        console.log("sMasksMasksMasksMasksMasksMasksMasksMasksMask", sMask);
+
+
         //если поиск не дал результатов вызываем сами себя с пустой маской
         if (sMask !== '' && data.length === 0) {
+
+
+          console.log("NENNENENENENENENENENNENE");
+
           this.getVacancy('',false, false);
           this.moveS.startNullFind(this.sFindNull);
           return;

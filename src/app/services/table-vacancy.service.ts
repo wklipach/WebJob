@@ -117,7 +117,7 @@ export class TableVacancyService {
 
     if (isFavorites) {
       params = new HttpParams()
-        .set('sMask', sMask)
+        .set('sMask', sMask.toString())
         .set('isFavorites', 'true')
         .set('id_user_current', curId_User.toString())
         .set('id_user_favorites', id_user.toString());
