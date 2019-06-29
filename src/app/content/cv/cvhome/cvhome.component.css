@@ -1,18 +1,3 @@
-.wrapper{
-  width: 1170px;
-  margin: 0 auto;
-  padding-right: 0;
-  padding-left: 0;
-}
-.top{
-  width: 100%;
-  height: 36px;
-  margin: 0 auto;
-  border-color: #b7b7b7;
-  font-size: 30px;
-  color: rgb(68, 75, 84);
-  text-align: left;
-}
 .cv-box{
   width:  100%;
   height: 390px;

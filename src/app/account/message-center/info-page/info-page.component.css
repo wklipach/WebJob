@@ -5,13 +5,6 @@
   margin: 0 auto;
   color: rgb(68, 75, 84);
 }
-.top{
-  height: 36px;
-  margin: 15px auto 0;
-  font-size: 22px;
-  text-align: left;
-  padding-bottom: 15px;
-}
 .messages-box{
   width: 100%;
   min-height: 300px;

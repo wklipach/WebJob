@@ -1,13 +1,16 @@
 <div class="wrapper">
-  <label class="top">{{  'allValue.Education' | translate}}</label>
+
+  <label class="topicName">{{  'allValue.Education' | translate}}</label>
 
 <form [formGroup]="formEducation">
 
+  <div class="box">
     <div *ngFor="let item of listEducation">
       <input type="checkbox" class="checkInput" formControlName="educationCheck{{item.id}}"
              id="educationCheck{{item.id}}" title={{item.name}}> <span>{{item.name}}</span>
     </div>
 
+  </div>
 </form>
 
 </div>

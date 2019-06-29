@@ -1,26 +1,11 @@
-.wrapper{
-  width: 1170px;
-  height: auto;
-  margin: 0 auto;
-  color: rgb(68, 75, 84);
-  text-align: left;
-  background-color: #fdfdfd;
-  padding-bottom: 2%;
-}
-.top{
-  width: 100%;
-  height: 42px;
-  margin: 0 auto;
-  font-size: 36px;
-  font-family: "Proxima Nova","sans-serif";
-}
+
 .v-line{
   display: inline-block;
   position: absolute;
   width:1px;
-  height:580px;
+  height:770px;
   background-color: #b8b8b8;
-  margin-left: 149px;
+  margin-left: 165px;
   margin-top: 65px;
 }
 .profile{
@@ -104,7 +89,7 @@ label{
   cursor: pointer;
 }
 .img-lock{
-  margin-left: 180px;
+  margin-left: 195px;
   margin-top: 60px;
 }
 .changePass{
@@ -115,7 +100,7 @@ label{
   text-decoration: underline;
 }
 .user-name{
-  margin-left: 180px;
+  margin-left: 195px;
   margin-top: 62px;
 }
 .inputUserName{
@@ -130,11 +115,11 @@ label{
   background-color: rgb(255, 255, 255);
   width: 230px;
   height: 43px;
-  margin-left: 180px;
+  margin-left: 195px;
   margin-top: 96px;
 }
 .email{
-  margin-left: 444px;
+  margin-left: 459px;
   margin-top: 62px;
 }
 .inputEmail{
@@ -149,11 +134,11 @@ label{
   background-color: rgb(255, 255, 255);
   width: 230px;
   height: 43px;
-  margin-left: 444px;
+  margin-left: 459px;
   margin-top: 96px;
 }
 .name{
-  margin-left: 180px;
+  margin-left: 195px;
   margin-top: 187px;
 }
 .input-name{
@@ -168,11 +153,11 @@ label{
   background-color: rgb(255, 255, 255);
   width: 495px;
   height: 43px;
-  margin-left: 180px;
+  margin-left: 195px;
   margin-top: 221px;
 }
 .lastname{
-  margin-left: 444px;
+  margin-left: 459px;
   margin-top: 186px;
 }
 .inputLastname{
@@ -187,15 +172,15 @@ label{
   background-color: rgb(255, 255, 255);
   width: 228px;
   height: 43px;
-  margin-left: 444px;
+  margin-left: 459px;
   margin-top: 221px;
 }
 .location{
-  margin-left: 180px;
+  margin-left: 195px;
   margin-top: 313px;
 }
 .zip{
-  margin-left: 444px;
+  margin-left: 459px;
   margin-top: 313px;
 }
 .inputCity{
@@ -208,7 +193,7 @@ label{
   position: absolute;
   width: 228px;
   height: 43px;
-  margin-left: 180px;
+  margin-left: 195px;
   margin-top: 348px;
 }
 .inputZip{
@@ -223,11 +208,11 @@ label{
   background-color: rgb(255, 255, 255);
   width: 228px;
   height: 43px;
-  margin-left: 444px;
+  margin-left: 459px;
   margin-top: 348px;
 }
 .home-address{
-  margin-left: 180px;
+  margin-left: 195px;
   margin-top: 435px;
 }
 .inputHomeAddress{
@@ -240,15 +225,15 @@ label{
   text-align: center;
   width: 492px;
   height: 43px;
-  margin-left: 180px;
+  margin-left: 195px;
   margin-top: 471px;
 }
 .phone{
-  margin-left: 180px;
+  margin-left: 195px;
   margin-top: 563px;
 }
 .phone2{
-  margin-left: 444px;
+  margin-left: 459px;
   margin-top: 563px;
 }
 .inputPhone{
@@ -261,7 +246,7 @@ label{
   text-align: center;
   width: 228px;
   height: 43px;
-  margin-left: 180px;
+  margin-left: 195px;
   margin-top: 599px;
 }
 .inputPhone2{
@@ -274,11 +259,11 @@ label{
   text-align: center;
   width: 228px;
   height: 43px;
-  margin-left: 444px;
+  margin-left: 459px;
   margin-top: 599px;
 }
 .web{
-  margin-left: 180px;
+  margin-left: 195px;
   margin-top: 691px;
 }
 .inputWeb{
@@ -291,11 +276,11 @@ label{
   text-align: center;
   width: 228px;
   height: 43px;
-  margin-left: 180px;
+  margin-left: 195px;
   margin-top: 721px;
 }
 .contact-person{
-  margin-left: 444px;
+  margin-left: 459px;
   margin-top: 691px;
 }
 .inputContactPerson{
@@ -308,18 +293,18 @@ label{
   text-align: center;
   width: 228px;
   height: 43px;
-  margin-left: 444px;
+  margin-left: 459px;
   margin-top: 721px;
 }
 .about{
-  margin-left: 180px;
+  margin-left: 195px;
   margin-top: 820px;
 }
 .inputAbout{
   position: relative;
   width: 848px;
   height: 190px;
-  margin-left: 180px;
+  margin-left: 195px;
   margin-top: 860px;
 }
 .btn-save{
@@ -336,7 +321,7 @@ label{
   width: 228px;
   height: 48px;
   margin-top:49px;
-  margin-left: 180px;
+  margin-left: 195px;
 }
 .btn-save:hover{
   background-color: #0066cc;
@@ -350,7 +335,6 @@ label{
 }
 .btn-cancel{
   font-size: 18px;
-  font-family: "Proxima Nova","sans-serif";
   width:228px;
   height: 48px;
   color: rgb(68, 75, 84);
@@ -362,7 +346,7 @@ label{
   line-height: 2;
   text-align: center;
   margin-top: 49px;
-  margin-left: 444px;
+  margin-left: 459px;
 }
 .btn-cancel:hover{
   background-color: rgb(240, 240, 240);
@@ -383,7 +367,7 @@ label{
   position: absolute;
   width: 530px;
   height: 199px;
-  margin: -80px 0 0 180px ;
+  margin: -80px 0 0 195px ;
   z-index: 10;
 }
 .inputNewPassword1 {

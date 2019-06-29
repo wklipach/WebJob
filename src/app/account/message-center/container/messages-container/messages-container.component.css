@@ -1,17 +1,9 @@
-.top{
-  height: 36px;
-  margin: 15px auto 0;
-  font-size: 22px;
-  text-align: left;
-  padding-bottom: 15px;
-  border-top: solid 1px #b7b7b7;
-  line-height: 1.8;
-}
 .messages-box{
   width: 1170px;
-  min-height: 300px;
+  min-height: 250px;
   max-height: 650px;
   overflow: auto;
+  margin-top: 15px;
 }
 .message{
   margin: 0 auto;
@@ -37,7 +29,6 @@ li{
 }
 .headline{
   margin-bottom: 2px;
-  font-family: "Proxima Nova","sans-serif";
   background-color: #DFDFDF;
 }
 .bline{

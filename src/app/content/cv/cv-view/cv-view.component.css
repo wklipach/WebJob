@@ -1,15 +1,3 @@
-.wrapper{
-  width: 1170px;
-  margin: 0 auto;
-  color: rgb(68, 75, 84);
-  font-size: 1em;
-}
-.top{
-  width: 100%;
-  height: 36px;
-  font-size: 22px;
-  text-align: left;
-}
 form{
   position: absolute;
 }

@@ -4,7 +4,7 @@
 
   <div class="box-row">
     <div class="left-side">
-      <label class="labelFrom">Собеседник</label>
+   <!--   <label class="labelFrom">Собеседник</label>  -->
       <br>
       <div class="from" *ngIf="_letter != undefined; else UF">
         {{this._sNameUserResp}}
@@ -18,7 +18,6 @@
            <div *ngIf="this._bEmployer">
               <img class="logotypeEr" *ngFor="let item of base64textString"  src={{item}} alt="Посмотреть профиль" id="img" (click) = "onProfileClick($event)">
           </div>
-
 
 
           <div *ngIf="!this._bEmployer">

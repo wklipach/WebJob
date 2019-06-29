@@ -1,10 +1,14 @@
 <div class="wrapper">
-  <label class="top">{{'allValue.Employment' | translate}}</label>
+  <label class="topicName">{{'allValue.Employment' | translate}}</label>
 
 <form [formGroup]="formEmployment">
+
+  <div class="box">
   <div *ngFor="let item of listEmployment">
     <input type="checkbox" class="checkInput" formControlName="employmentCheck{{item.id}}"
            id="employmentCheck{{item.id}}" title={{item.name}}><span>{{item.name}}</span>
+  </div>
+
   </div>
 </form>
 

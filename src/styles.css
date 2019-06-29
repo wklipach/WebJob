@@ -80,5 +80,15 @@ a:active {
   font-weight: bold;
 }
 a:visited{
-
+  color: rgb(68, 75, 84);
+}
+.top {
+  height: 36px;
+  margin: 15px auto 0;
+  font-size: 30px;
+  color: rgb(68, 75, 84);
+  text-align: left;
+  padding-bottom: 15px;
+  border-top: solid 1px #b7b7b7;
+  line-height: 1.8;
 }

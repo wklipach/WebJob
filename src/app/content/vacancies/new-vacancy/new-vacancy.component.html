@@ -32,7 +32,7 @@
       </div>
 
 
-      <label class="vacancyRequirements">{{'allValue.requirementse' | translate}}</label>
+      <label class="vacancyRequirements">{{'allValue.requirements' | translate}}</label>
       <textarea class="inputVacancyRequirements" maxlength="3000" aria-label="Требования до 3000 знаков"
           formControlName="inputVacancyRequirements" id="inputVacancyRequirements" placeholder="Требования до 3000 знаков"></textarea>
 
@@ -52,7 +52,7 @@
 
       <label class="city">{{'allValue.сity' | translate}}</label>
 
-      <select id="inputCity" formControlName="inputCity" class="inputCity" [title]="'allValue.сity' | translate">
+      <select id="inputCity" [formControlName]="inputCity" class="inputCity" title="'allValue.сity' | translate">
         <option  *ngFor="let lc of listCity" [value]="lc.name">
           {{lc.name}}
         </option>
@@ -78,17 +78,18 @@
         </option>
       </select>
 
-      <!-- Отрасль -->
-      <app-cv_industry></app-cv_industry>
-      <!-- Занятость -->
-      <app-cv-employment></app-cv-employment>
-      <!-- график работы -->
-      <app-cv-schedule></app-cv-schedule>
+
+
       <!-- Опыт работы -->
       <app-cv-experience></app-cv-experience>
       <!-- Образование -->
       <app-cv-education></app-cv-education>
-
+      <!-- Занятость -->
+      <app-cv-employment></app-cv-employment>
+      <!-- график работы -->
+      <app-cv-schedule></app-cv-schedule>
+            <!-- Отрасль -->
+      <app-cv_industry></app-cv_industry>
 
       <button type="submit" class="btn-save" [disabled]="newVacancyForm.invalid">{{'allValue.save' | translate}}</button>
 

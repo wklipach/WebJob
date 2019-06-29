@@ -46,11 +46,9 @@
 
     <div class="rightBox">
 
-      <label class="label-position">Желаемая позиция</label>
+      <label>Желаемая позиция</label>
      <!--  <div class="position" id="position"> </div> -->
       <div class="position"  *ngIf="_cvitem!= undefined">{{_cvitem.Position}}</div>
-
-
 
       <label>Дата рождения</label>
       <div class="tempo" *ngIf="_cvitem!= undefined">{{ _cvitem.DateBirth  | date:'dd.MM.yyyy'}}</div>
@@ -72,14 +70,14 @@
         {{Elm}}
       </div>
 
-      <label class="labelSkillsAbilities">Основные навыки и умения</label>
+      <label>Основные навыки и умения</label>
 
 
       <div *ngIf="_cvitem.Skills!= undefined">
         <div class="skills" appTextToHtml [sourceText]="_cvitem.Skills"></div>
       </div>
 
-      <label class="labelEducation">{{'allValue.Education' | translate}}</label>
+      <label>{{'allValue.Education' | translate}}</label>
 
       <div class="correspondence" *ngFor="let le of this._listEducation; let i = index">
         {{le}}

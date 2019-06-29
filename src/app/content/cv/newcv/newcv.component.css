@@ -1,18 +1,3 @@
-.wrapper{
-  position: relative;
-  font-size: 1em;
-  width: 1170px;
-  height: 180px;
-  margin: 0 auto;
-  padding-right: 0;
-  padding-left: 0;
-}
-.top{
-  width: 100%;
-  height: 42px;
-  margin: 0 auto;
-  font-size: 2em;
-}
 .cv-box{
   width: 100%;
   margin: 0 auto;
@@ -24,7 +9,6 @@
 }
 label{
   font-size: 1.1em;
-  font-family: "Proxima Nova";
   color: #0262d2;
   text-align: left;
 }
@@ -36,7 +20,6 @@ label{
 }
 .inputCity{
   font-size: 1em;
-  font-family: "Proxima Nova";
   text-align: center;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
@@ -49,7 +32,6 @@ label{
 }
 .inputSalaryFrom{
   font-size: 1em;
-  font-family: "Proxima Nova";
   text-align: center;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
@@ -65,7 +47,6 @@ label{
 }
 .inputPosition{
   font-size: 1em;
-  font-family: "Proxima Nova";
   text-align: center;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
