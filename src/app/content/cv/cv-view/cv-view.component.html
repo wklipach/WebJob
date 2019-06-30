@@ -51,24 +51,22 @@
       <div class="position"  *ngIf="_cvitem!= undefined">{{_cvitem.Position}}</div>
 
       <label>Дата рождения</label>
-      <div class="tempo" *ngIf="_cvitem!= undefined">{{ _cvitem.DateBirth  | date:'dd.MM.yyyy'}}</div>
+      <div class="birth" *ngIf="_cvitem!= undefined">{{ _cvitem.DateBirth  | date:'dd.MM.yyyy'}}</div>
 
       <label>{{'cvview.workexperience'| translate}}</label>
-      <div *ngFor="let lep of this._listExperience; let i = index">
+      <div class="workexperience" *ngFor="let lep of this._listExperience; let i = index">
         {{lep}}
       </div>
-      <div  *ngIf="this._listExperience.length ===0">Стаж не указан.&nbsp;</div>
+      <div class="workexperience" *ngIf="this._listExperience.length ===0">Стаж не указан.&nbsp;</div>
 
 
       <label class="From">{{'allValue.salary' | translate}}</label>
-      <div  *ngIf="_cvitem!= undefined">{{_cvitem.SalaryFrom}}</div>
-      <div  *ngIf="_cvitem === undefined">Не указана.&nbsp;</div>
+      <div class="salary" *ngIf="_cvitem!= undefined">{{_cvitem.SalaryFrom}} </div>
+      <div class="salary" *ngIf="_cvitem === undefined">Не указана.&nbsp;</div>
 
 
       <label>{{'allValue.Employment' | translate}}</label>
-      <div class="end" *ngFor="let Elm of this._listEmployment; let i = index">
-        {{Elm}}
-      </div>
+      <div class="listEmployment2" *ngFor="let Elm of this._listEmployment; let i = index">{{Elm}} </div>
 
       <label>Основные навыки и умения</label>
 
@@ -79,17 +77,15 @@
 
       <label>{{'allValue.Education' | translate}}</label>
 
-      <div class="correspondence" *ngFor="let le of this._listEducation; let i = index">
-        {{le}}
-      </div>
+      <div class="correspondence" *ngFor="let le of this._listEducation; let i = index">{{le}} </div>
 
       <label class="labelEducation">{{'allValue.Education' | translate}}</label>
 
-      <div  *ngIf="_cvitem.sEducation!= undefined">{{_cvitem.sEducation}}</div>
+      <div  *ngIf="_cvitem.sEducation!= undefined">{{_cvitem.sEducation}} </div>
 
 
       <label>{{'allValue.experience' | translate}}</label>
-      <div  *ngIf="_cvitem.sExperience!= undefined">{{_cvitem.sExperience}}</div>
+      <div  *ngIf="_cvitem.sExperience!= undefined">{{_cvitem.sExperience}} </div>
 
       <label>Сфера деятельности</label>
       <div *ngFor="let liI of this._listIndustry; let i = index">

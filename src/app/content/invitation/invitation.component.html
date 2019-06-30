@@ -5,44 +5,41 @@
 
   <div class="top">Пригласить соискателя</div>
 
+  <span>Выберите вакансию, на которую Вы приглашаете соискателя.</span>
 <!--  <div class="box" *ngFor="let item of cvList; let i = index;"> -->
-      <div class="box" >
+
 
                   <!--      <input type="radio" name="cv" title="cv" [(ngModel)]="modelResumeFromCheck.resumeFromCheck" [value] = "item.id"> -->
-                <ul class="head-line">
-                <li></li>
-                <li class="date">{{'allValue.date' | translate}}</li>
-                <li class="city">{{'allValue.сity' | translate}}</li>
-                <li class="salary">{{'allValue.salary' | translate}}</li>
-                <li class="position">Должность</li>
-                </ul>
+                <div class="head-line">
+                   <div class="radio">&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                   <div class="date">{{'allValue.date' | translate}}</div>
+                   <div class="city">{{'allValue.сity' | translate}}</div>
+                   <div class="salary">{{'allValue.salary' | translate}}</div>
+                   <div class="position">Должность</div>
+                </div>
 
 
-               <div class="box" *ngFor="let item of vacanciesList; let i = index;">
-                    <ul class="botom-line">
-                        <li>   <input type="radio" title="vacancy" name="vacancy" title="vacancy" [(ngModel)]="modelResumeFromCheck.resumeFromCheck" [value] = "item.id">      </li>
-                        <li class="date">{{item.DateTimeCreate | date: 'dd-MM-yyyy'}}</li>
-                        <li class="city">{{item.CityName}}</li>
-                        <li class="salary">{{item.SalaryFrom}} &#x20BD;</li>
-                        <li class="position">{{item.VacancyShortTitle}}</li>
-                    </ul>
+
+               <div  *ngFor="let item of vacanciesList; let i = index;">
+                    <div class="botom-line">
+                        <div class="radio">   <input type="radio" title="vacancy" name="vacancy" title="vacancy" [(ngModel)]="modelResumeFromCheck.resumeFromCheck" [value] = "item.id">      </div>
+                        <div class="date">{{item.DateTimeCreate | date: 'dd-MM-yyyy'}}</div>
+                        <div class="city">{{item.CityName}}</div>
+                        <div class="salary">{{item.SalaryFrom}} &#x20BD;</div>
+                        <div class="position">{{item.VacancyShortTitle}}</div>
+                    </div>
                </div>
 
 
-  </div>
-
-
-
-  <div class="cvlist">
 
             <div *ngIf="bErrorResumeCheck">Выберите вакансию на которую приглашаете соискателя.</div>
             <div *ngIf="bErrorResumeLetter">Вы не внесли текст сообщения</div>
 
             <div [formGroup]="formResponse">
                 <textarea class="comment" formControlName="textCommentValue" name="comment" cols="100" rows="6" placeholder="Ваш комментарий к приглашению"></textarea>
-                <button class="btn-newcv" (click)="MoveResult()">Отправить</button>
+                <button class="btn-send" (click)="MoveResult()">Отправить</button>
             </div>
-  </div>
+
 
 </div>
 

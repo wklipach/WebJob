@@ -99,6 +99,10 @@ label{
   cursor: pointer;
   text-decoration: underline;
 }
+.changePass:hover{
+  font-weight: bold;
+}
+
 .user-name{
   margin-left: 180px;
   margin-top: 62px;
@@ -274,7 +278,7 @@ label{
   display: inline-block;
   position: absolute;
   font-size: 18px;
-  background-color: #3366ff;
+  background-color: #0262d2;
   color: rgb(255, 255, 255);
   border-color: #054086;
   border-width: 1px;
@@ -288,13 +292,14 @@ label{
 }
 .btn-save:hover{
   background-color: #0066cc;
+  font-weight: bold;
 }
 .btn-save:active{
   border-color: #3399ff;
   border-style: solid;
   border-width: 3px;
   border-radius: 3px;
-  font-weight: 600;
+  font-weight: bold;
 }
 .btn-cancel{
   font-size: 18px;
@@ -313,13 +318,14 @@ label{
 }
 .btn-cancel:hover{
   background-color: rgb(240, 240, 240);
+  font-weight: bold;
 }
 .btn-cancel:active{
   border-color: #3399ff;
   border-style: solid;
   border-width: 3px;
   border-radius: 3px;
-  font-weight: 600;
+  font-weight: bold;
 }
 .changepassBox {
   border-width: 1px;
@@ -356,7 +362,7 @@ label{
   display: inline-block;
   position: absolute;
   font-size: 18px;
-  background-color: #3366ff;
+  background-color: #0262d2;
   color: rgb(255, 255, 255);
   border-color: #054086;
   border-width: 1px;
@@ -372,7 +378,7 @@ label{
   display: inline-block;
   position: absolute;
   font-size: 18px;
-  background-color: #3366ff;
+  background-color: #0262d2;
   color: rgb(255, 255, 255);
   border-color: #054086;
   border-width: 1px;

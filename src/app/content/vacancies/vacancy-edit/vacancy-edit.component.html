@@ -31,7 +31,7 @@
       </div>
 
       <!-- Нет обработчика -->
-      <label class="vacancyRequirements">{{'allValue.requirementse' | translate}}</label>
+      <label class="vacancyRequirements">{{'allValue.requirements' | translate}}</label>
       <textarea class="inputVacancyRequirements" maxlength="3000" aria-label="Требования до 3000 знаков"
                 formControlName="inputVacancyRequirements" id="inputVacancyRequirements" placeholder="Требования до 3000 знаков"></textarea>
 
@@ -47,10 +47,6 @@
       <div class="alert alert-danger" *ngIf="editVacancyForm.controls['inputConditions'].invalid && editVacancyForm.controls['inputConditions'].touched">
         Количество знаков не должно превышать 3000.
       </div>
-
-
-
-
 
 
 
@@ -96,7 +92,7 @@
       <app-cv_industry></app-cv_industry>
 
       <div>
-        <div class="form-group row">
+        <div class="buttons">
           <button type="submit" class="btn-save" [disabled]="editVacancyForm.invalid">{{'allValue.save' | translate}}</button>
           <button class="btn-cancel" routerLink="/vacancies" routerLinkActive="active">{{'allValue.Cancel' | translate}}</button>
         </div>
