@@ -11,7 +11,7 @@
  </div>
 
 <div class="city-line">
-    <img class="city" src="/assets/img/city.png" alt="'allValue.сity' | translate">
+    <img class="city" src="/assets/img/city.png" [alt]="'allValue.сity' | translate">
     <span *ngIf="this.descrDataVacancy" class="city-name"> {{this.descrDataVacancy?.CityName}}</span>
     <span *ngIf="this.descrDataVacancy" class="address">{{this.sAddress}}</span>
   </div>

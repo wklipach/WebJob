@@ -112,6 +112,10 @@ export class CvhomeComponent implements OnInit {
     if (window.localStorage.getItem('keyFind') !== null) {
       this.sMask = window.localStorage.getItem('keyFind');
     }
+
+
+    console.log('cv this.sMask',this.sMask);
+
     window.localStorage.removeItem('keyFind');
     this.httpService.onReopenCV.subscribe(({sMask: value, isFavorites: bFavorites, isAdvancedFind: bAdvancedFind }) => {
       this.getCV(value, bFavorites, bAdvancedFind);
@@ -123,8 +127,8 @@ export class CvhomeComponent implements OnInit {
     // если не было расширенного поиска вакансий делаем обычный поиск, иначе расширенный запускается из advanced-search.component
     if ( this.httpService.getMessageAdvancedFindObj() === null ) {
 
-      // запускаем событие "получить вакансии", в первый раз с пустой маской
-      this.httpTvsService.triggerReopenCV( {sMask: '', isFavorites: false, isAdvancedFind: false} );
+      // запускаем событие "получить резюме", в первый раз
+      this.httpTvsService.triggerReopenCV( {sMask: this.sMask, isFavorites: false, isAdvancedFind: false} );
       // записываем значение маски в элемент, так как при перегрузке страницы он стирается ??????
       this.moveS.setStringFind(this.sMask);
     } else
@@ -158,16 +162,21 @@ export class CvhomeComponent implements OnInit {
     return this.getTableCV = this.httpService.getTableCV(sMask, this.rowPerPage, this.page, isFavorites, isAdvancedFind, this.id_user).subscribe(
       (data: any) => {
 
-        // если поиск не дал результатов вызываем сами себя с пустой маской
-        if (sMask !== '' && data.length === 0) {
-          this.moveS.startNullFind(this.sNullFund);
-          this.getCV('',false, false);
-          return;
-        }
+        this.translate.get('cvhome.ts.sNullFund').subscribe(
+          value => {
+            this.sNullFund = value;
+            // если поиск не дал результатов вызываем сами себя с пустой маской
+            if (sMask !== '' && data.length === 0) {
+              this.getCV('', false, false);
+              this.moveS.startNullFind(this.sNullFund);
+              console.log('cv neneneneneenene startNullFind', this.sNullFund);
+              return;
+            }
 
-        this.data_show(data);
-        this.reloadPAge(this.allDataCV, sMask);
-        if (isFavorites) this.sCV = this.sFavCV; else this.sCV = this.sCV_Tr;
+            this.data_show(data);
+            this.reloadPAge(this.allDataCV, sMask);
+            if (isFavorites) this.sCV = this.sFavCV; else this.sCV = this.sCV_Tr;
+          });
       });
   }
 

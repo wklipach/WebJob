@@ -275,24 +275,22 @@ export class HomeComponent implements OnInit, OnDestroy {
     return this.getTableVacancy = this.httpService.getTableVacancy(sMask, this.rowPerPage, this.page, isFavorites, isAdvancedFind, this.id_user).subscribe(
       (data: dataVacancy[]) => {
 
-        console.log("sMasksMasksMasksMasksMasksMasksMasksMasksMask", sMask);
+        this.translate.get('home.ts.sFindNull').subscribe(
+          value => {
 
+            this.sFindNull = value;
+            //если поиск не дал результатов вызываем сами себя с пустой маской
+            if (sMask !== '' && data.length === 0) {
+              //TODO nenenenenenenenenene
+              this.getVacancy('', false, false);
+              this.moveS.startNullFind(this.sFindNull);
+              return;
+            }
 
-        //если поиск не дал результатов вызываем сами себя с пустой маской
-        if (sMask !== '' && data.length === 0) {
-
-
-          console.log("NENNENENENENENENENENNENE");
-
-          this.getVacancy('',false, false);
-          this.moveS.startNullFind(this.sFindNull);
-          return;
-        }
-
-
-      this.data_show(data);
-      this.reloadPAge(this.allDataVacancy, sMask);
-      if (isFavorites) this.sVacancy = this.sVacF; else this.sVacancy = this.sVacEasy;
+            this.data_show(data);
+            this.reloadPAge(this.allDataVacancy, sMask);
+            if (isFavorites) this.sVacancy = this.sVacF; else this.sVacancy = this.sVacEasy;
+          });
       });
   }
 
