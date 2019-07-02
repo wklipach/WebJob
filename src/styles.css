@@ -113,3 +113,50 @@ button{
   border-radius: 3px;
   font-weight: bold;
 }
+
+
+/*
+.message.error {
+    z-index: 1;
+    background: #e94e26;
+    color: #fff !important;
+}
+.message {
+    border-radius: 3px;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    animation-name: slide;
+    animation-duration: .3s;
+    left: 100%;
+    line-height: 1.15;
+    margin-left: 10px;
+    max-width: 300px;
+    padding: 6px 15px;
+    position: absolute;
+    top: 0;
+    width: 1000px;
+    box-shadow: 0 10px 20px -5px rgba(0,0,0,.4);
+    text-align: left;
+}
+
+
+.message.error::before {
+    content: "";
+    position: absolute;
+}
+.message::before {
+    border-top: 5px solid transparent;
+    border-right: 5px solid #e94e26;
+    border-bottom: 5px solid transparent;
+    content: "";
+    position: absolute;
+    right: 100%;
+    top: .6em;
+    height: 0;
+    width: 0;
+}
+
+
+
+*/
