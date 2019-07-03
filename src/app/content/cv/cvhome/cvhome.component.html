@@ -26,19 +26,19 @@
 
     <div class="photo">
 
-      <div *ngIf="curCV.base64textString.length>0; then contentLoadAvatar else contentDefault">Невозможно выполнить условия</div>
+      <div *ngIf="curCV.base64textString.length>0; then contentLoadAvatar else contentDefault">{{'cvhome.ifnot' | translate}}</div>
 
       <ng-template #contentLoadAvatar>
-        <img class="logotype" *ngFor="let item of curCV.base64textString"  src={{item}} title="Фото" id="img">
+        <img class="logotype" *ngFor="let item of curCV.base64textString"  src={{item}} [title]="'cvhome.photo' | translate" id="img">
       </ng-template>
 
       <ng-template #contentDefault>
-        <img class="logotype-company" src="/assets/img/no-photo.png" alt="Фото">
+        <img class="logotype-company" src="/assets/img/no-photo.png" [alt]="'cvhome.photo' | translate">
       </ng-template>
 
     </div>
 
-      <button class="btn-response" type="button" id="cvresponse" title="Пригласить" (click)="response(i, curCV.id)" >Пригласить</button>
+      <button class="btn-response" type="button" id="cvresponse" title="Пригласить" (click)="response(i, curCV.id)" >{{'cvhome.invate' | translate}}</button>
 
 
     </div>

@@ -7,6 +7,7 @@ import {ForgotpasswordService} from '../../services/forgotpassword.service';
 import * as CryptoJS from 'crypto-js';
 import {timer} from 'rxjs/observable/timer';
 import {Subscription} from 'rxjs';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-forgot-password',
@@ -23,7 +24,7 @@ export class ForgotPasswordComponent implements OnInit, OnDestroy {
 
   subscribeTimer: Subscription;
 
-  constructor(private httpService: AuthService, private fps: ForgotpasswordService) {
+  constructor(private httpService: AuthService, private fps: ForgotpasswordService, public translate: TranslateService) {
 
     this.forgotForm  = new FormGroup({
       'nameOrEmail': new FormControl('',

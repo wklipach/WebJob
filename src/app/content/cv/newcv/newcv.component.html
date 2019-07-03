@@ -1,14 +1,14 @@
 <app-header-top></app-header-top>
 
 <div class="wrapper">
-  <div class="top">Создание резюме</div>
+  <div class="top">{{'newcv.newcv23' | translate}}</div>
 
   <form [formGroup]="newCVForm">
     <div class="cv-box">
       <div class="line">
         <label class="location">{{'allValue.сity' | translate}}</label>
         <label class="salary">{{'allValue.salary' | translate}}</label>
-        <label class="position">Желаемая должность</label>
+        <label class="position">{{'newcv.gd23' | translate}}</label>
       </div>
       <!--   <div style="width:100%; height:1px; clear:both;"></div>    выравниваем без обтекания -->
 
@@ -19,35 +19,35 @@
           </option>
         </select>
 
-        <input type="text" class="inputSalaryFrom" formControlName="inputSalaryFrom" id="inputSalaryFrom" placeholder="от  &#8364;  ">
-        <input type="text" class="inputPosition" formControlName="inputPosition" id="inputPosition" placeholder="Желаемая должность">
+        <input type="text" class="inputSalaryFrom" formControlName="inputSalaryFrom" id="inputSalaryFrom" [placeholder]="'newcv.from23' | tranclate">
+        <input type="text" class="inputPosition" formControlName="inputPosition" id="inputPosition" [placeholder]="'newcv.gd23' | translate">
       </div>
 
       <div class="line">
-        <label class="labelSkillsAbilities">Основные навыки и умения</label>
+        <label class="labelSkillsAbilities">{{'newcv.onu23' | translate}}</label>
       </div>
       <div class="line">
-        <textarea class="inputSkillsAbilities" aria-label="Основные навыки и умения до 1000 знаков" formControlName="inputSkillsAbilities" id="inputSkillsAbilities"
-                  placeholder="Основные навыки и умения до 1000 знаков"></textarea>
+        <textarea class="inputSkillsAbilities" [title]="'newcv.onu231000' | translate" formControlName="inputSkillsAbilities" id="inputSkillsAbilities"
+                  [placeholder]="'newcv.onu231000' | translate"></textarea>
       </div>
       <div class="line">
         <app-cv-education></app-cv-education>
       </div>
 
       <div class="line">
-      <textarea class="inputEducation" aria-label="Учебное заведение. До 1000 знаков"
-                formControlName="inputEducation" id="inputEducation" placeholder="Учебное заведение. До 1000 знаков"></textarea>
+      <textarea class="inputEducation" [title]="'newcv.u231000' | translate"
+                formControlName="inputEducation" id="inputEducation" [placeholder]="'newcv.u231000' | translate"></textarea>
       </div>
 
       <div class="line">
-      <textarea class="inputExperience" aria-label="'allValue.experience1000' | translate"
-                formControlName="inputExperience" id="inputExperience" placeholder="'allValue.experience1000' | translate"></textarea>
+      <textarea class="inputExperience" [title]="'allValue.experience1000' | translate"
+                formControlName="inputExperience" id="inputExperience" [placeholder]="'allValue.experience1000' | translate"></textarea>
       </div>
 
 
       <div class="line">
         <ng-container #spotLanguage></ng-container>
-        <button class="btn-add"  (click)="createNewLanguageBlock()">Добавить знание языка</button>
+        <button class="btn-add"  (click)="createNewLanguageBlock()">{{'newcv.addlang23' | translate}}</button>
       </div>
       <div class="line">
         <!-- Опыт работы -->
@@ -57,7 +57,7 @@
 
       <div class="line">
         <ng-container #spot></ng-container>
-        <button class="btn-add"  (click)="createNewBlock()">Добавить место работы</button>
+        <button class="btn-add"  (click)="createNewBlock()">{{'newcv.addplacework23' | translate}}</button>
       </div>
 
       <div class="line">
@@ -74,7 +74,7 @@
       <app-cv_industry></app-cv_industry>
 
       <div class="line">
-        <button class="btn-save"  (click)="newcv()">Сохранить резюме</button>
+        <button class="btn-save"  (click)="newcv()">{{'newcv.savecv23' | translate}}Сохранить резюме</button>
       </div>
     </div>
   </form>

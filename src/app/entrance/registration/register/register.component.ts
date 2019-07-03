@@ -3,6 +3,7 @@ import {AuthService} from '../../../services/auth-service.service';
 import {UserTable} from '../../../class/UserTable';
 import {Router} from '@angular/router';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-register',
@@ -11,7 +12,7 @@ import { FormGroup, FormControl, Validators} from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private router: Router) {
+  constructor(private router: Router, public translate: TranslateService) {
   }
 
   myForm : FormGroup;

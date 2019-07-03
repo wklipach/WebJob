@@ -6,6 +6,7 @@ import {Router} from '@angular/router';
 import * as CryptoJS from 'crypto-js';
 import { timer } from 'rxjs/observable/timer';
 import {Subscription} from 'rxjs';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +22,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   public stopCondition: boolean = false;
   private subscribeTimer:  Subscription;
 
-  constructor(private httpService: AuthService, private router: Router) {
+  constructor(private httpService: AuthService, private router: Router,  public translate: TranslateService) {
 
     this.loginForm  = new FormGroup({
       'nameOrEmail': new FormControl('',

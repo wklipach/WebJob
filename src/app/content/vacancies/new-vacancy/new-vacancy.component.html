@@ -8,45 +8,45 @@
 
       <label class="shortTitle">{{'allValue.namevc' | translate}}</label>
       <input type="text" class="inputVacancyShortTitle" maxlength="90" formControlName="inputVacancyShortTitle"
-      id="inputVacancyShortTitle" placeholder="Наименование вакансии до 90 знаков.">
+      id="inputVacancyShortTitle" [placeholder]="'new-vacancy.naimvc66' | translate">
 
       <div class="alert alert-danger"
            *ngIf="newVacancyForm.controls['inputVacancyShortTitle'].invalid && newVacancyForm.controls['inputVacancyShortTitle'].touched">
-        Количество знаков должно превышать 90.
+        {{'new-vacancy.kz90i66' | translate}}
       </div>
 
       <label class="vacancyDescription">{{'allValue.shortdescrvc' | translate }}</label>
-      <textarea class="inputVacancyDescription" maxlength="3000" aria-label="Описание вакансии до 3000 знаков"
-                formControlName="inputVacancyDescription" id="inputVacancyDescription" placeholder="Описание вакансии до 3000 знаков"></textarea>
+      <textarea class="inputVacancyDescription" maxlength="3000" [title]="'new-vacancy.ov3000i66' | translate"
+                formControlName="inputVacancyDescription" id="inputVacancyDescription" [placeholder]="'new-vacancy.ov3000i66' | translate"></textarea>
 
       <div class="alert alert-danger" *ngIf="newVacancyForm.controls['inputVacancyDescription'].invalid && newVacancyForm.controls['inputVacancyDescription'].touched">
-        Количество знаков не должно превышать 3000.
+        {{'new-vacancy.kz3000i66' | translate}}
       </div>
 
         <label class="jobFunction">{{'allValue.jobresponsibilities' | translate}}</label>
-      <textarea class="inputjobFunction" maxlength="3000" aria-label="Должностные обязанности до 3000 знаков"
-                formControlName="inputjobFunction" id="inputjobFunction" placeholder="Должностные обязанности до 3000 знаков"></textarea>
+      <textarea class="inputjobFunction" maxlength="3000" [title]="'new-vacancy.do3000i66' | translate"
+                formControlName="inputjobFunction" id="inputjobFunction" [placeholder]="'new-vacancy.do3000i66' | translate"></textarea>
 
       <div class="alert alert-danger" *ngIf="newVacancyForm.controls['inputjobFunction'].invalid && newVacancyForm.controls['inputjobFunction'].touched">
-        Количество знаков не должно превышать 3000.
+        {{'new-vacancy.kz3000i66' | translate}}
       </div>
 
 
       <label class="vacancyRequirements">{{'allValue.requirements' | translate}}</label>
-      <textarea class="inputVacancyRequirements" maxlength="3000" aria-label="Требования до 3000 знаков"
-          formControlName="inputVacancyRequirements" id="inputVacancyRequirements" placeholder="Требования до 3000 знаков"></textarea>
+      <textarea class="inputVacancyRequirements" maxlength="3000" [title]="'new-vacancy.t3000i66' | translate"
+          formControlName="inputVacancyRequirements" id="inputVacancyRequirements" [placeholder]="'new-vacancy.t3000i66' | translate"></textarea>
 
       <div class="alert alert-danger" *ngIf="newVacancyForm.controls['inputVacancyRequirements'].invalid && newVacancyForm.controls['inputVacancyRequirements'].touched">
-        Количество знаков не должно превышать 3000.
+        {{'new-vacancy.kz3000i66' | translate}}
       </div>
 
 
       <label class="conditions">{{'allValue.if' | translate}}</label>
-      <textarea class="vacancyConditions" maxlength="3000" aria-label="Условия до 3000 знаков"
-                formControlName="inputConditions" id="inputConditions" placeholder="Условия до 3000 знаков"></textarea>
+      <textarea class="vacancyConditions" maxlength="3000" [title]="'new-vacancy.u3000i66' | translate"
+                formControlName="inputConditions" id="inputConditions" [placeholder]="'new-vacancy.u3000i66' | translate"></textarea>
 
       <div class="alert alert-danger" *ngIf="newVacancyForm.controls['inputConditions'].invalid && newVacancyForm.controls['inputConditions'].touched">
-        Количество знаков не должно превышать 3000.
+        {{'new-vacancy.kz3000i66' | translate}}
       </div>
 
 
@@ -63,11 +63,11 @@
       <input type="text" class="inputSalary" formControlName="inputSalary" id="inputSalary" placeholder="до">
 
       <div class="alert alert-danger" *ngIf="newVacancyForm.controls['inputSalaryFrom'].invalid && newVacancyForm.controls['inputSalaryFrom'].touched">
-        Ошибка в "Заработная плата от"
+        {{'new-vacancy.ozplfrom66' | translate}}
       </div>
 
       <div class="alert alert-danger" *ngIf="newVacancyForm.controls['inputSalary'].invalid && newVacancyForm.controls['inputSalary'].touched">
-        Ошибка в "Заработная плата до"
+        {{'new-vacancy.ozplto66' | translate}}
       </div>
 
       <label class="displayPeriod" for="displayPeriod">{{'allValue.maturity' | translate}}</label>

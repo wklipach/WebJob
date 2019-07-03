@@ -25,7 +25,7 @@
 
       <li class="salary">{{'allValue.salary' | translate}}</li>
 
-      <li class="position">Должность</li>
+      <li class="position">{{'response.d55' | translate}}</li>
 
     </ul>
 
@@ -49,9 +49,9 @@
 
   <div class="cvlist">
 
-    <div *ngIf="bErrorResumeCheck">Вы не выбрали резюме, прикрепляемое к отклику</div>
+    <div *ngIf="bErrorResumeCheck">{{'response.te55' | translate}}</div>
 
-    <div *ngIf="bErrorResumeLetter">Вы не внесли текст сообщения</div>
+    <div *ngIf="bErrorResumeLetter">{{'response.vnv55' | translate}}</div>
 
 
 
@@ -59,9 +59,9 @@
 
 
 
-     <textarea class="comment" formControlName="textCommentValue" name="comment" cols="100" rows="6" placeholder="Ваш комментарий к отклику"></textarea>
+     <textarea class="comment" formControlName="textCommentValue" name="comment" cols="100" rows="6" [placeholder]="'response.comment55' | translate"></textarea>
 
-      <button class="btn-newcv" (click)="MoveResult()">Отправить</button>
+      <button class="btn-newcv" (click)="MoveResult()">{{'response.resp55' | translate}}</button>
 
     </div>
 

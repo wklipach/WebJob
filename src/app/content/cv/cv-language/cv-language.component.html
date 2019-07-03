@@ -2,27 +2,27 @@
 
 <form [formGroup]="formLanguage">
 <div class="line">
-  <label>Язык</label>
+  <label>{{'cv-language.lang' | translate}}</label>
 
-  <label class="labelInputLevelLanguage">Уровень владения</label>
+  <label class="labelInputLevelLanguage">{{'cv-language.levellang' | translate}}</label>
 
 </div>
 
     <div class="line">
 
-      <select id="inputLanguage" formControlName="inputLanguage" class="inputLanguage" title="Язык">
+      <select id="inputLanguage" formControlName="inputLanguage" class="inputLanguage" [title]="'cv-language.lang' | translate">
         <option  *ngFor="let LL of listLanguage" [value]="LL.name">
           {{LL.name}}
         </option>
       </select>
 
-      <select id="inputLevelLanguage" formControlName="inputLevelLanguage" class="inputLevelLanguage" title="Уровень владения">
+      <select id="inputLevelLanguage" formControlName="inputLevelLanguage" class="inputLevelLanguage" [title]="'cv-language.levellang' | translate">
         <option  *ngFor="let LLL of listLevelLanguage" [value]="LLL.name">
         {{LLL.name}}
         </option>
       </select>
 
-      <button class="btn-delete" (click)="deleteLanguage()">Удалить данные о языке</button>
+      <button class="btn-delete" (click)="deleteLanguage()">{{'cv-language.deletelang' | translate}}</button>
 
     </div>
 </form>

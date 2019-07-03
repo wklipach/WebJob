@@ -1,7 +1,7 @@
 <app-header-top></app-header-top>
 
 <div class="wrapper">
-  <div class="top">Описание вакансии</div>
+  <div class="top">{{'vacancy-description.descr77'| translate}}</div>
   <div class="vacancy-box">
 
     <div class="title" *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy.VacancyShortTitle}}</div>
@@ -18,17 +18,17 @@
 
 
     <div *ngIf="this.descrDataVacancy">
-        <div *ngIf="this.descrDataVacancy.base64textString.length>0; then contentLoadAvatar else contentDefault">условия выполнить невозможно</div>
+        <div *ngIf="this.descrDataVacancy.base64textString.length>0; then contentLoadAvatar else contentDefault">{{'vacancy-description.unot77' | translate}}</div>
         <ng-template #contentLoadAvatar>
-          <img class="logotype-company" *ngFor="let item of this.descrDataVacancy.base64textString"  (click)="clickAboutCompany()" src={{item}} alt="Логотип компании" id="img"
-               title="Перейти к информации о компании">
+          <img class="logotype-company" *ngFor="let item of this.descrDataVacancy.base64textString"  (click)="clickAboutCompany()" src={{item}} [alt]="'vacancy-description.lc77' | translate" id="img"
+               [title]="'vacancy-description.moveinfo77' | translate">
         </ng-template>
         <ng-template #contentDefault>
-          <img class="logotype-company" src="/assets/img/no-photo.png"  title="Перейти к описанию компании" alt="Логотип компании" (click)="clickAboutCompany()">
+          <img class="logotype-company" src="/assets/img/no-photo.png"  [title]="'vacancy-description.moveinfo77' | translate" [alt]="'vacancy-description.lc77' | translate"  (click)="clickAboutCompany()">
         </ng-template>
     </div>
 
-    <div class="company-name" title="Перейти к информации о компании" (click)="clickAboutCompany()">{{this.sEmployerName}}</div>
+    <div class="company-name" [title]="'vacancy-description.moveinfo77' | translate" (click)="clickAboutCompany()">{{this.sEmployerName}}</div>
 
        <label>{{'allValue.jobresponsibilities' | translate}}</label>
        <div class="jobFunction">
@@ -73,9 +73,9 @@
 
 
     <button class="btn-response" type="button" id="vcresponse" [title]="'allValue.Response' | translate" (click)="vcResponse()">{{'allValue.Response' | translate}}</button>
-    <button class="btn-favorites" type="button" id="vcfavorites" title="В избранное" (click)="vcFavour()">
+    <button class="btn-favorites" type="button" id="vcfavorites" [title]="'vacancy-description.infavour77' | translate" (click)="vcFavour()">
       <img class="favor-star" src="/assets/img/favor-star.png" [title]="'allValue.DontShow' | translate">
-      В избранное</button>
+      {{'vacancy-description.infavour77' | translate}}</button>
 
 
 

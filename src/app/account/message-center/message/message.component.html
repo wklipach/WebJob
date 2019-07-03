@@ -11,17 +11,17 @@
       </div>
       <ng-template #UF></ng-template>
       <form class="zero" [formGroup]="form">
-        <div *ngIf="base64textString.length>0;then contentLoadAvatar else contentDefault">условия выполнить невозможно</div>
+        <div *ngIf="base64textString.length>0;then contentLoadAvatar else contentDefault">{{'message.ifnot'| translate }}</div>
         <ng-template #contentLoadAvatar>
 
 
            <div *ngIf="this._bEmployer">
-              <img class="logotypeEr" *ngFor="let item of base64textString"  src={{item}} alt="Посмотреть профиль" id="img" (click) = "onProfileClick($event)">
+              <img class="logotypeEr" *ngFor="let item of base64textString"  src={{item}} [alt]="'message.viewprofile' | translate" id="img" (click) = "onProfileClick($event)">
           </div>
 
 
           <div *ngIf="!this._bEmployer">
-              <img class="logotype" *ngFor="let item of base64textString"  src={{item}} alt="Посмотреть профиль" id="img2" (click) = "onProfileClick($event)">
+              <img class="logotype" *ngFor="let item of base64textString"  src={{item}} [alt]="'message.viewprofile' | translate" id="img2" (click) = "onProfileClick($event)">
           </div>
 
 
@@ -36,11 +36,11 @@
 
                 <div *ngIf="this._bEmployer; else EE">
 
-                  <label class="move" (click)="moveVC()">Перейти к вакансии</label>
+                  <label class="move" (click)="moveVC()">{{'message.movevc' | translate}}</label>
 
                 </div>
                 <ng-template #EE>
-                  <label class="move" (click)="moveCV()">Перейти к резюме</label>
+                  <label class="move" (click)="moveCV()">{{'message.movecv' | translate}}</label>
                 </ng-template>
 
 
@@ -59,7 +59,7 @@
 
       <div class="right-side">
         <div class="topline">
-          <label class="labelSubject">Вакансия
+          <label class="labelSubject">{{'message.vcword' | translate}}
             <span class="subject">{{responseVC}}</span>
           </label>
         </div>
@@ -75,10 +75,10 @@
 
     <div  *ngIf="lc != undefined;else LT">
       <div class="textline" *ngIf="lc.id_user_from===this.id_user">
-        <div class="leter"><img class="out" alt="Отправленное сообщение" src="/assets/img/left-arrow.png"> {{lc.letterText}}</div>
+        <div class="leter"><img class="out" [alt]="'message.respmsg'| translate" src="/assets/img/left-arrow.png"> {{lc.letterText}}</div>
       </div>
       <div class="textline" *ngIf="lc.id_user_to===this.id_user">
-        <div class="leter"> <img class="in" alt="Входящее сообщение" src="/assets/img/right-arrow.png"> {{lc.letterText}}</div> </div>
+        <div class="leter"> <img class="in" [alt]="'message.mymsg'| translate" src="/assets/img/right-arrow.png"> {{lc.letterText}}</div> </div>
     </div>
     <ng-template #LT></ng-template>
 
@@ -88,8 +88,8 @@
         {{sErrorResponse}}
       <form class="formResponse" [formGroup]="formResponse">
         <textarea formControlName="textCommentValue" class="answer" id="answer"
-                  placeholder="Введите ответ" cols="100" rows="6"></textarea>
-        <button class="btn-send" (click)="responseLetter()">Отправить</button>
+                  [placeholder]="'message.inpres'| translate" cols="100" rows="6"></textarea>
+        <button class="btn-send" (click)="responseLetter()">{{'message.send' | translate}}</button>
       </form>
     </div>
   </div>

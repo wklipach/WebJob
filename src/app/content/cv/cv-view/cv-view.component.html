@@ -10,9 +10,9 @@
           <div class="name"> {{this.loadUser.Name}}<br>{{this.loadUser.LastName}}</div>
         </div>
 
-        <div *ngIf="base64textString.length>0;then contentLoadAvatar else contentDefault">Условия выполнить невозможно</div>
+        <div *ngIf="base64textString.length>0;then contentLoadAvatar else contentDefault">{{'cv-view.ifnot' | translate}}</div>
         <ng-template #contentLoadAvatar>
-          <img class="logotype" *ngFor="let item of base64textString"  src={{item}} alt="Посмотреть профиль" id="img" (click) = "onProfileClick($event)">
+          <img class="logotype" *ngFor="let item of base64textString"  src={{item}} [alt]="'cv-view.viewprofile' | translate" id="img" (click) = "onProfileClick($event)">
         </ng-template>
 
         <ng-template #contentDefault>
@@ -46,29 +46,29 @@
 
     <div class="rightBox">
 
-      <label>Желаемая позиция</label>
+      <label>{{'cv-view.gp' | translate}}</label>
      <!--  <div class="position" id="position"> </div> -->
       <div class="position"  *ngIf="_cvitem!= undefined">{{_cvitem.Position}}</div>
 
-      <label>Дата рождения</label>
+      <label>{{'cv-view.birdt' | translate}}</label>
       <div class="birth" *ngIf="_cvitem!= undefined">{{ _cvitem.DateBirth  | date:'dd.MM.yyyy'}}</div>
 
       <label>{{'cvview.workexperience'| translate}}</label>
       <div class="workexperience" *ngFor="let lep of this._listExperience; let i = index">
         {{lep}}
       </div>
-      <div class="workexperience" *ngIf="this._listExperience.length ===0">Стаж не указан.&nbsp;</div>
+      <div class="workexperience" *ngIf="this._listExperience.length ===0">{{'cv-view.snu' | translate}}&nbsp;</div>
 
 
       <label class="From">{{'allValue.salary' | translate}}</label>
       <div class="salary" *ngIf="_cvitem!= undefined">{{_cvitem.SalaryFrom}} </div>
-      <div class="salary" *ngIf="_cvitem === undefined">Не указана.&nbsp;</div>
+      <div class="salary" *ngIf="_cvitem === undefined">{{'cv-view.nu' | translate}}&nbsp;</div>
 
 
       <label>{{'allValue.Employment' | translate}}</label>
       <div class="listEmployment2" *ngFor="let Elm of this._listEmployment; let i = index">{{Elm}} </div>
 
-      <label>Основные навыки и умения</label>
+      <label>{{'cv-view.oniu' | translate}}</label>
 
 
       <div *ngIf="_cvitem.Skills!= undefined">
@@ -87,21 +87,21 @@
       <label>{{'allValue.experience' | translate}}</label>
       <div  *ngIf="_cvitem.sExperience!= undefined">{{_cvitem.sExperience}} </div>
 
-      <label>Сфера деятельности</label>
+      <label>{{'cv-view.sd' | translate}}</label>
       <div *ngFor="let liI of this._listIndustry; let i = index">
         {{liI}}
       </div>
 
-      <label>Желаемый график</label>
+      <label>{{'cv-view.dreamgr' | translate}}</label>
       <div *ngFor="let lS of this._listSchedule; let i = index">
         {{lS}}
       </div>
-      <label>Места работы</label>
+      <label>{{'cv-view.plworks' | translate}}</label>
       <div class="correspondence" *ngFor="let lP of this._listPrevious; let i = index">
-        Период работы: {{lP['dStartDate'] | date:'dd.MM.yyyy'}} ==== {{lP['dCompletionDate'] | date:'dd.MM.yyyy'}}<br>
-        Организация: {{lP['sCompany']}}<br>
-        Должность: {{lP['sPreviousPosition']}}<br>
-        Описание: {{lP['sInputPositionDescription']}}
+        {{'cv-view.periodworks' | translate}} {{lP['dStartDate'] | date:'dd.MM.yyyy'}} ==== {{lP['dCompletionDate'] | date:'dd.MM.yyyy'}}<br>
+        {{'cv-view.org' | translate}} {{lP['sCompany']}}<br>
+        {{'cv-view.curD' | translate}} {{lP['sPreviousPosition']}}<br>
+        {{'cv-view.descr' | translate}} {{lP['sInputPositionDescription']}}
 
       </div>
 

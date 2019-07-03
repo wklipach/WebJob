@@ -1,6 +1,6 @@
 <app-header-top></app-header-top>
 <div class="wrapper">
-  <div class="top">Регистрация соискателя</div>
+  <div class="top">{{'register-employee.rsRE' | translate}}</div>
     <div class="box">
 
 
@@ -11,25 +11,25 @@
   <!-- Проверяем вносимый логин. Если логин уже есть в базе, показываем лейбл -Имя пользователя занято, или наоборот -->
       <div class="alert alert-danger"
            *ngIf="myForm.controls['userName'].touched && myForm.controls['userName'].value.length === 0 ">
-        Не указано имя
+        {{'register-employee.nuipRE' | translate}}
       </div>
 
       <div *ngIf="myForm.controls['userName'].value.length > 0">
 
         <div *ngIf="myForm.controls['userName'].invalid; else trueUserNameTemplate">
-          <div class="alert alert-danger">Имя пользователя занято</div>
+          <div class="alert alert-danger">{{'register-employee.ipzRE' | translate}}</div>
         </div>
 
         <ng-template #trueUserNameTemplate>
-          <div class="alert alert-info">Имя пользователя свободно</div>
+          <div class="alert alert-info">{{'register-employee.ipsRE' | translate}}</div>
         </ng-template>
 
       </div>
 
       <!-- закончили проверку логина -->
 
-      <label class="email" for="inputEmail">Email</label>
-      <input type="email" class="inputEmail" id="inputEmail" placeholder="Email" formControlName="userEmail">
+      <label class="email" for="inputEmail">{{'register-employee.emailRE' | translate}}</label>
+      <input type="email" class="inputEmail" id="inputEmail" [placeholder]="'register-employee.emailRE' | translate" formControlName="userEmail">
 
     <!-- начало обработки почтовых ошибок -->
 
@@ -38,7 +38,7 @@
       <div class="alert alert-danger"
 
            *ngIf="myForm.controls['userEmail'].value.length === 0 ">
-        Не указан Email.
+        {{'register-employee.nuemailRE' | translate}}
       </div>
 
 
@@ -50,7 +50,7 @@
 
                *ngIf="myForm.controls['userEmail'].hasError('errorEmailExists') === true">
 
-            Данный Email уже занят.
+            {{'register-employee.deuzRE' | translate}}
 
           </div>
 
@@ -58,7 +58,7 @@
 
                *ngIf="myForm.controls['userEmail'].hasError('email') === true">
 
-            Неверно введен Email.
+            {{'register-employee.nveRE' | translate}}
 
           </div>
 
@@ -66,7 +66,7 @@
 
         <ng-template #trueSucc>
 
-          <div class="alert alert-info">Email свободен.</div>
+          <div class="alert alert-info">{{'register-employee.esRE' | translate}}</div>
 
         </ng-template>
 
@@ -77,31 +77,31 @@
     <!-- закончили обработку почтовых ошибок -->
 
 
-      <label for="inputPassword1">Пароль</label>
+      <label for="inputPassword1">{{'register-employee.passwordRE' | translate}}</label>
       <input type="password" class="form-control" id="inputPassword1" placeholder="Password" formControlName="userPassword1">
-      <label for="inputPassword1">Повторитие пароль</label>
+      <label for="inputPassword1">{{'register-employee.ppRE' | translate}}</label>
       <input type="password" class="form-control" id="inputPassword2" placeholder="Password" formControlName="userPassword2">
 
 
       <div *ngIf="myForm.controls['userPassword2'].value.length > 0">
         <div *ngIf="myForm.controls['userPassword2'].invalid; else truePassword2Template">
-          <div class="alert alert-danger">Повторный пароль не совпадает</div>
+          <div class="alert alert-danger">{{'register-employee.ppnsRE' | translate}}</div>
         </div>
       </div>
 
       <ng-template #truePassword2Template>
-          <div class="alert alert-info">Пароль совпал</div>
+          <div class="alert alert-info">{{'register-employee.pusRE' | translate}}</div>
       </ng-template>
 
 
 
-  <div *ngIf="bPassword">
-    Пароли не совпадают.
-  </div>
+      <div *ngIf="bPassword">
+        {{'register-employee.pppnsRE' | translate}}
+      </div>
 
 
 
-  <label class="rules-link" (click)="licenseShow()">Прочитать правила использования.</label>
+  <label class="rules-link" (click)="licenseShow()">{{'register-employee.ppiRE' | translate}}</label>
   <div class="licenseText" *ngIf="bLicense">
 
     Правила работы с Базой данных резюме и вакансий<br><br>
@@ -155,16 +155,16 @@
   </div>
 
  <input class="form-check-input" type="checkbox" formControlName="cbLicense" title="Я согласен">
-    <div class="form-check-label">Я согласен с правилами использования</div>
+    <div class="form-check-label">{{'register-employee.ysspiRE' | translate}}</div>
 
 
   <div class="alertRegister"
            *ngIf="myForm.controls['cbLicense'].invalid && myForm.controls['cbLicense'].touched">
-    Без согласия с правилами использования MuCv - регистрация невозможна.
+    {{'register-employee.bsspirnRE' | translate}}
       </div>
 
 
-  <button class="btn-register" [disabled]="myForm.invalid">Зарегистрироваться</button>
+  <button class="btn-register" [disabled]="myForm.invalid">{{'register-employee.registrRE' | translate}}</button>
 
 </form>
     </div>

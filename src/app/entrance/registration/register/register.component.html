@@ -1,19 +1,19 @@
 <app-header-top></app-header-top>
 <div class="wrapper">
-  <div class="top">Регистрация</div>
+  <div class="top">{{'register.regR' | translate}}</div>
 
   <div class="box">
 
-    <span>Выберите один из вариантов регистрации.</span>
+    <span>{{'register.voivrR' | translate}}</span>
 
         <input  class="radio-employee" (change)="newFunction($event)" type="radio" name="registerRadios" id="rEmployee" >
         <label class="label-employee" for="rEmployee">
-          Соискатель
+          {{'register.sR' | translate}}
         </label>
 
         <input class="radio-employer"  (change)="newFunction($event)" type="radio" name="registerRadios" id="rEmployer" >
         <label class="label-employer" for="rEmployer">
-          Работодатель
+          {{'register.rrR' | translate}}
         </label>
 
     </div>

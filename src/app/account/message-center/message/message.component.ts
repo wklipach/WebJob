@@ -11,6 +11,7 @@ import {Router} from '@angular/router';
 import {MoveService} from '../../../services/move.service';
 import {CvEditService} from '../../../services/cv-edit.service';
 import {isNull} from 'util';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-message',
@@ -44,7 +45,8 @@ export class MessageComponent implements OnInit, OnDestroy {
               private auth: AuthService,
               private fb: FormBuilder,
               private moveS: MoveService,
-              private cls: CvListService) {
+              private cls: CvListService,
+              private translate: TranslateService ) {
 
     const Res =  this.auth.loginStorage();
     if (Res.bConnected) {

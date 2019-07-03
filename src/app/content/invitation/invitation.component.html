@@ -3,9 +3,9 @@
 
 <div class="wrapper">
 
-  <div class="top">Пригласить соискателя</div>
+  <div class="top">{{'invitation.inv44' | translate}}</div>
 
-  <span>Выберите вакансию, на которую Вы приглашаете соискателя.</span>
+  <span>{{'invitation.chvc44' | translate}}</span>
 <!--  <div class="box" *ngFor="let item of cvList; let i = index;"> -->
 
 
@@ -15,7 +15,7 @@
                    <div class="date">{{'allValue.date' | translate}}</div>
                    <div class="city">{{'allValue.сity' | translate}}</div>
                    <div class="salary">{{'allValue.salary' | translate}}</div>
-                   <div class="position">Должность</div>
+                   <div class="position">{{'invitation.d44' | translate }}</div>
                 </div>
 
 
@@ -32,12 +32,12 @@
 
 
 
-            <div *ngIf="bErrorResumeCheck">Выберите вакансию на которую приглашаете соискателя.</div>
-            <div *ngIf="bErrorResumeLetter">Вы не внесли текст сообщения</div>
+            <div *ngIf="bErrorResumeCheck">{{'invitation.chvc44' | translate}}</div>
+            <div *ngIf="bErrorResumeLetter">{{'invitation.warn44' | translate}}</div>
 
             <div [formGroup]="formResponse">
-                <textarea class="comment" formControlName="textCommentValue" name="comment" cols="100" rows="6" placeholder="Ваш комментарий к приглашению"></textarea>
-                <button class="btn-send" (click)="MoveResult()">Отправить</button>
+                <textarea class="comment" formControlName="textCommentValue" name="comment" cols="100" rows="6" [placeholder]="'invitation.comment44' | translate"></textarea>
+                <button class="btn-send" (click)="MoveResult()">{{'invitation.resp44' | translate}}</button>
             </div>
 
 

@@ -1,7 +1,7 @@
 <app-header-top></app-header-top>
 
 <div class="wrapper">
-  <div class="top">Мои резюме</div>
+  <div class="top">{{'cv-list.mycv' | translate}}</div>
 
   <div class="box" *ngFor="let item of cvList; let i = index;">
 
@@ -11,7 +11,7 @@
       <li class="date">{{'allValue.date' | translate}}</li>
       <li class="city">{{'allValue.сity' | translate}}</li>
       <li class="salary">{{'allValue.salary' | translate}}</li>
-      <li class="position">Должность</li>
+      <li class="position">{{'cv-list.dl' | translate}}</li>
       <li class="choice">{{'allValue.selectaction' | translate}}</li>
 
     </ul>
@@ -37,9 +37,9 @@
 
 
     <div class="alert alert-primary" *ngIf="contactMethods[i].bDelete === true">
-      Вы желаете удалить данное резюме?
-      <button type="button" class="btn btn-outline-danger" (click)="DeleteElement(item,i)">Да</button>
-      <button type="button" class="btn btn-outline-success" (click)="UnDeleteElement(item,i)">Нет</button>
+      {{'cv-list.questdeletecv' | translate}}
+      <button type="button" class="btn btn-outline-danger" (click)="DeleteElement(item,i)">{{'cv-list.yes' | translate}}</button>
+      <button type="button" class="btn btn-outline-success" (click)="UnDeleteElement(item,i)">{{'cv-list.no' | translate}}</button>
 
     </div>
 
@@ -49,7 +49,7 @@
 
 
   <div class="cvlist">
-    <button class="btn-newcv" (click)="newcv()">Новое резюме</button>
+    <button class="btn-newcv" (click)="newcv()">{{'cv-list.newcv' | translate}}</button>
   </div>
 </div>
 

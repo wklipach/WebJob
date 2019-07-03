@@ -1,18 +1,31 @@
 <form [formGroup]="formPrevious">
 
-  <label class="startDate">Начальная дата</label>
-  <label class="completionDate">Конечная дата</label>
+  <label class="startDate">{{'cv-previous.bdate' | translate}}</label>
+  <label class="completionDate">{{'cv-previous.edate' | translate}}</label>
 
-  <input type="date" class="inputStartDate" formControlName="startDate" id="startDate" placeholder="Начальная дата">
+  <input type="date"
+         class="inputStartDate"
+         formControlName="startDate"
+         id="startDate"
+         [placeholder]="'cv-previous.bdate' | translate">
 
 
-  <input type="date" class="input-completionDate" formControlName="completionDate" id="completionDate" placeholder="Конечная дата">
+  <input type="date" class="input-completionDate"
+         formControlName="completionDate"
+         id="completionDate"
+         [placeholder]="'cv-previous.edate' | translate">
 
-  <label class="company-name">Компания</label>
-  <input type="text" class="inputCompany" formControlName="inputCompany" id="inputCompany" placeholder="Компания">
+  <label class="company-name">{{'cv-previous.cmp' | translate}}</label>
+  <input type="text" class="inputCompany"
+         formControlName="inputCompany"
+         id="inputCompany"
+         [placeholder]="'cv-previous.cmp' | translate">
 
-  <label class="labelPreviousPosition">Должность</label>
-  <input type="text" class="inputpPreviousPosition" formControlName="inputpPreviousPosition" id="inputpPreviousPosition" placeholder="Занимаемая должность">
+  <label class="labelPreviousPosition">{{'cv-previous.dlg' | translate}}</label>
+  <input type="text" class="inputpPreviousPosition"
+         formControlName="inputpPreviousPosition"
+         id="inputpPreviousPosition"
+         [placeholder]="'cv-previous.zdlg' | translate">
 
   <!--
   <label class="labelSkillsAbilities">Основные навыки и умения</label>
@@ -20,9 +33,12 @@
 -->
 
   <label class="labelPositionDescription">{{'allValue.jobresponsibilities' | translate}}</label>
-  <textarea class="inputPositionDescription" aria-label="Должностные обязанности и достижения до 800 знаков" formControlName="inputPositionDescription" id="inputPositionDescription" placeholder="Должностные обязанности и достижения до 800 знаков"></textarea>
+  <textarea class="inputPositionDescription"
+            [title]="'cv-previous.dod' | translate"
+            formControlName="inputPositionDescription" id="inputPositionDescription"
+            [placeholder]="'cv-previous.dod' | translate"></textarea>
 
-  <button class="btn-delete"  (click)="checkNumberPrevious()">Удалить данное место работы</button><br>
+  <button class="btn-delete"  (click)="checkNumberPrevious()">{{'cv-previous.deleteplacejob' | translate}}</button><br>
 </form>
 
 

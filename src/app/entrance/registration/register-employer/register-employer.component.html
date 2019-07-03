@@ -1,12 +1,12 @@
 <app-header-top></app-header-top>
 
 <div class="wrapper">
-  <div class="top">Регистрация работодателя</div>
+  <div class="top">{{'register-employer.rr1RER' | translate}}</div>
   <div class="box">
 
 <form [formGroup]="formRegisterEmployer" novalidate (ngSubmit)="submit()">
 
-  <label class="userName">Имя пользователя (Nic)</label>
+  <label class="userName">{{'register-employer.rr2RER' | translate}}</label>
   <input type="text" class="form-control" id="userName" formControlName="userName" [placeholder]="'allValue.UserName' | translate">
 
     <div class="form-group col-md-3">
@@ -14,16 +14,16 @@
 
       <div class="alert alert-danger"
            *ngIf="formRegisterEmployer.controls['userName'].touched && formRegisterEmployer.controls['userName'].value.length === 0 ">
-        Не указано имя работодателя
+        {{'register-employer.rr3RER' | translate}}
       </div>
 
       <div *ngIf="formRegisterEmployer.controls['userName'].value.length > 0">
         <div *ngIf="formRegisterEmployer.controls['userName'].invalid; else trueUserNameTemplate">
-          <div class="alert alert-danger">Имя работодателя занято</div>
+          <div class="alert alert-danger">{{'register-employer.rr4RER' | translate}}</div>
         </div>
 
         <ng-template #trueUserNameTemplate>
-          <div class="alert alert-info">Имя работодателя свободно</div>
+          <div class="alert alert-info">{{'register-employer.rr5RER' | translate}}</div>
         </ng-template>
 
       </div>
@@ -45,25 +45,25 @@
     <div *ngIf="formRegisterEmployer.controls['userEmail'].dirty">
       <div class="alert alert-danger"
            *ngIf="formRegisterEmployer.controls['userEmail'].value.length === 0 ">
-        Не указан Email.
+        {{'register-employer.rr6RER' | translate}}
       </div>
 
       <div *ngIf="formRegisterEmployer.controls['userEmail'].value.length > 0">
         <div *ngIf="formRegisterEmployer.controls['userEmail'].invalid; else trueSucc">
           <div class="alert alert-danger"
                *ngIf="formRegisterEmployer.controls['userEmail'].hasError('errorEmailExists') === true">
-            Данный Email уже занят.
+            {{'register-employer.rr7RER' | translate}}
           </div>
 
           <div class="alert alert-danger"
                *ngIf="formRegisterEmployer.controls['userEmail'].hasError('email') === true">
-            Неверно введен Email.
+            {{'register-employer.rr8RER' | translate}}
           </div>
 
         </div>
 
         <ng-template #trueSucc>
-          <div class="alert alert-info">Email свободен.</div>
+          <div class="alert alert-info">{{'register-employer.rr8_1RER' | translate}}</div>
         </ng-template>
       </div>
     </div>
@@ -71,25 +71,25 @@
   </div>
 
 
-      <label for="inputPassword1">Пароль</label>
+      <label for="inputPassword1">{{'register-employer.rr9RER' | translate}}</label>
       <input type="password" class="form-control" id="inputPassword1" placeholder="Password" formControlName="userPassword1">
-      <label for="inputPassword1">Повторитие пароль</label>
+      <label for="inputPassword1">{{'register-employer.rr10RER' | translate}}</label>
       <input type="password" class="form-control" id="inputPassword2" placeholder="Password" formControlName="userPassword2">
 
       <div *ngIf="formRegisterEmployer.controls['userPassword2'].value.length > 0">
         <div *ngIf="formRegisterEmployer.controls['userPassword2'].invalid; else truePassword2Template">
-            <div class="alert alert-danger">Повторный пароль не совпадает</div>
+            <div class="alert alert-danger">{{'register-employer.rr11RER' | translate}}</div>
         </div>
       </div>
 
     <ng-template #truePassword2Template>
-        <div class="alert alert-info">Пароль совпал</div>
+        <div class="alert alert-info">{{'register-employer.rr12RER' | translate}}</div>
     </ng-template>
 
 
 
 
-  <label class="rules-link" (click)="licenseShow()">Прочитать правила использования.</label>
+  <label class="rules-link" (click)="licenseShow()">{{'register-employer.rr13RER' | translate}}</label>
   <div class="licenseText" *ngIf="bLicense">
 
 
@@ -143,16 +143,16 @@
 
   </div>
 
-    <input class="form-check-input" type="checkbox" formControlName="cbLicense" title="Я согласен !">
-        <div class="form-check-label">Я согласен с правилами использования</div>
+    <input class="form-check-input" type="checkbox" formControlName="cbLicense" [title]="'register-employer.rr14RER' | translate">
+        <div class="form-check-label">{{'register-employer.rr15RER' | translate}}</div>
 
       <div class="alertRegister"
            *ngIf="formRegisterEmployer.controls['cbLicense'].invalid && formRegisterEmployer.controls['cbLicense'].touched">
-         Без согласия с правилами использования MuCv - регистрация невозможна.
+        {{'register-employer.rr16RER' | translate}}
       </div>
 
 
-  <button class="btn-register" [disabled]="formRegisterEmployer.invalid">Зарегистрироваться</button>
+  <button class="btn-register" [disabled]="formRegisterEmployer.invalid">{{'register-employer.rr17RER' | translate}}</button>
 
 </form>
   </div>
