@@ -194,7 +194,7 @@
   "cv-previous.dlg": "Должность",
   "cv-previous.zdlg": "Занимаемая должность",
   "cv-previous.dod": "Должностные обязанности и достижения до 800 знаков",
-  "cv-previous.deleteplacejob": "Удалить данное место работы"
+  "cv-previous.deleteplacejob": "Удалить данное место работы",
   "cv-view.ifnot": "Условия выполнить невозможно",
   "cv-view.gp": "Желаемая позиция",
   "cv-view.viewprofile": "Посмотреть профиль",
@@ -309,5 +309,12 @@
   "register-employer.rr14RER" : "Я согласен !",
   "register-employer.rr15RER" : "Я согласен с правилами использования",
   "register-employer.rr16RER" : "Без согласия с правилами использования - регистрация невозможна.",
-  "register-employer.rr17RER" : "Зарегистрироваться"
+  "register-employer.rr17RER" : "Зарегистрироваться",
+
+  "footer.copiright" : "Copyright 2018 All rights reserved",
+  "footer.aboutmy" : "О нас",
+  "footer.cont" : "Контакты",
+  "footer.rules" : "Правила использования",
+  "footer.polit" : "Политика приватности"
+
 }
