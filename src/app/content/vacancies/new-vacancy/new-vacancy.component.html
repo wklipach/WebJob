@@ -52,15 +52,15 @@
 
       <label class="city">{{'allValue.сity' | translate}}</label>
 
-      <select id="inputCity" [formControlName]="inputCity" class="inputCity" title="'allValue.сity' | translate">
+      <select id="inputCity" formControlName="inputCity" class="inputCity" [title]="'allValue.сity' | translate">
         <option  *ngFor="let lc of listCity" [value]="lc.name">
           {{lc.name}}
         </option>
       </select>
 
       <label class="salary">{{'allValue.salary' | translate}}:</label>
-      <input type="text" class="inputSalaryFrom" formControlName="inputSalaryFrom" id="inputSalaryFrom" placeholder="от">
-      <input type="text" class="inputSalary" formControlName="inputSalary" id="inputSalary" placeholder="до">
+      <input type="text" class="inputSalaryFrom" formControlName="inputSalaryFrom" id="inputSalaryFrom" [placeholder]="'new-vacancy.fromNV' | translate">
+      <input type="text" class="inputSalary" formControlName="inputSalary" id="inputSalary" [placeholder]="'new-vacancy.toNV' | translate">
 
       <div class="alert alert-danger" *ngIf="newVacancyForm.controls['inputSalaryFrom'].invalid && newVacancyForm.controls['inputSalaryFrom'].touched">
         {{'new-vacancy.ozplfrom66' | translate}}

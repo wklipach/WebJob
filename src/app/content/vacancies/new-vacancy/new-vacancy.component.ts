@@ -43,6 +43,7 @@ export class NewVacancyComponent implements OnInit {
     }
 
     this.newVacancyForm  = new FormGroup({
+     'inputCity' : new FormControl('', []),
     'inputVacancyShortTitle': new FormControl('',
         [Validators.required, Validators.maxLength(90)]),
     'inputVacancyDescription': new FormControl('',
@@ -58,9 +59,7 @@ export class NewVacancyComponent implements OnInit {
       'inputjobFunction': new FormControl('',
         [Validators.required, Validators.maxLength(3000)]),
       'inputVacancyRequirements': new FormControl('',
-        [Validators.required, Validators.maxLength(3000)]),
-      'inputCity' : new FormControl('', [])
-
+        [Validators.required, Validators.maxLength(3000)])
     });
 
 /*

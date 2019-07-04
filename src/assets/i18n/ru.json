@@ -315,6 +315,26 @@
   "footer.aboutmy" : "О нас",
   "footer.cont" : "Контакты",
   "footer.rules" : "Правила использования",
-  "footer.polit" : "Политика приватности"
+  "footer.polit" : "Политика приватности",
+  "header-top.ompHT" : "Открыть меню пользователя",
+  "header-top.mpHT" : "Mеню пользователя",
+  "header-top.nvHT" : "Наши вакансии",
+  "header-top.psHT" : "Поиск сотрудников",
+  "header-top.dcHT" : "Данные соискателя",
+  "header-top.mrHT" : "Мои резюме",
+  "header-top.exitHT" : "Выйти",
+  "header-top.vsHT" : "Всего сообщений",
+  "header-top.vseventHT" : "Всего событий",
+  "header-top.inputHT" : "Войти",
+  "header-top.registrHT" : "Регистрация",
+  "header-top.russHT" : "Русский",
+  "header-top.eeHT" : "Эстонский",
+  "header-top.englHT" : "Английский",
+  "header-top.cholangHT" : "Выбор языка",
+  "header-top.mainHT" : "На главную",
+  "header-top.findHT" : "Поиск..",
+  "header-top.newcvHT" : "Новое резюме",
+  "new-vacancy.fromNV": "от",
+  "new-vacancy.toNV": "до"
 
 }

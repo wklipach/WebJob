@@ -40,7 +40,12 @@ export class VacanciesComponent implements OnInit, OnDestroy {
 
   onLoadFromBaseAvatar(k: any) {
     k.base64textString = [];
-    if (k.Avatar!= undefined) k.base64textString.push('data:image/png;base64,' + JSON.parse(k.Avatar).value);
+
+      if (typeof k.Avatar !== 'undefined') {
+            if (JSON.parse(k.Avatar) !== null) {
+              k.base64textString.push('data:image/png;base64,' + JSON.parse(k.Avatar).value);
+          }
+      }
   }
 
   constructor(private authService: AuthService,

@@ -309,5 +309,32 @@
   "register-employer.rr14RER": "I agree!",
   "register-employer.rr15RER": "I agree with the terms of use",
   "register-employer.rr16RER": "Without agreement with the terms of use - registration is impossible.",
-  "register-employer.rr17RER": "Register"
+  "register-employer.rr17RER": "Register",
+
+  "footer.copiright" : "Copyright 2018 All rights reserved",
+  "footer.aboutmy": "About us",
+  "footer.cont": "Contacts",
+  "footer.rules": "Terms of Use",
+  "footer.polit": "Privacy Policy",
+  "header-top.ompHT": "Open user menu",
+  "header-top.mpHT": "User menu",
+  "header-top.nvHT": "Our Jobs",
+  "header-top.psHT": "Employee search",
+  "header-top.dcHT": "Applicant data",
+  "header-top.mrHT": "My Resumes",
+  "header-top.exitHT": "Exit",
+  "header-top.vsHT": "Total Messages",
+  "header-top.vseventHT": "Total events",
+  "header-top.inputHT": "Login",
+  "header-top.registrHT": "Register",
+  "header-top.russHT": "Russian",
+  "header-top.eeHT": "Estonian",
+  "header-top.englHT": "English",
+  "header-top.cholangHT": "Choose a language",
+  "header-top.mainHT": "Home",
+  "header-top.findHT": "Search ..",
+  "header-top.newcvHT" : "New CV",
+  "new-vacancy.fromNV": "from",
+  "new-vacancy.toNV": "to"
+
 }
