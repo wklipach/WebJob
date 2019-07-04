@@ -1,16 +1,28 @@
 form{
   position: relative;
+  width: 100%;
   border-width: 1px;
   border-color: #0262d2;
   border-style: solid;
   border-radius: 3px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+}
+.line{
+  width: 100%;
 }
 .startDate{
+  position: absolute;
+  display: inline-block;
   margin-left: 13px;
   margin-top: 15px;
 }
+.completionDate{
+  display: inline-block;
+  margin-left: 344px;
+  margin-top: 13px;
+}
 .inputStartDate{
+  display: inline-block;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
   text-align: center;
@@ -21,74 +33,66 @@ form{
   width: 20%;
   height: 41px;
   margin-left: 15px;
-  margin-top: 41px;
+  margin-top: 20px;
   background:none;
 }
-.completionDate{
-  margin-left: 344px;
-  margin-top: 13px;
-}
 .input-completionDate{
-  display: block;
+  position: inherit;
+  display: inline-block;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
   text-align: center;
   border-style: solid;
   border-radius: 3px;
   background-color: rgb(255, 255, 255);
-  position: absolute;
   width: 20%;
   height: 41px;
   margin-left: 344px;
-  margin-top: 41px;
+  margin-top: 20px;
   background:none;
 }
 .company-name{
   display: block;
   margin-left: 15px;
-  margin-top: 100px;
+  margin-top: 20px;
 }
 .inputCompany{
   display: block;
   font-size: 1em;
-  font-family: "Proxima Nova";
   text-align: center;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
   border-style: solid;
   border-radius: 3px;
   background-color: rgb(255, 255, 255);
-  width: 563px;
+  width: 848px;
   height: 40px;
-  margin-top: 125px;
+  margin-top: 20px;
   margin-left: 15px;
 }
 
 label{
-  position: absolute;
   font-size: 1.1em;
-  font-family: "Proxima Nova";
   color: #0262d2;
   text-align: left;
 }
 .labelPreviousPosition{
   display: block;
-  margin-top: 5px;
+  margin-top: 20px;
   margin-left: 15px;
 }
 .inputpPreviousPosition{
   display: block;
   font-size: 1em;
-  font-family: "Proxima Nova";
   text-align: center;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
   border-style: solid;
   border-radius: 3px;
   background-color: rgb(255, 255, 255);
-  width: 457px;
+  width: 848px;
   height: 40px;
-  margin-top: 45px;
+  margin-top: 20px;
   margin-left: 15px;
 }
 .labelSkillsAbilities{
@@ -105,18 +109,17 @@ label{
 .labelPositionDescription{
   display: block;
   margin-left: 13px;
-  margin-top: 2px;
+  margin-top: 20px;
 }
 .inputPositionDescription{
   display: block;
   width: 848px;
   height: 190px;
   margin-left: 15px;
-  margin-top: 45px;
+  margin-top: 20px;
 }
 .btn-delete {
   display: inline-block;
-  position: relative;
   color: #484d55;
   background-color: #ffffff;
   border-color: rgb(242, 97, 0);
@@ -126,9 +129,9 @@ label{
   text-align: center;
   width: 256px;
   height: 48px;
+  margin: 15px 15px;
   margin-top: 2px;
   margin-bottom:20px;
-  margin-left: 15px;
 }
 .btn-delete:hover{
   background-color:#f26100;

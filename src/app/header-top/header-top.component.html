@@ -22,11 +22,12 @@
         <a routerLink="/advanced-search" routerLinkActive="active" *ngIf = "bEmployer"><li>{{'header-top.psHT' | translate}}</li></a>
         <a routerLink="/account-employee" routerLinkActive="active" *ngIf="!bEmployer"><li>{{'header-top.dcHT' | translate}}</li></a>
         <a routerLink="/cv-list" routerLinkActive="active" *ngIf="!bEmployer"><li>{{'header-top.mrHT' | translate}}</li></a>
+        <a routerLink="/newcv" routerLinkActive="active" *ngIf = "!bEmployer"><li>{{'header-top.newcvHT' | translate}}</li></a>
         <a routerLink="/message-center" routerLinkActive="active" *ngIf = "bEmployer"><li>{{'allValue.messagecenter' | translate}}</li></a>
         <a routerLink="/message-center" routerLinkActive="active"  *ngIf = "!bEmployer"><li>{{'allValue.messagecenter' | translate}}</li></a>
         <span class="logout" (click)="favorites()"  *ngIf = "!bEmployer"><li>{{'home.ts.sVacF' | translate}}</li></span>
 
-        <a routerLink="/newcv" routerLinkActive="active" *ngIf = "!bEmployer"><li>{{'header-top.newcvHT' | translate}}</li></a>
+
 
         <span class="logout" (click)="logout()"><li>{{'header-top.exitHT' | translate}}</li></span>
       </ul>

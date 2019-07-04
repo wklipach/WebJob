@@ -13,7 +13,7 @@ label{
   text-align: left;
 }
 .location{
-  margin-left: 15px;
+  margin-left: 13px;
 }
 .salary{
   margin-left: 270px;
@@ -27,7 +27,7 @@ label{
   border-radius: 3px;
   background-color: rgb(255, 255, 255);
   width: 275px;
-  height: 43px;
+  height: 39px;
   margin-left: 15px;
 }
 .inputSalaryFrom{
@@ -43,7 +43,7 @@ label{
   margin-left: 43px;
 }
 .position{
-  margin-left: 40px;
+  margin-left: 128px;
 }
 .inputPosition{
   font-size: 1em;
@@ -61,6 +61,11 @@ label{
   margin-left: 13px;
 }
 .inputSkillsAbilities{
+  width: 1149px;
+  height: 90px;
+  margin-left: 15px;
+}
+.inputEducation{
   width: 1149px;
   height: 90px;
   margin-left: 15px;
