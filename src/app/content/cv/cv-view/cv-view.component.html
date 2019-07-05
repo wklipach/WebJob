@@ -29,7 +29,7 @@
           <div class="city-name" *ngIf="_cvitem!= undefined">{{_cvitem.CityName}}</div>
         </div>
 
-       <label>Email</label>
+        <label>Email</label>
         <div class="contactsEmail" *ngIf="_cvitem!= undefined"> <a href="mailto:{{ _cvitem.EMail }}">{{ _cvitem.EMail }}</a></div>
 
         <label> {{'allValue.tele' | translate}}</label>
@@ -46,70 +46,75 @@
 
     <div class="rightBox">
 
-      <label>{{'cv-view.gp' | translate}}</label>
-     <!--  <div class="position" id="position"> </div> -->
+      <label class="strip">{{'cv-view.gp' | translate}}</label>
+      <!--  <div class="position" id="position"> </div> -->
       <div class="position"  *ngIf="_cvitem!= undefined">{{_cvitem.Position}}</div>
 
-      <label>{{'cv-view.birdt' | translate}}</label>
-      <div class="birth" *ngIf="_cvitem!= undefined">{{ _cvitem.DateBirth  | date:'dd.MM.yyyy'}}</div>
+      <label class="strip">{{'cv-view.birdt' | translate}}</label>
+      <div class="valueTxt" *ngIf="_cvitem!= undefined">{{ _cvitem.DateBirth  | date:'dd.MM.yyyy'}}</div>
 
-      <label>{{'cvview.workexperience'| translate}}</label>
-      <div class="workexperience" *ngFor="let lep of this._listExperience; let i = index">
+      <label class="strip">{{'cvview.workexperience'| translate}}</label>
+      <div class="valueTxt" *ngFor="let lep of this._listExperience; let i = index">
         {{lep}}
       </div>
-      <div class="workexperience" *ngIf="this._listExperience.length ===0">{{'cv-view.snu' | translate}}&nbsp;</div>
+      <div class="valueTxt" *ngIf="this._listExperience.length ===0">{{'cv-view.snu' | translate}}&nbsp;</div>
 
 
-      <label class="From">{{'allValue.salary' | translate}}</label>
-      <div class="salary" *ngIf="_cvitem!= undefined">{{_cvitem.SalaryFrom}} </div>
-      <div class="salary" *ngIf="_cvitem === undefined">{{'cv-view.nu' | translate}}&nbsp;</div>
+      <label class="strip">{{'allValue.salary' | translate}}</label>
+      <div class="valueTxt" *ngIf="_cvitem!= undefined">{{_cvitem.SalaryFrom}}&nbsp;</div>
+      <!-- Если зарплата не определена (undefined) -->
+      <div class="valueTxt" *ngIf="_cvitem === undefined">{{'cv-view.nu' | translate}}&nbsp;</div>
 
 
-      <label>{{'allValue.Employment' | translate}}</label>
-      <div class="listEmployment2" *ngFor="let Elm of this._listEmployment; let i = index">{{Elm}} </div>
+      <label class="strip">{{'allValue.Employment' | translate}}</label>
+      <div class="valueTxt" *ngFor="let Elm of this._listEmployment; let i = index">{{Elm}}</div>
 
-      <label>{{'cv-view.oniu' | translate}}</label>
+      <label class="strip">{{'cv-view.oniu' | translate}}</label>
 
 
       <div *ngIf="_cvitem.Skills!= undefined">
-        <div class="skills" appTextToHtml [sourceText]="_cvitem.Skills"></div>
+        <div class="valueTxt" appTextToHtml [sourceText]="_cvitem.Skills"></div>
       </div>
 
-      <label>{{'allValue.EducationLevel' | translate}}</label>
+      <label class="strip">{{'allValue.EducationLevel' | translate}}</label>
 
-      <div class="correspondence" *ngFor="let le of this._listEducation; let i = index">{{le}} </div>
+      <div class="valueTxt" *ngFor="let le of this._listEducation; let i = index">{{le}} </div>
 
-      <label class="labelEducation">{{'allValue.Education' | translate}}</label>
+      <label class="strip">{{'allValue.Education' | translate}}</label>
 
-      <div  *ngIf="_cvitem.sEducation!= undefined">{{_cvitem.sEducation}} </div>
+      <div class="valueTxt"  *ngIf="_cvitem.sEducation!= undefined">{{_cvitem.sEducation}} </div>
 
 
-      <label>{{'allValue.experience' | translate}}</label>
-      <div  *ngIf="_cvitem.sExperience!= undefined">{{_cvitem.sExperience}} </div>
+      <label class="strip">{{'allValue.experience' | translate}}</label>
+      <div class="valueTxt"  *ngIf="_cvitem.sExperience!= undefined">{{_cvitem.sExperience}} </div>
 
-      <label>{{'cv-view.sd' | translate}}</label>
-      <div *ngFor="let liI of this._listIndustry; let i = index">
+      <label class="strip">{{'cv-view.sd' | translate}}</label>
+      <div class="valueTxt" *ngFor="let liI of this._listIndustry; let i = index">
         {{liI}}
       </div>
 
-      <label>{{'cv-view.dreamgr' | translate}}</label>
-      <div *ngFor="let lS of this._listSchedule; let i = index">
+      <label class="strip">{{'cv-view.dreamgr' | translate}}</label>
+      <div class="valueTxt" *ngFor="let lS of this._listSchedule; let i = index">
         {{lS}}
       </div>
-      <label>{{'cv-view.plworks' | translate}}</label>
-      <div class="correspondence" *ngFor="let lP of this._listPrevious; let i = index">
-        {{'cv-view.periodworks' | translate}} {{lP['dStartDate'] | date:'dd.MM.yyyy'}} ==== {{lP['dCompletionDate'] | date:'dd.MM.yyyy'}}<br>
-        {{'cv-view.org' | translate}} {{lP['sCompany']}}<br>
-        {{'cv-view.curD' | translate}} {{lP['sPreviousPosition']}}<br>
-        {{'cv-view.descr' | translate}} {{lP['sInputPositionDescription']}}
+
+      <div class="previous">
+
+        <label class="strip">{{'cv-view.plworks' | translate}}</label>
+      <div *ngFor="let lP of this._listPrevious; let i = index">
+        <div class="valueTxt">{{'cv-view.periodworks' | translate}} {{lP['dStartDate'] | date:'dd.MM.yyyy'}} - {{lP['dCompletionDate'] | date:'dd.MM.yyyy'}}</div>
+        <div class="valueTxt">{{'cv-view.org' | translate}} {{lP['sCompany']}} </div>
+        <div class="valueTxt">{{'cv-view.curD' | translate}} {{lP['sPreviousPosition']}}</div>
+        <div class="valueTxt">{{'cv-view.descr' | translate}} {{lP['sInputPositionDescription']}}</div>
+      </div>
 
       </div>
 
     </div>
 
-<!--    <div class="message">Это какой-то меседж !</div>-->
-
   </div>
+
 </div>
+
 
 

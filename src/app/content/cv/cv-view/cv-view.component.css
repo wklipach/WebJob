@@ -1,3 +1,6 @@
+.wrapper{
+  margin-bottom: 50px;
+}
 form{
   position: absolute;
 }
@@ -12,12 +15,20 @@ label{
   display: block;
   color: #0262d2;
   width: 96%;
-  border-top: solid 1px #b8b8b8;
+  margin-bottom: 4px;
+  padding-top: 2px;
 }
-.listEmployment2{
+.valueTxt{
+  display: block;
   font-size:1em;
-  margin-top: 6px;
-  padding-bottom: 12px;
+  max-width: 95%;
+  margin: 0 21px;
+}
+.strip{
+  border-top: dotted 1px #b8b8b8;
+}
+.listEmployment{
+
 }
 .logotype{
   width: 190px;
@@ -43,11 +54,6 @@ label{
   margin-left: 12px;
   overflow: hidden;
 }
-.birth{
-  font-size:1em;
-  margin-top: 6px;
-  padding-bottom: 12px;
-}
 .contactsLang, .contactsEmail, .contactsPhone{
   margin: 1% 0 2% 8%;
   overflow: auto;
@@ -56,23 +62,9 @@ label{
   display: block;
   font-size: 1.2em;
   height: auto;
-  max-width: 95%;
+  max-width: 96%;
   margin-top: 6px;
-  padding-bottom: 12px;
-}
-.workexperience{
-  display: block;
-  font-size: 1em;
-  max-width: 95%;
-  margin-top: 6px;
-  padding-bottom: 12px;
-}
-.salary{
-  display: block;
-  font-size: 1em;
-  max-width: 95%;
-  margin-top: 6px;
-  padding-bottom: 12px;
+  padding-bottom: 8px;
 }
 .cv-box{
   position: relative;
@@ -91,44 +83,18 @@ label{
   min-height: 500px;
   padding-left: 3%;
   border-left: solid 1px #b8b8b8;
+  margin-bottom: 5px;
 }
-.skills{
-  color: rgb(68, 75, 84);
-  max-height: 100px;
-  text-align: left;
-  margin-top: 1px;
-  margin-left: 1px;
-  padding-right: 10px;
-  overflow: auto;
-}
-.valueTxt{
-  height: auto;
-  font-size:1.1em;
-  word-break: break-all;
-}
+
 .langLevel{
   display: inline-block;
   margin-right: 20%;
   float: right;
 }
-.message.error {
-  z-index: 1;
-  background: #e94e26;
-  color: #fff !important;
+.last .valueTxt:last-child{
+  font-size: 30px;
 }
-.message {
-  border-radius: 3px;
-  box-sizing: border-box;
-  animation-name: slide;
-  animation-duration: .3s;
-  left: -50%;
-  line-height: 1.15;
-  margin-left: 100px;
-  max-width: 300px;
-  padding: 6px 15px;
-  position: absolute;
-  top: 0;
-  width: 1000px;
-  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .4);
-  text-align: left;
+.previous{
+  position: relative;
+  margin-bottom: 100px;
 }
