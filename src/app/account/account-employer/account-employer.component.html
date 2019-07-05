@@ -11,7 +11,7 @@
     <form [formGroup]="form">
 
 
-      <div *ngIf="base64textString.length>0; then contentLoadAvatar else contentDefault">Условия выполнить невозможно</div>
+      <div *ngIf="base64textString.length>0; then contentLoadAvatar else contentDefault">{{'account-employer.uvnAER' | translate}}</div>
       <ng-template #contentLoadAvatar>
         <img class="logotype" [title]="'account-employer.loadlogo31' | translate" *ngFor="let item of base64textString"  src={{item}} [alt]="'account-employer.loadlogo31' | translate" id="img" onclick="document.getElementById('avatar').click()">
       </ng-template>
@@ -30,10 +30,10 @@
     <form [formGroup]="accountEmployerForm">
 
       <label class="user-name">{{'allValue.UserName' | translate }}</label>
-      <input type="text" class="inputUserName" id="inputUserName" formControlName="inputUserName" placeholder="введите имя пользователя">
+      <input type="text" class="inputUserName" id="inputUserName" formControlName="inputUserName" [placeholder]="'account-employer.vvipAER' | translate">
 
       <label class="email">Email</label>
-      <input type="text" class="inputEmail" id="inputEmail" formControlName="inputEmail" placeholder="введите Email">
+      <input type="text" class="inputEmail" id="inputEmail" formControlName="inputEmail" [placeholder]="'account-employer.vvemailAER' | translate">
 
       <!-- начало обработки почтовых ошибок -->
 
@@ -41,26 +41,26 @@
 
         <div class="alert alert-danger"
              *ngIf="accountEmployerForm.controls['inputEmail'].value.length === 0 ">
-          Не указан Email.
+          {{'account-employer.neuemailAER' | translate}}
         </div>
 
         <div *ngIf="accountEmployerForm.controls['inputEmail'].value.length > 0">
           <div *ngIf="accountEmployerForm.controls['inputEmail'].invalid; else trueSucc">
             <div class="alert alert-danger"
                  *ngIf="accountEmployerForm.controls['inputEmail'].hasError('errorEmailExists') === true">
-              Данный Email уже занят.
+              {{'account-employer.demailuzAER' | translate}}
             </div>
 
             <div class="alert alert-danger"
                  *ngIf="accountEmployerForm.controls['inputEmail'].hasError('email') === true">
-              Неверно введен Email.
+              {{'account-employer.eevvemailAER' | translate}}
             </div>
 
           </div>
 
           <ng-template #trueSucc>
 
-            <div class="alert alert-info">Email свободен.</div>
+            <div class="alert alert-info">{{'account-employer.emailfreeAER' | translate}}</div>
 
           </ng-template>
 
@@ -87,7 +87,7 @@
       </select>
 
       <label class="zip">{{'allValue.postindex' | translate}}</label>
-      <input type="text" class="inputZip" id="inputZip" formControlName="inputZip" placeholder="введите индекс">
+      <input type="text" class="inputZip" id="inputZip" formControlName="inputZip" [placeholder]="'account-employer.vvindexAER' | translate">
 
       <label class="home-address">{{'allValue.address' | translate}}</label>
       <input type="text" class="inputHomeAddress" id="inputAddress" formControlName="inputAddress" [placeholder]="'allValue.address' | translate" maxlength="100">
@@ -105,42 +105,42 @@
       <input type="text" class="inputContactPerson" id="inputContactPerson" formControlName="inputContactPerson" [placeholder]="'allValue.contactF' | translate">
 
       <label class="about">{{'allValue.aboutcomp' | translate}}</label>
-      <textarea class="inputAbout" maxlength="1000" aria-label="О компании. До 1000 знаков"
-                formControlName="inputAbout" id="inputAbout" placeholder="О компании. До 1000 знаков"></textarea>
+      <textarea class="inputAbout" maxlength="1000" [title]="'account-employer.okd1000zAER' | translate"
+                formControlName="inputAbout" id="inputAbout" [placeholder]="'account-employer.okd1000zAER' | translate"></textarea>
 
       <img class="img-lock" src="/assets/img/lock.png" [alt]="'allValue.changepwd' | translate" [title]="'allValue.changepwd' | translate">
       <label class="changePass" (click)="accessPassword()"> {{'allValue.changepwd2' | translate}} </label>
 
       <ng-container *ngIf="bShowChangePassword">
         <div class="changepassBox">
-          <input type="password" class="inputNewPassword1" id="inputNewPassword1" formControlName="inputNewPassword1" placeholder="Введите новый пароль">
-          <input type="password" class="inputNewPassword2" id="inputNewPassword2" formControlName="inputNewPassword2" placeholder="Повторите пароль">
+          <input type="password" class="inputNewPassword1" id="inputNewPassword1" formControlName="inputNewPassword1" [placeholder]="'account-employer.vvnewpvdAER' | translate">
+          <input type="password" class="inputNewPassword2" id="inputNewPassword2" formControlName="inputNewPassword2" [placeholder]="'account-employer.repeatpwdAER' | translate">
 
           <div *ngIf="accountEmployerForm.controls['inputNewPassword2'].value.length > 0">
             <div *ngIf="accountEmployerForm.controls['inputNewPassword2'].invalid; else truePassword2Template">
               <!-- <div>Пароли не совпадают</div> -->
-              <app-dialogminimum name="Пароли не совпадают"></app-dialogminimum>
+              <app-dialogminimum [name]="'account-employer.pwdnsAER' | translate"></app-dialogminimum>
             </div>
           </div>
 
           <ng-template #truePassword2Template>
-            <div class="alert alert-info">Пароль совпал</div>
+            <div class="alert alert-info">{{'account-employer.pwdsspAER' | translate}}</div>
           </ng-template>
 
 
           <button type="submit" class="btn-newPassword" (click)="NewPassword()">{{'allValue.changepwd2' | translate}}</button>
-          <ng-container *ngIf="bPasswordNew">Пароль изменен</ng-container>
+          <ng-container *ngIf="bPasswordNew">{{'account-employer.pwdchangeAER' | translate}}</ng-container>
 
           <!--
           <div class="alert-pass" *ngIf="bErrorRepeatPassword">Пароли не совпадают</div>
           -->
 
           <div class="alert-pass" *ngIf="bErrorRepeatPassword">
-            <app-dialogminimum name="Пароли не совпадают"></app-dialogminimum>
+            <app-dialogminimum [name]="'account-employer.pwdnsAER' | translate"></app-dialogminimum>
           </div>
 
           <div class="alert-pass" *ngIf="bErrorEmptyPassword">
-            <app-dialogminimum name="Пароли не должны быть пустыми"></app-dialogminimum>
+            <app-dialogminimum [name]="'account-employer.pwdndbpAER' | translate"></app-dialogminimum>
           </div>
 
           <button class="btn-newPassword2" (click)="DisappearFrame()">{{'allValue.Cancel' | translate}}</button>

@@ -3,7 +3,7 @@
     {{'message-container.messages' | translate}}
   </div>
 
-  <div class="messages-box" title="Перейти к переписке.">
+  <div class="messages-box" [title]="'messages-container.pkpMSC' | translate">
     <div class="message" id="message" *ngFor="let curLetter of myDataLetter; let i = index" (click)="curLetterClick(curLetter.id, curLetter.id_cv, curLetter.id_vc, $event)">
 
       <div [class.boldletter]="(curLetter.id_user_from !== this.id_user) && (curLetter.bOld === 0)">
@@ -12,18 +12,18 @@
         <div class="v-line"> </div>
         <ul class="headline">
           <li class="date">{{'allValue.date' | translate}}</li>
-          <li class="from">От</li>
-          <li class="subject">Тема</li>
+          <li class="from">{{'messages-container.fromMSC' | translate}}</li>
+          <li class="subject">{{'messages-container.themeMSC' | translate}}</li>
           <li> </li>
 
 
         </ul>
 
-        <div class="deleteCorrespondence" id="frameDelete" *ngIf="contactMethods[i].bDelete === true" title="Вы уверены?">
-          <span class="question">Вы уверены, что хотите удалить данную переписку?</span>
+        <div class="deleteCorrespondence" id="frameDelete" *ngIf="contactMethods[i].bDelete === true" [title]="'messages-container.vuMSC' | translate">
+          <span class="question">{{'messages-container.vuchupMSC' | translate}}</span>
 
-          <button type="button" class="btn" id="btnDelete" (click)="DeleteElement(curLetter,i)" title="Да">Да</button>
-          <button type="button" class="btn" id="btnUnDelete" (click)="UnDeleteElement(curLetter,i)" title="Нет">Нет</button>
+          <button type="button" class="btn" id="btnDelete" (click)="DeleteElement(curLetter,i)" [title]="'messages-container.yesMSC' | translate">{{'messages-container.yesMSC' | translate}}</button>
+          <button type="button" class="btn" id="btnUnDelete" (click)="UnDeleteElement(curLetter,i)" [title]="'messages-container.noMSC' | translate">{{'messages-container.noMSC' | translate}}</button>
 
         </div>
 
@@ -31,7 +31,7 @@
           <li class="date">{{curLetter.DateTimeCreate  | date: 'dd-MM-yyyy HH:mm'}}</li>
           <li class="from">{{curLetter.UserNameFrom}}</li>
           <li class="subject">{{'allValue.responsevac' | translate}}: {{curLetter.VacancyShortTitle}} </li>
-          <li *ngIf = "this.router.url=== '/message-center' || this.router.url=== '/messages'"><img class="trash" id="trash" src="/assets/img/trash.png" title="Удалить переписку" (click)="curDeleteClick(i, curLetter.id_cv, curLetter.id_vc, $event)"></li>
+          <li *ngIf = "this.router.url=== '/message-center' || this.router.url=== '/messages'"><img class="trash" id="trash" src="/assets/img/trash.png" [title]="'messages-container.uppMSC' | translate" (click)="curDeleteClick(i, curLetter.id_cv, curLetter.id_vc, $event)"></li>
         </ul>
 
         <div class="txt"> {{curLetter.letterText}} </div>

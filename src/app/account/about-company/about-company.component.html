@@ -7,13 +7,13 @@
     <div class="company-name">{{_myName}}</div>
 
    <div class="top">
-    <div *ngIf="base64textString.length>0; then contentLoadAvatar else contentDefault">Условия выполнить невозможно</div>
+    <div *ngIf="base64textString.length>0; then contentLoadAvatar else contentDefault">{{'about-company.uvnAC' | translate}}</div>
     <ng-template #contentLoadAvatar>
-      <img class="logotype" title="Логотип." *ngFor="let item of base64textString"  src={{item}} alt="Логотип." id="img">
+      <img class="logotype" [title]="'about-company.logoC' | translate" *ngFor="let item of base64textString"  src={{item}} [alt]="'about-company.logoC' | translate" id="img">
     </ng-template>
 
     <ng-template #contentDefault>
-      <img src="/assets/img/no-photo.png"  title="Логотип." alt="Логотип." class="img-thumbnail">
+      <img src="/assets/img/no-photo.png"  [title]="'about-company.logoC' | translate" [alt]="'about-company.logoC' | translate" class="img-thumbnail">
     </ng-template>
 
     </div>

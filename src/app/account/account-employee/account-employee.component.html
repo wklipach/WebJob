@@ -1,7 +1,7 @@
 <app-header-top></app-header-top>
 
 <div class="wrapper">
-  <div class="top">Мой профиль</div>
+  <div class="top">{{'account-employee.myprofileAE' | translate}}</div>
 
   <div class="profile">
     <div class="v-line"></div>
@@ -12,9 +12,9 @@
         -->
 
     <form [formGroup]="form">
-      <div *ngIf="base64textString.length>0;then contentLoadAvatar else contentDefault">условия выполнить невозможно</div>
+      <div *ngIf="base64textString.length>0;then contentLoadAvatar else contentDefault">{{'account-employee.uvnAE' | translate}}</div>
       <ng-template #contentLoadAvatar>
-        <img class="logotype" *ngFor="let item of base64textString"  src={{item}} alt="Загрузить фото" id="img" onclick="document.getElementById('avatar').click()">
+        <img class="logotype" *ngFor="let item of base64textString"  src={{item}} [alt]="'account-employee.zfAE' | translate" id="img" onclick="document.getElementById('avatar').click()">
       </ng-template>
 
       <ng-template #contentDefault>
@@ -27,24 +27,24 @@
 
     <form class="employee-form" [formGroup]="accountEmployeeForm">
 
-     <label class="photo-upload" onclick="document.getElementById('avatar').click()">Загрузить фото</label>
+     <label class="photo-upload" onclick="document.getElementById('avatar').click()">{{'account-employee.zfAE' | translate}}</label>
 
       <label class="user-name">{{'allValue.UserName' | translate}}</label>
-      <input type="text" class="inputUserName" id="inputUserName" formControlName="inputUserName" placeholder="введите имя пользователя" maxlength="100">
+      <input type="text" class="inputUserName" id="inputUserName" formControlName="inputUserName" [placeholder]="'account-employee.vipAE' | translate" maxlength="100">
 
       <label class="email">Email</label>
-      <input type="text" class="inputEmail" id="inputEmail" formControlName="inputEmail" placeholder="введите Email">
+      <input type="text" class="inputEmail" id="inputEmail" formControlName="inputEmail" [placeholder]="'account-employee.vemailAE' | translate">
 
 
-      <label class="gender">Выбрать пол</label>
-      <select class="inputGender" id="inputGender" formControlName="inputGender"  title="Выбрать пол">
+      <label class="gender">{{'account-employee.vpppvAE' | translate}}</label>
+      <select class="inputGender" id="inputGender" formControlName="inputGender"  [title]="'account-employee.vpppvAE' | translate">
         <option  *ngFor="let gl of genderList" [value]="gl.name">
           {{gl.name}}
         </option>
       </select>
 
 
-      <label class="birth" for="inputBirth">Дата рождения</label>
+      <label class="birth" for="inputBirth">{{'account-employee.datebirAE' | translate}}}</label>
       <input  class="inputBirth" type="date" id="inputBirth" name="inputBirth" formControlName="inputBirth">
 
 
@@ -54,26 +54,26 @@
 
         <div class="alert alert-danger"
              *ngIf="accountEmployeeForm.controls['inputEmail'].value.length === 0 ">
-          Не указан Email.
+          {{'account-employee.nuemailAE' | translate}}
         </div>
 
         <div *ngIf="accountEmployeeForm.controls['inputEmail'].value.length > 0">
           <div *ngIf="accountEmployeeForm.controls['inputEmail'].invalid; else trueSucc">
             <div class="alert alert-danger"
                  *ngIf="accountEmployeeForm.controls['inputEmail'].hasError('errorEmailExists') === true">
-              Данный Email уже занят.
+              {{'account-employee.demailuzAE' | translate}}
             </div>
 
             <div class="alert alert-danger"
                  *ngIf="accountEmployeeForm.controls['inputEmail'].hasError('email') === true">
-              Неверно введен Email.
+              {{'account-employee.nvvemailAE' | translate}}
             </div>
 
           </div>
 
           <ng-template #trueSucc>
 
-            <div class="alert alert-info">Email свободен.</div>
+            <div class="alert alert-info">{{'account-employee.emailsAE' | translate}}</div>
 
           </ng-template>
 
@@ -83,11 +83,11 @@
 
       <!-- закончили обработку почтовых ошибок -->
 
-      <label class="name">Имя</label>
-      <input type="text" class="input-name" id="inputName" formControlName="inputName" placeholder="Имя">
+      <label class="name">{{'account-employee.nameAE' | translate}}</label>
+      <input type="text" class="input-name" id="inputName" formControlName="inputName" [placeholder]="'account-employee.nameAE' | translate">
 
-      <label class="lastname">Фамилия</label>
-      <input type="text" class="inputLastname" id="inputLastname" formControlName="inputLastName" placeholder="введите фамилию">
+      <label class="lastname">{{'account-employee.familyAE' | translate}}</label>
+      <input type="text" class="inputLastname" id="inputLastname" formControlName="inputLastName" [placeholder]="'account-employee.vvfamilyAE' | translate">
 
       <label class="location">{{'allValue.сity' | translate}}</label>
       <select id="inputCity" formControlName="inputCity" class="inputCity" [title]="'allValue.сity' | translate">
@@ -97,11 +97,11 @@
       </select>
 
       <label class="zip">{{'allValue.postindex' | translate}}</label>
-      <input type="text" class="inputZip" id="inputZip" formControlName="inputZip" placeholder="введите индекс">
+      <input type="text" class="inputZip" id="inputZip" formControlName="inputZip" [placeholder]="'account-employee.vvindexAE' | translate">
 
 
-      <label class="home-address">Домашний адрес</label>
-      <input type="text" class="inputHomeAddress" id="inputAddress" formControlName="inputAddress" placeholder="Домашний адрес" maxlength="100">
+      <label class="home-address">{{'account-employee.dadrrAE' | translate}}</label>
+      <input type="text" class="inputHomeAddress" id="inputAddress" formControlName="inputAddress" [placeholder]="'account-employee.dadrrAE' | translate" maxlength="100">
 
       <label class="phone">{{'allValue.tele' | translate}}</label>
       <input type="text" class="inputPhone" id="inputPhone" formControlName="inputPhone" [placeholder]="'allValue.tele' | translate">
@@ -114,23 +114,23 @@
 
       <ng-container *ngIf="bShowChangePassword">
         <div class="changepassBox">
-          <input type="password" class="inputNewPassword1" id="inputNewPassword1" formControlName="inputNewPassword1" placeholder="Введите новый пароль">
-          <input type="password" class="inputNewPassword2" id="inputNewPassword2" formControlName="inputNewPassword2" placeholder="Повторите пароль">
+          <input type="password" class="inputNewPassword1" id="inputNewPassword1" formControlName="inputNewPassword1" [placeholder]="'account-employee.vvnewpwdAE' | translate">
+          <input type="password" class="inputNewPassword2" id="inputNewPassword2" formControlName="inputNewPassword2" [placeholder]="'account-employee.repeatpwdAE' | translate">
 
           <div *ngIf="accountEmployeeForm.controls['inputNewPassword2'].value.length > 0">
             <div *ngIf="accountEmployeeForm.controls['inputNewPassword2'].invalid; else truePassword2Template">
-              <div class="alert alert-danger">Повторный пароль не совпадает</div>
+              <div class="alert alert-danger">{{'account-employee.repeatpwdnsAE' | translate}}</div>
             </div>
           </div>
 
           <ng-template #truePassword2Template>
-            <div class="alert alert-info">Пароль совпал</div>
+            <div class="alert alert-info">{{'account-employee.pwdssuAE' | translate}}</div>
           </ng-template>
 
           <button type="submit" class="btn-newPassword" (click)="NewPassword()">{{'allValue.changepwd2' | translate}}</button>
-          <ng-container *ngIf="bPasswordNew">Пароль изменен</ng-container>
-          <div class="alert-pass" *ngIf="bErrorRepeatPassword">Пароли не совпадают</div>
-          <div class="alert-pass" *ngIf="bErrorEmptyPassword">Пароли не должны быть пустыми</div>
+          <ng-container *ngIf="bPasswordNew">{{'account-employee.pwdiAE' | translate}}</ng-container>
+          <div class="alert-pass" *ngIf="bErrorRepeatPassword">{{'account-employee.pwdnserrAE' | translate}}</div>
+          <div class="alert-pass" *ngIf="bErrorEmptyPassword">{{'account-employee.pwdndbpAE' | translate}}</div>
           <button class="btn-newPasswordCancel" (click)="DisappearFrame()">{{'allValue.Cancel' | translate}}</button>
         </div>
 

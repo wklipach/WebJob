@@ -17,13 +17,13 @@
 
 
     <!-- ////////////////////////// -->
-    <div *ngIf="curVacancy.base64textString.length>0; then contentLoadAvatar else contentDefault">условия выполнить невозможно</div>
+    <div *ngIf="curVacancy.base64textString.length>0; then contentLoadAvatar else contentDefault">{{'home.uvnHOME' | translate}}</div>
     <ng-template #contentLoadAvatar>
-      <img class="logotype" *ngFor="let item of curVacancy.base64textString"  src={{item}} alt="Логотип компании" id="img">
+      <img class="logotype" *ngFor="let item of curVacancy.base64textString"  src={{item}} [alt]="'home.lcHOME' | translate" id="img">
     </ng-template>
 
     <ng-template #contentDefault>
-          <img class="logotype-company" src="/assets/img/no-photo.png" alt="Логотип компании">
+          <img class="logotype-company" src="/assets/img/no-photo.png" [alt]="'home.lcHOME' | translate">
     </ng-template>
     <!-- ////////////////////////// -->
 
@@ -32,13 +32,13 @@
     <span class="description">{{curVacancy.Conditions}}</span>
 
     <div *ngIf="!curVacancy.errorEndDay">
-          <span class="final-date">Размещено до {{curVacancy.sDateEnd}}</span>
-         <span class="number">Дата размещения {{curVacancy.DateTimeCreate}}</span>
+          <span class="final-date">{{'home.razdHOME' | translate}} {{curVacancy.sDateEnd}}</span>
+         <span class="number">{{'home.daterHOME' | translate}} {{curVacancy.DateTimeCreate}}</span>
     </div>
 
 
     <button class="btn-response" type="button" id="vcresponse" [title]="'allValue.Response' | translate" (click)="response(i, curVacancy.id)" >{{'allValue.Response' | translate}}</button>
-    <button class="btn-favorites" type="button" id="vcfavorites" title="В избранное" (click)="favorites($event,i, curVacancy.id)" >
+    <button class="btn-favorites" type="button" id="vcfavorites" [title]="'home.viHOME' | translate" (click)="favorites($event,i, curVacancy.id)" >
       <img class="favor-star" src="/assets/img/favor-star.png" [title]="'allValue.DontShow' | translate">
       В избранное</button>
     <button class="btn-hide" type="button" id="vchide" [title]="'allValue.DontShow' | translate" (click)="unshow($event,i, curVacancy.id)">
@@ -55,7 +55,7 @@
 
 
     <ul>
-      <label class="form-check-input">Выводить по:</label>
+      <label class="form-check-input">{{'home.vvpHOME' | translate}}</label>
      <li>
     <label class="form-check-input">
       <input   (click) = "OnClickRowPerPage(5)" type="radio" name="rRow" id="rRow5" [value]="5" [checked]="bChecked5">5
