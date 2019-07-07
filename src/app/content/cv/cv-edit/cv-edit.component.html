@@ -6,62 +6,93 @@
 
   <form [formGroup]="editCVForm">
     <div class="cv-box">
-
+<div class="line">
       <label for="inputCity" class="location">{{'allValue.сity' | translate}}</label>
+
+
+  <label class="salary">{{'allValue.salary' | translate}}</label>
+
+  <label class="label-position">{{'cv-edit.gd' | translate}}</label>
+
+</div>
+
+      <div class="line">
+
+
       <select id="inputCity" formControlName="inputCity" class="inputCity" [title]="'allValue.сity' | translate">
         <option  *ngFor="let lc of listCity" [value]="lc.name">
           {{lc.name}}
         </option>
       </select>
 
-      <label class="salary">{{'allValue.salary' | translate}}</label>
       <input type="text" class="inputSalaryFrom" formControlName="inputSalaryFrom" id="inputSalaryFrom" [placeholder]="'cv-edit.from' | translate">
 
-      <label class="label-position">{{'cv-edit.gd' | translate}}</label>
+
       <input type="text" class="position" formControlName="inputPosition" id="inputPosition" [placeholder]="'cv-edit.gd' | translate">
 
+    </div>
 
+      <div class="line">
       <label class="labelSkillsAbilities">{{'cv-edit.ni' | translate}}</label>
+      </div>
+
+      <div class="line">
       <textarea class="inputSkillsAbilities" [title]="'cv-edit.ni100' | translate" formControlName="inputSkillsAbilities" id="inputSkillsAbilities"
                 [placeholder]="'cv-edit.ni100' | translate"></textarea>
+      </div>
 
+      <div class="line">
+        <app-cv-education></app-cv-education>
+      </div>
+
+      <label class="Education">{{'school' | translate}}</label>
+
+      <div class="line">
       <textarea class="inputEducation" [title]="'cv-edit.univ100' | translate"
                 formControlName="inputEducation" id="inputEducation" [placeholder]="'cv-edit.univ100' | translate"></textarea>
+      </div>
 
-      <textarea class="inputExperience" aria-label="'allValue.experience1000' | translate"
-                formControlName="inputExperience" id="inputExperience" [placeholder]="'allValue.experience1000' | translate"></textarea>
-
-
-      <!--
-      <p>{{promPer}}</p>
-      <p appTextToHtml [sourceText]="promPer"></p>
-
-      -->
-
-
-      <!-- Отрасль-->
-      <app-cv_industry></app-cv_industry>
-      <!-- Занятость -->
-      <app-cv-employment></app-cv-employment>
-      <!-- график работы-->
-      <app-cv-schedule></app-cv-schedule>
-      <!-- Опыт работы-->
-      <app-cv-experience></app-cv-experience>
-      <!-- Образование-->
-      <app-cv-education></app-cv-education>
-
-      <ng-container #spot></ng-container>
-      <button class="btn-add"  (click)="createNewBlock()">{{'cv-edit.addjobplace' | translate}}</button>
 
       <div class="line">
         <ng-container #spotLanguage></ng-container>
         <button class="btn-add"  (click)="createNewLanguageBlock()">{{'cv-edit.addlangknow' | translate}}</button>
       </div>
 
+      <div class="line">
+        <!-- Опыт работы -->
+        <app-cv-experience></app-cv-experience>
+      </div>
 
+
+      <div class="line">
+        <ng-container #spot></ng-container>
+        <button class="btn-add"  (click)="createNewBlock()">{{'cv-edit.addjobplace' | translate}}</button>
+      </div>
+
+      <div class="line">
+      <!-- Занятость -->
+      <app-cv-employment></app-cv-employment>
+      </div>
+      <div class="line">
+      <!-- график работы-->
+      <app-cv-schedule></app-cv-schedule>
+      </div>
+      <div class="line">
+      <!-- Отрасль-->
+      <app-cv_industry></app-cv_industry>
+      </div>
+
+      <label>{{'newcv.additionalInfo' | translate}}</label>
+
+      <div class="line">
+      <textarea class="inputExperience" [title]="'newcv.additionalInfo' | translate"
+                formControlName="inputExperience" id="inputExperience" [placeholder]="'newcv.additionalInfo1000' | translate"></textarea>
+      </div>
+
+      <div class="line">
       <button class="btn-save" (click)="savecv()">{{'cv-edit.savecv' | translate}}</button>
       <button class="btn-cancel" routerLink="/cv-list" routerLinkActive="active">{{'allValue.Cancel' | translate}}</button>
-
+      </div>
 
     </div>
   </form>

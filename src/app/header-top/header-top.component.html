@@ -21,8 +21,8 @@
         <a routerLink="/vacancies" routerLinkActive="active" *ngIf = "bEmployer"><li>{{'header-top.nvHT' | translate}}</li></a>
         <a routerLink="/advanced-search" routerLinkActive="active" *ngIf = "bEmployer"><li>{{'header-top.psHT' | translate}}</li></a>
         <a routerLink="/account-employee" routerLinkActive="active" *ngIf="!bEmployer"><li>{{'header-top.dcHT' | translate}}</li></a>
-        <a routerLink="/cv-list" routerLinkActive="active" *ngIf="!bEmployer"><li>{{'header-top.mrHT' | translate}}</li></a>
         <a routerLink="/newcv" routerLinkActive="active" *ngIf = "!bEmployer"><li>{{'header-top.newcvHT' | translate}}</li></a>
+        <a routerLink="/cv-list" routerLinkActive="active" *ngIf="!bEmployer"><li>{{'header-top.mrHT' | translate}}</li></a>
         <a routerLink="/message-center" routerLinkActive="active" *ngIf = "bEmployer"><li>{{'allValue.messagecenter' | translate}}</li></a>
         <a routerLink="/message-center" routerLinkActive="active"  *ngIf = "!bEmployer"><li>{{'allValue.messagecenter' | translate}}</li></a>
         <span class="logout" (click)="favorites()"  *ngIf = "!bEmployer"><li>{{'home.ts.sVacF' | translate}}</li></span>

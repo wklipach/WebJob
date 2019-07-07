@@ -31,29 +31,25 @@
                   [placeholder]="'newcv.onu231000' | translate"></textarea>
       </div>
       <div class="line">
+        <!-- Образование -->
         <app-cv-education></app-cv-education>
       </div>
 
+      <label class="Education">{{'school' | translate}}</label>
       <div class="line">
+
       <textarea class="inputEducation" [title]="'newcv.u231000' | translate"
                 formControlName="inputEducation" id="inputEducation" [placeholder]="'newcv.u231000' | translate"></textarea>
       </div>
-
-      <div class="line">
-      <textarea class="inputExperience" [title]="'allValue.experience1000' | translate"
-                formControlName="inputExperience" id="inputExperience" [placeholder]="'allValue.experience1000' | translate"></textarea>
-      </div>
-
-
       <div class="line">
         <ng-container #spotLanguage></ng-container>
         <button class="btn-add"  (click)="createNewLanguageBlock()">{{'newcv.addlang23' | translate}}</button>
       </div>
+
       <div class="line">
         <!-- Опыт работы -->
         <app-cv-experience></app-cv-experience>
       </div>
-
 
       <div class="line">
         <ng-container #spot></ng-container>
@@ -68,10 +64,17 @@
         <!-- график работы -->
         <app-cv-schedule></app-cv-schedule>
       </div>
-      <!-- Образование -->
+
 
       <!-- Отрасль -->
       <app-cv_industry></app-cv_industry>
+
+      <label>{{'newcv.additionalInfo' | translate}}</label>
+
+      <div class="line">
+      <textarea class="inputExperience" [title]="'allValue.experience1000' | translate"
+                formControlName="inputExperience" id="inputExperience" [placeholder]="'newcv.additionalInfo1000' | translate"></textarea>
+      </div>
 
       <div class="line">
         <button class="btn-save"  (click)="newcv()">{{'newcv.savecv23' | translate}}</button>

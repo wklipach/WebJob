@@ -1,10 +1,15 @@
 .box{
   width: 100%;
-  margin: 0 auto;
 }
-.cvlist{
-  width: 100%;
-  margin: 0 auto;
+.box:hover{
+  background-color: #f8f8f8;
+}
+span{
+  display: block;
+  width:100%;
+  margin: 30px auto;
+  border-top: solid 1px #b7b7b7;
+  color: rgb(68, 75, 84);
 }
 .v-line{
   display: inline-block;
@@ -13,59 +18,45 @@
   height:auto;
   background-color: #b8b8b8;
 }
-ul{
-  list-style: none;
-  display: inline-block;
-}
-li{
-  position: relative;
-  display: inline-block;
-  font-family: Proxima Nova,sans-serif;
-}
 .head-line{
-  display: inline-block;
-  font-family: Proxima Nova,sans-serif;
   background-color: #DFDFDF;
-  margin-left: 30px;
-  width: 94%;
+}
+.radio{
+  display: inline-block;
+  width: 50px;
+
+}
+.date{
+  display: inline-block;
+  width:90px;
+
+}
+.city{
+  display: inline-block;
+  width:120px;
+
+}
+.salary{
+  display: inline-block;
+  width:90px;
+
+}
+.position{
+  display: inline-block;
+  width:570px;
+
 }
 .botom-line{
   display: inline-block;
+  margin-top: 10px;
+}
+.comment{
+  display: block;
   width: 100%;
-  height: auto;
-  border-color: #b7b7b7;
-  margin-left: 30px;
-  margin-top: -1px;
+  margin-top: 30px;
 }
-.date{
-  width:10%;
-}
-.city{
-  width:18%;
-}
-.position{
-  width:55%;
-}
-.salary{
-  width:11%;
-}
-.choice{
-  width: 230px;
-}
-.selectChoice{
-  border-width: 1px;
-  border-color: rgb(68, 75, 84);
-  text-align: left;
-  border-style: solid;
-  border-radius: 3px;
-  background-color: rgb(255, 255, 255);
-  position: absolute;
-  width: 228px;
-  height: 33px;
-  margin-top: -20px;
-  margin-left: 20px;
-}
-.btn-newcv{
+
+.btn-send{
   display: inline-block;
   position: absolute;
   border-radius: 3px;
@@ -78,26 +69,14 @@ li{
   border-style: solid;
   margin-top: 1%;
 }
-.btn-newcv:hover{
+.btn-send:hover{
   background-color: #0066cc;
   font-weight:600;
 }
-.btn-newcv:active{
+.btn-send:active{
   border-color: #3399ff;
   border-style: solid;
   border-width: 3px;
   border-radius: 3px;
-  font-weight: 500;
-}
-.radio-place{
-  position: absolute;
-  display: inline-block;
-  width:30px;
-  height:30px;
-  margin-top:30px;
-}
-.comment{
-  display: block;
-  width: 935px;
-  margin-top: 13px;
+  font-weight: 600;
 }

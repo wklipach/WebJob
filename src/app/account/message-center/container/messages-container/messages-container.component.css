@@ -72,3 +72,10 @@ li{
 .question, .btn{
   margin-left: 20px;
 }
+.btn-delete{
+  width: 50px;
+  margin-left: 15px;
+}
+.btn-delete:hover{
+  font-weight: bold;
+}

@@ -10,13 +10,11 @@
 label{
   font-size: 1.1em;
   color: #0262d2;
-  text-align: left;
 }
 .location{
-  margin-left: 13px;
 }
 .salary{
-  margin-left: 270px;
+  margin-left: 283px;
 }
 .inputCity{
   font-size: 1em;
@@ -58,7 +56,7 @@ label{
   margin-left: 40px;
 }
 .labelSkillsAbilities{
-  margin-left: 13px;
+
 }
 .inputSkillsAbilities{
   width: 1149px;
@@ -84,18 +82,17 @@ label{
   border-color: #054086;
   border-width: 1px;
   border-style: solid;
-  margin-left: 15px;
 }
 .btn-save:hover{
   background-color: #0066cc;
-  font-weight:600;
+  font-weight:bold;
 }
 .btn-save:active{
   border-color: #3399ff;
   border-style: solid;
   border-width: 3px;
   border-radius: 3px;
-  font-weight: 600;
+  font-weight: bold;
 }
 .btn-add {
   border-radius: 3px;
@@ -110,12 +107,12 @@ label{
 }
 .btn-add:hover{
   background-color: #0066cc;
-  font-weight:600;
+  font-weight:bold;
 }
 .btn-add:active{
   border-color: #3399ff;
   border-style: solid;
   border-width: 3px;
   border-radius: 3px;
-  font-weight: 600;
+  font-weight: bold;
 }

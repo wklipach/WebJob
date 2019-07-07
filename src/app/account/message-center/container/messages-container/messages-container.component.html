@@ -22,8 +22,8 @@
         <div class="deleteCorrespondence" id="frameDelete" *ngIf="contactMethods[i].bDelete === true" [title]="'messages-container.vuMSC' | translate">
           <span class="question">{{'messages-container.vuchupMSC' | translate}}</span>
 
-          <button type="button" class="btn" id="btnDelete" (click)="DeleteElement(curLetter,i)" [title]="'messages-container.yesMSC' | translate">{{'messages-container.yesMSC' | translate}}</button>
-          <button type="button" class="btn" id="btnUnDelete" (click)="UnDeleteElement(curLetter,i)" [title]="'messages-container.noMSC' | translate">{{'messages-container.noMSC' | translate}}</button>
+          <button type="button" class="btn-delete" id="btnDelete" (click)="DeleteElement(curLetter,i)" [title]="'messages-container.yesMSC' | translate">{{'messages-container.yesMSC' | translate}}</button>
+          <button type="button" class="btn-delete" id="btnUnDelete" (click)="UnDeleteElement(curLetter,i)" [title]="'messages-container.noMSC' | translate">{{'messages-container.noMSC' | translate}}</button>
 
         </div>
 
