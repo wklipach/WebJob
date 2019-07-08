@@ -64,7 +64,7 @@
               {{'account-employee.demailuzAE' | translate}}
             </div>
 
-            <div class="alert alert-danger"
+            <div class="alert"
                  *ngIf="accountEmployeeForm.controls['inputEmail'].hasError('email') === true">
               {{'account-employee.nvvemailAE' | translate}}
             </div>
@@ -73,7 +73,7 @@
 
           <ng-template #trueSucc>
 
-            <div class="alert alert-info">{{'account-employee.emailsAE' | translate}}</div>
+            <div class="alert">{{'account-employee.emailsAE' | translate}}</div>
 
           </ng-template>
 
@@ -119,12 +119,12 @@
 
           <div *ngIf="accountEmployeeForm.controls['inputNewPassword2'].value.length > 0">
             <div *ngIf="accountEmployeeForm.controls['inputNewPassword2'].invalid; else truePassword2Template">
-              <div class="alert alert-danger">{{'account-employee.repeatpwdnsAE' | translate}}</div>
+              <div class="alert">{{'account-employee.repeatpwdnsAE' | translate}}</div>
             </div>
           </div>
 
           <ng-template #truePassword2Template>
-            <div class="alert alert-info">{{'account-employee.pwdssuAE' | translate}}</div>
+            <div class="alert">{{'account-employee.pwdssuAE' | translate}}</div>
           </ng-template>
 
           <button type="submit" class="btn-newPassword" (click)="NewPassword()">{{'allValue.changepwd2' | translate}}</button>
@@ -135,13 +135,14 @@
         </div>
 
       </ng-container>
+      <button type="submit" class="btn-save" (click)="savecv()" [disabled]="accountEmployeeForm.invalid" >{{'allValue.save' | translate}}</button>
+      <button type="submit" class="btn-cancel" (click)="back()">{{'allValue.Cancel' | translate}}</button>
     </form>
 
 
     <!-- [disabled]="accountEmployeeForm.invalid" -->
 
-    <button type="submit" class="btn-save" (click)="savecv()" [disabled]="accountEmployeeForm.invalid" >{{'allValue.save' | translate}}</button>
-    <button type="submit" class="btn-cancel" (click)="back()">{{'allValue.Cancel' | translate}}</button>
+
 
 
   </div>
