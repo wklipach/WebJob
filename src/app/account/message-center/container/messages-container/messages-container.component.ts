@@ -74,27 +74,51 @@ export class MessagesContainerComponent implements OnInit {
   }
 
 
-  curLetterClick(lid, id_cv, id_vc: number, $event) {
+  curLetterClick(lid, id_cv, id_vc: number, curId_user_to: number, $event) {
 
+
+    // console.log('curletter event', curId_user_to);
 
     if (($event.target.id === 'trash') || ($event.target.id === 'btnUnDelete') || ($event.target.id === 'btnDelete') || ($event.target.id === 'frameDelete')) return;
 
-    //делаем данное письмо прочитанным (ставим признак bOld)
-    this.httpLetter.setOldGroupLetter(id_cv, id_vc, this.id_user).subscribe(value => {
-      //ищем первое письмо в общении данных пользователей
-      this.httpLetter.getFirstLetter(id_cv, id_vc).subscribe(
-        (data: any) => {
-          let letter: Letter = data[0];
 
-          if (typeof letter !== 'undefined') {
-            //заодно закидываем идентификатор письма в хранилище
-            window.localStorage.setItem('_letterid', JSON.stringify(lid));
-            this.letterSubscription = this.httpLetter.setLetter(letter).subscribe(() => this.router.navigate(['/message']));
-          }
-        });
-    });
+    //есди это получатель письма делаем данное письмо прочитанным (ставим признак bOld)
+    if (this.id_user === curId_user_to) {
+
+      console.log('СДЕЛАЛИ ТОЛСТЫМ');
+
+      this.httpLetter.setOldGroupLetter(id_cv, id_vc, this.id_user).subscribe(value => {
+        this.OpenFirstElement(id_cv, id_vc, lid, true);
+      });
+    } else {
+      //если это не получатель (а например сам отправитель перепросматривает письмо) то просто открываем
+      console.log('ОСТАВИЛИ ХУДЫМ');
+      this.OpenFirstElement(id_cv, id_vc, lid, false);
+    }
+
+
 
   }
+
+  OpenFirstElement(id_cv : number, id_vc : number, lid : number, bSetRead: boolean) {
+    this.httpLetter.getFirstLetter(id_cv, id_vc).subscribe(
+      (data: any) => {
+        let letter: Letter = data[0];
+
+        if (typeof letter !== 'undefined') {
+          //заодно закидываем идентификатор письма в хранилище
+          window.localStorage.setItem('_letterid', JSON.stringify(lid));
+
+          //ставим или не ставим пометку Прочитанное
+          if (bSetRead) {
+            this.letterSubscription = this.httpLetter.setLetter(letter).subscribe(() => this.router.navigate(['/message']));
+          }  else {
+            this.router.navigate(['/message']);}
+        }
+      });
+
+  }
+
 
 
   DeleteElement(curLetter,i) {
