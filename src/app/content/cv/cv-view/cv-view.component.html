@@ -85,9 +85,6 @@
       <div class="valueTxt"  *ngIf="_cvitem.sEducation!= undefined">{{_cvitem.sEducation}} </div>
 
 
-      <label class="strip">{{'allValue.experience' | translate}}</label>
-      <div class="valueTxt"  *ngIf="_cvitem.sExperience!= undefined">{{_cvitem.sExperience}} </div>
-
       <label class="strip">{{'cv-view.sd' | translate}}</label>
       <div class="valueTxt" *ngFor="let liI of this._listIndustry; let i = index">
         {{liI}}
@@ -109,6 +106,9 @@
       </div>
 
       </div>
+
+      <label class="strip">{{'newcv.additionalInfo' | translate}}</label>
+      <div class="valueTxt"  *ngIf="_cvitem.sExperience!= undefined">{{_cvitem.sExperience}}</div>
 
     </div>
 
