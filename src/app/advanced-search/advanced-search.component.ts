@@ -102,9 +102,9 @@ export class AdvancedSearchComponent implements OnInit {
     // устанавливаем город
     this.gs.getCityTable().subscribe(
       (data: City[]) => {
-        this.listCity  = data;
+        this.listCity  = this.authService.loadLangCity(data);
 
-        let clearCity : City = {id: -1, name: 'Не учитывать', order: -1};
+        let clearCity : City = {id: -1, name: '---', order: -1, nameEx1: '', nameEx2: ''};
         this.listCity.push(clearCity);
           if (this.listCity.length > 0) this.myDisplayCity = this.listCity[this.listCity.length-1].name;
         this.advancedSearchForm.setControl('inputCity', new FormControl(this.myDisplayCity, []));

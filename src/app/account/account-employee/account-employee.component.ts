@@ -220,7 +220,23 @@ private loadUser: UserType;
     }
   }
 
-  loadCurrentUserInfo(item: any) {
+
+  loadLangCity(data: City[])  {
+    let curL = this.auth.getLangStorage();
+    if (typeof curL === 'undefined') {
+      curL = 0;
+    }
+
+    data.forEach((eekey, ih) => {
+      if (curL === 1) eekey.name = eekey.nameEx1;
+      if (curL === 2) eekey.name = eekey.nameEx2;
+    });
+  }
+
+
+
+
+loadCurrentUserInfo(item: any) {
 
 
 
@@ -229,6 +245,7 @@ private loadUser: UserType;
     // редактируемый список городов по подписке с выбранным ранее городом в качестве выбранного
     this.cveditCityTable = this.is.getCityTable().subscribe(
       (data: City[]) => {
+        this.loadLangCity(data);
         this.listCity = data;
 
         if (typeof item.City !== 'undefined') {

@@ -88,13 +88,22 @@ export class VacancyDescriptionComponent implements OnInit {
         //получаем объект из кэша, если неполный - делаем запрос к серверу и получаем новый getVacAny(id_vc: number)
         if (curDataVacancy.Industry || curDataVacancy.Education || curDataVacancy.Employment || curDataVacancy.Experience)
         {
+
           this.descrDataVacancy = curDataVacancy;
           this.onLoadUserData(this.descrDataVacancy);
           this.LoadAdvData();
         } else
         {
+
           this.vcListServ.getVacAny(curDataVacancy.id).subscribe(qcurDataVacancy => {
             this.descrDataVacancy = qcurDataVacancy[0];
+
+            console.log('this.descrDataVacancy a2',this.descrDataVacancy);
+
+            this.descrDataVacancy.CityName = this.authService.loadCurrentLangCity(this.descrDataVacancy.CityName, this.descrDataVacancy.CityName1, this.descrDataVacancy.CityName2);
+
+            // CityName: "Таллин", CityName1: "Tallinn EE", CityName2: "Tallinn"
+
             this.onLoadUserData(this.descrDataVacancy);
             this.LoadAdvData();
             this.onLoadFromBaseAvatar(this.descrDataVacancy);

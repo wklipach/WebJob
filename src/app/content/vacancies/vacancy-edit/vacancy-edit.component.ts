@@ -146,7 +146,7 @@ loadCurrentVacancy(item: any) {
     // устанавливаем город
     this.is.getCityTable().subscribe(
       (data: City[]) => {
-        this.listCity = data;
+        this.listCity = this.auth.loadLangCity(data);
 
         if (typeof item.City !== 'undefined') {
           if (this.listCity.length > 0) this.myDisplayCity = this.listCity[item.City - 1].name;

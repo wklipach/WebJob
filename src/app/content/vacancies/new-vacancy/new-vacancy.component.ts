@@ -79,7 +79,7 @@ export class NewVacancyComponent implements OnInit {
     is.getCityTable().subscribe(
       (data: City[]) => {
 
-           this.listCity = data;
+           this.listCity = this.auth.loadLangCity(data);
 
            if (this.listCity.length > 0) {
              this.myDisplayCity = this.listCity[0].name;

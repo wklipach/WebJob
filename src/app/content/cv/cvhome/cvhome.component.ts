@@ -29,6 +29,7 @@ export class CvhomeComponent implements OnInit {
 
 
   // заголовок вакансий
+  private _listCity: City[] = [];
   public sCV: string;
   private bConnected = false;
   private id_user = -1;
@@ -152,7 +153,12 @@ export class CvhomeComponent implements OnInit {
     console.log('advancedFindObj CV', advancedFindObj);
     return this.getTableCVAdvanced = this.httpService.getTableCVAdvanced(advancedFindObj).subscribe(
       (data: any) => {
+
+
+        //console.log('после продвинутого поиска', data );
+
         this.data_show(data);
+        this.reloadPAge(this.allDataCV, advancedFindObj.stringFind);
         this.sCV = this.sCV_Tr;
       });
   }
@@ -213,6 +219,12 @@ export class CvhomeComponent implements OnInit {
 
     this.cveditserv.getAnyCv(zid).subscribe(item =>{
       this.cveditserv.setCvId(item[0].id);
+
+      if (isNullOrUndefined(item[0].City) === false) {
+        let CurCity = this._listCity.find(x => x.id === parseInt(item[0].City.toString()));
+        item[0].CityName = CurCity.name;
+      }
+
       this.cveditserv.setCvItem(item[0]);
       this.router.navigate(['/cv-view']);
     });
@@ -287,8 +299,11 @@ export class CvhomeComponent implements OnInit {
     // это получаем город из нового вызываемого сервиса
     this.httpService.getCity().subscribe((city: City[]) => {
 
-
+        city = this.authService.loadLangCity(city);
+        this._listCity = city;
         console.log('CITY', city);
+
+
 
         data.forEach((eekey, ih) => {
 

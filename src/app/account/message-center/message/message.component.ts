@@ -12,6 +12,8 @@ import {MoveService} from '../../../services/move.service';
 import {CvEditService} from '../../../services/cv-edit.service';
 import {isNull} from 'util';
 import {TranslateService} from '@ngx-translate/core';
+import {City} from '../../../class/City';
+import {GuideService} from '../../../services/guide-service.service';
 
 @Component({
   selector: 'app-message',
@@ -46,7 +48,8 @@ export class MessageComponent implements OnInit, OnDestroy {
               private fb: FormBuilder,
               private moveS: MoveService,
               private cls: CvListService,
-              private translate: TranslateService ) {
+              private translate: TranslateService,
+              private gs: GuideService) {
 
     const Res =  this.auth.loginStorage();
     if (Res.bConnected) {
@@ -269,8 +272,16 @@ export class MessageComponent implements OnInit, OnDestroy {
   public moveCV() {
     this.cveditserv.getAnyCv(this.anyLetter.id_cv).subscribe(item =>{
       this.cveditserv.setCvId(item[0].id);
-      this.cveditserv.setCvItem(item[0]);
-      this.router.navigate(['/cv-view']);
+
+      this.gs.getCityTable().subscribe((value) => {
+        let cityList = this.auth.loadLangCity(value as City[]);
+        const sCityName = (cityList as City[]).find((valueC) => (valueC.id === parseInt(item[0].City.toString()))).name;
+        item[0].CityName = sCityName;
+        this.cveditserv.setCvItem(item[0]);
+        this.router.navigate(['/cv-view']);
+
+      });
+
     });
 
 

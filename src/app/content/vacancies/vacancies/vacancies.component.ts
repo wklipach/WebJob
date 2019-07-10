@@ -64,7 +64,7 @@ export class VacanciesComponent implements OnInit, OnDestroy {
 
 
     this.sbVacCity = this.gs.getCityTable().subscribe((value) => {
-      this.cityList = value as City[];
+      this.cityList = this.authService.loadLangCity(value as City[]);
 
       this.sbVacanciesGetList = this.gls.getVacanciesList(this.id_user).subscribe((valueVL) => {
           this.vacanciesList = valueVL;

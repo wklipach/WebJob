@@ -180,7 +180,7 @@ console.log('ITEM', item);
     this.cveditCityTable = this.is.getCityTable().subscribe(
 
       (data: City[]) => {
-        this.listCity = data;
+        this.listCity = this.auth.loadLangCity(data);
 
         if (typeof item.City !== 'undefined') {
 

@@ -72,7 +72,7 @@ export class CvListComponent implements OnInit, OnDestroy {
 
     this.cvCity = this.gs.getCityTable().subscribe((value) => {
 
-        this.cityList = value as City[];
+        this.cityList = this.authService.loadLangCity(value as City[]);
 
         this.cvlistGetCvList = this.cls.getCvList(this.id_user).subscribe((valueCL) => {
 
@@ -217,6 +217,10 @@ export class CvListComponent implements OnInit, OnDestroy {
   // просмотр резюме
   ViewElement(item: any) {
     this.cveditserv.setCvId(item.id);
+
+    const sCityName = (this.cityList as City[]).find((valueC) => (valueC.id === parseInt(item.City.toString()))).name;
+    item.CityName = sCityName;
+
     this.cveditserv.setCvItem(item);
     this.router.navigate(['/cv-view']);
   }

@@ -265,7 +265,14 @@ export class HomeComponent implements OnInit, OnDestroy {
     console.log('advancedFindObj', advancedFindObj);
     return this.getTableVacancyAdvanced = this.httpService.getTableVacancyAdvanced(advancedFindObj).subscribe(
       (data: any) => {
+
+//        console.log('getTableVacancyAdvanced', data);
+        //console.log('advancedFindObj', advancedFindObj.stringFind );
+
+
+
         this.data_show(data);
+        this.reloadPAge(this.allDataVacancy, advancedFindObj.stringFind);
         this.sVacancy = staticGuideList.all_vac1;
       });
   }
@@ -274,6 +281,9 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     return this.getTableVacancy = this.httpService.getTableVacancy(sMask, this.rowPerPage, this.page, isFavorites, isAdvancedFind, this.id_user).subscribe(
       (data: dataVacancy[]) => {
+
+        console.log('getTableVacancy', data);
+
 
         this.translate.get('home.ts.sFindNull').subscribe(
           value => {
@@ -299,6 +309,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   data_show(data: dataVacancy[]) {
 
     let curRemDay: {numberMonth, errorDay} = {numberMonth: -1, errorDay: true};
+
+    console.log('1234567890');
 
 
     data.forEach(  (curVacancy, index, arrCurValue) => {
@@ -405,15 +417,18 @@ export class HomeComponent implements OnInit, OnDestroy {
     // это получаем город из нового вызываемого сервиса
     this.httpService.getCity().subscribe((city: City[]) => {
 
-
       console.log('CITY', city);
 
         data.forEach((eekey, ih) => {
 
             let idCity = eekey.City;
             if (isNullOrUndefined(idCity) === false) {
-              let CurCity = city.find(x => x.id === parseInt(idCity.toString()));
-              eekey.CityName = CurCity.name;
+                let CurCity = city.find(x => x.id === parseInt(idCity.toString()));
+                let curL = this.authService.getLangStorage();
+                if (typeof curL === 'undefined') { eekey.CityName = CurCity.name;}
+                if (curL ===0 ) eekey.CityName = CurCity.name;
+                if (curL ===1 ) eekey.CityName = CurCity.nameEx1;
+                if (curL ===2 ) eekey.CityName = CurCity.nameEx2;
             }
           }
 

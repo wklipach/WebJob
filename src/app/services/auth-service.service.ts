@@ -4,6 +4,7 @@ import {UserType} from '../class/UserType';
 import {Subject} from 'rxjs';
 import {GlobalRef} from './globalref';
 import {RequestOptions} from '@angular/http';
+import {City} from '../class/City';
 
 @Injectable()
 export class AuthService {
@@ -21,6 +22,39 @@ export class AuthService {
   constructor(private http: HttpClient, private gr: GlobalRef) {
 
   }
+
+
+  loadCurrentLangCity(s1, s2, s3 : string): string {
+    let curL = this.getLangStorage();
+    if (typeof curL === 'undefined') {
+      curL = 0;
+    }
+
+    let s = s1;
+    if (curL === 0) s = s1;
+    if (curL === 1) s = s2;
+    if (curL === 2) s = s3;
+
+    return s;
+  }
+
+
+  loadLangCity(data: City[]): City[]  {
+    let curL = this.getLangStorage();
+    if (typeof curL === 'undefined') {
+      curL = 0;
+    }
+    data.forEach((eekey, ih) => {
+      if (curL === 1) eekey.name = eekey.nameEx1;
+      if (curL === 2) eekey.name = eekey.nameEx2;
+    });
+
+    return data;
+
+  }
+
+
+
 
   login(sUserName: string, id_user: number, bEmployer: boolean) {
     this.isAuthenticated = true;

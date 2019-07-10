@@ -67,7 +67,7 @@ export class NewcvComponent implements OnInit {
 
     this.previousCityTable =  is.getCityTable().subscribe(
       (data: City[]) => {
-        this.listCity = data;
+        this.listCity = this.authService.loadLangCity(data);
         if (this.listCity.length > 0) this.myDisplayCity = this.listCity[0].name;
         this.newCVForm.setControl('inputCity', new FormControl(this.myDisplayCity, []));
       }

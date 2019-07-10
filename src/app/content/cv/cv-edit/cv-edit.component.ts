@@ -165,7 +165,8 @@ export class CvEditComponent implements OnInit, OnDestroy {
     // редактируемый список городов по подписке с выбранным ранее городом в качестве выбранного
       this.cveditCityTable =  this.is.getCityTable().subscribe(
         (data: City[]) => {
-          this.listCity = data;
+
+          this.listCity = this.authService.loadLangCity(data);
 
           if (typeof item.City !== 'undefined') {
             if (this.listCity.length > 0) {
