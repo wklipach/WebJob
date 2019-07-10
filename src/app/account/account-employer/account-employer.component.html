@@ -7,6 +7,7 @@
     <div class="v-line"></div>
   <!--  <label class="personal">{{'header-top.datacompany' | translate}}</label> -->
 
+          <div class="leftSide">
 
     <form [formGroup]="form">
 
@@ -26,7 +27,10 @@
       <label class="clear" (click)="clearFile()">{{'account-employer.clear' | translate}}</label>
 
     </form>
+           </div>
 
+
+           <div class="rightSide">
     <form [formGroup]="accountEmployerForm">
 
       <label class="user-name">{{'allValue.UserName' | translate }}</label>
@@ -119,7 +123,8 @@
           <div *ngIf="accountEmployerForm.controls['inputNewPassword2'].value.length > 0">
             <div *ngIf="accountEmployerForm.controls['inputNewPassword2'].invalid; else truePassword2Template">
               <!-- <div>Пароли не совпадают</div> -->
-              <app-dialogminimum [name]="'account-employer.pwdnsAER' | translate"></app-dialogminimum>
+              <div class="wrong-pass">
+              <app-dialogminimum [name]="'account-employer.pwdnsAER' | translate"></app-dialogminimum></div>
             </div>
           </div>
 
@@ -135,22 +140,26 @@
           <div class="alert-pass" *ngIf="bErrorRepeatPassword">Пароли не совпадают</div>
           -->
 
-          <div class="alert-pass" *ngIf="bErrorRepeatPassword">
+          <div class="wrong-pass" *ngIf="bErrorRepeatPassword">
             <app-dialogminimum [name]="'account-employer.pwdnsAER' | translate"></app-dialogminimum>
           </div>
 
-          <div class="alert-pass" *ngIf="bErrorEmptyPassword">
+          <div class="wrong-pass" *ngIf="bErrorEmptyPassword">
             <app-dialogminimum [name]="'account-employer.pwdndbpAER' | translate"></app-dialogminimum>
           </div>
 
           <button class="btn-newPassword2" (click)="DisappearFrame()">{{'allValue.Cancel' | translate}}</button>
+
+
+
         </div>
 
       </ng-container>
 
     </form>
+               </div>
 
-    <button type="submit" class="btn-save" (click)="savecv()" [disabled]="accountEmployerForm.invalid">{{'allValue.save' | translate}}</button>
+  <button type="submit" class="btn-save" (click)="savecv()" [disabled]="accountEmployerForm.invalid">{{'allValue.save' | translate}}</button>
     <button type="submit" class="btn-cancel" (click)="back()">{{'allValue.Cancel' | translate}}</button>
 
   </div>

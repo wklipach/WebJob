@@ -1,11 +1,20 @@
-.v-line{
-  display: inline-block;
+.wrong-pass {
   position: absolute;
-  width:1px;
-  height:770px;
-  background-color: #b8b8b8;
-  margin-left: 165px;
-  margin-top: 65px;
+}
+.leftSide {
+  display: inline-block;
+  width: 15%;
+  height: 1400px;
+  margin-top: 30px;
+  vertical-align: top;
+  border-right: solid 1px #b8b8b8;
+}
+.rightSide{
+  display: inline-block;
+  width: 84%;
+  height: 1400px;
+  margin-top: 30px;
+  vertical-align: top;
 }
 .profile{
   width: 100%;
@@ -20,14 +29,15 @@ input{
 label{
   position: absolute;
   color: #0262d2;
-  text-align: left;
+  margin: 48px 0 20px;
+
 }
 .personal {
   font-size: 18px;
   margin-left: 12px;
   margin-top: 16px;
 }
-.photo-upload {
+.photo-upload2 {
   font-size: 13px;
   margin-left: 18px;
   margin-top: 177px;
@@ -64,7 +74,7 @@ label{
 .logotype{
   position: absolute;
   margin-left: 12px;
-  margin-top: 65px;
+  margin-top: 15px;
   width: 130px;
   height: 40px;
   cursor: pointer;
@@ -72,23 +82,25 @@ label{
 .upload-logo{
   position: absolute;
   margin-left: 12px;
-  margin-top: 125px;
+  margin-top: 65px;
   font-size: 15px;
 }
 .upload-logo:hover{
   cursor: pointer;
+  text-decoration: underline;
 }
 .clear{
   position: absolute;
   margin-left: 46px;
-  margin-top: 150px;
+  margin-top: 95px;
   font-size: 15px;
 }
 .clear:hover{
   cursor: pointer;
+  text-decoration: underline;
 }
 .img-lock{
-  margin-left: 195px;
+  margin-left: 30px;
   margin-top: 60px;
 }
 .changePass{
@@ -99,7 +111,8 @@ label{
   text-decoration: underline;
 }
 .user-name{
-  margin-left: 195px;
+  display: block;
+  margin-left: 30px;
   margin-top: 62px;
 }
 .inputUserName{
@@ -112,11 +125,15 @@ label{
   background-color: rgb(255, 255, 255);
   width: 230px;
   height: 43px;
-  margin-left: 195px;
+  margin-left: 30px;
   margin-top: 96px;
 }
+.inputUserName:hover{
+  background-color: #F74933;
+}
 .email{
-  margin-left: 459px;
+  display: inline-block;
+  margin-left: 300px;
   margin-top: 62px;
 }
 .inputEmail{
@@ -129,11 +146,11 @@ label{
   background-color: rgb(255, 255, 255);
   width: 230px;
   height: 43px;
-  margin-left: 459px;
+  margin-left: 300px;
   margin-top: 96px;
 }
 .name{
-  margin-left: 195px;
+  margin-left: 30px;
   margin-top: 187px;
 }
 .input-name{
@@ -146,11 +163,11 @@ label{
   background-color: rgb(255, 255, 255);
   width: 495px;
   height: 43px;
-  margin-left: 195px;
+  margin-left: 30px;
   margin-top: 221px;
 }
 .lastname{
-  margin-left: 459px;
+  margin-left: 300px;
   margin-top: 186px;
 }
 .inputLastname{
@@ -163,15 +180,15 @@ label{
   background-color: rgb(255, 255, 255);
   width: 228px;
   height: 43px;
-  margin-left: 459px;
+  margin-left: 300px;
   margin-top: 221px;
 }
 .location{
-  margin-left: 195px;
+  margin-left: 30px;
   margin-top: 313px;
 }
 .zip{
-  margin-left: 459px;
+  margin-left: 300px;
   margin-top: 313px;
 }
 .inputCity{
@@ -184,7 +201,7 @@ label{
   position: absolute;
   width: 228px;
   height: 43px;
-  margin-left: 195px;
+  margin-left: 30px;
   margin-top: 348px;
 }
 .inputZip{
@@ -197,11 +214,11 @@ label{
   background-color: rgb(255, 255, 255);
   width: 228px;
   height: 43px;
-  margin-left: 459px;
+  margin-left: 300px;
   margin-top: 348px;
 }
 .home-address{
-  margin-left: 195px;
+  margin-left: 30px;
   margin-top: 435px;
 }
 .inputHomeAddress{
@@ -214,15 +231,15 @@ label{
   text-align: center;
   width: 492px;
   height: 43px;
-  margin-left: 195px;
+  margin-left: 30px;
   margin-top: 471px;
 }
 .phone{
-  margin-left: 195px;
+  margin-left: 30px;
   margin-top: 563px;
 }
 .phone2{
-  margin-left: 459px;
+  margin-left: 300px;
   margin-top: 563px;
 }
 .inputPhone{
@@ -235,7 +252,7 @@ label{
   text-align: center;
   width: 228px;
   height: 43px;
-  margin-left: 195px;
+  margin-left: 30px;
   margin-top: 599px;
 }
 .inputPhone2{
@@ -248,11 +265,11 @@ label{
   text-align: center;
   width: 228px;
   height: 43px;
-  margin-left: 459px;
+  margin-left: 300px;
   margin-top: 599px;
 }
 .web{
-  margin-left: 195px;
+  margin-left: 30px;
   margin-top: 691px;
 }
 .inputWeb{
@@ -265,11 +282,11 @@ label{
   text-align: center;
   width: 228px;
   height: 43px;
-  margin-left: 195px;
+  margin-left: 30px;
   margin-top: 721px;
 }
 .contact-person{
-  margin-left: 459px;
+  margin-left: 300px;
   margin-top: 691px;
 }
 .inputContactPerson{
@@ -282,18 +299,18 @@ label{
   text-align: center;
   width: 228px;
   height: 43px;
-  margin-left: 459px;
+  margin-left: 300px;
   margin-top: 721px;
 }
 .about{
-  margin-left: 195px;
+  margin-left: 30px;
   margin-top: 820px;
 }
 .inputAbout{
   position: relative;
   width: 848px;
   height: 190px;
-  margin-left: 195px;
+  margin-left: 30px;
   margin-top: 860px;
 }
 .btn-save{
@@ -310,7 +327,7 @@ label{
   width: 228px;
   height: 48px;
   margin-top:49px;
-  margin-left: 195px;
+  margin-left: 30px;
 }
 .btn-save:hover{
   background-color: #0066cc;
@@ -335,7 +352,7 @@ label{
   line-height: 2;
   text-align: center;
   margin-top: 49px;
-  margin-left: 459px;
+  margin-left: 300px;
 }
 .btn-cancel:hover{
   background-color: rgb(240, 240, 240);
@@ -356,7 +373,7 @@ label{
   position: absolute;
   width: 530px;
   height: 199px;
-  margin: -80px 0 0 195px ;
+  margin: -80px 0 0 30px ;
   z-index: 10;
 }
 .inputNewPassword1 {
