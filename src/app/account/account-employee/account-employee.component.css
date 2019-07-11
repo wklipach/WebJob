@@ -1,22 +1,28 @@
+.leftSide {
+  display: inline-block;
+  width: 15%;
+  height: 1500px;
+  margin-top: 30px;
+  vertical-align: top;
+  border-right: solid 1px #b8b8b8;
+}
+.rightSide{
+  display: inline-block;
+  width: 84%;
+  margin-top: 30px;
+  vertical-align: top;
+}
+.line{
+  display: block;
+  width:100%;
+  margin:1px 0;
+}
+
 .alert{
   position: absolute;
 }
 .alert-pass{
   position: absolute;
-}
-.v-line{
-  display: inline-block;
-  position: absolute;
-  width:1px;
-  height:580px;
-  background-color: #b8b8b8;
-  margin-left: 149px;
-  margin-top: 65px;
-}
-.profile{
-  width: 100%;
-  margin: 0 auto;
-  position: relative;
 }
 .employee-form{
 }
@@ -33,7 +39,7 @@ label{
 .photo-upload {
   font-size: 13px;
   margin-left: 18px;
-  margin-top: 177px;
+  margin-top: 110px;
 }
 .photo-upload:hover{
   cursor: pointer;
@@ -63,7 +69,6 @@ label{
   width: 103px;
   height: 103px;
   margin-left: 12px;
-  margin-top: 65px;
 }
 .logotype:hover{
   cursor: pointer;
@@ -71,7 +76,7 @@ label{
 .clear{
   position: absolute;
   margin-left: 36px;
-  margin-top: 210px;
+  margin-top: 150px;
   font-size: 14px;
 }
 .clear:hover{
@@ -94,8 +99,8 @@ label{
 }
 
 .user-name{
-  margin-left: 180px;
-  margin-top: 62px;
+  display: inline-block;
+  margin-left: 60px;
 }
 .inputUserName{
   position: absolute;
@@ -107,12 +112,13 @@ label{
   background-color: rgb(255, 255, 255);
   width: 20%;
   height: 43px;
-  margin-left: 180px;
+  margin-left: 60px;
   margin-top: 96px;
 }
 .email{
+  display: inline-block;
   margin-left: 444px;
-  margin-top: 62px;
+
 }
 .inputEmail{
   position: absolute;

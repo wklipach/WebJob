@@ -440,5 +440,16 @@ label{
   text-align: center;
   border: dotted 1px #f20f4b;
   height: 50px;
-  padding-top: 15px;
+  line-height: 2.03;
+}
+.successPass{
+  display: block;
+  font-size: 1.4em;
+  color: #09D42B;
+  width: 530px;
+  margin-top: 100px;
+  text-align: center;
+  border: dotted 1px #09D42B;
+  height: 50px;
+  line-height: 2.03;
 }
