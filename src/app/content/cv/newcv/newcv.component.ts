@@ -238,6 +238,10 @@ chf() {
 
     // получаем изначальные данные без динамических блоков
     let MyCv: CV = this.loadMainCV();
+
+
+    console.log('CV',MyCv);
+
     return this.previousPostNewCV =this.httpService.postNewCV(MyCv).subscribe(
       (value) => {
         // из возвращенного результата забираем новое ID

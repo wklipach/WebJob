@@ -395,5 +395,7 @@
   "messages-container.yesMSC" : "Да",
   "messages-container.noMSC" : "Нет",
   "messages-container.uppMSC" : "Удалить переписку",
-  "message.messageM" : "Сообщение"
+  "message.messageM" : "Сообщение",
+  "cv-view.langcurCV" : "Языки"
+
 }

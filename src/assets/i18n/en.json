@@ -395,5 +395,6 @@
   "messages-container.yesMSC": "Yes",
   "messages-container.noMSC": "No",
   "messages-container.uppMSC": "Delete chat",
-  "message.messageM": "Message"
+  "message.messageM": "Message",
+  "cv-view.langcurCV" : "Языки"
 }

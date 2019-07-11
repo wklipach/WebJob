@@ -65,70 +65,82 @@ const arrEmployment = item.Employment.split(',');
 
     console.log('this._cvitem', this._cvitem);
 
-    if (this._cvitem.Education !== undefined) {
-      if (this._cvitem.Education !== null) {
-        const arrEducation = this._cvitem.Education.split(',');
-        arrEducation.forEach(
-          (value) => {
-            this._listEducation.push(staticGuideList.EducationList[value - 1].name);
-          })
+    if (this._cvitem !== null) {
+      if (this._cvitem.Education !== undefined) {
+        if (this._cvitem.Education !== null) {
+          const arrEducation = this._cvitem.Education.split(',');
+          arrEducation.forEach(
+            (value) => {
+              this._listEducation.push(staticGuideList.EducationList[value - 1].name);
+            })
+        }
       }
     }
 
 
-    if (this._cvitem.Experience !== undefined) {
-      if (this._cvitem.Experience !== null) {
-        const arrExperience = this._cvitem.Experience.split(',');
-        arrExperience.forEach(
-          (value) => {
-            this._listExperience.push(staticGuideList.ExperienceList[value - 1].name);
-          })
+    if (this._cvitem !== null) {
+      if (this._cvitem.Experience !== undefined) {
+        if (this._cvitem.Experience !== null) {
+          const arrExperience = this._cvitem.Experience.split(',');
+          arrExperience.forEach(
+            (value) => {
+              this._listExperience.push(staticGuideList.ExperienceList[value - 1].name);
+            })
+        }
       }
     }
 
-    if (this._cvitem.Industry !== undefined) {
-      if (this._cvitem.Industry !== null) {
-        const arrIndustry = this._cvitem.Industry.split(',');
-        arrIndustry.forEach(
-          (value) => {
-            this._listIndustry.push(staticGuideList.IndustryList[value - 1].name);
-          })
+
+
+    if (this._cvitem !== null) {
+      if (this._cvitem.Industry !== undefined) {
+        if (this._cvitem.Industry !== null) {
+          const arrIndustry = this._cvitem.Industry.split(',');
+          arrIndustry.forEach(
+            (value) => {
+              this._listIndustry.push(staticGuideList.IndustryList[value - 1].name);
+            })
+        }
       }
     }
 
-    if (this._cvitem.Schedule !== undefined) {
-      if (this._cvitem.Schedule !== null) {
-        const arrSchedule = this._cvitem.Schedule.split(',');
-        arrSchedule.forEach(
-          (value) => {
-            this._listSchedule.push(staticGuideList.ScheduleList[value - 1].name);
-          })
+    if (this._cvitem !== null) {
+      if (this._cvitem.Schedule !== undefined) {
+        if (this._cvitem.Schedule !== null) {
+          const arrSchedule = this._cvitem.Schedule.split(',');
+          arrSchedule.forEach(
+            (value) => {
+              this._listSchedule.push(staticGuideList.ScheduleList[value - 1].name);
+            })
+        }
       }
     }
 
-    if (this._cvitem.Employment !== undefined) {
-      if (this._cvitem.Employment !== null) {
-        const arrEmployment = this._cvitem.Employment.split(',');
-        arrEmployment.forEach(
-          (value) => {
-            this._listEmployment.push(staticGuideList.EmploymentList[value - 1].name);
-          })
+    if (this._cvitem !== null) {
+      if (this._cvitem.Employment !== undefined) {
+        if (this._cvitem.Employment !== null) {
+          const arrEmployment = this._cvitem.Employment.split(',');
+          arrEmployment.forEach(
+            (value) => {
+              this._listEmployment.push(staticGuideList.EmploymentList[value - 1].name);
+            })
+        }
       }
     }
 
     if (this._cvitem !== undefined) {
-      this.loadPicture(this._cvitem.id_user);
+      if (this._cvitem !== null) this.loadPicture(this._cvitem.id_user);
     }
 
 
     //языки
     if (this._cvitem !== undefined) {
-      this.loadLanguage(this._cvitem.id);
+      if (this._cvitem !== null) this.loadLanguage(this._cvitem.id);
     }
 
      //предыдущие места работы
     if (this._cvitem !== undefined) {
-      this.loadPrevious(this._cvitem.id);
+      if (this._cvitem !== null) this.loadPrevious(this._cvitem.id);
     }
     console.log('получили _cvitem', this._cvitem);
 
