@@ -3,11 +3,7 @@
 <div class="wrapper">
   <div class="top">{{'header-top.profcompany' | translate}}</div>
 
-  <div class="profile">
-    <div class="v-line"></div>
-  <!--  <label class="personal">{{'header-top.datacompany' | translate}}</label> -->
-
-          <div class="leftSide">
+  <div class="leftSide">
 
     <form [formGroup]="form">
 
@@ -33,10 +29,15 @@
            <div class="rightSide">
     <form [formGroup]="accountEmployerForm">
 
-      <label class="user-name">{{'allValue.UserName' | translate }}</label>
-      <input type="text" class="inputUserName" id="inputUserName" formControlName="inputUserName" [placeholder]="'account-employer.vvipAER' | translate">
 
-      <label class="email">Email</label>
+      <div class="line">
+      <label class="user-name">{{'allValue.UserName' | translate }}</label>
+        <label class="email">Email</label>
+      </div>
+
+      <div class="line">
+
+      <input type="text" class="inputUserName" id="inputUserName" formControlName="inputUserName" [placeholder]="'account-employer.vvipAER' | translate">
       <input type="text" class="inputEmail" id="inputEmail" formControlName="inputEmail" [placeholder]="'account-employer.vvemailAER' | translate">
 
       <!-- начало обработки почтовых ошибок -->
@@ -73,7 +74,7 @@
       </div>
 
       <!-- закончили обработку почтовых ошибок -->
-
+      </div>
 
       <label class="name">{{'allValue.compname' | translate}}</label>
       <input type="text" class="input-name" id="inputName" formControlName="inputName" [placeholder]="'allValue.compname' | translate" maxlength="100">
@@ -82,16 +83,23 @@
       <label class="lastname">Фамилия</label>
       <input type="text" class="inputLastname" id="inputLastname" formControlName="inputLastName" placeholder="введите фамилию">
        -->
-
+      <div class="line">
       <label class="location">{{'allValue.сity' | translate}}</label>
+      <label class="zip">{{'allValue.postindex' | translate}}</label>
+      </div>
+
+         <div class="line">
       <select id="inputCity" formControlName="inputCity" class="inputCity" [title]="'allValue.сity' | translate">
         <option  *ngFor="let lc of listCity" [value]="lc.name">
           {{lc.name}}
         </option>
       </select>
 
-      <label class="zip">{{'allValue.postindex' | translate}}</label>
+
       <input type="text" class="inputZip" id="inputZip" formControlName="inputZip" [placeholder]="'account-employer.vvindexAER' | translate">
+
+           </div>
+
 
       <label class="home-address">{{'allValue.address' | translate}}</label>
       <input type="text" class="inputHomeAddress" id="inputAddress" formControlName="inputAddress" [placeholder]="'allValue.address' | translate" maxlength="100">
@@ -163,7 +171,7 @@
     <button type="submit" class="btn-cancel" (click)="back()">{{'allValue.Cancel' | translate}}</button>
 
   </div>
-</div>
+
 
 <app-footer></app-footer>
 

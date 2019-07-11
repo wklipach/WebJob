@@ -9,7 +9,7 @@
   <label class="userName">{{'allValue.UserName' | translate}} (Nic)</label>
       <input type="text" class="inputUserName" id="userName" formControlName="userName" [placeholder]="'allValue.UserName' | translate">
   <!-- Проверяем вносимый логин. Если логин уже есть в базе, показываем лейбл -Имя пользователя занято, или наоборот -->
-      <div class="alert alert-danger"
+      <div class="alertWrongName"
            *ngIf="myForm.controls['userName'].touched && myForm.controls['userName'].value.length === 0 ">
         {{'register-employee.nuipRE' | translate}}
       </div>
@@ -17,11 +17,11 @@
       <div *ngIf="myForm.controls['userName'].value.length > 0">
 
         <div *ngIf="myForm.controls['userName'].invalid; else trueUserNameTemplate">
-          <div class="alert alert-danger">{{'register-employee.ipzRE' | translate}}</div>
+          <div class="alertName">{{'register-employee.ipzRE' | translate}}</div>
         </div>
 
         <ng-template #trueUserNameTemplate>
-          <div class="alert alert-info">{{'register-employee.ipsRE' | translate}}</div>
+          <div class="alertName">{{'register-employee.ipsRE' | translate}}</div>
         </ng-template>
 
       </div>

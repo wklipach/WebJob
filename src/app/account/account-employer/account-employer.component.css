@@ -16,20 +16,21 @@
   margin-top: 30px;
   vertical-align: top;
 }
-.profile{
+.line{
+  width:100%;
+  margin:1px 0;
+}
+.profile2{
   width: 100%;
   margin: 0 auto;
   position: relative;
-}
-.employee-form{
 }
 input{
   font-size: 1em;
 }
 label{
-  position: absolute;
   color: #0262d2;
-  margin: 48px 0 20px;
+
 
 }
 .personal {
@@ -111,12 +112,13 @@ label{
   text-decoration: underline;
 }
 .user-name{
-  display: block;
+  position: absolute;
+  display: inline-block;
   margin-left: 30px;
-  margin-top: 62px;
-}
+  }
 .inputUserName{
   position: absolute;
+  display: inline-block;
   text-align: center;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
@@ -126,7 +128,7 @@ label{
   width: 230px;
   height: 43px;
   margin-left: 30px;
-  margin-top: 96px;
+  margin-top: 1px;
 }
 .inputUserName:hover{
   background-color: #F74933;
@@ -134,10 +136,10 @@ label{
 .email{
   display: inline-block;
   margin-left: 300px;
-  margin-top: 62px;
+
 }
 .inputEmail{
-  position: absolute;
+  display: inline-block;
   text-align: center;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
@@ -147,14 +149,14 @@ label{
   width: 230px;
   height: 43px;
   margin-left: 300px;
-  margin-top: 96px;
 }
 .name{
+  position: relative;
+  display: block;
   margin-left: 30px;
-  margin-top: 187px;
 }
 .input-name{
-  position: absolute;
+  position: relative;
   text-align: center;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
@@ -164,7 +166,7 @@ label{
   width: 495px;
   height: 43px;
   margin-left: 30px;
-  margin-top: 221px;
+
 }
 .lastname{
   margin-left: 300px;
@@ -184,14 +186,15 @@ label{
   margin-top: 221px;
 }
 .location{
+  display: inline-block;
   margin-left: 30px;
-  margin-top: 313px;
 }
 .zip{
   margin-left: 300px;
-  margin-top: 313px;
+  display: inline-block;
 }
 .inputCity{
+  display: inline-block;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
   text-align: center;
@@ -202,10 +205,9 @@ label{
   width: 228px;
   height: 43px;
   margin-left: 30px;
-  margin-top: 348px;
 }
 .inputZip{
-  position: absolute;
+  display: inline-block;
   text-align: center;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
@@ -215,24 +217,24 @@ label{
   width: 228px;
   height: 43px;
   margin-left: 300px;
-  margin-top: 348px;
 }
 .home-address{
+  position: relative;
+  display: block;
   margin-left: 30px;
-  margin-top: 435px;
 }
 .inputHomeAddress{
+  position: relative;
+  display: block;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
   border-style: solid;
   border-radius: 3px;
   background-color: rgb(255, 255, 255);
-  position: absolute;
   text-align: center;
   width: 492px;
   height: 43px;
   margin-left: 30px;
-  margin-top: 471px;
 }
 .phone{
   margin-left: 30px;
