@@ -1,10 +1,7 @@
-.wrong-pass {
-  position: absolute;
-}
 .leftSide {
   display: inline-block;
   width: 15%;
-  height: 1400px;
+  height: 1500px;
   margin-top: 30px;
   vertical-align: top;
   border-right: solid 1px #b8b8b8;
@@ -12,11 +9,11 @@
 .rightSide{
   display: inline-block;
   width: 84%;
-  height: 1400px;
   margin-top: 30px;
   vertical-align: top;
 }
 .line{
+  display: block;
   width:100%;
   margin:1px 0;
 }
@@ -29,9 +26,8 @@ input{
   font-size: 1em;
 }
 label{
+  margin: 25px 1px 12px 0;
   color: #0262d2;
-
-
 }
 .personal {
   font-size: 18px;
@@ -65,13 +61,14 @@ label{
   margin-left: 12px;
   margin-top: 365px;
 }
-.btn-save{
+/*.btn-save{
   position: absolute;
   width: 103px;
   height: 23px;
   margin-left: 12px;
-  margin-top: 65px;
+  margin-top: 1px;
 }
+*/
 .logotype{
   position: absolute;
   margin-left: 12px;
@@ -115,7 +112,7 @@ label{
   position: absolute;
   display: inline-block;
   margin-left: 30px;
-  }
+}
 .inputUserName{
   position: absolute;
   display: inline-block;
@@ -131,7 +128,7 @@ label{
   margin-top: 1px;
 }
 .inputUserName:hover{
-  background-color: #F74933;
+  background-color: #b7b7b7;
 }
 .email{
   display: inline-block;
@@ -237,14 +234,15 @@ label{
   margin-left: 30px;
 }
 .phone{
+  display: inline-block;
   margin-left: 30px;
-  margin-top: 563px;
 }
 .phone2{
+  display: inline-block;
   margin-left: 300px;
-  margin-top: 563px;
 }
 .inputPhone{
+  display: inline-block;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
   border-style: solid;
@@ -255,26 +253,26 @@ label{
   width: 228px;
   height: 43px;
   margin-left: 30px;
-  margin-top: 599px;
 }
 .inputPhone2{
+  display: inline-block;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
   border-style: solid;
   border-radius: 3px;
   background-color: rgb(255, 255, 255);
-  position: absolute;
+  position: relative;
   text-align: center;
   width: 228px;
   height: 43px;
   margin-left: 300px;
-  margin-top: 599px;
 }
 .web{
+  display: inline-block;
   margin-left: 30px;
-  margin-top: 691px;
 }
 .inputWeb{
+  display: inline-block;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
   border-style: solid;
@@ -285,39 +283,38 @@ label{
   width: 228px;
   height: 43px;
   margin-left: 30px;
-  margin-top: 721px;
 }
 .contact-person{
+  display: inline-block;
   margin-left: 300px;
-  margin-top: 691px;
 }
 .inputContactPerson{
+  display: inline-block;
   border-width: 1px;
   border-color: rgb(68, 75, 84);
   border-style: solid;
   border-radius: 3px;
   background-color: rgb(255, 255, 255);
-  position: absolute;
+
   text-align: center;
   width: 228px;
   height: 43px;
   margin-left: 300px;
-  margin-top: 721px;
 }
 .about{
+  position: relative;
+  display: block;
   margin-left: 30px;
-  margin-top: 820px;
 }
 .inputAbout{
   position: relative;
+  display: block;
   width: 848px;
   height: 190px;
   margin-left: 30px;
-  margin-top: 860px;
 }
 .btn-save{
   display: inline-block;
-  position: absolute;
   font-size: 18px;
   background-color: #0262d2;
   color: rgb(255, 255, 255);
@@ -354,7 +351,7 @@ label{
   line-height: 2;
   text-align: center;
   margin-top: 49px;
-  margin-left: 300px;
+  margin-left: 20px;
 }
 .btn-cancel:hover{
   background-color: rgb(240, 240, 240);
@@ -364,18 +361,19 @@ label{
   border-style: solid;
   border-width: 3px;
   border-radius: 3px;
-  font-weight: 600;
+  font-weight: bold;
 }
 .changepassBox {
+  position: absolute;
+  display: block;
   border-width: 1px;
   border-color: rgb(188, 188, 188);
   border-style: solid;
   border-radius: 3px;
   background-color: rgb(247, 247, 247);
-  position: absolute;
   width: 530px;
   height: 199px;
-  margin: -80px 0 0 30px ;
+  margin: 30px 0 0 30px ;
   z-index: 10;
 }
 .inputNewPassword1 {
@@ -383,17 +381,18 @@ label{
   background-color: rgb(255, 255, 255);
   width: 441px;
   height: 45px;
-  margin-left: 22px;
+  margin-left: 38px;
   margin-top: 22px;
 }
 .inputNewPassword2 {
+  position: relative;
   border-radius: 3px;
   border-color: black;
   text-align: center;
   background-color: rgb(255, 255, 255);
   width: 441px;
   height: 45px;
-  margin-left: 22px;
+  margin-left: 38px;
   margin-top: 12px;
 }
 .btn-newPassword{
@@ -431,4 +430,15 @@ label{
 .alert-pass-danger{
   position: absolute;
   z-index: 20;
+}
+.wrongPass{
+  display: block;
+  font-size: 1.4em;
+  color: #F74933;
+  width: 530px;
+  margin-top: 100px;
+  text-align: center;
+  border: dotted 1px #f20f4b;
+  height: 50px;
+  padding-top: 15px;
 }
