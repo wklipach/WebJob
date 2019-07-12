@@ -125,6 +125,7 @@ export class AboutCompanyComponent implements OnInit, OnDestroy {
 
         if (typeof item.About !== 'undefined') {
           this._myAbout = item.About;
+          console.log('this._myAbout',this._myAbout);
         }
 
         if (typeof item.ContactPerson !== 'undefined') {

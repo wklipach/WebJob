@@ -13,10 +13,7 @@ export class TextToHtmlDirective implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-
-    this.Element.nativeElement.innerHTML = this.sourceText.replace(/[\r\n]/gmi, '<br/>').replace(/ /gmi, '&nbsp;') ;
-// curStr.replace(regexp,'<br>');
-
+    this.Element.nativeElement.innerHTML = this.sourceText.replace(/[\r\n]/gmi, '<br/>').replace(/ /gmi, '&nbsp;');
   }
 
 }

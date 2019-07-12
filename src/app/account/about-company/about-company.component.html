@@ -26,10 +26,21 @@
     <li><label>{{'allValue.address' | translate}}</label><div class="value">{{_myAddress}}&nbsp;</div></li>
     <li> <label>{{'allValue.tele' | translate}}</label><div class="value">{{_myPhone}}&nbsp;</div></li>
     <li><label>{{'allValue.tele2' | translate}}</label><div class="value">{{_myPhone2}}&nbsp;</div></li>
-    <li><label>{{'allValue.contactF' | translate}}</label><div class="value">{{_myContactPerson}}&nbsp;</div></li>
+    <li><label>{{'allValue.contactF' | translate}}</label><div class="value">{{_myContactPerson}}</div></li>
   </ul>
 
-    <div class="valueTxt">{{_myAbout}}&nbsp;</div>
+
+    <!-- БЫЛО -->
+    <div  class="valueTxt">{{this._myAbout}}</div>
+
+    <!-- СТАЛО -->
+   <div *ngIf="this._myAbout !== undefined">
+     <div  class="valueTxt"  appTextToHtml [sourceText]="this._myAbout"></div>
+   </div>
+    <!-- END -->
+
+
+
 
   </div>
 </div>
