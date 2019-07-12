@@ -383,7 +383,7 @@
   "account-employer.vvnewpvdAER" : "Введите новый пароль",
   "account-employer.repeatpwdAER" : "Повторите пароль",
   "account-employer.pwdnsAER" : "Пароли не совпадают",
-  "account-employer.pwdsspAER" : "Пароль совпал",
+  "account-employer.pwdsspAER" : "Пароли совпали",
   "account-employer.pwdchangeAER" : "Пароль изменен",
   "account-employer.pwdndbpAER" : "Пароли не должны быть пустыми",
   "info-container.infoIC": "Информация",

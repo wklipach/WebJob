@@ -3,15 +3,9 @@
 <div class="wrapper">
   <div class="top">{{'account-employee.myprofileAE' | translate}}</div>
 
-  <div class="profile">
-    <div class="v-line"></div>
-   <!-- <label class="personal">Личные данные соискателя</label> -->
+  <div class="leftSide">
 
-    <!--
-        <img class="img-thumbnail" src="/assets/img/usernull.png" alt="Фото" title="Загрузить фото" height="103px" width="103px">
-        -->
-
-    <form [formGroup]="form">
+     <form [formGroup]="form">
       <div *ngIf="base64textString.length>0;then contentLoadAvatar else contentDefault">{{'account-employee.uvnAE' | translate}}</div>
       <ng-template #contentLoadAvatar>
         <img class="logotype" *ngFor="let item of base64textString"  src={{item}} [alt]="'account-employee.zfAE' | translate" id="img" onclick="document.getElementById('avatar').click()">
@@ -22,30 +16,42 @@
       </ng-template>
 
       <input type="file" id="avatar" (change)="onFileChange($event)" #fileInput style="display:none">
-      <label class="clear" (click)="clearFile()">{{'account-employer.clear' | translate}}</label>
-    </form>
 
+       <label class="photo-upload" onclick="document.getElementById('avatar').click()">{{'account-employee.zfAE' | translate}}</label>
+
+      <label class="clear" (click)="clearFile()">{{'account-employer.clear' | translate}}</label>
+
+    </form>
+  </div>
+
+  <div class="rightSide">
     <form class="employee-form" [formGroup]="accountEmployeeForm">
 
-     <label class="photo-upload" onclick="document.getElementById('avatar').click()">{{'account-employee.zfAE' | translate}}</label>
-
+   <div class="line">
       <label class="user-name">{{'allValue.UserName' | translate}}</label>
-      <input type="text" class="inputUserName" id="inputUserName" formControlName="inputUserName" [placeholder]="'account-employee.vipAE' | translate" maxlength="100">
-
       <label class="email">Email</label>
+  </div>
+
+   <div class="line">
+      <input type="text" class="inputUserName" id="inputUserName" formControlName="inputUserName" [placeholder]="'account-employee.vipAE' | translate" maxlength="100">
       <input type="text" class="inputEmail" id="inputEmail" formControlName="inputEmail" [placeholder]="'account-employee.vemailAE' | translate">
+   </div>
 
-
+      <div class="line">
       <label class="gender">{{'account-employee.vpppvAE' | translate}}</label>
+      <label class="birth" for="inputBirth">{{'account-employee.datebirAE' | translate}}</label>
+      </div>
+
+
+   <div class="line">
+      <input  class="inputBirth" type="date" id="inputBirth" name="inputBirth" formControlName="inputBirth">
       <select class="inputGender" id="inputGender" formControlName="inputGender"  [title]="'account-employee.vpppvAE' | translate">
         <option  *ngFor="let gl of genderList" [value]="gl.name">
           {{gl.name}}
         </option>
       </select>
+   </div>
 
-
-      <label class="birth" for="inputBirth">{{'account-employee.datebirAE' | translate}}</label>
-      <input  class="inputBirth" type="date" id="inputBirth" name="inputBirth" formControlName="inputBirth">
 
 
       <!-- начало обработки почтовых ошибок -->
@@ -83,21 +89,30 @@
 
       <!-- закончили обработку почтовых ошибок -->
 
+
+      <div class="line">
       <label class="name">{{'account-employee.nameAE' | translate}}</label>
+        <label class="lastname">{{'account-employee.familyAE' | translate}}</label>
+      </div>
+
+      <div class="line">
       <input type="text" class="input-name" id="inputName" formControlName="inputName" [placeholder]="'account-employee.nameAE' | translate">
+       <input type="text" class="inputLastname" id="inputLastname" formControlName="inputLastName" [placeholder]="'account-employee.vvfamilyAE' | translate">
+      </div>
 
-      <label class="lastname">{{'account-employee.familyAE' | translate}}</label>
-      <input type="text" class="inputLastname" id="inputLastname" formControlName="inputLastName" [placeholder]="'account-employee.vvfamilyAE' | translate">
-
+      <div class="line">
       <label class="location">{{'allValue.сity' | translate}}</label>
+      <label class="zip">{{'allValue.postindex' | translate}}</label>
+      </div>
+
+      <div class="line">
       <select id="inputCity" formControlName="inputCity" class="inputCity" [title]="'allValue.сity' | translate">
         <option  *ngFor="let lc of listCity" [value]="lc.name">
           {{lc.name}}
         </option>
       </select>
-
-      <label class="zip">{{'allValue.postindex' | translate}}</label>
       <input type="text" class="inputZip" id="inputZip" formControlName="inputZip" [placeholder]="'account-employee.vvindexAE' | translate">
+      </div>
 
 
       <label class="home-address">{{'account-employee.dadrrAE' | translate}}</label>
@@ -140,13 +155,8 @@
     </form>
 
 
-    <!-- [disabled]="accountEmployeeForm.invalid" -->
-
-
-
-
-  </div>
-</div>
+   </div>
+      </div>
 
 
 
