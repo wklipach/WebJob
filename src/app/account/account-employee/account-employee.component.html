@@ -33,7 +33,7 @@
   </div>
 
    <div class="line">
-      <input type="text" class="inputUserName" id="inputUserName" formControlName="inputUserName" [placeholder]="'account-employee.vipAE' | translate" maxlength="100">
+      <input type="text" class="inputUserName" id="inputUserName" formControlName="inputUserName" [placeholder]="'account-employee.vipAE' | translate" maxlength="100" title="Не редактируется">
       <input type="text" class="inputEmail" id="inputEmail" formControlName="inputEmail" [placeholder]="'account-employee.vemailAE' | translate">
    </div>
 
@@ -56,19 +56,19 @@
 
       <div *ngIf="accountEmployeeForm.controls['inputEmail'].dirty">
 
-        <div class="alert alert-danger"
+        <div class="alertWrong"
              *ngIf="accountEmployeeForm.controls['inputEmail'].value.length === 0 ">
           {{'account-employee.nuemailAE' | translate}}
         </div>
 
         <div *ngIf="accountEmployeeForm.controls['inputEmail'].value.length > 0">
           <div *ngIf="accountEmployeeForm.controls['inputEmail'].invalid; else trueSucc">
-            <div class="alert alert-danger"
+            <div class="alertWrong"
                  *ngIf="accountEmployeeForm.controls['inputEmail'].hasError('errorEmailExists') === true">
               {{'account-employee.demailuzAE' | translate}}
             </div>
 
-            <div class="alert"
+            <div class="alertSuccess"
                  *ngIf="accountEmployeeForm.controls['inputEmail'].hasError('email') === true">
               {{'account-employee.nvvemailAE' | translate}}
             </div>
@@ -77,7 +77,7 @@
 
           <ng-template #trueSucc>
 
-            <div class="alert">{{'account-employee.emailsAE' | translate}}</div>
+            <div class="alertSuccess">{{'account-employee.emailsAE' | translate}}</div>
 
           </ng-template>
 
@@ -130,21 +130,24 @@
           <input type="password" class="inputNewPassword1" id="inputNewPassword1" formControlName="inputNewPassword1" [placeholder]="'account-employee.vvnewpwdAE' | translate">
           <input type="password" class="inputNewPassword2" id="inputNewPassword2" formControlName="inputNewPassword2" [placeholder]="'account-employee.repeatpwdAE' | translate">
 
+
+
+          <button type="submit" class="btn-newPassword" (click)="NewPassword()">{{'allValue.changepwd2' | translate}}</button>
+          <ng-container *ngIf="bPasswordNew">{{'account-employee.pwdiAE' | translate}}</ng-container>
+          <div class="alertWrong" *ngIf="bErrorRepeatPassword">{{'account-employee.pwdnserrAE' | translate}}</div>
+          <div class="alertWrong" *ngIf="bErrorEmptyPassword">{{'account-employee.pwdndbpAE' | translate}}</div>
+          <button class="btn-newPasswordCancel" (click)="DisappearFrame()">{{'allValue.Cancel' | translate}}</button>
+
           <div *ngIf="accountEmployeeForm.controls['inputNewPassword2'].value.length > 0">
             <div *ngIf="accountEmployeeForm.controls['inputNewPassword2'].invalid; else truePassword2Template">
-              <div class="alert">{{'account-employee.repeatpwdnsAE' | translate}}</div>
+              <div class="alertWrong">{{'account-employee.repeatpwdnsAE' | translate}}</div>
             </div>
           </div>
 
           <ng-template #truePassword2Template>
-            <div class="alert">{{'account-employee.pwdssuAE' | translate}}</div>
+            <div class="alertSuccess">{{'account-employee.pwdssuAE' | translate}}</div>
           </ng-template>
 
-          <button type="submit" class="btn-newPassword" (click)="NewPassword()">{{'allValue.changepwd2' | translate}}</button>
-          <ng-container *ngIf="bPasswordNew">{{'account-employee.pwdiAE' | translate}}</ng-container>
-          <div class="alert-pass" *ngIf="bErrorRepeatPassword">{{'account-employee.pwdnserrAE' | translate}}</div>
-          <div class="alert-pass" *ngIf="bErrorEmptyPassword">{{'account-employee.pwdndbpAE' | translate}}</div>
-          <button class="btn-newPasswordCancel" (click)="DisappearFrame()">{{'allValue.Cancel' | translate}}</button>
         </div>
 
       </ng-container>

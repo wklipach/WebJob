@@ -1,7 +1,7 @@
 .leftSide {
   display: inline-block;
   width: 15%;
-  height: 1500px;
+  height: 950px;
   margin-top: 30px;
   vertical-align: top;
   border-right: solid 1px #b8b8b8;
@@ -21,15 +21,16 @@
 .alert{
   position: absolute;
 }
-.alert-pass{
-  position: absolute;
-}
-.employee-form{
-}
 label{
   margin: 25px 1px 12px 0;
   color: #0262d2;
 }
+/*
+label:nth-child(1), label:nth-child(2){
+  margin-top: 6px;
+  margin-bottom: 25px;
+}
+*/
 .personal {
   font-size: 18px;
   margin-left: 12px;
@@ -118,7 +119,9 @@ label{
   width: 245px;
   height: 43px;
   margin-left: 60px;
-
+}
+.inputUserName:hover{
+  background-color: rgb(240, 240, 240);
 }
 .email{
   position: relative;
@@ -160,6 +163,7 @@ label{
 }
 .birth{
  position: relative;
+  display: inline-block;
   margin-left: 375px;
 
 }
@@ -407,21 +411,25 @@ label{
   margin-top:72px;
   margin-left: -192px;
 }
-.alert-pass{
-}
-.alert-incorrect{
-  position: absolute;
-  margin-top: 6px;
-  margin-left: 22px;
+.alertWrong{
+  display: block;
+  font-size: 1.4em;
+  color: #F74933;
+  width: 530px;
+  margin-top: 100px;
   text-align: center;
-  width: 441px;
-  color: red;
+  border: dotted 1px #f20f4b;
+  height: 50px;
+  line-height: 2.03;
 }
-.alert-correct{
-  position: absolute;
-  margin-top: 6px;
-  margin-left: 22px;
+.alertSuccess{
+  display: block;
+  font-size: 1.4em;
+  color: #09D42B;
+  width: 530px;
+  margin-top: 100px;
   text-align: center;
-  width: 441px;
-  color: green;
+  border: dotted 1px #09D42B;
+  height: 50px;
+  line-height: 2.03;
 }

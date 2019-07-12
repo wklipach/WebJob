@@ -1,7 +1,7 @@
 .leftSide {
   display: inline-block;
   width: 15%;
-  height: 1500px;
+  height: 1200px;
   margin-top: 30px;
   vertical-align: top;
   border-right: solid 1px #b8b8b8;
@@ -128,7 +128,7 @@ label{
   margin-top: 1px;
 }
 .inputUserName:hover{
-  background-color: #b7b7b7;
+  background-color: rgb(240, 240, 240);
 }
 .email{
   display: inline-block;
@@ -183,6 +183,7 @@ label{
   margin-top: 221px;
 }
 .location{
+  position: absolute;
   display: inline-block;
   margin-left: 30px;
 }
@@ -234,6 +235,7 @@ label{
   margin-left: 30px;
 }
 .phone{
+  position: absolute;
   display: inline-block;
   margin-left: 30px;
 }
@@ -268,6 +270,7 @@ label{
   margin-left: 300px;
 }
 .web{
+  position: absolute;
   display: inline-block;
   margin-left: 30px;
 }
@@ -427,11 +430,7 @@ label{
   margin-top: 72px;
   margin-left: -192px;
 }
-.alert-pass-danger{
-  position: absolute;
-  z-index: 20;
-}
-.wrongPass{
+.alertWrong{
   display: block;
   font-size: 1.4em;
   color: #F74933;
@@ -442,7 +441,7 @@ label{
   height: 50px;
   line-height: 2.03;
 }
-.successPass{
+.alertSuccess{
   display: block;
   font-size: 1.4em;
   color: #09D42B;

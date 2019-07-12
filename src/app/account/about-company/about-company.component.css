@@ -63,10 +63,11 @@
   font-size: 1em;
 }
 .valueTxt{
-  display: inline-block;
+  display: block;
   width:100%;
   margin: 30px 0 0 1px;
   padding: 1% 2% 2% 0;
+  white-space: pre-wrap;
 }
 .description{
   display: inline-block;

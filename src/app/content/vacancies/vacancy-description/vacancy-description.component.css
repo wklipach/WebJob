@@ -98,17 +98,18 @@
 }
 .company-name{
   display: inline-block;
-  font-size: 18px;
-  width:600px;
+  font-size: 1.5em;
+  width: 900px;
   color: rgb(68, 75, 84);
   text-align: left;
-  margin-top: 36px;
+  margin-top: 28px;
   margin-left: 209px;
   overflow: hidden;
 }
 .company-name:hover{
-   cursor: pointer;
+  cursor: pointer;
   text-decoration: underline;
+  font-weight:bold;
 }
 .jobFunction{
 }

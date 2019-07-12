@@ -44,19 +44,19 @@
 
         <div *ngIf="accountEmployerForm.controls['inputEmail'].dirty">
 
-          <div class="wrongPass"
+          <div class="alertWrong"
                *ngIf="accountEmployerForm.controls['inputEmail'].value.length === 0 ">
             {{'account-employer.neuemailAER' | translate}}
           </div>
 
           <div *ngIf="accountEmployerForm.controls['inputEmail'].value.length > 0">
             <div *ngIf="accountEmployerForm.controls['inputEmail'].invalid; else trueSucc">
-              <div class="wrongPass"
+              <div class="alertWrong"
                    *ngIf="accountEmployerForm.controls['inputEmail'].hasError('errorEmailExists') === true">
                 {{'account-employer.demailuzAER' | translate}}
               </div>
 
-              <div class="wrongPass"
+              <div class="alertWrong"
                    *ngIf="accountEmployerForm.controls['inputEmail'].hasError('email') === true">
                 {{'account-employer.eevvemailAER' | translate}}
               </div>
@@ -65,7 +65,7 @@
 
             <ng-template #trueSucc>
 
-              <div class="wrongPass">{{'account-employer.emailfreeAER' | translate}}</div>
+              <div class="alertWrong">{{'account-employer.emailfreeAER' | translate}}</div>
 
             </ng-template>
 
@@ -145,13 +145,13 @@
 
           <ng-container *ngIf="bPasswordNew">{{'account-employer.pwdchangeAER' | translate}}</ng-container>
 
-          <div class="wrongPass" *ngIf="bErrorRepeatPassword">
+          <div class="alertWrong" *ngIf="bErrorRepeatPassword">
 
-            {{'account-employer.pwdnsAER' | translate}} 150
+            {{'account-employer.pwdnsAER' | translate}}
 
           </div>
 
-          <div class="wrongPass" *ngIf="bErrorEmptyPassword">
+          <div class="alertWrong" *ngIf="bErrorEmptyPassword">
            <!-- <app-dialogminimum [name]="'account-employer.pwdndbpAER' | translate"></app-dialogminimum>
            Пароли не должны быть пустыми  -->
             {{'account-employer.pwdndbpAER' | translate}}
@@ -161,7 +161,7 @@
           <!-- Это начало единого блока -->
 
           <div *ngIf="accountEmployerForm.controls['inputNewPassword2'].value.length > 0">
-            <div class="wrongPass" *ngIf="accountEmployerForm.controls['inputNewPassword2'].invalid; else truePassword2Template">
+            <div class="alertWrong" *ngIf="accountEmployerForm.controls['inputNewPassword2'].invalid; else truePassword2Template">
               <!-- Пароли не совпадают -->
              {{'account-employer.pwdnsAER' | translate}}
             </div>
@@ -170,7 +170,7 @@
 
           <ng-template #truePassword2Template>
             <!-- Пароли совпали -->
-            <div class="successPass">{{'account-employer.pwdsspAER' | translate}}</div>
+            <div class="alertSuccess">{{'account-employer.pwdsspAER' | translate}}</div>
           </ng-template>
 
           <!-- Это конец единого блока  -->
