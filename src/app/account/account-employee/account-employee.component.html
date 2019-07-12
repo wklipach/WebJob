@@ -44,15 +44,13 @@
 
 
    <div class="line">
-      <input  class="inputBirth" type="date" id="inputBirth" name="inputBirth" formControlName="inputBirth">
       <select class="inputGender" id="inputGender" formControlName="inputGender"  [title]="'account-employee.vpppvAE' | translate">
         <option  *ngFor="let gl of genderList" [value]="gl.name">
           {{gl.name}}
         </option>
       </select>
+     <input  class="inputBirth" type="date" id="inputBirth" name="inputBirth" formControlName="inputBirth">
    </div>
-
-
 
       <!-- начало обработки почтовых ошибок -->
 
@@ -150,10 +148,13 @@
         </div>
 
       </ng-container>
-      <button type="submit" class="btn-save" (click)="savecv()" [disabled]="accountEmployeeForm.invalid" >{{'allValue.save' | translate}}</button>
-      <button type="submit" class="btn-cancel" (click)="back()">{{'allValue.Cancel' | translate}}</button>
+
     </form>
 
+    <div class="line">
+    <button type="submit" class="btn-save" (click)="savecv()" [disabled]="accountEmployeeForm.invalid" >{{'allValue.save' | translate}}</button>
+    <button type="submit" class="btn-cancel" (click)="back()">{{'allValue.Cancel' | translate}}</button>
+    </div>
 
    </div>
       </div>
