@@ -86,16 +86,24 @@ label{
   margin-left: 15px;
   margin-top:2px;
 }
-
-
-.trowblevalidator{
+.troublevalidator{
   border-width: 1px;
   border-style: solid;
   border-color: red;
 }
-
 .succesfullvalidator {
   border-width: 1px;
   border-style: solid;
   border-color: green;
+}
+.alertWrongLogin{
+  display: block;
+  font-size: 1.4em;
+  color: #F74933;
+  width: 530px;
+  text-align: center;
+  border: dotted 1px #f20f4b;
+  height: 50px;
+  line-height: 2.03;
+  margin-top: 30px;
 }

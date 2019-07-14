@@ -131,12 +131,15 @@
           <input type="password" class="inputNewPassword2" id="inputNewPassword2" formControlName="inputNewPassword2" [placeholder]="'account-employee.repeatpwdAE' | translate">
 
 
-
           <button type="submit" class="btn-newPassword" (click)="NewPassword()">{{'allValue.changepwd2' | translate}}</button>
+          <button class="btn-newPasswordCancel" (click)="DisappearFrame()">{{'allValue.Cancel' | translate}}</button>
+
+
           <ng-container *ngIf="bPasswordNew">{{'account-employee.pwdiAE' | translate}}</ng-container>
+
           <div class="alertWrong" *ngIf="bErrorRepeatPassword">{{'account-employee.pwdnserrAE' | translate}}</div>
           <div class="alertWrong" *ngIf="bErrorEmptyPassword">{{'account-employee.pwdndbpAE' | translate}}</div>
-          <button class="btn-newPasswordCancel" (click)="DisappearFrame()">{{'allValue.Cancel' | translate}}</button>
+
 
           <div *ngIf="accountEmployeeForm.controls['inputNewPassword2'].value.length > 0">
             <div *ngIf="accountEmployeeForm.controls['inputNewPassword2'].invalid; else truePassword2Template">

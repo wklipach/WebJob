@@ -39,7 +39,7 @@ a:visited{
   color: rgb(68, 75, 84);
 }
 
-
+white-space: pre-wrap;
 */
 @import "../fonts/fonts.css";
 
@@ -58,6 +58,7 @@ body {
   width: 1170px;
   margin: 0 auto;
   color: rgb(68, 75, 84);
+
 }
 input, textarea, select, label{
   font-family: "Proxima Nova","sans-serif";
@@ -118,7 +119,32 @@ button{
 }
 
 
+
 /*
+.alertWrong{
+  display: block;
+  font-size: 1.4em;
+  color: #F74933;
+  width: 530px;
+  margin-top: 10px;
+  text-align: center;
+  border: dotted 1px #f20f4b;
+  height: 50px;
+  line-height: 2.03;
+}
+.alertSuccess{
+  display: block;
+  font-size: 1.4em;
+  color: #09D42B;
+  width: 530px;
+  margin-top: 10px;
+  text-align: center;
+  border: dotted 1px #09D42B;
+  height: 50px;
+  line-height: 2.03;
+}
+
+
 .message.error {
     z-index: 1;
     background: #e94e26;

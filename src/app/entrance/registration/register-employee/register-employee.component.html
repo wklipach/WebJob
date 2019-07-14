@@ -1,15 +1,15 @@
 <app-header-top></app-header-top>
 <div class="wrapper">
   <div class="top">{{'register-employee.rsRE' | translate}}</div>
-    <div class="box">
 
+  <div class="box">
 
 <form [formGroup]="myForm" novalidate (ngSubmit)="submit()">
 
   <label class="userName">{{'allValue.UserName' | translate}} (Nic)</label>
       <input type="text" class="inputUserName" id="userName" formControlName="userName" [placeholder]="'allValue.UserName' | translate">
   <!-- Проверяем вносимый логин. Если логин уже есть в базе, показываем лейбл -Имя пользователя занято, или наоборот -->
-      <div class="alertWrongName"
+      <div class="alertWrong"
            *ngIf="myForm.controls['userName'].touched && myForm.controls['userName'].value.length === 0 ">
         {{'register-employee.nuipRE' | translate}}
       </div>
@@ -17,11 +17,11 @@
       <div *ngIf="myForm.controls['userName'].value.length > 0">
 
         <div *ngIf="myForm.controls['userName'].invalid; else trueUserNameTemplate">
-          <div class="alertName">{{'register-employee.ipzRE' | translate}}</div>
+          <div class="alertBusyName">{{'register-employee.ipzRE' | translate}}</div>
         </div>
 
         <ng-template #trueUserNameTemplate>
-          <div class="alertName">{{'register-employee.ipsRE' | translate}}</div>
+          <div class="alertSuccess">{{'register-employee.ipsRE' | translate}}</div>
         </ng-template>
 
       </div>
@@ -35,7 +35,7 @@
 
     <div *ngIf="myForm.controls['userEmail'].dirty">
 
-      <div class="alert alert-danger"
+      <div class="alertWrong"
 
            *ngIf="myForm.controls['userEmail'].value.length === 0 ">
         {{'register-employee.nuemailRE' | translate}}
@@ -46,7 +46,7 @@
 
         <div *ngIf="myForm.controls['userEmail'].invalid; else trueSucc">
 
-          <div class="alert alert-danger"
+          <div class="alertWrong"
 
                *ngIf="myForm.controls['userEmail'].hasError('errorEmailExists') === true">
 
@@ -54,7 +54,7 @@
 
           </div>
 
-          <div class="alert alert-danger"
+          <div class="alertWrong"
 
                *ngIf="myForm.controls['userEmail'].hasError('email') === true">
 
@@ -66,7 +66,7 @@
 
         <ng-template #trueSucc>
 
-          <div class="alert alert-info">{{'register-employee.esRE' | translate}}</div>
+          <div class="alertSuccess">{{'register-employee.esRE' | translate}}</div>
 
         </ng-template>
 
@@ -85,12 +85,12 @@
 
       <div *ngIf="myForm.controls['userPassword2'].value.length > 0">
         <div *ngIf="myForm.controls['userPassword2'].invalid; else truePassword2Template">
-          <div class="alert alert-danger">{{'register-employee.ppnsRE' | translate}}</div>
+          <div class="alertWrong">{{'register-employee.ppnsRE' | translate}}</div>
         </div>
       </div>
 
       <ng-template #truePassword2Template>
-          <div class="alert alert-info">{{'register-employee.pusRE' | translate}}</div>
+          <div class="alertSuccess">{{'register-employee.pusRE' | translate}}</div>
       </ng-template>
 
 
@@ -99,26 +99,24 @@
         {{'register-employee.pppnsRE' | translate}}
       </div>
 
-
-
   <label class="rules-link" (click)="licenseShow()">{{'register-employee.ppiRE' | translate}}</label>
   <div class="licenseText" *ngIf="bLicense">
-
-    Правила работы с Базой данных резюме и вакансий<br><br>
+<pre>
+    Правила работы с Базой данных резюме и вакансий
 
     Для работы с Базой данных резюме и вакансий (далее — База данных), доступ к которой возможен посредством
     информационно-телекоммуникационных сетей общего пользования через сайт www.superjob.ru (далее Сайт), а также
     через мобильное приложение при помощи мобильных устройств (смартфонов, планшетов и других устройств), Соискателю (Пользователю) необходимо пройти личную регистрацию в порядке, изложенном на Cайте.
-    Соискатели, прошедшие регистрацию, получают возможность:<br>
-    размещать, редактировать и удалять резюме Соискателя в Базе данных;<br>
+    Соискатели, прошедшие регистрацию, получают возможность:
+    размещать, редактировать и удалять резюме Соискателя в Базе данных;
     оформлять подписки на вакансии для ежедневного получения новых подходящих вакансий, размещенных в Базе данных за
     последние сутки, а также получать вакансии напрямую от работодателя;
     доступ ко всем вакансиям, хранящимся в открытом доступе в Базе данных, с возможностью отправки резюме на вакансию
-    работодателя (контактные данные работодателя доступны при наличии резюме в Базе данных);<br>
+    работодателя (контактные данные работодателя доступны при наличии резюме в Базе данных);
     получать консультации по вопросам работы Базы данных, включая консультации по составлению резюме, а также
-    рекомендации по работе с вакансиями;<br>
+    рекомендации по работе с вакансиями;
     консультации предоставляются по электронной почте; запрос на консультацию может быть отправлен из раздела
-    Cайта «Помощь»;<br>
+    Cайта «Помощь»;
     участвовать в дискуссиях и конкурсах, проводимых Администрацией Базы данных.
     Доступ Соискателя к Личной регистрации осуществляется с использованием его уникального идентификатора
     (далее — логин) и пароля, которые присваиваются
@@ -131,25 +129,25 @@
     https://www.superjob.ru/info/personalnye_dannye.html. Обработка персональных данных осуществляется с использованием
     интернет-сервисов сторонних организаций, в том числе с использованием интернет-сервиса Google Analitics. С порядком
     обработки данных с помощью интернет-сервиса Google Analitics можно ознакомиться, перейдя по ссылке
-    https://www.google.ru/policies/privacy/partners/. <br>
+    https://www.google.ru/policies/privacy/partners/.
     Личная регистрация Соискателя подтверждает согласие Соискателя на получение регулярных рассылок информационного и
-    рекламного характера по электронной почте. <br><br>
+    рекламного характера по электронной почте.
 
     Резюме, размещаемые Соискателем в Базе данных, должны соответствовать правилам, опубликованным по адресу
-    https://www.superjob.ru/info/rules.html.<br>
+    https://www.superjob.ru/info/rules.html.
     Все резюме, размещаемые Соискателем в Базе данных, проходят проверку администратора Базы данных. В случае
-    нарушения Правил размещения резюме<br>
+    нарушения Правил размещения резюме
     в Базе данных резюме может быть удалено из Базы данных без предупреждения, а регистрация Соискателя
-    удалена/заблокирована.<br>
-    Правила размещения резюме могут быть изменены ООО «СуперДжоб» в любое время.<br>
-    Ответственность за содержащуюся в резюме информацию несет Соискатель.<br>
+    удалена/заблокирована.
+    Правила размещения резюме могут быть изменены ООО «СуперДжоб» в любое время.
+    Ответственность за содержащуюся в резюме информацию несет Соискатель.
     ООО «СуперДжоб» не является представителем ни Соискателей, размещающих в Базе данных свои резюме, ни работодателей,
-    размещающих в Базе данных вакансии.<br>
+    размещающих в Базе данных вакансии.
     Любые договоренности между Соискателями и работодателями, являются двусторонними, и ООО «СуперДжоб» не имеет к ним отношения.
     Используя Базу данных, Пользователь безусловно соглашается и признает, что ООО СуперДжоб" вправе использовать Cookie
     Пользователей для целей идентификации, а также для любых иных целей, в том числе таргетирования рекламы и проведения исследований. Перечень и структура
-    характеристик Cookie Пользователей определяется ООО СуперДжоб" по своему усмотрению.<br>
-
+    характеристик Cookie Пользователей определяется ООО СуперДжоб" по своему усмотрению.
+</pre>
 
 
   </div>

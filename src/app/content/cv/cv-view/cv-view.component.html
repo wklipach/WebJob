@@ -1,9 +1,10 @@
 <app-header-top></app-header-top>
 
 <div class="wrapper">
+<div class="cv-box">
+  <div class="leftBox">
 
-  <div class="cv-box">
-    <div class="leftBox">
+
       <form [formGroup]="formView">
 
         <div  *ngIf="loadUser!= undefined">
@@ -19,9 +20,7 @@
           <img src="/assets/img/usernull.png" class="img-thumbnail" onclick="">
         </ng-template>
 
-        <!--
-         <span class="userName"> {{this.loadUser.UserName}} </span>
-        -->
+
 
         <div class="contact">{{'footer.cont' | translate}}</div>
         <div>
@@ -39,10 +38,13 @@
         <div class="contactsLang" *ngFor="let lL of this._listLanguage; let i = index">
           {{lL['language_name']}} - <div class="langLevel">{{lL['language_level']}}</div>
         </div>
+        <button class="btn-invitation">Пригласить</button>
+    </form>
 
-      </form>
 
-    </div>
+
+   </div>
+
 
     <div class="rightBox">
 
@@ -50,9 +52,10 @@
 
       <div *ngIf="_cvitem !== undefined">
         <div class="position"  *ngIf="_cvitem.Position !== ''">{{_cvitem.Position}}</div>
-        <div class="valueTxt"  *ngIf="_cvitem.Position === ''">- - -</div>
+        <div class="valueTxt"  *ngIf="_cvitem.Position === ''"> - - - </div>
+        <div class="valueTxt" *ngIf="_cvitem === undefined"> - - - </div>
       </div>
-      <div class="valueTxt" *ngIf="_cvitem === undefined">- - -</div>
+
 
       <label class="strip">{{'cv-view.birdt' | translate}}</label>
       <div class="valueTxt" *ngIf="_cvitem!= undefined">{{ _cvitem.DateBirth  | date:'dd.MM.yyyy'}}</div>
@@ -61,70 +64,84 @@
 
       <div *ngIf="_cvitem !== undefined">
         <div class="valueTxt" *ngFor="let lep of this._listExperience; let i = index">{{lep}}</div>
-        <div class="valueTxt" *ngIf="this._listExperience.length ===0">- - -</div>
+        <div class="valueTxt" *ngIf="this._listExperience.length ===0"> - - - </div>
+        <div class="valueTxt" *ngIf="_cvitem === undefined"> - - - </div>
       </div>
-      <div class="valueTxt" *ngIf="_cvitem === undefined">- - -</div>
+
 
       <label class="strip">{{'allValue.salary' | translate}}</label>
 
       <div *ngIf="_cvitem !== undefined">
         <div class="valueTxt" *ngIf="_cvitem.SalaryFrom !== 0">{{_cvitem.SalaryFrom}}&nbsp;</div>
-        <div class="valueTxt" *ngIf="_cvitem.SalaryFrom === 0">- - -</div>
+        <div class="valueTxt" *ngIf="_cvitem.SalaryFrom === 0"> - - - </div>
+        <div class="valueTxt" *ngIf="_cvitem === undefined"> - - - </div>
       </div>
-      <div class="valueTxt" *ngIf="_cvitem === undefined">- - -</div>
+
 
       <label class="strip">{{'allValue.Employment' | translate}}</label>
 
       <div *ngIf="_cvitem !== undefined">
         <div class="valueTxt" *ngFor="let Elm of this._listEmployment; let i = index">{{Elm}}</div>
-        <div class="valueTxt" *ngIf="this._listEmployment.length === 0">- - -</div>
+        <div class="valueTxt" *ngIf="this._listEmployment.length === 0"> - - - </div>
+        <div class="valueTxt" *ngIf="_cvitem === undefined"> - - - </div>
       </div>
-      <div class="valueTxt" *ngIf="_cvitem === undefined">- - -</div>
+
+
 
 
       <label class="strip">{{'cv-view.oniu' | translate}}</label>
 
       <div *ngIf="_cvitem !== undefined">
-        <div *ngIf="_cvitem.Skills!= ''"><div class="valueTxt" appTextToHtml [sourceText]="_cvitem.Skills"></div></div>
-        <div class="valueTxt" *ngIf="_cvitem.Skills === ''">- - -</div>
+        <div *ngIf="_cvitem.Skills!= ''">
+      <!--    <div class="valueTxt" appTextToHtml [sourceText]="_cvitem.Skills"></div>  8 965 026 50 40 Аня  -->
+
+          <div class="valueTxt"  *ngIf="_cvitem.Skills!= ''">{{_cvitem.Skills}}
+              </div>
+        </div>
+        <div class="valueTxt" *ngIf="_cvitem.Skills === ''"> - - - </div>
+        <div class="valueTxt" *ngIf="_cvitem === undefined"> - - - </div>
       </div>
-      <div class="valueTxt" *ngIf="_cvitem === undefined">- - -</div>
+
 
 
       <label class="strip">{{'allValue.EducationLevel' | translate}}</label>
 
       <div *ngIf="_cvitem !== undefined">
         <div class="valueTxt" *ngFor="let le of this._listEducation; let i = index">{{le}} </div>
-        <div class="valueTxt" *ngIf="this._listEducation.length ==0">- - -</div>
+        <div class="valueTxt" *ngIf="this._listEducation.length ==0" >- - - </div>
+        <div class="valueTxt" *ngIf="_cvitem === undefined"> - - - </div>
       </div>
-      <div class="valueTxt" *ngIf="_cvitem === undefined">- - -</div>
+
 
 
       <label class="strip">{{'allValue.Education' | translate}}</label>
 
       <div *ngIf="_cvitem !== undefined">
         <div class="valueTxt"  *ngIf="_cvitem.sEducation!= ''">{{_cvitem.sEducation}} </div>
-        <div class="valueTxt"  *ngIf="_cvitem.sEducation === ''">- - -</div>
+        <div class="valueTxt"  *ngIf="_cvitem.sEducation === ''"> - - - </div>
+        <div class="valueTxt" *ngIf="_cvitem === undefined"> - - - </div>
       </div>
-      <div class="valueTxt" *ngIf="_cvitem === undefined">- - -</div>
+
 
 
       <label class="strip">{{'cv-view.sd' | translate}}</label>
 
       <div *ngIf="_cvitem !== undefined">
         <div class="valueTxt" *ngFor="let liI of this._listIndustry; let i = index">{{liI}}</div>
-        <div class="valueTxt" *ngIf="this._listIndustry.length === 0">- - -</div>
+        <div class="valueTxt" *ngIf="this._listIndustry.length === 0"> - - - </div>
+        <div class="valueTxt" *ngIf="_cvitem === undefined"> - - - </div>
       </div>
-      <div class="valueTxt" *ngIf="_cvitem === undefined">- - -</div>
+
 
 
       <label class="strip">{{'cv-view.dreamgr' | translate}}</label>
 
       <div *ngIf="_cvitem !== undefined">
         <div class="valueTxt" *ngFor="let lS of this._listSchedule; let i = index">{{lS}}</div>
-        <div class="valueTxt" *ngIf="this._listSchedule.length===0">- - -</div>
+        <div class="valueTxt" *ngIf="this._listSchedule.length===0"> - - - </div>
+        <div class="valueTxt" *ngIf="_cvitem === undefined"> - - - </div>
       </div>
-      <div class="valueTxt" *ngIf="_cvitem === undefined">- - -</div>
+
 
       <div class="previous">
 
@@ -132,32 +149,37 @@
 
         <div *ngIf="_cvitem !== undefined">
           <div *ngIf="this._listPrevious.length > 0">
-            <div *ngFor="let lP of this._listPrevious; let i = index">
-              <div class="valueTxt">{{'cv-view.periodworks' | translate}} {{lP['dStartDate'] | date:'dd.MM.yyyy'}} - {{lP['dCompletionDate'] | date:'dd.MM.yyyy'}}</div>
-              <div class="valueTxt">{{'cv-view.org' | translate}} {{lP['sCompany']}} </div>
-              <div class="valueTxt">{{'cv-view.curD' | translate}} {{lP['sPreviousPosition']}}</div>
-              <div class="valueTxt">{{'cv-view.descr' | translate}} {{lP['sInputPositionDescription']}}</div>
+            <div class="previousItem" *ngFor="let lP of this._listPrevious; let i = index">
+              <div class="previousDates">{{'cv-view.periodworks' | translate}}
+                c {{lP['dStartDate'] | date:'dd.MM.yyyy'}} по {{lP['dCompletionDate'] | date:'dd.MM.yyyy'}}</div>
+
+
+
+
+              <div class="previousCompany">{{'cv-view.org' | translate}} {{lP['sCompany']}} </div>
+              <div class="previousPosition">{{'cv-view.curD' | translate}} {{lP['sPreviousPosition']}}</div>
+              <div class="previousDescription">{{'cv-view.descr' | translate}} {{lP['sInputPositionDescription']}}</div>
             </div>
           </div>
-          <div  class="valueTxt" *ngIf="this._listPrevious.length === 0">- - -</div>
+          <div  class="valueTxt" *ngIf="this._listPrevious.length === 0"> - - - </div>
+          <div class="valueTxt" *ngIf="_cvitem === undefined"> - - - </div>
         </div>
-        <div class="valueTxt" *ngIf="_cvitem === undefined">- - -</div>
+
 
       </div>
 
       <label class="strip">{{'newcv.additionalInfo' | translate}}</label>
 
       <div *ngIf="_cvitem !== undefined">
-        <div class="valueTxt"  *ngIf="_cvitem.sExperience !== ''">{{_cvitem.sExperience}}</div>
-        <div class="valueTxt"  *ngIf="_cvitem.sExperience === ''">- - -</div>
+        <div class="valueTxtEnd"  *ngIf="_cvitem.sExperience !== ''">{{_cvitem.sExperience}}</div>
+        <div class="valueTxtEnd"  *ngIf="_cvitem.sExperience === ''"> - - - </div>
+        <div class="valueTxtEnd" *ngIf="_cvitem === undefined"> - - - </div>
       </div>
-      <div class="valueTxt" *ngIf="_cvitem === undefined">- - -</div>
 
     </div>
 
+</div> <!-- cv-box end -->
+
   </div>
 
-</div>
-
-
-
+<app-footer></app-footer>

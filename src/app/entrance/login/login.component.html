@@ -16,8 +16,7 @@
   <input type="text" class="inputLogin" id="inputLogin" formControlName="nameOrEmail" [placeholder]="'login.lieL' | translate"
          [ngClass]="{
                       succesfullvalidator: this.loginForm.controls['nameOrEmail'].value.length >= 3,
-                      trowblevalidator: loginForm.controls['nameOrEmail'].value.length >= 1 && loginForm.controls['nameOrEmail'].value.length <= 2
-                     }">
+                      troublevalidator: loginForm.controls['nameOrEmail'].value.length >= 1 && loginForm.controls['nameOrEmail'].value.length <= 2  }">
 
 
   <label class="password" for="inputPassword">{{'login.pL' | translate}}</label>
@@ -33,14 +32,14 @@
 
 
   <ng-container *ngIf="showErr">
-    <div class="alert alert-danger" role="alert">
+    <div class="alertWrongLogin">
       {{sResTrouble}}
     </div>
   </ng-container>
 
 
   <ng-container *ngIf="showSucc">
-   <div class="alert alert-success" role="alert">{{'login.uvL' | translate}}</div>
+   <div class="alert">{{'login.uvL' | translate}}</div>
     <a routerLink="/smain" routerLinkActive="active"></a>
   </ng-container>
 

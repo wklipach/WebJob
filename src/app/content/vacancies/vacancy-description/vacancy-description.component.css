@@ -105,10 +105,10 @@
   margin-top: 28px;
   margin-left: 209px;
   overflow: hidden;
+  text-decoration: underline;
 }
 .company-name:hover{
   cursor: pointer;
-  text-decoration: underline;
   font-weight:bold;
 }
 .jobFunction{
