@@ -117,3 +117,36 @@ input{
 .alertRegister{
   color: red;
 }
+.alertWrong{
+  display: block;
+  font-size: 1.4em;
+  color: #F74933;
+  width: 530px;
+  margin-top: 10px;
+  text-align: center;
+  border: dotted 1px #f20f4b;
+  height: 50px;
+  line-height: 2.03;
+}
+.alertBusyName{
+  display: block;
+  font-size: 1.4em;
+  color: #F74933;
+  width: 530px;
+  margin-top: 10px;
+  text-align: center;
+  border: dotted 1px #f20f4b;
+  height: 50px;
+  line-height: 2.03;
+}
+.alertSuccess{
+  display: inline-block;
+  font-size: 1.4em;
+  color: #09D42B;
+  width: 530px;
+  margin-top: 10px;
+  text-align: center;
+  border: dotted 1px #09D42B;
+  height: 50px;
+  line-height: 2.03;
+}

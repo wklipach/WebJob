@@ -49,7 +49,7 @@ label{
   width: 130px;
   height: 40px;
   margin-left: 12px;
-  margin-top: 65px;
+  margin-top: 15px;
 }
 .img-thumbnail:hover{
   cursor: pointer;
@@ -416,7 +416,6 @@ label{
 }
 .btn-newPassword2{
   display: inline-block;
-  position: absolute;
   font-size: 18px;
   background-color: #0262d2;
   color: rgb(255, 255, 255);
@@ -427,15 +426,15 @@ label{
   line-height: 2.25;
   width: 190px;
   height: 48px;
-  margin-top: 72px;
-  margin-left: -192px;
+  margin-top: 9px;
+  margin-left: 295px;
 }
 .alertWrong{
   display: block;
   font-size: 1.4em;
   color: #F74933;
   width: 530px;
-  margin-top: 100px;
+  margin-top: 15px;
   text-align: center;
   border: dotted 1px #f20f4b;
   height: 50px;
@@ -446,7 +445,7 @@ label{
   font-size: 1.4em;
   color: #09D42B;
   width: 530px;
-  margin-top: 100px;
+  margin-top: 15px;
   text-align: center;
   border: dotted 1px #09D42B;
   height: 50px;

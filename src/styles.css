@@ -52,7 +52,6 @@ body {
   margin: 0 !important;
   padding: 0 !important;
   text-decoration: none;
-
 }
 .wrapper{
   width: 1170px;
@@ -68,7 +67,6 @@ input, textarea, select, label{
 h1,h2,h3,h4,h5,h6 {
   font-family: "Arial Rounded MT Bold", "Calibri", "sans-serif";
 }
-
 a:link{
   color: rgb(68, 75, 84);
 }

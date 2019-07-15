@@ -155,16 +155,17 @@
         <div *ngIf="_cvitem !== undefined">
           <div *ngIf="this._listPrevious.length > 0">
             <div class="previousItem" *ngFor="let lP of this._listPrevious; let i = index">
-              <div class="previousDates">{{'cv-view.periodworks' | translate}}
-                c {{lP['dStartDate'] | date:'dd.MM.yyyy'}} по {{lP['dCompletionDate'] | date:'dd.MM.yyyy'}}</div>
+              <div>{{'cv-view.periodworks' | translate}}&nbsp;&nbsp;&nbsp;&nbsp;
+                  c<div class="previousDates">{{lP['dStartDate'] | date:'dd.MM.yyyy'}}</div>по
+                <div class="previousDates">{{lP['dCompletionDate'] | date:'dd.MM.yyyy'}}</div>
+             </div>
 
 
-
-
-              <div class="previousCompany">{{'cv-view.org' | translate}} {{lP['sCompany']}} </div>
-              <div class="previousPosition">{{'cv-view.curD' | translate}} {{lP['sPreviousPosition']}}</div>
-              <div class="previousDescription">{{'cv-view.descr' | translate}} {{lP['sInputPositionDescription']}}</div>
+              <div>{{'cv-view.org' | translate}}<div class="previousCompany">{{lP['sCompany']}} </div></div>
+              <div>{{'cv-view.curD' | translate}}<div class="previousPosition">{{lP['sPreviousPosition']}}</div>
+              <div>{{'cv-view.descr' | translate}}<div class="previousDescription">{{lP['sInputPositionDescription']}}</div>
             </div>
+
           </div>
           <div  class="valueTxt" *ngIf="this._listPrevious.length === 0"> - - - </div>
           <div class="valueTxt" *ngIf="_cvitem === undefined"> - - - </div>
@@ -187,4 +188,7 @@
 
   </div>
 
+
+</div>
+</div>
 <app-footer></app-footer>

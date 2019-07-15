@@ -100,8 +100,37 @@ label{
   border-bottom: solid 1px #0262d2;
   white-space: pre-wrap;
 }
-
-
+.previousDates{
+  display: inline-block;
+  font-size: 1em;
+  font-weight :bold;
+  margin: 4px 0;
+  padding-left: 6px;
+  padding-right:6px;
+}
+.previousCompany{
+  display: inline-block;
+  font-size: 1.2em;
+  font-weight :bold;
+  margin: 4px 0;
+  padding-left: 6px;
+  padding-right:6px;
+}
+.previousPosition{
+  display: inline-block;
+  font-size: 1.2em;
+  font-weight :bold;
+  margin: 4px 0;
+  padding-left: 6px;
+  padding-right:6px;
+}
+.previousDescription{
+  display: inline-block;
+  font-size: 1em;
+  margin: 4px 0;
+  padding-left: 6px;
+  padding-right:6px;
+}
 .btn-invitation{
   display: block;
   position: absolute;

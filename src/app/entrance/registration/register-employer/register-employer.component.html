@@ -12,18 +12,18 @@
     <div class="form-group col-md-3">
       <!-- Проверяем вносимый логин. Если логин уже есть в базе, показываем лейбл -Имя пользователя занято, или наоборот -->
 
-      <div class="alert alert-danger"
+      <div class="alertWrong"
            *ngIf="formRegisterEmployer.controls['userName'].touched && formRegisterEmployer.controls['userName'].value.length === 0 ">
         {{'register-employer.rr3RER' | translate}}
       </div>
 
       <div *ngIf="formRegisterEmployer.controls['userName'].value.length > 0">
         <div *ngIf="formRegisterEmployer.controls['userName'].invalid; else trueUserNameTemplate">
-          <div class="alert alert-danger">{{'register-employer.rr4RER' | translate}}</div>
+          <div class="alertWrong">{{'register-employer.rr4RER' | translate}}</div>
         </div>
 
         <ng-template #trueUserNameTemplate>
-          <div class="alert alert-info">{{'register-employer.rr5RER' | translate}}</div>
+          <div class="alertWrong">{{'register-employer.rr5RER' | translate}}</div>
         </ng-template>
 
       </div>
@@ -43,19 +43,19 @@
     <!-- начало обработки почтовых ошибок -->
 
     <div *ngIf="formRegisterEmployer.controls['userEmail'].dirty">
-      <div class="alert alert-danger"
+      <div class="alertWrong"
            *ngIf="formRegisterEmployer.controls['userEmail'].value.length === 0 ">
         {{'register-employer.rr6RER' | translate}}
       </div>
 
       <div *ngIf="formRegisterEmployer.controls['userEmail'].value.length > 0">
         <div *ngIf="formRegisterEmployer.controls['userEmail'].invalid; else trueSucc">
-          <div class="alert alert-danger"
+          <div class="alertWrong"
                *ngIf="formRegisterEmployer.controls['userEmail'].hasError('errorEmailExists') === true">
             {{'register-employer.rr7RER' | translate}}
           </div>
 
-          <div class="alert alert-danger"
+          <div class="alertWrong"
                *ngIf="formRegisterEmployer.controls['userEmail'].hasError('email') === true">
             {{'register-employer.rr8RER' | translate}}
           </div>
@@ -63,7 +63,7 @@
         </div>
 
         <ng-template #trueSucc>
-          <div class="alert alert-info">{{'register-employer.rr8_1RER' | translate}}</div>
+          <div class="alertSuccess">{{'register-employer.rr8_1RER' | translate}}</div>
         </ng-template>
       </div>
     </div>
@@ -78,12 +78,12 @@
 
       <div *ngIf="formRegisterEmployer.controls['userPassword2'].value.length > 0">
         <div *ngIf="formRegisterEmployer.controls['userPassword2'].invalid; else truePassword2Template">
-            <div class="alert alert-danger">{{'register-employer.rr11RER' | translate}}</div>
+            <div class="alertWrong">{{'register-employer.rr11RER' | translate}}</div>
         </div>
       </div>
 
     <ng-template #truePassword2Template>
-        <div class="alert alert-info">{{'register-employer.rr12RER' | translate}}</div>
+        <div class="alertSuccess">{{'register-employer.rr12RER' | translate}}</div>
     </ng-template>
 
 
