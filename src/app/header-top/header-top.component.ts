@@ -167,7 +167,7 @@ export class HeaderTopComponent implements OnInit {
 
   favorites() {
     // TODO ПОКАЗ ФАВОРИТов 2
-
+    if (this.id_user === null) return;
     console.log('FAVORITS');
 
     this.httpTvsService.getFavoritesVacancy(this.id_user).subscribe((favor) =>{

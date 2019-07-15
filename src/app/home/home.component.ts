@@ -146,6 +146,11 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
 
+    var Res =  this.authService.loginStorage();
+    this.bConnected = Res.bConnected;
+    this.id_user =  Res.id_user;
+    this.bEmployer = Res.bEmployer;
+
 //    var encrypted = CryptoJS.SHA256('1234567890');
 //    console.log('encrypted',encrypted.toString());
 
@@ -202,10 +207,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     );
 
 
-    var Res =  this.authService.loginStorage();
-    this.bConnected = Res.bConnected;
-    this.id_user =  Res.id_user;
-    this.bEmployer = Res.bEmployer;
 
     this.rowPerPage = 5;
     if (window.localStorage.getItem('rowPerPage') !== '') {
@@ -234,7 +235,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     window.localStorage.removeItem('keyFind');
 
     this.httpService.onReopenVacancy.subscribe(({sMask: value, isFavorites: bFavorites, isAdvancedFind: bAdvancedFind }) => {
-        this.getVacancy(value, bFavorites, bAdvancedFind);
+        if (this.id_user !== null) this.getVacancy(value, bFavorites, bAdvancedFind);
     });
 
     // если не было расширенного поиска вакансий делаем обычный поиск, иначе расширенный запускается из advanced-search.component
@@ -299,7 +300,16 @@ export class HomeComponent implements OnInit, OnDestroy {
 
             this.data_show(data);
             this.reloadPAge(this.allDataVacancy, sMask);
-            if (isFavorites) this.sVacancy = this.sVacF; else this.sVacancy = this.sVacEasy;
+            if (isFavorites) {
+
+              this.translate.get('home.ts.sVacF').subscribe(
+                value => {this.sVacF = value;
+                              this.sVacancy = this.sVacF;});
+            } else {
+              this.translate.get('home.ts.sVacEasy').subscribe(
+                value => {this.sVacEasy = value;
+                              this.sVacancy = this.sVacEasy;});
+            }
           });
       });
   }
@@ -520,7 +530,12 @@ export class HomeComponent implements OnInit, OnDestroy {
   favorites($event, index: number, vcid: number) {
 
     // TODO ПОСТИНГ ФАВОРИТОВ
-    this.sVacancy = this.sVacEasy;
+
+    this.translate.get('home.ts.sVacEasy').subscribe(
+      value => {
+        this.sVacEasy = value;
+        this.sVacancy = this.sVacEasy;
+      });
 
    this.sNoUserValueFind = '';
     this.myDataVacancy[index].sErrorText = '';

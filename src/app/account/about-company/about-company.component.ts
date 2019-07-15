@@ -19,19 +19,19 @@ export class AboutCompanyComponent implements OnInit, OnDestroy {
   private aboutCityTable: Subscription;
   private loadUser: UserType;
   listCity: City[] = [];
-  protected _myDisplayCity: string;
+  protected _myDisplayCity: string  = '';
   protected base64textString = [];
-  protected _myZip: string;
-  protected _myUserName: string;
-  protected _myName: string;
-  protected _myAddress: string;
-  protected _myPhone: string;
-  protected _myEmail: string;
-  protected _myPhone2: string;
-  protected _myWeb: string;
-  protected _myAbout: string;
-  protected _myContactPerson: string;
-  protected _myLastName: string;
+  protected _myZip: string  = '';
+  protected _myUserName: string  = '';
+  protected _myName: string  = '';
+  protected _myAddress: string  = '';
+  protected _myPhone: string  = '';
+  protected _myEmail: string  = '';
+  protected _myPhone2: string  = '';
+  protected _myWeb: string  = '';
+  protected _myAbout: string  = '';
+  protected _myContactPerson: string  = '';
+  protected _myLastName: string  = '';
 
 
   constructor(private auth: AuthService, private is: GuideService, public translate: TranslateService) { }
@@ -43,12 +43,15 @@ export class AboutCompanyComponent implements OnInit, OnDestroy {
         {
           this.loadCurrentUserInfo(value[0]);
           this.loadUser = value[0] as UserType;
-          // вытаскиваем из базы картинку аватара
-          const S = this.loadUser.Avatar;
-          if (S.toString().length>0) {
-            if (S.toString() !== 'null') {
-              this.base64textString.push('data:image/png;base64,' + JSON.parse(S).value);
-            }
+
+                // вытаскиваем из базы картинку аватара
+          if (this.loadUser !== undefined) {
+                const S = this.loadUser.Avatar;
+                if (S.toString().length>0) {
+                  if (S.toString() !== 'null') {
+                    this.base64textString.push('data:image/png;base64,' + JSON.parse(S).value);
+                  }
+                }
           }
         }
       );
@@ -69,6 +72,10 @@ export class AboutCompanyComponent implements OnInit, OnDestroy {
 
 
   loadCurrentUserInfo(item: any) {
+
+
+    if (item===undefined) return;
+
     // редактируемый список городов по подписке с выбранным ранее городом в    качестве выбранного
     this.aboutCityTable = this.is.getCityTable().subscribe(
 
@@ -131,6 +138,11 @@ export class AboutCompanyComponent implements OnInit, OnDestroy {
         if (typeof item.ContactPerson !== 'undefined') {
           this._myContactPerson = item.ContactPerson;
         }
+
+
+        console.log('this._myDisplayCity', this._myDisplayCity);
+
+
       }
     );
   }

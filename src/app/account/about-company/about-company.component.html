@@ -17,21 +17,67 @@
     </ng-template>
 
     </div>
+
+
   <ul>
-    <li><label>Email</label><div class="value"><a href="mailto:{{_myEmail}}">{{_myEmail}}&nbsp;</a></div></li>
-    <li><label>Web-site</label><div class="value"> <a href="{{_myWeb}}" target="_blank">{{_myWeb}}&nbsp;</a></div></li>
+
+
+    <li><label>Email</label>
+      <div *ngIf="_myEmail !==''"><div class="value"><a href="mailto:{{_myEmail}}">{{_myEmail}}&nbsp;</a></div></div>
+      <div *ngIf="_myEmail ===''"><div class="value">---</div></div>
+    </li>
+
+
+    <li><label>Web-site</label>
+      <div *ngIf="_myWeb !==''"><div class="value"> <a href="{{_myWeb}}" target="_blank">{{_myWeb}}&nbsp;</a></div></div>
+      <div *ngIf="_myWeb ===''"><div class="value">---</div></div>
+    </li>
+
    <!-- <li><label>{{'allValue.compname' | translate}}</label> <div class="value">{{_myUserName}}</div></li> -->
-    <li><label>{{'allValue.сity' | translate}}</label><div class="value">{{this._myDisplayCity}}&nbsp;</div></li>
-    <li><label>{{'allValue.postindex' | translate}}</label><div class="value">{{_myZip}}&nbsp;</div></li>
-    <li><label>{{'allValue.address' | translate}}</label><div class="value">{{_myAddress}}&nbsp;</div></li>
-    <li> <label>{{'allValue.tele' | translate}}</label><div class="value">{{_myPhone}}&nbsp;</div></li>
-    <li><label>{{'allValue.tele2' | translate}}</label><div class="value">{{_myPhone2}}&nbsp;</div></li>
-    <li><label>{{'allValue.contactF' | translate}}</label><div class="value">{{_myContactPerson}}</div></li>
+
+    <li><label>{{'allValue.сity' | translate}}</label>
+      <div *ngIf="_myDisplayCity !==''"><div class="value">{{_myDisplayCity}}&nbsp;</div></div>
+      <div *ngIf="_myDisplayCity ===''"><div class="value">---</div></div>
+    </li>
+
+
+    <li><label>{{'allValue.postindex' | translate}}</label>
+      <div *ngIf="_myZip !==''"><div class="value">{{_myZip}}&nbsp;</div></div>
+      <div *ngIf="_myZip ===''"><div class="value">---</div></div>
+    </li>
+
+
+    <li><label>{{'allValue.address' | translate}}</label>
+      <div *ngIf="_myAddress !==''"><div class="value">{{_myAddress}}&nbsp;</div></div>
+      <div *ngIf="_myAddress ===''"><div class="value">---</div></div>
+    </li>
+
+
+
+    <li> <label>{{'allValue.tele' | translate}}</label>
+      <div *ngIf="_myPhone !==''"><div class="value">{{_myPhone}}&nbsp;</div></div>
+      <div *ngIf="_myPhone ===''"><div class="value">---</div></div>
+    </li>
+
+
+    <li><label>{{'allValue.tele2' | translate}}</label>
+      <div *ngIf="_myPhone2 !==''"><div class="value">{{_myPhone2}}&nbsp;</div></div>
+      <div *ngIf="_myPhone2 ===''"><div class="value">---</div></div>
+    </li>
+
+    <li><label>{{'allValue.contactF' | translate}}</label>
+      <div *ngIf="_myContactPerson !==''"><div class="value">{{_myContactPerson}}</div></div>
+      <div *ngIf="_myContactPerson ===''"><div class="value">---</div></div>
+    </li>
   </ul>
 
 
     <!-- Достаточно  white-space: pre-wrap  -->
-    <div  class="valueTxt">{{this._myAbout}}</div>
+
+    <div *ngIf="this._myAbout !==''"><div  class="valueTxt">{{this._myAbout}}</div>
+    <div *ngIf="this._myAbout ===''"><div  class="valueTxt">---</div>
+
+
 
     <!--
    <div *ngIf="this._myAbout !== undefined">

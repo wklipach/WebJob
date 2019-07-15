@@ -159,7 +159,11 @@ export class CvhomeComponent implements OnInit {
 
         this.data_show(data);
         this.reloadPAge(this.allDataCV, advancedFindObj.stringFind);
-        this.sCV = this.sCV_Tr;
+
+        this.translate.get('cvhome.ts.sCV_Tr').subscribe(
+          value => {
+            this.sCV_Tr = value;
+            this.sCV = this.sCV_Tr;});
       });
   }
 
@@ -181,7 +185,17 @@ export class CvhomeComponent implements OnInit {
 
             this.data_show(data);
             this.reloadPAge(this.allDataCV, sMask);
-            if (isFavorites) this.sCV = this.sFavCV; else this.sCV = this.sCV_Tr;
+            if (isFavorites) {
+              this.translate.get('cvhome.ts.sFavCV').subscribe(
+                value => {this.sFavCV = value;
+                              this.sCV = this.sFavCV;});
+            }
+            else {
+              this.translate.get('cvhome.ts.sCV_Tr').subscribe(
+                value => {
+                  this.sCV_Tr = value;
+                  this.sCV = this.sCV_Tr;});
+            }
           });
       });
   }
