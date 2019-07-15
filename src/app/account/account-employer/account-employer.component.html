@@ -137,8 +137,8 @@
       <ng-container *ngIf="bShowChangePassword">
         <div class="changepassBox">
 
-          <input type="password" class="inputNewPassword1" id="inputNewPassword1" formControlName="inputNewPassword1" [placeholder]="'account-employer.vvnewpvdAER' | translate">
-          <input type="password" class="inputNewPassword2" id="inputNewPassword2" formControlName="inputNewPassword2" [placeholder]="'account-employer.repeatpwdAER' | translate">
+          <input (click)="onClearInputError()" type="password" class="inputNewPassword1" id="inputNewPassword1" formControlName="inputNewPassword1" [placeholder]="'account-employer.vvnewpvdAER' | translate">
+          <input (click)="onClearInputError()" type="password" class="inputNewPassword2" id="inputNewPassword2" formControlName="inputNewPassword2" [placeholder]="'account-employer.repeatpwdAER' | translate">
 
           <button type="submit" class="btn-newPassword" (click)="NewPassword()">{{'allValue.changepwd2' | translate}}</button>
           <button class="btn-newPassword2" (click)="DisappearFrame()">{{'allValue.Cancel' | translate}}</button>
@@ -153,7 +153,7 @@
 
           <div class="alertWrong" *ngIf="bErrorEmptyPassword">
 
-           Пароли не должны быть пустыми  -->
+            <!-- Пароли не должны быть пустыми  -->
             {{'account-employer.pwdndbpAER' | translate}}
           </div>
 

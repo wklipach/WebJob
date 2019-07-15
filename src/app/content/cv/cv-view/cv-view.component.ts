@@ -9,6 +9,9 @@ import {
 } from '../../../class/GuideList';
 import {AdvancedLanguage, Language} from '../../../class/Language';
 import {TranslateService} from '@ngx-translate/core';
+import {Router} from '@angular/router';
+import {MoveService} from '../../../services/move.service';
+import {TableVacancyService} from '../../../services/table-vacancy.service';
 
 @Component({
   selector: 'app-cv-view',
@@ -21,6 +24,7 @@ export class CvViewComponent implements OnInit {
   private subscrDataUserFromId: Subscription;
   protected loadUser: UserType;
   protected _cvitem: any;
+  private id_user = -1;
   protected _listEducation: string[] = [];
   protected _listExperience: string[] = [];
   protected _listIndustry: string[] = [];
@@ -28,13 +32,18 @@ export class CvViewComponent implements OnInit {
   protected _listEmployment: string[] = [];
   protected _listLanguage: any = [];
   protected _listPrevious: any = [];
+  private dvSubscVacancy: Subscription;
+  protected errorResponse = '';
 
   cv_id = -1;
   protected formView: FormGroup;
 
   constructor(private auth: AuthService,
               private cveditserv: CvEditService,
+              private httpService: TableVacancyService,
               private fb: FormBuilder,
+              private router: Router,
+              private moveS: MoveService,
               public translate: TranslateService) {
 
     this.formView = this.fb.group({
@@ -47,20 +56,24 @@ export class CvViewComponent implements OnInit {
 
   ngOnInit() {
 
-    this.cv_id =  this.cveditserv.getCvId();
+    this.errorResponse = '';
+    var Res =  this.auth.loginStorage();
+    this.id_user =  Res.id_user;
+
+    this.cv_id = this.cveditserv.getCvId();
     if (this.cv_id > -1) {
       this._cvitem = this.cveditserv.getCvItem();
     }
 
 
-/*
-Education: "5,1"
-​Employment: "5,1"
-Experience: "1,4"
-Industry: "1,30"
-Schedule: "1,5"
-const arrEmployment = item.Employment.split(',');
-*/
+    /*
+    Education: "5,1"
+    ​Employment: "5,1"
+    Experience: "1,4"
+    Industry: "1,30"
+    Schedule: "1,5"
+    const arrEmployment = item.Employment.split(',');
+    */
 
 
     console.log('this._cvitem', this._cvitem);
@@ -89,7 +102,6 @@ const arrEmployment = item.Employment.split(',');
         }
       }
     }
-
 
 
     if (this._cvitem !== null) {
@@ -138,7 +150,7 @@ const arrEmployment = item.Employment.split(',');
       if (this._cvitem !== null) this.loadLanguage(this._cvitem.id);
     }
 
-     //предыдущие места работы
+    //предыдущие места работы
     if (this._cvitem !== undefined) {
       if (this._cvitem !== null) this.loadPrevious(this._cvitem.id);
     }
@@ -151,14 +163,16 @@ const arrEmployment = item.Employment.split(',');
   loadPrevious(id_cv: number) {
     this.cveditserv.getCvPrevious(id_cv).subscribe(curValue => {
 
-      let cvP: any  = curValue;
+      let cvP: any = curValue;
       cvP.forEach((cvP, ih) => {
-        this._listPrevious.push({dStartDate: cvP.dStartDate,
-              dCompletionDate: cvP.dCompletionDate,
-              sCompany: cvP.sCompany,
-              sPreviousPosition: cvP.sPreviousPosition,
-              sInputPositionDescription: cvP.sInputPositionDescription});
-              });
+        this._listPrevious.push({
+          dStartDate: cvP.dStartDate,
+          dCompletionDate: cvP.dCompletionDate,
+          sCompany: cvP.sCompany,
+          sPreviousPosition: cvP.sPreviousPosition,
+          sInputPositionDescription: cvP.sInputPositionDescription
+        });
+      });
 
     });
   }
@@ -166,12 +180,18 @@ const arrEmployment = item.Employment.split(',');
   loadLanguage(id_cv: number) {
     this.cveditserv.getCvLanguage(id_cv).subscribe(curValue => {
 
-        let cvL: any  = curValue;
-        cvL.forEach((cvL, ih) => {
-          this._listLanguage.push({id_cv: cvL.id_cv, id_language: cvL.id_language-1, id_level: cvL.id_level-1, language_name: staticGuideList.LanguageList[cvL.id_language-1].name, language_level: staticGuideList.LevelLanguageList[cvL.id_level-1].name});
+      let cvL: any = curValue;
+      cvL.forEach((cvL, ih) => {
+        this._listLanguage.push({
+          id_cv: cvL.id_cv,
+          id_language: cvL.id_language - 1,
+          id_level: cvL.id_level - 1,
+          language_name: staticGuideList.LanguageList[cvL.id_language - 1].name,
+          language_level: staticGuideList.LevelLanguageList[cvL.id_level - 1].name
+        });
       });
 
-      });
+    });
   }
 
 
@@ -183,6 +203,11 @@ const arrEmployment = item.Employment.split(',');
     if (typeof this.subscrDataUserFromId !== 'undefined') {
       this.subscrDataUserFromId.unsubscribe();
     }
+
+    if (typeof this.dvSubscVacancy !== 'undefined') {
+      this.dvSubscVacancy.unsubscribe();
+    }
+
   }
 
 
@@ -190,7 +215,7 @@ const arrEmployment = item.Employment.split(',');
     this.subscrDataUserFromId = this.auth.getDataUserFromId(id_user).subscribe(value => {
       // вытаскиваем из базы картинку аватара
       this.loadUser = value[0] as UserType;
-      console.log('this.loadUser',this.loadUser);
+      console.log('this.loadUser', this.loadUser);
       const S = this.loadUser.Avatar;
       if (typeof S !== 'undefined') {
         if (S !== null) {
@@ -202,5 +227,27 @@ const arrEmployment = item.Employment.split(',');
     });
   }
 
+  response(_cvitem: any) {
+
+
+    this.errorResponse = '';
+    console.log('response',_cvitem);
+
+    this.httpService.getCheckInvite(_cvitem.id, this.id_user, this.id_user).subscribe( (res) => {
+
+      if (res[0].Res === 0) {
+              this.dvSubscVacancy = this.moveS.setInvestCVID(_cvitem.id).subscribe(() => {
+              this.router.navigate(['/invitation']);
+        });
+      } else {
+              this.translate.get('cvhome.ts.sUseResp').subscribe(value => {
+                this.errorResponse = value;
+              });
+      }
+      console.log('invitation');
+
+    });
+  }
+////////////////////
 
 }

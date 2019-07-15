@@ -201,7 +201,12 @@ export class CvhomeComponent implements OnInit {
           this.router.navigate(['/invitation']);
         });
       } else {
-        this.myDataCV[index].sErrorText = this.sUseResp;
+        console.log('this.sUseResp', this.sUseResp);
+
+        this.translate.get('cvhome.ts.sUseResp').subscribe(
+          value => {
+               this.sUseResp = value;
+              this.myDataCV[index].sErrorText = this.sUseResp;});
       }
     }
   );

@@ -491,6 +491,10 @@ console.log('ITEM', item);
   }
 
 
+  onClearInputError() {
+    this.bErrorEmptyPassword = false;
+  }
+
 
 
 

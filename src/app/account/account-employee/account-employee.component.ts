@@ -462,5 +462,9 @@ loadCurrentUserInfo(item: any) {
     return input;
   }
 
+  onClearInputError() {
+    this.bErrorEmptyPassword = false;
+  }
+
 
 }
