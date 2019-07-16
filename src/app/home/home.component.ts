@@ -235,7 +235,10 @@ export class HomeComponent implements OnInit, OnDestroy {
     window.localStorage.removeItem('keyFind');
 
     this.httpService.onReopenVacancy.subscribe(({sMask: value, isFavorites: bFavorites, isAdvancedFind: bAdvancedFind }) => {
-        if (this.id_user !== null) this.getVacancy(value, bFavorites, bAdvancedFind);
+
+      if (this.id_user === null) this.id_user = -1;
+      this.getVacancy(value, bFavorites, bAdvancedFind);
+
     });
 
     // если не было расширенного поиска вакансий делаем обычный поиск, иначе расширенный запускается из advanced-search.component
