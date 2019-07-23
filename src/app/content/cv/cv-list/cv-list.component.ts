@@ -28,17 +28,17 @@ export class CvListComponent implements OnInit, OnDestroy {
 
   private _numberModel: number;
 
-  protected get CvListItem(): number {
+  public get CvListItem(): number {
     return this._numberModel;
   }
 
-  protected set CvListItem(a: number) {
+  public set CvListItem(a: number) {
     this._numberModel = a;
   }
 
   cvListForm: FormGroup;
-  protected cvList: any;
-  protected  cityList: City[];
+  public cvList: any;
+  public  cityList: City[];
   private id_user: number;
   private  bConnected: boolean;
 

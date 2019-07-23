@@ -16,20 +16,20 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class AdvancedSearchComponent implements OnInit {
 
-  private bConnected = false;
-  private id_user = -1;
-  protected bEmployer = false;
-  protected advancedSearchForm: FormGroup;
-  protected myDisplayCity: string = '';
-  protected listTimePlacement: Guide[];
-  protected listCity : City[] =[];
-  protected advSearchV = '';
-  protected advSearchVX = '';
-  protected advSearchTOP = '';
-  protected advSearchOlder = '';
+  public bConnected = false;
+  public id_user = -1;
+  public bEmployer = false;
+  public advancedSearchForm: FormGroup;
+  public myDisplayCity: string = '';
+  public listTimePlacement: Guide[];
+  public listCity : City[] =[];
+  public advSearchV = '';
+  public advSearchVX = '';
+  public advSearchTOP = '';
+  public advSearchOlder = '';
 
 
-  protected resFind: {
+  public resFind: {
     stringFind: string;
     timePlacement : string;
     timePlacementIndex : number;

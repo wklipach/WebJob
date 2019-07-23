@@ -59,7 +59,7 @@ export class CvEditComponent implements OnInit, OnDestroy {
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver,
               private is: GuideService,
-              private authService: AuthService,
+              public authService: AuthService,
               private router: Router,
               private ps: PreviousService,
               private cveditserv: CvEditService,

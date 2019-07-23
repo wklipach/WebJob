@@ -26,7 +26,7 @@ export class HeaderTopComponent implements OnInit {
   numberCountNotReadLetter: number = 0;
   numberCountNotReadBell: number = 0;
 
-  protected currentLangSwitch: number = 1;
+  public currentLangSwitch: number = 1;
   private arrLangs: any = ['ru', 'ee', 'en'];
 
   sNullValueFind : string = '';

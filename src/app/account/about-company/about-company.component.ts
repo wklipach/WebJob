@@ -19,19 +19,19 @@ export class AboutCompanyComponent implements OnInit, OnDestroy {
   private aboutCityTable: Subscription;
   private loadUser: UserType;
   listCity: City[] = [];
-  protected _myDisplayCity: string  = '';
-  protected base64textString = [];
-  protected _myZip: string  = '';
-  protected _myUserName: string  = '';
-  protected _myName: string  = '';
-  protected _myAddress: string  = '';
-  protected _myPhone: string  = '';
-  protected _myEmail: string  = '';
-  protected _myPhone2: string  = '';
-  protected _myWeb: string  = '';
-  protected _myAbout: string  = '';
-  protected _myContactPerson: string  = '';
-  protected _myLastName: string  = '';
+  public _myDisplayCity: string  = '';
+  public base64textString = [];
+  public _myZip: string  = '';
+  public _myUserName: string  = '';
+  public _myName: string  = '';
+  public _myAddress: string  = '';
+  public _myPhone: string  = '';
+  public _myEmail: string  = '';
+  public _myPhone2: string  = '';
+  public _myWeb: string  = '';
+  public _myAbout: string  = '';
+  public _myContactPerson: string  = '';
+  public _myLastName: string  = '';
 
 
   constructor(private auth: AuthService, private is: GuideService, public translate: TranslateService) { }

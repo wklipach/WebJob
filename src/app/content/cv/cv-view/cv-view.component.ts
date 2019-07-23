@@ -20,23 +20,23 @@ import {TableVacancyService} from '../../../services/table-vacancy.service';
 })
 export class CvViewComponent implements OnInit {
 
-  protected base64textString = [];
+  public base64textString = [];
   private subscrDataUserFromId: Subscription;
-  protected loadUser: UserType;
-  protected _cvitem: any;
+  public loadUser: UserType;
+  public _cvitem: any;
   private id_user = -1;
-  protected _listEducation: string[] = [];
-  protected _listExperience: string[] = [];
-  protected _listIndustry: string[] = [];
-  protected _listSchedule: string[] = [];
-  protected _listEmployment: string[] = [];
-  protected _listLanguage: any = [];
-  protected _listPrevious: any = [];
+  public _listEducation: string[] = [];
+  public _listExperience: string[] = [];
+  public _listIndustry: string[] = [];
+  public _listSchedule: string[] = [];
+  public _listEmployment: string[] = [];
+  public _listLanguage: any = [];
+  public _listPrevious: any = [];
   private dvSubscVacancy: Subscription;
-  protected errorResponse = '';
+  public errorResponse = '';
 
   cv_id = -1;
-  protected formView: FormGroup;
+  public formView: FormGroup;
 
   constructor(private auth: AuthService,
               private cveditserv: CvEditService,

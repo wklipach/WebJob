@@ -77,7 +77,17 @@ export class AuthService {
       idLang = parseInt(JSON.parse(window.localStorage.getItem('LangStorage')));
     }
 
+    let curCV= "-1";
+    if (window.localStorage.getItem('CV') !== null) {
+      curCV = JSON.parse(window.localStorage.getItem('CV'));
+    }
+
     window.localStorage.clear();
+
+    if (curCV !== "-1") {
+      window.localStorage.setItem('CV', curCV);
+    }
+
 
     if (idLang !== -1) {
       window.localStorage.setItem('LangStorage', idLang.toString());
@@ -194,7 +204,21 @@ export class AuthService {
   }
 
 
- public loginStorage(): {htUserName: string; bConnected: boolean; id_user: number; bEmployer: boolean} {
+  public setVorCV(bCV: boolean) {
+    window.localStorage.setItem('CV', bCV.toString());
+  }
+
+  public getVorCV(): boolean {
+
+    if (window.localStorage.getItem('CV') === null) return false; else {
+      if (window.localStorage.getItem('CV') === "false") return false; else return true;
+    }
+
+  }
+
+
+
+  public loginStorage(): {htUserName: string; bConnected: boolean; id_user: number; bEmployer: boolean} {
 
   let htUserName = '';
   if (window.localStorage.getItem('htUserName') !== '') {

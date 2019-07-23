@@ -15,9 +15,9 @@ export class MessagesContainerComponent implements OnInit {
 
   @Input() public  isGroup: boolean = false;
   private bConnected = false;
-  protected id_user = -1;
+  public id_user = -1;
   private bEmployer = false;
-  protected myDataLetter: any;
+  public myDataLetter: any;
   private sbscTableLetter: Subscription;
   private letterSubscription: Subscription;
   contactMethods = [];

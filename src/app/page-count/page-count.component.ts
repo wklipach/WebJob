@@ -17,7 +17,7 @@ export class PageCountComponent implements OnInit {
   @Output() currentPageChange = new EventEmitter<number>();
 
   private _numberOfRecordsPerPage = 10;
-  protected numberOfPage: string[] = [];
+  public numberOfPage: string[] = [];
   private _numberOfPage: number = 1;
 
   private  paginatorSubscription: Subscription;

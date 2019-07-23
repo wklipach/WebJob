@@ -23,22 +23,22 @@ import {GuideService} from '../../../services/guide-service.service';
 export class MessageComponent implements OnInit, OnDestroy {
 
 
-  protected messageSubscription: Subscription;
-  protected _letter: any;
-  protected form: FormGroup;
-  protected formResponse: FormGroup;
-  protected base64textString = [];
-  protected id_user = -1;
+  public messageSubscription: Subscription;
+  public _letter: any;
+  public form: FormGroup;
+  public formResponse: FormGroup;
+  public base64textString = [];
+  public id_user = -1;
   private subscrDataUserFromId: Subscription;
   private loadUser: UserType;
   listLetter: any[] = [];
   public responseVC: string;
-  protected anyLetter: any;
+  public anyLetter: any;
   _sNameUserResp: string = '';
   _bEmployer: boolean = false;
   private dvMoveSubscription: Subscription;
   public anyVC: any;
-  protected sErrorResponse = '';
+  public sErrorResponse = '';
 
 
   constructor(private router: Router,

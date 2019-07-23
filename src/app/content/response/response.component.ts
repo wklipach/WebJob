@@ -24,16 +24,16 @@ export class ResponseComponent implements OnInit, OnDestroy {
   private curVc: any;
   private _id_user: number;
   private _id_vc: number;
-  protected cvList: any;
-  protected cityList: City[];
-  protected modelResumeFromCheck = {resumeFromCheck: ''};
-  protected bErrorResumeCheck = false;
-  protected bErrorResumeLetter = false;
+  public cvList: any;
+  public cityList: City[];
+  public modelResumeFromCheck = {resumeFromCheck: ''};
+  public bErrorResumeCheck = false;
+  public bErrorResumeLetter = false;
 
   private cvResponseGetCvList: Subscription;
   private cvResponseCity: Subscription;
 
-  protected formResponse: FormGroup;
+  public formResponse: FormGroup;
 
   constructor(
               private router: Router,

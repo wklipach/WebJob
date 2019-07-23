@@ -38,7 +38,7 @@
         <option  *ngFor="let item of listTimePlacement; let i = index;" [value]="item.name" (click)="timePlacement(item.name, i+1,item.comment )">
           {{item.name}}
         </option>
-        <option  [value]="" (click)="timePlacement('',-1)">
+        <option  [value]="" (click)="timePlacement('',-1, '')">
           {{'allValue.Cancel' | translate}}
         </option>
 

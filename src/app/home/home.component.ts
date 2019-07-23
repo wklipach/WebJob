@@ -61,10 +61,10 @@ export class HomeComponent implements OnInit, OnDestroy {
   private sMask: string = ''
 
 
-  protected bChecked5 = true;
-  protected bChecked10 = false;
-  protected bChecked20 = false;
-  protected bChecked50 = false;
+  public bChecked5 = true;
+  public bChecked10 = false;
+  public bChecked20 = false;
+  public bChecked50 = false;
 
   base64textString = [];
 

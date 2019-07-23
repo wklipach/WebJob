@@ -34,13 +34,13 @@ export class CvhomeComponent implements OnInit {
   private bConnected = false;
   private id_user = -1;
   private bEmployer = false;
-  protected myDataCV: dataCV[];
-  protected allDataCV: dataCV[];
+  public myDataCV: dataCV[];
+  public allDataCV: dataCV[];
 
-  protected bChecked5 = true;
-  protected bChecked10 = false;
-  protected bChecked20 = false;
-  protected bChecked50 = false;
+  public bChecked5 = true;
+  public bChecked10 = false;
+  public bChecked20 = false;
+  public bChecked50 = false;
   private sMask: string = '';
   private getTableCV: Subscription;
   private getTableCVAdvanced: Subscription;

@@ -19,22 +19,22 @@ import {TranslateService} from '@ngx-translate/core';
 export class VacanciesComponent implements OnInit, OnDestroy {
 
   contactMethods = [];
-  protected vacanciesList: any;
+  public vacanciesList: any;
   private id_user: number;
   private  bConnected: boolean;
   private sbVacCity: Subscription;
-  protected  cityList: City[];
+  public  cityList: City[];
   private sbVacanciesGetList: Subscription;
   private sbDeleteVac: Subscription;
   private dvMoveSubscription: Subscription;
 
   private _numberModel: number;
 
-  protected get CvVacanciesItem(): number {
+  public get CvVacanciesItem(): number {
     return this._numberModel;
   }
 
-  protected set CvVacanciesItem(a: number) {
+  public set CvVacanciesItem(a: number) {
     this._numberModel = a;
   }
 

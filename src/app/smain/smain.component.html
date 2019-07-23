@@ -1,5 +1,12 @@
 <app-header-top></app-header-top>
-<div *ngIf="!bEmployer; else employer_content">
+
+<div>
+  <label><input   (click) = "OnClickV()" type="radio" name="rRow" id="vCheck"  [checked]="bV">Вакансии</label>
+  <label><input   (click) = "OnClickCV()" type="radio" name="rRow" id="cvCheck" [checked]="bCV">Резюме</label>
+</div>
+
+
+<div *ngIf="!bCV; else employer_content">
   <app-home></app-home>
 </div>
 

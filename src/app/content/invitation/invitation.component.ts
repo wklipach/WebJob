@@ -25,13 +25,13 @@ export class InvitationComponent implements OnInit, OnDestroy {
   private  bConnected: boolean;
   private sbVacCity: Subscription;
   private sbVacanciesGetList: Subscription;
-  protected vacanciesList: any;
-  protected formResponse: FormGroup;
-  protected bErrorResumeCheck = false;
-  protected bErrorResumeLetter = false;
-  protected modelResumeFromCheck = {resumeFromCheck: ''};
-  protected  cityList: City[];
-  protected cvid: number;
+  public vacanciesList: any;
+  public formResponse: FormGroup;
+  public bErrorResumeCheck = false;
+  public bErrorResumeLetter = false;
+  public modelResumeFromCheck = {resumeFromCheck: ''};
+  public  cityList: City[];
+  public cvid: number;
 
 
 

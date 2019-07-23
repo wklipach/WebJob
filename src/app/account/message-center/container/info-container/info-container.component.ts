@@ -14,9 +14,9 @@ import {TranslateService} from '@ngx-translate/core';
 export class InfoContainerComponent implements OnInit {
 
   private bConnected = false;
-  protected id_user = -1;
+  public id_user = -1;
   private bEmployer = false;
-  protected myDataInfo: any;
+  public myDataInfo: any;
   private sbscTableInfo: Subscription;
   private infoSubscription: Subscription;
 

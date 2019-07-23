@@ -11,7 +11,12 @@ export class SmainComponent implements OnInit {
 
   private bConnected = false;
   private id_user = -1;
-  protected bEmployer = false;
+  public bEmployer = false;
+
+
+  public bV = true;
+  public bCV = false;
+
 
   constructor(private authService: AuthService) {
 
@@ -23,7 +28,28 @@ export class SmainComponent implements OnInit {
     this.id_user =  Res.id_user;
     this.bEmployer = Res.bEmployer;
 
+    if (!this.authService.getVorCV()) {
+      this.bV = true;
+      this.bCV = false;
+    } else {
+      this.bV = false;
+      this.bCV = true;
+    }
 
+
+
+  }
+
+  OnClickV() {
+    this.authService.setVorCV(false);
+    this.bV = true;
+    this.bCV = false;
+  }
+
+  OnClickCV() {
+    this.authService.setVorCV(true);
+    this.bV = false;
+    this.bCV = true;
   }
 
 }
