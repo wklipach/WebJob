@@ -40,6 +40,9 @@ a:visited{
 }
 
 white-space: pre-wrap;
+
+min-height: calc(100vh - 90px);
+
 */
 @import "../fonts/fonts.css";
 
@@ -57,8 +60,7 @@ body {
   width: 1170px;
   margin: 0 auto;
   color: rgb(68, 75, 84);
-
-}
+  }
 input, textarea, select, label{
   font-family: "Proxima Nova","sans-serif";
   font-size: 1em;
@@ -118,72 +120,4 @@ button{
 
 
 
-/*
-.alertWrong{
-  display: block;
-  font-size: 1.4em;
-  color: #F74933;
-  width: 530px;
-  margin-top: 10px;
-  text-align: center;
-  border: dotted 1px #f20f4b;
-  height: 50px;
-  line-height: 2.03;
-}
-.alertSuccess{
-  display: block;
-  font-size: 1.4em;
-  color: #09D42B;
-  width: 530px;
-  margin-top: 10px;
-  text-align: center;
-  border: dotted 1px #09D42B;
-  height: 50px;
-  line-height: 2.03;
-}
 
-
-.message.error {
-    z-index: 1;
-    background: #e94e26;
-    color: #fff !important;
-}
-.message {
-    border-radius: 3px;
-    -o-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    box-sizing: border-box;
-    animation-name: slide;
-    animation-duration: .3s;
-    left: 100%;
-    line-height: 1.15;
-    margin-left: 10px;
-    max-width: 300px;
-    padding: 6px 15px;
-    position: absolute;
-    top: 0;
-    width: 1000px;
-    box-shadow: 0 10px 20px -5px rgba(0,0,0,.4);
-    text-align: left;
-}
-
-
-.message.error::before {
-    content: "";
-    position: absolute;
-}
-.message::before {
-    border-top: 5px solid transparent;
-    border-right: 5px solid #e94e26;
-    border-bottom: 5px solid transparent;
-    content: "";
-    position: absolute;
-    right: 100%;
-    top: .6em;
-    height: 0;
-    width: 0;
-}
-
-
-
-*/
