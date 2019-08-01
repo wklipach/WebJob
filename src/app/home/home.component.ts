@@ -46,9 +46,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   // всего записей после запроса
   public recordsPerAll = 0;
 
-  private bConnected = false;
+  public bConnected = false;
   private id_user = -1;
-  private bEmployer = false;
+  public bEmployer = false;
   public sNoUserValueFind = '';
 
   myDataVacancy: dataVacancy[];

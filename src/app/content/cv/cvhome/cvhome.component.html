@@ -38,7 +38,12 @@
 
     </div>
 
-      <button class="btn-response" type="button" id="cvresponse" title="Пригласить" (click)="response(i, curCV.id)" >{{'cvhome.invate' | translate}}</button>
+
+     <div *ngIf="bConnected">
+       <div *ngIf="bEmployer">
+         <button class="btn-response" type="button" id="cvresponse" [title]="'cvhome.invate' | translate" (click)="response(i, curCV.id)" >{{'cvhome.invate' | translate}}</button>
+       </div>
+     </div>
 
 
     </div>

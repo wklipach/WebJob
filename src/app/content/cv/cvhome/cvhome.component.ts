@@ -31,9 +31,9 @@ export class CvhomeComponent implements OnInit {
   // заголовок вакансий
   private _listCity: City[] = [];
   public sCV: string;
-  private bConnected = false;
+  public bConnected = false;
   private id_user = -1;
-  private bEmployer = false;
+  public bEmployer = false;
   public myDataCV: dataCV[];
   public allDataCV: dataCV[];
 

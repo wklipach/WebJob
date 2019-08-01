@@ -37,13 +37,25 @@
     </div>
 
 
-    <button class="btn-response" type="button" id="vcresponse" [title]="'allValue.Response' | translate" (click)="response(i, curVacancy.id)" >{{'allValue.Response' | translate}}</button>
-    <button class="btn-favorites" type="button" id="vcfavorites" [title]="'home.viHOME' | translate" (click)="favorites($event,i, curVacancy.id)" >
-      <img class="favor-star" src="/assets/img/favor-star.png" [title]="'allValue.DontShow' | translate">
-      В избранное</button>
-    <button class="btn-hide" type="button" id="vchide" [title]="'allValue.DontShow' | translate" (click)="unshow($event,i, curVacancy.id)">
-      <img class="crossed-eye" src="/assets/img/crossed-eye.png"  [title]="'allValue.DontShow' | translate">
-      {{'allValue.DontShow' | translate}}</button>
+    <div *ngIf="bConnected">
+      <div *ngIf="!bEmployer">
+
+          <button class="btn-response" type="button" id="vcresponse" [title]="'allValue.Response' | translate" (click)="response(i, curVacancy.id)" >
+            {{'allValue.Response' | translate}}
+          </button>
+
+          <button class="btn-favorites" type="button" id="vcfavorites" [title]="'vacancy-description.infavour77' | translate" (click)="favorites($event,i, curVacancy.id)" >
+            <img class="favor-star" src="/assets/img/favor-star.png" [title]="'vacancy-description.infavour77' | translate">
+            {{'vacancy-description.infavour77' | translate}}
+          </button>
+
+          <button class="btn-hide" type="button" id="vchide" [title]="'allValue.DontShow' | translate" (click)="unshow($event,i, curVacancy.id)">
+            <img class="crossed-eye" src="/assets/img/crossed-eye.png"  [title]="'allValue.DontShow' | translate">
+            {{'allValue.DontShow' | translate}}
+          </button>
+      </div>
+    </div>
+
     {{curVacancy.sErrorText}}
      </div>
 
