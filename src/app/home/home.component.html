@@ -56,6 +56,33 @@
       </div>
     </div>
 
+    <!-- Если не залогинился, кнопки не активны начало -->
+
+    <div *ngIf="!bConnected">
+      <div *ngIf="!bEmployer">
+
+
+        <button class="btn-response-disabled" type="button" id="vcresponseDisabled" [title]="'allValue.Response' | translate">
+          {{'allValue.Response' | translate}}
+        </button>
+
+        <button class="btn-favorites-disabled" type="button" id="vcfavoritesDisabled" [title]="'vacancy-description.infavour77' | translate">
+          <img class="favor-star" src="/assets/img/favor-star.png" [title]="'vacancy-description.infavour77' | translate">
+          {{'vacancy-description.infavour77' | translate}}
+        </button>
+
+        <button class="btn-hide-disabled" type="button" id="vchideDisabled" [title]="'allValue.DontShow' | translate">
+          <img class="crossed-eye" src="/assets/img/crossed-eye.png"  [title]="'allValue.DontShow' | translate">
+          {{'allValue.DontShow' | translate}}
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Если не залогинился, кнопки не активны конец -->
+
+
+
     {{curVacancy.sErrorText}}
      </div>
 

@@ -188,6 +188,95 @@
   color: white;
   font-weight:600;
 }
+
+/* Не активные кнопки
+         background: url(/assets/img/disabled.png) no-repeat;
+*/
+
+.btn-response-disabled {
+  display: inline-block;
+  position: absolute;
+  border-radius: 3px;
+  background-color: rgb( 145, 175, 209 );
+  width: 155px;
+  height: 48px;
+  color: rgb(255, 255, 255);
+  border-color: #054086;
+  border-width: 1px;
+  border-style: solid;
+  margin-top: 242px;
+  margin-left: 15px;
+}
+.btn-response-disabled:hover{
+
+  background-color: rgb( 145, 175, 209 );
+
+  line-height: 2;
+
+}
+.btn-response-disabled:active{
+  border-color: #3399ff;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 3px;
+
+}
+.btn-favorites-disabled{
+  display: inline-block;
+  position: absolute;
+  color: rgb(255, 255, 255);
+  background-color: rgb( 145, 175, 209 );
+  border-color: #054086;
+  border-radius: 3px;
+  border-width: 1px;
+  border-style: solid;
+  text-align: center;
+  width: 156px;
+  height: 48px;
+  margin-top: 243px;
+  margin-left: 172px;
+}
+.btn-favorites-disabled:hover{
+  background-color: rgb( 145, 175, 209 );
+  color: white;
+  vertical-align: middle;
+}
+.btn-favorites-disabled:active{
+  border-color: #3399ff;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 3px;
+
+}
+.favor-star{
+  vertical-align: middle;
+  z-index: 5;
+}
+.btn-hide-disabled{
+  display: inline-block;
+  position: absolute;
+  color: #484d55;
+  background-color: #ffffff;
+  border-color: rgb(242, 97, 0);
+  border-radius: 3px;
+  border-width: 1px;
+  border-style: solid;
+  text-align: center;
+  width: 160px;
+  height: 48px;
+  margin-top: 243px;
+  margin-left: 330px;
+  vertical-align: middle;
+}
+.crossed-eye{
+  vertical-align: middle;
+}
+.btn-hide:hover{
+  background-color:#f26100;
+  color: white;
+
+}
+
 .line{
   position: relative;
   display: inline-block;
