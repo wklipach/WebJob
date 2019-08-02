@@ -484,7 +484,10 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     if ($event.target.id === 'vcresponse' ||
       $event.target.id === 'vcfavorites' ||
-      $event.target.id === 'vchide')
+      $event.target.id === 'vchide' ||
+      $event.target.id === 'vcresponseDisabled' ||
+      $event.target.id === 'vcfavoritesDisabled' ||
+      $event.target.id === 'vchideDisabled')
     return;
 
     let vacancy = this.myDataVacancy.find(vacancy =>  vacancy.id===zid);
