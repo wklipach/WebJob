@@ -73,24 +73,30 @@
 
 
 
-    <button class="btn-response" type="button" id="vcresponse" [title]="'allValue.Response' | translate" (click)="vcResponse()">{{'allValue.Response' | translate}}</button>
-    <button class="btn-favorites" type="button" id="vcfavorites" [title]="'vacancy-description.infavour77' | translate" (click)="vcFavour()">
-      <img class="favor-star" src="/assets/img/favor-star.png" [title]="'allValue.DontShow' | translate">
-      {{'vacancy-description.infavour77' | translate}}</button>
+    <div *ngIf="bConnected">
+      <div *ngIf="!bEmployer">
 
+            <button class="btn-response" type="button" id="vcresponse" [title]="'allValue.Response' | translate" (click)="vcResponse()">
+              {{'allValue.Response' | translate}}
+            </button>
 
+            <button class="btn-favorites" type="button" id="vcfavorites" [title]="'vacancy-description.infavour77' | translate" (click)="vcFavour()">
+                <img class="favor-star" src="/assets/img/favor-star.png" [title]="'allValue.DontShow' | translate">
+              {{'vacancy-description.infavour77' | translate}}
+            </button>
 
-    <button class="btn-hide" type="button" id="vchide" [title]="'allValue.DontShow' | translate" (click)="vcDontShow()">
-      <img class="crossed-eye" src="/assets/img/crossed-eye.png"  [title]="'allValue.DontShow' | translate">{{'allValue.DontShow' | translate}}
-    </button>
+            <button class="btn-hide" type="button" id="vchide" [title]="'allValue.DontShow' | translate" (click)="vcDontShow()">
+                <img class="crossed-eye" src="/assets/img/crossed-eye.png"  [title]="'allValue.DontShow' | translate">{{'allValue.DontShow' | translate}}
+            </button>
+
+      </div>
+    </div>
+
     <div *ngIf="this.descrDataVacancy">{{this.descrDataVacancy.sErrorText}}</div>
 
 
-
     <!-- Если не залогинился, кнопки не активны начало -->
-
-
-      <div *ngIf="!bConnected || !bEmployer">
+      <div *ngIf="!bConnected">
 
       <button class="btn-response-disabled" type="button" id="vcresponseDisabled" [title]="'allValue.Response' | translate">
         {{'allValue.Response' | translate}}

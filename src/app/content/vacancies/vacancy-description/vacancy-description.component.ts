@@ -20,9 +20,9 @@ import {TranslateService} from '@ngx-translate/core';
 export class VacancyDescriptionComponent implements OnInit {
 
   descrDataVacancy: dataVacancy;
-  private bConnected = false;
+  public bConnected = false;
   private id_user = -1;
-  private bEmployer = false;
+  public bEmployer = false;
   public sNoUserValueFind = '';
 
 

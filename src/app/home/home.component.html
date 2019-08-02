@@ -58,8 +58,7 @@
 
     <!-- Если не залогинился, кнопки не активны начало -->
 
-    <div *ngIf="!bConnected || !bEmployer">
-
+    <div *ngIf="!bConnected">
 
         <button class="btn-response-disabled" type="button" id="vcresponseDisabled" [title]="'allValue.Response' | translate">
           {{'allValue.Response' | translate}}
