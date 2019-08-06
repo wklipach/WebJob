@@ -98,7 +98,7 @@
     <!-- Если не залогинился, кнопки не активны начало -->
       <div *ngIf="!bConnected">
 
-      <button class="btn-response-disabled" type="button" id="vcresponseDisabled" [title]="'allValue.Response' | translate">
+      <button class="btn-response-disabled" type="button" id="vcresponseDisabled" title="Недоступно для незарегистрированных пользователей.">
         {{'allValue.Response' | translate}}
       </button>
 
@@ -120,6 +120,3 @@
 </div>
 
 </div>
-
-
-<app-footer></app-footer>

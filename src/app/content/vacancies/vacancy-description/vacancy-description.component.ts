@@ -27,9 +27,9 @@ export class VacancyDescriptionComponent implements OnInit {
 
 
 
-  //период показа
+  // период показа
   displayPeriodList: Guide[];
-  //адрес вакансии
+  // адрес вакансии
   sAddress: string = '';
   sEmployerName: string = '';
 
@@ -44,7 +44,7 @@ export class VacancyDescriptionComponent implements OnInit {
   // опыт работы
   sExperience: string[] = [];
 
-  //период показа
+  // период показа
   sDisplayPeriod: string[] = [];
 
   private dvSubscription: Subscription;
@@ -79,13 +79,13 @@ export class VacancyDescriptionComponent implements OnInit {
       {
         console.log('curDataVacancy', curDataVacancy);
 
-        //получаем объект из кэша, если неполный - делаем запрос к серверу и получаем новый getVacAny(id_vc: number)
+        // получаем объект из кэша, если неполный - делаем запрос к серверу и получаем новый getVacAny(id_vc: number)
         if (curDataVacancy === undefined) {
           this.router.navigate(['/smain']);
           return;
         }
 
-        //получаем объект из кэша, если неполный - делаем запрос к серверу и получаем новый getVacAny(id_vc: number)
+        // получаем объект из кэша, если неполный - делаем запрос к серверу и получаем новый getVacAny(id_vc: number)
         if (curDataVacancy.Industry || curDataVacancy.Education || curDataVacancy.Employment || curDataVacancy.Experience)
         {
 
@@ -107,8 +107,8 @@ export class VacancyDescriptionComponent implements OnInit {
             this.onLoadUserData(this.descrDataVacancy);
             this.LoadAdvData();
             this.onLoadFromBaseAvatar(this.descrDataVacancy);
-            //console.log('asRES', this.descrDataVacancy);
-            //if (qcurDataVacancy[0].Avatar === null) this.descrDataVacancy.base64textString = [];
+            // console.log('asRES', this.descrDataVacancy);
+            // if (qcurDataVacancy[0].Avatar === null) this.descrDataVacancy.base64textString = [];
             //  else this.descrDataVacancy.base64textString = qcurDataVacancy[0].Avatar;
           });
         }
@@ -124,7 +124,7 @@ export class VacancyDescriptionComponent implements OnInit {
 
 
   onLoadFromBaseAvatar(k: any) {
-    //TODO точка 2
+    // TODO точка 2
     k.base64textString = [];
 
     if (k.Avatar !== 'null') {
@@ -216,7 +216,7 @@ export class VacancyDescriptionComponent implements OnInit {
       return;
     }
 
-    //проверяем нет ли уже такого в фаворитах, если есть то не даем внести
+    // проверяем нет ли уже такого в фаворитах, если есть то не даем внести
     this.httpService.checkFavoritesVacancy(this.id_user, this.descrDataVacancy.id).subscribe( value => {
       let curV: any = value;
       if (curV.length ===0) {

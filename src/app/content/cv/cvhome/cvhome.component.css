@@ -1,6 +1,6 @@
 .cv-box{
   width:  100%;
-  height: 390px;
+  height: 360px;
   margin: 30px auto;
   border-top: solid 1px;
   border-bottom: solid 1px;
@@ -16,7 +16,7 @@
 .v-line{
   position: absolute;
   width:6px;
-  height:390px;
+  height:360px;
   background-color: #b8b8b8;
 }
 .cv-box:hover{
@@ -143,7 +143,7 @@
   border-color: #054086;
   border-width: 1px;
   border-style: solid;
-  margin-top: 64px;
+  margin-top: 56px;
   margin-left: 15px;
 
 }

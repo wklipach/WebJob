@@ -23,7 +23,7 @@
   border-color: #b7b7b7;
   color: rgb(68, 75, 84);
   text-align: left;
-  padding-bottom: 2%;
+  padding-bottom: 5%;
 }
 .v-line{
   display: inline-block;
@@ -242,7 +242,7 @@ label{
   border-color: #054086;
   border-width: 1px;
   border-style: solid;
-  margin-top: 242px;
+  margin-top: 1%;
   margin-left: 15px;
 }
 .btn-response-disabled:hover{
@@ -271,7 +271,7 @@ label{
   text-align: center;
   width: 156px;
   height: 48px;
-  margin-top: 243px;
+  margin-top: 1%;
   margin-left: 172px;
 }
 .btn-favorites-disabled:hover{
@@ -302,7 +302,7 @@ label{
   text-align: center;
   width: 160px;
   height: 48px;
-  margin-top: 243px;
+  margin-top: 1%;
   margin-left: 330px;
   vertical-align: middle;
 }
@@ -316,4 +316,5 @@ label{
 .buttons{
   position: relative;
   display: block;
+  margin-bottom: 2%;
 }
