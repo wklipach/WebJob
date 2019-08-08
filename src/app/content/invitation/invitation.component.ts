@@ -95,7 +95,7 @@ export class InvitationComponent implements OnInit, OnDestroy {
         this.vacanciesList = valueVL;
 
         this.vacanciesList.forEach( (vacCur, index) => {
-          //this.contactMethods.push({'id' : 0, value : 0, 'bDelete': false});
+          // this.contactMethods.push({'id' : 0, value : 0, 'bDelete': false});
 
           const sCityName = (this.cityList as City[]).find((valueC) => (valueC.id === parseInt(vacCur.City.toString()) ) ).name;
 
@@ -134,7 +134,7 @@ export class InvitationComponent implements OnInit, OnDestroy {
     Res.id_vc =  parseInt(this.modelResumeFromCheck.resumeFromCheck, 10);
 
 
-    Res.id_user_to = -1; //this.curVc.id_user;
+    Res.id_user_to = -1; // this.curVc.id_user;
     Res.letterText = strLetter;
     Res.DateTimeCreate = currentDate;
 
