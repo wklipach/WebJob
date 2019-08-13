@@ -396,6 +396,6 @@
   "messages-container.noMSC" : "Нет",
   "messages-container.uppMSC" : "Удалить переписку",
   "message.messageM" : "Сообщение",
-  "cv-view.langcurCV" : "Языки"
-
+  "cv-view.langcurCV" : "Языки",
+  "forgotpassword.errorSend" : "Ошибка отправки почты"
 }

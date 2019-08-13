@@ -396,5 +396,6 @@
   "messages-container.noMSC" : "Ei",
   "messages-container.uppMSC" : "Eemaldada kirjavahetus",
   "message.messageM" : "Teade",
-  "cv-view.langcurCV" : "Keeled"
+  "cv-view.langcurCV" : "Keeled",
+  "forgotpassword.errorSend" : "Ошибка отправки почты"
 }

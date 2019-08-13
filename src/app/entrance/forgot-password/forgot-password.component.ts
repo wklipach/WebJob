@@ -21,6 +21,8 @@ export class ForgotPasswordComponent implements OnInit, OnDestroy {
   public showSucc : boolean = false;
   public showErr : boolean = false;
   public stopCondition: boolean = false;
+  public errorSend: string = '';
+  public sErrSend: string = '';
 
   subscribeTimer: Subscription;
 
@@ -32,10 +34,24 @@ export class ForgotPasswordComponent implements OnInit, OnDestroy {
       )
     });
 
+    this.forgotForm.get('nameOrEmail').valueChanges.subscribe(
+      value => {
+
+        this.errorSend = '';
+        console.log(value);
+        }
+    );
+
+
   }
 
 
   ngOnInit() {
+
+    this.translate.get('forgotpassword.errorSend').subscribe(
+      value => this.sErrSend = value);
+
+    this.errorSend = '';
   }
 
   ngOnDestroy() {
@@ -68,7 +84,7 @@ export class ForgotPasswordComponent implements OnInit, OnDestroy {
     return this.httpService.getDataUserTable(sUserOrEmail).subscribe(
       (data: UserTable) => {
         if (this.getCheckNameOrEmail (data,sUserOrEmail) === true) {
-           this.showSucc = true;
+          this.showSucc = false;
           this.showErr = false;
           const newpwd =  this.randomPass(12,true,'',true);
           console.log('newpwd',newpwd);
@@ -86,6 +102,17 @@ export class ForgotPasswordComponent implements OnInit, OnDestroy {
           this.fps.sendPassword(email, newpwd, hash).subscribe(
             value=> {
               console.log('результат отправки письма', value);
+
+              if (value === 'error send') {
+                this.errorSend = this.sErrSend; //'Ошибка отправки почты';
+                this.showSucc = false;
+                this.showErr = false;
+              } else {
+                  this.showSucc = true;
+                  this.showErr = false;
+                  this.errorSend = '';
+              }
+
               this.Block5Sec();
 
             });
@@ -100,7 +127,6 @@ export class ForgotPasswordComponent implements OnInit, OnDestroy {
     );
 
   }
-
 
 
   Block5Sec() {
