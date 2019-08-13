@@ -1,109 +1,126 @@
-.box{
-  width: 100%;
-  height: auto;
-  margin: 30px auto;
-  color: rgb(68, 75, 84);
-  text-align: left;
-}
-label{
-  color: #0262d2;
-  text-align: left;
-}
-.login{
-  display: block;
-  margin-top: 21px;
-  margin-left:15px;
-}
-.password{
-  display: block;
-  margin-left: 15px;
-  margin-top: 21px;
-}
-.inputLogin{
-  display: block;
-  font-size: 14px;
-  text-align: center;
-  border-width: 1px;
-  border-color: rgb(68, 75, 84);
-  border-style: solid;
-  border-radius: 3px;
-  background-color: rgb(255, 255, 255);
-  width: 253px;
-  height: 43px;
-  margin-left: 15px;
-  margin-top: 11px;
-}
-.inputPassword{
-  display: block;
-  font-size: 14px;
-  text-align: center;
-  border-width: 1px;
-  border-color: rgb(68, 75, 84);
-  border-style: solid;
-  border-radius: 3px;
-  background-color: rgb(255, 255, 255);
-  width: 253px;
-  height: 43px;
-  margin-left: 15px;
-  margin-top: 11px;
-}
-.btn-signin{
-  display: block;
-  background-color: #0262d2;
-  color: rgb(255, 255, 255);
-  border-color: #054086;
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 3px;
-  line-height: 2.25;
-  width: 182px;
-  height: 48px;
-  margin-left: 15px;
-  margin-top: 21px;
-}
-.btn-signin:hover{
-  background-color: #0066cc;
-  font-weight: bold;
-}
-.btn-signin:active{
-  border-color: #3399ff;
-  border-style: solid;
-  border-width: 3px;
-  border-radius: 3px;
-  font-weight: bold;
-}
-.btn-signin:disabled{
-  color: white;
-  background-color: rgb( 145, 175, 209 );
-}
-.forgot-password{
-  display: block;
-  margin-left: 15px;
-  margin-top:11px;
-}
-.register{
-  display: block;
-  margin-left: 15px;
-  margin-top:2px;
-}
-.troublevalidator{
-  border-width: 1px;
-  border-style: solid;
-  border-color: red;
-}
-.succesfullvalidator {
-  border-width: 1px;
-  border-style: solid;
-  border-color: green;
-}
-.alertWrongLogin{
-  display: block;
-  font-size: 1.4em;
-  color: #F74933;
-  width: 530px;
-  text-align: center;
-  border: dotted 1px #f20f4b;
-  height: 50px;
-  line-height: 2.03;
-  margin-top: 30px;
-}
+@media screen and (max-width: 1800px) {
+  .box {
+    width: 100%;
+    height: auto;
+    margin: 30px auto;
+    color: rgb(68, 75, 84);
+    text-align: left;
+  }
+
+  label {
+    color: #0262d2;
+    text-align: left;
+  }
+
+  .login {
+    display: block;
+    margin-top: 21px;
+    margin-left: 15px;
+  }
+
+  .password {
+    display: block;
+    margin-left: 15px;
+    margin-top: 21px;
+  }
+
+  .inputLogin {
+    display: block;
+    font-size: 14px;
+    text-align: center;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 253px;
+    height: 43px;
+    margin-left: 15px;
+    margin-top: 11px;
+  }
+
+  .inputPassword {
+    display: block;
+    font-size: 14px;
+    text-align: center;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 253px;
+    height: 43px;
+    margin-left: 15px;
+    margin-top: 11px;
+  }
+
+  .btn-signin {
+    display: block;
+    background-color: #0262d2;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    line-height: 2.25;
+    width: 182px;
+    height: 48px;
+    margin-left: 15px;
+    margin-top: 21px;
+  }
+
+  .btn-signin:hover {
+    background-color: #0066cc;
+    font-weight: bold;
+  }
+
+  .btn-signin:active {
+    border-color: #3399ff;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3px;
+    font-weight: bold;
+  }
+
+  .btn-signin:disabled {
+    color: white;
+    background-color: rgb(145, 175, 209);
+  }
+
+  .forgot-password {
+    display: block;
+    margin-left: 15px;
+    margin-top: 11px;
+  }
+
+  .register {
+    display: block;
+    margin-left: 15px;
+    margin-top: 2px;
+  }
+
+  .troublevalidator {
+    border-width: 1px;
+    border-style: solid;
+    border-color: red;
+  }
+
+  .succesfullvalidator {
+    border-width: 1px;
+    border-style: solid;
+    border-color: green;
+  }
+
+  .alertWrongLogin {
+    display: block;
+    font-size: 1.4em;
+    color: #F74933;
+    width: 530px;
+    text-align: center;
+    border: dotted 1px #f20f4b;
+    height: 50px;
+    line-height: 2.03;
+    margin-top: 30px;
+  }
+} /* Конец media 1800 */
+

@@ -80,10 +80,10 @@
 
     <ul>
       <li>Выводить по:</li>
-      <li><input (click) = "OnClickRowPerPage(5)" type="radio" name="rRow" id="rRow5" [value]="5" [checked]="bChecked5">5</li>
-      <li> <input (click) = "OnClickRowPerPage(10)" type="radio" name="rRow" id="rRow10" [value]="10" [checked]="bChecked10">10</li>
-      <li><input (click) = "OnClickRowPerPage(20)" type="radio" name="rRow" id="rRow20" [value]="20" [checked]="bChecked20">20</li>
-      <li><input (click) = "OnClickRowPerPage(50)" type="radio" name="rRow" id="rRow50" [value]="50" [checked]="bChecked50">50</li>
+      <li><input (click) = "OnClickRowPerPage(5)" type="radio" name="rRow" id="rRow5" [value]="5" [checked]="bChecked5"><label for="rRow5">5</label></li>
+      <li> <input (click) = "OnClickRowPerPage(10)" type="radio" name="rRow" id="rRow10" [value]="10" [checked]="bChecked10"><label for="rRow10">10</label></li>
+      <li><input (click) = "OnClickRowPerPage(20)" type="radio" name="rRow" id="rRow20" [value]="20" [checked]="bChecked20"><label for="rRow20">20</label></li>
+      <li><input (click) = "OnClickRowPerPage(50)" type="radio" name="rRow" id="rRow50" [value]="50" [checked]="bChecked50"><label for="rRow50">50</label></li>
       <li class="nPage">{{page}}</li>
     </ul>
 
