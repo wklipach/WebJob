@@ -223,6 +223,7 @@
   "school.u331000": "Educational institution. Up to 1000 characters",
   "invitation.inv44": "Invite a job seeker",
   "invitation.chvc44": "Select a job to which you are applying for a job seeker.",
+  "invitation.chcv44": "Выберите резюме, которое Вы хотите отправить работодателю.",
   "invitation.d44": "Position",
   "invitation.warn44": "You didn’t enter a message text",
   "invitation.comment44": "Your comment on the invitation",
