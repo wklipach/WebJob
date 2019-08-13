@@ -23,6 +23,7 @@ export class SmainComponent implements OnInit {
   }
 
   ngOnInit() {
+
     var Res =  this.authService.loginStorage();
     this.bConnected = Res.bConnected;
     this.id_user =  Res.id_user;
