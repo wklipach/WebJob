@@ -183,12 +183,12 @@ export class HeaderTopComponent implements OnInit {
 
 
   clearfind() {
-     this.getVacancy('', false, false);
 
-//    window.localStorage.removeItem('keyFind');
-//    this.router.navigate(['/home']);
-
-
+    if (!this.httpService.getVorCV()) {
+      this.getVacancy('', false, false);
+    } else {
+      this.getCV('', false, false);
+    }
 
   }
 
@@ -197,12 +197,22 @@ export class HeaderTopComponent implements OnInit {
     console.log('нажали обычный поиск');
     const sInputSearch = this.headerTopForm.controls['inputSearch'].value;
 
-    if (this.bConnected && this.bEmployer) {
-      console.log('нажали обычный поиск getCV');
-      this.getCV(sInputSearch, false, false);
-    } else {
-      console.log('нажали обычный поиск getVacancy');
+
+    /*
+        if (this.bConnected && this.bEmployer) {
+          console.log('нажали обычный поиск getCV');
+          this.getCV(sInputSearch, false, false);
+        } else {
+          console.log('нажали обычный поиск getVacancy');
+          this.getVacancy(sInputSearch, false, false);
+        }
+    */
+
+
+    if (!this.httpService.getVorCV()) {
       this.getVacancy(sInputSearch, false, false);
+    } else {
+      this.getCV(sInputSearch, false, false);
     }
 
   } //find()

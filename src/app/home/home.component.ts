@@ -263,6 +263,9 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   //TODO getVacancyAdvanced  ЭТО ПРОДВИНУТЫЙ ПОИСК
   getVacancyAdvanced(advancedFindObj: any) {
+
+
+
     //если есть id_user вствавляем его
     advancedFindObj['id_user']=-1;
     if (this.bConnected) {
@@ -276,11 +279,17 @@ export class HomeComponent implements OnInit, OnDestroy {
 //        console.log('getTableVacancyAdvanced', data);
         //console.log('advancedFindObj', advancedFindObj.stringFind );
 
+        this.translate.get('home.ts.sFindNull').subscribe(
+          value => {
 
+            this.sFindNull = value;
+            if (data.length === 0)  this.moveS.startNullFind(this.sFindNull);
 
-        this.data_show(data);
-        this.reloadPAge(this.allDataVacancy, advancedFindObj.stringFind);
-        this.sVacancy = staticGuideList.all_vac1;
+            this.data_show(data);
+            this.reloadPAge(this.allDataVacancy, advancedFindObj.stringFind);
+            this.sVacancy = staticGuideList.all_vac1;
+          });
+
       });
   }
 
@@ -301,6 +310,7 @@ export class HomeComponent implements OnInit, OnDestroy {
               //TODO nenenenenenenenenene
               this.getVacancy('', false, false);
               this.moveS.startNullFind(this.sFindNull);
+              console.log('this.sFindNull',this.sFindNull);
               return;
             }
 

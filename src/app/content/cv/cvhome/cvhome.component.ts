@@ -154,16 +154,23 @@ export class CvhomeComponent implements OnInit {
     return this.getTableCVAdvanced = this.httpService.getTableCVAdvanced(advancedFindObj).subscribe(
       (data: any) => {
 
-
         //console.log('после продвинутого поиска', data );
 
-        this.data_show(data);
-        this.reloadPAge(this.allDataCV, advancedFindObj.stringFind);
-
-        this.translate.get('cvhome.ts.sCV_Tr').subscribe(
+        this.translate.get('cvhome.ts.sNullFund').subscribe(
           value => {
-            this.sCV_Tr = value;
-            this.sCV = this.sCV_Tr;});
+            this.sNullFund = value;
+
+            if (data.length === 0) this.moveS.startNullFind(this.sNullFund);
+
+            this.data_show(data);
+            this.reloadPAge(this.allDataCV, advancedFindObj.stringFind);
+
+            this.translate.get('cvhome.ts.sCV_Tr').subscribe(
+              value => {
+                this.sCV_Tr = value;
+                this.sCV = this.sCV_Tr;
+              });
+          });
       });
   }
 

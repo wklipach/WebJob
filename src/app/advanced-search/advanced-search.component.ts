@@ -154,7 +154,9 @@ export class AdvancedSearchComponent implements OnInit {
 
 
     //отправляем событие, словит его app-component
-    if (!this.bEmployer) {
+    //if (!this.bEmployer) {
+
+    if (!this.authService.getVorCV()) {
     this.httpTvsService.triggerReopenVacancyAdvanced(this.resFind);} else
     this.httpTvsService.triggerReopenCVAdvanced(this.resFind);
 
