@@ -35,6 +35,10 @@ export class CvViewComponent implements OnInit {
   private dvSubscVacancy: Subscription;
   public errorResponse = '';
 
+  public bConnected = false;
+  public bEmployer = false;
+
+
   cv_id = -1;
   public formView: FormGroup;
 
@@ -59,6 +63,9 @@ export class CvViewComponent implements OnInit {
     this.errorResponse = '';
     var Res =  this.auth.loginStorage();
     this.id_user =  Res.id_user;
+
+    this.bConnected = Res.bConnected;
+    this.bEmployer = Res.bEmployer;
 
     this.cv_id = this.cveditserv.getCvId();
     if (this.cv_id > -1) {

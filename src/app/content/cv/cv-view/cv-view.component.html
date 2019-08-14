@@ -38,10 +38,21 @@
         <div class="contactsLang" *ngFor="let lL of this._listLanguage; let i = index">
           {{lL['language_name']}} - <div class="langLevel">{{lL['language_level']}}</div>
         </div>
-        <button class="btn-invitation" (click)=response(_cvitem) > Пригласить </button>
+
+
+        <div *ngIf="bConnected">
+          <div *ngIf="bEmployer">
+            <button class="btn-invitation" (click)=response(_cvitem) > Пригласить </button>
+          </div>
+        </div>
         <div class="alerSend" *ngIf="this.errorResponse !==''"> {{this.errorResponse}} </div>
 
-        <button class="btn-invitation-disabled" (click)=response(_cvitem) > Пригласить </button>
+
+        <div *ngIf="!bConnected">
+            <button class="btn-invitation-disabled"> Пригласить </button>
+        </div>
+
+
 
     </form>
 
