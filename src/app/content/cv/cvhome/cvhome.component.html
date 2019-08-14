@@ -45,6 +45,13 @@
        </div>
      </div>
 
+      <!-- Если не залогинился, кнопки не активны начало -->
+      <div *ngIf="!bConnected">
+        <div *ngIf="bEmployee">
+          <button class="btn-response--disabled" type="button" id="cvresponse-disabled" [title]="'cvhome.invate' | translate" (click)="response(i, curCV.id)" >{{'cvhome.invate' | translate}}</button>
+        </div>
+      </div>
+      <!-- Если не залогинился, кнопки не активны конец -->
 
     </div>
 
