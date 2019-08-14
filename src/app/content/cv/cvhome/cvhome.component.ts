@@ -232,7 +232,8 @@ export class CvhomeComponent implements OnInit {
     console.log('MyMethod', $event);
 
     // если это кнопка Пригласить запрещаем открывать просмотр
-    if ($event.target.id === 'cvresponse')   return;
+    if ($event.target.id === 'cvresponse' ||
+        $event.target.id === 'cvresponseDisabled')   return;
 
 //    let cv = this.myDataCV.find(cv =>  cv.id===zid);
 
