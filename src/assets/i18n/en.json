@@ -179,6 +179,7 @@
   "cvhome.ifnot": "Impossible to fulfill conditions",
   "cvhome.phot": "Photos",
   "cvhome.invate": "Invite",
+  "buttons-disabled": "Недоступно для незарегистрированных пользователей En",
   "cv-language.lang": "Language",
   "cv-language.levellang": "Level of proficiency",
   "cv-language.deletelang": "Delete language data",

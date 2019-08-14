@@ -49,7 +49,7 @@
 
 
         <div *ngIf="!bConnected">
-            <button class="btn-invitation-disabled"> Пригласить </button>
+            <button class="btn-invitation-disabled" [title]="'buttons-disabled' | translate">{{'cvhome.invate' | translate}}</button>
         </div>
 
 

@@ -179,6 +179,7 @@
   "cvhome.ifnot": "Nõudeid on võimatu täita",
   "cvhome.phot": "Foto",
   "cvhome.invate": "Kutsuda",
+  "buttons-disabled": "Недоступно для незарегистрированных пользователей est",
   "cv-language.lang": "Keel",
   "cv-language.levellang": "Keeleoskuse tase",
   "cv-language.deletelang": "Eemaldada andmed keeltest",

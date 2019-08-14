@@ -179,6 +179,7 @@
   "cvhome.ifnot": "Невозможно выполнить условия",
   "cvhome.phot": "Фото",
   "cvhome.invate": "Пригласить",
+  "buttons-disabled": "Недоступно для незарегистрированных пользователей",
   "cv-language.lang": "Язык",
   "cv-language.levellang": "Уровень владения",
   "cv-language.deletelang": "Удалить данные о языке",
