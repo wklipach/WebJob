@@ -162,3 +162,20 @@ label{
 .alerSend{
   background-color: #F74933;
 }
+
+.btn-invitation-disabled{
+  display: block;
+  position: absolute;
+  font-size: 18px;
+  background-color: rgb( 145, 175, 209 );
+  color: rgb(255, 255, 255);
+  border-color: #054086;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px;
+  line-height: 2.25;
+  width: 190px;
+  height: 48px;
+  margin-top:100px;
+  margin-left: 6px;
+}

@@ -39,10 +39,9 @@
           {{lL['language_name']}} - <div class="langLevel">{{lL['language_level']}}</div>
         </div>
         <button class="btn-invitation" (click)=response(_cvitem) > Пригласить </button>
-
         <div class="alerSend" *ngIf="this.errorResponse !==''"> {{this.errorResponse}} </div>
 
-
+        <button class="btn-invitation-disabled" (click)=response(_cvitem) > Пригласить </button>
 
     </form>
 
