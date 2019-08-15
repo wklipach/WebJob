@@ -52,11 +52,9 @@ html {
 body {
   font-family: "Proxima Nova","Helvetica Neue","sans-serif";
   font-size: 16px;
- /* margin: 0 !important;
-  padding: 0 !important;
   text-decoration: none;
-  */
-  min-height: calc(100vh - 90px)!important;
+  height: auto;
+  min-height: 100vh;
 }
 .wrapper{
   width: 1170px;
