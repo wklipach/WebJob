@@ -143,8 +143,9 @@
 
   </div>
 
-    <input class="form-check-input" type="checkbox" formControlName="cbLicense" [title]="'register-employer.rr14RER' | translate">
-        <div class="form-check-label">{{'register-employer.rr15RER' | translate}}</div>
+    <input class="form-check-input" type="checkbox" formControlName="cbLicense" id="cbLicense" [title]="'register-employer.rr14RER' | translate">
+        <div class="form-check-label">{{'' | translate}}</div>
+  <label for="cbLicense" class="form-check-label" >{{'register-employer.rr15RER' | translate}}</label>
 
       <div class="alertRegister"
            *ngIf="formRegisterEmployer.controls['cbLicense'].invalid && formRegisterEmployer.controls['cbLicense'].touched">

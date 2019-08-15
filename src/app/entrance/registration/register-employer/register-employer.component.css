@@ -88,12 +88,13 @@ input{
 .form-check-input{
   display: inline-block;
   width: 30px;
-  margin: 0 15px;
+  margin-left: 15px;
   vertical-align: top;
 }
 .form-check-label{
   display: inline-block;
-  margin-top: 12px;
+  color: rgb(68, 75, 84);
+  line-height: 2.7;
 }
 .rules-link {
   position: relative;
