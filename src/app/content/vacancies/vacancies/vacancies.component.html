@@ -1,3 +1,4 @@
+<div class="container">
 <app-header-top></app-header-top>
 
 <div class="wrapper">
@@ -34,10 +35,10 @@
     </ul>
 
 
-    <div class="alert alert-primary" *ngIf="contactMethods[i].bDelete === true">
-      Вы желаете удалить данную вакансию?
-      <button type="button" class="btn btn-outline-danger" (click)="DeleteElement(item,i)">Да</button>
-      <button type="button" class="btn btn-outline-success" (click)="UnDeleteElement(item,i)">Нет</button>
+    <div class="deleteCorrespondence" *ngIf="contactMethods[i].bDelete === true">
+      <span class="question">Вы желаете удалить данную вакансию?</span>
+      <button type="button" class="btn-delete" (click)="DeleteElement(item,i)">Да</button>
+      <button type="button" class="btn-delete" (click)="UnDeleteElement(item,i)">Нет</button>
 
     </div>
 
@@ -47,4 +48,4 @@
   </div>
 </div>
 
-
+</div>

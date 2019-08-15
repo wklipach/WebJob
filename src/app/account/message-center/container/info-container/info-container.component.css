@@ -1,32 +1,16 @@
-.wrapper{
-  width: 1170px;
-  min-height: 300px;
-  max-height: 500px;
-  margin: 0 auto;
-  color: rgb(68, 75, 84);
-}
 .messages-box{
   width: 100%;
-  min-height: 300px;
-  max-height: 650px;
+  min-height: 215px;
+  max-height: 600px;
   overflow: auto;
 }
 .message{
-
   margin: 0 auto;
 }
 .message:hover{
   cursor: pointer;
   background-color: #f8f8f8;
 }
-
-/*.v-line{
-  display: inline-block;
-  position: relative;
-  width:6px;
-  height:auto;
-  background-color: #b8b8b8;
-}*/
 ul{
   list-style: none;
 }

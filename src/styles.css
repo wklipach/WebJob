@@ -80,7 +80,6 @@ a:hover{
   font-weight: bold;
 }
 a:active {
-  font-size: 1.2em;
   color: #f26100;
   font-weight: bold;
 }
@@ -113,7 +112,7 @@ button:hover{
   font-weight:bold;
 }
 button:active{
-  font-size: 18px;
+  font-size: 16px;
   border-color: #3399ff;
   border-style: solid;
   border-width: 3px;

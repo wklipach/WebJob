@@ -12,14 +12,6 @@
   cursor: pointer;
   background-color: #f8f8f8;
 }
-
-/*.v-line{
-  display: inline-block;
-  position: relative;
-  width:6px;
-  height:auto;
-  background-color: #b8b8b8;
-}*/
 ul{
   list-style: none;
 }

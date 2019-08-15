@@ -9,7 +9,7 @@
   <label class="userName">{{'register-employer.rr2RER' | translate}}</label>
   <input type="text" class="form-control" id="userName" formControlName="userName" [placeholder]="'allValue.UserName' | translate">
 
-    <div class="form-group col-md-3">
+    <div>
       <!-- Проверяем вносимый логин. Если логин уже есть в базе, показываем лейбл -Имя пользователя занято, или наоборот -->
 
       <div class="alertWrong"
@@ -23,7 +23,7 @@
         </div>
 
         <ng-template #trueUserNameTemplate>
-          <div class="alertWrong">{{'register-employer.rr5RER' | translate}}</div>
+          <div class="alertSuccess">{{'register-employer.rr5RER' | translate}}</div>
         </ng-template>
 
       </div>

@@ -1,3 +1,4 @@
+<div class="container">
 <app-header-top></app-header-top>
 
 <div class="wrapper">
@@ -36,14 +37,14 @@
     </ul>
 
 
-    <div class="alert alert-primary" *ngIf="contactMethods[i].bDelete === true">
-      {{'cv-list.questdeletecv' | translate}}
-      <button type="button" class="btn btn-outline-danger" (click)="DeleteElement(item,i)">{{'cv-list.yes' | translate}}</button>
-      <button type="button" class="btn btn-outline-success" (click)="UnDeleteElement(item,i)">{{'cv-list.no' | translate}}</button>
+    <div class="deleteCorrespondence" *ngIf="contactMethods[i].bDelete === true">
+      <span class="question">{{'cv-list.questdeletecv' | translate}}</span>
+      <button type="button" class="btn-delete" (click)="DeleteElement(item,i)">{{'cv-list.yes' | translate}}</button>
+      <button type="button" class="btn-delete" (click)="UnDeleteElement(item,i)">{{'cv-list.no' | translate}}</button>
 
     </div>
 
-    <br>
+
 
   </div>
 
@@ -53,4 +54,4 @@
   </div>
 </div>
 
-
+</div>
