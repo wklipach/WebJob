@@ -399,5 +399,13 @@
   "messages-container.uppMSC": "Delete chat",
   "message.messageM": "Message",
   "cv-view.langcurCV" : "Языки",
-  "forgotpassword.errorSend" : "Error sending mail"
+  "forgotpassword.errorSend" : "Error sending mail",
+  "advanced-search.findOnlyVC" : "Search only in job title",
+  "advanced-search.findShortVc" : "Search only in a brief job description",
+  "advanced-search.findAdvVc" : "Advanced job search",
+  "advanced-search.findVcOlder" : "Search for jobs no older than",
+  "advanced-search.findOnlyCV" : "Search only in resume title",
+  "advanced-search.findShortCv" : "Search in resume summary only",
+  "advanced-search.findAdvCv" : "Advanced Resume Search",
+  "advanced-search.findCvOlder" : "Search for a resume no older"
 }

@@ -86,16 +86,24 @@ export class AdvancedSearchComponent implements OnInit {
     this.id_user =  Res.id_user;
     this.bEmployer = Res.bEmployer;
 
-    if (!this.bEmployer) {
-      this.advSearchV =  'Искать только в названии вакансии';
-      this.advSearchVX =  'Искать только в кратком описании вакансии';
-      this.advSearchTOP = 'Расширенный поиск вакансий';
-      this.advSearchOlder ='Искать вакансии не старше';
+    if (!this.authService.getVorCV()) {
+      this.translate.get('advanced-search.findOnlyVC').subscribe(
+        value => this.advSearchV = value);
+      this.translate.get('advanced-search.findShortVc').subscribe(
+        value => this.advSearchVX = value);
+      this.translate.get('advanced-search.findAdvVc').subscribe(
+        value => this.advSearchTOP = value);
+      this.translate.get('advanced-search.findVcOlder').subscribe(
+        value => this.advSearchOlder = value);
     } else {
-      this.advSearchV = 'Искать только в названии резюме';
-      this.advSearchVX =  'Искать только в кратком описании резюме';
-      this.advSearchTOP =  'Расширенный поиск резюме';
-      this.advSearchOlder =  'Искать резюме не старше';
+      this.translate.get('advanced-search.findOnlyCV').subscribe(
+        value => this.advSearchV = value);
+      this.translate.get('advanced-search.findShortCv').subscribe(
+        value => this.advSearchVX = value);
+      this.translate.get('advanced-search.findAdvCv').subscribe(
+        value => this.advSearchTOP = value);
+      this.translate.get('advanced-search.findCvOlder').subscribe(
+        value => this.advSearchOlder = value);
     }
 
 
