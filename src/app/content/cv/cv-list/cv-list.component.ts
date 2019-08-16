@@ -238,7 +238,7 @@ export class CvListComponent implements OnInit, OnDestroy {
   UnDeleteElement(item: any, i: number) {
     this.contactMethods[i].bDelete = false;
     this.contactMethods[i].id = 0;
-    item.cv.bInvisible = false;
+    item.bInvisible = false;
     this.CvListItem = 0;
   }
 
