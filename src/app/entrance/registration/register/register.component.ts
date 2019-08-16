@@ -21,17 +21,16 @@ export class RegisterComponent implements OnInit {
     // assets/img/b3291e37c5413656444d23e0bec71e2b.jpg
   }
 
-  newFunction(event) {
-    console.log (event.explicitOriginalTarget.id);
-    if (event.explicitOriginalTarget.id == 'rEmployee') {
+  newFunctionEmployee(event) {
       this.router.navigate(['/employee']);
-    }
-
-    if (event.explicitOriginalTarget.id == 'rEmployer') {
-      this.router.navigate(['/employer']);
-    }
-
   }
+
+
+  newFunctionEmployer(event) {
+      this.router.navigate(['/employer']);
+  }
+
+
 
   submit(){
     // console.log(this.myForm);
