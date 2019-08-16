@@ -22,7 +22,7 @@
 
                <div  *ngFor="let item of vacanciesList; let i = index;">
                     <div class="botom-line">
-                        <div class="radio">   <input type="radio" title="vacancy" name="vacancy" title="vacancy" [(ngModel)]="modelResumeFromCheck.resumeFromCheck" [value] = "item.id">      </div>
+                        <div class="radio">   <input (click)="ClickElem()" type="radio" title="vacancy" name="vacancy" title="vacancy" [(ngModel)]="modelResumeFromCheck.resumeFromCheck" [value] = "item.id">      </div>
                         <div class="date">{{item.DateTimeCreate | date: 'dd-MM-yyyy'}}</div>
                         <div class="city">{{item.CityName}}</div>
                         <div class="salary">{{item.SalaryFrom}} &#8364;</div>
@@ -36,7 +36,7 @@
             <div class="alertWrong" *ngIf="bErrorResumeLetter">{{'invitation.warn44' | translate}}</div>
 
             <div [formGroup]="formResponse">
-                <textarea class="comment" formControlName="textCommentValue" name="comment" cols="100" rows="6" [placeholder]="'invitation.comment44' | translate"></textarea>
+                <textarea (click)="ClickElem()" class="comment" formControlName="textCommentValue" name="comment" cols="100" rows="6" [placeholder]="'invitation.comment44' | translate"></textarea>
                 <button class="btn-send" (click)="MoveResult()">{{'invitation.resp44' | translate}}</button>
             </div>
 

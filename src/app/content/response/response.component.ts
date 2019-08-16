@@ -158,4 +158,11 @@ console.log('this._id_user',this._id_user);
 
   }
 
+
+  ClickElem() {
+    this.bErrorResumeCheck=false;
+    this.bErrorResumeLetter=false;
+  }
+
+
 }

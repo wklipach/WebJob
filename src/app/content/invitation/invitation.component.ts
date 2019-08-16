@@ -152,4 +152,9 @@ export class InvitationComponent implements OnInit, OnDestroy {
   }
 
 
+  ClickElem() {
+    this.bErrorResumeCheck=false;
+    this.bErrorResumeLetter=false;
+  }
+
 }
