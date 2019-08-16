@@ -142,6 +142,7 @@ export class VacanciesComponent implements OnInit, OnDestroy {
 
     console.log('item', item);
     item.bInvisible = false;
+    this.contactMethods[i].id = 0;
     this.contactMethods[i].bDelete = false;
   }
 
