@@ -1,3 +1,4 @@
+<div class="container">
 <app-header-top></app-header-top>
 
 <div class="wrapper">
@@ -31,13 +32,17 @@
 </div>
 
 
-    <div *ngIf="bErrorResumeCheck">{{'response.te55' | translate}}</div>
-    <div *ngIf="bErrorResumeLetter">{{'response.vnv55' | translate}}</div>
+    <div class="alertWrong" *ngIf="bErrorResumeCheck">{{'response.te55' | translate}}</div>
+    <div class="alertWrong" *ngIf="bErrorResumeLetter">{{'response.vnv55' | translate}}</div>
 
 
     <div [formGroup]="formResponse">
-     <textarea class="comment" formControlName="textCommentValue" name="comment" cols="100" rows="6" [placeholder]="'response.comment55' | translate"></textarea>
-      <button class="btn-send" (click)="MoveResult()">{{'response.resp55' | translate}}</button>
+     <textarea class="comment" formControlName="textCommentValue" id="textCommentValue" name="comment" cols="100" rows="6" [placeholder]="'response.comment55' | translate"></textarea>
+
     </div>
 
+  <button class="btn-send" (click)="MoveResult()">{{'response.resp55' | translate}}</button>
+
 </div>
+  </div>
+
