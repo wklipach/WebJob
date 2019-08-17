@@ -208,18 +208,14 @@
   margin-left: 15px;
 }
 .btn-response-disabled:hover{
-
   background-color: rgb( 145, 175, 209 );
-
   line-height: 2;
-
 }
 .btn-response-disabled:active{
   border-color: #3399ff;
   border-style: solid;
   border-width: 3px;
   border-radius: 3px;
-
 }
 .btn-favorites-disabled{
   display: inline-block;

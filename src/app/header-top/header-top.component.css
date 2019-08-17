@@ -334,19 +334,6 @@ ul.lang-list li{
 ul:hover{
   display: block;
 }
-
-/*
-.alertNotFound{
-  position: relative;
-  font-size: 28px;
-  height: 50px;
-  width: 600px;
-  color: #F74933;
-  text-align: center;
-  margin-left: 580px;
-  margin-top: 1px;
-}
- */
 .alertNotFound {
   display: block;
   font-size: 1.4em;
@@ -356,7 +343,7 @@ ul:hover{
   border: dotted 1px #f20f4b;
   height: 50px;
   line-height: 2.03;
-  margin-left: 580px;
+  margin-left: 700px;
   margin-top: -10px;
 }
 

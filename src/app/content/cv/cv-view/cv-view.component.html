@@ -45,7 +45,7 @@
             <button class="btn-invitation" (click)=response(_cvitem) > Пригласить </button>
           </div>
         </div>
-        <div class="alerSend" *ngIf="this.errorResponse !==''"> {{this.errorResponse}} </div>
+        <div class="alertWrong" *ngIf="this.errorResponse !==''"> {{this.errorResponse}} </div>
 
 
         <div *ngIf="!bConnected">

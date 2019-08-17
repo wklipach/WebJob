@@ -7,7 +7,7 @@
       <img class="user" src="/assets/img/user.png" alt="Welcome" title="Welcome">
       <span class="hello">{{ 'header-top.hello' | translate }},&nbsp;</span>
 
-      <div class="menu-header">{{ htUserName }}&nbsp;&nbsp;<img src="/assets/img/arrow-down.png" [alt]="'header-top.ompHT' | translate" [title]="'header-top.mpHT' | translate">
+      <div class="menu-header">{{ htUserName }}&nbsp;&nbsp;<img src="/assets/img/arrow-down.png" [title]="'header-top.ompHT' | translate" [alt]="'header-top.mpHT' | translate">
       </div>
 
 
@@ -31,10 +31,10 @@
 
     <div class="cor">
     <a routerLink="/messages" routerLinkActive="active">
-    <img class="img-envelop" src="/assets/img/envelope.png" [alt]="'header-top.newmessages' | translate" [title]="'header-top.newmessages' | translate">
+    <img class="img-envelop" src="/assets/img/envelope.png" [title]="'header-top.newmessages' | translate" [alt]="'header-top.newmessages' | translate">
 
       <div *ngIf="this.numberCountNotReadLetter > 0">
-        <img class="img-circle" src="/assets/img/circle.png" [alt]="'header-top.vsHT' | translate" [title]="'header-top.vsHT' | translate">
+        <img class="img-circle" src="/assets/img/circle.png" [title]="'header-top.vsHT' | translate" [alt]="'header-top.vsHT' | translate">
         <div *ngIf="this.numberCountNotReadLetter > 9">
           <span class="number-env">!</span>
         </div>
@@ -47,11 +47,11 @@
 
 
      <a routerLink="/info" routerLinkActive="active">
-       <img class="img-bell" src="/assets/img/bell.png" [alt]="'header-top.newevent' | translate" [title]="'header-top.newevent' | translate">
+       <img class="img-bell" src="/assets/img/bell.png" [title]="'header-top.newevent' | translate" [alt]="'header-top.newevent' | translate">
 
 
        <div *ngIf="this.numberCountNotReadBell > 0">
-              <img class="img-circle-bell" src="/assets/img/circle-bell.png" [alt]="'header-top.vseventHT' | translate" [title]="'header-top.vseventHT' | translate">
+              <img class="img-circle-bell" src="/assets/img/circle-bell.png" [title]="'header-top.vseventHT' | translate" [alt]="'header-top.vseventHT' | translate">
               <div *ngIf="this.numberCountNotReadBell > 9">
                   <span class="number-bell">!</span>
               </div>
@@ -68,7 +68,7 @@
   </div>
 
     <div class="menu-top" *ngIf="!bConnected">
-      <img class="user" src="/assets/img/user-login.png" [alt]="'header-top.inputHT' | translate" [title]="'header-top.inputHT' | translate">
+      <img class="user" src="/assets/img/user-login.png" [title]="'header-top.inputHT' | translate" [alt]="'header-top.inputHT' | translate">
            <!-- <button class="btn btn-primary" (click)="login()">Войти</button> -->
 
       <a routerLink="/login" routerLinkActive="active"><span class="hello">{{'header-top.inputHT' | translate}}&nbsp;/</span></a>
@@ -80,20 +80,20 @@
 
 <div *ngIf = "this.currentLangSwitch == 0">
             <span class="langLetters">RU</span>
-            <img  class="flag-menu" src="/assets/img/rus.png" [alt]="'header-top.russHT' | translate" [title]="'header-top.russHT' | translate">
+            <img  class="flag-menu" src="/assets/img/rus.png" [title]="'header-top.russHT' | translate" [alt]="'header-top.russHT' | translate">
 </div>
 
 <div *ngIf = "this.currentLangSwitch == 1">
             <span class="langLetters">EE</span>
-            <img  class="flag-menu" src="/assets/img/est.png" [alt]="'header-top.eeHT' | translate" [title]="'header-top.eeHT' | translate">
+            <img  class="flag-menu" src="/assets/img/est.png" [title]="'header-top.eeHT' | translate" [alt]="'header-top.eeHT' | translate">
 </div>
 
 <div *ngIf = "this.currentLangSwitch == 2">
             <span class="langLetters">EN</span>
-            <img  class="flag-menu" src="/assets/img/eng.png" [alt]="'header-top.englHT' | translate" [title]="'header-top.englHT' | translate">
+            <img  class="flag-menu" src="/assets/img/eng.png" [title]="'header-top.englHT' | translate" [alt]="'header-top.englHT' | translate">
 </div>
 
-          <img class="arrow-down-lang" src="/assets/img/arrow-down.png" [alt]="'header-top.cholangHT' | translate" [title]="'header-top.cholangHT' | translate">
+          <img class="arrow-down-lang" src="/assets/img/arrow-down.png" [title]="'header-top.cholangHT' | translate" [alt]="'header-top.cholangHT' | translate">
 
         </div>
 
@@ -102,9 +102,9 @@
 -->
 
     <ul class="lang-list">
-      <li class="langchoice-tumb" (click)="myClickLang(1)">EE<img class="flag" src="/assets/img/est-flag.png" [alt]="'header-top.eeHT' | translate" [title]="'header-top.eeHT' | translate"></li>
-      <li class="langchoice-tumb" (click)="myClickLang(0)">RU<img class="flag" src="/assets/img/rus-flag.png" [alt]="'header-top.russHT' | translate" [title]="'header-top.russHT' | translate"></li>
-      <li class="langchoice-tumb" (click)="myClickLang(2)">EN<img class="flag" src="/assets/img/eng-flag.png" [alt]="'header-top.englHT' | translate" [title]="'header-top.englHT' | translate"></li>
+      <li class="langchoice-tumb" (click)="myClickLang(1)">EE<img class="flag" src="/assets/img/est-flag.png" [title]="'header-top.eeHT' | translate" [alt]="'header-top.eeHT' | translate"></li>
+      <li class="langchoice-tumb" (click)="myClickLang(0)">RU<img class="flag" src="/assets/img/rus-flag.png" [title]="'header-top.russHT' | translate" [alt]="'header-top.russHT' | translate"></li>
+      <li class="langchoice-tumb" (click)="myClickLang(2)">EN<img class="flag" src="/assets/img/eng-flag.png" [title]="'header-top.englHT' | translate" [alt]="'header-top.englHT' | translate"></li>
     </ul>
 
   </div>
@@ -120,7 +120,7 @@
     <form [formGroup]="headerTopForm">
         <input type="search" class="inputSearch" formControlName="inputSearch" id="inputSearch" [placeholder]="'header-top.findHT' | translate" [value]="sElementMask">
         <button class="btn-search" type="submit" (click)="find()">
-        <img src="/assets/img/icon-search.png" [alt]="'allValue.Find' | translate" [title]="'allValue.Find' | translate">&nbsp;{{'allValue.Find' | translate}}
+        <img src="/assets/img/icon-search.png" [title]="'allValue.Find' | translate" [alt]="'allValue.Find' | translate">&nbsp;{{'allValue.Find' | translate}}
         </button>
         <button class="btn-advsearch" type="button" id="AdvSearch" (click)="toAdvance()" [title]= "'header-top.advsearch' | translate" >{{'header-top.advsearch' | translate}}</button>
     </form>

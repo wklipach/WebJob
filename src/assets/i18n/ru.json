@@ -323,6 +323,8 @@
   "header-top.mpHT" : "Mеню пользователя",
   "header-top.nvHT" : "Наши вакансии",
   "header-top.psHT" : "Поиск сотрудников",
+  "header-top.chrd" : "Вакансии",
+  "header-top.chrdcv" : "Резюме",
   "header-top.dcHT" : "Данные соискателя",
   "header-top.mrHT" : "Мои резюме",
   "header-top.exitHT" : "Выйти",

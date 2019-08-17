@@ -11,7 +11,7 @@
       {{curVacancy.SalaryFrom}}-{{curVacancy.Salary}} &#8364;</div>
 
 
-    <img class="city" src="/assets/img/city.png" [alt]="'allValue.сity' | translate">
+    <img class="city" src="/assets/img/city.png" [title]="'allValue.city' | translate">
 
     <span class="city-name">{{curVacancy.CityName}}</span>
 
@@ -19,11 +19,11 @@
     <!-- ////////////////////////// -->
     <div *ngIf="curVacancy.base64textString.length>0; then contentLoadAvatar else contentDefault">{{'home.uvnHOME' | translate}}</div>
     <ng-template #contentLoadAvatar>
-      <img class="logotype" *ngFor="let item of curVacancy.base64textString"  src={{item}} [alt]="'home.lcHOME' | translate" id="img">
+      <img class="logotype" *ngFor="let item of curVacancy.base64textString"  src={{item}} [title]="'home.lcHOME' | translate" id="img">
     </ng-template>
 
     <ng-template #contentDefault>
-          <img class="logotype-company" src="/assets/img/no-photo.png" [alt]="'home.lcHOME' | translate">
+          <img class="logotype-company" src="/assets/img/no-photo.png" [title]="'home.lcHOME' | translate">
     </ng-template>
     <!-- ////////////////////////// -->
 
@@ -77,8 +77,6 @@
 
     <!-- Если не залогинился, кнопки не активны конец -->
 
-
-
     {{curVacancy.sErrorText}}
      </div>
 
@@ -87,7 +85,6 @@
     <app-page-count [numberOfRecordsPerPage] = "rowPerPage" [numberOfVisiblePages]="7"
       [(currentPage)] = "page" [numberOfRecordsPerAll] = "recordsPerAll" (currentPageChange)="onPageChanged($event)"></app-page-count>
   </div>
-
 
     <ul>
       <label class="form-check-input">{{'home.vvpHOME' | translate}}</label>
@@ -107,8 +104,7 @@
       <li><label class="form-check-input">
       <input   (click) = "OnClickRowPerPage(50)" type="radio" name="rRow" id="rRow50" [value]="50" [checked]="bChecked50">50
     </label></li>
-      <label class="nPage">{{page}}</label>
-    </ul>
-
+          </ul>
+    <label class="nPage">{{page}}</label>
   </div>
 </div>

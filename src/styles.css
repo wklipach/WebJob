@@ -122,6 +122,16 @@ button:active{
 .container{
   min-height: calc(100vh - 120px);
 }
-
+.alertWrong{
+  display: block;
+  font-size: 1.4em;
+  color: #F74933;
+  margin: 30px 2px 0 260px;
+  text-align: center;
+  border: dotted 1px #f20f4b;
+  line-height: 2.03;
+  background-color: #FFFFFF;
+  z-index: 999;
+}
 
 
