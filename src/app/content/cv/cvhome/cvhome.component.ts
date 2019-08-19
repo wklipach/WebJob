@@ -160,7 +160,13 @@ export class CvhomeComponent implements OnInit {
           value => {
             this.sNullFund = value;
 
-            if (data.length === 0) this.moveS.startNullFind(this.sNullFund);
+            //if (data.length === 0) this.moveS.startNullFind(this.sNullFund);
+
+            if (advancedFindObj.stringFind !== '' && data.length === 0) {
+              this.getCV('', false, false);
+              this.moveS.startNullFind(this.sNullFund);
+              return;
+            }
 
             this.data_show(data);
             this.reloadPAge(this.allDataCV, advancedFindObj.stringFind);

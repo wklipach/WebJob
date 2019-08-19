@@ -113,7 +113,7 @@ export class ForgotPasswordComponent implements OnInit, OnDestroy {
                   this.errorSend = '';
               }
 
-              this.Block5Sec();
+              this.Block10Sec();
 
             });
 
@@ -121,7 +121,7 @@ export class ForgotPasswordComponent implements OnInit, OnDestroy {
         else {
           this.showSucc = false;
           this.showErr = true;
-          this.Block5Sec();
+          this.Block10Sec();
         }
       }
     );
@@ -129,10 +129,10 @@ export class ForgotPasswordComponent implements OnInit, OnDestroy {
   }
 
 
-  Block5Sec() {
+  Block10Sec() {
     //блокируем кнопку 5 секунд
     this.stopCondition = true;
-    this.subscribeTimer =  timer(5000).subscribe(()=>
+    this.subscribeTimer =  timer(10000).subscribe(()=>
       this.stopCondition = false );
   }
 

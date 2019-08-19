@@ -87,6 +87,14 @@ export class LoginComponent implements OnInit, OnDestroy {
           window.localStorage.setItem('id_user', JSON.stringify(curRes.id_user));
           window.localStorage.setItem('bEmployer', JSON.stringify(curRes.bEmployer));
 
+
+          if (curRes.bEmployer)
+            this.httpService.setVorCV(true);
+           else
+            this.httpService.setVorCV(false);
+
+
+
           this.showSucc = true;
           this.showErr = false;
           this.router.navigate(['/smain']);
@@ -96,10 +104,10 @@ export class LoginComponent implements OnInit, OnDestroy {
           this.httpService.logout();
           this.showSucc = false;
           this.showErr = true;
-          //блокируем кнопку 5 секунд
+          //блокируем кнопку 10 секунд
           this.stopCondition = true;
 
-          this.subscribeTimer =  timer(5000).subscribe(()=>
+          this.subscribeTimer =  timer(10000).subscribe(()=>
             this.stopCondition = false );
         }
       });

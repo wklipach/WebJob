@@ -205,7 +205,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
       this.translate.get('home.ts.sRespSucc').subscribe(
         value => this.sRespSucc = value);
-
       }
     );
 
@@ -283,7 +282,15 @@ export class HomeComponent implements OnInit, OnDestroy {
           value => {
 
             this.sFindNull = value;
-            if (data.length === 0)  this.moveS.startNullFind(this.sFindNull);
+
+            if (advancedFindObj.stringFind !== '' && data.length === 0) {
+              this.getVacancy('', false, false);
+              this.moveS.startNullFind(this.sFindNull);
+              console.log('this.sFindNull', this.sFindNull);
+              return;
+            }
+
+
 
             this.data_show(data);
             this.reloadPAge(this.allDataVacancy, advancedFindObj.stringFind);
@@ -632,17 +639,20 @@ export class HomeComponent implements OnInit, OnDestroy {
           return;
         }
 
-        this.httpService.getNumberResponse(this.id_user, vcid).subscribe((value: Letter[]) => {
 
-            if (value.length > 0) {
-                this.sNoUserValueFind = this.sRespSucc;
-                this.myDataVacancy[index].sErrorText = this.sNoUserValueFind;
-                } else {
-                  this.cvEditSrv.setCvId(vcid);
-                  this.router.navigate(['/response']);
-                }
-          }) ;
-
+    this.translate.get('home.ts.sRespSucc').subscribe(resRespSucc => {
+      this.sRespSucc = resRespSucc;
+      this.httpService.getNumberResponse(this.id_user, vcid).subscribe((value: Letter[]) => {
+        if (value.length > 0) {
+          this.sNoUserValueFind = this.sRespSucc;
+          console.log('!!!!!!!!!!!!!!!!!!!!!!this.sNoUserValueFind', this.sNoUserValueFind);
+          this.myDataVacancy[index].sErrorText = this.sNoUserValueFind;
+        } else {
+          this.cvEditSrv.setCvId(vcid);
+          this.router.navigate(['/response']);
+        }
+      });
+    });
 
   }
 
