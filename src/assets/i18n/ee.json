@@ -12,7 +12,7 @@
   "home.ts.sEmploeerDeniedUnshow" : "Tööandjatele funktsioon 'Mitte näidata' tööpakkumistele ei ole kättesaadav.",
   "home.ts.sResponseVer" : "Funktsiooni 'Vastata' kasutamiseks läbige autoriseerimine.",
   "home.ts.sEmpoyeerResponseDeny" : "Tööandjatele funktsioon 'Vastata' tööpakkumistele ei ole kättesaadav.",
-  "home.ts.sRespSucc" : "Te juba vastasite antud tööpakkumisele.Oodake teadet.",
+  "home.ts.sRespSucc" : "Te juba vastasite antud tööpakkumisele.",
   "cvhome.ts.sUseResp" : "Te juba saatsite kutset antud resümeele.",
   "cvhome.ts.sNullFund" : "Otsing ei andnud tulemusi.",
   "cvhome.ts.sFavCV" : "Valitud resümeed",

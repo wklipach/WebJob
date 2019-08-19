@@ -12,7 +12,7 @@
   "home.ts.sEmploeerDeniedUnshow": "For employers, the 'Do not show' function is not available for vacancies.",
   "home.ts.sResponseVer": "To use the 'Respond' function, go through verification.",
   "home.ts.sEmpoyeerResponseDeny": "Employers do not have the 'Respond' function for vacancies.",
-  "home.ts.sRespSucc": "You have already responded to this job. Wait for a reply.",
+  "home.ts.sRespSucc": "You have already responded to this job.",
   "cvhome.ts.sUseResp": "You have already sent an invitation to this resume.",
   "cvhome.ts.sNullFund": "The search returned no results.",
   "cvhome.ts.sFavCV": "Favorite Resumes",
