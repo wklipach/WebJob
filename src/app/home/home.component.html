@@ -77,7 +77,8 @@
 
     <!-- Если не залогинился, кнопки не активны конец -->
 
-    {{curVacancy.sErrorText}}
+    <div class="alertWrong" *ngIf="curVacancy.sErrorText">{{curVacancy.sErrorText}} </div>
+
      </div>
 
   <div class="counter-line">

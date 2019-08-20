@@ -325,3 +325,16 @@ li{
   margin-top: 263px;
   margin-left: 991px;
 }
+.alertWrong{
+  display: block;
+  font-size: 1.4em;
+  color: #F74933;
+  width: 530px;
+  margin: 30px 2px 0 260px;
+  text-align: center;
+  border: dotted 1px #f20f4b;
+  height: 50px;
+  line-height: 2.03;
+  background-color: #FFFFFF;
+  z-index: 999;
+}

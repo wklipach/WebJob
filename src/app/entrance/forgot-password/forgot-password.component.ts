@@ -37,6 +37,7 @@ export class ForgotPasswordComponent implements OnInit, OnDestroy {
     this.forgotForm.get('nameOrEmail').valueChanges.subscribe(
       value => {
 
+        this.showErr = false;
         this.errorSend = '';
         console.log(value);
         }
