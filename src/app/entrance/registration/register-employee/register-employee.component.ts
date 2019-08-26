@@ -78,7 +78,7 @@ export class RegisterEmployeeComponent implements OnInit {
 
     const AddUser  = new UserType(userName,userEmail,
       CryptoJS.SHA256(userPassword1.trim().toLowerCase()).toString().toLowerCase(),
-      false, -1,'','','','','', 0,0,'','','','');
+      false, -1,'','','','','', 0,0,'','','','', '');
 
     console.log(AddUser);
 

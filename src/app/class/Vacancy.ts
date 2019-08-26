@@ -45,4 +45,7 @@ export class  dataVacancy extends Vacancy {
   base64textString = [];
   UserName: string;
   UNAME: string;
+  Avatar_Name: string = '';
+  sAvatarPath: string = '';
+
 }

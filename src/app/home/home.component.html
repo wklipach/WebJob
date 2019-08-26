@@ -17,9 +17,12 @@
 
 
     <!-- ////////////////////////// -->
-    <div *ngIf="curVacancy.base64textString.length>0; then contentLoadAvatar else contentDefault">{{'home.uvnHOME' | translate}}</div>
+    <div *ngIf="curVacancy.Avatar_Name.length>0; then contentLoadAvatar else contentDefault">{{'home.uvnHOME' | translate}}</div>
     <ng-template #contentLoadAvatar>
-      <img class="logotype" *ngFor="let item of curVacancy.base64textString"  src={{item}} [title]="'home.lcHOME' | translate" id="img">
+
+    <!--  <img class="logotype" *ngFor="let item of curVacancy.base64textString"  src={{item}} [title]="'home.lcHOME' | translate" id="img"> -->
+      <img class="logotype" [src]="curVacancy.sAvatarPath"  [title]="'home.lcHOME' | translate" id="img">
+
     </ng-template>
 
     <ng-template #contentDefault>

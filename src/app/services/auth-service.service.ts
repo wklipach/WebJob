@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import {UserType} from '../class/UserType';
-import {Subject} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 import {GlobalRef} from './globalref';
-import {RequestOptions} from '@angular/http';
 import {City} from '../class/City';
 
 @Injectable()
@@ -179,6 +178,18 @@ export class AuthService {
   }
 
 
+  getNewAvatar(sFileName: string) {
+
+  let sUrl = this.gr.sUrlGlobal+'UserTable';
+
+  let params = new HttpParams()
+    .set('Avatar', 'Avatar')
+    .set('NameAvatar', sFileName);
+
+  return this.http.get(sUrl, {params: params});
+
+ }
+
   updateAvatarUserTable(curAvatar: any, id_user: number){
 
     console.log('curAvatar', this.gr.sUrlGlobal+'UserTable/'+id_user+'/avatar');
@@ -186,6 +197,13 @@ export class AuthService {
     return this.http.post(this.gr.sUrlGlobal+'UserTable/'+id_user+'/avatar', {"Avatar": curAvatar});
   }
 
+
+  public uploadImageAvatar(image: File): Observable<Object> {
+    const formData = new FormData();
+    formData.append('myFile', image, image.name);
+    console.log('formData',formData.get('myFile') );
+    return this.http.post(this.gr.sUrlGlobal+'file-upload', formData);
+  }
 
 ///
 

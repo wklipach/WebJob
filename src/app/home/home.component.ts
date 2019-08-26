@@ -13,6 +13,7 @@ import {DatePipe} from '@angular/common';
 import {Letter} from '../class/Letter';
 import {TranslateService} from '@ngx-translate/core';
 import {staticGuideList} from '../class/GuideList';
+import {GlobalRef} from '../services/globalref';
 
 @Component({
   selector: 'app-home',
@@ -68,7 +69,9 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   base64textString = [];
 
-  constructor(private httpService: TableVacancyService,
+  constructor(
+              public gr: GlobalRef,
+              private httpService: TableVacancyService,
               private router: Router,
               private moveS: MoveService,
               private authService: AuthService,
@@ -122,6 +125,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     console.log('k', k);
 
     k.base64textString = [];
+
+/*
     if (k.Avatar !== null) {
         if (k.Avatar.toString().length > 0) {
           if (JSON.parse(k.Avatar) !== null) {
@@ -129,6 +134,14 @@ export class HomeComponent implements OnInit, OnDestroy {
           }
         }
       }
+*/
+
+    if (k.Avatar_Name !== null) {
+      if (k.Avatar_Name.length > 0) {
+          k.sAvatarPath = this.gr.sUrlAvatarGlobal + k.Avatar_Name;
+      }
+    }
+
     }
 
 

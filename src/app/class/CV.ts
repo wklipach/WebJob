@@ -42,4 +42,6 @@ export class  dataCV extends CV {
   UserName: string;
   Skills: string = '';
   UName: string = '';
+  Avatar_Name: string = '';
+  sAvatarPath: string = '';
 }

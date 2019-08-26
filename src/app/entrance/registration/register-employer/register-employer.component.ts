@@ -80,6 +80,7 @@ export class RegisterEmployerComponent implements OnInit {
       '',
       '',
       '',
+      '',
       '');
     console.log(AddUser);
 

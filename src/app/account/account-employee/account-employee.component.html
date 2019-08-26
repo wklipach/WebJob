@@ -6,10 +6,18 @@
   <div class="leftSide">
 
      <form [formGroup]="form">
+
+<!--
       <div *ngIf="base64textString.length>0;then contentLoadAvatar else contentDefault">{{'account-employee.uvnAE' | translate}}</div>
       <ng-template #contentLoadAvatar>
         <img class="logotype" *ngFor="let item of base64textString"  src={{item}} [alt]="'account-employee.zfAE' | translate" id="img" onclick="document.getElementById('avatar').click()">
       </ng-template>
+-->
+
+       <div *ngIf="this.sAvatarPath.length>0;then contentLoadAvatar else contentDefault">{{'account-employee.uvnAE' | translate}}</div>
+       <ng-template #contentLoadAvatar>
+         <img class="logotype" [src]="this.sAvatarPath" [alt]="'account-employee.zfAE' | translate" id="img" onclick="document.getElementById('avatar').click()">
+       </ng-template>
 
       <ng-template #contentDefault>
         <img src="/assets/img/usernull.png" class="img-thumbnail" onclick="document.getElementById('avatar').click()">
@@ -163,6 +171,11 @@
     </div>
 
    </div>
+
+<!--
+  +"images/UserAvatar/3.jpg
+-->
+
       </div>
 
 

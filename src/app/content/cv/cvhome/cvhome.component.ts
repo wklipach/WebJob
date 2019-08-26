@@ -12,6 +12,7 @@ import {MoveService} from '../../../services/move.service';
 import {DatePipe} from '@angular/common';
 import {CvEditService} from '../../../services/cv-edit.service';
 import {TranslateService} from '@ngx-translate/core';
+import {GlobalRef} from '../../../services/globalref';
 
 @Component({
   selector: 'app-cvhome',
@@ -52,7 +53,9 @@ export class CvhomeComponent implements OnInit {
   // всего записей после запроса
   public recordsPerAll = 0;
 
-  constructor(private authService: AuthService,
+  constructor(
+              public gr: GlobalRef,
+              private authService: AuthService,
               private httpService: TableVacancyService,
               private is: GuideService,
               private router: Router,
@@ -410,6 +413,8 @@ export class CvhomeComponent implements OnInit {
     // TODO точка 2
     k.base64textString = [];
 
+
+/*
     if (k.Avatar !== null) {
       if (k.Avatar.toString().length > 0) {
         if (JSON.parse(k.Avatar) !== null) {
@@ -417,6 +422,15 @@ export class CvhomeComponent implements OnInit {
         }
       }
     }
+*/
+
+    if (k.Avatar_Name !== null) {
+      if (k.Avatar_Name.length > 0) {
+          k.sAvatarPath = this.gr.sUrlAvatarGlobal + k.Avatar_Name;
+      }
+    }
+
+
   }
 
 

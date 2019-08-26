@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {City} from '../../class/City';
 import {GuideService} from '../../services/guide-service.service';
@@ -11,6 +11,7 @@ import {isUndefined} from "util";
 import {Guide} from '../../class/guide';
 import * as CryptoJS from 'crypto-js';
 import {TranslateService} from '@ngx-translate/core';
+import {GlobalRef} from '../../services/globalref';
 
 @Component({
   selector: 'app-accountemployee',
@@ -36,6 +37,10 @@ export class AccountEmployeeComponent implements OnInit {
   public bErrorRepeatPassword: boolean = false;
   public bErrorEmptyPassword: boolean = false;
 
+  public MyTempVar: string;
+
+  public sAvatarPath : string = '';
+
 private loadUser: UserType;
 
 
@@ -45,7 +50,11 @@ private loadUser: UserType;
               private auth: AuthService,
               private router: Router,
               private gs: GuideService,
-              public translate: TranslateService) {
+              public translate: TranslateService,
+              public gr: GlobalRef,
+              private cdRef: ChangeDetectorRef) {
+
+
 
 
     this.createForm();
@@ -89,6 +98,7 @@ private loadUser: UserType;
     this.form.get('avatar').setValue(null);
     this.form.get('name').setValue(null);
     this.base64textString = [];
+    this.sAvatarPath = '';
     this.onPostImageAvatar();
   }
 
@@ -137,18 +147,23 @@ private loadUser: UserType;
       this.loadCurrentUserInfo(value[0]);
       this.loadUser = value[0] as UserType;
 
-      // вытаскиваем из базы картинку аватара
+      if (this.loadUser.Avatar_Name === '' || this.loadUser.Avatar_Name === undefined || this.loadUser.Avatar_Name === null) this.sAvatarPath = '';
+                else this.sAvatarPath = this.gr.sUrlAvatarGlobal + this.loadUser.Avatar_Name;
 
-      console.log('this.loadUser', this.loadUser);
+
+      // вытаскиваем из базы картинку аватара
+/*
+      console.log('this.loadUser', this.loadUser, 'this.sAvatarPath', this.sAvatarPath);
 
       let S = this.loadUser.Avatar;
-
-
       if (typeof S !== 'undefined' && S !== null && S !== 'null') {
         if (S.length>0) {
           this.base64textString.push('data:image/png;base64,' + JSON.parse(S).value);
         }
       }
+*/
+
+
     });
   }
 
@@ -159,36 +174,47 @@ private loadUser: UserType;
     if(event.target.files && event.target.files.length > 0) {
 
 
-      let file = event.target.files[0];
+      let file: File = event.target.files[0];
+
+      //todo 164
+//      this.auth.uploadImageAvatar(file).subscribe(
+//        (res) => {
 
 
-      reader.readAsDataURL(file);
-      reader.onloadend = () => {
-        var tempImg = new Image();
-        tempImg.src = reader.result;
+              reader.readAsDataURL(file);
+              reader.onloadend = () => {
+                var tempImg = new Image();
+                tempImg.src = reader.result;
 
-        tempImg.onload =() => {
-          var dataURL = this.ResizeImage(tempImg);
-          console.log('dataURL', dataURL);
-          this.form.get('avatar').setValue({
+                  tempImg.onload =() => {
+                  var dataURL = this.ResizeImage(tempImg);
+                  console.log('dataURL', dataURL);
+                  this.form.get('avatar').setValue({
 //          filename: file.name,
 //          filetype: file.type,
-            value: dataURL.split(',')[1]
-          });
+                    value: dataURL.split(',')[1]
+                  });
 
-          this.form.get('name').setValue(file.name);
+                  this.form.get('name').setValue(file.name);
 
-          this.onPostImageAvatar();
-        };
-      };
+                  this.onPostImageAvatar();
+                };
+              };
+//        },
+//        (err) => {
+//          console.log('err',err);
+//          return;
+//        });
+
+
 
     }
   }
 
 
   ResizeImage(tempImg: HTMLImageElement): string {
-    var MAX_WIDTH = 400;
-      var MAX_HEIGHT = 123;
+    var MAX_WIDTH = 200;
+      var MAX_HEIGHT = 200;
       var tempW = tempImg.width;
       var tempH = tempImg.height;
       if (tempW > tempH) {
@@ -337,7 +363,7 @@ loadCurrentUserInfo(item: any) {
       const AddUser  = new UserType(inputUserName, inputEmail, this._sPassword,
                                    false, id_city, inputZip, inputName, inputLastName, inputAddress, inputPhone,
                                     this.genderList.find((value)=>value.name == inputGender).id,
-       Date.parse(inputBirth), '','','','');
+       Date.parse(inputBirth), '','','','', '');
 
 
 
@@ -406,20 +432,24 @@ loadCurrentUserInfo(item: any) {
 
   onLoadFromBaseAvatar() {
 
-    console.log('11','22','33');
-
+    this.sAvatarPath = '';
 
     this.auth.getDataUserFromId(this.id_user).subscribe((aRes)=>
     {
       this.base64textString = [];
-      const S = aRes[0].Avatar;
+      const S = aRes[0].Avatar_Name;
       if (S !== '""') {
         if (typeof S !== 'undefined') {
           if (S.length > 0) {
-            if (JSON.parse(S) !== null) {
-              this.base64textString.push('data:image/png;base64,' + JSON.parse(S).value);
-            }
+
+              this.sAvatarPath = this.gr.sUrlAvatarGlobal + S;
+
+//            if (JSON.parse(S) !== null) {
+//              this.base64textString.push('data:image/png;base64,' + JSON.parse(S).value);
+//            }
+
           }
+
         }
       }
     });

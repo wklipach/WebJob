@@ -26,10 +26,15 @@
 
     <div class="photo">
 
+<!--
       <div *ngIf="curCV.base64textString.length>0; then contentLoadAvatar else contentDefault">{{'cvhome.ifnot' | translate}}</div>
+-->
+      <div *ngIf="curCV.Avatar_Name.length>0; then contentLoadAvatar else contentDefault">{{'cvhome.ifnot' | translate}}</div>
+
 
       <ng-template #contentLoadAvatar>
-        <img class="logotype" *ngFor="let item of curCV.base64textString"  src={{item}} [title]="'cvhome.photo' | translate" id="img">
+        <!-- <img class="logotype" *ngFor="let item of curCV.base64textString"  src={{item}} [title]="'cvhome.photo' | translate" id="img"> -->
+        <img class="logotype" [src]="curCV.sAvatarPath" [title]="'cvhome.photo' | translate" id="img">
       </ng-template>
 
       <ng-template #contentDefault>

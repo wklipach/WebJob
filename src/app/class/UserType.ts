@@ -13,6 +13,7 @@ export class UserType{
   Address: string;
   Phone: string;
   Avatar: any;
+  Avatar_Name: string;
   Gender: number;
   DateBirth: number;
   ContactPerson: string;
@@ -23,7 +24,7 @@ export class UserType{
   constructor(UserName: string, EMail: string, Password: string, bEmployer: boolean,
               City: number, Zip: string, Name: string,
               LastName: string, Address: string, Phone: string, Gender: number, DateBirth: number,
-              ContactPerson: string, About: string, Web: string, Phone2: string
+              ContactPerson: string, About: string, Web: string, Phone2: string, Avatar_Name: string
 ) {
     this.UserName = UserName;
     this.EMail = EMail;
@@ -41,6 +42,7 @@ export class UserType{
     this.About = About;
     this.Web = Web;
     this.Phone2 = Phone2;
+    this.Avatar_Name = Avatar_Name;
   }
 
 }

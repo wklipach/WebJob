@@ -8,9 +8,16 @@
     <form [formGroup]="form">
 
 
+<!--
       <div *ngIf="base64textString.length>0; then contentLoadAvatar else contentDefault">{{'account-employer.uvnAER' | translate}}</div>
       <ng-template #contentLoadAvatar>
         <img class="logotype" [title]="'account-employer.loadlogo31' | translate" *ngFor="let item of base64textString"  src={{item}} [alt]="'account-employer.loadlogo31' | translate" id="img" onclick="document.getElementById('avatar').click()">
+      </ng-template>
+-->
+      <div *ngIf="this.sAvatarPath.length>0; then contentLoadAvatar else contentDefault">{{'account-employer.uvnAER' | translate}}</div>
+      <ng-template #contentLoadAvatar>
+
+        <img class="logotype" [title]="'account-employer.loadlogo31' | translate"  [src]="this.sAvatarPath" [alt]="'account-employer.loadlogo31' | translate" id="img" onclick="document.getElementById('avatar').click()">
       </ng-template>
 
       <ng-template #contentDefault>

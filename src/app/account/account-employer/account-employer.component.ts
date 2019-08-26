@@ -12,6 +12,7 @@ import {isUndefined} from "util";
 import {Guide} from '../../class/guide';
 import * as CryptoJS from 'crypto-js';
 import {TranslateService} from '@ngx-translate/core';
+import {GlobalRef} from '../../services/globalref';
 
 @Component({
   selector: 'app-accountemployer',
@@ -22,6 +23,7 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class AccountEmployerComponent implements OnInit {
 
+  public sAvatarPath : string = '';
   base64textString = [];
   genderList: Guide[];
   accountEmployerForm: FormGroup;
@@ -65,6 +67,7 @@ constructor(  private is: GuideService,
               private gs: GuideService,
               private fb: FormBuilder,
               private _sanitizer: DomSanitizer,
+              public gr: GlobalRef,
               public translate: TranslateService) {
 
 
@@ -108,23 +111,36 @@ constructor(  private is: GuideService,
 
   ngOnInit() {
 
+
+    console.log('ngOnInit()');
+
     this.createAccountEmployerForm();
 
     this.subscrDataUserFromId =
       this.auth.getDataUserFromId(this.id_user).subscribe(value =>
        {
          this.loadCurrentUserInfo(value[0]);
-         this.loadUser = value as UserType;
+         this.loadUser = value[0] as UserType;
+
+         console.log('this.loadUser.Avatar_Name', this.loadUser.Avatar_Name);
+
+         if (this.loadUser.Avatar_Name === '' || this.loadUser.Avatar_Name === undefined || this.loadUser.Avatar_Name === null) this.sAvatarPath = '';
+         else {
+           console.log('this.sAvatarPath this.loadUser.Avatar_Name', this.loadUser.Avatar_Name);
+           this.sAvatarPath = this.gr.sUrlAvatarGlobal + this.loadUser.Avatar_Name;
+         }
+
+/*
          // вытаскиваем из базы картинку аватара
          console.log('this.loadUser', this.loadUser);
 
          let S = this.loadUser[0].Avatar;
-
          if (S===null) {S = '';}
-
          if (S.toString().length>0) {
            this.base64textString.push('data:image/png;base64,' + JSON.parse(S).value);
          }
+  */
+
         }
       );
     }
@@ -318,7 +334,8 @@ console.log('ITEM', item);
         inputContactPerson,
         inputAbout,
         inputWeb,
-        inputPhone2
+        inputPhone2,
+        ''
     );
 
 
@@ -408,8 +425,9 @@ console.log('ITEM', item);
   clearFile() {
     this.form.get('avatar').setValue(null);
     this.form.get('name').setValue(null);
-    this.fileInput.nativeElement.value = '';
+    //this.fileInput.nativeElement.value = '';
     this.base64textString = [];
+    this.sAvatarPath = '';
     this.onPostImageAvatar();
   }
 
@@ -425,19 +443,30 @@ console.log('ITEM', item);
 
   onLoadFromBaseAvatar() {
 
+
+//console.log('onLoadFromBaseAvatar()');
+
+    this.sAvatarPath = '';
     this.auth.getDataUserFromId(this.id_user).subscribe((aRes)=>
     {
 
-      console.log('aRes', aRes);
-
-      const S = aRes[0].Avatar;
       this.base64textString = [];
+      const S = aRes[0].Avatar_Name;
+
+  //    console.log('1 onLoadFromBaseAvatar()', aRes[0].Avatar_Name);
+
       if (S !== '""') {
         if (typeof S !== 'undefined') {
           if (S.length > 0) {
-            if (JSON.parse(S) !== null) {
-              this.base64textString.push('data:image/png;base64,' + JSON.parse(S).value);
-            }
+
+            this.sAvatarPath = this.gr.sUrlAvatarGlobal + S;
+
+//            console.log('2 onLoadFromBaseAvatar() this.sAvatarPath', this.sAvatarPath);
+
+//            if (JSON.parse(S) !== null) {
+//              this.base64textString.push('data:image/png;base64,' + JSON.parse(S).value);
+//            }
+
           }
         }
       }
@@ -463,10 +492,9 @@ console.log('ITEM', item);
 
   }
 
-
   ResizeImage(tempImg: HTMLImageElement): string {
-    var MAX_WIDTH = 400;
-    var MAX_HEIGHT = 123;
+    var MAX_WIDTH = 200;
+    var MAX_HEIGHT = 200;
     var tempW = tempImg.width;
     var tempH = tempImg.height;
     if (tempW > tempH) {
