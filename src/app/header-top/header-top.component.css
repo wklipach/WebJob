@@ -1,4 +1,5 @@
 .topLine{
+  position: relative;
   width: 100%;
   height: 59px;
   margin: 0 auto;
@@ -9,8 +10,8 @@
 .user{
   position: absolute;
   display: inline-block;
-  margin-top:17px;
-  margin-left: 1px;
+  top:17px;
+  left: 1px;
 }
 .hello{
   position: relative;
@@ -39,17 +40,17 @@
 .arrow-down-lang{
   position: absolute;
   display: inline-block;
-  margin-top:14px;
-  margin-left: -13px;
+  top:14px;
+  right: 3px;
 }
 .menu-top{
   position: absolute;
 }
 h1 {
   font-size: 48px;
- /* color: #484c54;
- letter-spacing: 2px;
-  */
+  /* color: #484c54;
+  letter-spacing: 2px;
+   */
   padding:0 18px ;
   font-family: "Arial Rounded MT Bold", "Calibri", "sans-serif";
   color: rgb(68, 75, 84);
@@ -135,12 +136,6 @@ a:visited {
   display: inline-block;
   background-color: yellow;
 }
-
-.user-login{
-  width: 30%;
-  background-color: yellow;
-}
-
 .langLetters{
   position: absolute;
   display: inline-block;
@@ -152,7 +147,6 @@ a:visited {
 .langchoice-tumb{
   font-size: 14px;
   color: rgb(68, 75, 84);
-  margin-left: -15px;
   padding-right: 18px;
 }
 .flag-list{
@@ -189,7 +183,7 @@ a:visited {
   display: inline-block;
   position: absolute;
   background-color: #0262d2;
- color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
   border-color: #054086;
   border-width: 1px;
   border-style: solid;
@@ -283,51 +277,29 @@ ul:hover{
 /*  Закончили меню пользователя, начали меню выбора языка */
 
 .menu-header-lang{
-  position: relative;
+  position: absolute;
   display: inline-block;
   width: 120px;
   height: 45px;
   color: #484c54;
-  float: right;
+  right:4px;
   text-align: right;
   cursor: pointer;
-  margin-top: 8px;
+  top: 16px;
 }
 .menu-header-lang:hover{
   background: #FFF;
 }
 .lang-list{
   position: absolute;
-  margin-top: 39px;
-  float: right;
   z-index: 2;
-  margin-left: 899px;
   display: none;
+  right: 0;
+  top: 34px;
 }
-ul.lang-list li{
-  position: relative;
-  display: block;
+.lang-list li{
   width: 55px;
-  height: 45px;
-  text-align: left;
-  background: #FFF;
-  cursor: pointer;
-  border-color: #dddddd;
-  border-style: solid;
-  border-width:1px;
-  margin-left:150px;
 }
-.lang-list li:hover{
-  background: #e8f1fb;
-}
-.lang-list li:after {
-  display: none;
- /* clear: both; */
-}
-.menu-header-lang:hover{
-  background: #FFF;
-}
-
 .menu-header-lang:hover + ul{
   display: block;
 }
