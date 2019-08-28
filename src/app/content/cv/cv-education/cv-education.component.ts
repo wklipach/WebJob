@@ -31,7 +31,7 @@ export class CvEducationComponent implements OnInit {
     this.formEducation = new FormGroup({});
 
     this.listEducation = is.getEducationList();
-    console.log('CONSTRUCTOR this.listEducation',this.listEducation);
+    //console.log('CONSTRUCTOR this.listEducation',this.listEducation);
     for (let p in this.listEducation) {
       this.formEducation.addControl('educationCheck' + (this.listEducation[p].id).toString(), new FormControl(''));
     }
@@ -43,7 +43,7 @@ export class CvEducationComponent implements OnInit {
 
     this.educationCheckedElementSubscription = this.is.onCheckedElementEducationList.subscribe((curMass: number[]) => {
       // this.is.industryNumber=this.CheckMassive(this.listIndustry);
-      console.log('получили событие onCheckedElementEducationList', curMass);
+      //console.log('получили событие onCheckedElementEducationList', curMass);
       if (curMass !== null) {
         if (curMass.length > 0) {
           // гарантированное преобразование в массив с разделителем из запятых

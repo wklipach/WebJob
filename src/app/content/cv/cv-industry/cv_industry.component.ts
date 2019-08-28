@@ -22,7 +22,7 @@ export class CvIndustryComponent implements OnInit {
 
     this.translate.onLangChange.subscribe( value => {
       this.listIndustry = is.getIndustryList();
-      console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!', this.listIndustry);
+      //console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!', this.listIndustry);
     });
 
     this.formIndustry  = new FormGroup({});
@@ -41,7 +41,7 @@ export class CvIndustryComponent implements OnInit {
     this.industryCheckedElementSubscription = this.is.onCheckedElementIndustryList.subscribe((curMass: number[]) =>
       {
         if (curMass!==null) {
-          console.log('получили событие onCheckedElementIndustryList', curMass);
+          //console.log('получили событие onCheckedElementIndustryList', curMass);
           // гарантированное преобразование в массив с разделителем из запятых
           const arrCurMass = curMass.toString().split(',');
           // this.is.industryNumber=this.CheckMassive(this.listIndustry);

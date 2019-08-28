@@ -190,20 +190,20 @@ export class NewVacancyComponent implements OnInit {
     MyExperience = this.is.startCheckExperienceList('! startCheckExperienceList !');
 
 
-    console.log('MyIndustry===');
-    console.log(MyIndustry);
+    //console.log('MyIndustry===');
+    //console.log(MyIndustry);
 
-    console.log('MyEmployment===');
-    console.log(MyEmployment);
+    //console.log('MyEmployment===');
+    //console.log(MyEmployment);
 
-    console.log('MySchedule===');
-    console.log(MySchedule);
+    //console.log('MySchedule===');
+    //console.log(MySchedule);
 
-    console.log('MyEducation===');
-    console.log(MyEducation);
+    //console.log('MyEducation===');
+    //console.log(MyEducation);
 
-    console.log('MyExperience===');
-    console.log(MyExperience);
+    //console.log('MyExperience===');
+    //console.log(MyExperience);
 
 
     const period = this.displayPeriodList.find((x) => x.name === this.newVacancyForm.controls['displayPeriod'].value);
@@ -242,7 +242,7 @@ export class NewVacancyComponent implements OnInit {
     return this.httpService.postNewVacancy(MyVacancy).subscribe(
       () => {
 
-        console.log('ПЕРЕХОДИТЬ НА ВАКАНСИИ');
+        //console.log('ПЕРЕХОДИТЬ НА ВАКАНСИИ');
         this.router.navigate(['/vacancies']);
       }
     );

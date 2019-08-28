@@ -58,7 +58,7 @@ export class HeaderTopComponent implements OnInit {
 
 
     this.moveS.onNullFind.subscribe((value) => {
-      console.log('event onNullFind', value);
+      //console.log('event onNullFind', value);
       this.sNullValueFind = value;
       this.headerTopForm.controls['inputSearch'].setValue('');
     });
@@ -76,7 +76,7 @@ export class HeaderTopComponent implements OnInit {
   }
 
   myClickLang (item: number) {
-    console.log(item);
+    //console.log(item);
     this.currentLangSwitch = item;
     this.httpService.setLangStorage(this.currentLangSwitch);
     this.translate.use(this.arrLangs[this.currentLangSwitch]);
@@ -126,7 +126,7 @@ export class HeaderTopComponent implements OnInit {
 
 
             if (value !== null) {
-              console.log('Bell value.length', value.length, 'this.id_user', this.id_user);
+              //console.log('Bell value.length', value.length, 'this.id_user', this.id_user);
               this.numberCountNotReadBell = value.length;
             }
           }
@@ -139,7 +139,7 @@ export class HeaderTopComponent implements OnInit {
     if (this.bConnected) {
           //TODO подсчет количества непрочитанных писем
 
-      console.log('header-top component countNotReadLetter()!');
+      //console.log('header-top component countNotReadLetter()!');
 
       this.letServ.getCountNotReadLetter(this.id_user).subscribe(
         (value: any[]) => {
@@ -168,7 +168,7 @@ export class HeaderTopComponent implements OnInit {
   favorites() {
     // TODO ПОКАЗ ФАВОРИТов 2
     if (this.id_user === null) return;
-    console.log('FAVORITS');
+    //console.log('FAVORITS');
 
     this.httpTvsService.getFavoritesVacancy(this.id_user).subscribe((favor) =>{
       let s='?&id=-1'; //-1 чтобы иметь пустой курсор в случае отсутствия избранных
@@ -194,7 +194,7 @@ export class HeaderTopComponent implements OnInit {
 
 //TODO FindComponent
   find() {
-    console.log('нажали обычный поиск');
+    //console.log('нажали обычный поиск');
     const sInputSearch = this.headerTopForm.controls['inputSearch'].value;
 
 
@@ -243,7 +243,7 @@ export class HeaderTopComponent implements OnInit {
     // событие инициализируется фактом запуска компонента Home и наличием маски
     if ( (this.router.isActive('smain',true)===false)  && (this.router.isActive('',true) ===false)  ) {
       window.localStorage.setItem('keyFind', sMask);
-      console.log('hetCV input1')
+      //console.log('hetCV input1')
       this.router.navigate(['/']);
     } else {
       window.localStorage.removeItem('keyFind');
@@ -302,7 +302,7 @@ export class HeaderTopComponent implements OnInit {
 
     this.translate.get('staticGuideList.Industry_val2').subscribe(value => {
         staticGuideList.Industry_val2 = value;
-        console.log('staticGuideList.Industry_val',  value, staticGuideList.IndustryList);
+        //console.log('staticGuideList.Industry_val',  value, staticGuideList.IndustryList);
 
       });
     this.translate.get('staticGuideList.Industry_val1').subscribe(value => staticGuideList.Industry_val1 = value);

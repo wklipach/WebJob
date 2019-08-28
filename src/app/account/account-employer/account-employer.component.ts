@@ -86,8 +86,7 @@ constructor(  private is: GuideService,
     return new Promise(
       (resolve, reject)=>{
 
-        console.log('userEmailAsyncValidator',this.loadUser[0].UserName);
-        return this.auth.getDataUserTableWithoutCurrentUser(this.loadUser[0].UserName).subscribe(
+        return this.auth.getDataUserTableWithoutCurrentUser(this.loadUser.UserName).subscribe(
           (data: UserTable) => {
             if (this.getCheckEmail (data,control.value) === true) {
               resolve( {'errorEmailExists': true});
@@ -112,7 +111,7 @@ constructor(  private is: GuideService,
   ngOnInit() {
 
 
-    console.log('ngOnInit()');
+   // console.log('ngOnInit()');
 
     this.createAccountEmployerForm();
 
@@ -122,11 +121,11 @@ constructor(  private is: GuideService,
          this.loadCurrentUserInfo(value[0]);
          this.loadUser = value[0] as UserType;
 
-         console.log('this.loadUser.Avatar_Name', this.loadUser.Avatar_Name);
+      //   console.log('this.loadUser.Avatar_Name', this.loadUser.Avatar_Name);
 
          if (this.loadUser.Avatar_Name === '' || this.loadUser.Avatar_Name === undefined || this.loadUser.Avatar_Name === null) this.sAvatarPath = '';
          else {
-           console.log('this.sAvatarPath this.loadUser.Avatar_Name', this.loadUser.Avatar_Name);
+        //   console.log('this.sAvatarPath this.loadUser.Avatar_Name', this.loadUser.Avatar_Name);
            this.sAvatarPath = this.gr.sUrlAvatarGlobal + this.loadUser.Avatar_Name;
          }
 
@@ -189,8 +188,8 @@ createAccountEmployerForm() {
   loadCurrentUserInfo(item: any) {
 
 
-console.log('ITEM', item);
-    console.log('ITEMUserName', item.UserName);
+//console.log('ITEM', item);
+//    console.log('ITEMUserName', item.UserName);
 
     // редактируемый список городов по подписке с выбранным ранее городом в    качестве выбранного
     this.cveditCityTable = this.is.getCityTable().subscribe(
@@ -288,7 +287,7 @@ console.log('ITEM', item);
 
   savecv() {
 
-    console.log('R1');
+  //  console.log('R1');
 
     if (this.accountEmployerForm.invalid) {
       return -1;
@@ -302,7 +301,7 @@ console.log('ITEM', item);
 
     inputUserName = this.accountEmployerForm.controls['inputUserName'].value;
 
-    console.log('inputUserName', inputUserName);
+ //   console.log('inputUserName', inputUserName);
 
 
 /*
@@ -406,7 +405,7 @@ console.log('ITEM', item);
         tempImg.src = reader.result;
         tempImg.onload =() => {
           var dataURL = this.ResizeImage(tempImg);
-          console.log('dataURL', dataURL);
+       //   console.log('dataURL', dataURL);
           this.form.get('avatar').setValue({
 //          filename: file.name,
 //          filetype: file.type,

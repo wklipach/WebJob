@@ -27,7 +27,7 @@ export class NewcvService {
   postUpdateCV(cv: CV) {
     cv['UpdateCV'] = 'true';
 
-    console.log(cv);
+    //console.log(cv);
 
     return this.http.post(this.gr.sUrlGlobal+'CV', {cv});
   }

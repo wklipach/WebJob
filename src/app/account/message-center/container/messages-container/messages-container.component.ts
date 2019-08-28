@@ -42,7 +42,7 @@ export class MessagesContainerComponent implements OnInit {
         if (data.length>0) {
           this.myDataLetter = [];
           this.myDataLetter = data; //data[0].concat(data[1]);
-          console.log('this.myDataLetter',this.myDataLetter);
+          //console.log('this.myDataLetter',this.myDataLetter);
 
 
           this.myDataLetter.forEach( (cvDL, index) => {
@@ -85,14 +85,14 @@ export class MessagesContainerComponent implements OnInit {
     //есди это получатель письма делаем данное письмо прочитанным (ставим признак bOld)
     if (this.id_user === curId_user_to) {
 
-      console.log('СДЕЛАЛИ ТОЛСТЫМ');
+      //console.log('СДЕЛАЛИ ТОЛСТЫМ');
 
       this.httpLetter.setOldGroupLetter(id_cv, id_vc, this.id_user).subscribe(value => {
         this.OpenFirstElement(id_cv, id_vc, lid, true);
       });
     } else {
       //если это не получатель (а например сам отправитель перепросматривает письмо) то просто открываем
-      console.log('ОСТАВИЛИ ХУДЫМ');
+      //console.log('ОСТАВИЛИ ХУДЫМ');
       this.OpenFirstElement(id_cv, id_vc, lid, false);
     }
 

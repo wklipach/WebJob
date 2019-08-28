@@ -124,7 +124,7 @@ export class CvEditComponent implements OnInit, OnDestroy {
         this._cvitem = this.cveditserv.getCvItem();
       }
 
-      console.log('получили _cvitem', this._cvitem);
+      //console.log('получили _cvitem', this._cvitem);
 
       this.loadCurrentResume(this._cvitem);
 
@@ -200,7 +200,7 @@ export class CvEditComponent implements OnInit, OnDestroy {
 
            if (value.length > 0) {
                value.forEach((curPrevious) => {
-                     console.log('curPrevious', curPrevious);
+                     //console.log('curPrevious', curPrevious);
                      this.createNewBlock(curPrevious);
                      // this.ps.startLoadPrevious(curPrevious);
              });
@@ -211,11 +211,11 @@ export class CvEditComponent implements OnInit, OnDestroy {
 
     //динамические блоки со знанием языков
     this.subscrCvEditLanguage = this.cveditserv.getCvLanguage(this.cv_id).subscribe((value: any) => {
-        console.log('value', value);
+        //console.log('value', value);
 
       if (value.length>0) {
             value.forEach((curLanguage) => {
-              console.log('curLanguage', curLanguage);
+              //console.log('curLanguage', curLanguage);
               this.createNewLanguageBlock(curLanguage);
             });
 
@@ -299,7 +299,7 @@ export class CvEditComponent implements OnInit, OnDestroy {
 
     if (MyCv.SalaryFrom.toString().trim() === '') MyCv.SalaryFrom = 0;
 
-    console.log('MyCv до=',MyCv);
+    //console.log('MyCv до=',MyCv);
 
     return this.previousPostNewCV = this.httpService.postUpdateCV(MyCv).subscribe(
       (value) => {
@@ -341,11 +341,11 @@ export class CvEditComponent implements OnInit, OnDestroy {
     apLanguage.InsertLanguage = true;
     apLanguage.id_cv = id;
 
-    console.log('apLanguage',apLanguage);
+    //console.log('apLanguage',apLanguage);
 
     this.sbscrSaveLanguage = this.httpService.postLanguage(apLanguage).subscribe(
       (value) => {
-        console.log('Данные успешно занесены.');
+        //console.log('Данные успешно занесены.');
         this.router.navigate(['/cv-list']);
       }
     );

@@ -123,7 +123,7 @@ export class VacanciesComponent implements OnInit, OnDestroy {
   EditElement(item: any) {
 
 
-    console.log('EditElement item any', item);
+    //console.log('EditElement item any', item);
 
     this.gls.setVacId(item.id);
     this.gls.setVacItem(item);
@@ -140,7 +140,7 @@ export class VacanciesComponent implements OnInit, OnDestroy {
 
   UnDeleteElement(item: any, i: number) {
 
-    console.log('item', item);
+    //console.log('item', item);
     item.bInvisible = false;
     this.contactMethods[i].id = 0;
     this.contactMethods[i].bDelete = false;
@@ -152,7 +152,7 @@ export class VacanciesComponent implements OnInit, OnDestroy {
     this.sbDeleteVac = this.gls.setDeleteVac(item.id, item).subscribe( () => {
         this.RouterReload();
       },
-      err => console.log('при удалении элемента возникла нештатная ситуация ', err));
+      err => console.log('there was a problem deleting the item ', err));
   }
 
   newVac() {
@@ -164,7 +164,7 @@ export class VacanciesComponent implements OnInit, OnDestroy {
 // TODO СОБЫТИЕ СПИСКА
 
 
-    console.log('item brokerSelected',item);
+    //console.log('item brokerSelected',item);
 
     switch ($event.target.value) {
 
@@ -213,7 +213,7 @@ export class VacanciesComponent implements OnInit, OnDestroy {
   copyVAC(item) {
 
 
-    console.log('MyVac item', item);
+    //('MyVac item', item);
 
     // получаем изначальные данные без динамических блоков
     let MyVac: Vacancy = item;

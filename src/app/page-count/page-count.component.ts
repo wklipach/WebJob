@@ -159,7 +159,7 @@ export class PageCountComponent implements OnInit {
   ngOnInit() {
 
 
-    console.log('PAGINATOR');
+    //console.log('PAGINATOR');
 
     this._numberOfPage = Math.ceil(this.numberOfRecordsPerAll / this.numberOfRecordsPerPage);
     this.InitializePages();
@@ -205,7 +205,7 @@ export class PageCountComponent implements OnInit {
   onNextPage() {
     // перевод в стринг из-за арифметки - this.currentPage хоть и number системой видится как стринг при арифметике
 
-    console.log('this.currentPage',this.currentPage, 'this._numberOfPage', this._numberOfPage);
+    //console.log('this.currentPage',this.currentPage, 'this._numberOfPage', this._numberOfPage);
 
     if (this.currentPage.toString() === this._numberOfPage.toString() ) return;
 

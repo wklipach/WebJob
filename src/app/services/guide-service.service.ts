@@ -243,7 +243,7 @@ export class GuideService {
   {
     // вставить запрос типа select Name from City where name='Пярну'
 
-    console.log('city=',city);
+    //console.log('city=',city);
 
     return this.http.get(this.gr.sUrlGlobal+'City/-1/'+city);
   }

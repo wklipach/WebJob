@@ -34,7 +34,7 @@ export class InfoContainerComponent implements OnInit {
       (data: any) => {
         this.myDataInfo = [];
         this.myDataInfo = data;
-        console.log('this.myDataInfo',this.myDataInfo);
+        //console.log('this.myDataInfo',this.myDataInfo);
       });
   }
 
@@ -52,7 +52,7 @@ export class InfoContainerComponent implements OnInit {
 
   curInfoClick(Iid: number, $event) {
 
-    console.log('нажали строку',Iid);
+    //console.log('нажали строку',Iid);
 
     let info: Info = this.myDataInfo.find(curInfo => curInfo.id===Iid);
     if (typeof info !== 'undefined') {

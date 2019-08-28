@@ -5,6 +5,7 @@ import {AuthService} from '../../services/auth-service.service';
 import {City} from '../../class/City';
 import {GuideService} from '../../services/guide-service.service';
 import {TranslateService} from '@ngx-translate/core';
+import {GlobalRef} from '../../services/globalref';
 
 
 @Component({
@@ -15,6 +16,7 @@ import {TranslateService} from '@ngx-translate/core';
 export class AboutCompanyComponent implements OnInit, OnDestroy {
 
 
+  public sAvatarPath : string = '';
   private subscrAboutCompanyFromId: Subscription;
   private aboutCityTable: Subscription;
   private loadUser: UserType;
@@ -34,9 +36,13 @@ export class AboutCompanyComponent implements OnInit, OnDestroy {
   public _myLastName: string  = '';
 
 
-  constructor(private auth: AuthService, private is: GuideService, public translate: TranslateService) { }
+  constructor(private auth: AuthService,
+              private is: GuideService,
+              public translate: TranslateService,
+              public gr: GlobalRef) { }
 
   ngOnInit() {
+    this.sAvatarPath = '';
     const id_user = parseInt(window.localStorage.getItem('about_user'));
     this.subscrAboutCompanyFromId =
       this.auth.getDataUserFromId(id_user).subscribe(value =>
@@ -45,6 +51,12 @@ export class AboutCompanyComponent implements OnInit, OnDestroy {
           this.loadUser = value[0] as UserType;
 
                 // вытаскиваем из базы картинку аватара
+
+          if (this.loadUser.Avatar_Name === '' || this.loadUser.Avatar_Name === undefined || this.loadUser.Avatar_Name === null) this.sAvatarPath = '';
+          else this.sAvatarPath = this.gr.sUrlAvatarGlobal + this.loadUser.Avatar_Name;
+
+
+/*
           if (this.loadUser !== undefined) {
                 const S = this.loadUser.Avatar;
                 if (S.toString().length>0) {
@@ -53,6 +65,11 @@ export class AboutCompanyComponent implements OnInit, OnDestroy {
                   }
                 }
           }
+*/
+
+
+
+
         }
       );
 
@@ -132,7 +149,7 @@ export class AboutCompanyComponent implements OnInit, OnDestroy {
 
         if (typeof item.About !== 'undefined') {
           this._myAbout = item.About;
-          console.log('this._myAbout',this._myAbout);
+          //console.log('this._myAbout',this._myAbout);
         }
 
         if (typeof item.ContactPerson !== 'undefined') {
@@ -140,7 +157,7 @@ export class AboutCompanyComponent implements OnInit, OnDestroy {
         }
 
 
-        console.log('this._myDisplayCity', this._myDisplayCity);
+        //console.log('this._myDisplayCity', this._myDisplayCity);
 
 
       }

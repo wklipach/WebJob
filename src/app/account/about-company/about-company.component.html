@@ -8,10 +8,21 @@
     <div class="company-name">{{_myName}}</div>
 
    <div class="title">
-    <div *ngIf="base64textString.length>0; then contentLoadAvatar else contentDefault">{{'about-company.uvnAC' | translate}}</div>
-    <ng-template #contentLoadAvatar>
-      <img class="logotype" [title]="'about-company.logoC' | translate" *ngFor="let item of base64textString"  src={{item}} [alt]="'about-company.logoC' | translate" id="img">
-    </ng-template>
+
+
+     <!--
+     <div *ngIf="base64textString.length>0; then contentLoadAvatar else contentDefault">{{'about-company.uvnAC' | translate}}</div>
+         <ng-template #contentLoadAvatar>
+           <img class="logotype" [title]="'about-company.logoC' | translate" *ngFor="let item of base64textString"  src={{item}} [alt]="'about-company.logoC' | translate" id="img">
+         </ng-template>
+     -->
+
+     <div *ngIf="this.sAvatarPath.length>0;then contentLoadAvatar else contentDefault">{{'about-company.uvnAC' | translate}}</div>
+     <ng-template #contentLoadAvatar>
+       <img class="logotype" [title]="'about-company.logoC' | translate" [src]="this.sAvatarPath" [alt]="'about-company.logoC' | translate" id="img">
+     </ng-template>
+
+
 
     <ng-template #contentDefault>
       <img src="/assets/img/no-photo.png"  [title]="'about-company.logoC' | translate" [alt]="'about-company.logoC' | translate" class="img-thumbnail">

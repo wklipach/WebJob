@@ -122,7 +122,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   onLoadFromBaseAvatar(k: any) {
   //TODO точка 2
 
-    console.log('k', k);
+    //console.log('k', k);
 
     k.base64textString = [];
 
@@ -171,7 +171,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 //    console.log('encrypted',encrypted.toString());
 
 
-    console.log('home this.translate.currentLang', this.translate.currentLang);
+    //console.log('home this.translate.currentLang', this.translate.currentLang);
 
 
     this.translate.onTranslationChange.subscribe(value =>
@@ -180,7 +180,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     this.translate.onLangChange.subscribe(value=> {
 
-      console.log('onLangChange');
+      //console.log('onLangChange');
 
       this.translate.get('home.ts.sFindNull').subscribe(
         value => this.sFindNull = value);
@@ -188,7 +188,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.translate.get('home.ts.sVacF').subscribe(
         value => {
           this.sVacF = value;
-          console.log('onLangChange this.sVacF', this.sVacF, value);
+          //console.log('onLangChange this.sVacF', this.sVacF, value);
         }
         );
 
@@ -284,7 +284,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       advancedFindObj['id_user'] = this.id_user;
     }
     // выводим всю таблицу по сути это заглушка вместо продвинутого поиска
-    console.log('advancedFindObj', advancedFindObj);
+    //console.log('advancedFindObj', advancedFindObj);
     return this.getTableVacancyAdvanced = this.httpService.getTableVacancyAdvanced(advancedFindObj).subscribe(
       (data: any) => {
 
@@ -299,7 +299,7 @@ export class HomeComponent implements OnInit, OnDestroy {
             if (advancedFindObj.stringFind !== '' && data.length === 0) {
               this.getVacancy('', false, false);
               this.moveS.startNullFind(this.sFindNull);
-              console.log('this.sFindNull', this.sFindNull);
+              //console.log('this.sFindNull', this.sFindNull);
               return;
             }
 
@@ -318,7 +318,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     return this.getTableVacancy = this.httpService.getTableVacancy(sMask, this.rowPerPage, this.page, isFavorites, isAdvancedFind, this.id_user).subscribe(
       (data: dataVacancy[]) => {
 
-        console.log('getTableVacancy', data);
+        //console.log('getTableVacancy', data);
 
 
         this.translate.get('home.ts.sFindNull').subscribe(
@@ -330,7 +330,7 @@ export class HomeComponent implements OnInit, OnDestroy {
               //TODO nenenenenenenenenene
               this.getVacancy('', false, false);
               this.moveS.startNullFind(this.sFindNull);
-              console.log('this.sFindNull',this.sFindNull);
+              //console.log('this.sFindNull',this.sFindNull);
               return;
             }
 
@@ -356,7 +356,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     let curRemDay: {numberMonth, errorDay} = {numberMonth: -1, errorDay: true};
 
-    console.log('1234567890');
+    //console.log('1234567890');
 
 
     data.forEach(  (curVacancy, index, arrCurValue) => {
@@ -399,7 +399,7 @@ export class HomeComponent implements OnInit, OnDestroy {
             // dd/MM/yyyy hh:mm локаль en-US
             if (!curRemDay.errorDay) {
 
-              console.log('curRemDay', curRemDay);
+              //console.log('curRemDay', curRemDay);
 
               var dateObject = this.StrToDate(curVacancy.DateTimeCreate);
               let DateEnd = new Date(dateObject.setMonth(dateObject.getMonth() + curRemDay.numberMonth));
@@ -454,16 +454,16 @@ export class HomeComponent implements OnInit, OnDestroy {
   reloadPAge(data: dataVacancy[], sMask: string) {
 
 
-    console.log('старая data', data);
-    console.log('this.rowPerPage', this.rowPerPage, 'this.page', this.page);
+    //console.log('старая data', data);
+    //console.log('this.rowPerPage', this.rowPerPage, 'this.page', this.page);
     data = data.slice(this.rowPerPage*(this.page-1),this.rowPerPage*(this.page-1)+this.rowPerPage);
-    console.log('новая data', data);
+    //console.log('новая data', data);
 
 
     // это получаем город из нового вызываемого сервиса
     this.httpService.getCity().subscribe((city: City[]) => {
 
-      console.log('CITY', city);
+      //console.log('CITY', city);
 
         data.forEach((eekey, ih) => {
 
@@ -658,7 +658,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.httpService.getNumberResponse(this.id_user, vcid).subscribe((value: Letter[]) => {
         if (value.length > 0) {
           this.sNoUserValueFind = this.sRespSucc;
-          console.log('!!!!!!!!!!!!!!!!!!!!!!this.sNoUserValueFind', this.sNoUserValueFind);
+          //console.log('!!!!!!!!!!!!!!!!!!!!!!this.sNoUserValueFind', this.sNoUserValueFind);
           this.myDataVacancy[index].sErrorText = this.sNoUserValueFind;
         } else {
           this.cvEditSrv.setCvId(vcid);

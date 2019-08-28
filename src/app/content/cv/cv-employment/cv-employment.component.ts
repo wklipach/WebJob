@@ -28,7 +28,7 @@ export class CvEmploymentComponent implements OnInit {
     this.formEmployment  = new FormGroup({});
     this.listEmployment = is.getEmploymentList();
 
-    console.log('this.listEmployment',this.listEmployment);
+    //console.log('this.listEmployment',this.listEmployment);
 
     for (let p in this.listEmployment) {
       this.formEmployment.addControl('employmentCheck'+(this.listEmployment[p].id).toString(), new FormControl(''));
@@ -43,7 +43,7 @@ export class CvEmploymentComponent implements OnInit {
     this.employmentCheckedElementSubscription = this.is.onCheckedElementEmploymentList.subscribe((curMass: number[]) =>
       {
         // this.is.industryNumber=this.CheckMassive(this.listIndustry);
-        console.log('получили событие onCheckedElemntEmploymentList', curMass);
+        //console.log('получили событие onCheckedElemntEmploymentList', curMass);
 
         if (curMass!==null) {
           if (curMass.length > 0) {

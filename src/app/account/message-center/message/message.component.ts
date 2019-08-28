@@ -100,7 +100,7 @@ export class MessageComponent implements OnInit, OnDestroy {
 
               if (this.listLetter.length > 0) {
 
-                console.log('this.listLetter[0].id_vc',this.listLetter[0].id_vc);
+                //console.log('this.listLetter[0].id_vc',this.listLetter[0].id_vc);
 
                 this.httpLetter.getAnyVC(this.listLetter[0].id_vc).subscribe(
                   anyValueVC => {
@@ -108,7 +108,7 @@ export class MessageComponent implements OnInit, OnDestroy {
                     if (typeof this.anyVC !== undefined) {
                       if (typeof this.anyVC[0] !== undefined) {
                         this.responseVC = this.anyVC[0].VacancyShortTitle;
-                        console.log('this.responseVC',this.anyVC);
+                        //console.log('this.responseVC',this.anyVC);
                       } else this.responseVC = '';
                     } else {
                       this.responseVC = '';
@@ -188,7 +188,7 @@ export class MessageComponent implements OnInit, OnDestroy {
 
 
   onProfileClick(event) {
-    console.log('$event', event);
+    //console.log('$event', event);
   }
 
   ngOnDestroy() {
@@ -208,7 +208,7 @@ export class MessageComponent implements OnInit, OnDestroy {
     this.sErrorResponse = '';
 
   if (this.formResponse.invalid) {
-      console.log('');
+      //console.log('');
       if (this.formResponse.get('textCommentValue').value.length>3000) this.sErrorResponse = 'Слишком длинный тект.'; else this.sErrorResponse = 'Проверьте отсылаемое сообщение.';
       return;
   }

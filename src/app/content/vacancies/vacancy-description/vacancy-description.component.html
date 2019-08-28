@@ -18,14 +18,28 @@
 
 
     <div *ngIf="this.descrDataVacancy">
+
+<!--
         <div *ngIf="this.descrDataVacancy.base64textString.length>0; then contentLoadAvatar else contentDefault">{{'vacancy-description.unot77' | translate}}</div>
+
         <ng-template #contentLoadAvatar>
           <img class="logotype-company" *ngFor="let item of this.descrDataVacancy.base64textString"  (click)="clickAboutCompany()" src={{item}} [alt]="'vacancy-description.lc77' | translate" id="img"
                [title]="'vacancy-description.moveinfo77' | translate">
         </ng-template>
+-->
+
+      <div *ngIf="this.sAvatarPath.length>0; then contentLoadAvatar else contentDefault">{{'vacancy-description.unot77' | translate}}</div>
+
+      <ng-template #contentLoadAvatar>
+        <img class="logotype-company" (click)="clickAboutCompany()" [src]="this.sAvatarPath"  [alt]="'vacancy-description.lc77' | translate" id="img"
+             [title]="'vacancy-description.moveinfo77' | translate">
+      </ng-template>
+
         <ng-template #contentDefault>
           <img class="logotype-company" src="/assets/img/no-photo.png"  [title]="'vacancy-description.moveinfo77' | translate" [alt]="'vacancy-description.lc77' | translate"  (click)="clickAboutCompany()">
         </ng-template>
+
+
     </div>
 
     <div class="company-name" [title]="'vacancy-description.moveinfo77' | translate" (click)="clickAboutCompany()">{{this.sEmployerName}}</div>

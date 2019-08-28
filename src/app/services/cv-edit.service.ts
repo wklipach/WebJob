@@ -21,7 +21,7 @@ export class CvEditService {
       .set('anycv', 'true')
       .set('id', id_cv.toString())
 
-    console.log('params',params);
+    //console.log('params',params);
 
     return this.http.get(sUrl, {params: params} );
   }
@@ -45,7 +45,7 @@ public  setCvId(cv_id: number) {
 
   public  setCvItem(cv_item: any) {
 
-    console.log('ВОТ cv_item',cv_item);
+    //console.log('ВОТ cv_item',cv_item);
 
     window.localStorage.setItem('_cvitem', JSON.stringify(cv_item));
     this._cvitem  = cv_item;

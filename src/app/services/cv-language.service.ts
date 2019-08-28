@@ -24,7 +24,7 @@ export class CvLanguageService {
 
   /* Удалить один или все динамические блоки Передыдущее место работы */
   public clearLanguage(i: number) {
-    console.log('ЧИСТИМ НОМЕР В ОСОБОМ СПИСКЕ ГДЕ ДАННЫЕ', i);
+    //console.log('ЧИСТИМ НОМЕР В ОСОБОМ СПИСКЕ ГДЕ ДАННЫЕ', i);
     if (this._cLanguage.length > 0) {
       if (i <= 0) {
         this._cLanguage.splice(0, this._cLanguage.length);

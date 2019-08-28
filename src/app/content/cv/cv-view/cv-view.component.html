@@ -11,9 +11,17 @@
           <div class="name"> {{this.loadUser.Name}}<br>{{this.loadUser.LastName}}</div>
         </div>
 
+
+<!--
         <div *ngIf="base64textString.length>0;then contentLoadAvatar else contentDefault">{{'cv-view.ifnot' | translate}}</div>
         <ng-template #contentLoadAvatar>
           <img class="logotype" *ngFor="let item of base64textString"  src={{item}} [alt]="'cv-view.viewprofile' | translate" id="img" (click) = "onProfileClick($event)">
+        </ng-template>
+-->
+
+        <div *ngIf="this.sAvatarPath.length>0;then contentLoadAvatar else contentDefault">{{'cv-view.ifnot' | translate}}</div>
+        <ng-template #contentLoadAvatar>
+          <img class="logotype" [src]="this.sAvatarPath" [alt]="'cv-view.viewprofile' | translate" id="img" (click) = "onProfileClick($event)">
         </ng-template>
 
         <ng-template #contentDefault>

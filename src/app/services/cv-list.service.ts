@@ -33,7 +33,7 @@ export class CvListService {
   setDeleteCv(id_cv: number, cv) {
     const sUrl = this.gr.sUrlGlobal+'CV';
     cv['DeleteCV'] = 'true';
-    console.log('cv=',cv);
+    //console.log('cv=',cv);
     return this.http.post(sUrl, {cv});
   }
 
@@ -53,7 +53,7 @@ export class CvListService {
   setCorrespondence(letter: Letter) {
     const sUrl = this.gr.sUrlGlobal+'Correspondence';
 
-    console.log('letter', letter);
+    //console.log('letter', letter);
 
     return this.http.post(sUrl, {letter});
   }

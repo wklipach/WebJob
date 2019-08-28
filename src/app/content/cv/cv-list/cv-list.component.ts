@@ -63,23 +63,23 @@ export class CvListComponent implements OnInit, OnDestroy {
   ngOnInit() {
 
 
-    console.log('staticGuideList.GenderList',staticGuideList.GenderList);
+    //console.log('staticGuideList.GenderList',staticGuideList.GenderList);
 
     const Res =  this.authService.loginStorage();
     this.bConnected = Res.bConnected;
     this.id_user =  Res.id_user;
 
-    console.log('a3 RES', Res);
+    //console.log('a3 RES', Res);
 
     this.cvCity = this.gs.getCityTable().subscribe((value) => {
 
         this.cityList = this.authService.loadLangCity(value as City[]);
 
-      console.log('a3 this.id_user', this.id_user);
+      //console.log('a3 this.id_user', this.id_user);
 
         this.cvlistGetCvList = this.cls.getCvList(this.id_user).subscribe((valueCL) => {
 
-          console.log('a3', valueCL);
+         // console.log('a3', valueCL);
 
 
 
@@ -92,13 +92,13 @@ export class CvListComponent implements OnInit, OnDestroy {
 
                         this.cvList.forEach( (cvCur, index) => {
                         this.contactMethods.push({'id' : 0, value : 0, 'bDelete': false});
-                        console.log('cvCur',cvCur);
+                        //console.log('cvCur',cvCur);
                         const sCityName = (this.cityList as City[]).find((valueC) => (valueC.id === parseInt(cvCur.City.toString())) ).name;
                         this.cvList[index].CityName = sCityName;
                         });
                 }
 
-            console.log('this.cvList', this.cvList);
+           // console.log('this.cvList', this.cvList);
           });
     });
 }
@@ -114,7 +114,7 @@ export class CvListComponent implements OnInit, OnDestroy {
         this.contactMethods[i].bDelete = false;
         this.CvListItem = 0;
         this.contactMethods[i].id = 0;
-        console.log('!!!!this.contactMethods', this.contactMethods);
+        //console.log('!!!!this.contactMethods', this.contactMethods);
         break;
       }
 
@@ -122,7 +122,7 @@ export class CvListComponent implements OnInit, OnDestroy {
         this.contactMethods[i].bDelete = false;
         this.CvListItem = 1;
         this.contactMethods[i].id = 1;
-        console.log('!!!!this.contactMethods', this.contactMethods);
+        //console.log('!!!!this.contactMethods', this.contactMethods);
         this.ViewElement(item);
         break;
       }
@@ -130,7 +130,7 @@ export class CvListComponent implements OnInit, OnDestroy {
         this.CvListItem = 2;
         this.contactMethods[i].bDelete = false;
         this.contactMethods[i].id = 2;
-        console.log('!!!!this.contactMethods', this.contactMethods);
+        //console.log('!!!!this.contactMethods', this.contactMethods);
         this.EditElement(item);
         break;
       }
@@ -139,7 +139,7 @@ export class CvListComponent implements OnInit, OnDestroy {
         this.CvListItem = 3;
         this.contactMethods[i].id = 3;
         this.copyCV(item);
-        console.log('Создать копию');
+        //console.log('Создать копию');
         break;
       }
       case '4': {
@@ -164,7 +164,7 @@ export class CvListComponent implements OnInit, OnDestroy {
 }
 
   OpenCV() {
-    console.log('просмотр резюме');
+   // console.log('просмотр резюме');
   }
 
   ngOnDestroy() {
@@ -196,7 +196,7 @@ export class CvListComponent implements OnInit, OnDestroy {
   UpdateDate(item: any) {
 
     // this.cvDeleteCv
-    console.log('обновляем дату для item.id', item.id);
+    //console.log('обновляем дату для item.id', item.id);
     this.cvUpdateDateCv = this.cls.setUpdateDateCv(item.id).subscribe( () => {
 
         this.RouterReload();
@@ -260,7 +260,7 @@ export class CvListComponent implements OnInit, OnDestroy {
 
     item.bInvisible = true;
     this.cvDeleteCv = this.cls.setDeleteCv(item.id, item).subscribe( () => {
-                                                                        console.log('удалили элемент', item.id);
+                                                                        //console.log('удалили элемент', item.id);
                                                                         this.RouterReload();
                                                                         },
  err => console.log('при удалении элемента возникла нештатная ситуация ', err));

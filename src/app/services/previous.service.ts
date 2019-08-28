@@ -58,7 +58,7 @@ export class PreviousService {
   public clearPrevious(i: number) {
 
 
-    console.log('ЧИСТИМ НОМЕР В ОСОБОМ СПИСКЕ ГДЕ ДАННЫЕ', i);
+    //console.log('ЧИСТИМ НОМЕР В ОСОБОМ СПИСКЕ ГДЕ ДАННЫЕ', i);
 
     if (this._cPrevious.length > 0) {
       if (i <= 0) {

@@ -61,7 +61,7 @@ export class AuthService {
     this._id_user = id_user;
     this._bEmployer = bEmployer;
 
-    console.log('login=',this._id_user,this._sUserName,this.isAuthenticated);
+    //console.log('login=',this._id_user,this._sUserName,this.isAuthenticated);
 
   }
 
@@ -132,7 +132,7 @@ export class AuthService {
 
   getDataUserTableWithoutCurrentUser(UserName: string) {
     let sUrl = this.gr.sUrlGlobal+'UserTable';
-    console.log('sUrl, UserName =', sUrl,UserName);
+    //console.log('sUrl, UserName =', sUrl,UserName);
     let params = new HttpParams()
       .set('UserName', UserName);
     return this.http.get(sUrl, {params: params});
@@ -148,7 +148,7 @@ export class AuthService {
 
   getDataUserFromId(id_user: number) {
 
-    console.log('ОПТИМИЗАЦИЯ: ТУТ ГРУЗИМ КАРТИНКУ');
+    //console.log('ОПТИМИЗАЦИЯ: ТУТ ГРУЗИМ КАРТИНКУ');
     //
     const S = this.gr.sUrlGlobal+'UserTable/'+id_user.toString();
     return this.http.get(S);
@@ -192,7 +192,7 @@ export class AuthService {
 
   updateAvatarUserTable(curAvatar: any, id_user: number){
 
-    console.log('curAvatar', this.gr.sUrlGlobal+'UserTable/'+id_user+'/avatar');
+    //console.log('curAvatar', this.gr.sUrlGlobal+'UserTable/'+id_user+'/avatar');
 
     return this.http.post(this.gr.sUrlGlobal+'UserTable/'+id_user+'/avatar', {"Avatar": curAvatar});
   }
@@ -201,7 +201,7 @@ export class AuthService {
   public uploadImageAvatar(image: File): Observable<Object> {
     const formData = new FormData();
     formData.append('myFile', image, image.name);
-    console.log('formData',formData.get('myFile') );
+    //console.log('formData',formData.get('myFile') );
     return this.http.post(this.gr.sUrlGlobal+'file-upload', formData);
   }
 

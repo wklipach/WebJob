@@ -84,7 +84,7 @@ export class CvhomeComponent implements OnInit {
     });
 
 
-    console.log('constructor cvhome');
+    //console.log('constructor cvhome');
 
     this.rowPerPage = 5;
     if (window.localStorage.getItem('rowPerPage') !== '') {
@@ -118,7 +118,7 @@ export class CvhomeComponent implements OnInit {
     }
 
 
-    console.log('cv this.sMask',this.sMask);
+    //console.log('cv this.sMask',this.sMask);
 
     window.localStorage.removeItem('keyFind');
     this.httpService.onReopenCV.subscribe(({sMask: value, isFavorites: bFavorites, isAdvancedFind: bAdvancedFind }) => {
@@ -153,7 +153,7 @@ export class CvhomeComponent implements OnInit {
       advancedFindObj['id_user'] = this.id_user;
     }
     // выводим всю таблицу по сути это заглушка вместо продвинутого поиска
-    console.log('advancedFindObj CV', advancedFindObj);
+    //console.log('advancedFindObj CV', advancedFindObj);
     return this.getTableCVAdvanced = this.httpService.getTableCVAdvanced(advancedFindObj).subscribe(
       (data: any) => {
 
@@ -195,7 +195,7 @@ export class CvhomeComponent implements OnInit {
             if (sMask !== '' && data.length === 0) {
               this.getCV('', false, false);
               this.moveS.startNullFind(this.sNullFund);
-              console.log('cv neneneneneenene startNullFind', this.sNullFund);
+              //console.log('cv neneneneneenene startNullFind', this.sNullFund);
               return;
             }
 
@@ -231,7 +231,7 @@ export class CvhomeComponent implements OnInit {
           this.router.navigate(['/invitation']);
         });
       } else {
-        console.log('this.sUseResp', this.sUseResp);
+        //console.log('this.sUseResp', this.sUseResp);
 
         this.translate.get('cvhome.ts.sUseResp').subscribe(
           value => {
@@ -241,11 +241,11 @@ export class CvhomeComponent implements OnInit {
     }
   );
 
-    console.log('invitation');
+    //console.log('invitation');
   }
 
   MyMethod(zid: number, $event) {
-    console.log('MyMethod', $event);
+    //console.log('MyMethod', $event);
 
     // если это кнопка Пригласить запрещаем открывать просмотр
     if ($event.target.id === 'cvresponse' ||
@@ -323,12 +323,12 @@ export class CvhomeComponent implements OnInit {
 
     if (data === undefined)  data = [];
 
-    console.log('старая data', data);
-    console.log('this.rowPerPage', this.rowPerPage, 'this.page', this.page);
+    //console.log('старая data', data);
+    //console.log('this.rowPerPage', this.rowPerPage, 'this.page', this.page);
 
 
       data = data.slice(this.rowPerPage * (this.page - 1), this.rowPerPage * (this.page - 1) + this.rowPerPage);
-      console.log('новая data', data);
+      //console.log('новая data', data);
 
 
 
@@ -337,7 +337,7 @@ export class CvhomeComponent implements OnInit {
 
         city = this.authService.loadLangCity(city);
         this._listCity = city;
-        console.log('CITY', city);
+        //console.log('CITY', city);
 
 
 
@@ -401,7 +401,7 @@ export class CvhomeComponent implements OnInit {
 
 
     this.myDataCV = data;
-    console.log('this.myDataCV',this.myDataCV);
+    //console.log('this.myDataCV',this.myDataCV);
     this.allDataCV = data;
     this.recordsPerAll = data.length;
   }

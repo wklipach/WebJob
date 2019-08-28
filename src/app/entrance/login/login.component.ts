@@ -53,7 +53,9 @@ export class LoginComponent implements OnInit, OnDestroy {
     //console.log('ResUser[id]', ResUser);
     //console.log('ResUser[id]', ResUser, ResUser[0].id);
 
-    if (ResUser.length === 1) {  console.log('вернули',ResUser[0].UserName); return {bCheck: true, uName: ResUser[0].UserName, id_user: ResUser[0].id, bEmployer : ResUser[0].bEmployer } } else {
+    if (ResUser.length === 1) {
+         //console.log('вернули',ResUser[0].UserName);
+         return {bCheck: true, uName: ResUser[0].UserName, id_user: ResUser[0].id, bEmployer : ResUser[0].bEmployer } } else {
       if (ResUser.length === 0) {
         this.sResTrouble = 'Не существующие имя или пароль.';
         return {bCheck: false, uName: '', id_user: -1, bEmployer: false};

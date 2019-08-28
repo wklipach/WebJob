@@ -29,14 +29,14 @@ export class InfoPageComponent implements OnInit {
 
       let Iid = parseInt(window.localStorage.getItem('_infoid'));
 
-      console.log('ip', Iid);
+      //console.log('ip', Iid);
 
       this.httpLetter.setOldLetter(Iid).subscribe(postInfo => {
-        console.log('ip postInfo', postInfo);
+        //console.log('ip postInfo', postInfo);
           if (typeof postInfo !== 'undefined') {
                 this.httpLetter.getAnyLetter(Iid).subscribe(curInfo => {
 
-                  console.log('ip curInfo', curInfo);
+                 // console.log('ip curInfo', curInfo);
 
                   if (typeof curInfo[0] !== 'undefined') {this.anyInfo = curInfo[0];}
                 });

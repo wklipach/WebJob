@@ -96,7 +96,7 @@ export class TableVacancyService {
   getTableCVAdvanced(findObject: any)
   {
 
-    console.log('cvadvanced-search');
+    //console.log('cvadvanced-search');
     let sUrl = this.gr.sUrlGlobal+'cvadvanced-search';
     let Result = this.http.post(sUrl,  findObject);
     return Result;
@@ -175,7 +175,7 @@ export class TableVacancyService {
         .set('sMask', sMask);
     }
 
-    console.log('sUrl=', sUrl, params);
+    //console.log('sUrl=', sUrl, params);
     return this.http.get(sUrl, {params: params});
 
   }

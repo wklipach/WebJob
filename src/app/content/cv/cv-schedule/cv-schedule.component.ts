@@ -39,7 +39,7 @@ export class CvScheduleComponent implements OnInit {
     this.scheduleCheckedElementSubscription = this.is.onCheckedElementScheduleList.subscribe((curMass: number[]) =>
       {
         // this.is.industryNumber=this.CheckMassive(this.listIndustry);
-        console.log('получили событие onCheckedElementScheduleList', curMass);
+        //console.log('получили событие onCheckedElementScheduleList', curMass);
         if (curMass!==null) {
           if (curMass.length > 0) {
             const arrCurMass = curMass.toString().split(',');

@@ -71,7 +71,7 @@ export class RegisterEmployeeComponent implements OnInit {
     const {userName, userEmail, userPassword1, userPassword2} = this.myForm.value;
 
     if (userPassword1.trim() !== userPassword2.trim()) {
-      console.log('Пароли не совподают');
+      //console.log('Пароли не совподают');
       this.bPassword = true;
       return -1;
     }
@@ -80,7 +80,7 @@ export class RegisterEmployeeComponent implements OnInit {
       CryptoJS.SHA256(userPassword1.trim().toLowerCase()).toString().toLowerCase(),
       false, -1,'','','','','', 0,0,'','','','', '');
 
-    console.log(AddUser);
+    //console.log(AddUser);
 
     return this.httpService.postDataUserTable(AddUser).subscribe(
       () => {

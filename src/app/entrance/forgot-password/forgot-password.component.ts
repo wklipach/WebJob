@@ -39,7 +39,7 @@ export class ForgotPasswordComponent implements OnInit, OnDestroy {
 
         this.showErr = false;
         this.errorSend = '';
-        console.log(value);
+        //console.log(value);
         }
     );
 
@@ -88,7 +88,7 @@ export class ForgotPasswordComponent implements OnInit, OnDestroy {
           this.showSucc = false;
           this.showErr = false;
           const newpwd =  this.randomPass(12,true,'',true);
-          console.log('newpwd',newpwd);
+          //console.log('newpwd',newpwd);
 
           const hash = CryptoJS.SHA256(newpwd.trim().toLowerCase()).toString().toLowerCase();
 
@@ -102,7 +102,7 @@ export class ForgotPasswordComponent implements OnInit, OnDestroy {
 
           this.fps.sendPassword(email, newpwd, hash).subscribe(
             value=> {
-              console.log('результат отправки письма', value);
+              //console.log('результат отправки письма', value);
 
               if (value === 'error send') {
                 this.errorSend = this.sErrSend; //'Ошибка отправки почты';

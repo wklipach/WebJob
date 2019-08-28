@@ -91,7 +91,7 @@ export class VacancyEditComponent implements OnInit {
     // TODO getVacItem
     if (this.vac_id>-1) this._vacitem = this.vls.getVacItem();
 
-    console.log('this._vacitem',this._vacitem);
+    //console.log('this._vacitem',this._vacitem);
 
     this.loadCurrentVacancy(this._vacitem);
 
@@ -150,7 +150,7 @@ loadCurrentVacancy(item: any) {
 
         if (typeof item.City !== 'undefined') {
           if (this.listCity.length > 0) this.myDisplayCity = this.listCity[item.City - 1].name;
-          console.log('this.myDisplayCity',this.myDisplayCity);
+          //console.log('this.myDisplayCity',this.myDisplayCity);
         } else {
           if (this.listCity.length > 0) this.myDisplayCity = this.listCity[0].name;
         }
@@ -163,7 +163,7 @@ loadCurrentVacancy(item: any) {
   //console.log('item.DisplayPeriod', item.DisplayPeriod);
 
     if (typeof item.DisplayPeriod !== 'undefined' && item.DisplayPeriod !==  null) {
-      console.log('DisplayPeriod',this.displayPeriodList);
+      //console.log('DisplayPeriod',this.displayPeriodList);
       this.myDisplayPeriod = this.displayPeriodList[item.DisplayPeriod-1].name;
       this.editVacancyForm.setControl('displayPeriod', new FormControl(this.myDisplayPeriod, []));
     }
@@ -231,20 +231,20 @@ loadCurrentVacancy(item: any) {
     MyExperience = this.is.startCheckExperienceList('! startCheckExperienceList !');
 
 
-    console.log('MyIndustry===');
-    console.log(MyIndustry);
+    //console.log('MyIndustry===');
+    //console.log(MyIndustry);
 
-    console.log('MyEmployment===');
-    console.log(MyEmployment);
+    //console.log('MyEmployment===');
+    //console.log(MyEmployment);
 
-    console.log('MySchedule===');
-    console.log(MySchedule);
+    //console.log('MySchedule===');
+    //console.log(MySchedule);
 
-    console.log('MyEducation===');
-    console.log(MyEducation);
+    //console.log('MyEducation===');
+    //console.log(MyEducation);
 
-    console.log('MyExperience===');
-    console.log(MyExperience);
+    //console.log('MyExperience===');
+    //console.log(MyExperience);
 
 
 
@@ -271,24 +271,24 @@ loadCurrentVacancy(item: any) {
 
 
 
-    console.log('sssssss111111111');
+    //console.log('sssssss111111111');
 
 
     MyVacancy.Industry = MyIndustry;
 
-    console.log('sssssss22222222222222');
+    //console.log('sssssss22222222222222');
 
     MyVacancy.DisplayPeriod = period.id;
 
-    console.log('sssssss33333333333');
+    //console.log('sssssss33333333333');
     MyVacancy.City = city.id;
-    console.log('sssssss444444444444444444');
+    //console.log('sssssss444444444444444444');
     // график работы
     MyVacancy.Schedule = MySchedule;
-    console.log('sssssss5555555555555555555');
+    //console.log('sssssss5555555555555555555');
     // занятость
     MyVacancy.Employment = MyEmployment;
-    console.log('sssssss6666666666666666666');
+    //console.log('sssssss6666666666666666666');
     // образование
     MyVacancy.Education = MyEducation;
     //опыт работы

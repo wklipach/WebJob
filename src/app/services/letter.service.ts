@@ -34,20 +34,20 @@ export class LetterService {
 
     let sUrl = this.gr.sUrlGlobal+'Correspondence';
 
-    console.log('внутри сервиса  isGroup', isGroup );
+    //console.log('внутри сервиса  isGroup', isGroup );
 
     if (isGroup.toString() === 'true') {
       let params = new HttpParams()
         .set('id_user_to', id_user.toString())
         .set('id_user_from', id_user.toString())
         .set('isGroup', 'true')
-        console.log('isGroup');
+        //console.log('isGroup');
         return this.http.get(sUrl, {params: params});
     } else {
       let params = new HttpParams()
         .set('id_user_to', id_user.toString())
         .set('id_user_from', id_user.toString())
-       console.log('без isGroup')
+       //console.log('без isGroup')
        return this.http.get(sUrl, {params: params});
     }
 
@@ -155,7 +155,7 @@ export class LetterService {
 
 
 // req.query['id_cv'], req.query['id_vc']
-    console.log('sUrl',sUrl);
+    //console.log('sUrl',sUrl);
     return this.http.get(sUrl,{params: params});
   }
 
@@ -167,7 +167,7 @@ export class LetterService {
     let params = new HttpParams()
       .set('anyletter', 'true')
       .set('id', id_letter.toString())
-    console.log('sUrl',sUrl);
+    //console.log('sUrl',sUrl);
     return this.http.get(sUrl,{params: params});
   }
 

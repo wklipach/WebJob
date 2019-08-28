@@ -76,9 +76,9 @@ export class NewcvComponent implements OnInit {
     this.factoryPreviousComponent =  this.componentFactoryResolver.resolveComponentFactory(CvPreviousComponent);
 
 
-    console.log('aa1');
+    //console.log('aa1');
     this.factoryLanguageComponent =  this.componentFactoryResolver.resolveComponentFactory(CvLanguageComponent);
-    console.log('aa2');
+    //console.log('aa2');
 
 
     /* подписка на удаление блока "предыдущее место работы" */
@@ -112,7 +112,7 @@ export class NewcvComponent implements OnInit {
   }
 
   submit() {
-    console.log('submit');
+    //console.log('submit');
 
   }
 
@@ -228,9 +228,9 @@ export class NewcvComponent implements OnInit {
 
 chf() {
   let mLanguage = this.getLanguageData();
-  console.log('mLanguage',mLanguage);
+  //console.log('mLanguage',mLanguage);
   let mPrevious = this.getPreviousData();
-  console.log('mPrevious',mPrevious);
+  //console.log('mPrevious',mPrevious);
 }
 
   /* сохранение данных */
@@ -240,7 +240,7 @@ chf() {
     let MyCv: CV = this.loadMainCV();
 
 
-    console.log('CV',MyCv);
+    //console.log('CV',MyCv);
 
     return this.previousPostNewCV =this.httpService.postNewCV(MyCv).subscribe(
       (value) => {
@@ -250,11 +250,11 @@ chf() {
 
         const mPrevious = this.getPreviousData();
 
-        console.log('mPrevious', mPrevious);
+        //console.log('mPrevious', mPrevious);
 
         const mLanguage = this.getLanguageData();
 
-        console.log('mLanguage', mLanguage);
+        //console.log('mLanguage', mLanguage);
 
 
         // присваиваем полученный id_cv внутрь каждого блока
@@ -296,7 +296,7 @@ chf() {
 
     this.sbscrSaveLanguage = this.httpService.postLanguage(apLanguage).subscribe(
       (value) => {
-        console.log('Данные успешно занесены.');
+        //console.log('Данные успешно занесены.');
         this.router.navigate(['/cv-list']);
       }
     );

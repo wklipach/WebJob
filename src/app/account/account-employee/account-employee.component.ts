@@ -37,8 +37,6 @@ export class AccountEmployeeComponent implements OnInit {
   public bErrorRepeatPassword: boolean = false;
   public bErrorEmptyPassword: boolean = false;
 
-  public MyTempVar: string;
-
   public sAvatarPath : string = '';
 
 private loadUser: UserType;
@@ -141,8 +139,7 @@ private loadUser: UserType;
 
     this.subscrDataUserFromId = this.auth.getDataUserFromId(this.id_user).subscribe(value=> {
 
-      console.log('this.id_user', this.id_user);
-
+      // console.log('this.id_user', this.id_user);
 
       this.loadCurrentUserInfo(value[0]);
       this.loadUser = value[0] as UserType;
@@ -188,7 +185,7 @@ private loadUser: UserType;
 
                   tempImg.onload =() => {
                   var dataURL = this.ResizeImage(tempImg);
-                  console.log('dataURL', dataURL);
+                 // console.log('dataURL', dataURL);
                   this.form.get('avatar').setValue({
 //          filename: file.name,
 //          filetype: file.type,
@@ -266,7 +263,7 @@ loadCurrentUserInfo(item: any) {
 
 
 
-    console.log('item: any',item);
+  //  console.log('item: any',item);
 
     // редактируемый список городов по подписке с выбранным ранее городом в качестве выбранного
     this.cveditCityTable = this.is.getCityTable().subscribe(
@@ -367,7 +364,7 @@ loadCurrentUserInfo(item: any) {
 
 
 
-      console.log('AddUser',AddUser);
+    //  console.log('AddUser',AddUser);
 
 
       return this.auth.updateDataUserTable(AddUser, this.id_user).subscribe(
@@ -411,7 +408,7 @@ loadCurrentUserInfo(item: any) {
 
             if (inputNewPassword1 === inputNewPassword2) {
                 this.loadUser.Password = inputNewPassword1;
-                console.log('this.loadUser',this.loadUser);
+                // console.log('this.loadUser',this.loadUser);
                 return this.auth.postUpdatePassword(CryptoJS.SHA256(inputNewPassword2.trim().toLowerCase()).toString().toLowerCase(), this.id_user).subscribe(
                     () => {
                       this.bPasswordNew = true; }

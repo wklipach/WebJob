@@ -11,6 +11,7 @@ import {TableVacancyService} from '../../../services/table-vacancy.service';
 import {Guide} from '../../../class/guide';
 import {VacanciesListService} from '../../../services/vacancies-list.service';
 import {TranslateService} from '@ngx-translate/core';
+import {GlobalRef} from '../../../services/globalref';
 
 @Component({
   selector: 'app-vacancy-description',
@@ -19,6 +20,8 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class VacancyDescriptionComponent implements OnInit {
 
+
+  public sAvatarPath : string = '';
   descrDataVacancy: dataVacancy;
   public bConnected = false;
   private id_user = -1;
@@ -57,7 +60,8 @@ export class VacancyDescriptionComponent implements OnInit {
               private httpService: TableVacancyService,
               private cvEditSrv: CvEditService,
               private vcListServ: VacanciesListService,
-              public translate: TranslateService) { }
+              public translate: TranslateService,
+              public gr: GlobalRef) { }
 
 
   ngOnInit() {
@@ -77,7 +81,7 @@ export class VacancyDescriptionComponent implements OnInit {
       this.dvSubscription = this.moveS.getDataVacancy()
       .subscribe (curDataVacancy =>
       {
-        console.log('curDataVacancy', curDataVacancy);
+        //console.log('curDataVacancy', curDataVacancy);
 
         // получаем объект из кэша, если неполный - делаем запрос к серверу и получаем новый getVacAny(id_vc: number)
         if (curDataVacancy === undefined) {
@@ -98,7 +102,7 @@ export class VacancyDescriptionComponent implements OnInit {
           this.vcListServ.getVacAny(curDataVacancy.id).subscribe(qcurDataVacancy => {
             this.descrDataVacancy = qcurDataVacancy[0];
 
-            console.log('this.descrDataVacancy a2',this.descrDataVacancy);
+            //console.log('this.descrDataVacancy a2',this.descrDataVacancy);
 
             this.descrDataVacancy.CityName = this.authService.loadCurrentLangCity(this.descrDataVacancy.CityName, this.descrDataVacancy.CityName1, this.descrDataVacancy.CityName2);
 
@@ -113,7 +117,8 @@ export class VacancyDescriptionComponent implements OnInit {
           });
         }
 
-      }, error => { console.log('DescriptionError', error); this.router.navigate(['/smain']); } );
+      }, error => { //console.log('DescriptionError', error);
+                          this.router.navigate(['/smain']); } );
 
 //    if (typeof this.descrDataVacancy === 'undefined') {
 //      console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
@@ -126,12 +131,26 @@ export class VacancyDescriptionComponent implements OnInit {
   onLoadFromBaseAvatar(k: any) {
     // TODO точка 2
     k.base64textString = [];
+    this.sAvatarPath = '';
+    const S = k.Avatar_Name;
 
+    if (S !== 'null') {
+      if (S !== null) {
+        if (typeof S !== 'undefined') {
+          if (S.length > 0) this.sAvatarPath = this.gr.sUrlAvatarGlobal + S;
+        }
+      }
+    }
+
+/*
     if (k.Avatar !== 'null') {
       if (k.Avatar !== null) {
         if (k.Avatar.toString().length > 0) k.base64textString.push('data:image/png;base64,' + JSON.parse(k.Avatar).value);
       }
     }
+*/
+
+
   }
 
   onLoadUserData(k: any) {
@@ -235,7 +254,7 @@ export class VacancyDescriptionComponent implements OnInit {
 
   vcResponse() {
 
-    console.log('vcResponse', this.descrDataVacancy);
+    //console.log('vcResponse', this.descrDataVacancy);
     this.sNoUserValueFind = '';
     this.descrDataVacancy.sErrorText = '';
     if  (!this.bConnected)  {
@@ -267,7 +286,7 @@ export class VacancyDescriptionComponent implements OnInit {
   }
 
   vcDontShow() {
-    console.log('vcDontShow', this.descrDataVacancy);
+    //console.log('vcDontShow', this.descrDataVacancy);
     this.sNoUserValueFind = '';
     this.descrDataVacancy.sErrorText = '';
     if  (!this.bConnected)  {

@@ -12,6 +12,7 @@ import {TranslateService} from '@ngx-translate/core';
 import {Router} from '@angular/router';
 import {MoveService} from '../../../services/move.service';
 import {TableVacancyService} from '../../../services/table-vacancy.service';
+import {GlobalRef} from '../../../services/globalref';
 
 @Component({
   selector: 'app-cv-view',
@@ -20,6 +21,7 @@ import {TableVacancyService} from '../../../services/table-vacancy.service';
 })
 export class CvViewComponent implements OnInit {
 
+  public sAvatarPath : string = '';
   public base64textString = [];
   private subscrDataUserFromId: Subscription;
   public loadUser: UserType;
@@ -48,7 +50,8 @@ export class CvViewComponent implements OnInit {
               private fb: FormBuilder,
               private router: Router,
               private moveS: MoveService,
-              public translate: TranslateService) {
+              public translate: TranslateService,
+              public gr: GlobalRef) {
 
     this.formView = this.fb.group({
       name: ['', Validators.required],
@@ -83,7 +86,7 @@ export class CvViewComponent implements OnInit {
     */
 
 
-    console.log('this._cvitem', this._cvitem);
+    //console.log('this._cvitem', this._cvitem);
 
     if (this._cvitem !== null) {
       if (this._cvitem.Education !== undefined) {
@@ -161,7 +164,7 @@ export class CvViewComponent implements OnInit {
     if (this._cvitem !== undefined) {
       if (this._cvitem !== null) this.loadPrevious(this._cvitem.id);
     }
-    console.log('получили _cvitem', this._cvitem);
+    //console.log('получили _cvitem', this._cvitem);
 
 
   }
@@ -203,7 +206,7 @@ export class CvViewComponent implements OnInit {
 
 
   onProfileClick($event) {
-    console.log('profile');
+    //('profile');
   }
 
   ngOnDestroy() {
@@ -219,11 +222,20 @@ export class CvViewComponent implements OnInit {
 
 
   loadPicture(id_user: number) {
+
+    this.sAvatarPath = '';
+
     this.subscrDataUserFromId = this.auth.getDataUserFromId(id_user).subscribe(value => {
       // вытаскиваем из базы картинку аватара
       this.loadUser = value[0] as UserType;
-      console.log('this.loadUser', this.loadUser);
+      //console.log('this.loadUser', this.loadUser);
       const S = this.loadUser.Avatar;
+
+      if (this.loadUser.Avatar_Name === '' || this.loadUser.Avatar_Name === undefined || this.loadUser.Avatar_Name === null) this.sAvatarPath = '';
+      else this.sAvatarPath = this.gr.sUrlAvatarGlobal + this.loadUser.Avatar_Name;
+
+
+/*
       if (typeof S !== 'undefined') {
         if (S !== null) {
           if (S.length > 0) {
@@ -231,6 +243,10 @@ export class CvViewComponent implements OnInit {
           }
         }
       }
+*/
+
+
+
     });
   }
 
@@ -238,7 +254,7 @@ export class CvViewComponent implements OnInit {
 
 
     this.errorResponse = '';
-    console.log('response',_cvitem);
+    //console.log('response',_cvitem);
 
     this.httpService.getCheckInvite(_cvitem.id, this.id_user, this.id_user).subscribe( (res) => {
 
@@ -251,7 +267,7 @@ export class CvViewComponent implements OnInit {
                 this.errorResponse = value;
               });
       }
-      console.log('invitation');
+      //console.log('invitation');
 
     });
   }
