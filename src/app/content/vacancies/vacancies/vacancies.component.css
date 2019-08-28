@@ -55,8 +55,7 @@ li{
   margin-left: 20px;
 }
 .btn-newVac{
-  display: inline-block;
-  position: absolute;
+  display: block;
   border-radius: 3px;
   background-color: #0262d2;
   width: 155px;
@@ -65,7 +64,7 @@ li{
   border-color: #054086;
   border-width: 1px;
   border-style: solid;
-  margin-top: 1%;
+  margin-top: 6vh;
 }
 .btn-newVac:hover{
   background-color: #0066cc;
