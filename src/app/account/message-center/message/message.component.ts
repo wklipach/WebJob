@@ -14,6 +14,7 @@ import {isNull} from 'util';
 import {TranslateService} from '@ngx-translate/core';
 import {City} from '../../../class/City';
 import {GuideService} from '../../../services/guide-service.service';
+import {GlobalRef} from '../../../services/globalref';
 
 @Component({
   selector: 'app-message',
@@ -22,7 +23,7 @@ import {GuideService} from '../../../services/guide-service.service';
 })
 export class MessageComponent implements OnInit, OnDestroy {
 
-
+  public sAvatarPath : string = '';
   public messageSubscription: Subscription;
   public _letter: any;
   public form: FormGroup;
@@ -49,6 +50,7 @@ export class MessageComponent implements OnInit, OnDestroy {
               private moveS: MoveService,
               private cls: CvListService,
               private translate: TranslateService,
+              public gr: GlobalRef,
               private gs: GuideService) {
 
     const Res =  this.auth.loginStorage();
@@ -63,23 +65,25 @@ export class MessageComponent implements OnInit, OnDestroy {
 
           loadPictureAndListLetter(id_user: number) {
 
+            this.sAvatarPath = '';
+            this.base64textString = [];
+
             this.subscrDataUserFromId = this.auth.getDataUserFromId(id_user).subscribe(value => {
               // вытаскиваем из базы картинку аватара
               this.loadUser = value[0] as UserType;
-              //console.log('getDataUserFromId value', this.loadUser);
-              const S = this.loadUser.Avatar;
 
               if (this.loadUser.bEmployer == true)
                 this._bEmployer = true; else this._bEmployer = false;
 
-
-
-              if (typeof S !== 'undefined') {
-                if (String(S) !== 'null' ) {
+              const S = this.loadUser.Avatar_Name;
+              if (S !== '""') {
+                if (typeof S !== 'undefined') {
                   if (S.length > 0) {
-                    this.base64textString.push('data:image/png;base64,' + JSON.parse(S).value); }
+                    this.sAvatarPath = this.gr.sUrlAvatarGlobal + S;
+                  }
                 }
               }
+
 
         // TODO вставляем вызов всех сообщений для данного пользователя
           this.httpLetter.getThreadLetter(this._letter.id_cv, this._letter.id_vc).subscribe(
@@ -105,8 +109,11 @@ export class MessageComponent implements OnInit, OnDestroy {
                 this.httpLetter.getAnyVC(this.listLetter[0].id_vc).subscribe(
                   anyValueVC => {
                     this.anyVC = anyValueVC;
-                    if (typeof this.anyVC !== undefined) {
-                      if (typeof this.anyVC[0] !== undefined) {
+                    if (this.anyVC !== undefined) {
+                      if (this.anyVC[0] !== undefined) {
+
+                        //console.log('this.anyVC',this.anyVC);
+
                         this.responseVC = this.anyVC[0].VacancyShortTitle;
                         //console.log('this.responseVC',this.anyVC);
                       } else this.responseVC = '';

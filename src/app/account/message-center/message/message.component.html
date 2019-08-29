@@ -11,17 +11,17 @@
       </div>
       <ng-template #UF></ng-template>
       <form class="zero" [formGroup]="form">
-        <div *ngIf="base64textString.length>0;then contentLoadAvatar else contentDefault">{{'message.ifnot'| translate }}</div>
+        <div *ngIf="this.sAvatarPath.length>0; then contentLoadAvatar else contentDefault">{{'message.ifnot'| translate }}</div>
         <ng-template #contentLoadAvatar>
 
 
            <div *ngIf="this._bEmployer">
-              <img class="logotypeEr" *ngFor="let item of base64textString"  src={{item}} [alt]="'message.viewprofile' | translate" id="img" (click) = "onProfileClick($event)">
+              <img class="logotypeEr" [src]="this.sAvatarPath"  [alt]="'message.viewprofile' | translate" id="img" (click) = "onProfileClick($event)">
           </div>
 
 
           <div *ngIf="!this._bEmployer">
-              <img class="logotype" *ngFor="let item of base64textString"  src={{item}} [alt]="'message.viewprofile' | translate" id="img2" (click) = "onProfileClick($event)">
+              <img class="logotype"   [src]="this.sAvatarPath" [alt]="'message.viewprofile' | translate" id="img2" (click) = "onProfileClick($event)">
           </div>
 
 

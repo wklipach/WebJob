@@ -10,6 +10,7 @@ import {Vacancy} from '../../../class/Vacancy';
 import {DatePipe} from '@angular/common';
 import {MoveService} from '../../../services/move.service';
 import {TranslateService} from '@ngx-translate/core';
+import {GlobalRef} from '../../../services/globalref';
 
 @Component({
   selector: 'app-vacancies',
@@ -41,11 +42,26 @@ export class VacanciesComponent implements OnInit, OnDestroy {
   onLoadFromBaseAvatar(k: any) {
     k.base64textString = [];
 
+    if (k.Avatar_Name !== null) {
+
+      if (k.Avatar_Name !== undefined) {
+
+        if (k.Avatar_Name.length > 0) {
+          k.sAvatarPath = this.gr.sUrlAvatarGlobal + k.Avatar_Name;
+          //console.log('k.sAvatarPath', k.sAvatarPath);
+        }
+      }
+    }
+
+/*
       if (typeof k.Avatar !== 'undefined') {
             if (JSON.parse(k.Avatar) !== null) {
               k.base64textString.push('data:image/png;base64,' + JSON.parse(k.Avatar).value);
           }
       }
+*/
+
+
   }
 
   constructor(private authService: AuthService,
@@ -54,7 +70,8 @@ export class VacanciesComponent implements OnInit, OnDestroy {
               private router: Router,
               private gls: VacanciesListService,
               private nvs: NewVacancyService,
-              public translate: TranslateService) { }
+              public translate: TranslateService,
+              public gr: GlobalRef) { }
 
   ngOnInit() {
 

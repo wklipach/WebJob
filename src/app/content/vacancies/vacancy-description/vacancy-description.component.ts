@@ -81,7 +81,7 @@ export class VacancyDescriptionComponent implements OnInit {
       this.dvSubscription = this.moveS.getDataVacancy()
       .subscribe (curDataVacancy =>
       {
-        //console.log('curDataVacancy', curDataVacancy);
+        console.log('curDataVacancy', curDataVacancy);
 
         // получаем объект из кэша, если неполный - делаем запрос к серверу и получаем новый getVacAny(id_vc: number)
         if (curDataVacancy === undefined) {
@@ -92,6 +92,8 @@ export class VacancyDescriptionComponent implements OnInit {
         // получаем объект из кэша, если неполный - делаем запрос к серверу и получаем новый getVacAny(id_vc: number)
         if (curDataVacancy.Industry || curDataVacancy.Education || curDataVacancy.Employment || curDataVacancy.Experience)
         {
+
+          console.log('a2');
 
           this.descrDataVacancy = curDataVacancy;
           this.onLoadUserData(this.descrDataVacancy);
@@ -141,23 +143,25 @@ export class VacancyDescriptionComponent implements OnInit {
         }
       }
     }
+  }
 
-/*
-    if (k.Avatar !== 'null') {
-      if (k.Avatar !== null) {
-        if (k.Avatar.toString().length > 0) k.base64textString.push('data:image/png;base64,' + JSON.parse(k.Avatar).value);
+
+  setPathImage(s: string) {
+    if (s !== 'null') {
+      if (s !== null) {
+        if (typeof s !== 'undefined') {
+          if (s.length > 0) this.sAvatarPath = this.gr.sUrlAvatarGlobal + s;
+        }
       }
     }
-*/
-
-
   }
 
   onLoadUserData(k: any) {
     if (typeof k.id_user !== 'undefined') {
       this.authService.getDataUserFromId(k.id_user).subscribe((aRes) => {
         if (aRes!= undefined) {
-
+          //this.sAvatarPath = aRes[0].Address;
+          this.setPathImage(aRes[0].Avatar_Name)
           this.sAddress = aRes[0].Address;
           this.sEmployerName = aRes[0].Name;
         }
