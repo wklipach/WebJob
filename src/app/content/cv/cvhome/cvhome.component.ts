@@ -145,6 +145,29 @@ export class CvhomeComponent implements OnInit {
 
   }
 
+  checkIsFull_AdvObj(advancedFindObj: any): boolean {
+
+    if (  advancedFindObj.City.toString() !=='-1' ||
+      advancedFindObj.Education.length>0 ||
+      advancedFindObj.Employment.length>0 ||
+      advancedFindObj.Experience.length>0 ||
+      advancedFindObj.Industry.length>0 ||
+      advancedFindObj.Schedule.length>0 ||
+      advancedFindObj.timePlacementIndex.toString() !== '-1' ||
+      advancedFindObj.Salary.toString() !== '' ||
+      advancedFindObj.stringFind.toString() !== '' ||
+      advancedFindObj.timePlacement.toString() !== '' ||
+      advancedFindObj.timePlacementComment.toString() !== '')  {
+      //console.log('TRUEEEEEE');
+      return true;
+    } else {
+      //console.log('FALSEEEEEE');
+      return false;
+    }
+  }
+
+
+
   // TODO getVacancyAdvanced  ЭТО ПРОДВИНУТЫЙ ПОИСК
   getCVAdvanced(advancedFindObj: any) {
     // если есть id_user вствавляем его
@@ -165,7 +188,9 @@ export class CvhomeComponent implements OnInit {
 
             //if (data.length === 0) this.moveS.startNullFind(this.sNullFund);
 
-            if (advancedFindObj.stringFind !== '' && data.length === 0) {
+            //if (advancedFindObj.stringFind !== '' && data.length === 0) {
+            if (this.checkIsFull_AdvObj(advancedFindObj) && data.length === 0) {
+
               this.getCV('', false, false);
               this.moveS.startNullFind(this.sNullFund);
               return;
@@ -425,14 +450,14 @@ export class CvhomeComponent implements OnInit {
 */
 
     if (k.Avatar_Name !== null) {
-      if (k.Avatar_Name.length > 0) {
+      if (k.Avatar_Name !== undefined) {
+        if (k.Avatar_Name.length > 0) {
           k.sAvatarPath = this.gr.sUrlAvatarGlobal + k.Avatar_Name;
+        }
       }
     }
 
-
   }
-
 
   ngOnDestroy() {
 

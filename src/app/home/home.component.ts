@@ -137,8 +137,12 @@ export class HomeComponent implements OnInit, OnDestroy {
 */
 
     if (k.Avatar_Name !== null) {
-      if (k.Avatar_Name.length > 0) {
+
+      if (k.Avatar_Name !== undefined) {
+
+        if (k.Avatar_Name.length > 0) {
           k.sAvatarPath = this.gr.sUrlAvatarGlobal + k.Avatar_Name;
+        }
       }
     }
 
@@ -273,10 +277,29 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
 
+  checkIsFull_AdvObj(advancedFindObj: any): boolean {
+
+            if (  advancedFindObj.City.toString() !=='-1' ||
+                  advancedFindObj.Education.length>0 ||
+                  advancedFindObj.Employment.length>0 ||
+                  advancedFindObj.Experience.length>0 ||
+                  advancedFindObj.Industry.length>0 ||
+                  advancedFindObj.Schedule.length>0 ||
+                  advancedFindObj.timePlacementIndex.toString() !== '-1' ||
+                  advancedFindObj.Salary.toString() !== '' ||
+                  advancedFindObj.stringFind.toString() !== '' ||
+                  advancedFindObj.timePlacement.toString() !== '' ||
+                  advancedFindObj.timePlacementComment.toString() !== '')  {
+                 //console.log('TRUEEEEEE');
+                 return true;
+               } else {
+                 //console.log('FALSEEEEEE');
+                 return false;
+               }
+  }
+
   //TODO getVacancyAdvanced  ЭТО ПРОДВИНУТЫЙ ПОИСК
   getVacancyAdvanced(advancedFindObj: any) {
-
-
 
     //если есть id_user вствавляем его
     advancedFindObj['id_user']=-1;
@@ -296,7 +319,11 @@ export class HomeComponent implements OnInit, OnDestroy {
 
             this.sFindNull = value;
 
-            if (advancedFindObj.stringFind !== '' && data.length === 0) {
+
+            //console.log('advancedFindObj',advancedFindObj, 'data.length',data.length);
+
+            //if (advancedFindObj.stringFind !== '' && data.length === 0) {
+            if (this.checkIsFull_AdvObj(advancedFindObj) && data.length === 0) {
               this.getVacancy('', false, false);
               this.moveS.startNullFind(this.sFindNull);
               //console.log('this.sFindNull', this.sFindNull);
