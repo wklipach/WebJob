@@ -35,7 +35,11 @@ export class MessageComponent implements OnInit, OnDestroy {
   listLetter: any[] = [];
   public responseVC: string;
   public anyLetter: any;
+
   _sNameUserResp: string = '';
+  _sName: string = '';
+  _sLastName: string = '';
+
   _bEmployer: boolean = false;
   private dvMoveSubscription: Subscription;
   public anyVC: any;
@@ -150,18 +154,30 @@ export class MessageComponent implements OnInit, OnDestroy {
       this.httpLetter.getUserName(anyLetter.id_user_from, anyLetter.id_user_to).subscribe((value) => {
         const arr = Object.values(value);
 
-        anyLetter.UserFrom = arr.find(x => x.id === anyLetter.id_user_from).UserName;
-        anyLetter.UserTo = arr.find(x => x.id === anyLetter.id_user_to).UserName;
+        const anyTempLetterFrom = arr.find(x => x.id === anyLetter.id_user_from);
+        const anyTempLetterTo = arr.find(x => x.id === anyLetter.id_user_to);
+
+        anyLetter.UserFrom = anyTempLetterFrom.UserName;
+        anyLetter.UserTo = anyTempLetterTo.UserName;
+
 
 
         //идет показ собеседника
         if (this.id_user == anyLetter.id_user_from) {
-          this._sNameUserResp = anyLetter.UserTo;
-          this.loadPictureAndListLetter(anyLetter.id_user_to);
+            this._sNameUserResp = anyTempLetterTo.UserName;
+            this._sName = anyTempLetterTo.Name;
+            this._sLastName = anyTempLetterTo.LastName;
+            this.loadPictureAndListLetter(anyLetter.id_user_to);
         } else {
-          this._sNameUserResp = anyLetter.UserFrom;
+          this._sNameUserResp = anyTempLetterFrom.UserName;
+          this._sName = anyTempLetterFrom.Name;
+          this._sLastName = anyTempLetterFrom.LastName;
           this.loadPictureAndListLetter(anyLetter.id_user_from);
         }
+
+
+       // console.log('this._sName',this._sName);
+       // console.log('this._sLastName',this._sLastName);
 
         this._letter = anyLetter;
 

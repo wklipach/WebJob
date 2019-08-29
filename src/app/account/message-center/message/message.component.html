@@ -7,7 +7,13 @@
    <!--   <label class="labelFrom">Собеседник</label>  -->
       <br>
       <div class="from" *ngIf="_letter != undefined; else UF">
-        {{this._sNameUserResp}}
+
+
+        <div *ngIf="this._sName !==''">{{this._sName}}</div>
+        <div *ngIf="this._sLastName !==''">{{this._sLastName}}</div>
+        <div *ngIf="this._sName =='' && this._sLastName ==''">{{this._sNameUserResp}}</div>
+
+
       </div>
       <ng-template #UF></ng-template>
       <form class="zero" [formGroup]="form">
