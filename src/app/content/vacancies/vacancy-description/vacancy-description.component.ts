@@ -81,7 +81,6 @@ export class VacancyDescriptionComponent implements OnInit {
       this.dvSubscription = this.moveS.getDataVacancy()
       .subscribe (curDataVacancy =>
       {
-        console.log('curDataVacancy', curDataVacancy);
 
         // получаем объект из кэша, если неполный - делаем запрос к серверу и получаем новый getVacAny(id_vc: number)
         if (curDataVacancy === undefined) {
@@ -92,8 +91,6 @@ export class VacancyDescriptionComponent implements OnInit {
         // получаем объект из кэша, если неполный - делаем запрос к серверу и получаем новый getVacAny(id_vc: number)
         if (curDataVacancy.Industry || curDataVacancy.Education || curDataVacancy.Employment || curDataVacancy.Experience)
         {
-
-          console.log('a2');
 
           this.descrDataVacancy = curDataVacancy;
           this.onLoadUserData(this.descrDataVacancy);
