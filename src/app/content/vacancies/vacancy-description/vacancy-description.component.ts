@@ -226,13 +226,20 @@ export class VacancyDescriptionComponent implements OnInit {
     this.sNoUserValueFind = '';
     this.descrDataVacancy.sErrorText = '';
     if  (!this.bConnected) {
-      this.sNoUserValueFind = 'Для использования функции "В избранное" пройдите верификацию.';
-      this.descrDataVacancy.sErrorText = this.sNoUserValueFind;
+
+      //home.ts.sReqVerif
+      this.translate.get('home.ts.sReqVerif').subscribe(value => {
+        this.sNoUserValueFind = value;
+        this.descrDataVacancy.sErrorText = this.sNoUserValueFind;
+      });
       return;
     }
     if (this.bEmployer) {
-      this.sNoUserValueFind = 'Работодателям функция "В избранное" для вакансий недоступна.';
-      this.descrDataVacancy.sErrorText = this.sNoUserValueFind;
+      //home.ts.sDeniedFavor
+      this.translate.get('home.ts.sDeniedFavor').subscribe(value => {
+        this.sNoUserValueFind = value;
+        this.descrDataVacancy.sErrorText = this.sNoUserValueFind;
+      });
       return;
     }
 
@@ -241,11 +248,20 @@ export class VacancyDescriptionComponent implements OnInit {
       let curV: any = value;
       if (curV.length ===0) {
         this.httpService.postFavoritesVacancy(this.id_user, this.descrDataVacancy.id).subscribe( ()=> {
-          this.sNoUserValueFind = 'Данная вакансия успешно занесена в избранные.';
+
+          //message.descrVUZR
+          this.translate.get('message.descrVUZR').subscribe(value => {
+            this.sNoUserValueFind = value;
+            this.descrDataVacancy.sErrorText = this.sNoUserValueFind;
+          });
+
         });
       } else {
-        this.sNoUserValueFind = 'Данная вакансия была занесена ранее.';
-        this.descrDataVacancy.sErrorText = this.sNoUserValueFind;
+        //home.ts.sOldInputVac
+        this.translate.get('home.ts.sOldInputVac').subscribe(value => {
+          this.sNoUserValueFind = value;
+          this.descrDataVacancy.sErrorText = this.sNoUserValueFind;
+        });
       }
     });
   }
@@ -259,14 +275,22 @@ export class VacancyDescriptionComponent implements OnInit {
     this.sNoUserValueFind = '';
     this.descrDataVacancy.sErrorText = '';
     if  (!this.bConnected)  {
-      this.sNoUserValueFind = 'Для использования функции "Откликнуться" пройдите верификацию.';
-      this.descrDataVacancy.sErrorText = this.sNoUserValueFind;
+
+      //home.ts.sResponseVer
+      this.translate.get('home.ts.sResponseVer').subscribe(value => {
+        this.sNoUserValueFind = value;
+        this.descrDataVacancy.sErrorText = this.sNoUserValueFind;
+      });
       return;
     }
 
     if (this.bEmployer) {
-      this.sNoUserValueFind = 'Работодателям функция "Откликнуться" для вакансий недоступна.';
-      this.descrDataVacancy.sErrorText = this.sNoUserValueFind;
+
+      //home.ts.sEmpoyeerResponseDeny
+      this.translate.get('home.ts.sEmpoyeerResponseDeny').subscribe(value => {
+        this.sNoUserValueFind = value;
+        this.descrDataVacancy.sErrorText = this.sNoUserValueFind;
+      });
       return;
     }
 
@@ -275,8 +299,12 @@ export class VacancyDescriptionComponent implements OnInit {
 
       if (value.length > 0) {
 
-        this.sNoUserValueFind = 'Вы уже откликались на данную вакансию. Дождитесь ответа';
-        this.descrDataVacancy.sErrorText = this.sNoUserValueFind;
+        //home.ts.sRespSucc
+        this.translate.get('home.ts.sRespSucc').subscribe(value => {
+          this.sNoUserValueFind = value;
+          this.descrDataVacancy.sErrorText = this.sNoUserValueFind;
+        });
+
       } else {
 
         this.cvEditSrv.setCvId(this.descrDataVacancy.id);
@@ -291,18 +319,29 @@ export class VacancyDescriptionComponent implements OnInit {
     this.sNoUserValueFind = '';
     this.descrDataVacancy.sErrorText = '';
     if  (!this.bConnected)  {
-      this.sNoUserValueFind = 'Для использования функции "Не показывать" пройдите верификацию.';
-      this.descrDataVacancy.sErrorText = this.sNoUserValueFind;
+
+      //home.ts.sUnsowVer
+      this.translate.get('home.ts.sUnsowVer').subscribe(value => {
+         this.sNoUserValueFind = value;
+         this.descrDataVacancy.sErrorText = this.sNoUserValueFind;});
       return;
     }
     if (this.bEmployer) {
-      this.sNoUserValueFind = 'Работодателям функция "Не показывать" для вакансий недоступна.';
-      this.descrDataVacancy.sErrorText = this.sNoUserValueFind;
+      //home.ts.sEmploeerDeniedUnshow
+      this.translate.get('home.ts.sEmploeerDeniedUnshow').subscribe(
+        value => { this.sNoUserValueFind = value;
+                        this.descrDataVacancy.sErrorText = this.sNoUserValueFind; }
+        );
       return;
     }
 
     this.httpService.postUnshowVacancy(this.id_user, this.id_user).subscribe( ()=> {
-      this.sNoUserValueFind = 'Данная вакансия будет игнорироваться.';
+      //message.descrVBI
+      this.translate.get('message.descrVBI').subscribe(
+        value => {
+          this.sNoUserValueFind = value;
+          this.descrDataVacancy.sErrorText = this.sNoUserValueFind;}
+      );
     });
 
   }

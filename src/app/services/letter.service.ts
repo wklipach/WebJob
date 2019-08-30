@@ -192,6 +192,24 @@ export class LetterService {
     return this.http.get(sUrl, {params: params});
   }
 
+  // получение вакансии
+  getAnyVcWithInvisible(id_vc: number) {
+    const sUrl = this.gr.sUrlGlobal+'Vacancy';
+    let params = new HttpParams()
+      .set('id_vc_with_invisible', id_vc.toString())
+    return this.http.get(sUrl, {params: params});
+  }
+
+
+  getInfoCv(id_cv: number) {
+    const sUrl = this.gr.sUrlGlobal+'CV';
+    let params = new HttpParams()
+      .set('cvVisibleInvisible', id_cv.toString())
+    return this.http.get(sUrl, {params: params});
+
+  }
+
+
   getCountNotReadLetter(id_user: number){
   let sUrl = this.gr.sUrlGlobal+'Correspondence';
     let params = new HttpParams()

@@ -409,5 +409,11 @@
   "advanced-search.findOnlyCV" : "Search only in resume title",
   "advanced-search.findShortCv" : "Search in resume summary only",
   "advanced-search.findAdvCv" : "Advanced Resume Search",
-  "advanced-search.findCvOlder" : "Search for a resume no older"
+  "advanced-search.findCvOlder" : "Search for a resume no older",
+  "message.messageRUON" : "This CV has been deleted. The answer is impossible.",
+  "message.messageVSON" : "This vacancy has been removed. The answer is impossible.",
+  "message.messageSDT" : "The text is too long.",
+  "message.messagePOS" : "Check the message being sent.",
+  "message.descrVUZR" : "This vacancy has been successfully added to your favorites.",
+  "message.descrVBI" : "This vacancy will be ignored."
 }

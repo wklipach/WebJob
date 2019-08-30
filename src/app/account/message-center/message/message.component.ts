@@ -36,6 +36,9 @@ export class MessageComponent implements OnInit, OnDestroy {
   public responseVC: string;
   public anyLetter: any;
 
+  public deleteThread: boolean = false;
+  public deleteCV: boolean = false;
+
   _sNameUserResp: string = '';
   _sName: string = '';
   _sLastName: string = '';
@@ -88,7 +91,6 @@ export class MessageComponent implements OnInit, OnDestroy {
                 }
               }
 
-
         // TODO вставляем вызов всех сообщений для данного пользователя
           this.httpLetter.getThreadLetter(this._letter.id_cv, this._letter.id_vc).subscribe(
             curList => {
@@ -110,8 +112,13 @@ export class MessageComponent implements OnInit, OnDestroy {
 
                 //console.log('this.listLetter[0].id_vc',this.listLetter[0].id_vc);
 
-                this.httpLetter.getAnyVC(this.listLetter[0].id_vc).subscribe(
+                this.deleteThread = false;
+
+                this.httpLetter.getAnyVcWithInvisible(this.listLetter[0].id_vc).subscribe(
                   anyValueVC => {
+
+                    //console.log('anyValueVC',anyValueVC);
+
                     this.anyVC = anyValueVC;
                     if (this.anyVC !== undefined) {
                       if (this.anyVC[0] !== undefined) {
@@ -119,6 +126,7 @@ export class MessageComponent implements OnInit, OnDestroy {
                         //console.log('this.anyVC',this.anyVC);
 
                         this.responseVC = this.anyVC[0].VacancyShortTitle;
+                        this.deleteThread = this.anyVC[0].bInvisible;
                         //console.log('this.responseVC',this.anyVC);
                       } else this.responseVC = '';
                     } else {
@@ -147,6 +155,8 @@ export class MessageComponent implements OnInit, OnDestroy {
 
   parseLetter(anyLetter: any) {
 
+
+
 //
 // СМОТРИМ НА ПИСЬМО
 //
@@ -161,6 +171,7 @@ export class MessageComponent implements OnInit, OnDestroy {
         anyLetter.UserTo = anyTempLetterTo.UserName;
 
 
+        this._letter = anyLetter;
 
         //идет показ собеседника
         if (this.id_user == anyLetter.id_user_from) {
@@ -179,7 +190,22 @@ export class MessageComponent implements OnInit, OnDestroy {
        // console.log('this._sName',this._sName);
        // console.log('this._sLastName',this._sLastName);
 
-        this._letter = anyLetter;
+
+        //получаем данные удаленно CV или нет
+        this.httpLetter.getInfoCv(anyLetter.id_cv).subscribe( aRes =>
+          {
+
+
+            //console.log('aRes[0]',aRes[0]);
+
+            this.deleteCV = aRes[0].bInvisible;
+            this._letter = anyLetter;
+
+          }
+
+        );
+
+
 
       });
 
@@ -228,11 +254,32 @@ export class MessageComponent implements OnInit, OnDestroy {
   responseLetter() {
     // отправляем данные в таблицу  correspondence
 
+
+
+    if (this.deleteCV) {
+      this.translate.get('message.messageRUON').subscribe(
+        value => this.sErrorResponse = value);
+      return;
+    }
+
+    if (this.deleteThread) {
+      this.translate.get('message.messageVSON').subscribe(
+        value => this.sErrorResponse = value);
+      return;
+    }
+
     this.sErrorResponse = '';
 
   if (this.formResponse.invalid) {
       //console.log('');
-      if (this.formResponse.get('textCommentValue').value.length>3000) this.sErrorResponse = 'Слишком длинный тект.'; else this.sErrorResponse = 'Проверьте отсылаемое сообщение.';
+      if (this.formResponse.get('textCommentValue').value.length>3000) {
+        this.translate.get('message.messageSDT').subscribe(
+          value => this.sErrorResponse = value);
+      }
+        else {
+        this.translate.get('message.messagePOS').subscribe(
+          value => this.sErrorResponse = value);
+      }
       return;
   }
 

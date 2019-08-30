@@ -409,5 +409,11 @@
   "advanced-search.findOnlyCV" : "Искать только в названии резюме",
   "advanced-search.findShortCv" : "Искать только в кратком описании резюме",
   "advanced-search.findAdvCv" : "Расширенный поиск резюме",
-  "advanced-search.findCvOlder" : "Искать резюме не старше"
+  "advanced-search.findCvOlder" : "Искать резюме не старше",
+  "message.messageRUON" : "Данное резюме удалено. Ответ невозможен.",
+  "message.messageVSON" : "Данная вакансия снята. Ответ невозможен.",
+  "message.messageSDT" : "Слишком длинный текст.",
+  "message.messagePOS" : "Проверьте отсылаемое сообщение.",
+  "message.descrVUZR" : "Данная вакансия успешно занесена в избранные.",
+  "message.descrVBI" : "Данная вакансия будет игнорироваться."
 }

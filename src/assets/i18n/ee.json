@@ -409,5 +409,11 @@
   "advanced-search.findOnlyCV" : "Otsida ainult CV nimetuses",
   "advanced-search.findShortCv" : "Otsida ainult CV lühikirjelduses",
   "advanced-search.findAdvCv" : "CV laiendatud otsing",
-  "advanced-search.findCvOlder" : "Otsida CV mitte vanemaid kui"
+  "advanced-search.findCvOlder" : "Otsida CV mitte vanemaid kui",
+  "message.messageRUON" : "Данное резюме удалено. Ответ невозможен.",
+  "message.messageVSON" : "Данная вакансия снята. Ответ невозможен.",
+  "message.messageSDT" : "Слишком длинный текст.",
+  "message.messagePOS" : "Проверьте отсылаемое сообщение.",
+  "message.descrVUZR" : "Данная вакансия успешно занесена в избранные.",
+  "message.descrVBI" : "Данная вакансия будет игнорироваться."
 }

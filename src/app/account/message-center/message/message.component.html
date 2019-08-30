@@ -67,6 +67,9 @@
         <div class="topline">
           <label class="labelSubject">{{'message.vcword' | translate}}
             <span class="subject">{{responseVC}}</span>
+
+            <span *ngIf="deleteThread"><br>Данная вакансия была снята.</span>
+
           </label>
         </div>
 
