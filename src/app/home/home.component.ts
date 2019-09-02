@@ -260,21 +260,51 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     });
 
-    // если не было расширенного поиска вакансий делаем обычный поиск, иначе расширенный запускается из advanced-search.component
-    if ( this.httpService.getMessageAdvancedFindObj() === null ) {
 
-      // запускаем событие "получить вакансии", в первый раз с пустой маской
-      this.httpService.triggerReopenVacancy({sMask: this.sMask, isFavorites: false, isAdvancedFind: false});
-      // записываем значение маски в элемент, так как при перегрузке страницы он стирается ??????
-      this.moveS.setStringFind(this.sMask);
-    } else
-    {
-      let advancedFindObj = this.httpService.getMessageAdvancedFindObj();
-      this.httpService.clearAdvancedFindObj();
-      this.getVacancyAdvanced(advancedFindObj);
+
+//todo ВЫЗОВ ИНИЦИАЛИЗАЦИИ ВАКАНСИЙ
+///
+    if (!this.authService.getForFavorites()) {
+      // если не было расширенного поиска вакансий делаем обычный поиск, иначе расширенный запускается из advanced-search.component
+      if (this.httpService.getMessageAdvancedFindObj() === null) {
+
+        // запускаем событие "получить вакансии", в первый раз с пустой маской
+        this.httpService.triggerReopenVacancy({sMask: this.sMask, isFavorites: false, isAdvancedFind: false});
+        // записываем значение маски в элемент, так как при перегрузке страницы он стирается ??????
+        this.moveS.setStringFind(this.sMask);
+      } else {
+        let advancedFindObj = this.httpService.getMessageAdvancedFindObj();
+        this.httpService.clearAdvancedFindObj();
+        this.getVacancyAdvanced(advancedFindObj);
+      }
+///
+    } else {
+      this.authService.setForFavorites(false);
+      this.showFavorites(this.id_user);
+
     }
 
+
+
+///
   }
+
+/*
+  favorites() {
+    // TODO ПОКАЗ ФАВОРИТов 2
+    if (this.id_user === null) return;
+    //console.log('FAVORITS');
+    this.httpTvsService.getFavoritesVacancy(this.id_user).subscribe((favor) =>{
+
+      let s='?&id=-1'; //-1 чтобы иметь пустой курсор в случае отсутствия избранных
+      for (let curFavor in favor) {
+        s=s+'&id='+favor[curFavor].id_vc;
+      }
+      window.localStorage.setItem('stringFavorites', s);
+      this.getVacancy('',true, false);
+    });
+  }
+*/
 
 
   checkIsFull_AdvObj(advancedFindObj: any): boolean {

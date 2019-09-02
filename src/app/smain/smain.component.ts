@@ -37,6 +37,12 @@ export class SmainComponent implements OnInit {
       this.bCV = true;
     }
 
+    this.authService.OnSwitchVacancy.subscribe(
+      value => {
+        this.authService.setForFavorites(true);
+        this.OnClickV();
+      }
+    );
 
 
   }

@@ -10,6 +10,7 @@ export class AuthService {
 
 
   public IsUserLoggedIn: Subject<{connect: boolean, name : string, id_user: number, bEmployer: boolean}> = new Subject<{connect: boolean, name : string, id_user: number, bEmployer: boolean}>();
+  public OnSwitchVacancy: Subject<{boolVacancy: boolean}> = new Subject<{boolVacancy: boolean}>();
 
   private isAuthenticated = false;
   private _sUserName : string = '';
@@ -220,6 +221,18 @@ export class AuthService {
   public setLangStorage(idLang: number) {
          window.localStorage.setItem('LangStorage', idLang.toString());
   }
+
+
+  public setForFavorites(bFV: boolean) {
+    window.localStorage.setItem('FV', bFV.toString());
+  }
+
+  public getForFavorites(): boolean {
+    if (window.localStorage.getItem('FV') === null) return false; else {
+      if (window.localStorage.getItem('FV') === "false") return false; else return true;
+    }
+  }
+
 
 
   public setVorCV(bCV: boolean) {

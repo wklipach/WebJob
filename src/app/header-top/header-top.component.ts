@@ -9,6 +9,7 @@ import {TranslateService} from '@ngx-translate/core';
 import {
   staticGuideList
 } from '../class/GuideList';
+import {Subject} from 'rxjs';
 
 @Component({
   selector: 'app-header-top',
@@ -71,7 +72,6 @@ export class HeaderTopComponent implements OnInit {
       this.bEmployer = value.bEmployer;
       // console.log('this.htUserName =', this.htUserName);
     });
-
 
   }
 
@@ -170,15 +170,22 @@ export class HeaderTopComponent implements OnInit {
     if (this.id_user === null) return;
     //console.log('FAVORITS');
 
-    this.httpTvsService.getFavoritesVacancy(this.id_user).subscribe((favor) =>{
-      let s='?&id=-1'; //-1 чтобы иметь пустой курсор в случае отсутствия избранных
-      for (let curFavor in favor) {
-        s=s+'&id='+favor[curFavor].id_vc;
-      }
-      window.localStorage.setItem('stringFavorites', s);
-      this.getVacancy('',true, false);
-    });
+    //если из CV идем через переинициализацию всей страницы в модуль home.ts
+    if (this.httpService.getVorCV()) {
+      this.httpService.OnSwitchVacancy.next({boolVacancy: true});
+      return;
+    } else {
+      //если находимся и так в вакансиях, делаем простой перезапрос без переинициализации
+      this.httpTvsService.getFavoritesVacancy(this.id_user).subscribe((favor) => {
 
+        let s = '?&id=-1'; //-1 чтобы иметь пустой курсор в случае отсутствия избранных
+        for (let curFavor in favor) {
+          s = s + '&id=' + favor[curFavor].id_vc;
+        }
+        window.localStorage.setItem('stringFavorites', s);
+        this.getVacancy('', true, false);
+      });
+    }
   }
 
 
@@ -278,6 +285,8 @@ export class HeaderTopComponent implements OnInit {
     this.translate.get('staticGuideList.Education_val3').subscribe(value => staticGuideList.Education_val3 = value);
     this.translate.get('staticGuideList.Education_val4').subscribe(value => staticGuideList.Education_val4 = value);
     this.translate.get('staticGuideList.Education_val5').subscribe(value => staticGuideList.Education_val5 = value);
+    this.translate.get('staticGuideList.Education_val6').subscribe(value => staticGuideList.Education_val6 = value);
+    this.translate.get('staticGuideList.Education_val7').subscribe(value => staticGuideList.Education_val7 = value);
 
     this.translate.get('staticGuideList.LanguageList_val2').subscribe(value => staticGuideList.LanguageList_val2 = value);
     this.translate.get('staticGuideList.LanguageList_val3').subscribe(value => staticGuideList.LanguageList_val3 = value);

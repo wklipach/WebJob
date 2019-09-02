@@ -38,6 +38,9 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
    private static _Education_val3: string = '';
    private static _Education_val4: string = '';
    private static _Education_val5: string = '';
+   private static _Education_val6: string = '';
+   private static _Education_val7: string = '';
+
 
    public static set Education_val1(value) {
      this._Education_val1 = value;
@@ -59,6 +62,15 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
      this._Education_val5 = value;
    }
 
+   public static set Education_val6(value) {
+     this._Education_val6 = value;
+   }
+
+   public static set Education_val7(value) {
+     this._Education_val7 = value;
+   }
+
+
 // образование
    public static get EducationList(): Guide[] {
      return [
@@ -66,7 +78,9 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
        {id: 2, order: 2, name: this._Education_val2, comment: ''},
        {id: 3, order: 3, name: this._Education_val3, comment: ''},
        {id: 4, order: 4, name: this._Education_val4, comment: ''},
-       {id: 5, order: 5, name: this._Education_val5, comment: ''}
+       {id: 5, order: 5, name: this._Education_val5, comment: ''},
+       {id: 6, order: 6, name: this._Education_val6, comment: ''} ,
+       {id: 7, order: 7, name: this._Education_val7, comment: ''}
      ];
    }
 
