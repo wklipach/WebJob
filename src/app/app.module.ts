@@ -78,6 +78,7 @@ import {TextToHtmlDirective} from './direct/text-to-html-directive';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {ConfJDirective} from '../directive/conf-j.directive';
+import { PostmoderComponent } from './postmoder/postmoder.component';
 
 
 
@@ -123,6 +124,7 @@ const appRoutes: Routes = [
   {path: 'ad-unit2', component: AdUnit2Component},
   {path: 'smain', component: SmainComponent},
   {path: 'invitation', component: InvitationComponent},
+  {path: 'postmoder', component: PostmoderComponent},
   {path: '**', component: NotFoundComponent }
 ];
 
@@ -202,7 +204,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     MessagesContainerComponent,
     InfoContainerComponent,
     TextToHtmlDirective,
-    ConfJDirective
+    ConfJDirective,
+    PostmoderComponent
    ],
   entryComponents: [
     CvPreviousComponent,

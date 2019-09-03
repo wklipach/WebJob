@@ -194,15 +194,10 @@ export class MessageComponent implements OnInit, OnDestroy {
         //получаем данные удаленно CV или нет
         this.httpLetter.getInfoCv(anyLetter.id_cv).subscribe( aRes =>
           {
-
-
             //console.log('aRes[0]',aRes[0]);
-
             this.deleteCV = aRes[0].bInvisible;
             this._letter = anyLetter;
-
           }
-
         );
 
 

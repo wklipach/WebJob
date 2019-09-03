@@ -21,10 +21,10 @@
         <a routerLink="/cv-list" routerLinkActive="active" *ngIf="!bEmployer"><li>{{'header-top.mrHT' | translate}}</li></a>
         <a routerLink="/message-center" routerLinkActive="active" *ngIf = "bEmployer"><li>{{'allValue.messagecenter' | translate}}</li></a>
         <a routerLink="/message-center" routerLinkActive="active"  *ngIf = "!bEmployer"><li>{{'allValue.messagecenter' | translate}}</li></a>
+
+        <a routerLink="/postmoder" routerLinkActive="active"  *ngIf = "this.id_user===1"><li>Проверка</li></a>
+
         <span class="logout" (click)="favorites()"  *ngIf = "!bEmployer"><li>{{'home.ts.sVacF' | translate}}</li></span>
-
-
-
         <span class="logout" (click)="logout()"><li>{{'header-top.exitHT' | translate}}</li></span>
       </ul>
 
