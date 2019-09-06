@@ -234,6 +234,20 @@ export class AuthService {
   }
 
 
+  public setVorModerCV(bCV: boolean) {
+    window.localStorage.setItem('CV_M', bCV.toString());
+  }
+
+
+
+  getVorModerCV(): boolean {
+
+    if (window.localStorage.getItem('CV_M') === null) return false; else {
+      if (window.localStorage.getItem('CV_M') === "false") return false; else return true;
+    }
+
+  }
+
 
   public setVorCV(bCV: boolean) {
     window.localStorage.setItem('CV', bCV.toString());

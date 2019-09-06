@@ -12,6 +12,7 @@ import {Guide} from '../../class/guide';
 import * as CryptoJS from 'crypto-js';
 import {TranslateService} from '@ngx-translate/core';
 import {GlobalRef} from '../../services/globalref';
+import {CheckpostService} from '../../services/checkpost.service';
 
 @Component({
   selector: 'app-accountemployee',
@@ -20,6 +21,7 @@ import {GlobalRef} from '../../services/globalref';
 })
 export class AccountEmployeeComponent implements OnInit {
 
+  bDeleteAll = false;
   base64textString = [];
   loading: boolean = false;
   form: FormGroup;
@@ -28,6 +30,8 @@ export class AccountEmployeeComponent implements OnInit {
   genderList: Guide[];
   private cveditCityTable: Subscription;
   private subscrDataUserFromId: Subscription;
+  private sbscrDeleteAll: Subscription;
+
   private _myDisplayCity: string;
   private id_user: number = -1;
   private _sEmail: string = '';
@@ -49,8 +53,8 @@ private loadUser: UserType;
               private router: Router,
               private gs: GuideService,
               public translate: TranslateService,
-              public gr: GlobalRef,
-              private cdRef: ChangeDetectorRef) {
+              public checkpostservice: CheckpostService,
+              public gr: GlobalRef) {
 
 
 
@@ -135,6 +139,11 @@ private loadUser: UserType;
 
     var Res =  this.auth.loginStorage();
     if (Res.bConnected) this.id_user = Res.id_user; else this.id_user = -1;
+
+    if (Res.bEmployer || !Res.bConnected) {
+      this.router.navigate(['/']);
+    }
+
 
 
     this.subscrDataUserFromId = this.auth.getDataUserFromId(this.id_user).subscribe(value=> {
@@ -241,6 +250,12 @@ private loadUser: UserType;
     if (typeof  this.subscrDataUserFromId !== 'undefined') {
       this.subscrDataUserFromId.unsubscribe();
     }
+
+    if (typeof  this.sbscrDeleteAll !== 'undefined') {
+      this.sbscrDeleteAll.unsubscribe();
+    }
+
+
   }
 
 
@@ -422,6 +437,23 @@ loadCurrentUserInfo(item: any) {
     this.bShowChangePassword = !this.bShowChangePassword;
   }
 
+  DeleteAll() {
+
+    this.sbscrDeleteAll = this.checkpostservice.setDeleteAll(this.id_user,this.id_user).subscribe(value => {
+
+        window.localStorage.removeItem('htUserName');
+        window.localStorage.removeItem('bConnected');
+        window.localStorage.removeItem('bEmployer');
+        window.localStorage.removeItem('id_user');
+        this.auth.IsUserLoggedIn.next({connect : false, name : '', id_user: -1, bEmployer: false});
+        this.router.navigate(['/']);
+      },
+      err => console.log('при удалении всех данных возникла нештатная ситуация ', err));
+
+  }
+
+
+
   back() {
     this.router.navigate(['/']);
   }
@@ -435,7 +467,7 @@ loadCurrentUserInfo(item: any) {
     {
       this.base64textString = [];
       const S = aRes[0].Avatar_Name;
-      if (S !== '""') {
+      if (S !== '""' && S !== null) {
         if (typeof S !== 'undefined') {
           if (S.length > 0) {
 

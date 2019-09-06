@@ -1,0 +1,61 @@
+
+<ul class="head-line">
+  <li class="column1">Дата создания</li>
+  <li class="column2">Пользователь</li>
+  <li class="column3">Резюме</li>
+</ul>
+
+
+
+<div class="box" *ngFor="let item of cvList; let i = index;">
+
+  <ul class="head-line" (click)="ulClick($event, item, i)" id = "UL">
+    <li id = "LI1" class="column1">{{item.DateTimeCreate | date:'dd.MM.yyyy : hh:mm:ss'}}</li>
+    <li id = "LI2" class="column2">{{item.UserName}}</li>
+    <li id = "LI3" class="column3">{{item.Position}}</li>
+    <li id = "LI4" class="column4"><button type="button" class="btn-delete" (click)="DeleteElement($event, item,i)" id = "BTN">Удалить резюме</button>
+    <li id = "LI5" class="column4"><button type="button" class="btn-delete" (click)="DeleteAll($event, item,i)" id = "BTNDELETEALL">Удалить всё физически</button>
+  </ul>
+
+</div>
+
+
+<div *ngIf="this.sAvatarPath.length>0;then contentLoadAvatar else contentDefault"></div>
+<ng-template #contentLoadAvatar>
+  <img class="logotype" [src]="this.sAvatarPath"  id="img">
+</ng-template>
+
+<ng-template #contentDefault>
+  <img src="/assets/img/usernull.png" class="img-thumbnail">
+</ng-template>
+
+
+
+<br>
+<label>Подробности о CV</label>
+
+<div>{{sEducation}}</div>
+<div>{{sSkills}}</div>
+<div>{{sExperience}}</div>
+<div>{{sPosition}}</div>
+
+
+<br>
+<label>Подробности о пользователе</label>
+<br>
+<div>{{sUserName}}</div>
+<div>{{sEMail}}</div>
+<div>{{sAvatar_Name}}</div>
+<div>{{sZip}}</div>
+<div>{{sName}}</div>
+<div>{{sContactPerson}}</div>
+<div>{{sLastName}}</div>
+<div>{{sAddress}}</div>
+<div>{{sPhone}}</div>
+<div>{{sPhone2}}</div>
+<div>{{sWeb}}</div>
+<div>{{sAbout}}</div>
+
+
+<button class="btn-newcv" (click)="applyAll()">Принять все</button>
+

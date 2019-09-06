@@ -13,8 +13,11 @@ export class PostmoderComponent implements OnInit {
 
   public bConnected: boolean = false;
   public id_user: number = -1;
+  public bV = true;
+  public bCV = false;
 
-  constructor(public translate: TranslateService,
+
+  constructor(
               public authService : AuthService,
               private router: Router) {
 
@@ -29,6 +32,30 @@ export class PostmoderComponent implements OnInit {
       if (this.id_user  !== 1) {
           this.router.navigate(['/']);
       }
+
+
+    if (!this.authService.getVorModerCV()) {
+      this.bV = true;
+      this.bCV = false;
+    } else {
+      this.bV = false;
+      this.bCV = true;
+    }
+
+
+
+  }
+
+  OnClickV() {
+    this.authService.setVorModerCV(false);
+    this.bV = true;
+    this.bCV = false;
+  }
+
+  OnClickCV() {
+    this.authService.setVorModerCV(true);
+    this.bV = false;
+    this.bCV = true;
 
   }
 

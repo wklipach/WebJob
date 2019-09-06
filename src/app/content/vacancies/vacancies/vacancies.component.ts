@@ -79,6 +79,10 @@ export class VacanciesComponent implements OnInit, OnDestroy {
     this.bConnected = Res.bConnected;
     this.id_user =  Res.id_user;
 
+    if (!Res.bEmployer || !Res.bConnected) {
+      this.router.navigate(['/']);
+    }
+
 
     this.sbVacCity = this.gs.getCityTable().subscribe((value) => {
       this.cityList = this.authService.loadLangCity(value as City[]);

@@ -109,6 +109,12 @@ export class NewcvComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    var Res =  this.authService.loginStorage();
+    if (Res.bEmployer || !Res.bConnected) {
+      this.router.navigate(['/']);
+    }
+
   }
 
   submit() {

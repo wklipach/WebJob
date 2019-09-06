@@ -168,6 +168,20 @@
     <div class="line">
     <button type="submit" class="btn-save" (click)="savecv()" [disabled]="accountEmployeeForm.invalid" >{{'allValue.save' | translate}}</button>
     <button type="submit" class="btn-cancel" (click)="back()">{{'allValue.Cancel' | translate}}</button>
+
+
+      <div *ngIf="!this.bDeleteAll">
+        <button type="button" class="btn-cancel" (click)="this.bDeleteAll=true">Удалить</button>
+      </div>
+      <div class="deleteCorrespondence" *ngIf="this.bDeleteAll">
+        <span class="question">Удалить все данные безвозвратно?</span>
+        <button type="button" class="btn-cancel" (click)="DeleteAll()">Удалить</button>
+        <button type="button" class="btn-delete" (click)="this.bDeleteAll=false">Отмена</button>
+     </div>
+
+
+
+
     </div>
 
    </div>

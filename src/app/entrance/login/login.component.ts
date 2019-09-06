@@ -15,6 +15,7 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
+  bConnected = false;
   loginForm : FormGroup;
   public showErr : boolean = false;
   public showSucc : boolean = false;
@@ -33,6 +34,12 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+
+    var Res =  this.httpService.loginStorage();
+    this.bConnected = Res.bConnected;
+    if (this.bConnected) {
+      this.router.navigate(['/']);
+    }
 
 
   }

@@ -62,6 +62,12 @@ export class RegisterEmployeeComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    var Res =  this.httpService.loginStorage();
+    if (Res.bConnected) {
+      this.router.navigate(['/']);
+    }
+
   }
 
   submit(){

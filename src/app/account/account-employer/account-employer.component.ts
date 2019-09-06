@@ -13,6 +13,7 @@ import {Guide} from '../../class/guide';
 import * as CryptoJS from 'crypto-js';
 import {TranslateService} from '@ngx-translate/core';
 import {GlobalRef} from '../../services/globalref';
+import {CheckpostService} from '../../services/checkpost.service';
 
 @Component({
   selector: 'app-accountemployer',
@@ -23,6 +24,9 @@ import {GlobalRef} from '../../services/globalref';
 })
 export class AccountEmployerComponent implements OnInit {
 
+  bEmployer = false;
+  bDeleteAll = false;
+  private sbscrDeleteAll: Subscription;
   public sAvatarPath : string = '';
   base64textString = [];
   genderList: Guide[];
@@ -66,8 +70,8 @@ constructor(  private is: GuideService,
               private router: Router,
               private gs: GuideService,
               private fb: FormBuilder,
-              private _sanitizer: DomSanitizer,
               public gr: GlobalRef,
+              public checkpostservice: CheckpostService,
               public translate: TranslateService) {
 
 
@@ -109,6 +113,13 @@ constructor(  private is: GuideService,
   }
 
   ngOnInit() {
+
+
+    var Res =  this.auth.loginStorage();
+    this.bEmployer = Res.bEmployer;
+    if (!this.bEmployer || !Res.bConnected) {
+      this.router.navigate(['/']);
+    }
 
 
    // console.log('ngOnInit()');
@@ -183,6 +194,11 @@ createAccountEmployerForm() {
     if (typeof  this.subscrDataUserFromId !== 'undefined') {
       this.subscrDataUserFromId.unsubscribe();
     }
+
+    if (typeof  this.sbscrDeleteAll !== 'undefined') {
+      this.sbscrDeleteAll.unsubscribe();
+    }
+
   }
 
   loadCurrentUserInfo(item: any) {
@@ -523,6 +539,20 @@ createAccountEmployerForm() {
   }
 
 
+  DeleteAll() {
+
+    this.sbscrDeleteAll = this.checkpostservice.setDeleteAll(this.id_user,this.id_user).subscribe(value => {
+
+        window.localStorage.removeItem('htUserName');
+        window.localStorage.removeItem('bConnected');
+        window.localStorage.removeItem('bEmployer');
+        window.localStorage.removeItem('id_user');
+        this.auth.IsUserLoggedIn.next({connect : false, name : '', id_user: -1, bEmployer: false});
+        this.router.navigate(['/']);
+      },
+      err => console.log('при удалении всех данных возникла нештатная ситуация ', err));
+
+  }
 
 
 }

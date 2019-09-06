@@ -12,13 +12,19 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private router: Router, public translate: TranslateService) {
+  bConnected = false;
+
+  constructor(private httpService: AuthService, private router: Router, public translate: TranslateService) {
   }
 
   myForm : FormGroup;
 
   ngOnInit() {
-    // assets/img/b3291e37c5413656444d23e0bec71e2b.jpg
+    var Res =  this.httpService.loginStorage();
+    this.bConnected = Res.bConnected;
+    if (this.bConnected) {
+      this.router.navigate(['/']);
+    }
   }
 
   newFunctionEmployee(event) {

@@ -161,6 +161,11 @@ export class NewVacancyComponent implements OnInit {
       this.id_user = -1;
     }
 
+    if (!Res.bEmployer || !Res.bConnected) {
+      this.router.navigate(['/']);
+    }
+
+
 
   }
 

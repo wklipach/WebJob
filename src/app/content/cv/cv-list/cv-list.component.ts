@@ -69,6 +69,12 @@ export class CvListComponent implements OnInit, OnDestroy {
     this.bConnected = Res.bConnected;
     this.id_user =  Res.id_user;
 
+    if (Res.bEmployer || !Res.bConnected) {
+      this.router.navigate(['/']);
+    }
+
+
+
     //console.log('a3 RES', Res);
 
     this.cvCity = this.gs.getCityTable().subscribe((value) => {

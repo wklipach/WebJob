@@ -208,6 +208,12 @@ export class MessageComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
 
+
+    var Res =  this.auth.loginStorage();
+    if (!Res.bConnected) {
+      this.router.navigate(['/']);
+    }
+
     this.base64textString = [];
     this.messageSubscription = this.httpLetter.getLetter()
       .subscribe (oLetter => {

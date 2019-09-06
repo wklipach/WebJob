@@ -79,6 +79,9 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {ConfJDirective} from '../directive/conf-j.directive';
 import { PostmoderComponent } from './postmoder/postmoder.component';
+import { PostmoderCvComponent } from './postmoder/postmoder-cv/postmoder-cv.component';
+import { PostmoderVcComponent } from './postmoder/postmoder-vc/postmoder-vc.component';
+import {CheckpostService} from './services/checkpost.service';
 
 
 
@@ -205,7 +208,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     InfoContainerComponent,
     TextToHtmlDirective,
     ConfJDirective,
-    PostmoderComponent
+    PostmoderComponent,
+    PostmoderCvComponent,
+    PostmoderVcComponent
    ],
   entryComponents: [
     CvPreviousComponent,
@@ -213,7 +218,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   providers: [AuthService, GuideService, NewVacancyService, TableVacancyService,
               MoveService, PreviousService, NewcvService, CvListService, CvEditService,
-              VacanciesListService, LetterService, InfoService, CvLanguageService, GlobalRef, ForgotpasswordService],
+              VacanciesListService, LetterService, InfoService, CvLanguageService, GlobalRef, ForgotpasswordService, CheckpostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
