@@ -83,7 +83,7 @@ export class MessageComponent implements OnInit, OnDestroy {
                 this._bEmployer = true; else this._bEmployer = false;
 
               const S = this.loadUser.Avatar_Name;
-              if (S !== '""') {
+              if (S !== '""' && S !== null) {
                 if (typeof S !== 'undefined') {
                   if (S.length > 0) {
                     this.sAvatarPath = this.gr.sUrlAvatarGlobal + S;
