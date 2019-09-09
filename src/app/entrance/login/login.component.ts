@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     });
   }
 
+
   ngOnInit() {
 
     var Res =  this.httpService.loginStorage();
