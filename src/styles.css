@@ -62,8 +62,7 @@ body {
   width: 1170px;
   margin: 0 auto;
   color: rgb(68, 75, 84);
-
-  }
+}
 input, textarea, select, label{
   font-family: "Proxima Nova","Helvetica Neue","sans-serif";
   font-size: 1em;

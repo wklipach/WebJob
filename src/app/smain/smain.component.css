@@ -1,10 +1,42 @@
-.cvorvac{
-  text-align: right;
-  margin-bottom: -10px;
+@media screen and (min-width: 1200px) and (max-width: 4000px) {
+  .cvorvac{
+    text-align: right;
+    margin-bottom: -10px;
+  }
+  label{
+    padding: 0 10px;
+  }
+  input{
+    padding-right: 10px;
+  }
 }
-label{
-  padding: 0 10px;
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .wrapper{
+    width: 99%;
+  }
+  .cvorvac{
+    text-align: right;
+    margin-bottom: -10px;
+  }
+  label{
+    padding: 0 10px;
+  }
+  input{
+    padding-right: 10px;
+  }
 }
-input{
-  padding-right: 10px;
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .wrapper{
+    width: 99%;
+  }
+  .cvorvac{
+    text-align: right;
+    margin: 20px 10px -8px auto;
+  }
+  label{
+    padding: 0 10px;
+  }
+  input{
+    padding-right: 10px;
+  }
 }

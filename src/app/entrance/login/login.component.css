@@ -1,4 +1,4 @@
-@media screen and (min-width: 1200px) {}
+@media screen and (min-width: 1200px) and (max-width: 4000px) {
 
   .box {
     width: 100%;
@@ -123,5 +123,262 @@
     line-height: 2.03;
     margin-top: 30px;
   }
- /* Конец media 1800 */
+}         /* Конец media 1200-4000 */
 
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+
+  .wrapper{
+    width: 99%;
+    margin: 0 auto;
+  }
+  .box {
+    width: 100%;
+    height: auto;
+    margin: 30px auto;
+    color: rgb(68, 75, 84);
+    text-align: left;
+  }
+
+  label {
+    color: #0262d2;
+    text-align: left;
+  }
+
+  .login {
+    display: block;
+    margin-top: 21px;
+    margin-left: 15px;
+  }
+
+  .password {
+    display: block;
+    margin-left: 15px;
+    margin-top: 21px;
+  }
+
+  .inputLogin {
+    display: block;
+    font-size: 14px;
+    text-align: center;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 253px;
+    height: 43px;
+    margin-left: 15px;
+    margin-top: 11px;
+  }
+
+  .inputPassword {
+    display: block;
+    font-size: 14px;
+    text-align: center;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 253px;
+    height: 43px;
+    margin-left: 15px;
+    margin-top: 11px;
+  }
+
+  .btn-signin {
+    display: block;
+    background-color: #0262d2;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    line-height: 2.25;
+    width: 182px;
+    height: 48px;
+    margin-left: 15px;
+    margin-top: 21px;
+  }
+
+  .btn-signin:hover {
+    background-color: #0066cc;
+    font-weight: bold;
+  }
+
+  .btn-signin:active {
+    border-color: #3399ff;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3px;
+    font-weight: bold;
+  }
+
+  .btn-signin:disabled {
+    color: white;
+    background-color: rgb(145, 175, 209);
+  }
+  .forgot-password {
+    display: block;
+    margin-left: 15px;
+    margin-top: 11px;
+  }
+  .register {
+    display: block;
+    margin-left: 15px;
+    margin-top: 12px;
+  }
+  .troublevalidator {
+    border-width: 1px;
+    border-style: solid;
+    border-color: red;
+  }
+  /*
+    .succesfullvalidator {
+      border-width: 1px;
+      border-style: solid;
+      border-color: green;
+    }
+  */
+  .alertWrongLogin {
+    position: absolute;
+    margin-top: -120px;
+    left: 350px;
+    font-size: 1.4em;
+    color: #F74933;
+  }
+}    /* Конец media 768-1199 */
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .wrapper {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 8px;
+  }
+  .top {
+    height: 10px;
+    margin: 15px auto 0;
+    font-size: 24px;
+    color: rgb(68, 75, 84);
+    text-align: left;
+    padding-bottom: 10px;
+    border-top: solid 1px #b7b7b7;
+    line-height: 1.8;
+  }
+  .box {
+    width: 100%;
+    height: auto;
+    margin: 30px auto;
+    color: rgb(68, 75, 84);
+    text-align: left;
+  }
+
+  label {
+    color: #0262d2;
+    text-align: left;
+  }
+
+  .login {
+    display: block;
+    margin-top: 21px;
+    margin-left: 15px;
+  }
+
+  .password {
+    display: block;
+    margin-left: 15px;
+    margin-top: 21px;
+  }
+
+  .inputLogin {
+    display: block;
+    font-size: 14px;
+    text-align: center;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 253px;
+    height: 43px;
+    margin-left: 15px;
+    margin-top: 11px;
+  }
+
+  .inputPassword {
+    display: block;
+    font-size: 14px;
+    text-align: center;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 253px;
+    height: 43px;
+    margin-left: 15px;
+    margin-top: 11px;
+  }
+
+  .btn-signin {
+    display: block;
+    background-color: #0262d2;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    line-height: 2.25;
+    width: 182px;
+    height: 48px;
+    margin-left: 15px;
+    margin-top: 21px;
+  }
+
+  .btn-signin:hover {
+    background-color: #0066cc;
+    font-weight: bold;
+  }
+
+  .btn-signin:active {
+    border-color: #3399ff;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3px;
+    font-weight: bold;
+  }
+
+  .btn-signin:disabled {
+    color: white;
+    background-color: rgb(145, 175, 209);
+  }
+  .forgot-password {
+    display: block;
+    margin-left: 15px;
+    margin-top: 11px;
+  }
+  .register {
+    display: block;
+    margin-left: 15px;
+    margin-top: 12px;
+  }
+  .troublevalidator {
+    border-width: 1px;
+    border-style: solid;
+    border-color: red;
+  }
+  /*
+    .succesfullvalidator {
+      border-width: 1px;
+      border-style: solid;
+      border-color: green;
+    }
+  */
+  .alertWrongLogin {
+    position: absolute;
+    margin-bottom: 120px;
+    font-size: 1.1em;
+    color: #F74933;
+    width: 90%;
+    padding: 0 8px;
+  }
+}   /* Конец media 320-767 */
