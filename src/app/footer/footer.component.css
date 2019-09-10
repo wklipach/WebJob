@@ -1,11 +1,12 @@
 @media screen and (min-width: 1200px) and (max-width: 4000px) {
-  .widht100{
+  .width100{
     background-color: #444b54;
+    width: 100%;
   }
-  .wrapper {
+  .foot {
     width: 1170px;
+    margin: 0 auto;
     height: 90px;
-    margin-top: 30px;
     background-color: #444b54;
     bottom: 0;
   }
@@ -43,15 +44,15 @@
     color: wheat;
     cursor: pointer;
   }
-  .menu-footer{
+  .footer-menu{
     visibility: hidden;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1199px) {
-  .widht100{
+  .width100{
     background-color: #444b54;
   }
-  .wrapper {
+  .foot {
     width: 100%;
     height: 90px;
     margin-top: 30px;
@@ -74,7 +75,7 @@
     position: absolute;
     color: rgb(255, 255, 255);
     margin-left: 15px;
-    bottom: 0;
+    margin-top: 70px;
     font-size: .8em;
   }
   .info {
@@ -92,16 +93,16 @@
     color: wheat;
     cursor: pointer;
   }
-  .menu-footer {
+  .footer-menu{
     visibility: hidden;
   }
+
   @media screen and (min-width: 320px) and (max-width: 767px) {
-    .widht100{
+    .width100{
       background-color: #444b54;
-      width: 100vw;
     }
-    .wrapper {
-      width: 99vw;
+    .foot {
+      width: 100%;
       height: 90px;
       margin-top: 30px;
       background-color: #444b54;
@@ -140,12 +141,14 @@
       color: wheat;
       cursor: pointer;
     }
-    .menu-footer {
-      margin: 0 auto;
-      font-size: 2em;
-    }
-    .menu-footer:hover {
-      cursor: pointer;
+    .footer-menu{
+      width: 100px;
+      height: 100px;
     }
   }
+
+/* .menu-footer:hover {
+       cursor: pointer;
+
+     }  */
 }

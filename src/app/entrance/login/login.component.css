@@ -252,18 +252,12 @@
   .wrapper {
     width: 100%;
     margin: 0 auto;
-    padding: 0 8px;
   }
   .top {
-    height: 10px;
-    margin: 15px auto 0;
-    font-size: 24px;
-    color: rgb(68, 75, 84);
-    text-align: left;
-    padding-bottom: 10px;
-    border-top: solid 1px #b7b7b7;
-    line-height: 1.8;
-  }
+    height: 0;
+    font-size: 1.5em;
+    padding-left: 4px;
+ }
   .box {
     width: 100%;
     height: auto;
@@ -271,12 +265,10 @@
     color: rgb(68, 75, 84);
     text-align: left;
   }
-
   label {
     color: #0262d2;
     text-align: left;
   }
-
   .login {
     display: block;
     margin-top: 21px;
