@@ -1,3 +1,4 @@
+@media screen and (min-width: 1200px) and (max-width: 4000px) {
 .box{
   width: 100%;
   height: auto;
@@ -144,13 +145,330 @@ input{
   line-height: 2.03;
 }
 .alertSuccess{
-  display: inline-block;
   font-size: 1.4em;
   color: #09D42B;
-  width: 530px;
   margin-top: 10px;
-  text-align: center;
-  border: dotted 1px #09D42B;
-  height: 50px;
-  line-height: 2.03;
+
 }
+
+}   /* Конец media 1200-4000 */
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .wrapper{
+    width: 98%;
+  }
+  .box{
+    width: 100%;
+    height: auto;
+    margin: 30px auto;
+    border-top: solid 1px;
+    border-color: #b7b7b7;
+    color: rgb(68, 75, 84);
+    text-align: left;
+  }
+  label{
+    display: block;
+    color: #0262d2;
+    text-align: left;
+    margin-left: 15px;
+    margin-top: 12px;
+  }
+  input{
+    text-align: center;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 228px;
+    height: 43px;
+    display: block;
+    margin-left: 15px;
+    margin-top: 12px;
+  }
+  .userName{
+    display: block;
+    margin-left: 15px;
+    margin-top: 12px;
+  }
+  .inputUserName{
+    display: block;
+    margin-left: 15px;
+    margin-top: 12px;
+  }
+  .email{
+    display: block;
+    margin-left: 15px;
+    margin-top: 12px;
+  }
+  .inputEmail{
+    display: block;
+    margin-left: 15px;
+    margin-top: 12px;
+  }
+  .license{
+    display: inline-block;
+  }
+  .inputLicense{
+    display: inline-block;
+    margin-left: 15px;
+    margin-top: 12px;
+    width: 10px;
+  }
+  .btn-register{
+    display: block;
+    background-color: #0262d2;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    line-height: 2.25;
+    width: 182px;
+    height: 48px;
+    margin-left: 15px;
+    margin-top: 21px;
+  }
+  .btn-register:hover{
+    background-color: #0066cc;
+    font-weight: bold;
+  }
+  .btn-register:active{
+    border-color: #3399ff;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3px;
+    font-weight: bold;
+  }
+  .btn-register:disabled{
+    color: white;
+    background-color: rgb( 145, 175, 209 );
+  }
+  .form-check-input{
+    display: inline-block;
+    width: 20px;
+    margin-left: 15px;
+    vertical-align: top;
+  }
+  .form-check-label{
+    display: inline-block;
+    margin-top: 12px;
+    color: rgb(68, 75, 84);
+    line-height: 2.7;
+  }
+  .rules-link {
+    position: relative;
+    text-decoration: underline;
+    margin-bottom: 1%;
+  }
+  .rules-link:hover {
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .rules-link:hover {
+    color: red;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .licenseText{
+    width:100%;
+    margin: 30px 0 0 1px;
+    padding: 1% 2% 2% 0;
+    white-space: pre-wrap;
+
+  }
+  .alertRegister{
+    color: red;
+  }
+  .alertWrong{
+    display: block;
+    font-size: 1.4em;
+    color: #F74933;
+    width: 530px;
+    margin-top: 10px;
+    text-align: center;
+    border: dotted 1px #f20f4b;
+    height: 50px;
+    line-height: 2.03;
+  }
+  .alertBusyName{
+    display: block;
+    font-size: 1.4em;
+    color: #F74933;
+    width: 530px;
+    margin-top: 10px;
+    text-align: center;
+    border: dotted 1px #f20f4b;
+    height: 50px;
+    line-height: 2.03;
+  }
+  .alertSuccess{
+    display: inline-block;
+    font-size: 1.4em;
+    color: #09D42B;
+    width: 530px;
+    margin-top: 10px;
+    text-align: center;
+    border: dotted 1px #09D42B;
+    height: 50px;
+    line-height: 2.03;
+  }
+}    /* Конец media 768-1199 */
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .container{
+    min-height: calc(100vh - 50px);
+  }
+  .wrapper{
+    width: 98%;
+  }
+  .top {
+    height: 10px;
+    font-size: 1.5em;
+  }
+  .box{
+    width: 100%;
+    height: auto;
+    margin: 30px auto;
+    border-top: solid 1px;
+    border-color: #b7b7b7;
+    color: rgb(68, 75, 84);
+    text-align: left;
+  }
+  label{
+    display: block;
+    color: #0262d2;
+    text-align: left;
+    margin-left: 15px;
+    margin-top: 12px;
+  }
+  input{
+    text-align: center;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 228px;
+    height: 43px;
+    display: block;
+    margin-left: 15px;
+    margin-top: 12px;
+  }
+  .userName{
+    display: block;
+    margin-left: 15px;
+    margin-top: 12px;
+  }
+  .inputUserName{
+    display: block;
+    margin-left: 15px;
+    margin-top: 12px;
+  }
+  .email{
+    display: block;
+    margin-left: 15px;
+    margin-top: 12px;
+  }
+  .inputEmail{
+    display: block;
+    margin-left: 15px;
+    margin-top: 12px;
+  }
+  .license{
+    display: inline-block;
+  }
+  .inputLicense{
+    display: inline-block;
+    margin-left: 15px;
+    margin-top: 12px;
+    width: 10px;
+  }
+  .btn-register{
+    display: block;
+    background-color: #0262d2;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    line-height: 2.25;
+    width: 182px;
+    height: 48px;
+    margin-left: 15px;
+    margin-top: 21px;
+  }
+  .btn-register:hover{
+    background-color: #0066cc;
+    font-weight: bold;
+  }
+  .btn-register:active{
+    border-color: #3399ff;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3px;
+    font-weight: bold;
+  }
+  .btn-register:disabled{
+    color: white;
+    background-color: rgb( 145, 175, 209 );
+  }
+  .form-check-input{
+    display: inline-block;
+    width: 20px;
+    margin-left: 15px;
+    vertical-align: top;
+  }
+   .form-check-label {
+    display: inline-block;
+    font-size: 0.9em;
+    color: rgb(68, 75, 84);
+    line-height: 3;
+    margin-left: 2px;
+  }
+  .rules-link {
+    position: relative;
+    text-decoration: underline;
+    margin-bottom: 1%;
+  }
+  .rules-link:hover {
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .rules-link:hover {
+    color: red;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .licenseText{
+    width:100%;
+    margin: 30px 0 0 1px;
+    padding: 1% 2% 2% 0;
+    white-space: pre-wrap;
+
+  }
+  .alertRegister{
+    display: block;
+    font-size: 1.2em;
+    color: #F74933;
+    margin-top: 10px;
+  }
+  .alertWrong{
+    display: block;
+    font-size: 1.2em;
+    color: #F74933;
+    margin-top: 10px;
+   }
+  .alertBusyName{
+    display: block;
+    font-size: 1.2em;
+    color: #F74933;
+    margin-top: 10px;
+   }
+  .alertSuccess{
+    display: block;
+    font-size: 1.2em;
+    color: #09D42B;
+    margin-top: 10px;
+  }
+}   /* Конец media 320-767 */
