@@ -23,11 +23,13 @@
         <img src="/assets/img/usernull.png" class="img-thumbnail" onclick="document.getElementById('avatar').click()">
       </ng-template>
 
+       <div class="up-clear">
       <input type="file" id="avatar" (change)="onFileChange($event)" #fileInput style="display:none">
 
        <label class="photo-upload" onclick="document.getElementById('avatar').click()">{{'account-employee.zfAE' | translate}}</label>
-
       <label class="clear" (click)="clearFile()">{{'account-employer.clear' | translate}}</label>
+
+        </div>
 
     </form>
   </div>
@@ -180,18 +182,6 @@
      </div>
 
 
-
-
     </div>
-
-   </div>
-
-<!--
-  +"images/UserAvatar/3.jpg
--->
-
       </div>
-
-
-
-
+        </div>

@@ -1,7 +1,9 @@
+@media screen and (min-width: 1200px) and (max-width: 4000px) {
 .leftSide {
   display: inline-block;
+  position: relative;
   width: 15%;
-  height: 966px;
+  height: 60vw;
   margin-top: 30px;
   vertical-align: top;
   border-right: solid 1px #b8b8b8;
@@ -9,7 +11,6 @@
 .rightSide{
   display: inline-block;
   width: 84%;
-  margin-top: 30px;
   vertical-align: top;
 }
 .line{
@@ -21,29 +22,32 @@ label{
   margin: 25px 1px 12px 0;
   color: #0262d2;
 }
-/*
-label:nth-child(1), label:nth-child(2){
-  margin-top: 6px;
-  margin-bottom: 25px;
-}
-*/
-.personal {
-  font-size: 18px;
-  margin-left: 12px;
-  margin-top: 16px;
+.up-clear{
+  position: relative;
+  display: block;
+  margin: 20px auto;
 }
 .photo-upload {
   display: block;
-  font-size: 13px;
-  margin-left: 18px;
-  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
 }
 .photo-upload:hover{
   cursor: pointer;
   text-decoration: underline;
 }
+  .clear{
+    display: block;
+    font-size: 14px;
+    text-align: center;
+  }
+  .clear:hover{
+    cursor: pointer;
+    text-decoration: underline;
+  }
 .img-thumbnail {
   position: relative;
+  display: block;
   border-width: 1px;
   border-color: rgb(188, 188, 188);
   border-style: solid;
@@ -51,14 +55,14 @@ label:nth-child(1), label:nth-child(2){
   background-color: rgb(220, 220, 220);
   width: 103px;
   height: 103px;
-  margin-left: 12px;
-  margin-top: 65px;
+  margin: 0 auto;
 }
 .img-thumbnail:hover{
   cursor: pointer;
 }
 .logotype{
   position: relative;
+  display: block;
   border-width: 1px;
   border-color: rgb(188, 188, 188);
   border-style: solid;
@@ -66,21 +70,10 @@ label:nth-child(1), label:nth-child(2){
   background-color: rgb(220, 220, 220);
   width: 103px;
   height: 103px;
-  margin-left: 12px;
+  margin: 0 auto;
 }
 .logotype:hover{
   cursor: pointer;
-}
-.clear{
-  display: block;
-  position: absolute;
-  margin-left: 36px;
-  margin-top: 30px;
-  font-size: 14px;
-}
-.clear:hover{
-  cursor: pointer;
-  text-decoration: underline;
 }
 .img-lock{
   display: inline-block;
@@ -215,19 +208,16 @@ label:nth-child(1), label:nth-child(2){
   width: 245px;
   height: 43px;
   margin-left: 375px;
-
 }
 .location{
   position: absolute;
  display: inline-block;
   margin-left: 60px;
-
 }
 .zip{
   display: inline-block;
   position: relative;
   margin-left: 375px;
-
 }
 .inputCity{
   position: absolute;
@@ -286,7 +276,6 @@ label:nth-child(1), label:nth-child(2){
   border-style: solid;
   border-radius: 3px;
   background-color: rgb(255, 255, 255);
-
   text-align: center;
   width: 245px;
   height: 43px;
@@ -421,11 +410,855 @@ label:nth-child(1), label:nth-child(2){
 .alertSuccess{
   display: block;
   font-size: 1.4em;
-  color: #09D42B;
+  color: #64b65b;
   width: 530px;
   margin-top: 100px;
   text-align: center;
-  border: dotted 1px #09D42B;
+  border: dotted 1px #64b65b;
   height: 50px;
   line-height: 2.03;
 }
+
+}   /* Конец media 1200-4000 */
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .wrapper{
+    width: 100%;
+  }
+  .top{
+    margin: 10px;
+  }
+  .leftSide {
+    display: inline-block;
+    position: relative;
+    width: 20%;
+    height: 60vw;
+    margin-top: 30px;
+    vertical-align: top;
+    border-right: solid 1px #b8b8b8;
+  }
+  .rightSide{
+    display: inline-block;
+    width: 70%;
+    vertical-align: top;
+  }
+  .line{
+    display: block;
+    width:100%;
+    margin:1px 0;
+  }
+  label{
+    margin: 25px 1px 12px 0;
+    color: #0262d2;
+  }
+  .up-clear{
+    position: relative;
+    display: block;
+    margin: 20px auto;
+  }
+  .photo-upload {
+    display: block;
+    font-size: 14px;
+    text-align: center;
+  }
+  .photo-upload:hover{
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .clear{
+    display: block;
+    font-size: 14px;
+    text-align: center;
+  }
+  .clear:hover{
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .img-thumbnail {
+    position: relative;
+    display: block;
+    border-width: 1px;
+    border-color: rgb(188, 188, 188);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(220, 220, 220);
+    width: 103px;
+    height: 103px;
+    margin: 0 auto;
+  }
+  .img-thumbnail:hover{
+    cursor: pointer;
+  }
+  .logotype{
+    position: relative;
+    display: block;
+    border-width: 1px;
+    border-color: rgb(188, 188, 188);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(220, 220, 220);
+    width: 103px;
+    height: 103px;
+    margin: 0 auto;
+  }
+  .logotype:hover{
+    cursor: pointer;
+  }
+  .img-lock{
+    display: inline-block;
+    margin-left: 35px;
+    margin-top: 60px;
+  }
+  .changePass{
+    position: absolute;
+    display: inline-block;
+    margin-left: 15px;
+    margin-top: 60px;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .changePass:hover{
+    font-weight: bold;
+  }
+  .user-name{
+    position: absolute;
+    display: inline-block;
+    margin-left: 35px;
+  }
+  .inputUserName{
+    position: absolute;
+    text-align: center;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 245px;
+    height: 43px;
+    margin-left: 35px;
+  }
+  .inputUserName:hover{
+    background-color: rgb(240, 240, 240);
+  }
+  .email{
+    position: relative;
+    display: inline-block;
+    margin-left: 340px;
+
+  }
+  .inputEmail{
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 245px;
+    height: 43px;
+    margin-left: 340px;
+
+  }
+  .gender{
+    position: absolute;
+    margin-left: 35px;
+  }
+  .inputGender{
+    position: absolute;
+    display: inline-block;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    text-align: center;
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 246px;
+    height: 43px;
+    margin-left: 35px;
+
+  }
+  .birth{
+    position: relative;
+    display: inline-block;
+    margin-left: 340px;
+
+  }
+  .inputBirth{
+    position: relative;
+    display: inline-block;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    text-align: center;
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 245px;
+    height: 41px;
+    margin-left: 340px;
+    background:none;
+  }
+  .name{
+    position: absolute;
+    display: inline-block;
+    margin-left: 35px;
+
+  }
+  .input-name{
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 245px;
+    height: 43px;
+    margin-left: 35px;
+
+  }
+  .lastname{
+    position: relative;
+    display: inline-block;
+    margin-left: 340px;
+
+  }
+  .inputLastname{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 245px;
+    height: 43px;
+    margin-left: 340px;
+  }
+  .location{
+    position: absolute;
+    display: inline-block;
+    margin-left: 35px;
+  }
+  .zip{
+    display: inline-block;
+    position: relative;
+    margin-left: 340px;
+  }
+  .inputCity{
+    position: absolute;
+    display: inline-block;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    text-align: center;
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 246px;
+    height: 43px;
+    margin-left: 35px;
+  }
+  .inputZip{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 245px;
+    height: 43px;
+    margin-left: 340px;
+  }
+  .home-address{
+    position: relative;
+    display: block;
+    margin-left: 35px;
+  }
+  .inputHomeAddress{
+    display: block;
+    position: relative;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    width: 560px;
+    height: 43px;
+    margin-left: 35px;
+  }
+  .phone{
+    display: block;
+    position: relative;
+    margin-left: 35px;
+  }
+  .inputPhone{
+    display: block;
+    position: relative;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    width: 245px;
+    height: 43px;
+    margin-left: 35px;
+  }
+  .btn-save{
+    display: inline-block;
+    font-size: 18px;
+    background-color: #0262d2;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    line-height: 2.25;
+    width: 228px;
+    height: 48px;
+    margin-top:49px;
+    margin-left: 35px;
+  }
+  .btn-save:hover{
+    background-color: #0066cc;
+    font-weight: bold;
+  }
+  .btn-save:active{
+    border-color: #3399ff;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3px;
+    font-weight: 600;
+  }
+  .btn-cancel{
+    font-size: 18px;
+    width:228px;
+    height: 48px;
+    color: rgb(68, 75, 84);
+    background-color: rgb(255, 255, 255);
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    line-height: 2;
+    text-align: center;
+    margin-top: 49px;
+    margin-left: 20px;
+  }
+  .btn-cancel:hover{
+    background-color: rgb(240, 240, 240);
+    font-weight: bold;
+  }
+  .btn-cancel:active{
+    border-color: #3399ff;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3px;
+    font-weight: bold;
+  }
+  .changepassBox {
+    position: absolute;
+    display: block;
+    border-width: 1px;
+    border-color: rgb(188, 188, 188);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(247, 247, 247);
+    width: 530px;
+    height: 199px;
+    margin: -45px 0 0 30px ;
+    z-index: 10;
+  }
+  .inputNewPassword1 {
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    width: 441px;
+    height: 45px;
+    margin-left: 22px;
+    margin-top: 22px;
+  }
+  .inputNewPassword2 {
+    border-radius: 3px;
+    border-color: black;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    width: 441px;
+    height: 45px;
+    margin-left: 22px;
+    margin-top: 12px;
+  }
+  .btn-newPassword{
+    display: inline-block;
+    position: absolute;
+    font-size: 18px;
+    background-color: #0262d2;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    line-height: 2.25;
+    width: 190px;
+    height: 48px;
+    margin-top:72px;
+    margin-left: -445px;
+  }
+  .btn-newPasswordCancel{
+    display: inline-block;
+    position: absolute;
+    font-size: 18px;
+    background-color: #0262d2;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    line-height: 2.25;
+    width: 190px;
+    height: 48px;
+    margin-top:72px;
+    margin-left: -192px;
+  }
+  .alertWrong{
+    display: block;
+    font-size: 1.4em;
+    color: #F74933;
+    width: 530px;
+    margin-top: 100px;
+    text-align: center;
+    border: dotted 1px #f20f4b;
+    height: 50px;
+    line-height: 2.03;
+  }
+  .alertSuccess{
+    display: block;
+    font-size: 1.4em;
+    color: #64b65b;
+    width: 530px;
+    margin-top: 100px;
+    text-align: center;
+    border: dotted 1px #64b65b;
+    height: 50px;
+    line-height: 2.03;
+  }
+
+}    /* Конец media 768-1199 */
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+   .wrapper{
+    width: 100%;
+  }
+  .top {
+    height: 25px;
+    font-size: 1.5em;
+    margin: 0 0 10px 0;
+    padding-left: 6px;
+    line-height: 0.8;
+    border-bottom: solid 1px #b7b7b7;
+    padding-bottom: 0;
+    border-top: 0;
+  }
+   label{
+    display: block;
+    margin: 20px 0 0 6px;
+    color: #0262d2;
+  }
+   input{
+     display: block;
+     margin-left: 6px;
+   }
+   .up-clear{
+    display: inline-block;
+    width: 45%;
+    height: 100px;
+    padding-left: 30px;
+  }
+  .photo-upload {
+    display: inline-block;
+    font-size: 0.9em;
+    margin: 20px;
+    text-decoration: underline;
+   }
+  .photo-upload:hover{
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .clear{
+    display: block;
+    font-size: 0.9em;
+    margin-left: 20px;
+    margin-top: -1px;
+    text-decoration: underline;
+  }
+  .clear:hover{
+    cursor: pointer;
+    font-weight: bold;
+
+  }
+  .img-thumbnail {
+    position: relative;
+    border-width: 1px;
+    border-color: rgb(188, 188, 188);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(220, 220, 220);
+    width: 103px;
+    height: 103px;
+    margin-left: 12px;
+    margin-top: 65px;
+  }
+  .img-thumbnail:hover{
+    cursor: pointer;
+  }
+  .logotype{
+    position: relative;
+    border: solid 1px rgb(188, 188, 188);
+    border-radius: 3px;
+    background-color: rgb(220, 220, 220);
+    width: 103px;
+    height: 103px;
+    margin-left: 12px;
+    float: left;
+  }
+  .logotype:hover{
+    cursor: pointer;
+  }
+  .img-lock{
+    display: inline-block;
+    margin-left: 60px;
+    margin-top: 60px;
+  }
+  .changePass{
+    position: absolute;
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 60px;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .changePass:hover{
+    font-weight: bold;
+  }
+  .user-name{
+  }
+  .inputUserName{
+    display: block;
+    text-align: center;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 245px;
+    height: 43px;
+    margin-left: 6px;
+  }
+  .inputUserName:hover{
+    background-color: rgb(240, 240, 240);
+  }
+  .email{
+      }
+  .inputEmail{
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 245px;
+    height: 43px;
+    margin-left: 6px;
+  }
+  .gender{
+    position: relative;
+    margin-left: 6px;
+  }
+  .inputGender{
+    position: relative;
+    display: inline-block;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    text-align: center;
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 246px;
+    height: 43px;
+    margin-left: 6px;
+  }
+  .birth{
+    position: relative;
+    display: inline-block;
+    margin-left: 375px;
+  }
+  .inputBirth{
+    position: relative;
+    display: inline-block;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    text-align: center;
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 245px;
+    height: 41px;
+    margin-left: 375px;
+    background:none;
+  }
+  .name{
+    position: absolute;
+    display: inline-block;
+    margin-left: 60px;
+
+  }
+  .input-name{
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 245px;
+    height: 43px;
+    margin-left: 60px;
+
+  }
+  .lastname{
+    position: relative;
+    display: inline-block;
+    margin-left: 375px;
+
+  }
+  .inputLastname{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 245px;
+    height: 43px;
+    margin-left: 375px;
+  }
+  .location{
+    position: absolute;
+    display: inline-block;
+    margin-left: 60px;
+  }
+  .zip{
+    display: inline-block;
+    position: relative;
+    margin-left: 375px;
+  }
+  .inputCity{
+    position: absolute;
+    display: inline-block;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    text-align: center;
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 246px;
+    height: 43px;
+    margin-left: 60px;
+  }
+  .inputZip{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 245px;
+    height: 43px;
+    margin-left: 375px;
+  }
+  .home-address{
+    position: relative;
+    display: block;
+    margin-left: 60px;
+  }
+  .inputHomeAddress{
+    display: block;
+    position: relative;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    width: 560px;
+    height: 43px;
+    margin-left: 60px;
+  }
+  .phone{
+    display: block;
+    position: relative;
+    margin-left: 60px;
+  }
+  .inputPhone{
+    display: block;
+    position: relative;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    width: 245px;
+    height: 43px;
+    margin-left: 60px;
+  }
+  .btn-save{
+    display: inline-block;
+    font-size: 18px;
+    background-color: #0262d2;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    line-height: 2.25;
+    width: 228px;
+    height: 48px;
+    margin-top:49px;
+    margin-left: 60px;
+  }
+  .btn-save:hover{
+    background-color: #0066cc;
+    font-weight: bold;
+  }
+  .btn-save:active{
+    border-color: #3399ff;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3px;
+    font-weight: 600;
+  }
+  .btn-cancel{
+    font-size: 18px;
+    width:228px;
+    height: 48px;
+    color: rgb(68, 75, 84);
+    background-color: rgb(255, 255, 255);
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    line-height: 2;
+    text-align: center;
+    margin-top: 49px;
+    margin-left: 20px;
+  }
+  .btn-cancel:hover{
+    background-color: rgb(240, 240, 240);
+    font-weight: bold;
+  }
+  .btn-cancel:active{
+    border-color: #3399ff;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3px;
+    font-weight: bold;
+  }
+  .changepassBox {
+    position: absolute;
+    display: block;
+    border-width: 1px;
+    border-color: rgb(188, 188, 188);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(247, 247, 247);
+    width: 530px;
+    height: 199px;
+    margin: -45px 0 0 30px ;
+    z-index: 10;
+  }
+  .inputNewPassword1 {
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    width: 441px;
+    height: 45px;
+    margin-left: 22px;
+    margin-top: 22px;
+  }
+  .inputNewPassword2 {
+    border-radius: 3px;
+    border-color: black;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    width: 441px;
+    height: 45px;
+    margin-left: 22px;
+    margin-top: 12px;
+  }
+  .btn-newPassword{
+    display: inline-block;
+    position: absolute;
+    font-size: 18px;
+    background-color: #0262d2;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    line-height: 2.25;
+    width: 190px;
+    height: 48px;
+    margin-top:72px;
+    margin-left: -445px;
+  }
+  .btn-newPasswordCancel{
+    display: inline-block;
+    position: absolute;
+    font-size: 18px;
+    background-color: #0262d2;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    line-height: 2.25;
+    width: 190px;
+    height: 48px;
+    margin-top:72px;
+    margin-left: -192px;
+  }
+  .alertWrong{
+    display: block;
+    font-size: 1.4em;
+    color: #F74933;
+    width: 530px;
+    margin-top: 100px;
+    text-align: center;
+    border: dotted 1px #f20f4b;
+    height: 50px;
+    line-height: 2.03;
+  }
+  .alertSuccess{
+    display: block;
+    font-size: 1.4em;
+    color: #64b65b;
+    width: 530px;
+    margin-top: 100px;
+    text-align: center;
+    border: dotted 1px #64b65b;
+    height: 50px;
+    line-height: 2.03;
+  }
+
+}   /* Конец media 320-767 */

@@ -443,11 +443,11 @@ label{
 .alertSuccess{
   display: block;
   font-size: 1.4em;
-  color: #09D42B;
+  color: #64b65b;
   width: 530px;
   margin-top: 15px;
   text-align: center;
-  border: dotted 1px #09D42B;
+  border: dotted 1px #64b65b;
   height: 50px;
   line-height: 2.03;
 }
