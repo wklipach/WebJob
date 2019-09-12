@@ -855,7 +855,7 @@ label{
   }
   .top {
     height: 25px;
-    font-size: 1.5em;
+    font-size: 1.4em;
     margin: 0 0 10px 0;
     padding-left: 6px;
     line-height: 0.8;
@@ -865,7 +865,6 @@ label{
   }
    label{
     display: block;
-    margin: 20px 0 0 6px;
     color: #0262d2;
   }
    input{
@@ -944,7 +943,10 @@ label{
     font-weight: bold;
   }
   .user-name{
+    margin-top: 20px;
+    margin-left: 6px;
   }
+
   .inputUserName{
     display: block;
     text-align: center;
@@ -956,6 +958,7 @@ label{
     width: 245px;
     height: 43px;
     margin-left: 6px;
+    margin-top: -20px;
   }
   .inputUserName:hover{
     background-color: rgb(240, 240, 240);
@@ -1259,5 +1262,7 @@ label{
     height: 50px;
     line-height: 2.03;
   }
-
+.btn-delete{
+  margin-top:800px;
+}
 }   /* Конец media 320-767 */

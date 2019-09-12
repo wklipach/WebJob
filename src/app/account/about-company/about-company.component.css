@@ -199,7 +199,7 @@ li{
   }
   .top {
     height: 25px;
-    font-size: 1.5em;
+    font-size: 1.4em;
     margin: 0 0 10px 0;
     padding-left: 6px;
     line-height: 0.8;
@@ -211,6 +211,7 @@ li{
     position: relative;
     width: 100%;
     margin: 30px auto;
+    font-size: 0.9em;
   }
   .title{
     position: relative;
@@ -264,7 +265,7 @@ li{
     border-bottom: solid 1px #b7b7b7;
   }
   .value{
-    margin-left:210px;
+    margin-left:130px;
     font-size: 1em;
   }
   .valueTxt{
@@ -291,8 +292,8 @@ li{
   }
   ul{
     display: inline-block;
-    margin-left: 4%;
-  }
+    margin-left: -20px;
+   }
   li{
     list-style: none;
     margin-bottom: 3%;

@@ -126,7 +126,7 @@ label{
   border-color: #054086;
   border-width: 1px;
   border-style: solid;
-  margin-left: 1.36%;
+  margin-left: 15px;
   margin-top: 1%;
 }
 .btn-response:hover{
@@ -152,7 +152,7 @@ label{
   text-align: center;
   width: 156px;
   height: 48px;
-  margin-left: 14.75%;
+  margin-left: 172px;
   margin-top: 1%;
 }
 .btn-favorites:hover{
@@ -184,7 +184,7 @@ label{
   text-align: center;
   width: 160px;
   height: 48px;
-  margin-left: 28.292%;
+  margin-left: 330px;
   vertical-align: middle;
   margin-top: 1.02%;
 }
@@ -426,7 +426,7 @@ label{
     border-color: #054086;
     border-width: 1px;
     border-style: solid;
-    margin-left: 1.36%;
+    margin-left: 15px;
     margin-top: 1%;
   }
   .btn-response:hover{
@@ -452,7 +452,7 @@ label{
     text-align: center;
     width: 156px;
     height: 48px;
-    margin-left: 14.75%;
+    margin-left: 172px;
     margin-top: 1%;
   }
   .btn-favorites:hover{
@@ -484,7 +484,7 @@ label{
     text-align: center;
     width: 160px;
     height: 48px;
-    margin-left: 28.292%;
+    margin-left: 330px;
     vertical-align: middle;
     margin-top: 1.02%;
   }
@@ -709,7 +709,7 @@ label{
     font-size: 0.9em;
     color: rgb(68, 75, 84);
     border-top: solid 1px #b7b7b7;
-    padding-bottom: 5%;
+    padding-bottom: 1%;
   }
   .title{
     position: relative;
@@ -805,8 +805,8 @@ label{
     font-size: .9em;
   }
   .btn-response {
-    display: inline-block;
-    position: absolute;
+    display: block;
+    position: relative;
     border-radius: 3px;
     background-color: #0262d2;
     width: 155px;
@@ -815,8 +815,7 @@ label{
     border-color: #054086;
     border-width: 1px;
     border-style: solid;
-    margin-left: 1.36%;
-    margin-top: 1%;
+    margin: 10px auto;
   }
   .btn-response:hover{
     background-color: #0066cc;
@@ -830,8 +829,8 @@ label{
     font-weight: bold;
   }
   .btn-favorites{
-    display: inline-block;
-    position: absolute;
+    display: block;
+    position: relative;
     color: rgb(255, 255, 255);
     background-color: #0262d2;
     border-color: #054086;
@@ -841,8 +840,7 @@ label{
     text-align: center;
     width: 156px;
     height: 48px;
-    margin-left: 14.75%;
-    margin-top: 1%;
+    margin: 10px auto;
   }
   .btn-favorites:hover{
     background-color:#0066cc;
@@ -862,7 +860,7 @@ label{
     z-index: 5;
   }
   .btn-hide{
-    display: inline-block;
+    display: block;
     position: relative;
     color: #484d55;
     background-color: #ffffff;
@@ -873,9 +871,7 @@ label{
     text-align: center;
     width: 160px;
     height: 48px;
-    margin-left: 28.292%;
-    vertical-align: middle;
-    margin-top: 1.02%;
+    margin: 10px auto;
   }
   .crossed-eye{
     vertical-align: middle;
@@ -903,8 +899,8 @@ label{
   */
 
   .btn-response-disabled {
-    display: inline-block;
-    position: absolute;
+    display: block;
+    position: relative;
     border-radius: 3px;
     background-color: rgb( 145, 175, 209 );
     width: 155px;
@@ -913,8 +909,7 @@ label{
     border-color: #054086;
     border-width: 1px;
     border-style: solid;
-    margin-top: 1%;
-    margin-left: 15px;
+    margin: 10px auto;
   }
   .btn-response-disabled:hover{
 
@@ -928,8 +923,8 @@ label{
 
   }
   .btn-favorites-disabled{
-    display: inline-block;
-    position: absolute;
+    display: block;
+    position: relative;
     color: rgb(255, 255, 255);
     background-color: rgb( 145, 175, 209 );
     border-color: #054086;
@@ -939,8 +934,7 @@ label{
     text-align: center;
     width: 156px;
     height: 48px;
-    margin-top: 1%;
-    margin-left: 172px;
+    margin: 10px auto;
   }
   .btn-favorites-disabled:hover{
     background-color: rgb( 145, 175, 209 );
@@ -959,8 +953,8 @@ label{
     z-index: 5;
   }
   .btn-hide-disabled{
-    display: inline-block;
-    position: absolute;
+    display: block;
+    position: relative;
     color: #484d55;
     background-color: #ffffff;
     border-color: rgb(242, 97, 0);
@@ -970,9 +964,7 @@ label{
     text-align: center;
     width: 165px;
     height: 48px;
-    margin-top: 1%;
-    margin-left: 330px;
-    vertical-align: middle;
+    margin: 10px auto;
   }
   .crossed-eye{
     vertical-align: middle;
@@ -983,7 +975,6 @@ label{
   }
   .buttons{
     position: relative;
-    display: block;
-    margin-bottom: 2%;
+    margin: 30px auto;
   }
-}   /* Конец media 320-767 */
+}   /* Конец media 320-767  */
