@@ -17,6 +17,7 @@
   </div>
 
 
+    <div class="logo-line">
     <div *ngIf="this.descrDataVacancy">
 
 <!--
@@ -44,14 +45,16 @@
 
     <div class="company-name" [title]="'vacancy-description.moveinfo77' | translate" (click)="clickAboutCompany()">{{this.sEmployerName}}</div>
 
+    </div>
+
        <label>{{'allValue.jobresponsibilities' | translate}}</label>
        <div class="jobFunction">
-         <div *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy.JobFunction }}</div>
+         <div class="desc-txt" *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy.JobFunction }}</div>
        </div>
 
     <label>{{'allValue.requirements' | translate}}</label>
     <div class="vacancyRequirements">
-      <div *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy.VacancyRequirements }}</div>
+      <div class="desc-txt" *ngIf="this.descrDataVacancy">{{ this.descrDataVacancy.VacancyRequirements }}</div>
     </div>
 
 

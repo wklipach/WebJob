@@ -1,11 +1,9 @@
+@media screen and (min-width: 1200px) and (max-width: 4000px) {
 .box{
   position: relative;
   width: 100%;
   height: auto;
   margin: 30px auto;
-  border-bottom: solid 1px #b7b7b7;
-  color: rgb(68, 75, 84);
-  text-align: left;
 }
 .title{
   position: relative;
@@ -49,10 +47,11 @@
 }
 .logotype{
   float: left;
+  height: 120px;
 }
 .company-name{
   position: relative;
-  font-size: 30px;
+  font-size: 1.5em;
   color: rgb(68, 75, 84);
   text-align: center;
   overflow: hidden;
@@ -64,9 +63,8 @@
 }
 .valueTxt{
   display: block;
-  width:100%;
-  margin: 30px 0 0 1px;
-  padding: 1% 2% 2% 0;
+  width:95%;
+  margin: 0  auto;
   white-space: pre-wrap;
 }
 .description{
@@ -93,8 +91,210 @@ li{
   list-style: none;
   margin-bottom: 3%;
 }
+}   /* Конец media 1200-4000 */
 
-/*
-display: inline-block;
-  font-size: 17px;
-*/
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .wrapper{
+    width: 98%;
+    margin: 0 auto;
+  }
+  .top{
+    margin: 10px;
+  }
+  .box{
+    position: relative;
+    width: 100%;
+    margin: 30px auto;
+  }
+  .title{
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    color: #0262d2;
+    width: 98%;
+    margin-top: 6px;
+    margin-left:15px;
+  }
+  .city-line{
+    position: relative;
+    display: block;
+  }
+  .city{
+    text-align: left;
+    width:12px;
+    margin-top: 13px;
+    margin-left: 15px;
+    overflow: hidden;
+  }
+  .city-name{
+    display: inline-block;
+    font-size: 18px;
+    font-family: "Proxima Nova","sans-serif";
+    color: rgb(68, 75, 84);
+    text-align: left;
+    margin-top: 13px;
+    margin-left: 42px;
+    overflow: hidden;
+  }
+  .address{
+    display: inline-block;
+    font-size: 18px;
+    color: rgb(68, 75, 84);
+    text-align: left;
+    margin-top: 13px;
+    margin-left: 82px;
+    overflow: hidden;
+  }
+  .logotype{
+    float: left;
+    height: 100px;
+  }
+  .company-name{
+    position: relative;
+    font-size: 1.5em;
+    color: rgb(68, 75, 84);
+    text-align: center;
+    overflow: hidden;
+    border-bottom: solid 1px #b7b7b7;
+  }
+  .value{
+    margin-left:210px;
+    font-size: 1em;
+  }
+  .valueTxt{
+    display: block;
+    width:95%;
+    margin: 0  auto;
+    white-space: pre-wrap;
+  }
+  .description{
+    display: inline-block;
+    position: absolute;
+    color: rgb(68, 75, 84);
+    width: 1130px;
+    height: 80px;
+    text-align: left;
+    margin-top: 143px;
+    margin-left: 15px;
+    padding-right: 20px;
+    overflow: auto;
+  }
+  label{
+    position: absolute;
+    color: #0262d2;
+  }
+  ul{
+    display: inline-block;
+    margin-left: 4%;
+  }
+  li{
+    list-style: none;
+    margin-bottom: 3%;
+  }
+}    /* Конец media 768-1199 */
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .wrapper{
+    width: 100%;
+  }
+  .top {
+    height: 25px;
+    font-size: 1.5em;
+    margin: 0 0 10px 0;
+    padding-left: 6px;
+    line-height: 0.8;
+    border-bottom: solid 1px #b7b7b7;
+    padding-bottom: 0;
+    border-top: 0;
+  }
+  .box{
+    position: relative;
+    width: 100%;
+    margin: 30px auto;
+  }
+  .title{
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    color: #0262d2;
+    width: 98%;
+    margin-top: 6px;
+    margin-left:15px;
+  }
+  .city-line{
+    position: relative;
+    display: block;
+  }
+  .city{
+    text-align: left;
+    width:12px;
+    margin-top: 13px;
+    margin-left: 15px;
+    overflow: hidden;
+  }
+  .city-name{
+    display: inline-block;
+    font-size: 18px;
+    font-family: "Proxima Nova","sans-serif";
+    color: rgb(68, 75, 84);
+    text-align: left;
+    margin-top: 13px;
+    margin-left: 42px;
+    overflow: hidden;
+  }
+  .address{
+    display: inline-block;
+    font-size: 18px;
+    color: rgb(68, 75, 84);
+    text-align: left;
+    margin-top: 13px;
+    margin-left: 82px;
+    overflow: hidden;
+  }
+  .logotype{
+    float: left;
+    height: 100px;
+  }
+  .company-name{
+    position: relative;
+    font-size: 1.5em;
+    color: rgb(68, 75, 84);
+    text-align: center;
+    overflow: hidden;
+    border-bottom: solid 1px #b7b7b7;
+  }
+  .value{
+    margin-left:210px;
+    font-size: 1em;
+  }
+  .valueTxt{
+    display: block;
+    width:95%;
+    margin: 0  auto;
+    white-space: pre-wrap;
+  }
+  .description{
+    display: inline-block;
+    position: absolute;
+    color: rgb(68, 75, 84);
+    width: 1130px;
+    height: 80px;
+    text-align: left;
+    margin-top: 143px;
+    margin-left: 15px;
+    padding-right: 20px;
+    overflow: auto;
+  }
+  label{
+    position: absolute;
+    color: #0262d2;
+  }
+  ul{
+    display: inline-block;
+    margin-left: 4%;
+  }
+  li{
+    list-style: none;
+    margin-bottom: 3%;
+  }
+}   /* Конец media 320-767 */

@@ -898,7 +898,6 @@ label{
   .clear:hover{
     cursor: pointer;
     font-weight: bold;
-
   }
   .img-thumbnail {
     position: relative;

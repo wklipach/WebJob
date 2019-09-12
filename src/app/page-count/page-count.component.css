@@ -1,6 +1,5 @@
-
 ul{
-  width: 400px;
+  width: 100%;
 }
 li{
   display: inline-block;
@@ -18,11 +17,3 @@ li:hover{
 .normalNumeral{
   color: #484c54;
 }
-/*
-
- div:focus {
- background-color: #00A4E4;
-
- border-radius: 3px;
- border-style: double;
- border-color: red; */
