@@ -296,7 +296,7 @@ input{
   }
   .top {
     height: 10px;
-    font-size: 1.5em;
+    font-size: 1.4em;
     margin: 0;
     padding-top: 0;
     border-top: solid 0;
@@ -431,18 +431,20 @@ input{
     display: block;
     font-size: 1.2em;
     color: #F74933;
+    margin-left: 15px;
 
   }
   .alertBusyName{
     display: block;
     font-size: 1.2em;
     color: #F74933;
-
+    margin-left: 15px;
   }
   .alertSuccess{
     font-size: 1.2em;
     color: #64b65b;
     margin-top: 10px;
+    margin-left: 15px;
 
   }
 }   /* Конец media 320-767 */

@@ -128,7 +128,7 @@
 @media screen and (min-width: 768px) and (max-width: 1199px) {
 
   .wrapper{
-    width: 99%;
+    width: 100%;
     margin: 0 auto;
   }
   .box {
@@ -254,9 +254,14 @@
     margin: 0 auto;
   }
   .top {
-    height: 0;
-    font-size: 1.5em;
-    padding-left: 4px;
+    height: 25px;
+    font-size: 1.4em;
+    margin: 0 0 10px 0;
+    padding-left: 6px;
+    line-height: 0.8;
+    border-bottom: solid 1px #b7b7b7;
+    padding-bottom: 0;
+    border-top: 0;
  }
   .box {
     width: 100%;
