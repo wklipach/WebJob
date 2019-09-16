@@ -1,5 +1,4 @@
 @media screen and (min-width: 1200px) and (max-width: 4000px) {
-
   .userName{
   visibility: hidden;
 }
@@ -146,7 +145,7 @@ label{
   line-height: 2.25;
   width: 190px;
   height: 48px;
-  margin-top:100px;
+  margin-top: 700px;
   margin-left: 6px;
 }
 .btn-invitation:hover{
@@ -178,7 +177,7 @@ label{
   line-height: 2.25;
   width: 190px;
   height: 48px;
-  margin-top:100px;
+  margin-top: 700px;
   margin-left: 6px;
 }
 .alertWrong{
@@ -344,7 +343,7 @@ label{
     line-height: 2.25;
     width: 160px;
     height: 48px;
-    margin:100px auto;
+    margin:700px auto;
 
   }
   .btn-invitation:hover{
@@ -376,7 +375,7 @@ label{
     line-height: 2.25;
     width: 160px;
     height: 48px;
-    margin:100px auto;
+    margin:700px auto;
   }
   .alertWrong{
     display: block;
@@ -467,7 +466,7 @@ label{
   }
   .position{
     display: block;
-    font-size: 1.2em;
+    font-size: 1.15em;
     height: auto;
     max-width: 96%;
     margin-top: 6px;
@@ -543,10 +542,9 @@ label{
     border-style: solid;
     border-radius: 3px;
     line-height: 2.25;
-    width: 190px;
-    height: 48px;
-    margin-top:100px;
-    margin-left: 6px;
+    width: 120px;
+    height: 42px;
+    right: 4%;
   }
   .btn-invitation:hover{
     background-color: #0066cc;
@@ -575,10 +573,9 @@ label{
     border-style: solid;
     border-radius: 3px;
     line-height: 2.25;
-    width: 190px;
-    height: 48px;
-    margin-top:100px;
-    margin-left: 6px;
+    width: 120px;
+    height: 42px;
+    right: 4%;
   }
   .alertWrong{
     display: block;

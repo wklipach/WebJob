@@ -47,7 +47,12 @@
   .footer-menu{
     visibility: hidden;
   }
-}
+  .img-back{
+    visibility: hidden;
+  }
+
+}        /* Конец media 1200-4000 */
+
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   .width100 {
     background-color: #444b54;
@@ -102,7 +107,12 @@
   .footer-menu {
     visibility: hidden;
   }
-}
+  .img-back{
+    visibility: hidden;
+  }
+
+}    /* Конец media 768-1199 */
+
   @media screen and (min-width: 320px) and (max-width: 767px) {
     .width100{
       background-color: #444b54;
@@ -164,4 +174,11 @@
     ul:hover {
       display: block;
     }
-  }
+   .img-back{
+      position: absolute;
+     cursor: pointer;
+      margin: 8px 50%;
+    }
+
+
+  }        /* Конец media 320-767 */

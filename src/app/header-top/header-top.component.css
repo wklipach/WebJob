@@ -8,7 +8,6 @@
     border-bottom: solid 1px;
     border-color: #b7b7b7;
   }
-
   .user{
     position: absolute;
     display: inline-block;
@@ -830,7 +829,7 @@
   }
   form{
     position: relative;
-    width: 100%;
+    width: 98%;
     top: 50px;
   }
   .langLetters{
@@ -862,9 +861,9 @@
     border-style: solid;
     border-radius: 3px;
     background-color: white;
-    width: calc(100% - 80px);
+    width: calc(98% - 60px);
     height: 48px;
-    margin-left: 2px;
+    margin: 0 4px;
     padding-left: 15px;
     vertical-align: top;
 
@@ -904,7 +903,7 @@
     text-align: center;
     height: 28px;
     line-height: 0.6;
-    width: 99%;
+    width: 97%;
     position: absolute;
     left: 1px;
     top: 55px;

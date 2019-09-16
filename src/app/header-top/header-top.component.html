@@ -10,7 +10,6 @@
       <div class="menu-header">{{ htUserName }}&nbsp;&nbsp;<img src="/assets/img/arrow-down.png" [title]="'header-top.ompHT' | translate" [alt]="'header-top.mpHT' | translate">
       </div>
 
-
       <ul class="user-list">
         <a routerLink="/account-employer" routerLinkActive="active" *ngIf = "bEmployer"><li>{{ 'header-top.profile' | translate }}</li></a>
         <a routerLink="/new-vacancy" routerLinkActive="active" *ngIf = "bEmployer"><li>{{'allValue.newvc' | translate}}</li></a>
@@ -27,7 +26,6 @@
         <span class="logout" (click)="favorites()"  *ngIf = "!bEmployer"><li>{{'home.ts.sVacF' | translate}}</li></span>
         <span class="logout" (click)="logout()"><li>{{'header-top.exitHT' | translate}}</li></span>
       </ul>
-
 
     <div class="cor">
     <a routerLink="/messages" routerLinkActive="active">
