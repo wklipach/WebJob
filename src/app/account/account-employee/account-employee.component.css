@@ -1,41 +1,36 @@
 @media screen and (min-width: 1200px) and (max-width: 4000px) {
-.leftSide {
-  display: inline-block;
-  position: relative;
-  width: 15%;
-  height: 60vw;
-  margin-top: 30px;
-  vertical-align: top;
-  border-right: solid 1px #b8b8b8;
-}
-.rightSide{
-  display: inline-block;
-  width: 84%;
-  vertical-align: top;
-}
-.line{
-  display: block;
-  width:100%;
-  margin:1px 0;
-}
-label{
-  margin: 25px 1px 12px 0;
-  color: #0262d2;
-}
-.up-clear{
-  position: relative;
-  display: block;
-  margin: 20px auto;
-}
-.photo-upload {
-  display: block;
-  font-size: 14px;
-  text-align: center;
-}
-.photo-upload:hover{
-  cursor: pointer;
-  text-decoration: underline;
-}
+  .leftSide {
+    display: inline-block;
+    position: relative;
+    width: 15%;
+    height: 60vw;
+    margin-top: 30px;
+    vertical-align: top;
+    border-right: solid 1px #b8b8b8;
+  }
+  .rightSide{
+    display: inline-block;
+    width: 84%;
+    vertical-align: top;
+  }
+  label{
+    margin: 25px 1px 12px 0;
+    color: #0262d2;
+  }
+  .up-clear{
+    position: relative;
+    display: block;
+    margin: 20px auto;
+  }
+  .photo-upload {
+    display: block;
+    font-size: 14px;
+    text-align: center;
+  }
+  .photo-upload:hover{
+    cursor: pointer;
+    text-decoration: underline;
+  }
   .clear{
     display: block;
     font-size: 14px;
@@ -45,379 +40,379 @@ label{
     cursor: pointer;
     text-decoration: underline;
   }
-.img-thumbnail {
-  position: relative;
-  display: block;
-  border-width: 1px;
-  border-color: rgb(188, 188, 188);
-  border-style: solid;
-  border-radius: 3px;
-  background-color: rgb(220, 220, 220);
-  width: 103px;
-  height: 103px;
-  margin: 0 auto;
-}
-.img-thumbnail:hover{
-  cursor: pointer;
-}
-.logotype{
-  position: relative;
-  display: block;
-  border-width: 1px;
-  border-color: rgb(188, 188, 188);
-  border-style: solid;
-  border-radius: 3px;
-  background-color: rgb(220, 220, 220);
-  width: 103px;
-  height: 103px;
-  margin: 0 auto;
-}
-.logotype:hover{
-  cursor: pointer;
-}
-.img-lock{
-  display: inline-block;
-  margin-left: 60px;
-  margin-top: 60px;
-}
-.changePass{
-  position: absolute;
-  display: inline-block;
-  margin-left: 20px;
-  margin-top: 60px;
-  cursor: pointer;
-  text-decoration: underline;
-}
-.changePass:hover{
-  font-weight: bold;
-}
+  .img-thumbnail {
+    position: relative;
+    display: block;
+    border-width: 1px;
+    border-color: rgb(188, 188, 188);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(220, 220, 220);
+    width: 103px;
+    height: 103px;
+    margin: 0 auto;
+  }
+  .img-thumbnail:hover{
+    cursor: pointer;
+  }
+  .logotype{
+    position: relative;
+    display: block;
+    border-width: 1px;
+    border-color: rgb(188, 188, 188);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(220, 220, 220);
+    width: 103px;
+    height: 103px;
+    margin: 0 auto;
+  }
+  .logotype:hover{
+    cursor: pointer;
+  }
+  .img-lock{
+    display: inline-block;
+    margin-left: 60px;
+    margin-top: 60px;
+  }
+  .changePass{
+    position: absolute;
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 60px;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .changePass:hover{
+    font-weight: bold;
+  }
 
-.user-name{
-  position: absolute;
-  display: inline-block;
-  margin-left: 60px;
-}
-.inputUserName{
-  position: absolute;
-  text-align: center;
-  border-width: 1px;
-  border-color: rgb(68, 75, 84);
-  border-style: solid;
-  border-radius: 3px;
-  background-color: rgb(255, 255, 255);
-  width: 245px;
-  height: 43px;
-  margin-left: 60px;
-}
-.inputUserName:hover{
-  background-color: rgb(240, 240, 240);
-}
-.email{
-  position: relative;
-  display: inline-block;
-  margin-left: 375px;
+  .user-name{
+    position: absolute;
+    display: inline-block;
+    margin-left: 60px;
+  }
+  .inputUserName{
+    position: absolute;
+    text-align: center;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 245px;
+    height: 43px;
+    margin-left: 60px;
+  }
+  .inputUserName:hover{
+    background-color: rgb(240, 240, 240);
+  }
+  .email{
+    position: relative;
+    display: inline-block;
+    margin-left: 375px;
 
-}
-.inputEmail{
-  display: inline-block;
-  position: relative;
-  text-align: center;
-  border-width: 1px;
-  border-color: rgb(68, 75, 84);
-  border-style: solid;
-  border-radius: 3px;
-  background-color: rgb(255, 255, 255);
-  width: 245px;
-  height: 43px;
-  margin-left: 375px;
+  }
+  .inputEmail{
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 245px;
+    height: 43px;
+    margin-left: 375px;
 
-}
-.gender{
-  position: absolute;
-  margin-left: 60px;
-}
-.inputGender{
-  position: absolute;
-  display: inline-block;
-  border-width: 1px;
-  border-color: rgb(68, 75, 84);
-  text-align: center;
-  border-style: solid;
-  border-radius: 3px;
-  background-color: rgb(255, 255, 255);
-  width: 246px;
-  height: 43px;
-  margin-left: 60px;
+  }
+  .gender{
+    position: absolute;
+    margin-left: 60px;
+  }
+  .inputGender{
+    position: absolute;
+    display: inline-block;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    text-align: center;
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 246px;
+    height: 43px;
+    margin-left: 60px;
 
-}
-.birth{
- position: relative;
-  display: inline-block;
-  margin-left: 375px;
+  }
+  .birth{
+    position: relative;
+    display: inline-block;
+    margin-left: 375px;
 
-}
-.inputBirth{
-  position: relative;
-  display: inline-block;
-  border-width: 1px;
-  border-color: rgb(68, 75, 84);
-  text-align: center;
-  border-style: solid;
-  border-radius: 3px;
-  background-color: rgb(255, 255, 255);
-  width: 245px;
-  height: 41px;
-  margin-left: 375px;
-  background:none;
-}
-.name{
-  position: absolute;
-  display: inline-block;
-  margin-left: 60px;
+  }
+  .inputBirth{
+    position: relative;
+    display: inline-block;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    text-align: center;
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 245px;
+    height: 41px;
+    margin-left: 375px;
+    background:none;
+  }
+  .name{
+    position: absolute;
+    display: inline-block;
+    margin-left: 60px;
 
-}
-.input-name{
-  position: absolute;
-  display: inline-block;
-  text-align: center;
-  border-width: 1px;
-  border-color: rgb(68, 75, 84);
-  border-style: solid;
-  border-radius: 3px;
-  background-color: rgb(255, 255, 255);
-  width: 245px;
-  height: 43px;
-  margin-left: 60px;
+  }
+  .input-name{
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 245px;
+    height: 43px;
+    margin-left: 60px;
 
-}
-.lastname{
-  position: relative;
-  display: inline-block;
-  margin-left: 375px;
+  }
+  .lastname{
+    position: relative;
+    display: inline-block;
+    margin-left: 375px;
 
-}
-.inputLastname{
-  position: relative;
-  display: inline-block;
-  text-align: center;
-  border-width: 1px;
-  border-color: rgb(68, 75, 84);
-  border-style: solid;
-  border-radius: 3px;
-  background-color: rgb(255, 255, 255);
-  width: 245px;
-  height: 43px;
-  margin-left: 375px;
-}
-.location{
-  position: absolute;
- display: inline-block;
-  margin-left: 60px;
-}
-.zip{
-  display: inline-block;
-  position: relative;
-  margin-left: 375px;
-}
-.inputCity{
-  position: absolute;
-  display: inline-block;
-  border-width: 1px;
-  border-color: rgb(68, 75, 84);
-  text-align: center;
-  border-style: solid;
-  border-radius: 3px;
-  background-color: rgb(255, 255, 255);
-  width: 246px;
-  height: 43px;
-  margin-left: 60px;
-}
-.inputZip{
-  position: relative;
-  display: inline-block;
-  text-align: center;
-  border-width: 1px;
-  border-color: rgb(68, 75, 84);
-  border-style: solid;
-  border-radius: 3px;
-  background-color: rgb(255, 255, 255);
-  width: 245px;
-  height: 43px;
-  margin-left: 375px;
-}
-.home-address{
-  position: relative;
-  display: block;
-  margin-left: 60px;
-}
-.inputHomeAddress{
-  display: block;
-  position: relative;
-  border-width: 1px;
-  border-color: rgb(68, 75, 84);
-  border-style: solid;
-  border-radius: 3px;
-  background-color: rgb(255, 255, 255);
-  text-align: center;
-  width: 560px;
-  height: 43px;
-  margin-left: 60px;
-}
-.phone{
-  display: block;
-  position: relative;
-  margin-left: 60px;
-}
-.inputPhone{
-  display: block;
-  position: relative;
-  border-width: 1px;
-  border-color: rgb(68, 75, 84);
-  border-style: solid;
-  border-radius: 3px;
-  background-color: rgb(255, 255, 255);
-  text-align: center;
-  width: 245px;
-  height: 43px;
-  margin-left: 60px;
-}
-.btn-save{
-  display: inline-block;
-  font-size: 18px;
-  background-color: #0262d2;
-  color: rgb(255, 255, 255);
-  border-color: #054086;
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 3px;
-  line-height: 2.25;
-  width: 228px;
-  height: 48px;
-  margin-top:49px;
-  margin-left: 60px;
-}
-.btn-save:hover{
-  background-color: #0066cc;
-  font-weight: bold;
-}
-.btn-save:active{
-  border-color: #3399ff;
-  border-style: solid;
-  border-width: 3px;
-  border-radius: 3px;
-  font-weight: 600;
-}
-.btn-cancel{
-  font-size: 18px;
-  width:228px;
-  height: 48px;
-  color: rgb(68, 75, 84);
-  background-color: rgb(255, 255, 255);
-  border-width: 1px;
-  border-color: rgb(68, 75, 84);
-  border-style: solid;
-  border-radius: 3px;
-  line-height: 2;
-  text-align: center;
-  margin-top: 49px;
-  margin-left: 20px;
-}
-.btn-cancel:hover{
-  background-color: rgb(240, 240, 240);
-  font-weight: bold;
-}
-.btn-cancel:active{
-  border-color: #3399ff;
-  border-style: solid;
-  border-width: 3px;
-  border-radius: 3px;
-  font-weight: bold;
-}
-.changepassBox {
-  position: absolute;
-  display: block;
-  border-width: 1px;
-  border-color: rgb(188, 188, 188);
-  border-style: solid;
-  border-radius: 3px;
-  background-color: rgb(247, 247, 247);
-  width: 530px;
-  height: 199px;
-  margin: -45px 0 0 30px ;
-  z-index: 10;
-}
-.inputNewPassword1 {
-  text-align: center;
-  background-color: rgb(255, 255, 255);
-  width: 441px;
-  height: 45px;
-  margin-left: 22px;
-  margin-top: 22px;
-}
-.inputNewPassword2 {
-  border-radius: 3px;
-  border-color: black;
-  text-align: center;
-  background-color: rgb(255, 255, 255);
-  width: 441px;
-  height: 45px;
-  margin-left: 22px;
-  margin-top: 12px;
-}
-.btn-newPassword{
-  display: inline-block;
-  position: absolute;
-  font-size: 18px;
-  background-color: #0262d2;
-  color: rgb(255, 255, 255);
-  border-color: #054086;
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 3px;
-  line-height: 2.25;
-  width: 190px;
-  height: 48px;
-  margin-top:72px;
-  margin-left: -445px;
-}
-.btn-newPasswordCancel{
-  display: inline-block;
-  position: absolute;
-  font-size: 18px;
-  background-color: #0262d2;
-  color: rgb(255, 255, 255);
-  border-color: #054086;
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 3px;
-  line-height: 2.25;
-  width: 190px;
-  height: 48px;
-  margin-top:72px;
-  margin-left: -192px;
-}
-.alertWrong{
-  display: block;
-  font-size: 1.4em;
-  color: #F74933;
-  width: 530px;
-  margin-top: 100px;
-  text-align: center;
-  border: dotted 1px #f20f4b;
-  height: 50px;
-  line-height: 2.03;
-}
-.alertSuccess{
-  display: block;
-  font-size: 1.4em;
-  color: #64b65b;
-  width: 530px;
-  margin-top: 100px;
-  text-align: center;
-  border: dotted 1px #64b65b;
-  height: 50px;
-  line-height: 2.03;
-}
+  }
+  .inputLastname{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 245px;
+    height: 43px;
+    margin-left: 375px;
+  }
+  .location{
+    position: absolute;
+    display: inline-block;
+    margin-left: 60px;
+  }
+  .zip{
+    display: inline-block;
+    position: relative;
+    margin-left: 375px;
+  }
+  .inputCity{
+    position: absolute;
+    display: inline-block;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    text-align: center;
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 246px;
+    height: 43px;
+    margin-left: 60px;
+  }
+  .inputZip{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 245px;
+    height: 43px;
+    margin-left: 375px;
+  }
+  .home-address{
+    position: relative;
+    display: block;
+    margin-left: 60px;
+  }
+  .inputHomeAddress{
+    display: block;
+    position: relative;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    width: 560px;
+    height: 43px;
+    margin-left: 60px;
+  }
+  .phone{
+    display: block;
+    position: relative;
+    margin-left: 60px;
+  }
+  .inputPhone{
+    display: block;
+    position: relative;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    width: 245px;
+    height: 43px;
+    margin-left: 60px;
+  }
+  .btn-save{
+    display: inline-block;
+    font-size: 18px;
+    background-color: #0262d2;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    line-height: 2.25;
+    width: 228px;
+    height: 48px;
+    margin-top:49px;
+    margin-left: 60px;
+  }
+  .btn-save:hover{
+    background-color: #0066cc;
+    font-weight: bold;
+  }
+  .btn-save:active{
+    border-color: #3399ff;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3px;
+    font-weight: 600;
+  }
+  .btn-cancel{
+    font-size: 18px;
+    width:228px;
+    height: 48px;
+    color: rgb(68, 75, 84);
+    background-color: rgb(255, 255, 255);
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    line-height: 2;
+    text-align: center;
+    margin-top: 49px;
+    margin-left: 20px;
+  }
+  .btn-cancel:hover{
+    background-color: rgb(240, 240, 240);
+    font-weight: bold;
+  }
+  .btn-cancel:active{
+    border-color: #3399ff;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3px;
+    font-weight: bold;
+  }
+  .changepassBox {
+    position: absolute;
+    display: block;
+    border-width: 1px;
+    border-color: rgb(188, 188, 188);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(247, 247, 247);
+    width: 530px;
+    height: 199px;
+    margin: -45px 0 0 30px ;
+    z-index: 10;
+  }
+  .inputNewPassword1 {
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    width: 441px;
+    height: 45px;
+    margin-left: 22px;
+    margin-top: 22px;
+  }
+  .inputNewPassword2 {
+    border-radius: 3px;
+    border-color: black;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    width: 441px;
+    height: 45px;
+    margin-left: 22px;
+    margin-top: 12px;
+  }
+  .btn-newPassword{
+    display: inline-block;
+    position: absolute;
+    font-size: 18px;
+    background-color: #0262d2;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    line-height: 2.25;
+    width: 190px;
+    height: 48px;
+    margin-top:72px;
+    margin-left: -445px;
+  }
+  .btn-newPasswordCancel{
+    display: inline-block;
+    position: absolute;
+    font-size: 18px;
+    background-color: #0262d2;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    line-height: 2.25;
+    width: 190px;
+    height: 48px;
+    margin-top:72px;
+    margin-left: -192px;
+  }
+  .alertWrong{
+    display: block;
+    font-size: 1.4em;
+    color: #F74933;
+    width: 530px;
+    margin-top: 100px;
+    text-align: center;
+    border: dotted 1px #f20f4b;
+    height: 50px;
+    line-height: 2.03;
+  }
+  .alertSuccess{
+    display: block;
+    font-size: 1.4em;
+    color: #64b65b;
+    width: 530px;
+    margin-top: 100px;
+    text-align: center;
+    border: dotted 1px #64b65b;
+    height: 50px;
+    line-height: 2.03;
+  }
 
 }   /* Конец media 1200-4000 */
 
@@ -441,11 +436,6 @@ label{
     display: inline-block;
     width: 70%;
     vertical-align: top;
-  }
-  .line{
-    display: block;
-    width:100%;
-    margin:1px 0;
   }
   label{
     margin: 25px 1px 12px 0;
@@ -850,7 +840,7 @@ label{
 }    /* Конец media 768-1199 */
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
-   .wrapper{
+  .wrapper{
     width: 100%;
   }
   .top {
@@ -863,26 +853,46 @@ label{
     padding-bottom: 0;
     border-top: 0;
   }
-   label{
+  .leftSide {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    margin-top: 10px;
+    vertical-align: top;
+  }
+  .rightSide{
+    display: block;
+    width: 100%;
+    background-color: gold;
+  }
+  .line{
+    position: relative;
+    background-color: aqua;
+  }
+  label{
+    position: absolute;
     display: block;
     color: #0262d2;
+    margin: 20px 0 10px 10px ;
   }
-   input{
-     display: block;
-     margin-left: 6px;
-   }
-   .up-clear{
+  input{
+    display: block;
+    margin-left: 10px;
+  }
+  .up-clear{
     display: inline-block;
     width: 45%;
     height: 100px;
     padding-left: 30px;
+
   }
   .photo-upload {
+    position: relative;
     display: inline-block;
     font-size: 0.9em;
     margin: 20px;
     text-decoration: underline;
-   }
+  }
   .photo-upload:hover{
     cursor: pointer;
     font-weight: bold;
@@ -943,12 +953,12 @@ label{
     font-weight: bold;
   }
   .user-name{
-    margin-top: 20px;
-    margin-left: 6px;
+    position: relative;
   }
 
   .inputUserName{
     display: block;
+    position: absolute;
     text-align: center;
     border-width: 1px;
     border-color: rgb(68, 75, 84);
@@ -957,14 +967,13 @@ label{
     background-color: rgb(255, 255, 255);
     width: 245px;
     height: 43px;
-    margin-left: 6px;
-    margin-top: -20px;
   }
   .inputUserName:hover{
     background-color: rgb(240, 240, 240);
   }
   .email{
-      }
+    margin-top: 60px;
+  }
   .inputEmail{
     display: inline-block;
     position: relative;
@@ -976,14 +985,14 @@ label{
     background-color: rgb(255, 255, 255);
     width: 245px;
     height: 43px;
-    margin-left: 6px;
+    margin-left: 10px;
+    margin-top: 90px;
   }
   .gender{
     position: relative;
-    margin-left: 6px;
   }
   .inputGender{
-    position: relative;
+    position: absolute;
     display: inline-block;
     border-width: 1px;
     border-color: rgb(68, 75, 84);
@@ -993,12 +1002,12 @@ label{
     background-color: rgb(255, 255, 255);
     width: 246px;
     height: 43px;
-    margin-left: 6px;
+    margin-left: 10px;
   }
   .birth{
-    position: relative;
-    display: inline-block;
-    margin-left: 375px;
+    position: absolute;
+    display: block;
+    margin-top: 55px;
   }
   .inputBirth{
     position: relative;
@@ -1011,18 +1020,17 @@ label{
     background-color: rgb(255, 255, 255);
     width: 245px;
     height: 41px;
-    margin-left: 375px;
     background:none;
+    margin-top: 80px;
   }
   .name{
-    position: absolute;
-    display: inline-block;
-    margin-left: 60px;
-
+    position: relative;
+    display: block;
+    margin-top: 10px;
   }
   .input-name{
     position: absolute;
-    display: inline-block;
+    display: block;
     text-align: center;
     border-width: 1px;
     border-color: rgb(68, 75, 84);
@@ -1032,17 +1040,16 @@ label{
     width: 245px;
     height: 43px;
     margin-left: 60px;
-
+    margin-top: 800px;
   }
   .lastname{
-    position: relative;
-    display: inline-block;
-    margin-left: 375px;
-
+    position: absolute;
+    display: block;
+    margin-top: 60px;
   }
   .inputLastname{
     position: relative;
-    display: inline-block;
+    display: block;
     text-align: center;
     border-width: 1px;
     border-color: rgb(68, 75, 84);
@@ -1051,17 +1058,20 @@ label{
     background-color: rgb(255, 255, 255);
     width: 245px;
     height: 43px;
-    margin-left: 375px;
+    margin-left: 10px;
+    margin-top: -800px;
   }
   .location{
     position: absolute;
-    display: inline-block;
+    display: block;
     margin-left: 60px;
+    margin-top: 800px;
   }
   .zip{
-    display: inline-block;
+    display: block;
     position: relative;
     margin-left: 375px;
+    margin-top: 800px;
   }
   .inputCity{
     position: absolute;
@@ -1075,6 +1085,7 @@ label{
     width: 246px;
     height: 43px;
     margin-left: 60px;
+    margin-top: 800px;
   }
   .inputZip{
     position: relative;
@@ -1088,11 +1099,13 @@ label{
     width: 245px;
     height: 43px;
     margin-left: 375px;
+    margin-top: 800px;
   }
   .home-address{
     position: relative;
     display: block;
     margin-left: 60px;
+    margin-top: 800px;
   }
   .inputHomeAddress{
     display: block;
@@ -1106,11 +1119,13 @@ label{
     width: 560px;
     height: 43px;
     margin-left: 60px;
+    margin-top: 800px;
   }
   .phone{
     display: block;
     position: relative;
     margin-left: 60px;
+    margin-top: 800px;
   }
   .inputPhone{
     display: block;
@@ -1124,6 +1139,7 @@ label{
     width: 245px;
     height: 43px;
     margin-left: 60px;
+    margin-top: 800px;
   }
   .btn-save{
     display: inline-block;
@@ -1262,7 +1278,7 @@ label{
     height: 50px;
     line-height: 2.03;
   }
-.btn-delete{
-  margin-top:800px;
-}
+  .btn-delete{
+    margin-top:800px;
+  }
 }   /* Конец media 320-767 */
