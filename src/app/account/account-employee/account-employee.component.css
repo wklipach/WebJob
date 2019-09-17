@@ -413,7 +413,41 @@
     height: 50px;
     line-height: 2.03;
   }
-
+  .deleteAccount{
+    position: absolute;
+    display: inline-block;
+    margin-left: 416px;
+    margin-top: -30px;
+    cursor: pointer;
+    text-decoration: underline;
+    color: red;
+  }
+  .deleteAccountPopup{
+    position: absolute;
+    width: 700px;
+    height: 150px;
+    border: dotted 1px red;
+    background-color: red;
+    line-height: 3.2;
+    margin-top: -40px;
+    margin-left: 20px;
+    z-index: 9999;
+  }
+  .question{
+    display: block;
+    position: relative;
+    color: white;
+    font-size: 1.4em;
+    text-align: center;
+    margin-top: 15px;
+  }
+.btn-delete-acc{
+  margin-left: 39px;
+}
+.btn-cancel-acc{
+  float: right;
+  margin-right: 39px;
+}
 }   /* Конец media 1200-4000 */
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
@@ -836,7 +870,41 @@
     height: 50px;
     line-height: 2.03;
   }
-
+  .deleteAccount{
+    position: absolute;
+    display: inline-block;
+    margin-left: 376px;
+    margin-top: -30px;
+    cursor: pointer;
+    text-decoration: underline;
+    color: red;
+  }
+  .deleteAccountPopup{
+    position: absolute;
+    width: 700px;
+    height: 150px;
+    border: dotted 1px red;
+    background-color: red;
+    line-height: 3.2;
+    margin-top: -40px;
+    margin-left: -110px;
+    z-index: 9999;
+  }
+  .question{
+    display: block;
+    position: relative;
+    color: white;
+    font-size: 1.4em;
+    text-align: center;
+    margin-top: 15px;
+  }
+  .btn-delete-acc{
+    margin-left: 39px;
+  }
+  .btn-cancel-acc{
+    float: right;
+    margin-right: 39px;
+  }
 }    /* Конец media 768-1199 */
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
@@ -856,35 +924,15 @@
   .leftSide {
     position: relative;
     width: 100%;
-    height: 100px;
+    height: 110px;
     margin-top: 10px;
     vertical-align: top;
-  }
-  .rightSide{
-    display: block;
-    width: 100%;
-    background-color: gold;
-  }
-  .line{
-    position: relative;
-    background-color: aqua;
-  }
-  label{
-    position: absolute;
-    display: block;
-    color: #0262d2;
-    margin: 20px 0 10px 10px ;
-  }
-  input{
-    display: block;
-    margin-left: 10px;
   }
   .up-clear{
     display: inline-block;
     width: 45%;
     height: 100px;
     padding-left: 30px;
-
   }
   .photo-upload {
     position: relative;
@@ -910,15 +958,13 @@
   }
   .img-thumbnail {
     position: relative;
-    border-width: 1px;
-    border-color: rgb(188, 188, 188);
-    border-style: solid;
+    border: solid 1px rgb(188, 188, 188);
     border-radius: 3px;
     background-color: rgb(220, 220, 220);
     width: 103px;
     height: 103px;
     margin-left: 12px;
-    margin-top: 65px;
+    float: left;
   }
   .img-thumbnail:hover{
     cursor: pointer;
@@ -936,26 +982,27 @@
   .logotype:hover{
     cursor: pointer;
   }
-  .img-lock{
-    display: inline-block;
-    margin-left: 60px;
-    margin-top: 60px;
+  .rightSide{
+    display: block;
+    width: 100%;
+    background-color: gold;
   }
-  .changePass{
+  .line{
+    }
+  label{
     position: absolute;
-    display: inline-block;
-    margin-left: 20px;
-    margin-top: 60px;
-    cursor: pointer;
-    text-decoration: underline;
+    display: block;
+    color: #0262d2;
+    margin-left: 15px;
   }
-  .changePass:hover{
-    font-weight: bold;
+  input{
+    display: block;
+    margin-left: 15px;
   }
   .user-name{
-    position: relative;
+    position: absolute;
+    margin-top: 2px;
   }
-
   .inputUserName{
     display: block;
     position: absolute;
@@ -965,14 +1012,15 @@
     border-style: solid;
     border-radius: 3px;
     background-color: rgb(255, 255, 255);
-    width: 245px;
+    width: 80%;
     height: 43px;
+    margin-top: 30px;
   }
   .inputUserName:hover{
     background-color: rgb(240, 240, 240);
   }
   .email{
-    margin-top: 60px;
+    margin-top: 80px;
   }
   .inputEmail{
     display: inline-block;
@@ -983,10 +1031,10 @@
     border-style: solid;
     border-radius: 3px;
     background-color: rgb(255, 255, 255);
-    width: 245px;
+    width: 80%;
     height: 43px;
     margin-left: 10px;
-    margin-top: 90px;
+    margin-top: 100px;
   }
   .gender{
     position: relative;
@@ -1000,7 +1048,7 @@
     border-style: solid;
     border-radius: 3px;
     background-color: rgb(255, 255, 255);
-    width: 246px;
+    width: 80%;
     height: 43px;
     margin-left: 10px;
   }
@@ -1018,7 +1066,7 @@
     border-style: solid;
     border-radius: 3px;
     background-color: rgb(255, 255, 255);
-    width: 245px;
+    width: 80%;
     height: 41px;
     background:none;
     margin-top: 80px;
@@ -1029,7 +1077,6 @@
     margin-top: 10px;
   }
   .input-name{
-    position: absolute;
     display: block;
     text-align: center;
     border-width: 1px;
@@ -1037,15 +1084,15 @@
     border-style: solid;
     border-radius: 3px;
     background-color: rgb(255, 255, 255);
-    width: 245px;
+    width: 80%;
     height: 43px;
-    margin-left: 60px;
-    margin-top: 800px;
+    margin-left: 10px;
+    margin-top: 2px;
   }
   .lastname{
     position: absolute;
     display: block;
-    margin-top: 60px;
+    margin-top: 50px;
   }
   .inputLastname{
     position: relative;
@@ -1056,22 +1103,36 @@
     border-style: solid;
     border-radius: 3px;
     background-color: rgb(255, 255, 255);
-    width: 245px;
+    width: 80%;
     height: 43px;
     margin-left: 10px;
-    margin-top: -800px;
-  }
-  .location{
-    position: absolute;
-    display: block;
-    margin-left: 60px;
-    margin-top: 800px;
+    margin-top: 18px;
   }
   .zip{
     display: block;
     position: relative;
-    margin-left: 375px;
-    margin-top: 800px;
+    margin-left: 10px;
+    margin-top: 8px;
+  }
+  .inputZip{
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 80%;
+    height: 43px;
+    margin-left: 10px;
+    margin-top: 8px;
+  }
+  .location{
+    position: absolute;
+    display: block;
+    margin-left: 10px;
+    margin-top: 80px;
   }
   .inputCity{
     position: absolute;
@@ -1082,30 +1143,16 @@
     border-style: solid;
     border-radius: 3px;
     background-color: rgb(255, 255, 255);
-    width: 246px;
+    width: 80%;
     height: 43px;
-    margin-left: 60px;
-    margin-top: 800px;
-  }
-  .inputZip{
-    position: relative;
-    display: inline-block;
-    text-align: center;
-    border-width: 1px;
-    border-color: rgb(68, 75, 84);
-    border-style: solid;
-    border-radius: 3px;
-    background-color: rgb(255, 255, 255);
-    width: 245px;
-    height: 43px;
-    margin-left: 375px;
-    margin-top: 800px;
+    margin-left: 10px;
+    margin-top: 80px;
   }
   .home-address{
     position: relative;
     display: block;
-    margin-left: 60px;
-    margin-top: 800px;
+    margin-left: 10px;
+    margin-top: 130px;
   }
   .inputHomeAddress{
     display: block;
@@ -1116,16 +1163,16 @@
     border-radius: 3px;
     background-color: rgb(255, 255, 255);
     text-align: center;
-    width: 560px;
+    width: 80%;
     height: 43px;
-    margin-left: 60px;
-    margin-top: 800px;
+    margin-left: 10px;
+    margin-top: 8px;
   }
   .phone{
     display: block;
     position: relative;
-    margin-left: 60px;
-    margin-top: 800px;
+    margin-left: 10px;
+    margin-top: 10px;
   }
   .inputPhone{
     display: block;
@@ -1136,10 +1183,26 @@
     border-radius: 3px;
     background-color: rgb(255, 255, 255);
     text-align: center;
-    width: 245px;
+    width: 80%;
     height: 43px;
+    margin-left: 10px;
+    margin-top: 18px;
+  }
+  .img-lock{
+    display: inline-block;
     margin-left: 60px;
-    margin-top: 800px;
+    margin-top: 30px;
+  }
+  .changePass{
+    position: absolute;
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 30px;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .changePass:hover{
+    font-weight: bold;
   }
   .btn-save{
     display: inline-block;
@@ -1151,10 +1214,11 @@
     border-style: solid;
     border-radius: 3px;
     line-height: 2.25;
-    width: 228px;
+    width: 35%;
     height: 48px;
     margin-top:49px;
-    margin-left: 60px;
+    margin-left: 15px;
+    margin-bottom: 10px;
   }
   .btn-save:hover{
     background-color: #0066cc;
@@ -1169,7 +1233,7 @@
   }
   .btn-cancel{
     font-size: 18px;
-    width:228px;
+    width:35%;
     height: 48px;
     color: rgb(68, 75, 84);
     background-color: rgb(255, 255, 255);
@@ -1180,7 +1244,7 @@
     line-height: 2;
     text-align: center;
     margin-top: 49px;
-    margin-left: 20px;
+    margin-left: 45px;
   }
   .btn-cancel:hover{
     background-color: rgb(240, 240, 240);
@@ -1280,5 +1344,40 @@
   }
   .btn-delete{
     margin-top:800px;
+  }
+  .deleteAccount{
+    position: absolute;
+    display: inline-block;
+    margin-left: 416px;
+    margin-top: -30px;
+    cursor: pointer;
+    text-decoration: underline;
+    color: red;
+  }
+  .deleteAccountPopup{
+    position: absolute;
+    width: 700px;
+    height: 150px;
+    border: dotted 1px red;
+    background-color: red;
+    line-height: 3.2;
+    margin-top: -40px;
+    margin-left: 20px;
+    z-index: 9999;
+  }
+  .question{
+    display: block;
+    position: relative;
+    color: white;
+    font-size: 1.4em;
+    text-align: center;
+    margin-top: 15px;
+  }
+  .btn-delete-acc{
+    margin-left: 39px;
+  }
+  .btn-cancel-acc{
+    float: right;
+    margin-right: 39px;
   }
 }   /* Конец media 320-767 */

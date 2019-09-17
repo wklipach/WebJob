@@ -135,6 +135,18 @@
 
       <label class="changePass" (click)="accessPassword()"> {{'allValue.changepwd2' | translate}} </label>
 
+
+      <!-- Удаление аккаунта -->
+      <div *ngIf="!this.bDeleteAll">
+      <div class="deleteAccount" (click)="this.bDeleteAll=true">Удалить аккаунт</div>
+    </div>
+      <div class="deleteAccountPopup" *ngIf="this.bDeleteAll">
+        <span class="question">Удалить аккаунт? Все данные будут безвозвратно утеряны !</span>
+        <button type="button" class="btn-delete-acc" (click)="DeleteAll()">{{'allValue.delete' | translate}}</button>
+        <button type="button" class="btn-cancel-acc" (click)="this.bDeleteAll=false">{{'allValue.Cancel' | translate}}</button>
+      </div>
+      <!-- Удаление аккаунта конец -->
+
       <ng-container *ngIf="bShowChangePassword">
         <div class="changepassBox">
           <input (click)="onClearInputError()" type="password" class="inputNewPassword1" id="inputNewPassword1" formControlName="inputNewPassword1" [placeholder]="'account-employee.vvnewpwdAE' | translate">
@@ -170,18 +182,6 @@
     <div class="line">
     <button type="submit" class="btn-save" (click)="savecv()" [disabled]="accountEmployeeForm.invalid" >{{'allValue.save' | translate}}</button>
     <button type="submit" class="btn-cancel" (click)="back()">{{'allValue.Cancel' | translate}}</button>
-
-
-      <div *ngIf="!this.bDeleteAll">
-        <button type="button" class="btn-delete" (click)="this.bDeleteAll=true">Удалить</button>
-      </div>
-      <div class="deleteCorrespondence" *ngIf="this.bDeleteAll">
-        <span class="question">Удалить все данные безвозвратно?</span>
-        <button type="button" class="btn-cancel" (click)="DeleteAll()">Удалить</button>
-        <button type="button" class="btn-delete" (click)="this.bDeleteAll=false">Отмена</button>
-
-     </div>
-
 
     </div>
       </div>
