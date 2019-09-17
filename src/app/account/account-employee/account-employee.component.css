@@ -125,7 +125,6 @@
     width: 245px;
     height: 43px;
     margin-left: 375px;
-
   }
   .gender{
     position: absolute;
@@ -143,13 +142,11 @@
     width: 246px;
     height: 43px;
     margin-left: 60px;
-
   }
   .birth{
     position: relative;
     display: inline-block;
     margin-left: 375px;
-
   }
   .inputBirth{
     position: relative;
@@ -169,7 +166,6 @@
     position: absolute;
     display: inline-block;
     margin-left: 60px;
-
   }
   .input-name{
     position: absolute;
@@ -183,13 +179,11 @@
     width: 245px;
     height: 43px;
     margin-left: 60px;
-
   }
   .lastname{
     position: relative;
     display: inline-block;
     margin-left: 375px;
-
   }
   .inputLastname{
     position: relative;
@@ -795,7 +789,7 @@
     background-color: rgb(247, 247, 247);
     width: 530px;
     height: 199px;
-    margin: -45px 0 0 30px ;
+    margin: -85px 0 0 30px ;
     z-index: 10;
   }
   .inputNewPassword1 {
@@ -1265,15 +1259,17 @@
     border-style: solid;
     border-radius: 3px;
     background-color: rgb(247, 247, 247);
-    width: 530px;
+    width: 98%;
     height: 199px;
-    margin: -45px 0 0 30px ;
+    margin-top: -195px;
+    margin-left: auto;
+    margin-right: auto;
     z-index: 10;
   }
   .inputNewPassword1 {
     text-align: center;
     background-color: rgb(255, 255, 255);
-    width: 441px;
+    width: 90%;
     height: 45px;
     margin-left: 22px;
     margin-top: 22px;
@@ -1283,7 +1279,7 @@
     border-color: black;
     text-align: center;
     background-color: rgb(255, 255, 255);
-    width: 441px;
+    width: 90%;
     height: 45px;
     margin-left: 22px;
     margin-top: 12px;
@@ -1302,7 +1298,7 @@
     width: 190px;
     height: 48px;
     margin-top:72px;
-    margin-left: -445px;
+    margin-left: 45px;
   }
   .btn-newPasswordCancel{
     display: inline-block;
@@ -1317,8 +1313,8 @@
     line-height: 2.25;
     width: 190px;
     height: 48px;
-    margin-top:72px;
-    margin-left: -192px;
+    margin-top: 12px;
+    margin-left: 392px;
   }
   .alertWrong{
     display: block;
