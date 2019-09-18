@@ -3,7 +3,7 @@
     display: inline-block;
     position: relative;
     width: 15%;
-    height: 60vw;
+    height: 75vh;
     margin-top: 30px;
     vertical-align: top;
     border-right: solid 1px #b8b8b8;
@@ -310,6 +310,7 @@
     text-align: center;
     margin-top: 49px;
     margin-left: 20px;
+    margin-bottom: 20px;
   }
   .btn-cancel:hover{
     background-color: rgb(240, 240, 240);
@@ -455,7 +456,7 @@
     display: inline-block;
     position: relative;
     width: 20%;
-    height: 60vw;
+    height: 75vh;
     margin-top: 30px;
     vertical-align: top;
     border-right: solid 1px #b8b8b8;
@@ -932,7 +933,7 @@
     position: relative;
     display: inline-block;
     font-size: 0.9em;
-    margin: 20px;
+    margin-left: 20px;
     text-decoration: underline;
   }
   .photo-upload:hover{
@@ -943,7 +944,7 @@
     display: block;
     font-size: 0.9em;
     margin-left: 20px;
-    margin-top: -1px;
+    margin-top: 15px;
     text-decoration: underline;
   }
   .clear:hover{
@@ -979,7 +980,6 @@
   .rightSide{
     display: block;
     width: 100%;
-    background-color: gold;
   }
   .line{
     }
@@ -991,11 +991,11 @@
   }
   input{
     display: block;
-    margin-left: 15px;
+    margin-left: 10px;
   }
   .user-name{
     position: absolute;
-    margin-top: 2px;
+
   }
   .inputUserName{
     display: block;
@@ -1008,13 +1008,13 @@
     background-color: rgb(255, 255, 255);
     width: 80%;
     height: 43px;
-    margin-top: 30px;
+    margin-top: 28px;
   }
   .inputUserName:hover{
     background-color: rgb(240, 240, 240);
   }
   .email{
-    margin-top: 80px;
+    margin-top: 81px;
   }
   .inputEmail{
     display: inline-block;
@@ -1028,10 +1028,11 @@
     width: 80%;
     height: 43px;
     margin-left: 10px;
-    margin-top: 100px;
+    margin-top: 109px;
   }
   .gender{
     position: relative;
+    margin-top: 7px;
   }
   .inputGender{
     position: absolute;
@@ -1042,14 +1043,15 @@
     border-style: solid;
     border-radius: 3px;
     background-color: rgb(255, 255, 255);
-    width: 80%;
+    width: 81.5%;
     height: 43px;
     margin-left: 10px;
+    margin-top: 10px;
   }
   .birth{
     position: absolute;
     display: block;
-    margin-top: 55px;
+    margin-top: 59px;
   }
   .inputBirth{
     position: relative;
@@ -1060,10 +1062,10 @@
     border-style: solid;
     border-radius: 3px;
     background-color: rgb(255, 255, 255);
-    width: 80%;
+    width: 79%;
     height: 41px;
     background:none;
-    margin-top: 80px;
+    margin-top: 88px;
   }
   .name{
     position: relative;
@@ -1081,12 +1083,12 @@
     width: 80%;
     height: 43px;
     margin-left: 10px;
-    margin-top: 2px;
+    margin-top: 9px;
   }
   .lastname{
     position: absolute;
     display: block;
-    margin-top: 50px;
+    margin-top: 67px;
   }
   .inputLastname{
     position: relative;
@@ -1100,7 +1102,7 @@
     width: 80%;
     height: 43px;
     margin-left: 10px;
-    margin-top: 18px;
+    margin-top: 41px;
   }
   .zip{
     display: block;
@@ -1126,7 +1128,7 @@
     position: absolute;
     display: block;
     margin-left: 10px;
-    margin-top: 80px;
+    margin-top: 83px;
   }
   .inputCity{
     position: absolute;
@@ -1140,13 +1142,13 @@
     width: 80%;
     height: 43px;
     margin-left: 10px;
-    margin-top: 80px;
+    margin-top: 90px;
   }
   .home-address{
     position: relative;
     display: block;
     margin-left: 10px;
-    margin-top: 130px;
+    margin-top: 141px;
   }
   .inputHomeAddress{
     display: block;
@@ -1180,7 +1182,7 @@
     width: 80%;
     height: 43px;
     margin-left: 10px;
-    margin-top: 18px;
+    margin-top: 10px;
   }
   .img-lock{
     display: inline-block;
@@ -1259,11 +1261,10 @@
     border-style: solid;
     border-radius: 3px;
     background-color: rgb(247, 247, 247);
-    width: 98%;
+    width: 90%;
     height: 199px;
-    margin-top: -195px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: -100px;
+    margin-left: 2%;
     z-index: 10;
   }
   .inputNewPassword1 {
@@ -1271,8 +1272,8 @@
     background-color: rgb(255, 255, 255);
     width: 90%;
     height: 45px;
-    margin-left: 22px;
-    margin-top: 22px;
+    margin-left: 3.5%;
+    margin-top: 12px;
   }
   .inputNewPassword2 {
     border-radius: 3px;
@@ -1281,13 +1282,13 @@
     background-color: rgb(255, 255, 255);
     width: 90%;
     height: 45px;
-    margin-left: 22px;
+    margin-left: 3.5%;
     margin-top: 12px;
   }
   .btn-newPassword{
     display: inline-block;
     position: absolute;
-    font-size: 18px;
+    font-size: 0.96em;
     background-color: #0262d2;
     color: rgb(255, 255, 255);
     border-color: #054086;
@@ -1295,15 +1296,15 @@
     border-style: solid;
     border-radius: 3px;
     line-height: 2.25;
-    width: 190px;
+    width: 50%;
     height: 48px;
-    margin-top:72px;
-    margin-left: 45px;
+    margin-top:12px;
+    margin-left: 3.5%;
   }
   .btn-newPasswordCancel{
     display: inline-block;
     position: absolute;
-    font-size: 18px;
+    font-size: 0.96em;
     background-color: #0262d2;
     color: rgb(255, 255, 255);
     border-color: #054086;
@@ -1311,55 +1312,54 @@
     border-style: solid;
     border-radius: 3px;
     line-height: 2.25;
-    width: 190px;
+    width: 30%;
     height: 48px;
     margin-top: 12px;
-    margin-left: 392px;
+    margin-left: 64.5%;
   }
   .alertWrong{
     display: block;
-    font-size: 1.4em;
+    font-size: 1.1em;
     color: #F74933;
-    width: 530px;
-    margin-top: 100px;
+    margin-top: -178px;
     text-align: center;
-    border: dotted 1px #f20f4b;
     height: 50px;
-    line-height: 2.03;
-  }
+    line-height: 2.8;
+    font-weight: bold;
+    background-color: white;
+   }
+
   .alertSuccess{
     display: block;
-    font-size: 1.4em;
+    font-size: 1.1em;
     color: #64b65b;
-    width: 530px;
-    margin-top: 100px;
+    left: -25px;
+    margin-top: -178px;
     text-align: center;
-    border: dotted 1px #64b65b;
     height: 50px;
-    line-height: 2.03;
+    line-height: 2.8;
+    font-weight: bold;
+    background-color: white;
   }
-  .btn-delete{
-    margin-top:800px;
-  }
-  .deleteAccount{
+   .deleteAccount{
     position: absolute;
     display: inline-block;
-    margin-left: 416px;
-    margin-top: -30px;
+    left: -7%;
+    margin-top: -10px;
+    font-size: .8em;
     cursor: pointer;
-    text-decoration: underline;
     color: red;
+    transform: rotate(90deg);
   }
   .deleteAccountPopup{
     position: absolute;
-    width: 700px;
-    height: 150px;
+    font-size: 0.9em;
+    width: 90%;
+    height: 20vh;
     border: dotted 1px red;
     background-color: red;
-    line-height: 3.2;
-    margin-top: -40px;
-    margin-left: 20px;
-    z-index: 9999;
+    margin-top: -28px;
+    margin-left: 12px;
   }
   .question{
     display: block;
@@ -1367,7 +1367,7 @@
     color: white;
     font-size: 1.4em;
     text-align: center;
-    margin-top: 15px;
+    margin: 15px auto;
   }
   .btn-delete-acc{
     margin-left: 39px;

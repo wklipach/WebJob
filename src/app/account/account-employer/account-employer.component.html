@@ -24,10 +24,12 @@
         <img src="/assets/img/no-photo.png" class="img-thumbnail" onclick="document.getElementById('avatar').click()">
       </ng-template>
 
+      <div class="up-clear">
       <input type="file" id="avatar" (change)="onFileChange($event)" #fileInput style="display:none">
 
       <label class="upload-logo" onclick="document.getElementById('avatar').click()">{{'account-employer.loadlogo' | translate}}</label>
       <label class="clear" (click)="clearFile()">{{'account-employer.clear' | translate}}</label>
+  </div>
 
     </form>
   </div>
@@ -140,6 +142,20 @@
       <img class="img-lock" src="/assets/img/lock.png" [alt]="'allValue.changepwd' | translate" [title]="'allValue.changepwd' | translate">
       <label class="changePass" (click)="accessPassword()"> {{'allValue.changepwd2' | translate}} </label>
 
+    <!-- Удаление аккаунта -->
+
+      <div *ngIf="!this.bDeleteAll">
+        <div class="deleteAccount" (click)="this.bDeleteAll=true">Удалить аккаунт</div>
+      </div>
+
+      <div class="deleteAccountPopup" *ngIf="this.bDeleteAll">
+        <span class="question">Удалить аккаунт? Все данные будут безвозвратно утеряны !</span>
+        <button type="button" class="btn-delete-acc" (click)="DeleteAll()">{{'allValue.delete' | translate}}</button>
+        <button type="button" class="btn-cancel-acc" (click)="this.bDeleteAll=false">{{'allValue.Cancel' | translate}}</button>
+      </div>
+
+      <!--  Удаление аккаунта конец -->
+
 
       <ng-container *ngIf="bShowChangePassword">
         <div class="changepassBox">
@@ -193,14 +209,7 @@
       <button type="submit" class="btn-cancel" (click)="back()">{{'allValue.Cancel' | translate}}</button>
 
 
-      <div *ngIf="!this.bDeleteAll">
-        <button type="button" class="btn-cancel" (click)="this.bDeleteAll=true">Удалить</button>
-      </div>
-      <div class="deleteCorrespondence" *ngIf="this.bDeleteAll">
-        <span class="question">Удалить все данные безвозвратно?</span>
-        <button type="button" class="btn-cancel" (click)="DeleteAll()">Удалить</button>
-        <button type="button" class="btn-delete" (click)="this.bDeleteAll=false">Отмена</button>
-      </div>
+
 
 
 
