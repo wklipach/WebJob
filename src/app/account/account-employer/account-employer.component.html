@@ -85,7 +85,6 @@
         <!-- закончили обработку почтовых ошибок -->
       </div>
 
-
       <label class="name">{{'allValue.compname' | translate}}</label>
       <input type="text" class="input-name" id="inputName" formControlName="inputName" [placeholder]="'allValue.compname' | translate" maxlength="100">
 
@@ -143,7 +142,6 @@
       <label class="changePass" (click)="accessPassword()"> {{'allValue.changepwd2' | translate}} </label>
 
     <!-- Удаление аккаунта -->
-
       <div *ngIf="!this.bDeleteAll">
         <div class="deleteAccount" (click)="this.bDeleteAll=true">Удалить аккаунт</div>
       </div>
@@ -153,9 +151,7 @@
         <button type="button" class="btn-delete-acc" (click)="DeleteAll()">{{'allValue.delete' | translate}}</button>
         <button type="button" class="btn-cancel-acc" (click)="this.bDeleteAll=false">{{'allValue.Cancel' | translate}}</button>
       </div>
-
       <!--  Удаление аккаунта конец -->
-
 
       <ng-container *ngIf="bShowChangePassword">
         <div class="changepassBox">
@@ -164,7 +160,7 @@
           <input (click)="onClearInputError()" type="password" class="inputNewPassword2" id="inputNewPassword2" formControlName="inputNewPassword2" [placeholder]="'account-employer.repeatpwdAER' | translate">
 
           <button type="submit" class="btn-newPassword" (click)="NewPassword()">{{'allValue.changepwd2' | translate}}</button>
-          <button class="btn-newPassword2" (click)="DisappearFrame()">{{'allValue.Cancel' | translate}}</button>
+          <button class="btn-newPasswordCancel" (click)="DisappearFrame()">{{'allValue.Cancel' | translate}}</button>
 
           <ng-container *ngIf="bPasswordNew">{{'account-employer.pwdchangeAER' | translate}}</ng-container>
 

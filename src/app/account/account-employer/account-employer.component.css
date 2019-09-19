@@ -415,7 +415,7 @@ label{
   margin-top: 72px;
   margin-left: -445px;
 }
-.btn-newPassword2{
+.btn-newPasswordCancel{
   display: inline-block;
   font-size: 18px;
   background-color: #0262d2;
@@ -913,7 +913,7 @@ label{
     margin-top: 72px;
     margin-left: -445px;
   }
-  .btn-newPassword2{
+  .btn-newPasswordCancel{
     display: inline-block;
     font-size: 18px;
     background-color: #0262d2;
@@ -1017,7 +1017,6 @@ label{
   .rightSide{
     display: block;
     width: 100%;
-    background-color: #DFDFDF;
   }
   .line{
   }
@@ -1031,22 +1030,7 @@ label{
     display: block;
     margin-left: 10px;
   }
-  .profile2{
-    width: 100%;
-    margin: 0 auto;
-    position: relative;
-  }
-   .personal {
-    font-size: 18px;
-    margin-left: 12px;
-    margin-top: 16px;
-  }
-  .photo-upload2 {
-    font-size: 13px;
-    margin-left: 18px;
-    margin-top: 177px;
-  }
-  .img-thumbnail {
+ .img-thumbnail {
     border-width: 1px;
     border-color: rgb(188, 188, 188);
     border-style: solid;
@@ -1061,14 +1045,7 @@ label{
   .img-thumbnail:hover{
     cursor: pointer;
   }
-  .fileName{
-    position: absolute;
-    width: 103px;
-    height: 23px;
-    margin-left: 12px;
-    margin-top: 365px;
-  }
-    .logotype{
+  .logotype{
     position: relative;
     border: solid 1px rgb(188, 188, 188);
     border-radius: 3px;
@@ -1115,100 +1092,82 @@ label{
   }
   .user-name{
     position: absolute;
-    display: inline-block;
-    margin-left: 30px;
   }
   .inputUserName{
+    display: block;
     position: absolute;
-    display: inline-block;
     text-align: center;
     border-width: 1px;
     border-color: rgb(68, 75, 84);
     border-style: solid;
     border-radius: 3px;
     background-color: rgb(255, 255, 255);
-    width: 230px;
+    width: 90%;
     height: 43px;
-    margin-left: 30px;
-    margin-top: 1px;
+    margin-top: 28px;
   }
   .inputUserName:hover{
     background-color: rgb(240, 240, 240);
   }
   .email{
-    display: inline-block;
-    margin-left: 300px;
-
+    margin-top: 83px;
   }
   .inputEmail{
     display: inline-block;
+    position: relative;
     text-align: center;
     border-width: 1px;
     border-color: rgb(68, 75, 84);
     border-style: solid;
     border-radius: 3px;
     background-color: rgb(255, 255, 255);
-    width: 230px;
+    width: 90%;
     height: 43px;
-    margin-left: 300px;
+    margin-left: 10px;
+    margin-top: 109px;
   }
   .name{
     position: relative;
-    display: block;
-    margin-left: 30px;
+    margin-top: 8px;
   }
   .input-name{
-    position: relative;
-    text-align: center;
-    border-width: 1px;
-    border-color: rgb(68, 75, 84);
-    border-style: solid;
-    border-radius: 3px;
-    background-color: rgb(255, 255, 255);
-    width: 495px;
-    height: 43px;
-    margin-left: 30px;
-
-  }
-  .lastname{
-    margin-left: 300px;
-    margin-top: 186px;
-  }
-  .inputLastname{
-    position: absolute;
-    text-align: center;
-    border-width: 1px;
-    border-color: rgb(68, 75, 84);
-    border-style: solid;
-    border-radius: 3px;
-    background-color: rgb(255, 255, 255);
-    width: 228px;
-    height: 43px;
-    margin-left: 300px;
-    margin-top: 221px;
-  }
-  .location{
     position: absolute;
     display: inline-block;
-    margin-left: 30px;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    text-align: center;
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 90%;
+    height: 43px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+   .location{
+     position: absolute;
+     display: block;
+     margin-top: 64px;
+  }
+   .inputCity{
+    position: relative;
+    display: inline-block;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    text-align: center;
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 90.9%;
+    height: 43px;
+    margin-left: 10px;
+    margin-top: 92px;
   }
   .zip{
-    margin-left: 300px;
     display: inline-block;
-  }
-  .inputCity{
-    display: inline-block;
-    border-width: 1px;
-    border-color: rgb(68, 75, 84);
-    text-align: center;
-    border-style: solid;
-    border-radius: 3px;
-    background-color: rgb(255, 255, 255);
-    position: absolute;
-    width: 228px;
-    height: 43px;
-    margin-left: 30px;
-  }
+    margin-left: 10px;
+    margin-top: 142px;
+   }
   .inputZip{
     display: inline-block;
     text-align: center;
@@ -1217,14 +1176,15 @@ label{
     border-style: solid;
     border-radius: 3px;
     background-color: rgb(255, 255, 255);
-    width: 228px;
+    width: 90%;
     height: 43px;
-    margin-left: 300px;
+    margin-left: 10px;
+    margin-top: 35px;
   }
   .home-address{
     position: relative;
     display: block;
-    margin-left: 30px;
+    margin-top: 8px;
   }
   .inputHomeAddress{
     position: relative;
@@ -1235,31 +1195,32 @@ label{
     border-radius: 3px;
     background-color: rgb(255, 255, 255);
     text-align: center;
-    width: 492px;
+    width: 90%;
     height: 43px;
-    margin-left: 30px;
+    margin-top: 10px;
+    margin-left: 10px;
   }
   .phone{
-    position: absolute;
-    display: inline-block;
-    margin-left: 30px;
+    position: relative;
+    display: block;
+    margin-top: 8px;
   }
   .phone2{
-    display: inline-block;
-    margin-left: 300px;
+    display: block;
+    margin-top: 64px;
   }
   .inputPhone{
+    position: relative;
     display: inline-block;
     border-width: 1px;
     border-color: rgb(68, 75, 84);
     border-style: solid;
     border-radius: 3px;
     background-color: rgb(255, 255, 255);
-    position: absolute;
     text-align: center;
-    width: 228px;
+    width: 90%;
     height: 43px;
-    margin-left: 30px;
+    margin-top: 8px;
   }
   .inputPhone2{
     display: inline-block;
@@ -1270,14 +1231,14 @@ label{
     background-color: rgb(255, 255, 255);
     position: relative;
     text-align: center;
-    width: 228px;
+    width: 90%;
     height: 43px;
-    margin-left: 300px;
+    margin-top: 39px;
   }
   .web{
     position: absolute;
-    display: inline-block;
-    margin-left: 30px;
+    display: block;
+    margin-top: 8px;
   }
   .inputWeb{
     display: inline-block;
@@ -1288,13 +1249,13 @@ label{
     background-color: rgb(255, 255, 255);
     position: absolute;
     text-align: center;
-    width: 228px;
+    width: 90%;
     height: 43px;
-    margin-left: 30px;
+    margin-top: 37px;
   }
   .contact-person{
-    display: inline-block;
-    margin-left: 300px;
+    display: block;
+    margin-top: 92px;
   }
   .inputContactPerson{
     display: inline-block;
@@ -1303,23 +1264,39 @@ label{
     border-style: solid;
     border-radius: 3px;
     background-color: rgb(255, 255, 255);
-
     text-align: center;
-    width: 228px;
+    width: 90%;
     height: 43px;
-    margin-left: 300px;
+    margin-top: 120px;
   }
   .about{
     position: relative;
     display: block;
-    margin-left: 30px;
+    margin-top: 10px;
   }
   .inputAbout{
     position: relative;
     display: block;
-    width: 498px;
+    width: 90%;
     height: 190px;
-    margin-left: 30px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  .img-lock{
+    display: inline-block;
+    margin-left: 60px;
+    margin-top: 30px;
+  }
+  .changePass{
+    position: absolute;
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 30px;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .changePass:hover{
+    font-weight: bold;
   }
   .btn-save{
     display: inline-block;
@@ -1331,13 +1308,15 @@ label{
     border-style: solid;
     border-radius: 3px;
     line-height: 2.25;
-    width: 228px;
+    width: 35%;
     height: 48px;
     margin-top:49px;
-    margin-left: 30px;
+    margin-left: 15px;
+    margin-bottom: 10px;
   }
   .btn-save:hover{
     background-color: #0066cc;
+    font-weight: bold;
   }
   .btn-save:active{
     border-color: #3399ff;
@@ -1348,7 +1327,7 @@ label{
   }
   .btn-cancel{
     font-size: 18px;
-    width:228px;
+    width:35%;
     height: 48px;
     color: rgb(68, 75, 84);
     background-color: rgb(255, 255, 255);
@@ -1359,10 +1338,11 @@ label{
     line-height: 2;
     text-align: center;
     margin-top: 49px;
-    margin-left: 20px;
+    margin-left: 20%;
   }
   .btn-cancel:hover{
     background-color: rgb(240, 240, 240);
+    font-weight: bold;
   }
   .btn-cancel:active{
     border-color: #3399ff;
@@ -1379,34 +1359,34 @@ label{
     border-style: solid;
     border-radius: 3px;
     background-color: rgb(247, 247, 247);
-    width: 507px;
+    width: 90.6%;
     height: 199px;
-    margin: -88px 0 0 30px ;
+    margin-top: -100px;
+    margin-left: 2%;
     z-index: 10;
   }
   .inputNewPassword1 {
     text-align: center;
     background-color: rgb(255, 255, 255);
-    width: 441px;
+    width: 90%;
     height: 45px;
-    margin-left: 38px;
-    margin-top: 22px;
+    margin-left: 3.5%;
+    margin-top: 12px;
   }
   .inputNewPassword2 {
-    position: relative;
     border-radius: 3px;
     border-color: black;
     text-align: center;
     background-color: rgb(255, 255, 255);
-    width: 441px;
+    width: 90%;
     height: 45px;
-    margin-left: 38px;
+    margin-left: 3.5%;
     margin-top: 12px;
   }
   .btn-newPassword{
     display: inline-block;
     position: absolute;
-    font-size: 18px;
+    font-size: 0.96em;
     background-color: #0262d2;
     color: rgb(255, 255, 255);
     border-color: #054086;
@@ -1414,14 +1394,15 @@ label{
     border-style: solid;
     border-radius: 3px;
     line-height: 2.25;
-    width: 190px;
+    width: 50%;
     height: 48px;
-    margin-top: 72px;
-    margin-left: -445px;
+    margin-top:12px;
+    margin-left: 3.5%;
   }
-  .btn-newPassword2{
+  .btn-newPasswordCancel{
     display: inline-block;
-    font-size: 18px;
+    position: absolute;
+    font-size: 0.96em;
     background-color: #0262d2;
     color: rgb(255, 255, 255);
     border-color: #054086;
@@ -1429,52 +1410,54 @@ label{
     border-style: solid;
     border-radius: 3px;
     line-height: 2.25;
-    width: 190px;
+    width: 30%;
     height: 48px;
-    margin-top: 9px;
-    margin-left: 295px;
+    margin-top: 12px;
+    margin-left: 64.5%;
   }
   .alertWrong{
     display: block;
-    font-size: 1.4em;
+    font-size: 1.1em;
     color: #F74933;
-    width: 530px;
-    margin-top: 15px;
+    margin-top: -178px;
     text-align: center;
-    border: dotted 1px #f20f4b;
     height: 50px;
-    line-height: 2.03;
+    line-height: 2.8;
+    font-weight: bold;
+    background-color: white;
   }
+
   .alertSuccess{
     display: block;
-    font-size: 1.4em;
+    font-size: 1.1em;
     color: #64b65b;
-    width: 530px;
-    margin-top: 15px;
+    left: -25px;
+    margin-top: -178px;
     text-align: center;
-    border: dotted 1px #64b65b;
     height: 50px;
-    line-height: 2.03;
+    line-height: 2.8;
+    font-weight: bold;
+    background-color: white;
   }
   .deleteAccount{
     position: absolute;
     display: inline-block;
-    margin-left: 386px;
-    margin-top: -30px;
+    left: -7%;
+    margin-top: -10px;
+    font-size: .8em;
     cursor: pointer;
-    text-decoration: underline;
     color: red;
+    transform: rotate(90deg);
   }
   .deleteAccountPopup{
     position: absolute;
-    width: 700px;
-    height: 150px;
+    font-size: 0.9em;
+    width: 90%;
+    height: 20vh;
     border: dotted 1px red;
     background-color: red;
-    line-height: 3.2;
-    margin-top: -40px;
-    margin-left: 20px;
-    z-index: 9999;
+    margin-top: -28px;
+    margin-left: 12px;
   }
   .question{
     display: block;
@@ -1482,7 +1465,7 @@ label{
     color: white;
     font-size: 1.4em;
     text-align: center;
-    margin-top: 15px;
+    margin: 15px auto;
   }
   .btn-delete-acc{
     margin-left: 39px;
