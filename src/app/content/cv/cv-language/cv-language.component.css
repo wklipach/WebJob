@@ -1,3 +1,6 @@
+@media screen and (min-width: 1200px) and (max-width: 4000px) {
+.wrapper{
+}
 label{
   font-size: 1.1em;
   color: #0262d2;
@@ -63,3 +66,146 @@ span{
   color: white;
   font-weight:600;
 }
+}         /* Конец media 1200-4000 */
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .wrapper{
+    width: 98%;
+    margin: 0 auto;
+  }
+  label{
+    font-size: 1.1em;
+    color: #0262d2;
+    text-align: left;
+  }
+  .labelInputLevelLanguage{
+    margin-left: 277px;
+  }
+  .line{
+    width: 100%;
+    margin-top: 1%;
+    position: relative;
+  }
+  .inputLanguage{
+    font-size: 1em;
+    text-align: center;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 275px;
+    height: 43px;
+  }
+  .inputLevelLanguage{
+    font-size: 1em;
+    text-align: center;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 100px;
+    height: 43px;
+    margin-left: 43px;
+  }
+  span{
+    font-size: 1.1em;
+    color: rgb(0, 0, 0);
+    text-align: left;
+    padding-left: 0.2%;
+    vertical-align: middle;
+    margin-left: 0.1%;
+  }
+  .btn-delete {
+    display: inline-block;
+    position: relative;
+    color: #484d55;
+    background-color: #ffffff;
+    border-color: rgb(242, 97, 0);
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: solid;
+    text-align: center;
+    width: 223px;
+    height: 48px;
+    margin-top: 2px;
+    margin-bottom:20px;
+    margin-left: 35px;
+  }
+  .btn-delete:hover{
+    background-color:#f26100;
+    color: white;
+    font-weight:600;
+  }
+}    /* Конец media 768-1199 */
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .wrapper{
+    width: 98%;
+    margin: 0 auto;
+  }
+  label{
+    font-size: 1.1em;
+    color: #0262d2;
+    text-align: left;
+  }
+  .labelInputLevelLanguage{
+    margin-left: 150px;
+  }
+  .line{
+    width: 100%;
+    margin-top: 1%;
+    position: relative;
+  }
+  .inputLanguage{
+    font-size: 1em;
+    text-align: center;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 175px;
+    height: 43px;
+  }
+  .inputLevelLanguage{
+    font-size: 1em;
+    text-align: center;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 100px;
+    height: 43px;
+    margin: 1% 5%;
+  }
+  span{
+    font-size: 1.1em;
+    color: rgb(0, 0, 0);
+    text-align: left;
+    padding-left: 0.2%;
+    vertical-align: middle;
+    margin-left: 0.1%;
+  }
+  .btn-delete {
+    display: inline-block;
+    position: relative;
+    color: #484d55;
+    background-color: #ffffff;
+    border-color: rgb(242, 97, 0);
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: solid;
+    text-align: center;
+    width: 210px;
+    height: 48px;
+    margin-top: 2px;
+    margin-bottom:15px;
+    }
+  .btn-delete:hover{
+    background-color:#f26100;
+    color: white;
+    font-weight:600;
+  }
+}   /* Конец media 320-767 */

@@ -5,14 +5,14 @@
 
   <form [formGroup]="newCVForm">
     <div class="cv-box">
-      <div class="line">
+
         <label class="location">{{'allValue.сity' | translate}}</label>
         <label class="salary">{{'allValue.salary' | translate}}&nbsp;&nbsp;&nbsp;&#8364;</label>
         <label class="position">{{'newcv.gd23' | translate}}</label>
-      </div>
+
       <!--   <div style="width:100%; height:1px; clear:both;"></div>    выравниваем без обтекания -->
 
-      <div class="line">
+      <div class="line"> </div>
         <select id="inputCity" formControlName="inputCity" class="inputCity" [title]="'allValue.сity' | translate">
           <option  *ngFor="let lc of listCity" [value]="lc.name">
             {{lc.name}}
@@ -21,7 +21,7 @@
 
         <input type="text" class="inputSalaryFrom" formControlName="inputSalaryFrom" id="inputSalaryFrom" [placeholder]="'newcv.from23' | translate">
         <input type="text" class="inputPosition" formControlName="inputPosition" id="inputPosition" [placeholder]="'newcv.gd23' | translate">
-      </div>
+
 
       <div class="line">
         <label class="labelSkillsAbilities">{{'newcv.onu23' | translate}}</label>
@@ -69,7 +69,7 @@
       <!-- Отрасль -->
       <app-cv_industry></app-cv_industry>
 
-      <label>{{'newcv.additionalInfo' | translate}}</label>
+      <label class="Education">{{'newcv.additionalInfo' | translate}}</label>
 
       <div class="line">
       <textarea class="inputExperience" [title]="'allValue.experience1000' | translate"

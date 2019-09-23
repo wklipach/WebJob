@@ -223,7 +223,7 @@
   "newcv.savecv23": "Save CV",
   "newcv.additionalInfo": "Дополнительная информация",
   "newcv.additionalInfo1000": "Дополнительная информация до 1000 знаков",
-  "school.u331000": "Educational institution. Up to 1000 characters",
+  "school": "Educational institution",
   "invitation.inv44": "Invite a job seeker",
   "invitation.chvc44": "Select a job to which you are applying for a job seeker.",
   "invitation.chcv44": "Выберите резюме, которое Вы хотите отправить работодателю.",

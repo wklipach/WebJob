@@ -1,3 +1,4 @@
+@media screen and (min-width: 1200px) and (max-width: 4000px) {
 .cv-box{
   width: 100%;
   margin: 0 auto;
@@ -82,6 +83,7 @@ label{
   border-color: #054086;
   border-width: 1px;
   border-style: solid;
+  margin-bottom: 15px;
 }
 .btn-save:hover{
   background-color: #0066cc;
@@ -116,3 +118,278 @@ label{
   border-radius: 3px;
   font-weight: bold;
 }
+}         /* Конец media 1200-4000 */
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .wrapper{
+    width: 98%;
+    margin: 0 auto;
+  }
+  .cv-box{
+    }
+  .line{
+    margin: 10px auto;
+  }
+  label{
+    font-size: 1.1em;
+    color: #0262d2;
+  }
+  .location{
+  }
+  .salary{
+    float: right;
+    margin-right: 16.6%;
+  }
+  .inputCity{
+    font-size: 1em;
+    text-align: center;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 275px;
+    height: 39px;
+  }
+  .inputSalaryFrom{
+    font-size: 1em;
+    text-align: center;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 141px;
+    height: 40px;
+    float: right;
+    margin-right: 9.5%;
+  }
+  .position{
+    display: block;
+    position: absolute;
+    margin-top: 60px;
+  }
+  .inputPosition{
+    font-size: 1em;
+    text-align: center;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 90%;
+    height: 40px;
+    margin-top: 38px;
+  }
+  .labelSkillsAbilities{
+
+  }
+  .inputSkillsAbilities{
+    width: 90%;
+    height: 90px;
+  }
+  .inputEducation{
+    width: 90%;
+    height: 90px;
+  }
+  .inputExperience{
+    width: 90%;
+    height: 90px;
+  }
+  .btn-save {
+    border-radius: 3px;
+    background-color: #0262d2;
+    width: 255px;
+    height: 50px;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    margin-bottom: 15px;
+  }
+  .btn-save:hover{
+    background-color: #0066cc;
+    font-weight:bold;
+  }
+  .btn-save:active{
+    border-color: #3399ff;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3px;
+    font-weight: bold;
+  }
+  .btn-add {
+    border-radius: 3px;
+    background-color: #0262d2;
+    width: 255px;
+    height: 50px;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    margin-left: 2px;
+  }
+  .btn-add:hover{
+    background-color: #0066cc;
+    font-weight:bold;
+  }
+  .btn-add:active{
+    border-color: #3399ff;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3px;
+    font-weight: bold;
+  }
+}    /* Конец media 768-1199 */
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .wrapper {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .top {
+    height: 25px;
+    font-size: 1.4em;
+    margin: 0 0 10px 0;
+    padding-left: 6px;
+    line-height: 0.8;
+    border-bottom: solid 1px #b7b7b7;
+    padding-bottom: 0;
+    border-top: 0;
+  }
+  .cv-box{
+  }
+  .line{
+  }
+  label{
+    font-size: 1.1em;
+    color: #0262d2;
+    position: absolute;
+  }
+  .location{
+    display: block;
+    position: relative;
+  }
+  .salary{
+    display: block;
+    margin-top: 60px;
+  }
+  .inputCity{
+    font-size: 1em;
+    text-align: center;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 275px;
+    height: 39px;
+    margin-top: 10px;
+
+  }
+  .inputSalaryFrom{
+    font-size: 1em;
+    text-align: center;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 141px;
+    height: 40px;
+    display: block;
+    position: relative;
+    margin-top: 41px;
+  }
+  .position{
+    display: block;
+    margin-top: 146px;
+  }
+  .inputPosition{
+    font-size: 1em;
+    text-align: center;
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 90%;
+    height: 40px;
+    margin-top: 44px;
+    position: relative;
+  }
+  .labelSkillsAbilities{
+    margin-top: 9px;
+    position: relative;
+    display: block;
+  }
+  .inputSkillsAbilities{
+    width: 90%;
+    height: 90px;
+    display: block;
+    margin-top: 10px;
+  }
+  .Education{
+    display: block;
+    margin-top: 10px;
+    position: relative;
+  }
+  .inputEducation{
+    width: 90%;
+    height: 90px;
+    display: block;
+    margin-top: 10px;
+    position: relative;
+
+  }
+  .inputExperience{
+    width: 90%;
+    height: 90px;
+    display: block;
+    margin-top: 10px;
+  }
+  .btn-save {
+    border-radius: 3px;
+    background-color: #0262d2;
+    width: 255px;
+    height: 50px;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    margin: 10px auto;
+  }
+  .btn-save:hover{
+    background-color: #0066cc;
+    font-weight:bold;
+  }
+  .btn-save:active{
+    border-color: #3399ff;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3px;
+    font-weight: bold;
+  }
+  .btn-add {
+    border-radius: 3px;
+    background-color: #0262d2;
+    width: 255px;
+    height: 50px;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    margin: 10px 2px;
+  }
+  .btn-add:hover{
+    background-color: #0066cc;
+    font-weight:bold;
+  }
+  .btn-add:active{
+    border-color: #3399ff;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3px;
+    font-weight: bold;
+  }
+
+}   /* Конец media 320-767 */
