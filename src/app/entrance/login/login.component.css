@@ -249,6 +249,9 @@
   }
 }    /* Конец media 768-1199 */
 @media screen and (min-width: 320px) and (max-width: 767px) {
+  .container{
+    min-height: calc(100vh - 50px);
+  }
   .wrapper {
     width: 100%;
     margin: 0 auto;

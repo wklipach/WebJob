@@ -4,18 +4,17 @@
 <div class="wrapper">
   <div class="top">{{'cv-list.mycv' | translate}}</div>
 
+  <ul class="head-line">
+    <li class="date">{{'allValue.date' | translate}}</li>
+    <li class="city">{{'allValue.сity' | translate}}</li>
+    <li class="salary">{{'allValue.salary' | translate}}</li>
+    <li class="position">{{'cv-list.dl' | translate}}</li>
+    <li class="choice">{{'allValue.selectaction' | translate}}</li>
+
+  </ul>
+
   <div class="box" *ngFor="let item of cvList; let i = index;">
 
-
-    <ul class="head-line">
-
-      <li class="date">{{'allValue.date' | translate}}</li>
-      <li class="city">{{'allValue.сity' | translate}}</li>
-      <li class="salary">{{'allValue.salary' | translate}}</li>
-      <li class="position">{{'cv-list.dl' | translate}}</li>
-      <li class="choice">{{'allValue.selectaction' | translate}}</li>
-
-    </ul>
 
     <ul class="botom-line">
       <li class="date">{{item.DateTimeCreate | date:'dd.MM.yyyy'}}</li>
@@ -44,12 +43,9 @@
 
     </div>
 
-
-
   </div>
 
-
-  <div class="cvlist">
+  <div class="btn-line">
     <button class="btn-newcv" (click)="newcv()">{{'cv-list.newcv' | translate}}</button>
   </div>
 </div>
