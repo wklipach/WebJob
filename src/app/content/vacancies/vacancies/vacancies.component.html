@@ -6,14 +6,12 @@
 
   <div class="box" *ngFor="let item of vacanciesList; let i = index;">
 
-       <ul class="head-line">
-
-      <li class="date">{{'allValue.date' | translate}}</li>
-      <li class="city">{{'allValue.сity' | translate}}</li>
-      <li class="salary">{{'allValue.salary' | translate}}</li>
-      <li class="position">Должность</li>
+    <ul class="head-line">
+      <li class="date-head">{{'allValue.date' | translate}}</li>
+      <li class="city-head">{{'allValue.сity' | translate}}</li>
+      <li class="salary-head">{{'allValue.salary' | translate}}</li>
+      <li class="position-head">{{'cv-list.dl' | translate}}</li>
       <li class="choice">{{'allValue.selectaction' | translate}}</li>
-
     </ul>
 
     <ul class="botom-line">
@@ -21,7 +19,7 @@
       <li class="city">{{item.CityName}}</li>
       <li class="salary">{{item.Salary}} &#8364;</li>
        <li class="position">{{item.VacancyShortTitle}}</li>
-      <li><select class="selectChoice" [title]="'allValue.selectaction' | translate"
+      <li class="choice-data"><select class="selectChoice" [title]="'allValue.selectaction' | translate"
                   (change)= "brokerSelected($event,item, i)"
                   [(ngModel)]="contactMethods[i].id">>
 
@@ -37,13 +35,13 @@
 
     <div class="deleteCorrespondence" *ngIf="contactMethods[i].bDelete === true">
       <span class="question">Вы желаете удалить данную вакансию?</span>
-      <button type="button" class="btn-delete" (click)="DeleteElement(item,i)">Да</button>
-      <button type="button" class="btn-delete" (click)="UnDeleteElement(item,i)">Нет</button>
+      <button type="button" class="btn-delete" (click)="DeleteElement(item,i)">{{'cv-list.yes' | translate}}</button>
+      <button type="button" class="btn-delete" (click)="UnDeleteElement(item,i)">{{'cv-list.no' | translate}}</button>
 
     </div>
 
   </div>
-  <div class="vacList">
+  <div class="btn-line">
   <button class="btn-newVac" (click)="newVac()">{{'allValue.newvc' | translate}}</button>
   </div>
 </div>

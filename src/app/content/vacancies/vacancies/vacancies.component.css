@@ -1,104 +1,330 @@
-.box{
-  width: 100%;
-  margin: 0 auto;
-}
-.cvlist{
-  width: 100%;
-  margin: 0 auto;
-}
-.v-line{
-  display: inline-block;
-  position: relative;
-  width:6px;
-  height:auto;
-  background-color: #b8b8b8;
-}
-ul{
-  list-style: none;
-}
-li{
-  position: relative;
-  display: inline-block;
-}
-.head-line{
-  background-color: #DFDFDF;
-}
-.botom-line{
-  width: 100%;
-  height: auto;
-  border-color: #b7b7b7;
-}
-.date{
-  width:90px;
-}
-.city{
-  width:120px;
-}
-.position{
-  width:570px;
-}
-.salary{
-  width:90px;
-}
-.choice{
-  width: 230px;
-}
-.selectChoice{
-  border: solid 1px rgb(68, 75, 84);
-  text-align: left;
-  border-radius: 3px;
-  background-color: rgb(255, 255, 255);
-  position: absolute;
-  width: 228px;
-  height: 33px;
-  margin-top: -20px;
-  margin-left: 20px;
-}
-.btn-newVac{
-  display: block;
-  border-radius: 3px;
-  background-color: #0262d2;
-  width: 155px;
-  height: 50px;
-  color: rgb(255, 255, 255);
-  border-color: #054086;
-  border-width: 1px;
-  border-style: solid;
-  margin-top: 6vh;
-}
-.btn-newVac:hover{
-  background-color: #0066cc;
-  font-weight:600;
-}
-.btn-newVac:active{
-  border-color: #3399ff;
-  border-style: solid;
-  border-width: 3px;
-  border-radius: 3px;
-  font-weight: 500;
-}
-.vacList{
-  width: 100%;
-  margin: 0 auto;
-}
-.deleteCorrespondence{
-  position: absolute;
-  width: 467px;
-  height: 50px;
-  border: dotted 1px blue;
-  background-color: #fff;
-  line-height: 3.2;
-  margin-left: 700px;
-  margin-top: -52px;
-  z-index: 9999;
-}
-.btn-delete{
-  width: 50px;
-  margin-left: 15px;
-}
-.btn-delete:hover{
-  font-weight: bold;
-}
-.question, .btn{
-  margin-left: 20px;
-}
+@media screen and (min-width: 1200px) and (max-width: 4000px) {
+  .box{
+    width: 100%;
+  }
+  ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  li{
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+  }
+  .head-line{
+    height: 20px;
+    background-color: #DFDFDF;
+    margin-bottom: 3px;
+  }
+  .botom-line{
+    height: 39px;
+    border-bottom: dotted 1px #b7b7b7;
+  }
+  .date-head, .date{
+    width: 8%;
+  }
+  .city-head, .city{
+    width: 10%;
+  }
+  .position-head, .position{
+    width: 55%;
+    height: 39px;
+    overflow: hidden;
+  }
+  .salary-head, .salary{
+    width:8%;
+  }
+  .choice{
+    width: 15%;
+  }
+  .selectChoice{
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    text-align: left;
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 32px;
+    margin-top: 3px;
+  }
+  .btn-newVac{
+    display: inline-block;
+    position: relative;
+    border-radius: 3px;
+    background-color: #0262d2;
+    width: 155px;
+    height: 50px;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    margin: 2% auto;
+  }
+  .btn-newVac:hover{
+    background-color: #0066cc;
+    font-weight:600;
+  }
+  .btn-newVac:active{
+    border-color: #3399ff;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3px;
+    font-weight: 500;
+  }
+  .deleteCorrespondence{
+    position: absolute;
+    width: 467px;
+    height: 50px;
+    border: dotted 1px blue;
+    background-color: #fff;
+    line-height: 3.2;
+    margin-left: 700px;
+    margin-top: -52px;
+    z-index: 9999;
+  }
+  .btn-delete{
+    width: 50px;
+    margin-left: 15px;
+  }
+  .btn-delete:hover{
+    font-weight: bold;
+  }
+  .question, .btn{
+    margin-left: 20px;
+  }
+
+}         /* Конец media 1200-4000 */
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .wrapper{
+    width: 100%;
+  }
+  .box{
+    margin: 6px;
+    padding: 6px;
+    border: 1px solid #0262d2;
+  }
+  ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  li{
+    position: relative;
+    display: block;
+    height: 28px;
+    vertical-align: top;
+    margin: 6px auto;
+    overflow: hidden;
+  }
+  .head-line{
+    display: inline-block;
+    width: 20%;
+    vertical-align: top;
+    color: #0262d2;
+  }
+  .botom-line{
+    display: inline-block;
+    width: 77%;
+    vertical-align: top;
+  }
+  .date-head, .date{
+    width: auto;
+  }
+  .city-head, .city{
+    width: auto;
+  }
+  .position-head, .position{
+    width: auto;
+    height: 42px;
+  }
+  .salary-head, .salary{
+    width:auto;
+  }
+  .choice, .choice-data{
+    width: auto;
+    height: 42px;
+    line-height: 2;
+  }
+  .selectChoice{
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    text-align: left;
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: auto;
+    height: 32px;
+  }
+  .btn-newVac{
+    display: inline-block;
+    position: relative;
+    border-radius: 3px;
+    background-color: #0262d2;
+    width: 155px;
+    height: 50px;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    margin: 2% auto;
+  }
+  .btn-newVac:hover{
+    background-color: #0066cc;
+    font-weight:600;
+  }
+  .btn-newVac:active{
+    border-color: #3399ff;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3px;
+    font-weight: 500;
+  }
+  .deleteCorrespondence{
+    position: absolute;
+    width: 467px;
+    height: 50px;
+    border: dotted 1px blue;
+    background-color: #fff;
+    line-height: 3.2;
+    margin-left: 15px;
+    margin-top: -52px;
+    z-index: 9999;
+  }
+  .btn-delete{
+    width: 50px;
+    margin-left: 15px;
+  }
+  .btn-delete:hover{
+    font-weight: bold;
+  }
+  .question, .btn{
+    margin-left: 20px;
+  }
+
+}    /* Конец media 768-1199 */
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .wrapper {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .top {
+    height: 25px;
+    font-size: 1.4em;
+    margin: 0 0 10px 0;
+    padding-left: 6px;
+    line-height: 0.8;
+    border-bottom: solid 1px #b7b7b7;
+    padding-bottom: 0;
+    border-top: 0;
+  }
+  .wrapper{
+    width: 100%;
+    font-size: 0.9em;
+  }
+  .box{
+    margin: 1px;
+    padding: 3px;
+    border: 1px solid #0262d2;
+  }
+  ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  li{
+    position: relative;
+    display: block;
+    height: 28px;
+    vertical-align: top;
+    margin: 6px auto;
+    overflow: hidden;
+  }
+  .head-line{
+    display: inline-block;
+    width: 25%;
+    vertical-align: top;
+    color: #0262d2;
+  }
+  .botom-line{
+    display: inline-block;
+    width: 70%;
+    vertical-align: top;
+  }
+  .date-head, .date{
+    width: auto;
+  }
+  .city-head, .city{
+    width: auto;
+  }
+  .position-head, .position{
+    width: auto;
+    height: 39px;
+  }
+  .salary-head, .salary{
+    width:auto;
+  }
+  .choice, .choice-data{
+    width: auto;
+    height: 42px;
+    line-height: 2.4;
+  }
+  .selectChoice{
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    text-align: left;
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: auto;
+    height: 32px;
+    margin-top: 2px;
+  }
+  .btn-newVac{
+    display: inline-block;
+    position: relative;
+    border-radius: 3px;
+    background-color: #0262d2;
+    width: 155px;
+    height: 50px;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    margin: 2% auto;
+  }
+  .btn-newVac:hover{
+    background-color: #0066cc;
+    font-weight:600;
+  }
+  .btn-newVac:active{
+    border-color: #3399ff;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3px;
+    font-weight: 500;
+  }
+  .deleteCorrespondence{
+    position: absolute;
+    width: 467px;
+    height: 50px;
+    border: dotted 1px blue;
+    background-color: #fff;
+    line-height: 3.2;
+    margin-left: 15px;
+    margin-top: -52px;
+    z-index: 9999;
+  }
+  .btn-delete{
+    width: 50px;
+    margin-left: 15px;
+  }
+  .btn-delete:hover{
+    font-weight: bold;
+  }
+  .question, .btn{
+    margin-left: 20px;
+  }
+}   /* Конец media 320-767 */
