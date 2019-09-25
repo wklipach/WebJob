@@ -1,46 +1,42 @@
 @media screen and (min-width: 1200px) and (max-width: 4000px) {
-.box{
-  width: 100%;
-}
-.box:hover{
-  background-color: #DFDFDF;
+  .box{
+    width: 100%;
   }
-.cvlist{
-  width: 100%;
-  margin: 0 auto;
-}
-ul{
-  list-style: none;
-}
+  ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 li{
   position: relative;
   display: inline-block;
-}
+  vertical-align: top;
+  }
 .head-line{
-  height: 35px;
-  line-height: 2.2;
-  margin-bottom: 20px;
-  display: block;
-  background-color: #DFDFDF;
-  padding-left: -30px;
+  height: 20px;
+ background-color: #DFDFDF;
+  margin-bottom: 3px;
 }
 .botom-line{
+  height: 39px;
   border-bottom: dotted 1px #b7b7b7;
 }
-.date{
-  width:90px;
+.date-head, .date{
+  width: 8%;
 }
-.city{
-  width:120px;
+.city-head, .city{
+  width: 10%;
 }
-.position{
-  width:570px;
+.position-head, .position{
+  width: 55%;
+  height: 39px;
+  overflow: hidden;
 }
-.salary{
-  width:90px;
+.salary-head, .salary{
+  width:8%;
 }
 .choice{
-  width: 230px;
+  width: 15%;
 }
 .selectChoice{
   border-width: 1px;
@@ -49,11 +45,9 @@ li{
   border-style: solid;
   border-radius: 3px;
   background-color: rgb(255, 255, 255);
-  position: absolute;
-  width: 228px;
-  height: 33px;
-  margin-top: 0;
-  margin-left: 0;
+  width: 100%;
+  height: 32px;
+  margin-top: 3px;
 }
 .btn-newcv{
   display: inline-block;
@@ -101,60 +95,59 @@ li{
   margin-left: 20px;
 }
 
-
 }         /* Конец media 1200-4000 */
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
-  .wrapper{
-    width: 99%;
-    margin: 0 auto;
-  }
+ .wrapper{
+   width: 100%;
+ }
   .box{
-    width: 100%;
-    margin: 0 auto;
-  }
-  .btn-line{
-    width: 100%;
-    margin: 0 auto;
-  }
-  .v-line{
-    display: inline-block;
-    position: relative;
-    width:6px;
-    height:auto;
-    background-color: #b8b8b8;
+    margin: 6px;
+    padding: 6px;
+    border: 1px solid #0262d2;
   }
   ul{
     list-style: none;
+    padding: 0;
+    margin: 0;
   }
   li{
     position: relative;
-    display: inline-block;
+    display: block;
+    height: 28px;
+    vertical-align: top;
+    margin: 6px auto;
+    overflow: hidden;
   }
   .head-line{
-    background-color: #DFDFDF;
+    display: inline-block;
+    width: 20%;
+    vertical-align: top;
+    color: #0262d2;
   }
   .botom-line{
-    width: 100%;
-    height: auto;
-    margin-bottom: 2%;
-    border-bottom: dotted 1px #b7b7b7;
+    display: inline-block;
+    width: 77%;
+    vertical-align: top;
   }
-  .date{
-    width:90px;
+  .date-head, .date{
+    width: auto;
   }
-  .city{
-    width:120px;
+  .city-head, .city{
+    width: auto;
   }
-  .position{
-    width:570px;
+  .position-head, .position{
+    width: auto;
+    height: 42px;
   }
-  .salary{
-    width:90px;
+  .salary-head, .salary{
+    width:auto;
   }
-  .choice{
-    width: 230px;
-  }
+  .choice, .choice-data{
+     width: auto;
+    height: 42px;
+    line-height: 2;
+   }
   .selectChoice{
     border-width: 1px;
     border-color: rgb(68, 75, 84);
@@ -162,11 +155,8 @@ li{
     border-style: solid;
     border-radius: 3px;
     background-color: rgb(255, 255, 255);
-    position: absolute;
-    width: 228px;
-    height: 33px;
-    margin-top: -29px;
-    margin-left: 20px;
+    width: auto;
+    height: 32px;
   }
   .btn-newcv{
     display: inline-block;
@@ -179,7 +169,7 @@ li{
     border-color: #054086;
     border-width: 1px;
     border-style: solid;
-    margin-top: 1%;
+    margin: 2% auto;
   }
   .btn-newcv:hover{
     background-color: #0066cc;
@@ -199,7 +189,7 @@ li{
     border: dotted 1px blue;
     background-color: #fff;
     line-height: 3.2;
-    margin-left: 700px;
+    margin-left: 15px;
     margin-top: -52px;
     z-index: 9999;
   }
@@ -230,44 +220,56 @@ li{
     padding-bottom: 0;
     border-top: 0;
   }
-
-  .box{
+  .wrapper{
     width: 100%;
-    margin: 0 auto;
+    font-size: 0.9em;
   }
-  .cvlist{
-    width: 100%;
-    margin: 0 auto;
+  .box{
+    margin: 1px;
+    padding: 3px;
+    border: 1px solid #0262d2;
   }
   ul{
     list-style: none;
+    padding: 0;
+    margin: 0;
   }
   li{
     position: relative;
-    display: inline-block;
+    display: block;
+    height: 28px;
+    vertical-align: top;
+    margin: 6px auto;
+    overflow: hidden;
   }
   .head-line{
-    background-color: #DFDFDF;
+    display: inline-block;
+    width: 25%;
+    vertical-align: top;
+    color: #0262d2;
   }
   .botom-line{
-    width: 100%;
-    height: auto;
-    border-color: #b7b7b7;
+    display: inline-block;
+    width: 70%;
+    vertical-align: top;
   }
-  .date{
-    width:90px;
+  .date-head, .date{
+    width: auto;
   }
-  .city{
-    width:120px;
+  .city-head, .city{
+    width: auto;
   }
-  .position{
-    width:570px;
+  .position-head, .position{
+    width: auto;
+    height: 39px;
   }
-  .salary{
-    width:90px;
+  .salary-head, .salary{
+    width:auto;
   }
-  .choice{
-    width: 230px;
+  .choice, .choice-data{
+    width: auto;
+    height: 42px;
+    line-height: 2.4;
   }
   .selectChoice{
     border-width: 1px;
@@ -276,11 +278,9 @@ li{
     border-style: solid;
     border-radius: 3px;
     background-color: rgb(255, 255, 255);
-    position: absolute;
-    width: 228px;
-    height: 33px;
-    margin-top: -20px;
-    margin-left: 20px;
+    width: auto;
+    height: 32px;
+    margin-top: 2px;
   }
   .btn-newcv{
     display: inline-block;
@@ -293,7 +293,7 @@ li{
     border-color: #054086;
     border-width: 1px;
     border-style: solid;
-    margin-top: 1%;
+    margin: 2% auto;
   }
   .btn-newcv:hover{
     background-color: #0066cc;
@@ -313,7 +313,7 @@ li{
     border: dotted 1px blue;
     background-color: #fff;
     line-height: 3.2;
-    margin-left: 700px;
+    margin-left: 15px;
     margin-top: -52px;
     z-index: 9999;
   }
@@ -327,5 +327,4 @@ li{
   .question, .btn{
     margin-left: 20px;
   }
-
 }   /* Конец media 320-767 */

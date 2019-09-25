@@ -4,24 +4,22 @@
 <div class="wrapper">
   <div class="top">{{'cv-list.mycv' | translate}}</div>
 
-  <ul class="head-line">
-    <li class="date">{{'allValue.date' | translate}}</li>
-    <li class="city">{{'allValue.сity' | translate}}</li>
-    <li class="salary">{{'allValue.salary' | translate}}</li>
-    <li class="position">{{'cv-list.dl' | translate}}</li>
-    <li class="choice">{{'allValue.selectaction' | translate}}</li>
+   <div class="box" *ngFor="let item of cvList; let i = index;">
 
-  </ul>
-
-  <div class="box" *ngFor="let item of cvList; let i = index;">
-
+     <ul class="head-line">
+       <li class="date-head">{{'allValue.date' | translate}}</li>
+       <li class="city-head">{{'allValue.сity' | translate}}</li>
+       <li class="salary-head">{{'allValue.salary' | translate}}</li>
+       <li class="position-head">{{'cv-list.dl' | translate}}</li>
+       <li class="choice">{{'allValue.selectaction' | translate}}</li>
+     </ul>
 
     <ul class="botom-line">
       <li class="date">{{item.DateTimeCreate | date:'dd.MM.yyyy'}}</li>
       <li class="city">{{item.CityName}}</li>
       <li class="salary">{{item.SalaryFrom}} &#8364;</li>
       <li class="position">{{item.Position}}</li>
-      <li><select class="selectChoice" [title]="'allValue.selectaction' | translate"
+      <li class="choice-data"><select class="selectChoice" [title]="'allValue.selectaction' | translate"
                   (change)= "brokerSelected($event,item, i)"
                   [(ngModel)]="contactMethods[i].id">>
 

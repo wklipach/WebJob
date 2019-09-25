@@ -1357,7 +1357,7 @@
     height: 20vh;
     border: dotted 1px red;
     background-color: red;
-    margin-top: -28px;
+    margin-top: -12px;
     margin-left: 12px;
   }
   .question{
@@ -1366,7 +1366,7 @@
     color: white;
     font-size: 1.4em;
     text-align: center;
-    margin: 15px auto;
+    margin: 10px auto;
   }
   .btn-delete-acc{
     margin-left: 39px;

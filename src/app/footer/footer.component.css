@@ -171,9 +171,7 @@
       color: wheat;
       display: block;
     }
-    ul:hover {
-      display: block;
-    }
+
    .img-back{
       position: absolute;
      cursor: pointer;
