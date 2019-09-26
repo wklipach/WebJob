@@ -36,7 +36,7 @@
     width:8%;
   }
   .choice{
-    width: 15%;
+    width: 18%;
   }
   .selectChoice{
     border-width: 1px;
@@ -45,7 +45,7 @@
     border-style: solid;
     border-radius: 3px;
     background-color: rgb(255, 255, 255);
-    width: 100%;
+    width: 160%;
     height: 32px;
     margin-top: 3px;
   }
@@ -114,7 +114,7 @@
   li{
     position: relative;
     display: block;
-    height: 28px;
+    height: 18px;
     vertical-align: top;
     margin: 6px auto;
     overflow: hidden;
@@ -155,7 +155,7 @@
     border-style: solid;
     border-radius: 3px;
     background-color: rgb(255, 255, 255);
-    width: auto;
+    width: 65%;
     height: 32px;
   }
   .btn-newVac{
@@ -237,7 +237,7 @@
   li{
     position: relative;
     display: block;
-    height: 28px;
+    height: 18px;
     vertical-align: top;
     margin: 6px auto;
     overflow: hidden;
@@ -278,7 +278,7 @@
     border-style: solid;
     border-radius: 3px;
     background-color: rgb(255, 255, 255);
-    width: auto;
+    width: 65%;
     height: 32px;
     margin-top: 2px;
   }
@@ -308,23 +308,24 @@
   }
   .deleteCorrespondence{
     position: absolute;
-    width: 467px;
-    height: 50px;
+    width: 300px;
+    height: 80px;
     border: dotted 1px blue;
     background-color: #fff;
-    line-height: 3.2;
-    margin-left: 15px;
-    margin-top: -52px;
+    line-height: 2.2;
+    margin-top: -85px;
     z-index: 9999;
+    margin-left: 4%;
   }
   .btn-delete{
     width: 50px;
-    margin-left: 15px;
+    margin-left: 25%;
   }
   .btn-delete:hover{
     font-weight: bold;
   }
   .question, .btn{
-    margin-left: 20px;
+    margin-left: 10%;
+    display: block;
   }
 }   /* Конец media 320-767 */
