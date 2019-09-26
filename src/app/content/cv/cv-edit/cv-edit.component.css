@@ -40,10 +40,10 @@ label{
   height: 40px;
   margin-left: 43px;
 }
-.label-position{
+.position{
   margin-left: 128px;
 }
-.position{
+.inputPosition{
   font-size: 1em;
   text-align: center;
   border-width: 1px;

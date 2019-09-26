@@ -1,4 +1,3 @@
-
 <app-header-top></app-header-top>
 
 <div class="wrapper">
@@ -6,18 +5,12 @@
 
   <form [formGroup]="editCVForm">
     <div class="cv-box">
-<div class="line">
-      <label for="inputCity" class="location">{{'allValue.сity' | translate}}</label>
 
+     <label for="inputCity" class="location">{{'allValue.сity' | translate}}</label>
+     <label class="salary">{{'allValue.salary' | translate}}</label>
+     <label class="position">{{'cv-edit.gd' | translate}}</label>
 
-  <label class="salary">{{'allValue.salary' | translate}}</label>
-
-  <label class="label-position">{{'cv-edit.gd' | translate}}</label>
-
-</div>
-
-      <div class="line">
-
+      <div class="line"></div>
 
       <select id="inputCity" formControlName="inputCity" class="inputCity" [title]="'allValue.сity' | translate">
         <option  *ngFor="let lc of listCity" [value]="lc.name">
@@ -26,21 +19,16 @@
       </select>
 
       <input type="text" class="inputSalaryFrom" formControlName="inputSalaryFrom" id="inputSalaryFrom" [placeholder]="'cv-edit.from' | translate">
+      <input type="text" class="inputPosition" formControlName="inputPosition" id="inputPosition" [placeholder]="'cv-edit.gd' | translate">
 
-
-      <input type="text" class="position" formControlName="inputPosition" id="inputPosition" [placeholder]="'cv-edit.gd' | translate">
-
-    </div>
 
       <div class="line">
       <label class="labelSkillsAbilities">{{'cv-edit.ni' | translate}}</label>
       </div>
-
       <div class="line">
       <textarea class="inputSkillsAbilities" [title]="'cv-edit.ni100' | translate" formControlName="inputSkillsAbilities" id="inputSkillsAbilities"
                 [placeholder]="'cv-edit.ni100' | translate"></textarea>
       </div>
-
       <div class="line">
         <app-cv-education></app-cv-education>
       </div>
@@ -51,8 +39,6 @@
       <textarea class="inputEducation" [title]="'cv-edit.univ100' | translate"
                 formControlName="inputEducation" id="inputEducation" [placeholder]="'cv-edit.univ100' | translate"></textarea>
       </div>
-
-
       <div class="line">
         <ng-container #spotLanguage></ng-container>
         <button class="btn-add"  (click)="createNewLanguageBlock(null)">{{'cv-edit.addlangknow' | translate}}</button>

@@ -6,14 +6,13 @@
   <form [formGroup]="newCVForm">
     <div class="cv-box">
 
-        <label class="location">{{'allValue.сity' | translate}}</label>
+        <label for="inputCity" class="location">{{'allValue.сity' | translate}}</label>
         <label class="salary">{{'allValue.salary' | translate}}&nbsp;&nbsp;&nbsp;&#8364;</label>
         <label class="position">{{'newcv.gd23' | translate}}</label>
 
-      <!--   <div style="width:100%; height:1px; clear:both;"></div>    выравниваем без обтекания -->
+            <div class="line"> </div>
 
-      <div class="line"> </div>
-        <select id="inputCity" formControlName="inputCity" class="inputCity" [title]="'allValue.сity' | translate">
+      <select id="inputCity" formControlName="inputCity" class="inputCity" [title]="'allValue.сity' | translate">
           <option  *ngFor="let lc of listCity" [value]="lc.name">
             {{lc.name}}
           </option>
@@ -36,8 +35,8 @@
       </div>
 
       <label class="Education">{{'school' | translate}}</label>
-      <div class="line">
 
+      <div class="line">
       <textarea class="inputEducation" [title]="'newcv.u231000' | translate"
                 formControlName="inputEducation" id="inputEducation" [placeholder]="'newcv.u231000' | translate"></textarea>
       </div>
