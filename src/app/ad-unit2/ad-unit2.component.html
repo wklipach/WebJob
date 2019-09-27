@@ -6,26 +6,35 @@
 <app-page-count></app-page-count>
 -->
 
-  <ul class="mmenuu">
-    <li><a href=#>Меню №1</a>
-      <ul class="ssubmenuu">
-        <li><a href=#>Субменю №1 первого меню</a></li>
-      </ul>
-    </li>
-    <li><a href=#>Меню №2</a>
-      <ul class="ssubmenuu">
-        <li><a href=#>Субменю №2 второго меню</a></li>
-        <li><a href=#>Субменю №2 второго меню</a></li>
-      </ul>
-    </li>
-    <li><a href=#>Меню №3</a>
-      <ul class="ssubmenuu">
-        <li><a href=#>Субменю №3 третьего меню</a></li>
-        <li><a href=#>Субменю №3 третьего меню</a></li>
-        <li><a href=#>Субменю №3 третьего меню</a></li>
+
+  <ul class="menu">
+    <li>
+      <a href="#">&#9776;</a>
+      <ul class="sub-menu">
+        <li><a href="#">{{'footer.aboutmy' | translate }}</a></li>
+        <li><a href="#">{{'footer.cont' | translate }}</a></li>
+        <li><a href="#">{{'footer.rules' | translate }}</a></li>
+        <li><a href="#">{{'footer.polit' | translate }}</a></li>
       </ul>
     </li>
   </ul>
 
-
 </div>
+
+<!--
+
+<ul class="info">
+  <li>{{'footer.aboutmy' | translate }}</li>
+            <li>{{'footer.cont' | translate }}</li>
+            <li>{{'footer.rules' | translate }}</li>
+            <li>{{'footer.polit' | translate }}</li>
+</ul>
+
+<img class="img-back" src="/assets/img/arrow-back.png"  onclick="history.back();" [title]="'footer.previous' | translate"
+     [alt]="'footer.previous' | translate">
+
+<div class="footer-menu" title="Открыть меню">&#9776;</div>
+</div>
+
+
+-->

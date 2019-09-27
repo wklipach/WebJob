@@ -89,7 +89,7 @@
     <app-page-count [numberOfRecordsPerPage] = "rowPerPage" [numberOfVisiblePages]="7"
       [(currentPage)] = "page" [numberOfRecordsPerAll] = "recordsPerAll" (currentPageChange)="onPageChanged($event)"></app-page-count>
   </div>
-
+    <div class="right-box">
     <ul>
       <label class="form-check-input">{{'home.vvpHOME' | translate}}</label>
      <li>
@@ -109,6 +109,8 @@
       <input   (click) = "OnClickRowPerPage(50)" type="radio" name="rRow" id="rRow50" [value]="50" [checked]="bChecked50">50
     </label></li>
           </ul>
+    </div>
     <label class="nPage">{{page}}</label>
-  </div>
+
+ </div>
 </div>
