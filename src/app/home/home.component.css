@@ -707,12 +707,12 @@ li{
   .vacancy-box{
     position: relative;
     width: 100%;
+    height: auto;
     margin: 10px auto;
     font-size: 0.9em;
     color: rgb(68, 75, 84);
     border-top: solid 1px #b7b7b7;
     padding-bottom: 1%;
-    height: 600px;
   }
   .vacancy-box:active{
     background-color: #f8f8f8;
@@ -725,42 +725,51 @@ li{
     color: #0262d2;
     width: 75%;
     height: 39px;
-    margin-top: 16px;
+    margin-top: 6px;
     overflow: hidden;
-    background-color: yellow;
   }
   .income{
-    position: relative;
     display: inline-block;
     font-size: 1em;
     color: rgb(242, 97, 0);
     text-align: right;
     width: 21%;
     height: 39px;
-    margin-top: 12px;
+    margin-top: 5px;
     float: right;
     overflow: hidden;
   }
-  .city{
+  .salaryFrom{
     display: inline-block;
+  }
+  .salaryMax{
+    display: inline-block;
+  }
+  .city-line {
+    position: relative;
+    display: block;
+  }
+  .city{
     text-align: left;
     width:12px;
-    margin-left: 4px;
+    margin-left: 15px;
     overflow: hidden;
   }
   .city-name{
-    position: relative;
     display: inline-block;
-    font-size: 1.1em;
+    font-size: 18px;
     color: rgb(68, 75, 84);
     text-align: left;
-    margin-left: 12px;
+    margin-left: 42px;
     overflow: hidden;
+  }
+  .logo-line{
+    height: 50px;
   }
   .logotype{
     display: inline-block;
     position: absolute;
-    margin-top: 35px;
+    margin-top: 10px;
     margin-left: 1px;
     font-size: 12px;
     width: 130px;
@@ -769,41 +778,50 @@ li{
   .logotype-company{
     display: inline-block;
     position: absolute;
-    margin-top: 85px;
-    margin-left: 15px;
-    font-size: 12px;
+    margin-top: 8px;
     width: 130px;
     height: 40px;
+    cursor: pointer;
   }
   .company-name{
     display: inline-block;
-    position: absolute;
-    font-size: 18px;
-    width:700px;
+    font-size: 1.1em;
+    width: 60%;
     color: rgb(68, 75, 84);
-    text-align: left;
-    margin-top: 93px;
-    margin-left: 208px;
+    margin-top: 2px;
+    margin-left: 130px;
     overflow: hidden;
+    text-decoration: underline;
+  }
+  .company-name:hover{
+    cursor: pointer;
+    font-weight:bold;
   }
   .description{
     display: block;
     position: relative;
     color: rgb(68, 75, 84);
-    width: 1130px;
+    width: 95%;
     height: 80px;
     text-align: left;
-    margin-top: 143px;
-    margin-left: 15px;
+    margin-top: 10px;
+    margin-left: 2px;
     padding-right: 20px;
     overflow: auto;
   }
-  .btn-response {
-    display: block;
+  .button-line{
     position: relative;
+    display: block;
+    height: 50px;
+    margin: 10px auto;
+  }
+  .btn-response {
+    display: inline-block;
+    position: relative;
+    font-size: 0.9em;
     border-radius: 3px;
     background-color: #0262d2;
-    width: 155px;
+    width: 100px;
     height: 48px;
     color: rgb(255, 255, 255);
     border-color: #054086;
@@ -823,8 +841,9 @@ li{
     font-weight: bold;
   }
   .btn-favorites{
-    display: block;
+    display: inline-block;
     position: relative;
+    font-size: 0.9em;
     color: rgb(255, 255, 255);
     background-color: #0262d2;
     border-color: #054086;
@@ -832,7 +851,7 @@ li{
     border-width: 1px;
     border-style: solid;
     text-align: center;
-    width: 157px;
+    width: 120px;
     height: 48px;
     margin: 10px auto;
   }
@@ -854,8 +873,9 @@ li{
     z-index: 5;
   }
   .btn-hide{
-    display: block;
+    display: inline-block;
     position: relative;
+    font-size: 0.9em;
     color: #484d55;
     background-color: #ffffff;
     border-color: rgb(242, 97, 0);
@@ -863,7 +883,7 @@ li{
     border-width: 1px;
     border-style: solid;
     text-align: center;
-    width: 160px;
+    width: 150px;
     height: 48px;
     margin: 10px auto;
   }
@@ -884,6 +904,7 @@ li{
   .btn-response-disabled {
     display: inline-block;
     position: absolute;
+    font-size: 0.9em;
     border-radius: 3px;
     background-color: rgb( 145, 175, 209 );
     width: 155px;
@@ -892,8 +913,7 @@ li{
     border-color: #054086;
     border-width: 1px;
     border-style: solid;
-    margin-top: 242px;
-    margin-left: 15px;
+    margin: 10px auto;
   }
   .btn-response-disabled:hover{
     background-color: rgb( 145, 175, 209 );
@@ -908,6 +928,7 @@ li{
   .btn-favorites-disabled{
     display: inline-block;
     position: absolute;
+    font-size: 0.9em;
     color: rgb(255, 255, 255);
     background-color: rgb( 145, 175, 209 );
     border-color: #054086;
@@ -917,8 +938,7 @@ li{
     text-align: center;
     width: 157px;
     height: 48px;
-    margin-top: 243px;
-    margin-left: 172px;
+    margin: 10px auto;
   }
   .btn-favorites-disabled:hover{
     background-color: rgb( 145, 175, 209 );
@@ -939,6 +959,7 @@ li{
   .btn-hide-disabled{
     display: inline-block;
     position: absolute;
+    font-size: 0.9em;
     color: #484d55;
     background-color: #ffffff;
     border-color: rgb(242, 97, 0);
@@ -948,8 +969,7 @@ li{
     text-align: center;
     width: 160px;
     height: 48px;
-    margin-top: 243px;
-    margin-left: 331px;
+    margin: 10px auto;
     vertical-align: middle;
   }
   .crossed-eye{
@@ -958,9 +978,7 @@ li{
   .btn-hide:hover{
     background-color:#f26100;
     color: white;
-
   }
-
   .line{
     position: relative;
     display: inline-block;
@@ -1011,12 +1029,7 @@ li{
   }
   .final-date{
     position: absolute;
-    font-size: 15px;
-    width: 330px;
-    height: 30px;
-    text-align: left;
-    margin-top: 3px;
-    margin-left: 1px;
+    font-size: 0.9em;
   }
   .alertWrong{
     display: block;

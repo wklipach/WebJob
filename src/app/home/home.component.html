@@ -10,12 +10,13 @@
     <div class="income">
       {{curVacancy.SalaryFrom}}-{{curVacancy.Salary}} &#8364;</div>
 
-
+    <div class="city-line">
     <img class="city" src="/assets/img/city.png" [title]="'allValue.city' | translate">
 
     <span class="city-name">{{curVacancy.CityName}}</span>
+    </div>
 
-
+    <div class="logo-line">
     <!-- ////////////////////////// -->
     <div *ngIf="curVacancy.Avatar_Name !== null && curVacancy.Avatar_Name !== undefined && curVacancy.Avatar_Name.length>0; then contentLoadAvatar else contentDefault">{{'home.uvnHOME' | translate}}</div>
     <ng-template #contentLoadAvatar>
@@ -30,9 +31,10 @@
     </ng-template>
     <!-- ////////////////////////// -->
 
-
     <span class="company-name">{{curVacancy.UNAME}}</span>
-    <span class="description">{{curVacancy.VacancyDescription}}</span>
+    </div>
+
+    <div class="description">{{curVacancy.VacancyDescription}}</div>
 
     <div *ngIf="!curVacancy.errorEndDay">
           <span class="final-date">{{'home.razdHOME' | translate}} {{curVacancy.sDateEnd}}</span>
@@ -43,6 +45,7 @@
     <div *ngIf="bConnected">
       <div *ngIf="!bEmployer">
 
+        <div class="button-line">
           <button class="btn-response" type="button" id="vcresponse" [title]="'allValue.Response' | translate" (click)="response(i, curVacancy.id)" >
             {{'allValue.Response' | translate}}
           </button>
@@ -56,6 +59,8 @@
             <img class="crossed-eye" src="/assets/img/crossed-eye.png"  [title]="'allValue.DontShow' | translate">
             {{'allValue.DontShow' | translate}}
           </button>
+
+        </div>
       </div>
     </div>
 
@@ -63,6 +68,7 @@
 
     <div *ngIf="!bConnected">
 
+      <div class="button-line">
         <button class="btn-response-disabled" type="button" id="vcresponseDisabled" [title]="'buttons-disabled' | translate">
           {{'allValue.Response' | translate}}
         </button>
@@ -77,6 +83,7 @@
           {{'allValue.DontShow' | translate}}
         </button>
     </div>
+  </div>
 
     <!-- Если не залогинился, кнопки не активны конец -->
 

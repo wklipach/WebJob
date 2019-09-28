@@ -77,7 +77,7 @@ li{
   position: absolute;
   width: 467px;
   height: 50px;
-  border: dotted 1px blue;
+  border: dotted 1px rgb(68, 75, 84);
   background-color: #fff;
   line-height: 3.2;
   margin-left: 700px;
@@ -104,7 +104,7 @@ li{
   .box{
     margin: 6px;
     padding: 6px;
-    border: 1px solid #0262d2;
+    border: 1px solid rgb(68, 75, 84);
   }
   ul{
     list-style: none;
@@ -186,7 +186,7 @@ li{
     position: absolute;
     width: 467px;
     height: 50px;
-    border: dotted 1px blue;
+    border: dotted 1px rgb(68, 75, 84);
     background-color: #fff;
     line-height: 3.2;
     margin-left: 15px;
@@ -227,7 +227,7 @@ li{
   .box{
     margin: 1px;
     padding: 3px;
-    border: 1px solid #0262d2;
+    border: 1px solid rgb(68, 75, 84);
   }
   ul{
     list-style: none;
@@ -308,23 +308,24 @@ li{
   }
   .deleteCorrespondence{
     position: absolute;
-    width: 467px;
-    height: 50px;
+    width: 300px;
+    height: 80px;
     border: dotted 1px blue;
     background-color: #fff;
-    line-height: 3.2;
-    margin-left: 15px;
-    margin-top: -52px;
+    line-height: 2.2;
+    margin-top: -85px;
     z-index: 9999;
+    margin-left: 4%;
   }
   .btn-delete{
     width: 50px;
-    margin-left: 15px;
+    margin-left: 25%;
   }
   .btn-delete:hover{
     font-weight: bold;
   }
   .question, .btn{
-    margin-left: 20px;
+    margin-left: 10%;
+    display: block;
   }
 }   /* Конец media 320-767 */
