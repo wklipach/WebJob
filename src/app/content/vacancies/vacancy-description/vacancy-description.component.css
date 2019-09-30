@@ -19,7 +19,6 @@
   border-top: solid 1px #b7b7b7;
   color: rgb(68, 75, 84);
   text-align: left;
-  padding-bottom: 5%;
 }
 .title{
   position: relative;
@@ -319,7 +318,6 @@ label{
     border-top: solid 1px #b7b7b7;
     color: rgb(68, 75, 84);
     text-align: left;
-    padding-bottom: 5%;
   }
   .title{
     position: relative;

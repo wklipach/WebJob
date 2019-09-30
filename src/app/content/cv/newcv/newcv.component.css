@@ -291,6 +291,7 @@ label{
   .wrapper {
     width: 100%;
     margin: 0 auto;
+    font-size: 0.9em;
   }
   .top {
     height: 25px;

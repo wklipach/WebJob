@@ -166,7 +166,7 @@
 }
 .btn-hide{
   display: inline-block;
-  position: absolute;
+  position: relative;
   color: #484d55;
   background-color: #ffffff;
   border-color: rgb(242, 97, 0);
@@ -287,47 +287,37 @@
   visibility:hidden;
 }
 .counter-line{
-  position: relative;
   width: 1170px;
-  height: auto;
-  margin: 0 auto;
-  padding: 20px 10px;
 }
 label{
   color: #484c54;
   font-size:16px;
 }
 ul{
-  float: right;
-}
-li{
-  display: inline-block;
+  margin: 10px auto;
   list-style: none;
-  color: #484c54;
-  margin-right: 10px;
-  padding: 0 10px;
+ }
+li{
+  display: inline;
+  padding-left: 10px;
 }
 .nPage{
   visibility:hidden;
 }
   .left-box{
     display: inline-block;
-    float: left;
     width: 35%;
   }
   .right-box{
     display: inline-block;
     float: right;
     width: 60%;
+    text-align: right;
   }
 .final-date{
-  position: absolute;
-  font-size: 15px;
-  width: 330px;
-  height: 30px;
-  text-align: left;
-  margin-top: 3px;
-  margin-left: 1px;
+  display: block;
+  font-size: 0.8em;
+  float: right;
 }
 .alertWrong{
   display: block;
@@ -511,7 +501,7 @@ li{
   }
   .btn-hide{
     display: inline-block;
-    position: absolute;
+    position: relative;
     color: #484d55;
     background-color: #ffffff;
     border-color: rgb(242, 97, 0);
@@ -595,7 +585,7 @@ li{
   }
   .btn-hide-disabled{
     display: inline-block;
-    position: absolute;
+    position: relative;
     color: #484d55;
     background-color: #ffffff;
     border-color: rgb(242, 97, 0);
@@ -644,13 +634,14 @@ li{
   }
   ul{
     float: right;
+    padding-right: 10px;
   }
   li{
-    display: inline-block;
+    display: inline;
     list-style: none;
     color: #484c54;
-    margin-right: 10px;
-    padding: 0 10px;
+    margin: 0;
+    padding: 0;
   }
   .nPage{
     visibility:hidden;
@@ -663,16 +654,14 @@ li{
   .right-box{
     display: inline-block;
     float: right;
-    width: 60%;
+    width: 65%;
+    position: relative;
   }
   .final-date{
-    position: absolute;
-    font-size: 15px;
-    width: 330px;
-    height: 30px;
-    text-align: left;
-    margin-top: 3px;
-    margin-left: 1px;
+    display: block;
+    font-size: 0.8em;
+    float: right;
+    margin-right: 1%;
   }
   .alertWrong{
     display: block;
@@ -801,12 +790,10 @@ li{
     display: block;
     position: relative;
     color: rgb(68, 75, 84);
-    width: 95%;
-    height: 80px;
-    text-align: left;
-    margin-top: 10px;
-    margin-left: 2px;
-    padding-right: 20px;
+    width: 98%;
+    min-height: 30px;
+    max-height: 80px;
+    margin: 10px auto;
     overflow: auto;
   }
   .button-line{
@@ -821,17 +808,19 @@ li{
     font-size: 0.9em;
     border-radius: 3px;
     background-color: #0262d2;
-    width: 100px;
+    width: 29%;
     height: 48px;
     color: rgb(255, 255, 255);
     border-color: #054086;
     border-width: 1px;
     border-style: solid;
-    margin: 10px auto;
+    margin: 10px 0.5% 8px 0;
+    text-align: left;
   }
   .btn-response:hover{
     background-color: #0066cc;
     font-weight:600;
+    font-size: .8em;
   }
   .btn-response:active{
     border-color: #3399ff;
@@ -839,6 +828,7 @@ li{
     border-width: 3px;
     border-radius: 3px;
     font-weight: bold;
+    font-size: .8em;
   }
   .btn-favorites{
     display: inline-block;
@@ -850,16 +840,16 @@ li{
     border-radius: 3px;
     border-width: 1px;
     border-style: solid;
-    text-align: center;
-    width: 120px;
+    width: 34%;
     height: 48px;
-    margin: 10px auto;
+    margin: 10px 0.5% 8px 0;
+    text-align: left;
   }
   .btn-favorites:hover{
     background-color:#0066cc;
     color: white;
     font-weight:600;
-    vertical-align: middle;
+    font-size: .8em;
   }
   .btn-favorites:active{
     border-color: #3399ff;
@@ -867,10 +857,11 @@ li{
     border-width: 3px;
     border-radius: 3px;
     font-weight: bold;
+    font-size: .8em;
   }
   .favor-star{
-    vertical-align: middle;
-    z-index: 5;
+    position: absolute;
+    visibility: hidden;
   }
   .btn-hide{
     display: inline-block;
@@ -882,19 +873,20 @@ li{
     border-radius: 3px;
     border-width: 1px;
     border-style: solid;
-    text-align: center;
-    width: 150px;
+    width: 35%;
     height: 48px;
-    margin: 10px auto;
+    margin: 10px 0.5% 8px 0;
+    text-align: left;
   }
   .crossed-eye{
-    vertical-align: middle;
-    padding-right: 4px;
+    position: absolute;
+    visibility: hidden;
   }
   .btn-hide:hover{
     background-color:#f26100;
     color: white;
     font-weight:bold;
+    font-size: .8em;
   }
 
   /* Не активные кнопки
@@ -903,21 +895,23 @@ li{
 
   .btn-response-disabled {
     display: inline-block;
-    position: absolute;
+    position: relative;
     font-size: 0.9em;
     border-radius: 3px;
     background-color: rgb( 145, 175, 209 );
-    width: 155px;
+    width: 29%;
     height: 48px;
     color: rgb(255, 255, 255);
     border-color: #054086;
     border-width: 1px;
     border-style: solid;
-    margin: 10px auto;
+    margin: 10px 0.5% 8px 0;
+    text-align: left;
   }
   .btn-response-disabled:hover{
     background-color: rgb( 145, 175, 209 );
-    line-height: 2;
+    font-weight:bold;
+    font-size: .8em;
   }
   .btn-response-disabled:active{
     border-color: #3399ff;
@@ -927,7 +921,7 @@ li{
   }
   .btn-favorites-disabled{
     display: inline-block;
-    position: absolute;
+    position: relative;
     font-size: 0.9em;
     color: rgb(255, 255, 255);
     background-color: rgb( 145, 175, 209 );
@@ -935,15 +929,17 @@ li{
     border-radius: 3px;
     border-width: 1px;
     border-style: solid;
-    text-align: center;
-    width: 157px;
+    width: 34%;
     height: 48px;
-    margin: 10px auto;
+    margin: 10px 0.5% 8px 0;
+    text-align: left;
   }
   .btn-favorites-disabled:hover{
     background-color: rgb( 145, 175, 209 );
     color: white;
-    vertical-align: middle;
+    font-weight:bold;
+    font-size: .8em;
+    padding-left: -3px;
   }
   .btn-favorites-disabled:active{
     border-color: #3399ff;
@@ -958,7 +954,7 @@ li{
   }
   .btn-hide-disabled{
     display: inline-block;
-    position: absolute;
+    position: relative;
     font-size: 0.9em;
     color: #484d55;
     background-color: #ffffff;
@@ -966,18 +962,18 @@ li{
     border-radius: 3px;
     border-width: 1px;
     border-style: solid;
-    text-align: center;
-    width: 160px;
+    width: 35%;
     height: 48px;
-    margin: 10px auto;
-    vertical-align: middle;
+    margin: 10px 0.5% 8px 0;
+    text-align: left;
   }
   .crossed-eye{
-    vertical-align: middle;
   }
-  .btn-hide:hover{
+  .btn-hide-disabled:hover{
     background-color:#f26100;
     color: white;
+    font-weight:bold;
+    font-size: .8em;
   }
   .line{
     position: relative;
@@ -994,11 +990,11 @@ li{
   }
   .counter-line{
     position: relative;
-    width: 100%;
-    height: auto;
+    width: 99%;
+    height: 30px;
     margin: 0 auto;
     padding: 10px 5px;
-    font-size: 0.8em;
+    font-size: 0.7em;
   }
   label{
     color: #484c54;
@@ -1006,13 +1002,14 @@ li{
   }
   ul{
     float: right;
+    padding: 0;
   }
   li{
     display: inline-block;
     list-style: none;
     color: #484c54;
-    margin-right: 10px;
-    padding: 0 10px;
+    margin: 0;
+    padding: 0;
   }
   .nPage{
     visibility:hidden;
@@ -1020,16 +1017,20 @@ li{
   .left-box{
     display: inline-block;
     float: left;
-    width: 35%;
+    width: 32%;
   }
   .right-box{
     display: inline-block;
     float: right;
-    width: 60%;
+    width: 65%;
+    position: relative;
   }
   .final-date{
-    position: absolute;
-    font-size: 0.9em;
+    display: block;
+    font-size: 0.8em;
+    float: right;
+    margin-right: 1%;
+
   }
   .alertWrong{
     display: block;
