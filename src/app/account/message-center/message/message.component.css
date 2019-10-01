@@ -1,18 +1,22 @@
+@media screen and (min-width: 1200px) and (max-width: 4000px) {
 .wrapper{
   width: 1170px;
-  height: auto;
   margin: 0 auto;
   color: rgb(68, 75, 84);
+}
+.top{
+  padding-bottom: 35px;
 }
 .box-row{
   position: relative;
   width: 100%;
-  height:900px;
+  height: 550px;
 }
 .left-side{
   float: left;
   width:180px;
   min-height:380px;
+  text-align: center;
 }
 .right-side{
   position: relative;
@@ -25,10 +29,19 @@
   border-width: 1px;
   margin-top: 2px;
 }
-.zero{
+  .alertWrong{
+    font-size: 1.4em;
+    color: #F74933;
+    text-align: center;
+  }
+  .alertWrong2{
+    font-size: 1.4em;
+    color: blue;
+    text-align: center;
+  }
+.form{
   position: absolute;
 }
-
 .logotypeEr{
   border-width: 1px;
   border-color: rgb(188, 188, 188);
@@ -38,8 +51,7 @@
   position: relative;
   width: 130px;
   height: 40px;
-  margin-left: 22px;
-  margin-top: 45px;
+  margin-bottom: 20px;
 }
 
 .logotype{
@@ -51,27 +63,21 @@
   position: relative;
   width: 103px;
   height: 103px;
-
-  /*  width: 130px;
-  height: 40px; */
-
-  margin-left: 22px;
-  margin-top: 45px;
+  margin-bottom: 20px;
 }
 .logotype:hover{
   cursor: pointer;
 }
 .logotype-company{
-  position: absolute;
   border-width: 1px;
   border-color: rgb(188, 188, 188);
   border-style: solid;
   border-radius: 3px;
   background-color: rgb(220, 220, 220);
+  position: relative;
   width: 130px;
   height: 40px;
-  margin-left: 10px;
-  margin-top: 242px;
+  margin-bottom: 20px;
 }
 label{
   position: absolute;
@@ -95,18 +101,21 @@ label{
   font-size: 14px;
 }
 .from{
-  position: absolute;
-  width:250px;
-  margin-left:38px;
+  position: relative;
+  width: 180px;
+  margin-bottom: 30px;
+  height: auto;
+  font-size: 1.2em;
 }
 .move{
-  font-size: 12px;
-  margin-left:22px;
-  margin-top: 160px;
+  position: relative;
+  font-size: 0.9em;
+  margin-top: 30px;
   text-decoration: underline;
 }
 .move:hover{
   cursor: pointer;
+  font-weight: bold;
 }
 .labelTo{
   margin-top: 196px;
@@ -122,9 +131,10 @@ label{
   height: 30px;
 }
 .dateTime{
-  font-size: 13px;
+  font-size: 0.8em;
   font-weight: 300;
-  margin-left:850px;
+  float: right;
+  margin-right: 18px;
 }
 .labelSubject{
   margin-left: 20px;
@@ -133,11 +143,11 @@ label{
 .subject{
   position: absolute;
   margin-left: 60px;
-  width:800px;
+  width:92%;
   font-size: 1.2em;
   margin-top: -4px;
   overflow: hidden;
-
+  text-align: center;
 }
 .labelText{
   margin-left: 20px;
@@ -157,20 +167,20 @@ label{
   max-height: 31vh;
   overflow: auto;
 }
-.answer{
-  font-size: 13px;
-  border-style: solid;
-  border-color: #b8b8b8;
-  border-width: 2px;
-  border-radius: 5px;
-  margin: 35px 0 0 18px;
-  width: 945px;
-  height: 120px;
-}
-.formResponse{
-  position: absolute;
-  width: 970px;
-}
+  .answer{
+    font-size: 13px;
+    border-style: solid;
+    border-color: #b8b8b8;
+    border-width: 2px;
+    border-radius: 5px;
+    margin: 35px 0 0 18px;
+    width: 96%;
+    height: 120px;
+  }
+  .formResponse{
+    position: absolute;
+    width: 100%;
+  }
 .test{
   height: auto;
   margin: 30px;
@@ -178,7 +188,7 @@ label{
   background-color: yellow;
 }
 .correspondence{
- min-height: 300px;
+ min-height: 190px;
   max-height: 600px;
   overflow: auto;
   box-sizing: border-box;
@@ -188,6 +198,7 @@ label{
   margin-right: 12px;
 }
 .btn-send {
+  position: relative;
   border-radius: 3px;
   background-color: #0262d2;
   width: 155px;
@@ -197,7 +208,7 @@ label{
   border-width: 1px;
   border-style: solid;
   float: right;
-  margin: 12px 18px 0 0;
+  margin: 12px 18px 15px 0;
 }
 .btn-send:hover{
   background-color: #0066cc;
@@ -210,3 +221,441 @@ label{
   border-radius: 3px;
   font-weight: 600;
 }
+
+}         /* Конец media 1200-4000 */
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .wrapper{
+    width: 100%;
+    margin: 0 auto;
+  }
+  .top{
+    padding-bottom: 35px;
+  }
+  .box-row{
+    position: relative;
+    width: 100%;
+    min-height: 600px;
+  }
+  .left-side{
+    float: left;
+    width: 20%;
+    min-height:380px;
+    text-align: center;
+  }
+  .right-side{
+    position: relative;
+    display: inline-block;
+    width: 78%;
+    height: auto;
+    min-height:380px;
+    border-left: solid;
+    border-color: #b8b8b8;
+    border-width: 1px;
+    margin-top: 2px;
+  }
+  .form{
+    position: absolute;
+  }
+  .logotypeEr{
+    border-width: 1px;
+    border-color: rgb(188, 188, 188);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(220, 220, 220);
+    position: relative;
+    width: 130px;
+    height: 40px;
+    margin-bottom: 20px;
+  }
+
+  .logotype{
+    border-width: 1px;
+    border-color: rgb(188, 188, 188);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(220, 220, 220);
+    position: relative;
+    width: 103px;
+    height: 103px;
+    margin-bottom: 20px;
+  }
+  .logotype:hover{
+    cursor: pointer;
+  }
+  .logotype-company{
+    border-width: 1px;
+    border-color: rgb(188, 188, 188);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(220, 220, 220);
+    position: relative;
+    width: 130px;
+    height: 40px;
+    margin-bottom: 20px;
+  }
+  label{
+    position: absolute;
+    font-size: 15px;
+    color: #0262d2;
+    text-align: left;
+  }
+  .headline{
+    background-color: #DFDFDF;
+  }
+  .bline{
+    width: 100%;
+    height: auto;
+    border-color: #b7b7b7;
+  }
+  .date{
+    width:100px;
+    margin-left:800px;
+  }
+  .labelFrom{
+    font-size: 14px;
+  }
+  .from{
+    position: relative;
+    width: 99.5%;
+    margin-bottom: 30px;
+    height: auto;
+    font-size: 1.2em;
+  }
+  .move{
+    position: relative;
+    font-size: 0.9em;
+    margin-top: 30px;
+    text-decoration: underline;
+  }
+  .move:hover{
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .labelTo{
+    margin-top: 196px;
+    font-size: 14px;
+  }
+  .UserTo{
+    position: absolute;
+    margin-left:40px;
+    margin-top:196px;
+  }
+  .topline{
+    width:100%;
+    height: 30px;
+  }
+  .dateTime{
+    font-size: 0.8em;
+    font-weight: 300;
+    float: right;
+    margin-right: 18px;
+  }
+  .labelSubject{
+    margin-left: 20px;
+    width:600px;
+  }
+  .subject{
+    position: absolute;
+    margin-left: 60px;
+    width:92%;
+    font-size: 1.2em;
+    margin-top: -4px;
+    overflow: hidden;
+    text-align: center;
+  }
+  .labelText{
+    margin-left: 20px;
+    margin-top: 70px;
+  }
+  .textline{
+    display: block;
+    font-size: 14px;
+    padding: 6px 20px;
+    border-style: solid;
+    border-color: #b8b8b8;
+    border-width: 1px;
+    border-radius: 5px;
+    margin: 5px 20px 10px 20px;
+    width: 90%;
+    min-height: 6vh;
+    max-height: 31vh;
+    overflow: auto;
+  }
+  .answer{
+    font-size: 13px;
+    border-style: solid;
+    border-color: #b8b8b8;
+    border-width: 2px;
+    border-radius: 5px;
+    margin: 35px 0 0 18px;
+    width: 96%;
+    height: 120px;
+  }
+  .formResponse{
+    position: absolute;
+    width: 100%;
+  }
+  .test{
+    height: auto;
+    margin: 30px;
+    overflow: auto;
+    background-color: yellow;
+  }
+  .correspondence{
+    min-height: 190px;
+    max-height: 600px;
+    overflow: auto;
+    box-sizing: border-box;
+  }
+  .in, .out{
+    float: left;
+    margin-right: 12px;
+  }
+  .btn-send {
+    position: relative;
+    border-radius: 3px;
+    background-color: #0262d2;
+    width: 155px;
+    height: 48px;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    float: right;
+    margin-top: 12px;
+  }
+  .btn-send:hover{
+    background-color: #0066cc;
+    font-weight:600;
+  }
+  .btn-send:active{
+    border-color: #3399ff;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3px;
+    font-weight: 600;
+  }
+
+}    /* Конец media 768-1199 */
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .wrapper {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 0.9em;
+  }
+  .top {
+    height: 25px;
+    font-size: 1.4em;
+    margin: 0 0 10px 0;
+    padding-left: 6px;
+    line-height: 0.8;
+    border-bottom: solid 1px #b7b7b7;
+    padding-bottom: 0;
+    border-top: 0;
+  }
+  .box-row{
+    position: relative;
+    width: 100%;
+    min-height: 600px;
+  }
+  .left-side{
+    float: left;
+    width:180px;
+    min-height:380px;
+    text-align: center;
+  }
+  .right-side{
+    position: relative;
+    display: inline-block;
+    width: 986px;
+    height: auto;
+    min-height:380px;
+    border-left: solid;
+    border-color: #b8b8b8;
+    border-width: 1px;
+    margin-top: 2px;
+  }
+  .form{
+    position: absolute;
+  }
+  .logotypeEr{
+    border-width: 1px;
+    border-color: rgb(188, 188, 188);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(220, 220, 220);
+    position: relative;
+    width: 130px;
+    height: 40px;
+    margin-bottom: 20px;
+  }
+
+  .logotype{
+    border-width: 1px;
+    border-color: rgb(188, 188, 188);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(220, 220, 220);
+    position: relative;
+    width: 103px;
+    height: 103px;
+    margin-bottom: 20px;
+  }
+  .logotype:hover{
+    cursor: pointer;
+  }
+  .logotype-company{
+    border-width: 1px;
+    border-color: rgb(188, 188, 188);
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(220, 220, 220);
+    position: relative;
+    width: 130px;
+    height: 40px;
+    margin-bottom: 20px;
+  }
+  label{
+    position: absolute;
+    font-size: 15px;
+    color: #0262d2;
+    text-align: left;
+  }
+  .headline{
+    background-color: #DFDFDF;
+  }
+  .bline{
+    width: 100%;
+    height: auto;
+    border-color: #b7b7b7;
+  }
+  .date{
+    width:100px;
+    margin-left:800px;
+  }
+  .labelFrom{
+    font-size: 14px;
+  }
+  .from{
+    position: relative;
+    width: 180px;
+    margin-bottom: 30px;
+    height: auto;
+    font-size: 1.2em;
+  }
+  .move{
+    position: relative;
+    font-size: 0.9em;
+    margin-top: 30px;
+    text-decoration: underline;
+  }
+  .move:hover{
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .labelTo{
+    margin-top: 196px;
+    font-size: 14px;
+  }
+  .UserTo{
+    position: absolute;
+    margin-left:40px;
+    margin-top:196px;
+  }
+  .topline{
+    width:100%;
+    height: 30px;
+  }
+  .dateTime{
+    font-size: 0.8em;
+    font-weight: 300;
+    float: right;
+    margin-right: 18px;
+  }
+  .labelSubject{
+    margin-left: 20px;
+    width:600px;
+  }
+  .subject{
+    position: absolute;
+    margin-left: 60px;
+    width:800px;
+    font-size: 1.2em;
+    margin-top: -4px;
+    overflow: hidden;
+    text-align: center;
+  }
+  .labelText{
+    margin-left: 20px;
+    margin-top: 70px;
+  }
+  .textline{
+    display: block;
+    font-size: 14px;
+    padding: 6px 20px;
+    border-style: solid;
+    border-color: #b8b8b8;
+    border-width: 1px;
+    border-radius: 5px;
+    margin: 5px 20px 10px 20px;
+    width: 90%;
+    min-height: 6vh;
+    max-height: 31vh;
+    overflow: auto;
+  }
+  .answer{
+    font-size: 13px;
+    border-style: solid;
+    border-color: #b8b8b8;
+    border-width: 2px;
+    border-radius: 5px;
+    margin: 35px 0 0 18px;
+    width: 96%;
+    height: 120px;
+  }
+  .formResponse{
+    position: absolute;
+    width: 100%;
+  }
+  .test{
+    height: auto;
+    margin: 30px;
+    overflow: auto;
+    background-color: yellow;
+  }
+  .correspondence{
+    min-height: 190px;
+    max-height: 600px;
+    overflow: auto;
+    box-sizing: border-box;
+  }
+  .in, .out{
+    float: left;
+    margin-right: 12px;
+  }
+  .btn-send {
+    border-radius: 3px;
+    background-color: #0262d2;
+    width: 155px;
+    height: 48px;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    float: right;
+    margin-top: 12px;
+  }
+  .btn-send:hover{
+    background-color: #0066cc;
+    font-weight:600;
+  }
+  .btn-send:active{
+    border-color: #3399ff;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3px;
+    font-weight: 600;
+  }
+
+}   /* Конец media 320-767 */

@@ -110,24 +110,24 @@ export class MessageComponent implements OnInit, OnDestroy {
 
               if (this.listLetter.length > 0) {
 
-                //console.log('this.listLetter[0].id_vc',this.listLetter[0].id_vc);
+                // console.log('this.listLetter[0].id_vc',this.listLetter[0].id_vc);
 
                 this.deleteThread = false;
 
                 this.httpLetter.getAnyVcWithInvisible(this.listLetter[0].id_vc).subscribe(
                   anyValueVC => {
 
-                    //console.log('anyValueVC',anyValueVC);
+                    // console.log('anyValueVC',anyValueVC);
 
                     this.anyVC = anyValueVC;
                     if (this.anyVC !== undefined) {
                       if (this.anyVC[0] !== undefined) {
 
-                        //console.log('this.anyVC',this.anyVC);
+                        // console.log('this.anyVC',this.anyVC);
 
                         this.responseVC = this.anyVC[0].VacancyShortTitle;
                         this.deleteThread = this.anyVC[0].bInvisible;
-                        //console.log('this.responseVC',this.anyVC);
+                        // console.log('this.responseVC',this.anyVC);
                       } else this.responseVC = '';
                     } else {
                       this.responseVC = '';
@@ -173,7 +173,7 @@ export class MessageComponent implements OnInit, OnDestroy {
 
         this._letter = anyLetter;
 
-        //идет показ собеседника
+        // идет показ собеседника
         if (this.id_user == anyLetter.id_user_from) {
             this._sNameUserResp = anyTempLetterTo.UserName;
             this._sName = anyTempLetterTo.Name;
@@ -191,10 +191,10 @@ export class MessageComponent implements OnInit, OnDestroy {
        // console.log('this._sLastName',this._sLastName);
 
 
-        //получаем данные удаленно CV или нет
+        // получаем данные удаленно CV или нет
         this.httpLetter.getInfoCv(anyLetter.id_cv).subscribe( aRes =>
           {
-            //console.log('aRes[0]',aRes[0]);
+            // console.log('aRes[0]',aRes[0]);
             this.deleteCV = aRes[0].bInvisible;
             this._letter = anyLetter;
           }
@@ -238,7 +238,7 @@ export class MessageComponent implements OnInit, OnDestroy {
 
 
   onProfileClick(event) {
-    //console.log('$event', event);
+    // console.log('$event', event);
   }
 
   ngOnDestroy() {
@@ -272,8 +272,8 @@ export class MessageComponent implements OnInit, OnDestroy {
     this.sErrorResponse = '';
 
   if (this.formResponse.invalid) {
-      //console.log('');
-      if (this.formResponse.get('textCommentValue').value.length>3000) {
+      // console.log('');
+      if (this.formResponse.get('textCommentValue').value.length > 3000) {
         this.translate.get('message.messageSDT').subscribe(
           value => this.sErrorResponse = value);
       }

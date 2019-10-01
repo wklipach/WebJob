@@ -3,9 +3,13 @@
 <div class="top">{{'message.messageM' | translate}}</div>
 
   <div class="box-row">
+
+    <div class="alertWrong" *ngIf="deleteThread">{{'message.messageVSON'| translate }}</div>
+    <div class="alertWrong2" *ngIf="this.deleteCV">Данное резюме было снято.</div>
+
     <div class="left-side">
    <!--   <label class="labelFrom">Собеседник</label>  -->
-      <br>
+
       <div class="from" *ngIf="_letter != undefined; else UF">
 
 
@@ -16,7 +20,7 @@
 
       </div>
       <ng-template #UF></ng-template>
-      <form class="zero" [formGroup]="form">
+      <form [formGroup]="form">
         <div *ngIf="this.sAvatarPath.length>0; then contentLoadAvatar else contentDefault">{{'message.ifnot'| translate }}</div>
         <ng-template #contentLoadAvatar>
 
@@ -34,8 +38,7 @@
        </ng-template>
 
                   <ng-template #contentDefault>
-                    <br><br>
-                    <img src="/assets/img/no-photo.png" class="img-thumbnail" onclick="">
+                        <img src="/assets/img/no-photo.png" class="img-thumbnail" onclick="">
                   </ng-template>
         </form>
 
@@ -64,16 +67,13 @@
 
 
       <div class="right-side">
+
+
         <div class="topline">
-          <label class="labelSubject">{{'message.vcword' | translate}}
+          <label class="labelSubject">{{'messages-container.themeMSC' | translate}}</label>
             <span class="subject">{{responseVC}}</span>
 
-            <span *ngIf="deleteThread"><br>Данная вакансия была снята.</span>
 
-            <span *ngIf="this.deleteCV"><br>Данное резюме было снято.</span>
-
-
-          </label>
         </div>
 
 <div class="correspondence">
@@ -97,7 +97,7 @@
   </div>
   <!-- КОНЕЦ ЦИКЛА -->
 </div>
-        {{sErrorResponse}}
+        <div class="alertWrong">{{sErrorResponse}}</div>
       <form class="formResponse" [formGroup]="formResponse">
         <textarea formControlName="textCommentValue" class="answer" id="answer"
                   [placeholder]="'message.inpres'| translate" cols="100" rows="6"></textarea>
@@ -107,3 +107,4 @@
   </div>
 
 </div>
+
