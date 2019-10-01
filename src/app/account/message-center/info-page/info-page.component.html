@@ -1,18 +1,12 @@
-<div class="container">
 <app-header-top></app-header-top>
 
 <div class="wrapper">
-
     <div *ngIf="this.anyInfo">
 
-     <div class="top">{{this.anyInfo.Subject}}</div>
-
-     <span class="date">{{this.anyInfo.DateTimeCreate | date :'dd.MM.yyyy'}}</span>
-     <span class="from">{{this.anyInfo.UserNameFrom}}</span>
-     <span class="txt">{{this.anyInfo.letterText}}</span>
+      <div class="top">{{this.anyInfo.Subject}}</div>
+       <span class="date">{{this.anyInfo.DateTimeCreate | date :'dd.MM.yyyy'}}</span>
+       <span class="from">{{this.anyInfo.UserNameFrom}}</span>
+       <span class="txt">{{this.anyInfo.letterText}}</span>
 
     </div>
-</div>
-
-
 </div>
