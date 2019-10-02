@@ -47,7 +47,6 @@
   border-color: rgb(188, 188, 188);
   border-style: solid;
   border-radius: 3px;
-  background-color: rgb(220, 220, 220);
   position: relative;
   width: 130px;
   height: 40px;
@@ -59,7 +58,6 @@
   border-color: rgb(188, 188, 188);
   border-style: solid;
   border-radius: 3px;
-  background-color: rgb(220, 220, 220);
   position: relative;
   width: 103px;
   height: 103px;
@@ -262,7 +260,6 @@ label{
     border-color: rgb(188, 188, 188);
     border-style: solid;
     border-radius: 3px;
-    background-color: rgb(220, 220, 220);
     position: relative;
     width: 130px;
     height: 40px;
@@ -274,7 +271,6 @@ label{
     border-color: rgb(188, 188, 188);
     border-style: solid;
     border-radius: 3px;
-    background-color: rgb(220, 220, 220);
     position: relative;
     width: 103px;
     height: 103px;
@@ -377,7 +373,7 @@ label{
     border-width: 1px;
     border-radius: 5px;
     margin: 5px 20px 10px 20px;
-    width: 90%;
+    width: 89%;
     min-height: 6vh;
     max-height: 31vh;
     overflow: auto;
@@ -424,6 +420,7 @@ label{
     border-style: solid;
     float: right;
     margin-top: 12px;
+    margin-right: 10px;
   }
   .btn-send:hover{
     background-color: #0066cc;
@@ -439,6 +436,9 @@ label{
 
 }    /* Конец media 768-1199 */
 @media screen and (min-width: 320px) and (max-width: 767px) {
+  .container{
+    min-height: calc(100vh - 50px);
+  }
   .wrapper {
     width: 100%;
     margin: 0 auto;
@@ -457,34 +457,28 @@ label{
   .box-row{
     position: relative;
     width: 100%;
-    min-height: 600px;
+    min-height: 530px;
   }
   .left-side{
-    float: left;
-    width:180px;
-    min-height:380px;
-    text-align: center;
+    position: relative;
+    width:100%;
+    vertical-align: top;
   }
   .right-side{
     position: relative;
-    display: inline-block;
-    width: 986px;
-    height: auto;
+    display: block;
     min-height:380px;
-    border-left: solid;
-    border-color: #b8b8b8;
-    border-width: 1px;
     margin-top: 2px;
   }
   .form{
     position: absolute;
   }
   .logotypeEr{
+    display: inline-block;
     border-width: 1px;
     border-color: rgb(188, 188, 188);
     border-style: solid;
     border-radius: 3px;
-    background-color: rgb(220, 220, 220);
     position: relative;
     width: 130px;
     height: 40px;
@@ -496,7 +490,6 @@ label{
     border-color: rgb(188, 188, 188);
     border-style: solid;
     border-radius: 3px;
-    background-color: rgb(220, 220, 220);
     position: relative;
     width: 103px;
     height: 103px;
@@ -539,15 +532,17 @@ label{
   }
   .from{
     position: relative;
-    width: 180px;
-    margin-bottom: 30px;
-    height: auto;
+    margin-bottom: 20px;
     font-size: 1.2em;
+    text-align: center;
   }
   .move{
-    position: relative;
+
+    display: inline-block;
     font-size: 0.9em;
-    margin-top: 30px;
+    margin-left: 50%;
+    margin-top: -60px;
+    position: absolute;
     text-decoration: underline;
   }
   .move:hover{
@@ -574,17 +569,14 @@ label{
     margin-right: 18px;
   }
   .labelSubject{
-    margin-left: 20px;
-    width:600px;
+    margin-left: 1%;
+    width:60px;
   }
   .subject{
-    position: absolute;
-    margin-left: 60px;
+    margin-left: 12%;
     width:800px;
     font-size: 1.2em;
-    margin-top: -4px;
     overflow: hidden;
-    text-align: center;
   }
   .labelText{
     margin-left: 20px;
@@ -593,15 +585,15 @@ label{
   .textline{
     display: block;
     font-size: 14px;
-    padding: 6px 20px;
+    padding: 3px 5px;
     border-style: solid;
     border-color: #b8b8b8;
     border-width: 1px;
     border-radius: 5px;
-    margin: 5px 20px 10px 20px;
-    width: 90%;
+    margin: 5px 20px 10px 2px;
+    width: 92%;
     min-height: 6vh;
-    max-height: 31vh;
+    max-height: 13vh;
     overflow: auto;
   }
   .answer{
@@ -610,8 +602,8 @@ label{
     border-color: #b8b8b8;
     border-width: 2px;
     border-radius: 5px;
-    margin: 35px 0 0 18px;
-    width: 96%;
+    margin: 3px 0 0 2px;
+    width: 94%;
     height: 120px;
   }
   .formResponse{
@@ -644,7 +636,7 @@ label{
     border-width: 1px;
     border-style: solid;
     float: right;
-    margin-top: 12px;
+    margin: 12px 12px;
   }
   .btn-send:hover{
     background-color: #0066cc;

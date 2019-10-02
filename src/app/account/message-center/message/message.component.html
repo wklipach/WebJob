@@ -1,3 +1,4 @@
+<div class="container">
 <app-header-top></app-header-top>
 <div class="wrapper">
 <div class="top">{{'message.messageM' | translate}}</div>
@@ -17,9 +18,10 @@
         <div *ngIf="this._sLastName !==''">{{this._sLastName}}</div>
         <div *ngIf="this._sName =='' && this._sLastName ==''">{{this._sNameUserResp}}</div>
 
-
       </div>
+
       <ng-template #UF></ng-template>
+
       <form [formGroup]="form">
         <div *ngIf="this.sAvatarPath.length>0; then contentLoadAvatar else contentDefault">{{'message.ifnot'| translate }}</div>
         <ng-template #contentLoadAvatar>
@@ -48,6 +50,7 @@
                   <label class="move" (click)="moveVC()">{{'message.movevc' | translate}}</label>
 
                 </div>
+
                 <ng-template #EE>
                   <label class="move" (click)="moveCV()">{{'message.movecv' | translate}}</label>
                 </ng-template>
@@ -108,3 +111,4 @@
 
 </div>
 
+</div>
