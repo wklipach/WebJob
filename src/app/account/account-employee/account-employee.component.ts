@@ -90,8 +90,11 @@ private loadUser: UserType;
       'inputBirth': new FormControl('', [])
     });
 
-    this.genderList = this.gs.getGenderList();
 
+
+    this.translate.onLangChange.subscribe( value => {
+      this.genderList = this.gs.getGenderList();
+    });
 
     this.accountEmployeeForm.controls['inputUserName'].disable();
   }

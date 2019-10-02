@@ -219,6 +219,7 @@ export class VacancyDescriptionComponent implements OnInit {
       this.dvSubscription.unsubscribe();
     }
 
+
   }
 
   vcFavour() {
