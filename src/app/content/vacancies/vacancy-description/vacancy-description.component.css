@@ -294,7 +294,7 @@ label{
 .buttons{
   position: relative;
   display: block;
-  margin-bottom: 2%;
+  margin: 2% auto;
 }
 }   /* Конец media 1200-4000 */
 
@@ -593,7 +593,7 @@ label{
   .buttons{
     position: relative;
     display: block;
-    margin: 5% 0;
+    margin: 2% auto;
   }
   /* Не активные кнопки
            background: url(/assets/img/disabled.png) no-repeat;
@@ -681,7 +681,7 @@ label{
   .buttons{
     position: relative;
     display: block;
-    margin-bottom: 2%;
+    margin: 2% auto;
   }
 }    /* Конец media 768-1199 */
 
@@ -971,6 +971,6 @@ label{
   }
   .buttons{
     position: relative;
-    margin: 30px auto;
+    margin: 2% auto;
   }
 }   /* Конец media 320-767  */
