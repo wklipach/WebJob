@@ -7,6 +7,7 @@
     margin-top: 15px;
   }
   .message{
+    position: relative;
     margin: 0 auto;
   }
   .message:hover{
@@ -53,8 +54,13 @@
     font-weight: bold;
   }
   .trash{
-    float: right;
-    padding-top: 5px;
+    position: absolute;
+    width: 100%;
+    margin-top: 25px;
+    text-align: right;
+  }
+  .img-trash{
+    margin-right: 0.3%;
   }
   .deleteCorrespondence{
     position: absolute;
@@ -63,11 +69,15 @@
     border: dotted 1px blue;
     background-color: #fff;
     line-height: 3.2;
-    margin: 10px 25%;
+    margin: 2px 25%;
     z-index: 9999;
   }
-  .question, .btn{
+  .question {
+    display: inline-block;
     margin-left: 20px;
+  }
+  .buttons{
+    display: inline-block;
   }
   .btn-delete{
     width: 50px;
@@ -124,6 +134,7 @@
     margin: 10px auto;
     color: #0262d2;
     max-height: 10vh;
+    width: 90%;
     overflow: auto;
   }
   .from{
@@ -131,13 +142,19 @@
   }
   .subject{
     width: 60%;
+
   }
   .boldletter {
     font-weight: bold;
   }
   .trash{
-    float: right;
-    padding-top: 5px;
+    position: absolute;
+    width: 100%;
+    margin-top: 25px;
+    text-align: right;
+  }
+  .img-trash{
+    margin-right: 2%;
   }
   .deleteCorrespondence{
     position: absolute;
@@ -146,11 +163,15 @@
     border: dotted 1px blue;
     background-color: #fff;
     line-height: 3.2;
-    margin: 1.2% 0 1.2% 12%;
+    margin: 2px 25%;
     z-index: 9999;
   }
-  .question, .btn{
+  .question {
+    display: inline-block;
     margin-left: 20px;
+  }
+  .buttons{
+    display: inline-block;
   }
   .btn-delete{
     width: 50px;
@@ -161,31 +182,29 @@
   }
 }    /* Конец media 768-1199 */
 @media screen and (min-width: 320px) and (max-width: 767px) {
-  .wrapper{
+  .wrapper {
     width: 100%;
     margin: 0 auto;
-    font-size: 0.95em;
+    font-size: 0.9em;
   }
   .top {
     height: 25px;
     font-size: 1.4em;
     margin: 0 0 10px 0;
     padding-left: 6px;
-    line-height: 1;
+    line-height: 0.8;
     border-bottom: solid 1px #b7b7b7;
     padding-bottom: 0;
     border-top: 0;
-    overflow: hidden;
   }
   .messages-box{
-    font-size: 0.8em;
-    min-height: 250px;
-    max-height: 650px;
-    overflow: auto;
-    margin-top: 15px;
+    margin: 1px;
+    padding: 3px;
   }
   .message{
     margin: 0 auto;
+    border: 1px solid rgb(68, 75, 84);
+    margin-bottom: 10px;
   }
   .message:hover{
     cursor: pointer;
@@ -198,55 +217,75 @@
   }
   li{
     position: relative;
-    display: inline-block;
+    display: block;
+    height: 18px;
     vertical-align: top;
+    margin-top: 6px;
+    overflow: hidden;
   }
   .headline{
-    margin-bottom: 2px;
-    background-color: #DFDFDF;
+    display: inline-block;
+    width: 25%;
+    vertical-align: top;
+    color: #0262d2;
+    text-align: left;
   }
   .bline{
-    width: 100%;
-    border-color: #b7b7b7;
-    margin-top: 2px;
+    display: inline-block;
+    width: 70%;
+    vertical-align: top;
   }
   .date{
-    width: 17%;
   }
   .txt{
     font-size: 0.9em;
     margin: 10px auto;
     color: #0262d2;
     max-height: 10vh;
+    width: 90%;
     overflow: auto;
   }
   .from{
-    width: 15%;
   }
   .subject{
-    width: 60%;
+    height: 38px;
+    overflow: hidden;
   }
   .boldletter {
     font-weight: bold;
   }
   .trash{
-    float: right;
-    padding-top: 5px;
+    position: absolute;
+    width: 100%;
+    margin-top: 25px;
+    text-align: right;
   }
+  .img-trash{
+    margin-right: 3%;
+  }
+
   .deleteCorrespondence{
     position: absolute;
-    width: 600px;
-    height: 50px;
+    width: 80%;
+    height: 115px;
     border: dotted 1px blue;
     background-color: #fff;
-    line-height: 3.2;
-    margin: 10px 25%;
+    margin: -90px 5%;
     z-index: 9999;
   }
-  .question, .btn{
+  .question {
+    display: inline-block;
     margin-left: 20px;
+    height: 50px;
+  }
+  .buttons{
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin-top: 6px;
   }
   .btn-delete{
+    display: inline-block;
     width: 50px;
     margin-left: 15px;
   }

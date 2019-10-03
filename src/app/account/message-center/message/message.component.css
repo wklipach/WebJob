@@ -30,12 +30,12 @@
   margin-top: 2px;
 }
   .alertWrong{
-    font-size: 1.4em;
+    font-size: 1.2em;
     color: #F74933;
     text-align: center;
   }
   .alertWrong2{
-    font-size: 1.4em;
+    font-size: 1.2em;
     color: blue;
     text-align: center;
   }
@@ -189,7 +189,6 @@ label{
  min-height: 190px;
   max-height: 320px;
   overflow: auto;
-  box-sizing: border-box;
 }
 .in, .out{
   float: left;
@@ -225,6 +224,7 @@ label{
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   .wrapper{
     width: 100%;
+    min-height: 680px;
     margin: 0 auto;
   }
   .top{
@@ -233,7 +233,7 @@ label{
   .box-row{
     position: relative;
     width: 100%;
-    min-height: 600px;
+    min-height: 500px;
   }
   .left-side{
     float: left;
@@ -402,7 +402,6 @@ label{
     min-height: 190px;
     max-height: 320px;
     overflow: auto;
-    box-sizing: border-box;
   }
   .in, .out{
     float: left;
@@ -433,6 +432,11 @@ label{
     border-radius: 3px;
     font-weight: 600;
   }
+  .alertWrong[_ngcontent-c2] {
+    font-size: 1.2em;
+    color: #F74933;
+    text-align: center;
+  }
 
 }    /* Конец media 768-1199 */
 @media screen and (min-width: 320px) and (max-width: 767px) {
@@ -441,6 +445,7 @@ label{
   }
   .wrapper {
     width: 100%;
+    min-height: 700px;
     margin: 0 auto;
     font-size: 0.9em;
   }
@@ -620,7 +625,6 @@ label{
     min-height: 190px;
     max-height: 320px;
     overflow: auto;
-    box-sizing: border-box;
   }
   .in, .out{
     float: left;
@@ -649,5 +653,9 @@ label{
     border-radius: 3px;
     font-weight: 600;
   }
-
+  .alertWrong[_ngcontent-c2] {
+    font-size: 1.2em;
+    color: #F74933;
+    text-align: center;
+  }
 }   /* Конец media 320-767 */

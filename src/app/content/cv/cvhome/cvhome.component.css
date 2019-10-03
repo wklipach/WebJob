@@ -1,3 +1,4 @@
+@media screen and (min-width: 1200px) and (max-width: 4000px) {
 .cv-box{
   width:  100%;
   height: 360px;
@@ -222,3 +223,480 @@ li{
   position: absolute;
   float: left;
 }
+}         /* Конец media 1200-4000 */
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .wrapper{
+    width: 100%;
+    margin: 0 auto;
+  }
+  .cv-box{
+    width:  100%;
+    height: 360px;
+    margin: 30px auto;
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+    border-color: #b7b7b7;
+    color: rgb(68, 75, 84);
+    text-align: left;
+  }
+  .line {
+    width: 100%;
+    margin-top: 0.1%;
+    padding: auto 10px;
+  }
+  .v-line{
+    position: absolute;
+    width:6px;
+    height:360px;
+    background-color: #b8b8b8;
+  }
+  .cv-box:hover{
+    background-color: #f8f8f8;
+    cursor: pointer;
+  }
+  .title{
+    display: inline-block;
+    font-size: 20px;
+    color: #0262d2;
+    text-align: left;
+    width: 900px;
+    margin-top: 16px;
+    margin-left:15px;
+    height: 20px;
+    overflow: auto;
+  }
+  .income{
+    display: inline-block;
+    font-size: 20px;
+    color: rgb(242, 97, 0);
+    text-align: right;
+    width: 238px;
+    margin-top: 17px;
+    margin-left: 12px;
+  }
+  .number{
+    position: absolute;
+    visibility:hidden;
+  }
+  .city{
+    display: inline-block;
+    text-align: left;
+    width:12px;
+    margin-top: 4px;
+    margin-left: 15px;
+    overflow: hidden;
+  }
+  .city-name{
+    display: inline-block;
+    font-size: 18px;
+    color: rgb(68, 75, 84);
+    text-align: left;
+    margin-top: 4px;
+    margin-left: 42px;
+    overflow: hidden;
+  }
+  .user-name{
+    display: block;
+    font-size: 18px;
+    width: 100%;
+    height: auto;
+    color: rgb(68, 75, 84);
+    text-align: left;
+    margin-top: 2px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  .logotype{
+    margin-top: 1px;
+    margin-left: 15px;
+    font-size: 12px;
+    width: 130px;
+    height: 130px;
+  }
+  .logotype-company{
+    margin-top: 85px;
+    margin-left: 15px;
+    font-size: 12px;
+    width: 130px;
+    height: 40px;
+  }
+  .leftSide{
+    display: inline-block;
+    width: 16%;
+    height: 403px;
+    vertical-align: top;
+  }
+  .photo{
+    width: 100%;
+  }
+  .rightSide{
+    display: inline-block;
+    width: 84%;
+    height: 403px;
+    vertical-align: top;
+  }
+  .experience{
+    display: block;
+    color: rgb(68, 75, 84);
+    height: 90px;
+    text-align: left;
+    padding-left: 2%;
+    margin-bottom: 4px;
+    overflow: auto;
+
+  }
+  .skills{
+    display: block;
+    color: rgb(68, 75, 84);
+    height: 90px;
+    text-align: left;
+    padding-left: 2%;
+    overflow: auto;
+    margin-bottom: 4px;
+
+  }
+  .education{
+    display: block;
+    color: rgb(68, 75, 84);
+    height: 70px;
+    text-align: left;
+    padding-left: 2%;
+    overflow: auto;
+    margin-bottom: 4px;
+
+  }
+  .btn-response {
+    display: inline-block;
+    border-radius: 3px;
+    background-color: #0262d2;
+    width: 155px;
+    height: 48px;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    margin-top: 56px;
+    margin-left: 15px;
+
+  }
+  .btn-response:hover{
+    background-color: #0066cc;
+    font-weight:600;
+  }
+  .btn-response:active{
+    border-color: #3399ff;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3px;
+    font-weight: 600;
+  }
+
+  .btn-response-disabled {
+    display: inline-block;
+    border-radius: 3px;
+    background-color: rgb( 145, 175, 209 );
+    width: 155px;
+    height: 48px;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    margin-top: 56px;
+    margin-left: 15px;
+  }
+  .btn-response-disabled:hover{
+    background-color: rgb( 145, 175, 209 );
+    line-height: 2;
+  }
+  .final-date{
+    display: block;
+    font-size: 15px;
+    text-align: left;
+    margin-top: 1px;
+    margin-left: 87px;
+  }
+  .alertWrong{
+    display: block;
+    font-size: 1.4em;
+    color: #F74933;
+    width: 530px;
+    margin: -330px 2px 0 120px;
+    text-align: center;
+    border: dotted 1px #f20f4b;
+    height: 50px;
+    line-height: 2.03;
+    background-color: #FFFFFF;
+    z-index: 999;
+  }
+
+  /* Pagination */
+  .counter-line {
+    padding: 20px 10px;
+  }
+  ul{
+    width: 500px;
+    margin-left: 750px;
+    color: #484c54;
+  }
+  li{
+    display: inline-block;
+    list-style: none;
+    color: #484c54;
+    margin-right: 10px;
+    padding: 0 10px;
+  }
+  .nPage{
+    visibility:hidden;
+  }
+  .left-box{
+    position: absolute;
+    float: left;
+  }
+
+}    /* Конец media 768-1199 */
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .wrapper {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 0.9em ;
+  }
+  .top {
+    height: 25px;
+    font-size: 1.4em;
+    margin: 0 0 10px 0;
+    padding-left: 6px;
+    line-height: 0.8;
+    border-bottom: solid 1px #b7b7b7;
+    padding-bottom: 0;
+    border-top: 0;
+  }
+  .cv-box{
+    width:  100%;
+    height: 460px;
+    margin: 30px auto;
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+    border-color: #b7b7b7;
+    color: rgb(68, 75, 84);
+    text-align: left;
+  }
+  .line {
+    width: 100%;
+    margin-top: 0.1%;
+    padding: auto 10px;
+  }
+  .city-line{
+    width: 100%;
+    margin-top: -2%;
+   }
+   .cv-box:hover{
+    background-color: #f8f8f8;
+    cursor: pointer;
+  }
+  .title{
+    position: relative;
+    display: inline-block;
+    font-size: 1.1em;
+    line-height: 1.1;
+    color: #0262d2;
+    width: 75%;
+    height: 39px;
+    margin-top: 6px;
+    overflow: hidden;
+  }
+  .income{
+    display: inline-block;
+    font-size: 1em;
+    color: rgb(242, 97, 0);
+    text-align: right;
+    width: 21%;
+    height: 39px;
+    margin-top: 5px;
+    float: right;
+    overflow: hidden;
+  }
+  .number{
+    position: absolute;
+    visibility:hidden;
+  }
+  .city{
+    display: inline-block;
+    text-align: left;
+    width:12px;
+    margin-top: 4px;
+    margin-left: 15px;
+    overflow: hidden;
+  }
+  .city-name{
+    display: inline-block;
+    font-size: 18px;
+    color: rgb(68, 75, 84);
+    text-align: left;
+    margin-top: 4px;
+    margin-left: 42px;
+    overflow: hidden;
+  }
+  .user-name{
+    display: block;
+    font-size: 18px;
+    width: 100%;
+    height: auto;
+    color: rgb(68, 75, 84);
+    text-align: left;
+    margin-top: 2px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  .logotype{
+    display: inline-block;
+    margin-top: 1px;
+    margin-left: 10px;
+    font-size: 12px;
+    width: 90px;
+    height: 90px;
+  }
+  .logotype-company{
+    margin-top: 85px;
+    margin-left: 15px;
+    font-size: 12px;
+    width: 130px;
+    height: 40px;
+  }
+  .leftSide{
+    display: block;
+    vertical-align: top;
+  }
+  .photo{
+    width: 100%;
+    position: relative;
+  }
+  .rightSide{
+    display: block;
+    vertical-align: top;
+  }
+  .experience{
+    display: block;
+    color: rgb(68, 75, 84);
+    min-height: 30px;
+    max-height: 90px;
+    text-align: left;
+    padding-left: 2%;
+    margin: 10px auto;
+    overflow: auto;
+    border-bottom: solid 0.1px rgb(68, 75, 84);
+
+  }
+  .skills{
+    display: block;
+    color: rgb(68, 75, 84);
+    min-height: 30px;
+    max-height: 90px;
+    text-align: left;
+    padding-left: 2%;
+    overflow: auto;
+    margin: 10px auto;
+
+  }
+  .education{
+    display: block;
+    color: rgb(68, 75, 84);
+    min-height: 30px;
+    max-height: 90px;
+    text-align: left;
+    padding-left: 2%;
+    overflow: auto;
+    margin: 10px auto;
+
+  }
+  .btn-response {
+    display: inline-block;
+    border-radius: 3px;
+    background-color: #0262d2;
+    width: 155px;
+    height: 48px;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    margin-top: -70px;
+    margin-right: 4vw;
+    position: relative;
+    float: right;
+  }
+  .btn-response:hover{
+    background-color: #0066cc;
+    font-weight:600;
+  }
+  .btn-response:active{
+    border-color: #3399ff;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3px;
+    font-weight: 600;
+  }
+
+  .btn-response-disabled {
+    display: inline-block;
+    border-radius: 3px;
+    background-color: rgb( 145, 175, 209 );
+    width: 155px;
+    height: 48px;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    margin-top: 56px;
+    margin-left: 15px;
+  }
+  .btn-response-disabled:hover{
+    background-color: rgb( 145, 175, 209 );
+    line-height: 2;
+  }
+  .final-date{
+    display: block;
+    font-size: 15px;
+    text-align: left;
+    margin-top: 1px;
+    margin-left: 87px;
+  }
+  .alertWrong{
+    display: block;
+    font-size: 1.4em;
+    color: #F74933;
+    width: 530px;
+    margin: -330px 2px 0 120px;
+    text-align: center;
+    border: dotted 1px #f20f4b;
+    height: 50px;
+    line-height: 2.03;
+    background-color: #FFFFFF;
+    z-index: 999;
+  }
+
+  /* Pagination */
+  .counter-line {
+    padding: 20px 10px;
+  }
+  ul{
+    width: 500px;
+    margin-left: 750px;
+    color: #484c54;
+  }
+  li{
+    display: inline-block;
+    list-style: none;
+    color: #484c54;
+    margin-right: 10px;
+    padding: 0 10px;
+  }
+  .nPage{
+    visibility:hidden;
+  }
+  .left-box{
+    position: absolute;
+    float: left;
+  }
+}   /* Конец media 320-767 */
