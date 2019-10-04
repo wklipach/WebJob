@@ -542,7 +542,6 @@ label{
     text-align: center;
   }
   .move{
-
     display: inline-block;
     font-size: 0.9em;
     margin-left: 50%;
@@ -653,7 +652,7 @@ label{
     border-radius: 3px;
     font-weight: 600;
   }
-  .alertWrong[_ngcontent-c2] {
+  .alertWrong {
     font-size: 1.2em;
     color: #F74933;
     text-align: center;

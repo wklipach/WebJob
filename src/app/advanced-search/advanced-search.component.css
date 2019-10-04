@@ -1,3 +1,4 @@
+@media screen and (min-width: 1200px) and (max-width: 4000px) {
 .box{
   position: relative;
   width: 1170px;
@@ -150,3 +151,335 @@ form{
   margin-top:49px;
   margin-left: 15px;
 }
+}         /* Конец media 1200-4000 */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .wrapper{
+    width: 100%;
+    margin: 0 auto;
+ }
+  .box{
+    position: relative;
+    width: 1170px;
+    height: 1px;
+    margin: 1px auto;
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+    border-color: #b7b7b7;
+    color: rgb(68, 75, 84);
+    text-align: left;
+  }
+  .check1{
+    position: absolute;
+    display: inline-block;
+    font-size: 14px;
+    text-align: left;
+    background-color: rgb(255, 255, 255);
+    width: auto;
+    height: 43px;
+    margin-left: 15px;
+    margin-top: 15px;
+  }
+  .check2{
+    position: absolute;
+    display: inline-block;
+    font-size: 14px;
+    text-align: left;
+    background-color: rgb(255, 255, 255);
+    width: auto;
+    height: 43px;
+    margin-left: 15px;
+    margin-top: 41px;
+  }
+  label{
+    position: absolute;
+    color: #0262d2;
+    text-align: left;
+  }
+  .label-check1{
+    padding-left: 38px;
+    margin-top: 27px;
+  }
+  .label-check2{
+    padding-left: 38px;
+    margin-top: 53px;
+  }
+  span {
+    display: block;
+    color: rgb(68, 75, 84);
+    text-align: left;
+    margin-top:22px;
+  }
+  form{
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+  }
+  .btn-search{
+    background-color: #0262d2;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    line-height: 2.25;
+    width: 108px;
+    height: 48px;
+    margin-top:20px;
+    margin-left: 2px;
+  }
+  .btn-search:hover{
+    background-color: #0066cc;
+    font-weight:600;
+  }
+  .btn-search:active{
+    border-color: #3399ff;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3px;
+  }
+  .inputSearch{
+    border-width: 1px;
+    border-color: #b7b7b7;
+    border-style: solid;
+    border-radius: 3px;
+    background-color: white;
+    color: #82878d;
+    width: 58%;
+    height: 48px;
+    margin-top:20px;
+    margin-left: 15px;
+    padding-left:15px;
+  }
+  .box-city{
+    position: relative;
+    display: block;
+    width: 40%;
+    height: auto;
+    margin-top: 100px;
+  }
+  .label-city{
+    display: block;
+    margin-left: 15px;
+    margin-top: 10px;
+  }
+  .inputCity{
+    border-width: 1px;
+    border-color: #b7b7b7;
+    border-style: solid;
+    border-radius: 3px;
+    background-color: white;
+    color: #82878d;
+    width: 282px;
+    height: 31px;
+    margin-top: 41px;
+    margin-left: 15px;
+  }
+  .salary{
+    display: block;
+    margin-left: 15px;
+    margin-top: 20px;
+    width: 300px;
+  }
+  .inputSalary{
+    display: block;
+    border-width: 1px;
+    border-color: #b7b7b7;
+    border-style: solid;
+    border-radius: 3px;
+    background-color: white;
+    color: #82878d;
+    width: 282px;
+    height: 28px;
+    margin-top: 50px;
+    margin-left: 15px;
+  }
+  .dropdownTimePlacement{
+    padding-left: 15px;
+    margin-top: 20px;
+  }
+  .timePlacement{
+    border-width: 1px;
+    border-color: #b7b7b7;
+    border-style: solid;
+    border-radius: 3px;
+    background-color: white;
+    color: #82878d;
+    width: 282px;
+    height: 31px;
+    margin-top:49px;
+    margin-left: 15px;
+  }
+}    /* Конец media 768-1199 */
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+
+  .wrapper {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 0.9em;
+  }
+  .top {
+    height: 25px;
+    font-size: 1.4em;
+    margin: 0 0 10px 0;
+    padding-left: 6px;
+    line-height: 0.8;
+    border-bottom: solid 1px #b7b7b7;
+    padding-bottom: 0;
+    border-top: 0;
+  }
+  .box{
+    position: relative;
+    width: 1170px;
+    height: 1px;
+    margin: 1px auto;
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+    border-color: #b7b7b7;
+    color: rgb(68, 75, 84);
+    text-align: left;
+  }
+  .check1{
+    position: absolute;
+    display: inline-block;
+    font-size: 14px;
+    text-align: left;
+    background-color: rgb(255, 255, 255);
+    width: auto;
+    height: 43px;
+    margin-left: 15px;
+    margin-top: 15px;
+  }
+  .check2{
+    position: absolute;
+    display: inline-block;
+    font-size: 14px;
+    text-align: left;
+    background-color: rgb(255, 255, 255);
+    width: auto;
+    height: 43px;
+    margin-left: 15px;
+    margin-top: 41px;
+  }
+  label{
+    position: absolute;
+    color: #0262d2;
+    text-align: left;
+  }
+  .label-check1{
+    padding-left: 38px;
+    margin-top: 27px;
+  }
+  .label-check2{
+    padding-left: 38px;
+    margin-top: 53px;
+  }
+  span {
+    display: block;
+    color: rgb(68, 75, 84);
+    text-align: left;
+    margin-top:22px;
+  }
+  form{
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+  }
+  .btn-search{
+    background-color: #0262d2;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    line-height: 2.25;
+    width: 108px;
+    height: 48px;
+    margin-top:20px;
+    margin-left: 2px;
+  }
+  .btn-search:hover{
+    background-color: #0066cc;
+    font-weight:600;
+  }
+  .btn-search:active{
+    border-color: #3399ff;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3px;
+  }
+  .inputSearch{
+    border-width: 1px;
+    border-color: #b7b7b7;
+    border-style: solid;
+    border-radius: 3px;
+    background-color: white;
+    color: #82878d;
+    width: 95%;
+    height: 48px;
+    margin-top:20px;
+    margin-left: 4px;
+    padding-left:15px;
+  }
+  .box-city{
+    position: relative;
+    display: block;
+    width: 40%;
+    height: auto;
+    margin-top: 100px;
+  }
+  .label-city{
+    display: block;
+    margin-left: 15px;
+    margin-top: 10px;
+  }
+  .inputCity{
+    border-width: 1px;
+    border-color: #b7b7b7;
+    border-style: solid;
+    border-radius: 3px;
+    background-color: white;
+    color: #82878d;
+    width: 282px;
+    height: 31px;
+    margin-top: 41px;
+    margin-left: 15px;
+  }
+  .salary{
+    display: block;
+    margin-left: 15px;
+    margin-top: 20px;
+    width: 300px;
+  }
+  .inputSalary{
+    display: block;
+    border-width: 1px;
+    border-color: #b7b7b7;
+    border-style: solid;
+    border-radius: 3px;
+    background-color: white;
+    color: #82878d;
+    width: 282px;
+    height: 28px;
+    margin-top: 50px;
+    margin-left: 15px;
+  }
+  .dropdownTimePlacement{
+    padding-left: 15px;
+    margin-top: 20px;
+    width: 230px;
+  }
+  .timePlacement{
+    border-width: 1px;
+    border-color: #b7b7b7;
+    border-style: solid;
+    border-radius: 3px;
+    background-color: white;
+    color: #82878d;
+    width: 282px;
+    height: 31px;
+    margin-top:49px;
+    margin-left: 15px;
+  }
+
+}   /* Конец media 320-767 */

@@ -114,7 +114,6 @@
   padding-left: 2%;
   margin-bottom: 4px;
   overflow: auto;
-
 }
 .skills{
   display: block;
@@ -124,7 +123,6 @@
   padding-left: 2%;
   overflow: auto;
   margin-bottom: 4px;
-
 }
 .education{
   display: block;
@@ -134,7 +132,6 @@
   padding-left: 2%;
   overflow: auto;
   margin-bottom: 4px;
-
 }
 .btn-response {
   display: inline-block;
@@ -148,7 +145,6 @@
   border-style: solid;
   margin-top: 56px;
   margin-left: 15px;
-
 }
 .btn-response:hover{
   background-color: #0066cc;
@@ -161,7 +157,6 @@
   border-radius: 3px;
   font-weight: 600;
 }
-
 .btn-response-disabled {
   display: inline-block;
   border-radius: 3px;
@@ -202,27 +197,33 @@
 
 /* Pagination */
 .counter-line {
-  padding: 20px 10px;
+  position: relative;
+  height: 50px;
 }
+  .page {
+    width: 45%;
+    float: left;
+  }
+  .checked {
+    width: 50%;
+    float: right;
+  }
 ul{
-  width: 500px;
-  margin-left: 750px;
+  margin: 0;
+  padding: 0;
   color: #484c54;
+  float: right;
 }
 li{
   display: inline-block;
   list-style: none;
   color: #484c54;
-  margin-right: 10px;
-  padding: 0 10px;
+  padding-left: 10px;
 }
 .nPage{
   visibility:hidden;
 }
-.left-box{
-  position: absolute;
-  float: left;
-}
+
 }         /* Конец media 1200-4000 */
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
@@ -232,13 +233,18 @@ li{
   }
   .cv-box{
     width:  100%;
-    height: 360px;
-    margin: 30px auto;
+    min-height: 340px;
+    max-height: 410px;
+    margin-bottom: 20px;
     border-top: solid 1px;
     border-bottom: solid 1px;
     border-color: #b7b7b7;
     color: rgb(68, 75, 84);
     text-align: left;
+  }
+  .cv-box:hover{
+    background-color: #f8f8f8;
+    cursor: pointer;
   }
   .line {
     width: 100%;
@@ -248,32 +254,31 @@ li{
   .v-line{
     position: absolute;
     width:6px;
-    height:360px;
+    height: auto;
     background-color: #b8b8b8;
   }
-  .cv-box:hover{
-    background-color: #f8f8f8;
-    cursor: pointer;
-  }
-  .title{
+    .title{
+    position: relative;
     display: inline-block;
-    font-size: 20px;
+    font-size: 1.2em;
+    line-height: 1.1;
     color: #0262d2;
-    text-align: left;
-    width: 900px;
-    margin-top: 16px;
-    margin-left:15px;
-    height: 20px;
-    overflow: auto;
+    width: 75%;
+    height: 39px;
+    margin-top: 6px;
+    padding-left: 10px;
+    overflow: hidden;
   }
   .income{
     display: inline-block;
-    font-size: 20px;
+    font-size: 1.1em;
     color: rgb(242, 97, 0);
     text-align: right;
-    width: 238px;
-    margin-top: 17px;
-    margin-left: 12px;
+    width: 21%;
+    height: 39px;
+    margin-top: 5px;
+    float: right;
+    overflow: hidden;
   }
   .number{
     position: absolute;
@@ -325,7 +330,6 @@ li{
   .leftSide{
     display: inline-block;
     width: 16%;
-    height: 403px;
     vertical-align: top;
   }
   .photo{
@@ -334,50 +338,52 @@ li{
   .rightSide{
     display: inline-block;
     width: 84%;
-    height: 403px;
     vertical-align: top;
   }
   .experience{
     display: block;
     color: rgb(68, 75, 84);
-    height: 90px;
+    min-height: 60px;
+    max-height: 90px;
+    width: 94%;
     text-align: left;
-    padding-left: 2%;
     margin-bottom: 4px;
     overflow: auto;
-
+    margin-left: 4%;
   }
   .skills{
     display: block;
     color: rgb(68, 75, 84);
-    height: 90px;
+    min-height: 60px;
+    max-height: 90px;
+    width: 94%;
     text-align: left;
-    padding-left: 2%;
-    overflow: auto;
     margin-bottom: 4px;
-
+    overflow: auto;
+    margin-left: 4%;
   }
   .education{
     display: block;
     color: rgb(68, 75, 84);
-    height: 70px;
+    min-height: 60px;
+    max-height: 90px;
+    width: 94%;
     text-align: left;
-    padding-left: 2%;
-    overflow: auto;
     margin-bottom: 4px;
-
+    overflow: auto;
+    margin-left: 4%;
   }
   .btn-response {
     display: inline-block;
     border-radius: 3px;
     background-color: #0262d2;
-    width: 155px;
+    width: 125px;
     height: 48px;
     color: rgb(255, 255, 255);
     border-color: #054086;
     border-width: 1px;
     border-style: solid;
-    margin-top: 56px;
+    margin-top: 10%;
     margin-left: 15px;
 
   }
@@ -397,13 +403,13 @@ li{
     display: inline-block;
     border-radius: 3px;
     background-color: rgb( 145, 175, 209 );
-    width: 155px;
+    width: 125px;
     height: 48px;
     color: rgb(255, 255, 255);
     border-color: #054086;
     border-width: 1px;
     border-style: solid;
-    margin-top: 56px;
+    margin-top: 10%;
     margin-left: 15px;
   }
   .btn-response-disabled:hover{
@@ -433,28 +439,32 @@ li{
 
   /* Pagination */
   .counter-line {
-    padding: 20px 10px;
+    position: relative;
+    height: 50px;
+  }
+  .page {
+    width: 45%;
+    float: left;
+  }
+  .checked {
+    width: 50%;
+    float: right;
   }
   ul{
-    width: 500px;
-    margin-left: 750px;
+    margin: 0;
+    padding: 0;
     color: #484c54;
+    float: right;
   }
   li{
     display: inline-block;
     list-style: none;
     color: #484c54;
-    margin-right: 10px;
-    padding: 0 10px;
+    padding-left: 10px;
   }
   .nPage{
     visibility:hidden;
   }
-  .left-box{
-    position: absolute;
-    float: left;
-  }
-
 }    /* Конец media 768-1199 */
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .wrapper {
@@ -474,7 +484,7 @@ li{
   }
   .cv-box{
     width:  100%;
-    height: 460px;
+    height: auto;
     margin: 30px auto;
     border-top: solid 1px;
     border-bottom: solid 1px;
@@ -580,36 +590,35 @@ li{
   .experience{
     display: block;
     color: rgb(68, 75, 84);
+    width: 96%;
     min-height: 30px;
     max-height: 90px;
     text-align: left;
     padding-left: 2%;
-    margin: 10px auto;
+    margin-bottom: 8px;
     overflow: auto;
-    border-bottom: solid 0.1px rgb(68, 75, 84);
-
   }
   .skills{
     display: block;
     color: rgb(68, 75, 84);
+    width: 96%;
     min-height: 30px;
     max-height: 90px;
     text-align: left;
     padding-left: 2%;
     overflow: auto;
-    margin: 10px auto;
-
+    margin-bottom: 8px;
   }
   .education{
     display: block;
     color: rgb(68, 75, 84);
+    width: 96%;
     min-height: 30px;
     max-height: 90px;
     text-align: left;
     padding-left: 2%;
     overflow: auto;
-    margin: 10px auto;
-
+    margin-bottom: 8px;
   }
   .btn-response {
     display: inline-block;
@@ -648,8 +657,10 @@ li{
     border-color: #054086;
     border-width: 1px;
     border-style: solid;
-    margin-top: 56px;
-    margin-left: 15px;
+    margin-top: -70px;
+    margin-right: 4vw;
+    position: relative;
+    float: right;
   }
   .btn-response-disabled:hover{
     background-color: rgb( 145, 175, 209 );
@@ -678,25 +689,32 @@ li{
 
   /* Pagination */
   .counter-line {
-    padding: 20px 10px;
+    position: relative;
+    height: 75px;
+  }
+  .page {
+    display: block;
+    width: 90%;
+    }
+  .checked {
+    display: block;
+    width: 90%;
+    vertical-align: bottom;
+    margin-top: 25px;
   }
   ul{
-    width: 500px;
-    margin-left: 750px;
+    margin: 0;
+    padding: 0;
     color: #484c54;
+    text-align: center;
   }
   li{
     display: inline-block;
     list-style: none;
     color: #484c54;
-    margin-right: 10px;
-    padding: 0 10px;
+    padding-left: 10px;
   }
   .nPage{
     visibility:hidden;
-  }
-  .left-box{
-    position: absolute;
-    float: left;
   }
 }   /* Конец media 320-767 */

@@ -118,7 +118,7 @@
   }
   .messages-box{
     width: 100%;
-    min-height: 215px;
+    min-height: 75px;
     max-height: 600px;
     overflow: auto;
     font-size: 0.8em;

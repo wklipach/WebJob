@@ -81,11 +81,12 @@
 
 
   <div class="counter-line">
-    <div class="left-box">
+
+    <div class="page">
       <app-page-count [numberOfRecordsPerPage] = "rowPerPage" [numberOfVisiblePages]="7"
                       [(currentPage)] = "page" [numberOfRecordsPerAll] = "recordsPerAll" (currentPageChange)="onPageChanged($event)"></app-page-count>
     </div>
-
+    <div class="checked">
     <ul>
       <li>Выводить по:</li>
       <li><input (click) = "OnClickRowPerPage(5)" type="radio" name="rRow" id="rRow5" [value]="5" [checked]="bChecked5"><label for="rRow5">5</label></li>
@@ -94,6 +95,8 @@
       <li><input (click) = "OnClickRowPerPage(50)" type="radio" name="rRow" id="rRow50" [value]="50" [checked]="bChecked50"><label for="rRow50">50</label></li>
       <li class="nPage">{{page}}</li>
     </ul>
+  </div>
 
   </div>
+
 </div>

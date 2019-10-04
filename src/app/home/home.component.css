@@ -286,33 +286,38 @@
   position: absolute;
   visibility:hidden;
 }
-.counter-line{
-  width: 1170px;
-}
-label{
-  color: #484c54;
-  font-size:16px;
-}
-ul{
-  margin: 10px auto;
-  list-style: none;
- }
-li{
-  display: inline;
-  padding-left: 10px;
-}
-.nPage{
-  visibility:hidden;
-}
-  .left-box{
-    display: inline-block;
-    width: 35%;
+  label{
+    color: #484c54;
+    font-size:16px;
   }
-  .right-box{
-    display: inline-block;
+
+  /* Pagination */
+  .counter-line {
+    position: relative;
+    height: 50px;
+  }
+  .page {
+    width: 45%;
+    float: left;
+  }
+  .checked {
+    width: 50%;
     float: right;
-    width: 60%;
-    text-align: right;
+  }
+  ul{
+    margin: 0;
+    padding: 0;
+    color: #484c54;
+    float: right;
+  }
+  li{
+    display: inline-block;
+    list-style: none;
+    color: #484c54;
+    padding-left: 10px;
+  }
+  .nPage{
+    visibility:hidden;
   }
 .final-date{
   display: block;
@@ -621,42 +626,35 @@ li{
     position: absolute;
     visibility:hidden;
   }
-  .counter-line{
+  /* Pagination */
+  .counter-line {
     position: relative;
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
-    padding: 20px 10px;
+    height: 50px;
   }
-  label{
-    color: #484c54;
-    font-size:16px;
+  .page {
+    width: 45%;
+    float: left;
+  }
+  .checked {
+    width: 50%;
+    float: right;
   }
   ul{
-    float: right;
-    padding-right: 10px;
-  }
-  li{
-    display: inline;
-    list-style: none;
-    color: #484c54;
     margin: 0;
     padding: 0;
+    color: #484c54;
+    float: right;
+  }
+  li{
+    display: inline-block;
+    list-style: none;
+    color: #484c54;
+    padding-left: 10px;
   }
   .nPage{
     visibility:hidden;
   }
-  .left-box{
-    display: inline-block;
-    float: left;
-    width: 35%;
-  }
-  .right-box{
-    display: inline-block;
-    float: right;
-    width: 65%;
-    position: relative;
-  }
+
   .final-date{
     display: block;
     font-size: 0.8em;
@@ -988,43 +986,41 @@ li{
     position: absolute;
     visibility:hidden;
   }
-  .counter-line{
-    position: relative;
-    width: 99%;
-    height: 30px;
-    margin: 0 auto;
-    padding: 10px 5px;
-    font-size: 0.7em;
-  }
   label{
     color: #484c54;
     font-size:1em;
   }
+  /* Pagination */
+  .counter-line {
+    position: relative;
+    height: 75px;
+  }
+  .page {
+    display: block;
+    width: 90%;
+  }
+  .checked {
+    display: block;
+    width: 90%;
+    vertical-align: bottom;
+    margin-top: 25px;
+  }
   ul{
-    float: right;
+    margin: 0;
     padding: 0;
+    color: #484c54;
+    text-align: center;
   }
   li{
     display: inline-block;
     list-style: none;
     color: #484c54;
-    margin: 0;
-    padding: 0;
+    padding-left: 10px;
   }
   .nPage{
     visibility:hidden;
   }
-  .left-box{
-    display: inline-block;
-    float: left;
-    width: 32%;
-  }
-  .right-box{
-    display: inline-block;
-    float: right;
-    width: 65%;
-    position: relative;
-  }
+
   .final-date{
     display: block;
     font-size: 0.8em;
