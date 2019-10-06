@@ -19,6 +19,12 @@ span{
 .head-line{
   background-color: #DFDFDF;
 }
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
 .radio{
   display: inline-block;
   width: 50px;
@@ -102,21 +108,20 @@ span{
   }
   span{
     display: block;
-    width:100%;
-    margin: 30px auto;
+    margin: 15px auto;
     border-top: solid 1px #b7b7b7;
     color: rgb(68, 75, 84);
   }
   .v-line{
-    display: inline-block;
-    position: relative;
-    width:6px;
-    height:auto;
-    background-color: #b8b8b8;
-  }
-  .head-line{
+    }
+    ul.head-line {
+    margin: 0;
+    padding: 0;
     background-color: #DFDFDF;
   }
+li {
+  text-align: left;
+}
   .radio{
     display: inline-block;
     width: 4%;
@@ -124,29 +129,30 @@ span{
   }
   .date{
     display: inline-block;
-    width: 15%;
+    width: 10%;
   }
   .city{
     display: inline-block;
-    width: 15%;
+    width: 13%;
   }
   .salary{
     display: inline-block;
-    width: 10%;
+    width: 12%;
 
   }
   .position{
     display: inline-block;
     width: 60%;
+    overflow: hidden;
 
   }
-  .botom-line{
-    display: inline-block;
-    margin-top: 10px;
+  ul.botom-line{
+    margin: 10px auto;
+    padding: 0;
   }
   .comment{
     display: block;
-    width: 95%;
+    width: 96%;
     margin-top: 30px;
   }
 
@@ -179,12 +185,7 @@ span{
     display: block;
     font-size: 1.4em;
     color: #F74933;
-    width: auto;
-    margin-top: 10px;
     text-align: center;
-    border: dotted 1px #f20f4b;
-    height: 50px;
-    line-height: 2.03;
   }
 }    /* Конец media 768-1199 */
 @media screen and (min-width: 320px) and (max-width: 767px) {
@@ -202,5 +203,93 @@ span{
     border-bottom: solid 1px #b7b7b7;
     padding-bottom: 0;
     border-top: 0;
+  }
+  .box{
+    width: 100%;
+  }
+  span{
+    display: block;
+    margin: 15px auto;
+    border-top: solid 1px #b7b7b7;
+    color: rgb(68, 75, 84);
+  }
+  .v-line{
+  }
+  ul.head-line {
+    margin: 0;
+    padding: 0;
+    background-color: #DFDFDF;
+    vertical-align: top;
+  }
+  li {
+    text-align: left;
+  }
+  .radio{
+    display: inline-block;
+    width: 6%;
+
+  }
+  .date{
+    display: inline-block;
+    width: 19%;
+
+  }
+  .city{
+    position: absolute;
+    visibility: hidden;
+  }
+  .salary{
+    display: inline-block;
+    width: 15%;
+
+
+  }
+  .position{
+    display: inline-block;
+    width: 50%;
+    overflow: hidden;
+
+  }
+  ul.botom-line{
+    margin: 10px auto;
+    padding: 0;
+    vertical-align: top;
+  }
+  .comment{
+    display: block;
+    width: 96%;
+    margin-top: 30px;
+  }
+
+  .btn-send{
+    display: block;
+    position: relative;
+    border-radius: 3px;
+    background-color: #0262d2;
+    width: 155px;
+    height: 50px;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  .btn-send:hover{
+    background-color: #0066cc;
+    font-weight:600;
+  }
+  .btn-send:active{
+    border-color: #3399ff;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3px;
+    font-weight: 500;
+  }
+  .alertWrong{
+    display: block;
+    font-size: 1.4em;
+    color: #F74933;
+    text-align: center;
   }
 }   /* Конец media 320-767 */

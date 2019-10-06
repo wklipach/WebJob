@@ -6,28 +6,27 @@
   <div class="top">{{'invitation.inv44' | translate}}</div>
 
   <span>{{'invitation.chvc44' | translate}}</span>
-<!--  <div class="box" *ngFor="let item of cvList; let i = index;"> -->
 
 
-                  <!--      <input type="radio" name="cv" title="cv" [(ngModel)]="modelResumeFromCheck.resumeFromCheck" [value] = "item.id"> -->
-                <div class="head-line">
-                   <div class="radio">&nbsp;&nbsp;&nbsp;&nbsp;</div>
-                   <div class="date">{{'allValue.date' | translate}}</div>
-                   <div class="city">{{'allValue.сity' | translate}}</div>
-                   <div class="salary">{{'allValue.salary' | translate}}</div>
-                   <div class="position">{{'invitation.d44' | translate }}</div>
-                </div>
+                <ul class="head-line">
+                   <li class="radio">&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                   <li class="date">{{'allValue.date' | translate}}</li>
+                   <li class="city">{{'allValue.сity' | translate}}</li>
+                   <li class="salary">{{'allValue.salary' | translate}}</li>
+                   <li class="position">{{'invitation.d44' | translate }}</li>
+                </ul>
 
 
 
                <div  *ngFor="let item of vacanciesList; let i = index;">
-                    <div class="botom-line">
-                        <div class="radio">   <input (click)="ClickElem()" type="radio" title="vacancy" name="vacancy" title="vacancy" [(ngModel)]="modelResumeFromCheck.resumeFromCheck" [value] = "item.id">      </div>
-                        <div class="date">{{item.DateTimeCreate | date: 'dd-MM-yyyy'}}</div>
-                        <div class="city">{{item.CityName}}</div>
-                        <div class="salary">{{item.SalaryFrom}} &#8364;</div>
-                        <div class="position">{{item.VacancyShortTitle}}</div>
-                    </div>
+                    <ul class="botom-line">
+                        <li class="radio">   <input (click)="ClickElem()" type="radio" title="vacancy" name="vacancy" title="vacancy" [(ngModel)]="modelResumeFromCheck.resumeFromCheck" [value] = "item.id">      </li>
+                        <li class="date">{{item.DateTimeCreate | date: 'dd-MM-yyyy'}}</li>
+                        <li class="city">{{item.CityName}}</li>
+                        <li class="salary">{{item.SalaryFrom}} &#8364;</li>
+                        <li class="position">{{item.VacancyShortTitle}}</li>
+                    </ul>
+
                </div>
 
 
@@ -36,8 +35,10 @@
             <div class="alertWrong" *ngIf="bErrorResumeLetter">{{'invitation.warn44' | translate}}</div>
 
             <div [formGroup]="formResponse">
-                <textarea (click)="ClickElem()" class="comment" formControlName="textCommentValue" name="comment" cols="100" rows="6" [placeholder]="'invitation.comment44' | translate"></textarea>
-                <button class="btn-send" (click)="MoveResult()">{{'invitation.resp44' | translate}}</button>
+                <textarea (click)="ClickElem()" class="comment" formControlName="textCommentValue" name="comment"
+                 title="'invitation.comment44' | translate" cols="100" rows="6" [placeholder]="'invitation.comment44' | translate"></textarea>
+
+              <button class="btn-send" (click)="MoveResult()">{{'invitation.resp44' | translate}}</button>
             </div>
 
 

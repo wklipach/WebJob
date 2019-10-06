@@ -139,7 +139,9 @@
       margin-top: 41px;
       font-size: 0.5em;
     }
+    /*
      .info {
+
       float: right;
       padding-right: 30px;
       color: rgb(255, 255, 255);
@@ -171,12 +173,63 @@
       color: wheat;
       display: block;
     }
-
+*/
    .img-back{
       position: absolute;
      cursor: pointer;
       margin: 8px 50%;
     }
+    /* Меню */
 
+    .menu{
+      float: right;
+      font-size: 1.3em;
+      color: #fff;
+    }
+    .menu ul li{
+      padding: 10px;
+    }
+    .menu ul > li:hover{
+      background-color: #444b54;
+    }
+    .menu ul ul > li:hover{
+      background-color: #69e;
+    }
+    .menu ul li, .menu ul{
+      display: inline-block;
+    }
+    .menu ul{
+      position: relative;
+      margin: 0;
+      padding: 0;
+      background-color: #444b54;
+      float: right;
+      font-size: 1.3em;
+      color: #fff;
+    }
+    .menu ul ul{
+      display: none;
+      position: absolute;
+      background-color: #369;
+      margin-top: 10px;
+      margin-left: -10px;
+    }
+    .menu ul a{
+      color: #fff;
+      text-decoration: none;
+    }
+    .menu ul ul a{
+      color: #fff;
+      text-decoration: none;
+    }
+    .menu li:hover ul{
+      display: block;
+    }
+
+    .menu li:hover li{
+      display: block;
+    }
+
+    /* Меню */
 
   }        /* Конец media 320-767 */

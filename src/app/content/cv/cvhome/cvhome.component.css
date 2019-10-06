@@ -425,16 +425,10 @@ li{
   }
   .alertWrong{
     display: block;
-    font-size: 1.4em;
+    font-size: 1.2em;
     color: #F74933;
-    width: 530px;
-    margin: -330px 2px 0 120px;
     text-align: center;
-    border: dotted 1px #f20f4b;
     height: 50px;
-    line-height: 2.03;
-    background-color: #FFFFFF;
-    z-index: 999;
   }
 
   /* Pagination */
@@ -675,16 +669,10 @@ li{
   }
   .alertWrong{
     display: block;
-    font-size: 1.4em;
+    font-size: 1.2em;
     color: #F74933;
-    width: 530px;
-    margin: -330px 2px 0 120px;
     text-align: center;
-    border: dotted 1px #f20f4b;
     height: 50px;
-    line-height: 2.03;
-    background-color: #FFFFFF;
-    z-index: 999;
   }
 
   /* Pagination */
