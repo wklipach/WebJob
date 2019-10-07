@@ -31,7 +31,7 @@
     margin-left: 209px;
     margin-top: 38px;
   }
-  .info {
+  .menu {
     float: right;
     margin-top: 37px;
     color: rgb(255, 255, 255);
@@ -125,8 +125,9 @@
       font-size: 2em;
       font-family: Arial Rounded MT Bold, sans-serif;
       color: rgb(255, 255, 255);
-      margin-left: 10px;
+      margin-left: 38%;
       margin-top: 4px;
+      z-index: 9999;
     }
     .logo:hover {
       cursor: pointer;
@@ -135,56 +136,22 @@
     .copyright {
       position: absolute;
       color: rgb(255, 255, 255);
-      margin-left: 10px;
+      margin-left: 2px;
       margin-top: 41px;
       font-size: 0.5em;
     }
-    /*
-     .info {
 
-      float: right;
-      padding-right: 30px;
-      color: rgb(255, 255, 255);
-      text-align: left;
-      margin-left: 350px;
-      margin-top: 37px;
-      list-style: none;
-      display: none;
-    }
-    li {
-      display: block;
-      padding-left: 32px;
-     }
-    li:hover{
-      color: wheat;
-      cursor: pointer;
-    }
-    .footer-menu{
-      font-size: 1.4em;
-      color: white;
-      font-weight: bolder;
-      right: 10px;
-      position: absolute;
-      margin-top: 8px;
-      cursor: pointer;
-    }
-    .footer-menu:hover +ul {
-      cursor: pointer;
-      color: wheat;
-      display: block;
-    }
-*/
    .img-back{
-      position: absolute;
-     cursor: pointer;
-      margin: 8px 50%;
+      cursor: pointer;
+     margin: 8px 8px 0 0;
+     float: right;
     }
+
+
     /* Меню */
 
     .menu{
-      float: right;
-      font-size: 1.3em;
-      color: #fff;
+      float: left;
     }
     .menu ul li{
       padding: 10px;
@@ -192,26 +159,36 @@
     .menu ul > li:hover{
       background-color: #444b54;
     }
+    .menu ul ul > li{
+      border-bottom: 1px solid white;
+    }
+    .symbol-open {
+      width: 35px;
+    }
     .menu ul ul > li:hover{
-      background-color: #69e;
+      background-color: #788393;
     }
     .menu ul li, .menu ul{
-      display: inline-block;
+      display: block;
+
     }
     .menu ul{
       position: relative;
       margin: 0;
       padding: 0;
       background-color: #444b54;
-      float: right;
-      font-size: 1.3em;
+      float: left;
+      font-size: 1em;
       color: #fff;
+      bottom: 0;
+      width: 210px;
     }
+
     .menu ul ul{
       display: none;
       position: absolute;
-      background-color: #369;
-      margin-top: 10px;
+      background-color: #444b54;
+      margin-bottom: 43px;
       margin-left: -10px;
     }
     .menu ul a{
