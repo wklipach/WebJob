@@ -7,27 +7,27 @@
 
   <span>{{'invitation.chcv44' | translate}}</span>
 
-    <div class="head-line">
+    <ul class="head-line">
 
-      <div class="radio">&nbsp;&nbsp;&nbsp;&nbsp;</div>
-      <div class="date">{{'allValue.date' | translate}}</div>
-      <div class="city">{{'allValue.сity' | translate}}</div>
-      <div class="salary">{{'allValue.salary' | translate}}</div>
-      <div class="position">{{'response.d55' | translate}}</div>
+      <li class="radio">&nbsp;&nbsp;&nbsp;&nbsp;</li>
+      <li class="date">{{'allValue.date' | translate}}</li>
+      <li class="city">{{'allValue.сity' | translate}}</li>
+      <li class="salary">{{'allValue.salary' | translate}}</li>
+      <li class="position">{{'response.d55' | translate}}</li>
 
-    </div>
+    </ul>
 
 
   <div class="box" *ngFor="let item of cvList; let i = index;">
-    <div class="botom-line">
+    <ul class="botom-line">
 
-      <div class="radio"> <input type="radio" name="cv" title="cv" (click)="ClickElem()" [(ngModel)]="modelResumeFromCheck.resumeFromCheck" [value] = "item.id"></div>
-      <div class="date">{{item.DateTimeCreate | date: 'dd.MM.yyyy'}} </div>
-      <div class="city">{{item.CityName}}</div>
-      <div class="salary">{{item.SalaryFrom}} &#8364;</div>
-      <div class="position">{{item.Position}}</div>
+      <li class="radio"> <input type="radio" name="cv" title="cv" (click)="ClickElem()" [(ngModel)]="modelResumeFromCheck.resumeFromCheck" [value] = "item.id"></li>
+      <li class="date">{{item.DateTimeCreate | date: 'dd.MM.yyyy'}} </li>
+      <li class="city">{{item.CityName}}</li>
+      <li class="salary">{{item.SalaryFrom}} &#8364;</li>
+      <li class="position">{{item.Position}}</li>
 
-    </div>
+    </ul>
 
 </div>
 

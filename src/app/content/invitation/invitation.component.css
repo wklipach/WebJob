@@ -99,9 +99,20 @@ ul {
 }         /* Конец media 1200-4000 */
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
-  .wrapper{
+  .wrapper {
     width: 100%;
     margin: 0 auto;
+    font-size: 0.9em ;
+  }
+  .top {
+    height: 25px;
+    font-size: 1.4em;
+    margin: 0 0 10px 0;
+    padding-left: 6px;
+    line-height: 0.8;
+    border-bottom: solid 1px #b7b7b7;
+    padding-bottom: 0;
+    border-top: 0;
   }
   .box{
     width: 100%;
@@ -113,48 +124,55 @@ ul {
     color: rgb(68, 75, 84);
   }
   .v-line{
-    }
-    ul.head-line {
-    margin: 0;
-    padding: 0;
-    background-color: #DFDFDF;
   }
-li {
-  text-align: left;
-}
+  ul.head-line {
+    position: absolute;
+    visibility: hidden;
+  }
+  ul.botom-line{
+    margin: 10px 10px 10px 0;
+    padding: 0;
+    vertical-align: top;
+    display: block;
+    border: 1px solid blue;
+  }
+
+  li {
+    text-align: left;
+  }
   .radio{
     display: inline-block;
-    width: 4%;
+    width: 10%;
 
   }
   .date{
     display: inline-block;
-    width: 10%;
+    width: 25%;
+
   }
   .city{
     display: inline-block;
-    width: 13%;
+    width: 39%;
   }
   .salary{
     display: inline-block;
-    width: 12%;
+    width: 25%;
+
 
   }
   .position{
     display: inline-block;
-    width: 60%;
+    width: 88%;
     overflow: hidden;
+    margin-left: 10%;
+
   }
-  ul.botom-line{
-    margin: 10px auto;
-    padding: 0;
-  }
+
   .comment{
     display: block;
     width: 96%;
     margin-top: 30px;
   }
-
   .btn-send{
     display: block;
     position: relative;
@@ -217,26 +235,21 @@ li {
   ul.head-line {
     position: absolute;
     visibility: hidden;
-
-
-    /*
-    margin: 0;
-    padding: 0;
-    background-color: #DFDFDF;
-    vertical-align: top;
-
-    */
   }
-
   ul.botom-line{
+    margin: 10px 10px 10px 0;
+    padding: 0;
+    vertical-align: top;
+    display: block;
     border: 1px solid blue;
   }
+
   li {
     text-align: left;
   }
   .radio{
     display: inline-block;
-    width: 15%;
+    width: 10%;
 
   }
   .date{
@@ -246,26 +259,22 @@ li {
   }
   .city{
     display: inline-block;
-    width: 25%;
+    width: 39%;
   }
   .salary{
     display: inline-block;
-    width: 15%;
+    width: 25%;
 
 
   }
   .position{
     display: inline-block;
-    width: 90%;
+    width: 88%;
     overflow: hidden;
+    margin-left: 10%;
 
   }
-  ul.botom-line{
-    margin: 10px auto;
-    padding: 0;
-    vertical-align: top;
-    display: block;
-  }
+
   .comment{
     display: block;
     width: 96%;

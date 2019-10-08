@@ -1,3 +1,4 @@
+@media screen and (min-width: 1200px) and (max-width: 4000px) {
 .box{
   width: 100%;
 }
@@ -55,31 +56,31 @@ span{
   width: 100%;
   margin-top: 30px;
 }
-
-.btn-send{
-  display: block;
-  position: relative;
-  border-radius: 3px;
-  background-color: #0262d2;
-  width: 155px;
-  height: 50px;
-  color: rgb(255, 255, 255);
-  border-color: #054086;
-  border-width: 1px;
-  border-style: solid;
-  margin-top: 1%;
-}
-.btn-send:hover{
-  background-color: #0066cc;
-  font-weight:600;
-}
-.btn-send:active{
-  border-color: #3399ff;
-  border-style: solid;
-  border-width: 3px;
-  border-radius: 3px;
-  font-weight: 600;
-}
+  .btn-send{
+    display: block;
+    position: relative;
+    border-radius: 3px;
+    background-color: #0262d2;
+    width: 155px;
+    height: 50px;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  .btn-send:hover{
+    background-color: #0066cc;
+    font-weight:600;
+  }
+  .btn-send:active{
+    border-color: #3399ff;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3px;
+    font-weight: 500;
+  }
 .alertWrong{
   display: block;
   font-size: 1.4em;
@@ -91,3 +92,217 @@ span{
   height: 50px;
   line-height: 2.03;
 }
+}         /* Конец media 1200-4000 */
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .wrapper {
+    width: 99%;
+    margin: 0 auto;
+    font-size: 0.9em ;
+  }
+  .top {
+    height: 25px;
+    font-size: 1.4em;
+    margin: 0 0 10px 0;
+    padding-left: 6px;
+    line-height: 0.8;
+    border-bottom: solid 1px #b7b7b7;
+    padding-bottom: 0;
+    border-top: 0;
+  }
+  .box{
+    width: 100%;
+  }
+  span{
+    display: block;
+    margin: 15px auto;
+    border-top: solid 1px #b7b7b7;
+    color: rgb(68, 75, 84);
+  }
+  .v-line{
+  }
+  ul.head-line {
+    position: absolute;
+    visibility: hidden;
+  }
+  ul.botom-line{
+    margin: 10px 10px 10px 0;
+    padding: 0;
+    vertical-align: top;
+    display: block;
+    border: 1px solid blue;
+  }
+
+  li {
+    text-align: left;
+  }
+  .radio{
+    display: inline-block;
+    width: 10%;
+
+  }
+  .date{
+    display: inline-block;
+    width: 25%;
+
+  }
+  .city{
+    display: inline-block;
+    width: 39%;
+  }
+  .salary{
+    display: inline-block;
+    width: 25%;
+
+
+  }
+  .position{
+    display: inline-block;
+    width: 88%;
+    overflow: hidden;
+    margin-left: 10%;
+  }
+  .comment{
+    display: block;
+    width: 96%;
+    margin-top: 30px;
+  }
+  .btn-send{
+    display: block;
+    position: relative;
+    border-radius: 3px;
+    background-color: #0262d2;
+    width: 155px;
+    height: 50px;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  .btn-send:hover{
+    background-color: #0066cc;
+    font-weight:600;
+  }
+  .btn-send:active{
+    border-color: #3399ff;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3px;
+    font-weight: 500;
+  }
+  .alertWrong{
+    display: block;
+    font-size: 1.4em;
+    color: #F74933;
+    text-align: center;
+  }
+}    /* Конец media 768-1199 */
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .wrapper {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 0.9em ;
+  }
+  .top {
+    height: 25px;
+    font-size: 1.4em;
+    margin: 0 0 10px 0;
+    padding-left: 6px;
+    line-height: 0.8;
+    border-bottom: solid 1px #b7b7b7;
+    padding-bottom: 0;
+    border-top: 0;
+  }
+  .box{
+    width: 100%;
+  }
+  span{
+    display: block;
+    margin: 15px auto;
+    border-top: solid 1px #b7b7b7;
+    color: rgb(68, 75, 84);
+  }
+  .v-line{
+  }
+  ul.head-line {
+    position: absolute;
+    visibility: hidden;
+  }
+  ul.botom-line{
+    margin: 10px 10px 10px 0;
+    padding: 0;
+    vertical-align: top;
+    display: block;
+    border: 1px solid blue;
+  }
+
+  li {
+    text-align: left;
+  }
+  .radio{
+    display: inline-block;
+    width: 10%;
+
+  }
+  .date{
+    display: inline-block;
+    width: 25%;
+
+  }
+  .city{
+    display: inline-block;
+    width: 39%;
+  }
+  .salary{
+    display: inline-block;
+    width: 25%;
+
+
+  }
+  .position{
+    display: inline-block;
+    width: 88%;
+    overflow: hidden;
+    margin-left: 10%;
+
+  }
+
+  .comment{
+    display: block;
+    width: 96%;
+    margin-top: 30px;
+  }
+  .btn-send{
+    display: block;
+    position: relative;
+    border-radius: 3px;
+    background-color: #0262d2;
+    width: 155px;
+    height: 50px;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  .btn-send:hover{
+    background-color: #0066cc;
+    font-weight:600;
+  }
+  .btn-send:active{
+    border-color: #3399ff;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3px;
+    font-weight: 500;
+  }
+  .alertWrong{
+    display: block;
+    font-size: 1.4em;
+    color: #F74933;
+    text-align: center;
+  }
+}   /* Конец media 320-767 */

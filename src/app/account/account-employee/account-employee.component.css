@@ -768,6 +768,7 @@
     text-align: center;
     margin-top: 49px;
     margin-left: 20px;
+    margin-bottom: 20px;
   }
   .btn-cancel:hover{
     background-color: rgb(240, 240, 240);
