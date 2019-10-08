@@ -3,7 +3,6 @@
     background-color: #444b54;
     width: 100%;
   }
-
   .foot {
     width: 1170px;
     margin: 0 auto;
@@ -31,28 +30,36 @@
     margin-left: 209px;
     margin-top: 38px;
   }
-  .menu {
+
+  .menu{
+   visibility: hidden;
+  }
+  ul{
+    position: relative;
     float: right;
-    margin-top: 37px;
-    color: rgb(255, 255, 255);
-    list-style: none;
+    margin: 17px auto;
+    padding: 0;
   }
   li{
     display: inline-block;
-    padding-left: 32px;
+
+    }
+  a {
+    color: #FFFFFF;
+    text-decoration: none;
+    padding-left: 20px;
   }
-  li:hover{
+  a:hover {
     color: wheat;
+    transition: 0.2s;
     cursor: pointer;
-  }
-  .footer-menu{
-    visibility: hidden;
   }
   .img-back{
     visibility: hidden;
   }
 
 }        /* Конец media 1200-4000 */
+
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   .width100 {
@@ -87,26 +94,30 @@
     margin-top: 70px;
     font-size: .8em;
   }
-  .info {
+  .menu{
+    visibility: hidden;
+  }
+  ul{
+    position: relative;
     float: right;
-    margin-top: 37px;
-    margin-right: 20px;
-    color: rgb(255, 255, 255);
-    list-style: none;
+    margin: 17px 14px;
+    padding: 0;
   }
-  li {
+  li{
     display: inline-block;
-    padding-left: 32px;
-  }
 
-  li:hover {
+  }
+  a {
+    color: #FFFFFF;
+    text-decoration: none;
+    padding-left: 20px;
+  }
+  a:hover {
     color: wheat;
+    transition: 0.2s;
     cursor: pointer;
   }
 
-  .footer-menu {
-    visibility: hidden;
-  }
   .img-back{
     visibility: hidden;
   }
@@ -115,6 +126,7 @@
 
   @media screen and (min-width: 320px) and (max-width: 767px) {
     .width100{
+      position: relative;
       background-color: #444b54;
     }
     .foot {
@@ -152,61 +164,44 @@
 
     .menu{
       float: left;
-    }
-    .menu ul li{
+      color: white;
       padding: 10px;
+      font-size: 1.1em;
+      cursor: pointer;
     }
-    .menu ul > li:hover{
+    ul{
+      position: absolute;
+      font-size: 0.9em;
+      width: 210px;
+      margin-bottom: 50px;
+      padding: 0;
+      bottom: 0;
+      display: none;
+    }
+    li{
+      display: block;
+      padding: 10px;
       background-color: #444b54;
+      border-bottom: 1px solid #fff;
     }
-    .menu ul ul > li{
-      border-bottom: 1px solid white;
-    }
-    .symbol-open {
-      width: 35px;
-    }
-    .menu ul ul > li:hover{
+    li:hover {
+      cursor: pointer;
       background-color: #788393;
     }
-    .menu ul li, .menu ul{
-      display: block;
-
-    }
-    .menu ul{
-      position: relative;
-      margin: 0;
-      padding: 0;
-      background-color: #444b54;
-      float: left;
-      font-size: 1em;
-      color: #fff;
-      bottom: 0;
-      width: 210px;
-    }
-
-    .menu ul ul{
-      display: none;
-      position: absolute;
-      background-color: #444b54;
-      margin-bottom: 43px;
-      margin-left: -10px;
-    }
-    .menu ul a{
-      color: #fff;
+    a {
+      color: #FFFFFF;
       text-decoration: none;
+      padding-left: 20px;
     }
-    .menu ul ul a{
-      color: #fff;
-      text-decoration: none;
+    a:hover {
+      cursor: pointer;
     }
-    .menu li:hover ul{
+    .menu:hover + ul{
       display: block;
     }
-
-    .menu li:hover li{
+    ul:hover{
       display: block;
     }
-
     /* Меню */
 
   }        /* Конец media 320-767 */
