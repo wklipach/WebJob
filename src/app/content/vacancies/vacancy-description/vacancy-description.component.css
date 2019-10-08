@@ -270,7 +270,7 @@ label{
 }
 .btn-hide-disabled{
   display: inline-block;
-  position: absolute;
+  position: relative;
   color: #484d55;
   background-color: #ffffff;
   border-color: rgb(242, 97, 0);
@@ -278,9 +278,9 @@ label{
   border-width: 1px;
   border-style: solid;
   text-align: center;
-  width: 165px;
+  width: 160px;
   height: 48px;
-  margin-top: 1%;
+  margin-top: 1.02%;
   margin-left: 331px;
   vertical-align: middle;
 }

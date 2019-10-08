@@ -144,7 +144,6 @@ li {
     display: inline-block;
     width: 60%;
     overflow: hidden;
-
   }
   ul.botom-line{
     margin: 10px auto;
@@ -216,27 +215,38 @@ li {
   .v-line{
   }
   ul.head-line {
+    position: absolute;
+    visibility: hidden;
+
+
+    /*
     margin: 0;
     padding: 0;
     background-color: #DFDFDF;
     vertical-align: top;
+
+    */
+  }
+
+  ul.botom-line{
+    border: 1px solid blue;
   }
   li {
     text-align: left;
   }
   .radio{
     display: inline-block;
-    width: 6%;
+    width: 15%;
 
   }
   .date{
     display: inline-block;
-    width: 19%;
+    width: 25%;
 
   }
   .city{
-    position: absolute;
-    visibility: hidden;
+    display: inline-block;
+    width: 25%;
   }
   .salary{
     display: inline-block;
@@ -246,7 +256,7 @@ li {
   }
   .position{
     display: inline-block;
-    width: 50%;
+    width: 90%;
     overflow: hidden;
 
   }
@@ -254,6 +264,7 @@ li {
     margin: 10px auto;
     padding: 0;
     vertical-align: top;
+    display: block;
   }
   .comment{
     display: block;

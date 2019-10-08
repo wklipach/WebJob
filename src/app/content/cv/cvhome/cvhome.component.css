@@ -563,11 +563,12 @@ li{
     height: 90px;
   }
   .logotype-company{
-    margin-top: 85px;
-    margin-left: 15px;
+    display: inline-block;
+    margin-top: 1px;
+    margin-left: 10px;
     font-size: 12px;
-    width: 130px;
-    height: 40px;
+    width: 90px;
+    height: 90px;
   }
   .leftSide{
     display: block;
