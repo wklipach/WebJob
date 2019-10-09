@@ -53,7 +53,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import {LetterService} from './services/letter.service';
 import { PageCountComponent } from './page-count/page-count.component';
 import {NgbModule, NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
-import { AboutComponent } from './about/about.component';
+import { AboutComponent } from './account/about/about.component';
 import { FavoritesComponent } from './account/favorites/favorites.component';
 import { CvViewComponent } from './content/cv/cv-view/cv-view.component';
 import {InfoService} from './services/info.service';
@@ -82,6 +82,9 @@ import { PostmoderComponent } from './postmoder/postmoder.component';
 import { PostmoderCvComponent } from './postmoder/postmoder-cv/postmoder-cv.component';
 import { PostmoderVcComponent } from './postmoder/postmoder-vc/postmoder-vc.component';
 import {CheckpostService} from './services/checkpost.service';
+import { AboutUsruComponent } from './account/about/about-usru/about-usru.component';
+import { AboutUseeComponent } from './account/about/about-usee/about-usee.component';
+import { AboutUsenComponent } from './account/about/about-usen/about-usen.component';
 
 
 
@@ -128,6 +131,9 @@ const appRoutes: Routes = [
   {path: 'smain', component: SmainComponent},
   {path: 'invitation', component: InvitationComponent},
   {path: 'postmoder', component: PostmoderComponent},
+  {path: 'about-usru', component: AboutUsruComponent},
+  {path: 'about-usee', component: AboutUseeComponent},
+  {path: 'about-usen', component: AboutUsenComponent},
   {path: '**', component: NotFoundComponent }
 ];
 
@@ -210,7 +216,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     ConfJDirective,
     PostmoderComponent,
     PostmoderCvComponent,
-    PostmoderVcComponent
+    PostmoderVcComponent,
+    AboutUsruComponent,
+    AboutUseeComponent,
+    AboutUsenComponent
    ],
   entryComponents: [
     CvPreviousComponent,

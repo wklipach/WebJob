@@ -431,26 +431,30 @@ label{
   margin-left: 295px;
 }
 .alertWrong{
+  position: relative;
   display: block;
   font-size: 1.4em;
   color: #F74933;
   width: 530px;
-  margin-top: 15px;
+  margin-top: -250px;
   text-align: center;
   border: dotted 1px #f20f4b;
   height: 50px;
   line-height: 2.03;
+  background-color: #fff;
 }
 .alertSuccess{
+  position: relative;
   display: block;
   font-size: 1.4em;
   color: #64b65b;
   width: 530px;
-  margin-top: 15px;
+  margin-top: -250px;
   text-align: center;
   border: dotted 1px #64b65b;
   height: 50px;
   line-height: 2.03;
+  background-color: #fff;
 }
 .deleteAccount{
   position: absolute;
@@ -929,26 +933,30 @@ label{
     margin-left: 295px;
   }
   .alertWrong{
+    position: relative;
     display: block;
     font-size: 1.4em;
     color: #F74933;
-    width: 530px;
-    margin-top: 15px;
+    width: 507px;
+    margin-top: -250px;
     text-align: center;
     border: dotted 1px #f20f4b;
     height: 50px;
     line-height: 2.03;
+    background-color: #fff;
   }
   .alertSuccess{
+    position: relative;
     display: block;
     font-size: 1.4em;
     color: #64b65b;
-    width: 530px;
-    margin-top: 15px;
+    width: 507px;
+    margin-top: -250px;
     text-align: center;
     border: dotted 1px #64b65b;
     height: 50px;
     line-height: 2.03;
+    background-color: #fff;
   }
   .deleteAccount{
     position: absolute;
