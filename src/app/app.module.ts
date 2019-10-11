@@ -14,7 +14,7 @@ import {AuthService} from './services/auth-service.service';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { RegisterEmployerComponent } from './entrance/registration/register-employer/register-employer.component';
 import { RegisterEmployeeComponent } from './entrance/registration/register-employee/register-employee.component';
-import { RulesComponent } from './rules/rules.component';
+import { RulesComponent } from './account/about/rules/rules.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AngularFontAwesomeModule} from 'angular-font-awesome';
 import {AccountEmployeeComponent} from './account/account-employee/account-employee.component';
@@ -85,6 +85,9 @@ import {CheckpostService} from './services/checkpost.service';
 import { AboutUsruComponent } from './account/about/about-usru/about-usru.component';
 import { AboutUseeComponent } from './account/about/about-usee/about-usee.component';
 import { AboutUsenComponent } from './account/about/about-usen/about-usen.component';
+import { RulesRuComponent } from './account/about/rules-ru/rules-ru.component';
+import { RulesEeComponent } from './account/about/rules-ee/rules-ee.component';
+import { RulesEnComponent } from './account/about/rules-en/rules-en.component';
 
 
 
@@ -134,6 +137,11 @@ const appRoutes: Routes = [
   {path: 'about-usru', component: AboutUsruComponent},
   {path: 'about-usee', component: AboutUseeComponent},
   {path: 'about-usen', component: AboutUsenComponent},
+  {path: 'rules-ru', component: RulesRuComponent},
+  {path: 'rules-ee', component: RulesEeComponent},
+  {path: 'rules-en', component: RulesEnComponent},
+
+
   {path: '**', component: NotFoundComponent }
 ];
 
@@ -219,7 +227,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     PostmoderVcComponent,
     AboutUsruComponent,
     AboutUseeComponent,
-    AboutUsenComponent
+    AboutUsenComponent,
+    RulesRuComponent,
+    RulesEeComponent,
+    RulesEnComponent
    ],
   entryComponents: [
     CvPreviousComponent,
