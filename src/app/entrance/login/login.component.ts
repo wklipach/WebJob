@@ -65,10 +65,10 @@ export class LoginComponent implements OnInit, OnDestroy {
          //console.log('вернули',ResUser[0].UserName);
          return {bCheck: true, uName: ResUser[0].UserName, id_user: ResUser[0].id, bEmployer : ResUser[0].bEmployer } } else {
       if (ResUser.length === 0) {
-        this.sResTrouble = 'Не существующие имя или пароль.';
+        this.sResTrouble = 'Parool või kasutajanimi ei eksisteeri.';
         return {bCheck: false, uName: '', id_user: -1, bEmployer: false};
       } else {
-        this.sResTrouble = 'Существует несколько пользователей с такими именем или паролем.';
+        this.sResTrouble = 'Существуют несколько пользователей с такими именем или паролем.';
         return {bCheck: false, uName: '', id_user: -1, bEmployer: false};
       }
 

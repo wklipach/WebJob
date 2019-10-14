@@ -34,7 +34,7 @@
 
 
     <div class="deleteCorrespondence" *ngIf="contactMethods[i].bDelete === true">
-      <span class="question">Вы желаете удалить данную вакансию?</span>
+      <span class="question">{{'allValue.deletevacancyquestion' | translate}}</span>
       <button type="button" class="btn-delete" (click)="DeleteElement(item,i)">{{'cv-list.yes' | translate}}</button>
       <button type="button" class="btn-delete" (click)="UnDeleteElement(item,i)">{{'cv-list.no' | translate}}</button>
 

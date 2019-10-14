@@ -181,6 +181,7 @@ label{
   margin-left: 6px;
 }
 .alertWrong{
+  position: absolute;
   display: block;
   font-size: 1.4em;
   color: #F74933;
@@ -378,11 +379,12 @@ label{
     margin:700px auto;
   }
   .alertWrong{
+    position: absolute;
     display: block;
     font-size: 1.4em;
     color: #F74933;
     width: 530px;
-    margin: 30px 2px 0 260px;
+    margin: 30px 2px 0 300px;
     text-align: center;
     border: dotted 1px #f20f4b;
     height: 50px;
@@ -580,7 +582,7 @@ label{
   .alertWrong{
     position: relative;
     display: block;
-    font-size: 1.4em;
+    font-size: 1.2em;
     color: #F74933;
     margin: 6px 2px 10px 2px;
     height: 50px;

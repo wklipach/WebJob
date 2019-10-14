@@ -445,7 +445,7 @@ label{
   }
   .wrapper {
     width: 100%;
-    min-height: 700px;
+    min-height: 750px;
     margin: 0 auto;
     font-size: 0.9em;
   }
@@ -577,10 +577,11 @@ label{
     width:60px;
   }
   .subject{
-    margin-left: 12%;
-    width:800px;
+    margin-left: 15%;
+    width: 800px;
     font-size: 1.2em;
     overflow: hidden;
+    line-height: 1.1;
   }
   .labelText{
     margin-left: 20px;
@@ -653,7 +654,7 @@ label{
     font-weight: 600;
   }
   .alertWrong {
-    font-size: 1.2em;
+    font-size: 1.1em;
     color: #F74933;
     text-align: center;
   }

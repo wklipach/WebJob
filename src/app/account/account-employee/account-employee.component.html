@@ -138,10 +138,10 @@
 
       <!-- Удаление аккаунта -->
       <div *ngIf="!this.bDeleteAll">
-      <div class="deleteAccount" (click)="this.bDeleteAll=true">Удалить аккаунт</div>
+      <div class="deleteAccount" (click)="this.bDeleteAll=true">{{'allValue.deleteaccount' | translate}}</div>
     </div>
       <div class="deleteAccountPopup" *ngIf="this.bDeleteAll">
-        <span class="question">Удалить аккаунт? Все данные будут безвозвратно утеряны !</span>
+        <span class="question">{{'allValue.deleteaccountquestion' | translate}}</span>
         <button type="button" class="btn-delete-acc" (click)="DeleteAll()">{{'allValue.delete' | translate}}</button>
         <button type="button" class="btn-cancel-acc" (click)="this.bDeleteAll=false">{{'allValue.Cancel' | translate}}</button>
       </div>
