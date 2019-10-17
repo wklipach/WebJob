@@ -119,7 +119,7 @@ label{
   position: absolute;
   border-radius: 3px;
   background-color: #0262d2;
-  width: 155px;
+  width: 160px;
   height: 48px;
   color: rgb(255, 255, 255);
   border-color: #054086;
@@ -149,9 +149,9 @@ label{
   border-width: 1px;
   border-style: solid;
   text-align: center;
-  width: 157px;
+  width: 165px;
   height: 48px;
-  margin-left: 172px;
+  margin-left: 177px;
   margin-top: 1%;
 }
 .btn-favorites:hover{
@@ -183,7 +183,7 @@ label{
   text-align: center;
   width: 165px;
   height: 48px;
-  margin-left: 331px;
+  margin-left: 344px;
   vertical-align: middle;
   margin-top: 1.02%;
 }
@@ -217,7 +217,7 @@ label{
   position: absolute;
   border-radius: 3px;
   background-color: rgb( 145, 175, 209 );
-  width: 155px;
+  width: 160px;
   height: 48px;
   color: rgb(255, 255, 255);
   border-color: #054086;
@@ -247,10 +247,10 @@ label{
   border-width: 1px;
   border-style: solid;
   text-align: center;
-  width: 157px;
+  width: 165px;
   height: 48px;
   margin-top: 1%;
-  margin-left: 172px;
+  margin-left: 177px;
 }
 .btn-favorites-disabled:hover{
   background-color: rgb( 145, 175, 209 );
@@ -281,7 +281,7 @@ label{
   width: 165px;
   height: 48px;
   margin-top: 1.02%;
-  margin-left: 331px;
+  margin-left: 344px;
   vertical-align: middle;
 }
 .crossed-eye{
@@ -418,7 +418,7 @@ label{
     position: absolute;
     border-radius: 3px;
     background-color: #0262d2;
-    width: 155px;
+    width: 160px;
     height: 48px;
     color: rgb(255, 255, 255);
     border-color: #054086;
@@ -448,9 +448,9 @@ label{
     border-width: 1px;
     border-style: solid;
     text-align: center;
-    width: 157px;
+    width: 165px;
     height: 48px;
-    margin-left: 172px;
+    margin-left: 177px;
     margin-top: 1%;
   }
   .btn-favorites:hover{
@@ -482,7 +482,7 @@ label{
     text-align: center;
     width: 165px;
     height: 48px;
-    margin-left: 331px;
+    margin-left: 344px;
     vertical-align: middle;
     margin-top: 1.02%;
   }
@@ -516,7 +516,7 @@ label{
     position: absolute;
     border-radius: 3px;
     background-color: rgb( 145, 175, 209 );
-    width: 155px;
+    width: 160px;
     height: 48px;
     color: rgb(255, 255, 255);
     border-color: #054086;
@@ -546,10 +546,10 @@ label{
     border-width: 1px;
     border-style: solid;
     text-align: center;
-    width: 157px;
+    width: 165px;
     height: 48px;
     margin-top: 1%;
-    margin-left: 172px;
+    margin-left: 177px;
   }
   .btn-favorites-disabled:hover{
     background-color: rgb( 145, 175, 209 );
@@ -580,7 +580,7 @@ label{
     width: 165px;
     height: 48px;
     margin-top: 1%;
-    margin-left: 331px;
+    margin-left: 344px;
     vertical-align: middle;
   }
   .crossed-eye{
@@ -604,7 +604,7 @@ label{
     position: absolute;
     border-radius: 3px;
     background-color: rgb( 145, 175, 209 );
-    width: 155px;
+    width: 160px;
     height: 48px;
     color: rgb(255, 255, 255);
     border-color: #054086;
@@ -634,10 +634,10 @@ label{
     border-width: 1px;
     border-style: solid;
     text-align: center;
-    width: 157px;
+    width: 165px;
     height: 48px;
     margin-top: 1%;
-    margin-left: 172px;
+    margin-left: 177px;
   }
   .btn-favorites-disabled:hover{
     background-color: rgb( 145, 175, 209 );
@@ -657,7 +657,7 @@ label{
   }
   .btn-hide-disabled{
     display: inline-block;
-    position: absolute;
+    position: relative;
     color: #484d55;
     background-color: #ffffff;
     border-color: rgb(242, 97, 0);
@@ -668,7 +668,7 @@ label{
     width: 165px;
     height: 48px;
     margin-top: 1%;
-    margin-left: 331px;
+    margin-left: 344px;
     vertical-align: middle;
   }
   .crossed-eye{
@@ -805,7 +805,7 @@ label{
     position: relative;
     border-radius: 3px;
     background-color: #0262d2;
-    width: 155px;
+    width: 165px;
     height: 48px;
     color: rgb(255, 255, 255);
     border-color: #054086;
@@ -834,7 +834,7 @@ label{
     border-width: 1px;
     border-style: solid;
     text-align: center;
-    width: 157px;
+    width: 165px;
     height: 48px;
     margin: 10px auto;
   }
@@ -865,7 +865,7 @@ label{
     border-width: 1px;
     border-style: solid;
     text-align: center;
-    width: 160px;
+    width: 165px;
     height: 48px;
     margin: 10px auto;
   }
@@ -899,7 +899,7 @@ label{
     position: relative;
     border-radius: 3px;
     background-color: rgb( 145, 175, 209 );
-    width: 155px;
+    width: 165px;
     height: 48px;
     color: rgb(255, 255, 255);
     border-color: #054086;
@@ -928,7 +928,7 @@ label{
     border-width: 1px;
     border-style: solid;
     text-align: center;
-    width: 157px;
+    width: 165px;
     height: 48px;
     margin: 10px auto;
   }

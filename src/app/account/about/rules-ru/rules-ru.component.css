@@ -5,9 +5,9 @@
     display: block;
     font-size: 1em;
   }
-  .highlight {
+  span {
     font-weight: bold;
-    background-color: cornflowerblue;
+
   }
   h2 {
     font-size: 1.2em;
@@ -29,9 +29,9 @@
     display: block;
     font-size: 1em;
   }
-  .highlight {
+  span {
     font-weight: bold;
-    background-color: cornflowerblue;
+
   }
   h2 {
     font-size: 1.2em;
@@ -59,9 +59,9 @@
     display: block;
     font-size: 1em;
   }
-  .highlight {
+  span {
     font-weight: bold;
-    background-color: cornflowerblue;
+
   }
   h2 {
     font-size: 1.2em;
