@@ -297,6 +297,7 @@
   "register-employee.ppnsRE" : "Antud parool ei ühti esialgsega",
   "register-employee.pusRE" : "Paroolid ühtivad",
   "register-employee.pppnsRE" : "Paroolid ei klapi",
+  "register-rules" : "Kasutuseeskirjad",
   "register-employee.ppiRE" : "Lugeda kasutuse eeskirjad.",
   "register-employee.ysspiRE" : "Olen nõus kasutuseeeskirjadega",
   "register-employee.bsspirnRE" : "Ilma kasutuse eeskirjadega nõustumiseta on registreerimine võimatu.",

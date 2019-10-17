@@ -1,23 +1,23 @@
-<app-header-top></app-header-top>
-<h1>
- Правила использования сайта.
-</h1>
+  <app-header-top></app-header-top>
+  <div class="wrapper">
+    <div class="top">{{'register-rules' | translate}}</div>
+
+    <div *ngIf="idLang == 1">
+      <app-rules-ee></app-rules-ee>
+    </div>
+
+    <div *ngIf="idLang == 2">
+      <app-rules-en></app-rules-en>
+    </div>
+
+    <div *ngIf="idLang == 0">
+      <app-rules-ru></app-rules-ru>
+    </div>
+
+    <br>
+
+  </div>
 
 
-<div *ngIf="idLang == 1">
-  <app-rules-ee></app-rules-ee>
-</div>
-
-<div *ngIf="idLang == 2">
-  <app-rules-en></app-rules-en>
-</div>
-
-<div *ngIf="idLang == 0">
-  <app-rules-ru></app-rules-ru>
-</div>
-
-
-
-<br><br><br><br><br>
 
 

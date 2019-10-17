@@ -174,7 +174,7 @@
   border-width: 1px;
   border-style: solid;
   text-align: center;
-  width: 160px;
+  width: 165px;
   height: 48px;
   margin-top: 243px;
   margin-left: 331px;
@@ -250,7 +250,7 @@
 }
 .btn-hide-disabled{
   display: inline-block;
-  position: absolute;
+  position: relative;
   color: #484d55;
   background-color: #ffffff;
   border-color: rgb(242, 97, 0);
@@ -258,7 +258,7 @@
   border-width: 1px;
   border-style: solid;
   text-align: center;
-  width: 160px;
+  width: 165px;
   height: 48px;
   margin-top: 243px;
   margin-left: 331px;

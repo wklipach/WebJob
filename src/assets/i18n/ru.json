@@ -297,6 +297,7 @@
   "register-employee.ppnsRE" : "Повторный пароль не совпадает",
   "register-employee.pusRE" : "Пароль совпал",
   "register-employee.pppnsRE" : "Пароли не совпадают",
+  "register-rules" : "Правила использования",
   "register-employee.ppiRE" : "Прочитать правила использования.",
   "register-employee.ysspiRE" : "Я согласен с правилами использования",
   "register-employee.bsspirnRE" : "Без согласия с правилами использования  - регистрация невозможна.",
