@@ -540,6 +540,7 @@ li{
     text-align: left;
     margin-top: 4px;
     margin-left: 42px;
+    line-height: 1;
     overflow: hidden;
   }
   .user-name{
