@@ -1,0 +1,12 @@
+p {
+  position: relative;
+  margin: 10px auto 15px;
+  display: block;
+  font-size: 1em;
+}
+span {
+  color: #0066cc;
+}
+h2 {
+  font-size: 1.2em;
+}
