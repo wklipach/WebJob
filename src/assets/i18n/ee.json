@@ -421,5 +421,7 @@
   "message.messageSDT" : "Слишком длинный текст.",
   "message.messagePOS" : "Проверьте отсылаемое сообщение.",
   "message.descrVUZR" : "Данная вакансия успешно занесена в избранные.",
-  "message.descrVBI" : "Данная вакансия будет игнорироваться."
+  "message.descrVBI" : "Данная вакансия будет игнорироваться.",
+  "newUserMessage.subject" : "Tere tulemast.",
+  "newUserMessage.letter" : "Suur tänu et meid külastasite.Loodame et leiate siit lahenduse oma probleemidele."
 }

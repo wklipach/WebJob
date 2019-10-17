@@ -421,5 +421,7 @@
   "message.messageSDT" : "The text is too long.",
   "message.messagePOS" : "Check the message being sent.",
   "message.descrVUZR" : "This vacancy has been successfully added to your favorites.",
-  "message.descrVBI" : "This vacancy will be ignored."
+  "message.descrVBI" : "This vacancy will be ignored.",
+  "newUserMessage.subject" : "Welcome.",
+  "newUserMessage.letter" : "Thank you for choosing us. We hope that you will find a solution to your issues here."
 }

@@ -235,6 +235,7 @@ export class VacancyDescriptionComponent implements OnInit {
       });
       return;
     }
+
     if (this.bEmployer) {
       //home.ts.sDeniedFavor
       this.translate.get('home.ts.sDeniedFavor').subscribe(value => {

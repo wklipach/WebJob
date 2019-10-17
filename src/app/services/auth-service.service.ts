@@ -4,6 +4,7 @@ import {UserType} from '../class/UserType';
 import {Observable, Subject} from 'rxjs';
 import {GlobalRef} from './globalref';
 import {City} from '../class/City';
+import {staticGuideList} from '../class/GuideList';
 
 @Injectable()
 export class AuthService {
@@ -156,12 +157,16 @@ export class AuthService {
    }
 
 
-  postDataUserTable(user: UserType){
+  postDataUserTable(user: UserType,curSubject, curLetter){
     // вставить запрос по добавлению пользователя в базу
 
     //TODO ТУТ ПРАВИМ!!!!!
     let nUser: any = user;
     nUser.NewUser = 'new_user';
+    nUser.idLang = this.getLangStorage();
+    nUser.newSubject =  curSubject;
+    nUser.newLetter = curLetter;
+
     return this.http.post(this.gr.sUrlGlobal+'UserTable', nUser);
   }
 

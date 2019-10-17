@@ -98,10 +98,19 @@ export class RegisterEmployerComponent implements OnInit {
       '');
     //console.log(AddUser);
 
-    return this.httpService.postDataUserTable(AddUser).subscribe(
-      () => {
-        this.router.navigate(['/login']); }
-    );
+
+    this.translate.get('newUserMessage.subject').subscribe(value => {
+      let curSubject = value;
+      this.translate.get('newUserMessage.letter').subscribe(value => {
+        let curLetter = value;
+        return this.httpService.postDataUserTable(AddUser, curSubject, curLetter).subscribe(() => {
+          this.router.navigate(['/login']);
+        });
+      });
+
+    });
+
+
 
 
   }
