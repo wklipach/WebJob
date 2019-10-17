@@ -1,11 +1,19 @@
 <div class="container">
 <app-header-top></app-header-top>
 
-<div class="wrapper">
-  <div class="top">{{'allValue.aboutcomp' | translate}}</div>
+  <div *ngIf="idLang == 1">
+      <app-about-usee></app-about-usee>
+  </div>
 
-  <div class="profile">
-    <label class="personal">{{'about.ldsA' | translate}}</label></div>
+  <div *ngIf="idLang == 2">
+      <app-about-usen></app-about-usen>
+  </div>
+
+  <div *ngIf="idLang == 0">
+      <app-about-usru></app-about-usru>
+  </div>
 
 </div>
-</div>
+
+
+

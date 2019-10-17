@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
+import {AuthService} from '../services/auth-service.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -8,7 +10,7 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor(public translate: TranslateService) { }
+  constructor() { }
 
   ngOnInit() {
   }

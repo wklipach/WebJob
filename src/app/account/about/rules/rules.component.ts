@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from '../../../services/auth-service.service';
 
 @Component({
   selector: 'app-rules',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RulesComponent implements OnInit {
 
-  constructor() { }
+  public idLang = 1;
+
+  constructor(public authService: AuthService) { }
 
   ngOnInit() {
+    this.CallPageRules();
+  }
+
+  CallPageRules() {
+    this.idLang = this.authService.getLangStorage();
   }
 
 }

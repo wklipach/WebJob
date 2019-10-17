@@ -2,7 +2,21 @@
 <h1>
  Правила использования сайта.
 </h1>
-<p>ЗДесь будет страница с правилами и условиями использования сайта !</p>
+
+
+<div *ngIf="idLang == 1">
+  <app-rules-ee></app-rules-ee>
+</div>
+
+<div *ngIf="idLang == 2">
+  <app-rules-en></app-rules-en>
+</div>
+
+<div *ngIf="idLang == 0">
+  <app-rules-ru></app-rules-ru>
+</div>
+
+
 
 <br><br><br><br><br>
 

@@ -19,6 +19,8 @@ export class RegisterEmployerComponent implements OnInit {
   protected _bLicense: boolean = false;
   public bPassword: boolean = false;
 
+  public idLang = 1;
+
   formRegisterEmployer: FormGroup;
 
 
@@ -65,8 +67,13 @@ export class RegisterEmployerComponent implements OnInit {
       this.router.navigate(['/']);
     }
 
-
+    this.CallPageRules();
   }
+
+  CallPageRules() {
+    this.idLang = this.httpService.getLangStorage();
+  }
+
 
   submit() {
 
