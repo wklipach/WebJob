@@ -1,0 +1,16 @@
+<div class="container">
+<app-header-top></app-header-top>
+
+<div *ngIf="idLang == 1">
+  <app-contacts-ee></app-contacts-ee>
+</div>
+
+<div *ngIf="idLang == 2">
+  <app-contacts-en></app-contacts-en>
+</div>
+
+<div *ngIf="idLang == 0">
+  <app-contacts-ru></app-contacts-ru>
+</div>
+
+</div>

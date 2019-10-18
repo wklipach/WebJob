@@ -88,6 +88,10 @@ import { AboutUsenComponent } from './account/about/about-usen/about-usen.compon
 import { RulesRuComponent } from './account/about/rules-ru/rules-ru.component';
 import { RulesEeComponent } from './account/about/rules-ee/rules-ee.component';
 import { RulesEnComponent } from './account/about/rules-en/rules-en.component';
+import { ContactsEeComponent } from './account/about/contacts-ee/contacts-ee.component';
+import { ContactsRuComponent } from './account/about/contacts-ru/contacts-ru.component';
+import { ContactsEnComponent } from './account/about/contacts-en/contacts-en.component';
+import { ContactsComponent } from './account/about/contacts/contacts.component';
 
 
 
@@ -140,7 +144,10 @@ const appRoutes: Routes = [
   {path: 'rules-ru', component: RulesRuComponent},
   {path: 'rules-ee', component: RulesEeComponent},
   {path: 'rules-en', component: RulesEnComponent},
-
+  {path: 'contacts', component: ContactsComponent},
+  {path: 'contacts-ee', component: ContactsEeComponent},
+  {path: 'contacts-en', component: ContactsEnComponent},
+  {path: 'contacts-ru', component: ContactsRuComponent},
 
   {path: '**', component: NotFoundComponent }
 ];
@@ -208,7 +215,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     InfoPageComponent,
     AboutCompanyComponent,
     SchoolComponent,
-    NotFoundComponent,
     SchoolComponent,
     CvLanguageComponent,
     AdUnitComponent,
@@ -230,7 +236,12 @@ export function HttpLoaderFactory(http: HttpClient) {
     AboutUsenComponent,
     RulesRuComponent,
     RulesEeComponent,
-    RulesEnComponent
+    RulesEnComponent,
+    ContactsEeComponent,
+    ContactsRuComponent,
+    ContactsEnComponent,
+    ContactsComponent,
+    NotFoundComponent
    ],
   entryComponents: [
     CvPreviousComponent,
