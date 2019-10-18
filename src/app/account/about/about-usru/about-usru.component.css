@@ -4,7 +4,7 @@
     margin: 10px auto 15px;
     display: block;
     font-size: 1.1em;
-    color: #0262d2;
+
   }
   p:first-child{
     font-weight: bold;
@@ -23,7 +23,7 @@
     margin: 10px auto 15px;
     display: block;
     font-size: 1.1em;
-    color: #0262d2;
+
   }
 
 }    /* Конец media 768-1199 */
@@ -52,7 +52,7 @@
     margin: 10px auto 15px;
     display: block;
     font-size: 1em;
-    color: #0262d2;
+
   }
 
 }   /* Конец media 320-767 */
