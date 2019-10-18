@@ -1,16 +1,15 @@
 <div class="width100">
 <div class="foot">
 
-  <div class="logo" title="На главную">MUCV</div>
+  <a routerLink="/" routerLinkActive="active"><div class="logo" title="На главную">MUCV</div></a>
 <div class="copyright"> © {{'footer.copiright' | translate }}</div>
 
   <div class="menu" title="Открыть меню">&#9776;</div>
 
     <ul>
-      <li><a href="/about">{{'footer.aboutmy' | translate }}</a></li>
-          <li><a href="/contacts">{{'footer.cont' | translate }}</a></li>
-          <li><a href="/rules">{{'footer.rules' | translate }}</a></li>
-      <!--    <li><a href="#">{{'footer.polit' | translate }}</a></li>  -->
+      <li><a routerLink="/about" routerLinkActive="active">{{'footer.aboutmy' | translate }}</a></li>
+      <li><a routerLink="/contacts" routerLinkActive="active">{{'footer.cont' | translate }}</a></li>
+      <li><a routerLink="/rules" routerLinkActive="active">{{'footer.rules' | translate }}</a></li>
     </ul>
 
 
