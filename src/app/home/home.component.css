@@ -681,7 +681,8 @@
     min-height: calc(100vh - 50px);
   }
   .wrapper {
-    width: 98%;
+    width: 99%;
+    font-size: 0.9em;
    }
   .top {
     height: 10px;

@@ -16,7 +16,7 @@
   "cvhome.ts.sUseResp": "You have already sent an invitation to this resume.",
   "cvhome.ts.sNullFund": "The search returned no results.",
   "cvhome.ts.sFavCV": "Favorite Resumes",
-  "cvhome.ts.sCV_Tr": "Summary",
+  "cvhome.ts.sCV_Tr": "CV",
   "staticGuideList.GenderList_val2": "Male",
   "staticGuideList.GenderList_val3": "Female",
   "staticGuideList.Education_val1" : "Basic",
