@@ -110,11 +110,7 @@ export class RegisterEmployerComponent implements OnInit {
 
     });
 
-
-
-
   }
-
 
   // валидатор по паролю
   password2AsyncValidator(control: FormControl): Promise<{[s:string]: boolean}> {

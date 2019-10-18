@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from '../../../services/auth-service.service';
 
 @Component({
   selector: 'app-contacts',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactsComponent implements OnInit {
 
-  constructor() { }
+
+  public idLang = 1;
+
+  constructor(public authService: AuthService) { }
 
   ngOnInit() {
+    this.CallPageRules();
   }
+
+  CallPageRules() {
+    this.idLang = this.authService.getLangStorage();
+  }
+
 
 }
