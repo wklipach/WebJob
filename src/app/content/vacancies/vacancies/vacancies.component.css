@@ -53,7 +53,7 @@
     display: inline-block;
     position: relative;
     border-radius: 3px;
-    background-color: rgb(68, 75, 84);
+    background-color: #0262d2;
     width: 155px;
     height: 50px;
     color: rgb(255, 255, 255);
@@ -99,7 +99,7 @@
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   .wrapper{
-    width: 100%;
+    width: 99%;
   }
   .box{
     margin: 6px;
