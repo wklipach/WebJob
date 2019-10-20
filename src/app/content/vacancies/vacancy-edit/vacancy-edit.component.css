@@ -35,7 +35,7 @@
     width: 99.5%;;
     height: 190px;
   }
-  .vacancyConditions{
+  .inputVacancyConditions{
     width: 99.5%;;
     height: 190px;
   }
@@ -43,6 +43,7 @@
     width: 99.5%;;
     height: 190px;
   }
+
   .city{
     width: 90%;
   }
@@ -55,10 +56,6 @@
   .inputVacancyShortTitle{
     width: 99.5%;;
     height: 43px;
-  }
-  .Conditions{
-    width: 90%;
-    height: 243px;
   }
   .inputCity{
     text-align: center;
@@ -171,9 +168,7 @@
   .shortTitle{
     width: 90%;
   }
-  .conditions{
-    width: 72.4%;
-  }
+
   .inputVacancyDescription{
     width: 99.5%;
     height: 190px;
@@ -182,7 +177,7 @@
     width: 99.5%;;
     height: 190px;
   }
-  .vacancyConditions{
+  .inputVacancyConditions{
     width: 99.5%;;
     height: 190px;
   }
@@ -202,10 +197,6 @@
   .inputVacancyShortTitle{
     width: 99.5%;;
     height: 43px;
-  }
-  .Conditions{
-    width: 90%;
-    height: 243px;
   }
   .inputCity{
     text-align: center;
@@ -327,9 +318,6 @@
   .shortTitle{
     width: 90%;
   }
-  .conditions{
-    width: 72.4%;
-  }
   .inputVacancyDescription{
     width: 98%;
     height: 190px;
@@ -338,8 +326,8 @@
     width: 98%;;
     height: 190px;
   }
-  .vacancyConditions{
-    width: 98%;;
+  .inputVacancyConditions{
+    width: 98%;
     height: 190px;
   }
   .inputVacancyRequirements{
