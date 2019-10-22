@@ -780,7 +780,8 @@ label{
     font-size: 1.1em;
     width: 60%;
     color: rgb(68, 75, 84);
-    margin-left: 130px;
+    margin-left: 135px;
+    margin-top: 6px;
     overflow: hidden;
     text-decoration: underline;
   }
