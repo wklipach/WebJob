@@ -341,11 +341,14 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
    private static _Employment_val3: string = '';
    private static _Employment_val4: string = '';
    private static _Employment_val5: string = '';
+   private static _Employment_val6: string = '';
+
    public static set Employment_val1(value) {this._Employment_val1 = value;}
    public static set Employment_val2(value) {this._Employment_val2 = value;}
    public static set Employment_val3(value) {this._Employment_val3 = value;}
    public static set Employment_val4(value) {this._Employment_val4 = value;}
    public static set Employment_val5(value) {this._Employment_val5 = value;}
+   public static set Employment_val6(value) {this._Employment_val6 = value;}
 
    public static get EmploymentList(): Guide[] {
      return [
@@ -353,7 +356,8 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
      { id: 2, order: 2, name: this._Employment_val2,  comment: '' },
      { id: 3, order: 3, name: this._Employment_val3,  comment: '' },
      { id: 4, order: 4, name: this._Employment_val4,  comment: '' },
-     { id: 5, order: 5, name: this._Employment_val5,  comment: '' }
+     { id: 5, order: 5, name: this._Employment_val5,  comment: '' },
+     { id: 6, order: 6, name: this._Employment_val6,  comment: '' }
    ];}
 
 //опыт работы

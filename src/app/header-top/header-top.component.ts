@@ -361,6 +361,8 @@ export class HeaderTopComponent implements OnInit {
     this.translate.get('staticGuideList.Employment_val3').subscribe(value => staticGuideList.Employment_val3 = value);
     this.translate.get('staticGuideList.Employment_val4').subscribe(value => staticGuideList.Employment_val4 = value);
     this.translate.get('staticGuideList.Employment_val5').subscribe(value => staticGuideList.Employment_val5 = value);
+    this.translate.get('staticGuideList.Employment_val6').subscribe(value => staticGuideList.Employment_val6 = value);
+
 
     this.translate.get('staticGuideList.Experience_val1').subscribe(value => staticGuideList.Experience_val1 = value);
     this.translate.get('staticGuideList.Experience_val2').subscribe(value => staticGuideList.Experience_val2 = value);
