@@ -6,7 +6,6 @@ import {Subscription} from 'rxjs';
 import {AuthService} from '../../services/auth-service.service';
 import {UserType} from '../../class/UserType';
 import {Router} from '@angular/router';
-import {DomSanitizer} from '@angular/platform-browser';
 import {UserTable} from '../../class/UserTable';
 import {isUndefined} from "util";
 import {Guide} from '../../class/guide';
@@ -114,13 +113,11 @@ constructor(  private is: GuideService,
 
   ngOnInit() {
 
-
     var Res =  this.auth.loginStorage();
     this.bEmployer = Res.bEmployer;
     if (!this.bEmployer || !Res.bConnected) {
       this.router.navigate(['/']);
     }
-
 
    // console.log('ngOnInit()');
 

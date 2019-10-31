@@ -61,14 +61,14 @@ export class VacancyDescriptionComponent implements OnInit {
               private cvEditSrv: CvEditService,
               private vcListServ: VacanciesListService,
               public translate: TranslateService,
-              public gr: GlobalRef) { }
+              public gr: GlobalRef) {
+
+  }
 
 
   ngOnInit() {
 
-
-//    let genderList = staticGuideList.GenderList;
-//    console.log('genderList', genderList);
+    //localhost:4200/vacancy-description?id_vc=25
 
 
     var Res =  this.authService.loginStorage();
@@ -78,43 +78,56 @@ export class VacancyDescriptionComponent implements OnInit {
 
       this.displayPeriodList = this.sGuide.getDisplayPeriodList();
 
+    this.activatedRoute.queryParams.subscribe(params => {
+      let pID_VC = params['id_vc'];
+
       this.dvSubscription = this.moveS.getDataVacancy()
       .subscribe (curDataVacancy =>
       {
 
-        // получаем объект из кэша, если неполный - делаем запрос к серверу и получаем новый getVacAny(id_vc: number)
-        if (curDataVacancy === undefined) {
-          this.router.navigate(['/smain']);
-          return;
-        }
+            // получаем объект из кэша, если неполный - делаем запрос к серверу и получаем новый getVacAny(id_vc: number)
+            if (curDataVacancy == undefined && !pID_VC) {
+              this.router.navigate(['/smain']);
+              return;
+            }
 
-        // получаем объект из кэша, если неполный - делаем запрос к серверу и получаем новый getVacAny(id_vc: number)
-        if (curDataVacancy.Industry || curDataVacancy.Education || curDataVacancy.Employment || curDataVacancy.Experience)
-        {
+            // получаем объект из кэша, если неполный - делаем запрос к серверу и получаем новый getVacAny(id_vc: number)
+            if (curDataVacancy && (curDataVacancy.Industry || curDataVacancy.Education || curDataVacancy.Employment || curDataVacancy.Experience) && (!pID_VC))
+            {
 
-          this.descrDataVacancy = curDataVacancy;
-          this.onLoadUserData(this.descrDataVacancy);
-          this.LoadAdvData();
-        } else
-        {
+              this.descrDataVacancy = curDataVacancy;
+              this.onLoadUserData(this.descrDataVacancy);
+              this.LoadAdvData();
+            } else
+            {
 
-          this.vcListServ.getVacAny(curDataVacancy.id).subscribe(qcurDataVacancy => {
-            this.descrDataVacancy = qcurDataVacancy[0];
+              if (!pID_VC) pID_VC =curDataVacancy.id;
 
-            //console.log('this.descrDataVacancy a2',this.descrDataVacancy);
+              this.vcListServ.getVacAny(pID_VC).subscribe(qcurDataVacancy => {
+              this.descrDataVacancy = qcurDataVacancy[0];
 
-            this.descrDataVacancy.CityName = this.authService.loadCurrentLangCity(this.descrDataVacancy.CityName, this.descrDataVacancy.CityName1, this.descrDataVacancy.CityName2);
+              //console.log('this.descrDataVacancy a2',this.descrDataVacancy);
 
-            // CityName: "Таллин", CityName1: "Tallinn EE", CityName2: "Tallinn"
+              //если параметр с номером вакансии есть, а вакансии с таким номером нет покидаем страницу
+              if (!this.descrDataVacancy) {
+                  this.router.navigate(['/smain']);
+                  return;
+              }
 
-            this.onLoadUserData(this.descrDataVacancy);
-            this.LoadAdvData();
-            this.onLoadFromBaseAvatar(this.descrDataVacancy);
-            // console.log('asRES', this.descrDataVacancy);
-            // if (qcurDataVacancy[0].Avatar === null) this.descrDataVacancy.base64textString = [];
-            //  else this.descrDataVacancy.base64textString = qcurDataVacancy[0].Avatar;
-          });
-        }
+
+              this.descrDataVacancy.CityName = this.authService.loadCurrentLangCity(this.descrDataVacancy.CityName, this.descrDataVacancy.CityName1, this.descrDataVacancy.CityName2);
+
+              // CityName: "Таллин", CityName1: "Tallinn EE", CityName2: "Tallinn"
+
+              this.onLoadUserData(this.descrDataVacancy);
+              this.LoadAdvData();
+              this.onLoadFromBaseAvatar(this.descrDataVacancy);
+              // console.log('asRES', this.descrDataVacancy);
+              // if (qcurDataVacancy[0].Avatar === null) this.descrDataVacancy.base64textString = [];
+              //  else this.descrDataVacancy.base64textString = qcurDataVacancy[0].Avatar;
+            });
+          }
+
 
       }, error => { //console.log('DescriptionError', error);
                           this.router.navigate(['/smain']); } );
@@ -123,6 +136,8 @@ export class VacancyDescriptionComponent implements OnInit {
 //      console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
 //      this.router.navigate(['/smain']);
 //    }
+
+      }); //this.activatedRoute.queryParams.subscribe
 
   }
 

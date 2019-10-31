@@ -92,6 +92,8 @@ import { ContactsEeComponent } from './account/about/contacts-ee/contacts-ee.com
 import { ContactsRuComponent } from './account/about/contacts-ru/contacts-ru.component';
 import { ContactsEnComponent } from './account/about/contacts-en/contacts-en.component';
 import { ContactsComponent } from './account/about/contacts/contacts.component';
+import { SendMailComponent } from './account/send-mail/send-mail.component';
+import {SendMailService} from './services/send-mail.service';
 
 
 
@@ -148,7 +150,7 @@ const appRoutes: Routes = [
   {path: 'contacts-ee', component: ContactsEeComponent},
   {path: 'contacts-en', component: ContactsEnComponent},
   {path: 'contacts-ru', component: ContactsRuComponent},
-
+  {path: 'send-mail', component: SendMailComponent},
   {path: '**', component: NotFoundComponent }
 ];
 
@@ -241,7 +243,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ContactsRuComponent,
     ContactsEnComponent,
     ContactsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SendMailComponent
    ],
   entryComponents: [
     CvPreviousComponent,
@@ -249,7 +252,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   providers: [AuthService, GuideService, NewVacancyService, TableVacancyService,
               MoveService, PreviousService, NewcvService, CvListService, CvEditService,
-              VacanciesListService, LetterService, InfoService, CvLanguageService, GlobalRef, ForgotpasswordService, CheckpostService],
+              VacanciesListService, LetterService, InfoService, CvLanguageService, GlobalRef, ForgotpasswordService, CheckpostService, SendMailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -40,12 +40,13 @@
           <img src="/assets/img/usernull.png" class="img-thumbnail" onclick="">
         </ng-template>
 
-
-
         <div class="contact">{{'footer.cont' | translate}}</div>
         <div>
           <img class="city" src="/assets/img/city.png" alt="'allValue.сity' | translate">
-          <div class="city-name" *ngIf="_cvitem.CityName!= undefined" >{{_cvitem.CityName}}</div>
+
+          <div *ngIf="_cvitem">
+            <div class="city-name" *ngIf="_cvitem.CityName!= undefined" >{{_cvitem.CityName}}</div>
+          </div>
         </div>
 
         <label>Email</label>

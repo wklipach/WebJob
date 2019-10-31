@@ -336,7 +336,9 @@ loadCurrentUserInfo(item: any) {
           let IdGender = item.Gender;
           if (item.Gender<1) IdGender = 1;
 
-          this.accountEmployeeForm.controls['inputGender'].setValue(this.genderList.find((value) => value.id == IdGender).name);
+            this.genderList = this.gs.getGenderList();
+            this.accountEmployeeForm.controls['inputGender'].setValue(this.genderList.find((value) => value.id == IdGender).name);
+
         }
 
         if (typeof item.DateBirth !== 'undefined') {

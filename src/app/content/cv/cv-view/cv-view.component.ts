@@ -9,10 +9,12 @@ import {
 } from '../../../class/GuideList';
 import {AdvancedLanguage, Language} from '../../../class/Language';
 import {TranslateService} from '@ngx-translate/core';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {MoveService} from '../../../services/move.service';
 import {TableVacancyService} from '../../../services/table-vacancy.service';
 import {GlobalRef} from '../../../services/globalref';
+import {isNullOrUndefined} from "util";
+import {City} from '../../../class/City';
 
 @Component({
   selector: 'app-cv-view',
@@ -36,6 +38,7 @@ export class CvViewComponent implements OnInit {
   public _listPrevious: any = [];
   private dvSubscVacancy: Subscription;
   public errorResponse = '';
+  private _listCity: City[] = [];
 
   public bConnected = false;
   public bEmployer = false;
@@ -51,7 +54,8 @@ export class CvViewComponent implements OnInit {
               private router: Router,
               private moveS: MoveService,
               public translate: TranslateService,
-              public gr: GlobalRef) {
+              public gr: GlobalRef,
+              private activatedRoute: ActivatedRoute) {
 
     this.formView = this.fb.group({
       name: ['', Validators.required],
@@ -63,110 +67,50 @@ export class CvViewComponent implements OnInit {
 
   ngOnInit() {
 
-    this.errorResponse = '';
-    var Res =  this.auth.loginStorage();
-    this.id_user =  Res.id_user;
 
-    this.bConnected = Res.bConnected;
-    this.bEmployer = Res.bEmployer;
+    this.activatedRoute.queryParams.subscribe(params => {
+      let pID_CV = params['id_cv'];
 
-    this.cv_id = this.cveditserv.getCvId();
-    if (this.cv_id > -1) {
-      this._cvitem = this.cveditserv.getCvItem();
-    }
+      if (pID_CV) {
+        this.loadSubscribeData(pID_CV);
+      } else this.loadInitData();
 
+    });
 
-    /*
-    Education: "5,1"
-    ​Employment: "5,1"
-    Experience: "1,4"
-    Industry: "1,30"
-    Schedule: "1,5"
-    const arrEmployment = item.Employment.split(',');
-    */
+        //загрузка данных из кэша без подписок
+  }
 
 
-    //console.log('this._cvitem', this._cvitem);
+  loadSubscribeData(pID_CV: number) {
 
-    if (this._cvitem !== null) {
-      if (this._cvitem.Education !== undefined) {
-        if (this._cvitem.Education !== null) {
-          const arrEducation = this._cvitem.Education.split(',');
-          arrEducation.forEach(
-            (value) => {
-              this._listEducation.push(staticGuideList.EducationList[value - 1].name);
-            })
+
+    this.httpService.getCity().subscribe((city: City[]) => {
+      city = this.auth.loadLangCity(city);
+      this._listCity = city;
+
+
+      this.cveditserv.getAnyCv(pID_CV).subscribe(item => {
+
+        //http://localhost:4200/cv-view?id_cv=39
+        if (!item[0].id) {
+          //console.log('не нашли записей');
+          this.router.navigate(['/smain']);
+          return;
         }
-      }
-    }
 
 
-    if (this._cvitem !== null) {
-      if (this._cvitem.Experience !== undefined) {
-        if (this._cvitem.Experience !== null) {
-          const arrExperience = this._cvitem.Experience.split(',');
-          arrExperience.forEach(
-            (value) => {
-              this._listExperience.push(staticGuideList.ExperienceList[value - 1].name);
-            })
+
+        this.cveditserv.setCvId(item[0].id);
+
+        if (isNullOrUndefined(item[0].City) === false) {
+          let CurCity = this._listCity.find(x => x.id === parseInt(item[0].City.toString()));
+          item[0].CityName = CurCity.name;
         }
-      }
-    }
 
-
-    if (this._cvitem !== null) {
-      if (this._cvitem.Industry !== undefined) {
-        if (this._cvitem.Industry !== null) {
-          const arrIndustry = this._cvitem.Industry.split(',');
-          arrIndustry.forEach(
-            (value) => {
-              this._listIndustry.push(staticGuideList.IndustryList[value - 1].name);
-            })
-        }
-      }
-    }
-
-    if (this._cvitem !== null) {
-      if (this._cvitem.Schedule !== undefined) {
-        if (this._cvitem.Schedule !== null) {
-          const arrSchedule = this._cvitem.Schedule.split(',');
-          arrSchedule.forEach(
-            (value) => {
-              this._listSchedule.push(staticGuideList.ScheduleList[value - 1].name);
-            })
-        }
-      }
-    }
-
-    if (this._cvitem !== null) {
-      if (this._cvitem.Employment !== undefined) {
-        if (this._cvitem.Employment !== null) {
-          const arrEmployment = this._cvitem.Employment.split(',');
-          arrEmployment.forEach(
-            (value) => {
-              this._listEmployment.push(staticGuideList.EmploymentList[value - 1].name);
-            })
-        }
-      }
-    }
-
-    if (this._cvitem !== undefined) {
-      if (this._cvitem !== null) this.loadPicture(this._cvitem.id_user);
-    }
-
-
-    //языки
-    if (this._cvitem !== undefined) {
-      if (this._cvitem !== null) this.loadLanguage(this._cvitem.id);
-    }
-
-    //предыдущие места работы
-    if (this._cvitem !== undefined) {
-      if (this._cvitem !== null) this.loadPrevious(this._cvitem.id);
-    }
-    //console.log('получили _cvitem', this._cvitem);
-
-
+        this.cveditserv.setCvItem(item[0]);
+        this.loadInitData();
+      });
+    });
   }
 
 
@@ -272,5 +216,99 @@ export class CvViewComponent implements OnInit {
     });
   }
 ////////////////////
+
+  //загрузка данных из кэша без подписок
+  loadInitData() {
+    this.errorResponse = '';
+    var Res =  this.auth.loginStorage();
+    this.id_user =  Res.id_user;
+
+    this.bConnected = Res.bConnected;
+    this.bEmployer = Res.bEmployer;
+
+    this.cv_id = this.cveditserv.getCvId();
+    if (this.cv_id > -1) {
+      this._cvitem = this.cveditserv.getCvItem();
+    }
+
+    if (this._cvitem !== null) {
+      if (this._cvitem.Education !== undefined) {
+        if (this._cvitem.Education !== null) {
+          const arrEducation = this._cvitem.Education.split(',');
+          arrEducation.forEach(
+            (value) => {
+              this._listEducation.push(staticGuideList.EducationList[value - 1].name);
+            })
+        }
+      }
+    }
+
+
+    if (this._cvitem !== null) {
+      if (this._cvitem.Experience !== undefined) {
+        if (this._cvitem.Experience !== null) {
+          const arrExperience = this._cvitem.Experience.split(',');
+          arrExperience.forEach(
+            (value) => {
+              this._listExperience.push(staticGuideList.ExperienceList[value - 1].name);
+            })
+        }
+      }
+    }
+
+
+    if (this._cvitem !== null) {
+      if (this._cvitem.Industry !== undefined) {
+        if (this._cvitem.Industry !== null) {
+          const arrIndustry = this._cvitem.Industry.split(',');
+          arrIndustry.forEach(
+            (value) => {
+              this._listIndustry.push(staticGuideList.IndustryList[value - 1].name);
+            })
+        }
+      }
+    }
+
+    if (this._cvitem !== null) {
+      if (this._cvitem.Schedule !== undefined) {
+        if (this._cvitem.Schedule !== null) {
+          const arrSchedule = this._cvitem.Schedule.split(',');
+          arrSchedule.forEach(
+            (value) => {
+              this._listSchedule.push(staticGuideList.ScheduleList[value - 1].name);
+            })
+        }
+      }
+    }
+
+    if (this._cvitem !== null) {
+      if (this._cvitem.Employment !== undefined) {
+        if (this._cvitem.Employment !== null) {
+          const arrEmployment = this._cvitem.Employment.split(',');
+          arrEmployment.forEach(
+            (value) => {
+              this._listEmployment.push(staticGuideList.EmploymentList[value - 1].name);
+            })
+        }
+      }
+    }
+
+    if (this._cvitem !== undefined) {
+      if (this._cvitem !== null) this.loadPicture(this._cvitem.id_user);
+    }
+
+
+    //языки
+    if (this._cvitem !== undefined) {
+      if (this._cvitem !== null) this.loadLanguage(this._cvitem.id);
+    }
+
+    //предыдущие места работы
+    if (this._cvitem !== undefined) {
+      if (this._cvitem !== null) this.loadPrevious(this._cvitem.id);
+    }
+
+  }
+//////////////////////////////////////////////
 
 }
