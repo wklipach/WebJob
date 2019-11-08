@@ -57,8 +57,8 @@ export class SendMailComponent implements OnInit {
 
     let str = this.formSendMail.controls['inputWords'].value;
 
-    //let str = ",,,,,Привет!!как..дела??,,,,,,";
-    //заменяем все символы пробелами
+    // let str = ",,,,,Привет!!как..дела??,,,,,,";
+    // заменяем все символы пробелами
     str = str.replace(/\!/g, ' ');
     str = str.replace(/\|/g, ' ');
     str = str.replace(/\,/g, ' ');
@@ -68,17 +68,17 @@ export class SendMailComponent implements OnInit {
     str = str.replace(/\\/g, ' ');
 
 
-    //все последовательности пробелов меняем на одиночные запятые
+    // все последовательности пробелов меняем на одиночные запятые
     str = str.replace(/\s+/g, ',');
 
-    //если последний символ запятая убираем её
+    // если последний символ запятая убираем её
     if (str.length>0) {
       if (str[str.length-1] == ',') {
         str = str.substring(0, str.length - 1);
       }
     }
 
-    //если первый символ запятая убираем её
+    // если первый символ запятая убираем её
     if (str.length>0) {
       if (str[0] == ',') {
         str = str.substring(1, str.length);
@@ -99,7 +99,7 @@ export class SendMailComponent implements OnInit {
     // getSendMailUserMask(id_user: number)
 
 
-    //console.log('сохранить слова для поиска');
+    // console.log('сохранить слова для поиска');
   }
 
   OnCheckInput() {

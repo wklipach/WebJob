@@ -1,44 +1,26 @@
-/* Меню */
-
-.menu ul li{
+.box{
+  border: #0262d2 2px solid;
   padding: 10px;
+  margin-bottom: 10px;
 }
-.menu ul > li:hover{
-  background-color: #444b54;
+.name{
+  background-color: #fff;
+  margin: 10px auto;
+  font-weight: bold;
+  font-size: 1.1em;
 }
-.menu ul ul > li:hover{
-  background-color: #69e;
+.data{
+  background-color: #fff;
+  margin: 10px auto;
 }
-.menu ul li, .menu ul{
-  display: inline-block;
+.pole{
+  background-color: #fff;
+  margin: 10px auto;
 }
-.menu ul{
-  position: relative;
-  margin: 0;
-  padding: 0;
-  background-color: #444b54;
+.link{
+  background-color: #fff;
+  margin: 10px auto;
+  color: #0066cc;
+  text-decoration: underline;
+  cursor: pointer;
 }
-.menu ul ul{
-  display: none;
-  position: absolute;
-  background-color: #369;
-  margin-top: 10px;
-  margin-left: -10px;
-}
-.menu ul a{
-  color: #fff;
-  text-decoration: none;
-}
-.menu ul ul a{
-  color: #fff;
-  text-decoration: none;
-}
-.menu li:hover ul{
-  display: block;
-}
-
-.menu li:hover li{
-  display: block;
-}
-
-/* Меню */

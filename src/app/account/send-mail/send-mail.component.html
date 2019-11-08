@@ -1,22 +1,27 @@
+<div class="container">
 <app-header-top></app-header-top>
 
-<form [formGroup]="formSendMail">
+  <div class="wrapper">
+    <div class="top">{{'forgot-password.vpFP' | translate}}</div>
+
+    <div class="box">
+    <form [formGroup]="formSendMail">
 
 
-  <p>
-  <li><input [checked]="bChecked" formControlName="inputCheckBox" (click) = "OnCheckInput()" type="checkbox" name="checkInput" id="checkInput"  ><label for="checkInput">Осуществлять рассылку</label></li>
-  </p>
 
-  <p>
-    <label>Слова для поиска через запятую</label>
-  </p>
+<input [checked]="bChecked" formControlName="inputCheckBox" (click) = "OnCheckInput()" type="checkbox" name="checkInput" id="checkInput"  >
 
-  <p>
-    <input type="text" id="inputWords" formControlName="inputWords" maxlength="250" placeholder="Слова для поиска через запятую">
-  </p>
+  <label for="checkInput">Осуществлять рассылку</label>
 
-  <p>
+
+    <input class="forgot-pass" type="text" id="inputWords" formControlName="inputWords" maxlength="250" placeholder="Слова для поиска через запятую">
+
+
+
     <button type="button" class="btn-delete-acc" (click)="SaveWords()">Сохранить</button>
-  </p>
 
 </form>
+
+    </div>
+  </div>
+</div>
