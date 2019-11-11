@@ -1,25 +1,38 @@
 .box{
-  border: #0262d2 2px solid;
-  padding: 10px;
+  border: #ccc 6px solid;
+  padding: 5px 10px;
   margin-bottom: 10px;
 }
 .name{
+  display: inline-block;
   background-color: #fff;
   margin: 10px auto;
   font-weight: bold;
   font-size: 1.1em;
 }
 .data{
+  display: inline-block;
   background-color: #fff;
   margin: 10px auto;
+  float: right;
 }
 .pole{
   background-color: #fff;
   margin: 10px auto;
 }
 .link{
+  position: relative;
+  display: inline-block;
   background-color: #fff;
   margin: 10px auto;
+  color: #0066cc;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.copy-link{
+  display: inline-block;
+  background-color: #fff;
+  margin: 10px auto 0 10%;
   color: #0066cc;
   text-decoration: underline;
   cursor: pointer;
