@@ -1,30 +1,22 @@
 @media screen and (min-width: 1200px) and (max-width: 4000px) {
   .box{
     width: 100%;
-    height: 180px;
-    margin: 30px auto;
+    margin: 5px auto 20px auto;
     border-top: solid 1px;
     border-color: #b7b7b7;
     color: rgb(68, 75, 84);
-    text-align: left;
+  }
+  p{
+    margin-top: 3px;
   }
   label{
-    position: absolute;
+    position: relative;
     color: #0262d2;
-    text-align: left;
+    padding-left: 15px;
   }
-  .login{
-    display: inline-block;
-    position: absolute;
-    margin-top: 16px;
-    margin-left:15px;
-  }
-  .password{
-    margin-left: 15px;
-    margin-top: 30px;
-  }
-  .forgot-pass{
-    position: absolute;
+  .words{
+    position:relative;
+    display: block;
     font-size: 14px;
     text-align: center;
     border-width: 1px;
@@ -32,14 +24,13 @@
     border-style: solid;
     border-radius: 3px;
     background-color: rgb(255, 255, 255);
-    width: 253px;
+    width: 70%;
     height: 43px;
     margin-left: 15px;
     margin-top: 25px;
   }
-  .btn-forgot{
-    display: inline-block;
-    position: absolute;
+  .btn-save{
+    display: block;
     background-color: #0262d2;
     color: rgb(255, 255, 255);
     border-color: #054086;
@@ -47,54 +38,24 @@
     border-style: solid;
     border-radius: 3px;
     line-height: 2.25;
-    width: 253px;
+    width: 203px;
     height: 48px;
-    margin-top:90px;
+    margin-top:6vh;
     margin-left: 15px;
   }
-  .btn-forgot:hover{
+  .btn-save:hover{
     background-color: #0066cc;
     font-weight: bold;
   }
-  .btn-forgot:active{
+  .btn-save:active{
     border-color: #3399ff;
     border-style: solid;
     border-width: 3px;
     border-radius: 3px;
     font-weight: bold;
   }
-  .btn-forgot:disabled{
-    color: white;
-    background-color: rgb( 145, 175, 209 );
-  }
-  .wrong-account{
-    position: absolute;
-    margin-top: 31px;
-    margin-left: 315px;
-    color: red;
-    font-weight: bold;
-    font-size:18px;
-  }
-  .wrong-email{
-    position: absolute;
-    margin-top: 31px;
-    margin-left: 315px;
-    color: red;
-    font-weight: bold;
-    font-size:18px;
-  }
-  .recovery-success{
-    position: absolute;
-    margin-top: 31px;
-    margin-left: 315px;
-    color: green;
-    font-weight: bold;
-    font-size:18px;
-  }
-  .explanation{
-    margin-left: 8px;
-  }
-}         /* Конец media 1200-4000 */
+
+ }         /* Конец media 1200-4000 */
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
 
@@ -105,30 +66,22 @@
   }
   .box{
     width: 100%;
-    height: 180px;
-    margin: 30px auto;
+    margin: 5px auto 20px auto;
     border-top: solid 1px;
     border-color: #b7b7b7;
     color: rgb(68, 75, 84);
-    text-align: left;
+  }
+  p{
+    margin-top: 3px;
   }
   label{
-    position: absolute;
+    position: relative;
     color: #0262d2;
-    text-align: left;
+    padding-left: 15px;
   }
-  .login{
-    display: inline-block;
-    position: absolute;
-    margin-top: 16px;
-    margin-left:15px;
-  }
-  .password{
-    margin-left: 15px;
-    margin-top: 30px;
-  }
-  .forgot-pass{
-    position: absolute;
+  .words{
+    position:relative;
+    display: block;
     font-size: 14px;
     text-align: center;
     border-width: 1px;
@@ -136,14 +89,13 @@
     border-style: solid;
     border-radius: 3px;
     background-color: rgb(255, 255, 255);
-    width: 253px;
+    width: 70%;
     height: 43px;
     margin-left: 15px;
     margin-top: 25px;
   }
-  .btn-forgot{
-    display: inline-block;
-    position: absolute;
+  .btn-save{
+    display: block;
     background-color: #0262d2;
     color: rgb(255, 255, 255);
     border-color: #054086;
@@ -151,53 +103,23 @@
     border-style: solid;
     border-radius: 3px;
     line-height: 2.25;
-    width: 253px;
+    width: 203px;
     height: 48px;
-    margin-top:90px;
+    margin-top:6vh;
     margin-left: 15px;
   }
-  .btn-forgot:hover{
+  .btn-save:hover{
     background-color: #0066cc;
     font-weight: bold;
   }
-  .btn-forgot:active{
+  .btn-save:active{
     border-color: #3399ff;
     border-style: solid;
     border-width: 3px;
     border-radius: 3px;
     font-weight: bold;
   }
-  .btn-forgot:disabled{
-    color: white;
-    background-color: rgb( 145, 175, 209 );
-  }
-  .wrong-account{
-    position: absolute;
-    margin-top: 31px;
-    margin-left: 315px;
-    color: red;
-    font-weight: bold;
-    font-size:18px;
-  }
-  .wrong-email{
-    position: absolute;
-    margin-top: 31px;
-    margin-left: 315px;
-    color: red;
-    font-weight: bold;
-    font-size:18px;
-  }
-  .recovery-success{
-    position: absolute;
-    margin-top: 31px;
-    margin-left: 315px;
-    color: green;
-    font-weight: bold;
-    font-size:18px;
-  }
-  .explanation{
-    margin-left: 8px;
-  }
+
 }    /* Конец media 768-1199 */
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
@@ -218,29 +140,22 @@
     padding-bottom: 0;
     border-top: 0;
   }
-  .box{
-    width: 98%;
-    height: 180px;
-    margin: 15px auto;
-    color: rgb(68, 75, 84);
+ .box{
+   width: 100%;
+   margin: 5px auto 20px auto;
+   color: rgb(68, 75, 84);
+  }
+  p{
+    margin-top: 3px;
   }
   label{
-    position: absolute;
+    position: relative;
     color: #0262d2;
-    text-align: left;
+    padding-left: 15px;
   }
-  .login{
-    display: inline-block;
-    position: absolute;
-    margin-top: 16px;
-    margin-left:15px;
-  }
-  .password{
-    margin-left: 15px;
-    margin-top: 30px;
-  }
-  .forgot-pass{
-    position: absolute;
+  .words{
+    position:relative;
+    display: block;
     font-size: 14px;
     text-align: center;
     border-width: 1px;
@@ -248,14 +163,13 @@
     border-style: solid;
     border-radius: 3px;
     background-color: rgb(255, 255, 255);
-    width: 253px;
+    width: 90%;
     height: 43px;
     margin-left: 15px;
     margin-top: 25px;
   }
-  .btn-forgot{
-    display: inline-block;
-    position: absolute;
+  .btn-save{
+    display: block;
     background-color: #0262d2;
     color: rgb(255, 255, 255);
     border-color: #054086;
@@ -263,49 +177,21 @@
     border-style: solid;
     border-radius: 3px;
     line-height: 2.25;
-    width: 253px;
+    width: 203px;
     height: 48px;
-    margin-top:90px;
+    margin-top:6vh;
     margin-left: 15px;
   }
-  .btn-forgot:hover{
+  .btn-save:hover{
     background-color: #0066cc;
     font-weight: bold;
   }
-  .btn-forgot:active{
+  .btn-save:active{
     border-color: #3399ff;
     border-style: solid;
     border-width: 3px;
     border-radius: 3px;
     font-weight: bold;
   }
-  .btn-forgot:disabled{
-    color: white;
-    background-color: rgb( 145, 175, 209 );
-  }
-  .wrong-account{
-    position: absolute;
-    color: red;
-    font-weight: bold;
-    font-size:18px;
-    margin: 170px auto 0 15px;
-  }
-  .wrong-email{
-    position: absolute;
-    color: red;
-    font-weight: bold;
-    font-size:18px;
-    margin: 170px auto 0 15px;
-  }
-  .recovery-success{
-    position: absolute;
-    bottom: 120px;
-    color: green;
-    font-weight: bold;
-    font-size:18px;
-    margin: 170px auto 0 15px;
-  }
-  .explanation{
-    margin-left: 8px;
-  }
+
 }    /* Конец media 800-1199 */

@@ -47,7 +47,7 @@
 }
 .logotype{
   float: left;
-  height: 120px;
+  height: 60px;
 }
 .company-name{
   position: relative;
@@ -147,7 +147,7 @@ li{
   }
   .logotype{
     float: left;
-    height: 100px;
+    height: 60px;
   }
   .company-name{
     position: relative;
@@ -254,7 +254,7 @@ li{
   }
   .logotype{
     float: left;
-    height: 100px;
+    height: 60px;
   }
   .company-name{
     position: relative;
