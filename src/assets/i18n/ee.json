@@ -425,5 +425,7 @@
   "message.descrVUZR" : "Antud tööpakkumine on edukalt kantud valitutesse.",
   "message.descrVBI" : "Antud tööpakkumine kuulub ignoreerimisele.",
   "newUserMessage.subject" : "Tere tulemast.",
-  "newUserMessage.letter" : "Suur tänu et meid külastasite.Loodame et leiate siit lahenduse oma probleemidele."
+  "newUserMessage.letter" : "Suur tänu et meid külastasite.Loodame et leiate siit lahenduse oma probleemidele.",
+  "login.pneAll" : "Parool või kasutajanimi ei eksisteeri",
+  "login.pneNSK" : "Selle kasutajanime või parooliga kasutajaid on mitu"
 }
