@@ -43,10 +43,6 @@
   position: absolute;
 }
 .logotypeEr{
-  border-width: 1px;
-  border-color: rgb(188, 188, 188);
-  border-style: solid;
-  border-radius: 3px;
   position: relative;
   width: 130px;
   height: 40px;
@@ -256,10 +252,6 @@ label{
     position: absolute;
   }
   .logotypeEr{
-    border-width: 1px;
-    border-color: rgb(188, 188, 188);
-    border-style: solid;
-    border-radius: 3px;
     position: relative;
     width: 130px;
     height: 40px;
