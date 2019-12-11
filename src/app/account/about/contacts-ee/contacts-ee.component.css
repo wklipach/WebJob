@@ -1,9 +1,10 @@
 @media screen and (min-width: 1200px) and (max-width: 4000px) {
   p {
     position: relative;
-    margin: 10px auto 15px;
-    display: block;
+    margin: 20px 0 0 25px;
+    display: inline-block;
     font-size: 1.1em;
+    font-weight: bold;
   }
 
 }         /* Конец media 1200-4000 */
@@ -16,9 +17,10 @@
   }
   p {
     position: relative;
-    margin: 10px auto 15px;
-    display: block;
+    margin: 20px 0 0 25px;
+    display: inline-block;
     font-size: 1.1em;
+    font-weight: bold;
   }
 
 }    /* Конец media 768-1199 */
@@ -42,8 +44,9 @@
   }
   p {
     position: relative;
-    margin: 10px auto 15px;
-    display: block;
-    font-size: 1em;
+    margin: 20px 0 0 25px;
+    display: inline-block;
+    font-size: 1.1em;
+    font-weight: bold;
   }
 }   /* Конец media 320-767 */
