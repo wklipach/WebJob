@@ -2,24 +2,24 @@
 <app-header-top></app-header-top>
 
   <div class="wrapper">
-    <div class="top">Настройка рассылки</div>
+    <div class="top">{{'send_mail.nr' | translate}}</div>
 
     <div class="box">
-      <p>Если Вы хотите получать рассылку о новых объявлениях, внесите ключевые слова, по которым мы сможем найти их для Вас.</p>
+      <p>{{'send_mail.uuu' | translate}}</p>
     <form [formGroup]="formSendMail">
 
 
 
 <input [checked]="bChecked" formControlName="inputCheckBox" (click) = "OnCheckInput()" type="checkbox" name="checkInput" id="checkInput"  >
 
-  <label for="checkInput">Осуществлять рассылку</label>
+  <label for="checkInput">{{'send_mail.or' | translate}}</label>
 
 
-    <input class="words" type="text" id="inputWords" formControlName="inputWords" maxlength="250" placeholder="Ключевые слова через запятую">
+    <input class="words" type="text" id="inputWords" formControlName="inputWords" maxlength="250" [placeholder]="'send_mail.keywr' | translate">
 
 
 
-    <button type="button" class="btn-save" (click)="SaveWords()">Сохранить</button>
+    <button type="button" class="btn-save" (click)="SaveWords()">{{'allValue.save' | translate}}</button>
 
 </form>
 

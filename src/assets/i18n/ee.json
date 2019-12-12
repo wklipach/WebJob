@@ -427,5 +427,9 @@
   "newUserMessage.subject" : "Tere tulemast.",
   "newUserMessage.letter" : "Suur tänu et meid külastasite.Loodame et leiate siit lahenduse oma probleemidele.",
   "login.pneAll" : "Parool või kasutajanimi ei eksisteeri",
-  "login.pneNSK" : "Selle kasutajanime või parooliga kasutajaid on mitu"
+  "login.pneNSK" : "Selle kasutajanime või parooliga kasutajaid on mitu",
+  "send_mail.nr" : "Teadete saatmise kohandamine",
+  "send_mail.or" : "Rakendada teadete saatmine",
+  "send_mail.uuu" : "Kui Te tahate saada teateid uutest kuulutustest ,sisestage võtmesõnad mille järgi me saame neid Teie jaoks leida.",
+  "send_mail.keywr" : "Võtmesõnad eraldage komadega."
 }

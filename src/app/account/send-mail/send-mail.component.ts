@@ -3,6 +3,7 @@ import {AuthService} from '../../services/auth-service.service';
 import {Router} from '@angular/router';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {SendMailService} from '../../services/send-mail.service';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-send-mail',
@@ -18,7 +19,11 @@ export class SendMailComponent implements OnInit {
   formSendMail: FormGroup;
 
 
-  constructor(private httpService: AuthService, private router: Router, private fb: FormBuilder, private sms: SendMailService) {
+  constructor(private httpService: AuthService,
+              private router: Router,
+              private fb: FormBuilder,
+              private sms: SendMailService,
+              public translate: TranslateService) {
 
     this.formSendMail = this.fb.group({
       'inputWords': new FormControl('', []),

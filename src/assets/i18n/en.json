@@ -427,5 +427,9 @@
   "newUserMessage.subject" : "Welcome.",
   "newUserMessage.letter" : "Thank you for choosing us. We hope that you will find a solution to your issues here.",
   "login.pneAll" : "Invalid password or username",
-  "login.pneNSK" : "There are several users with this username or password."
+  "login.pneNSK" : "There are several users with this username or password.",
+  "send_mail.nr" : "Newsletter Setup",
+  "send_mail.or" : "Carry out newsletter",
+  "send_mail.uuu" : "If you want to receive newsletters about new announcements, enter keywords by which we can find them for you.",
+  "send_mail.keywr" : "Keywords separated by commas."
 }
