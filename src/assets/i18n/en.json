@@ -143,6 +143,7 @@
   "allValue.responsevac": "Откликнуться на Vacancy",
   "allValue.date": "Date",
   "allValue.messagecenter": "Message Center",
+  "allValue.notifications" : "Set up notifications",
   "header-top.hello": "Hello",
   "header-top.profile": "Employer profile",
   "header-top.advsearch": "Advanced Search",
