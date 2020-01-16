@@ -135,12 +135,38 @@ label{
     background-color: rgb(240, 240, 240);
     font-weight: 600;
   }
-  .btn-cancel:active{
+  .btn-cancel:active {
     border-color: #3399ff;
     border-style: solid;
     border-width: 3px;
     border-radius: 3px;
   }
+
+  .btn-publish{
+    border-radius: 3px;
+    background-color: #0262d2;
+    width: 190px;
+    height: 50px;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    margin-bottom: 15px;
+    float: right;
+  }
+  .btn-publish:hover{
+    background-color: #0066cc;
+    font-weight:bold;
+  }
+  .btn-publish:active{
+    border-color: #3399ff;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3px;
+    font-weight: bold;
+  }
+
+
 }         /* Конец media 1200-4000 */
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
