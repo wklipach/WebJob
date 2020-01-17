@@ -131,7 +131,7 @@ export class ForgotPasswordComponent implements OnInit, OnDestroy {
 
 
   Block10Sec() {
-    //блокируем кнопку 5 секунд
+    //блокируем кнопку 10 секунд
     this.stopCondition = true;
     this.subscribeTimer =  timer(10000).subscribe(()=>
       this.stopCondition = false );

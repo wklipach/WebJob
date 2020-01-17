@@ -14,22 +14,31 @@
       <li class="choice">{{'allValue.selectaction' | translate}}</li>
     </ul>
 
-    <ul class="botom-line">
+
+   <ul [ngClass]="item.bPublish===1 ? 'botom-line': 'botom-line-gainsboro'">
+
       <li class="date">{{item.DateTimeCreate | date: 'dd-MM-yyyy'}}</li>
       <li class="city">{{item.CityName}}</li>
       <li class="salary">{{item.Salary}} &#8364;</li>
        <li class="position">{{item.VacancyShortTitle}}</li>
-      <li class="choice-data"><select class="selectChoice" [title]="'allValue.selectaction' | translate"
-                  (change)= "brokerSelected($event,item, i)"
-                  [(ngModel)]="contactMethods[i].id">>
+      <li class="choice-data">
 
-        <option [value]="0" [selected]="contactMethods[i].id === 0">...</option>
-        <option [value]="1" [selected]="contactMethods[i].id === 1">{{'allValue.view' | translate}}</option>
-        <option [value]="2" [selected]="contactMethods[i].id === 2">{{'allValue.edit' | translate}}</option>
-        <option [value]="3" [selected]="contactMethods[i].id === 3">{{'allValue.createcopy' | translate}}</option>
-        <option [value]="4" [selected]="contactMethods[i].id === 4">{{'allValue.delete' | translate}}</option>
-        <option [value]="5" [selected]="contactMethods[i].id === 5">{{'allValue.publish' | translate}}</option>
-      </select>
+
+        <select class="selectChoice" [title]="'allValue.selectaction' | translate"
+                                     (change)= "brokerSelected($event,item, i)"
+                                     [(ngModel)]="contactMethods[i].id">
+
+              <option [value]="0" [selected]="contactMethods[i].id === 0">...</option>
+              <option [value]="1" [selected]="contactMethods[i].id === 1">{{'allValue.view' | translate}}</option>
+              <option [value]="2" [selected]="contactMethods[i].id === 2">{{'allValue.edit' | translate}}</option>
+              <option [value]="3" [selected]="contactMethods[i].id === 3">{{'allValue.createcopy' | translate}}</option>
+              <option [value]="4" [selected]="contactMethods[i].id === 4">{{'allValue.delete' | translate}}</option>
+
+              <ng-container *ngIf = "item.bPublish===0">
+              <option [value]="5" [selected]="contactMethods[i].id === 5">{{'allValue.publish' | translate}}</option>
+              </ng-container>
+        </select>
+
       </li>
     </ul>
 
@@ -38,8 +47,15 @@
       <span class="question">{{'allValue.deletevacancyquestion' | translate}}</span>
       <button type="button" class="btn-delete" (click)="DeleteElement(item,i)">{{'cv-list.yes' | translate}}</button>
       <button type="button" class="btn-delete" (click)="UnDeleteElement(item,i)">{{'cv-list.no' | translate}}</button>
-
     </div>
+
+    <div class="deleteCorrespondence" *ngIf="contactMethods[i].bSuccPublish === true">
+      <span class="question">{{'allValue.publishvacancyquestion' | translate}}</span>
+      <button type="button" class="btn-delete" (click)="PublishElement(item,i)">{{'cv-list.yes' | translate}}</button>
+      <button type="button" class="btn-delete" (click)="UnPublishElement(item,i)">{{'cv-list.no' | translate}}</button>
+    </div>
+
+
 
   </div>
   <div class="btn-line">
@@ -47,6 +63,6 @@
   </div>
 </div>
 
-  {{sSuccPublish}}
+  <div *ngIf ="showSuccPublish">{{sSuccPublish}}</div>
 
 </div>

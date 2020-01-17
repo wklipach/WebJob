@@ -14,7 +14,9 @@
        <li class="choice">{{'allValue.selectaction' | translate}}</li>
      </ul>
 
-    <ul class="botom-line">
+    <!-- <ul class="botom-line"> -->
+      <ul [ngClass]="item.bPublish===1 ? 'botom-line': 'botom-line-gainsboro'">
+
       <li class="date">{{item.DateTimeCreate | date:'dd.MM.yyyy'}}</li>
       <li class="city">{{item.CityName}}</li>
       <li class="salary">{{item.SalaryFrom}} &#8364;</li>
@@ -29,7 +31,10 @@
         <option [value]="3" [selected]="contactMethods[i].id === 3">{{'allValue.createcopy' | translate}}</option>
         <option [value]="5" [selected]="contactMethods[i].id === 5">{{'allValue.refreshdate' | translate}}</option>
         <option [value]="4" [selected]="contactMethods[i].id === 4">{{'allValue.delete' | translate}}</option>
+
+        <ng-container *ngIf = "item.bPublish===0">
         <option [value]="6" [selected]="contactMethods[i].id === 6">{{'allValue.publish' | translate}}</option>
+        </ng-container>
       </select>
       </li>
     </ul>
@@ -39,8 +44,15 @@
       <span class="question">{{'cv-list.questdeletecv' | translate}}</span>
       <button type="button" class="btn-delete" (click)="DeleteElement(item,i)">{{'cv-list.yes' | translate}}</button>
       <button type="button" class="btn-delete" (click)="UnDeleteElement(item,i)">{{'cv-list.no' | translate}}</button>
-
     </div>
+
+     <div class="deleteCorrespondence" *ngIf="contactMethods[i].bSuccPublish === true">
+       <span class="question">{{'allValue.publishCVquestion' | translate}}</span>
+       <button type="button" class="btn-delete" (click)="UpdatePublish(item,i)">{{'cv-list.yes' | translate}}</button>
+       <button type="button" class="btn-delete" (click)="UnUpdatePublish(item,i)">{{'cv-list.no' | translate}}</button>
+     </div>
+
+
 
   </div>
 

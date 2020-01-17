@@ -21,6 +21,13 @@ li{
   height: 39px;
   border-bottom: dotted 1px #b7b7b7;
 }
+
+  .botom-line-gainsboro{
+    height: 39px;
+    border-bottom: dotted 1px #b7b7b7;
+    background-color: gainsboro;
+  }
+
 .date-head, .date{
   width: 8%;
 }

@@ -11,6 +11,7 @@ import {DatePipe} from '@angular/common';
 import {MoveService} from '../../../services/move.service';
 import {TranslateService} from '@ngx-translate/core';
 import {GlobalRef} from '../../../services/globalref';
+import {timer} from 'rxjs/observable/timer';
 
 @Component({
   selector: 'app-vacancies',
@@ -29,6 +30,8 @@ export class VacanciesComponent implements OnInit, OnDestroy {
   private sbDeleteVac: Subscription;
   private dvMoveSubscription: Subscription;
   private sbPublishVac: Subscription;
+  private subscribeTimerPublish: Subscription;
+  showSuccPublish = false;
 
   private _numberModel: number;
 
@@ -93,11 +96,14 @@ export class VacanciesComponent implements OnInit, OnDestroy {
       this.sbVacanciesGetList = this.gls.getVacanciesList(this.id_user).subscribe((valueVL) => {
           this.vacanciesList = valueVL;
 
+
+          console.log('this.vacanciesList', this.vacanciesList);
+
         //обратная сортировка
         this.vacanciesList = this.vacanciesList.sort( (b, a) =>   +new Date(a.DateTimeCreate) - +new Date(b.DateTimeCreate));
 
         this.vacanciesList.forEach( (vacCur, index) => {
-            this.contactMethods.push({'id' : 0, value : 0, 'bDelete': false});
+            this.contactMethods.push({'id' : 0, value : 0, 'bDelete': false, 'bSuccPublish': false});
 
             const sCityName = (this.cityList as City[]).find((valueC) => (valueC.id === parseInt(vacCur.City.toString()) ) ).name;
 
@@ -127,6 +133,10 @@ export class VacanciesComponent implements OnInit, OnDestroy {
 
     if (typeof this.sbPublishVac !== 'undefined') {
       this.sbPublishVac.unsubscribe();
+    }
+
+    if (typeof this.subscribeTimerPublish !== 'undefined') {
+      this.subscribeTimerPublish.unsubscribe();
     }
 
   }
@@ -164,10 +174,14 @@ export class VacanciesComponent implements OnInit, OnDestroy {
 
     this.sbPublishVac = this.gls.setPublishVac(item.id, item).subscribe( () => {
         this.contactMethods[i].id = 0;
-        this.translate.get('cv-view.succPublish').subscribe(
-          value => this.sSuccPublish = value);
-        console.log(this.sSuccPublish);
 
+//        this.translate.get('cv-view.succPublish').subscribe(
+//          value =>
+//          {this.sSuccPublish = value;
+//          });
+//        item['bPublish'] = '1';
+//        this.Block3Sec();
+        this.RouterReload();
       },
       err => console.log('there was a problem deleting the item ', err));
   }
@@ -179,6 +193,11 @@ export class VacanciesComponent implements OnInit, OnDestroy {
   }
 
 
+  UnPublishElement(item: any, i: number) {
+    item.bInvisible = false;
+    this.contactMethods[i].id = 0;
+    this.contactMethods[i].bSuccPublish = false;
+  }
 
   UnDeleteElement(item: any, i: number) {
 
@@ -212,6 +231,7 @@ export class VacanciesComponent implements OnInit, OnDestroy {
 
       case '0': {
         this.contactMethods[i].bDelete = false;
+        this.contactMethods[i].bSuccPublish = false;
         this.CvVacanciesItem = 0;
         this.contactMethods[i].id = 0;
         break;
@@ -219,6 +239,7 @@ export class VacanciesComponent implements OnInit, OnDestroy {
 
       case '1': {
         this.contactMethods[i].bDelete = false;
+        this.contactMethods[i].bSuccPublish = false;
         this.CvVacanciesItem = 1;
         this.contactMethods[i].id = 1;
         this.DescriptionElement(item);
@@ -227,12 +248,14 @@ export class VacanciesComponent implements OnInit, OnDestroy {
       case '2': {
         this.CvVacanciesItem = 2;
         this.contactMethods[i].bDelete = false;
+        this.contactMethods[i].bSuccPublish = false;
         this.contactMethods[i].id = 2;
         this.EditElement(item);
         break;
       }
       case '3': {
         this.contactMethods[i].bDelete = false;
+        this.contactMethods[i].bSuccPublish = false;
         this.CvVacanciesItem = 3;
         this.contactMethods[i].id = 3;
         this.copyVAC(item);
@@ -247,9 +270,9 @@ export class VacanciesComponent implements OnInit, OnDestroy {
 
       case '5': {
         this.contactMethods[i].bDelete = false;
+        this.contactMethods[i].bSuccPublish = true;
         this.contactMethods[i].id = 5;
         this.CvVacanciesItem = 5;
-        this.PublishElement(item, i);
         break;
       }
 
@@ -302,6 +325,15 @@ export class VacanciesComponent implements OnInit, OnDestroy {
             this.RouterReload();
           }
         );
+  }
+
+
+
+  Block3Sec() {
+    //выключаем показ через 3 секунды
+    this.showSuccPublish = true;
+    this.subscribeTimerPublish =  timer(3000).subscribe(()=>
+      this.showSuccPublish = false );
   }
 
 

@@ -436,5 +436,7 @@
   "allValue.publish" : "Publish",
   "allValue.publishText" : "* After saving, to publish the CV, select the <Publish> line from the drop-down list",
   "allValue.publishVacancyText" : "* After saving, to publish the vacancy, select the <Publish> line from the drop-down list",
-  "cv-view.succPublish": "Successfully published"
+  "cv-view.succPublish": "Successfully published",
+  "allValue.publishvacancyquestion": "Would you like to post this job?",
+  "allValue.publishCVquestion": "Would you like to post this CV?"
 }

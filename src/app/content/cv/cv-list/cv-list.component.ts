@@ -99,7 +99,7 @@ export class CvListComponent implements OnInit, OnDestroy {
                   this.cvList = this.cvList.sort( (b, a) =>   +new Date(a.DateTimeCreate) - +new Date(b.DateTimeCreate));
 
                         this.cvList.forEach( (cvCur, index) => {
-                        this.contactMethods.push({'id' : 0, value : 0, 'bDelete': false});
+                        this.contactMethods.push({'id' : 0, value : 0, 'bDelete': false, 'bSuccPublish': false});
                         //console.log('cvCur',cvCur);
                         const sCityName = (this.cityList as City[]).find((valueC) => (valueC.id === parseInt(cvCur.City.toString())) ).name;
                         this.cvList[index].CityName = sCityName;
@@ -120,6 +120,7 @@ export class CvListComponent implements OnInit, OnDestroy {
 
       case '0': {
         this.contactMethods[i].bDelete = false;
+        this.contactMethods[i].bSuccPublish = false;
         this.CvListItem = 0;
         this.contactMethods[i].id = 0;
         //console.log('!!!!this.contactMethods', this.contactMethods);
@@ -128,6 +129,7 @@ export class CvListComponent implements OnInit, OnDestroy {
 
       case '1': {
         this.contactMethods[i].bDelete = false;
+        this.contactMethods[i].bSuccPublish = false;
         this.CvListItem = 1;
         this.contactMethods[i].id = 1;
         //console.log('!!!!this.contactMethods', this.contactMethods);
@@ -137,6 +139,7 @@ export class CvListComponent implements OnInit, OnDestroy {
       case '2': {
         this.CvListItem = 2;
         this.contactMethods[i].bDelete = false;
+        this.contactMethods[i].bSuccPublish = false;
         this.contactMethods[i].id = 2;
         //console.log('!!!!this.contactMethods', this.contactMethods);
         this.EditElement(item);
@@ -144,6 +147,7 @@ export class CvListComponent implements OnInit, OnDestroy {
       }
       case '3': {
         this.contactMethods[i].bDelete = false;
+        this.contactMethods[i].bSuccPublish = false;
         this.CvListItem = 3;
         this.contactMethods[i].id = 3;
         this.copyCV(item);
@@ -152,6 +156,7 @@ export class CvListComponent implements OnInit, OnDestroy {
       }
       case '4': {
         this.contactMethods[i].bDelete = true;
+        this.contactMethods[i].bSuccPublish = false;
         this.contactMethods[i].id = 4;
         this.CvListItem = 4;
         break;
@@ -159,6 +164,7 @@ export class CvListComponent implements OnInit, OnDestroy {
 
       case '5': {
         this.contactMethods[i].bDelete = false;
+        this.contactMethods[i].bSuccPublish = false;
         this.contactMethods[i].id = 5;
         this.CvListItem = 5;
         this.UpdateDate(item);
@@ -167,9 +173,9 @@ export class CvListComponent implements OnInit, OnDestroy {
 
       case '6': {
         this.contactMethods[i].bDelete = false;
+        this.contactMethods[i].bSuccPublish = true;
         this.contactMethods[i].id = 6;
         this.CvListItem = 6;
-        this.UpdatePublish(item, i);
         break;
       }
 
@@ -213,16 +219,24 @@ export class CvListComponent implements OnInit, OnDestroy {
     this.router.navigate(['/newcv']);
   }
 
+
+  UnUpdatePublish(item: any, i: number) {
+    item.bInvisible = false;
+    this.contactMethods[i].id = 0;
+    this.contactMethods[i].bSuccPublish = false;
+    this.CvListItem = 0;
+  }
+
 //todo UpdatePublish
   UpdatePublish(item: any, i: number) {
     // this.cvDeleteCv
     //console.log('обновляем дату для item.id', item.id);
     this.cvUpdatePublishCv = this.cls.setUpdatePublishCv(item.id).subscribe( () => {
-        //this.RouterReload();
-        this.contactMethods[i].id = 0;
-        this.translate.get('cv-view.succPublish').subscribe(
-          value => this.sSuccPublish = value);
-        console.log(this.sSuccPublish);
+        this.RouterReload();
+//        this.contactMethods[i].id = 0;
+//        this.translate.get('cv-view.succPublish').subscribe(
+//          value => this.sSuccPublish = value);
+//        console.log(this.sSuccPublish);
       },
       err => console.log('при публикации CV возникла нештатная ситуация ', err));
   }
