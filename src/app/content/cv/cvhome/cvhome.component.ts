@@ -226,6 +226,7 @@ export class CvhomeComponent implements OnInit {
 
             this.data_show(data);
             this.reloadPAge(this.allDataCV, sMask);
+            console.log(this.myDataCV);
             if (isFavorites) {
               this.translate.get('cvhome.ts.sFavCV').subscribe(
                 value => {this.sFavCV = value;

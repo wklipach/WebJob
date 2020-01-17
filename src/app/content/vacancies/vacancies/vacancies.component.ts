@@ -28,8 +28,11 @@ export class VacanciesComponent implements OnInit, OnDestroy {
   private sbVacanciesGetList: Subscription;
   private sbDeleteVac: Subscription;
   private dvMoveSubscription: Subscription;
+  private sbPublishVac: Subscription;
 
   private _numberModel: number;
+
+  sSuccPublish = '';
 
   public get CvVacanciesItem(): number {
     return this._numberModel;
@@ -122,6 +125,10 @@ export class VacanciesComponent implements OnInit, OnDestroy {
       this.dvMoveSubscription.unsubscribe();
     }
 
+    if (typeof this.sbPublishVac !== 'undefined') {
+      this.sbPublishVac.unsubscribe();
+    }
+
   }
 
 
@@ -149,6 +156,20 @@ export class VacanciesComponent implements OnInit, OnDestroy {
     this.gls.setVacId(item.id);
     this.gls.setVacItem(item);
     this.router.navigate(['/vacancy-edit']);
+  }
+
+
+  PublishElement(item: any, i : number) {
+
+
+    this.sbPublishVac = this.gls.setPublishVac(item.id, item).subscribe( () => {
+        this.contactMethods[i].id = 0;
+        this.translate.get('cv-view.succPublish').subscribe(
+          value => this.sSuccPublish = value);
+        console.log(this.sSuccPublish);
+
+      },
+      err => console.log('there was a problem deleting the item ', err));
   }
 
   // просмотр элемента
@@ -223,6 +244,15 @@ export class VacanciesComponent implements OnInit, OnDestroy {
         this.CvVacanciesItem = 4;
         break;
       }
+
+      case '5': {
+        this.contactMethods[i].bDelete = false;
+        this.contactMethods[i].id = 5;
+        this.CvVacanciesItem = 5;
+        this.PublishElement(item, i);
+        break;
+      }
+
       default: {
         break;
       }

@@ -38,6 +38,18 @@ export class VacanciesListService {
   }
 
 
+  setPublishVac(id_vac: number, vacbody) {
+    let sUrl = this.gr.sUrlGlobal+'Vacancy/'+id_vac+'/false/false';
+
+    console.log(sUrl);
+
+    let vac: any = { UpdatePublish: true, id: id_vac.toString()};
+    return this.http.post(sUrl, {vac});
+
+
+
+  }
+
   setDeleteVac(id_vac: number, vacbody) {
     let sUrl = this.gr.sUrlGlobal+'Vacancy/'+id_vac+'/'+vacbody.bInvisible+'/false';
 

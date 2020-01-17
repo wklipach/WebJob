@@ -25,6 +25,7 @@ export class CvListComponent implements OnInit, OnDestroy {
 
 
   contactMethods = [];
+  sSuccPublish = '';
 
   private _numberModel: number;
 
@@ -46,6 +47,7 @@ export class CvListComponent implements OnInit, OnDestroy {
   private cvCity: Subscription;
   private cvDeleteCv: Subscription;
   private cvUpdateDateCv: Subscription;
+  private cvUpdatePublishCv: Subscription;
 
   constructor( private cls: CvListService,
                private authService: AuthService,
@@ -163,6 +165,15 @@ export class CvListComponent implements OnInit, OnDestroy {
         break;
       }
 
+      case '6': {
+        this.contactMethods[i].bDelete = false;
+        this.contactMethods[i].id = 6;
+        this.CvListItem = 6;
+        this.UpdatePublish(item, i);
+        break;
+      }
+
+
       default: {
         break;
       }
@@ -190,6 +201,11 @@ export class CvListComponent implements OnInit, OnDestroy {
       this.cvUpdateDateCv.unsubscribe();
     }
 
+    if (typeof  this.cvUpdatePublishCv !== 'undefined') {
+      this.cvUpdatePublishCv.unsubscribe();
+    }
+
+
   }
 
 
@@ -197,8 +213,21 @@ export class CvListComponent implements OnInit, OnDestroy {
     this.router.navigate(['/newcv']);
   }
 
+//todo UpdatePublish
+  UpdatePublish(item: any, i: number) {
+    // this.cvDeleteCv
+    //console.log('обновляем дату для item.id', item.id);
+    this.cvUpdatePublishCv = this.cls.setUpdatePublishCv(item.id).subscribe( () => {
+        //this.RouterReload();
+        this.contactMethods[i].id = 0;
+        this.translate.get('cv-view.succPublish').subscribe(
+          value => this.sSuccPublish = value);
+        console.log(this.sSuccPublish);
+      },
+      err => console.log('при публикации CV возникла нештатная ситуация ', err));
+  }
 
-  //todo UpdateDate
+
   UpdateDate(item: any) {
 
     // this.cvDeleteCv

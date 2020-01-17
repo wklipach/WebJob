@@ -23,6 +23,11 @@ export class CvListService {
     return this.http.get(sUrl, {params: params});
   }
 
+  setUpdatePublishCv(id: number) {
+    const sUrl =  this.gr.sUrlGlobal+'CV';
+    let cv: any = { UpdatePublish: true, id: id.toString()};
+    return this.http.post(sUrl, {cv});
+  }
 
   setUpdateDateCv(id: number) {
     const sUrl =  this.gr.sUrlGlobal+'CV';

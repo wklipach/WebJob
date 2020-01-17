@@ -29,6 +29,7 @@
         <option [value]="3" [selected]="contactMethods[i].id === 3">{{'allValue.createcopy' | translate}}</option>
         <option [value]="5" [selected]="contactMethods[i].id === 5">{{'allValue.refreshdate' | translate}}</option>
         <option [value]="4" [selected]="contactMethods[i].id === 4">{{'allValue.delete' | translate}}</option>
+        <option [value]="6" [selected]="contactMethods[i].id === 6">{{'allValue.publish' | translate}}</option>
       </select>
       </li>
     </ul>
@@ -47,5 +48,7 @@
     <button class="btn-newcv" (click)="newcv()">{{'cv-list.newcv' | translate}}</button>
   </div>
 </div>
+
+  {{this.sSuccPublish}}
 
 </div>

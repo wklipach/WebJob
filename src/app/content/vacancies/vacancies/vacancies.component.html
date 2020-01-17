@@ -28,6 +28,7 @@
         <option [value]="2" [selected]="contactMethods[i].id === 2">{{'allValue.edit' | translate}}</option>
         <option [value]="3" [selected]="contactMethods[i].id === 3">{{'allValue.createcopy' | translate}}</option>
         <option [value]="4" [selected]="contactMethods[i].id === 4">{{'allValue.delete' | translate}}</option>
+        <option [value]="5" [selected]="contactMethods[i].id === 5">{{'allValue.publish' | translate}}</option>
       </select>
       </li>
     </ul>
@@ -45,5 +46,7 @@
   <button class="btn-newVac" (click)="newVac()">{{'allValue.newvc' | translate}}</button>
   </div>
 </div>
+
+  {{sSuccPublish}}
 
 </div>

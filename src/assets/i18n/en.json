@@ -432,5 +432,9 @@
   "send_mail.nr" : "Newsletter Setup",
   "send_mail.or" : "Carry out newsletter",
   "send_mail.uuu" : "If you want to receive newsletters about new announcements, enter keywords by which we can find them for you.",
-  "send_mail.keywr" : "Keywords separated by commas."
+  "send_mail.keywr" : "Keywords separated by commas.",
+  "allValue.publish" : "Publish",
+  "allValue.publishText" : "* After saving, to publish the CV, select the <Publish> line from the drop-down list",
+  "allValue.publishVacancyText" : "* After saving, to publish the vacancy, select the <Publish> line from the drop-down list",
+  "cv-view.succPublish": "Successfully published"
 }

@@ -432,5 +432,9 @@
   "send_mail.nr" : "Teadete saatmise kohandamine",
   "send_mail.or" : "Rakendada teadete saatmine",
   "send_mail.uuu" : "Kui Te tahate saada teateid uutest kuulutustest ,sisestage võtmesõnad mille järgi me saame neid Teie jaoks leida.",
-  "send_mail.keywr" : "Võtmesõnad eraldage komadega."
+  "send_mail.keywr" : "Võtmesõnad eraldage komadega.",
+  "allValue.publish" : "Publish",
+  "allValue.publishText" : "* После сохранения для опубликования резюме выберите из выпадающего списка строку <Опубликовать>",
+  "allValue.publishVacancyText" : "* После сохранения для опубликования вакансии выберите из выпадающего списка строку <Опубликовать>",
+  "cv-view.succPublish": "Успешно опубликовано"
 }
