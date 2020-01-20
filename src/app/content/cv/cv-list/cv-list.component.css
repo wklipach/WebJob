@@ -82,7 +82,7 @@ li{
 }
 .deleteCorrespondence{
   position: absolute;
-  width: 467px;
+  width: 475px;
   height: 50px;
   border: dotted 1px rgb(68, 75, 84);
   background-color: #fff;
@@ -137,6 +137,13 @@ li{
     width: 77%;
     vertical-align: top;
   }
+  .botom-line-gainsboro{
+    display: inline-block;
+    width: 77%;
+    vertical-align: top;
+    background-color: gainsboro;
+  }
+
   .date-head, .date{
     width: auto;
   }
@@ -191,7 +198,7 @@ li{
   }
   .deleteCorrespondence{
     position: absolute;
-    width: 467px;
+    width: 475px;
     height: 50px;
     border: dotted 1px rgb(68, 75, 84);
     background-color: #fff;
@@ -256,6 +263,13 @@ li{
     display: inline-block;
     width: 70%;
     vertical-align: top;
+  }
+
+  .botom-line-gainsboro{
+    display: inline-block;
+    width: 70%;
+    vertical-align: top;
+    background-color: gainsboro;
   }
   .date-head, .date{
     width: auto;
