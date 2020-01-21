@@ -102,6 +102,12 @@
     margin-left: 10px;
   }
 
+  .succPublish{
+    top: 10px;
+    color: #0066cc;
+    font-size: 1.2em;
+  }
+
 }         /* Конец media 1200-4000 */
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
@@ -139,7 +145,7 @@
   }
   .botom-line-gainsboro{
     display: inline-block;
-    width: 77%;
+    width: 80%;
     vertical-align: top;
     background-color: gainsboro;
   }
@@ -267,7 +273,7 @@
   }
   .botom-line-gainsboro{
     display: inline-block;
-    width: 70%;
+    width: 75%;
     vertical-align: top;
     background-color: gainsboro;
   }

@@ -247,9 +247,10 @@
     color: #F74933;
   }
 }    /* Конец media 768-1199 */
+
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .container{
-    min-height: calc(100vh - 50px);
+    min-height: calc(110vh - 50px);
   }
   .wrapper {
     width: 100%;
@@ -264,7 +265,7 @@
     border-bottom: solid 1px #b7b7b7;
     padding-bottom: 0;
     border-top: 0;
- }
+  }
   .box {
     width: 100%;
     height: auto;

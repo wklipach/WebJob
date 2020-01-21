@@ -7,20 +7,20 @@
     padding: 0;
     margin: 0;
   }
-li{
-  position: relative;
-  display: inline-block;
-  vertical-align: top;
+  li{
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
   }
-.head-line{
-  height: 20px;
- background-color: #DFDFDF;
-  margin-bottom: 3px;
-}
-.botom-line{
-  height: 39px;
-  border-bottom: dotted 1px #b7b7b7;
-}
+  .head-line{
+    height: 20px;
+    background-color: #DFDFDF;
+    margin-bottom: 3px;
+  }
+  .botom-line{
+    height: 39px;
+    border-bottom: dotted 1px #b7b7b7;
+  }
 
   .botom-line-gainsboro{
     height: 39px;
@@ -28,86 +28,86 @@ li{
     background-color: gainsboro;
   }
 
-.date-head, .date{
-  width: 8%;
-}
-.city-head, .city{
-  width: 10%;
-}
-.position-head, .position{
-  width: 55%;
-  height: 39px;
-  overflow: hidden;
-}
-.salary-head, .salary{
-  width:8%;
-}
-.choice{
-  width: 15%;
-}
-.selectChoice{
-  border-width: 1px;
-  border-color: rgb(68, 75, 84);
-  text-align: left;
-  border-style: solid;
-  border-radius: 3px;
-  background-color: rgb(255, 255, 255);
-  width: 100%;
-  height: 32px;
-  margin-top: 3px;
-}
-.btn-newcv{
-  display: inline-block;
-  position: relative;
-  border-radius: 3px;
-  background-color: #0262d2;
-  width: 155px;
-  height: 50px;
-  color: rgb(255, 255, 255);
-  border-color: #054086;
-  border-width: 1px;
-  border-style: solid;
-  margin: 2% auto;
-}
-.btn-newcv:hover{
-  background-color: #0066cc;
-  font-weight:600;
-}
-.btn-newcv:active{
-  border-color: #3399ff;
-  border-style: solid;
-  border-width: 3px;
-  border-radius: 3px;
-  font-weight: 500;
-}
-.deleteCorrespondence{
-  position: absolute;
-  width: 475px;
-  height: 50px;
-  border: dotted 1px rgb(68, 75, 84);
-  background-color: #fff;
-  line-height: 3.2;
-  margin-left: 700px;
-  margin-top: -52px;
-  z-index: 9999;
-}
-.btn-delete{
-  width: 50px;
-  margin-left: 15px;
-}
-.btn-delete:hover{
-  font-weight: bold;
-}
-.question, .btn{
-  margin-left: 20px;
-}
+  .date-head, .date{
+    width: 8%;
+  }
+  .city-head, .city{
+    width: 10%;
+  }
+  .position-head, .position{
+    width: 55%;
+    height: 39px;
+    overflow: hidden;
+  }
+  .salary-head, .salary{
+    width:8%;
+  }
+  .choice{
+    width: 15%;
+  }
+  .selectChoice{
+    border-width: 1px;
+    border-color: rgb(68, 75, 84);
+    text-align: left;
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 32px;
+    margin-top: 3px;
+  }
+  .btn-newcv{
+    display: inline-block;
+    position: relative;
+    border-radius: 3px;
+    background-color: #0262d2;
+    width: 155px;
+    height: 50px;
+    color: rgb(255, 255, 255);
+    border-color: #054086;
+    border-width: 1px;
+    border-style: solid;
+    margin: 2% auto;
+  }
+  .btn-newcv:hover{
+    background-color: #0066cc;
+    font-weight:600;
+  }
+  .btn-newcv:active{
+    border-color: #3399ff;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3px;
+    font-weight: 500;
+  }
+  .deleteCorrespondence{
+    position: absolute;
+    width: 475px;
+    height: 50px;
+    border: dotted 1px rgb(68, 75, 84);
+    background-color: #fff;
+    line-height: 3.2;
+    margin-left: 700px;
+    margin-top: -52px;
+    z-index: 9999;
+  }
+  .btn-delete{
+    width: 50px;
+    margin-left: 15px;
+  }
+  .btn-delete:hover{
+    font-weight: bold;
+  }
+  .question, .btn{
+    margin-left: 20px;
+  }
 
 }         /* Конец media 1200-4000 */
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
- .wrapper{
-   width: 100%;
- }
+  .wrapper{
+    width: 100%;
+  }
   .box{
     margin: 6px;
     padding: 6px;
@@ -139,7 +139,7 @@ li{
   }
   .botom-line-gainsboro{
     display: inline-block;
-    width: 77%;
+    width: 80%;
     vertical-align: top;
     background-color: gainsboro;
   }
@@ -158,10 +158,10 @@ li{
     width:auto;
   }
   .choice, .choice-data{
-     width: auto;
+    width: auto;
     height: 42px;
     line-height: 2;
-   }
+  }
   .selectChoice{
     border-width: 1px;
     border-color: rgb(68, 75, 84);
@@ -235,7 +235,7 @@ li{
     padding-bottom: 0;
     border-top: 0;
   }
-   .box{
+  .box{
     margin: 1px;
     padding: 3px;
     border: 1px solid rgb(68, 75, 84);
@@ -267,7 +267,7 @@ li{
 
   .botom-line-gainsboro{
     display: inline-block;
-    width: 70%;
+    width: 75%;
     vertical-align: top;
     background-color: gainsboro;
   }
@@ -327,7 +327,7 @@ li{
   .deleteCorrespondence{
     position: absolute;
     width: 300px;
-    height: 80px;
+    height: 120px;
     border: dotted 1px blue;
     background-color: #fff;
     line-height: 2.2;
