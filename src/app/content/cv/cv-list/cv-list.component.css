@@ -24,8 +24,8 @@
 
   .botom-line-gainsboro{
     height: 39px;
-    border-bottom: dotted 1px #b7b7b7;
-    background-color: gainsboro;
+    border: solid 0.4px #f26100;
+
   }
 
   .date-head, .date{

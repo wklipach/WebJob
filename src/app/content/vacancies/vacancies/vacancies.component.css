@@ -24,8 +24,7 @@
 
   .botom-line-gainsboro{
     height: 39px;
-    border-bottom: dotted 1px #b7b7b7;
-    background-color: gainsboro;
+    border: solid 1px #f26100;
   }
 
   .date-head, .date{
@@ -147,7 +146,7 @@
     display: inline-block;
     width: 80%;
     vertical-align: top;
-    background-color: gainsboro;
+    border: solid 1px #f26100;
   }
   .date-head, .date{
     width: auto;
@@ -275,7 +274,7 @@
     display: inline-block;
     width: 75%;
     vertical-align: top;
-    background-color: gainsboro;
+    border: solid 1px #f26100;
   }
   .city-head, .city{
     width: auto;
