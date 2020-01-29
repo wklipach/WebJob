@@ -26,15 +26,17 @@
                   [(ngModel)]="contactMethods[i].id">>
 
         <option [value]="0" [selected]="contactMethods[i].id === 0">...</option>
+
+        <ng-container *ngIf = "item.bPublish===0">
+          <option [value]="6" [selected]="contactMethods[i].id === 6">{{'allValue.publishCV' | translate}}</option>
+        </ng-container>
+
         <option [value]="1" [selected]="contactMethods[i].id === 1">{{'allValue.view' | translate}}</option>
         <option [value]="2" [selected]="contactMethods[i].id === 2">{{'allValue.edit' | translate}}</option>
         <option [value]="3" [selected]="contactMethods[i].id === 3">{{'allValue.createcopy' | translate}}</option>
         <option [value]="5" [selected]="contactMethods[i].id === 5">{{'allValue.refreshdate' | translate}}</option>
         <option [value]="4" [selected]="contactMethods[i].id === 4">{{'allValue.delete' | translate}}</option>
 
-        <ng-container *ngIf = "item.bPublish===0">
-        <option [value]="6" [selected]="contactMethods[i].id === 6">{{'allValue.publish' | translate}}</option>
-        </ng-container>
       </select>
       </li>
     </ul>

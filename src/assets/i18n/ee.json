@@ -433,10 +433,12 @@
   "send_mail.or" : "Rakendada teadete saatmine",
   "send_mail.uuu" : "Kui Te tahate saada teateid uutest kuulutustest ,sisestage võtmesõnad mille järgi me saame neid Teie jaoks leida.",
   "send_mail.keywr" : "Võtmesõnad eraldage komadega.",
-  "allValue.publish" : "Publish",
-  "allValue.publishText" : "* После сохранения для опубликования резюме выберите из выпадающего списка строку <Опубликовать>",
-  "allValue.publishVacancyText" : "* После сохранения для опубликования вакансии выберите из выпадающего списка строку <Опубликовать>",
-  "cv-view.succPublish": "Успешно опубликовано",
-  "allValue.publishvacancyquestion": "Вы желаете опубликовать данную вакансию?",
-  "allValue.publishCVquestion": "Вы желаете опубликовать данное резюме?"
+  "allValue.publish" : "Avaldada",
+  "allValue.publishV" : "Avaldada tööpakkumine",
+  "allValue.publishCV" : "Avaldada CV",
+  "allValue.publishText" : "* Kui teie CV pole veel avaldamiseks valmis, võite Te seda teha hiljem leheküljel “Minu CVd”. Selleks peab valima nimekirjast “Valida tegevus” punkt “Avaldada”.",
+  "allValue.publishVacancyText" : "* Kui tööpakkumise kirjeldus pole veel avaldamiseks valmis,võite te seda teha hiljem leheküljel “Kõik tööpakkumised”. Selleks peab valima nimekirjast “Valida tegevus” punkt “Avaldada”.",
+  "cv-view.succPublish" : "Avaldamine on õnnestunud",
+  "allValue.publishvacancyquestion" : "Kas Te soovite avaldada antud tööpakkumist?",
+  "allValue.publishCVquestion" : "Kas te soovite avaldada antud CV?"
 }

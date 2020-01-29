@@ -434,8 +434,10 @@
   "send_mail.uuu" : "If you want to receive newsletters about new announcements, enter keywords by which we can find them for you.",
   "send_mail.keywr" : "Keywords separated by commas.",
   "allValue.publish" : "Publish",
-  "allValue.publishText" : "* After saving, to publish the CV, select the <Publish> line from the drop-down list",
-  "allValue.publishVacancyText" : "* After saving, to publish the vacancy, select the <Publish> line from the drop-down list",
+  "allValue.publishV" : "Post a job",
+  "allValue.publishCV" : "Post a CV",
+  "allValue.publishText" : "* If your CV is not yet ready for publication, you can do it later on the page “My CV”. To do this, select “Publish” from the “Action” drop-down list.",
+  "allValue.publishVacancyText" : "* If the job description is not yet ready for publication, you can do it later on the page “Our vacancies”. To do this, select “Publish” from the “Actions” drop-down list.",
   "cv-view.succPublish": "Successfully published",
   "allValue.publishvacancyquestion": "Would you like to post this job?",
   "allValue.publishCVquestion": "Would you like to post this CV?"
