@@ -166,6 +166,11 @@ label{
     font-weight: bold;
   }
 
+ .attention{
+   position: relative;
+   font-size: 1em;
+   margin: 3% auto;
+ }
 
 }         /* Конец media 1200-4000 */
 
@@ -312,6 +317,12 @@ label{
     border-width: 3px;
     border-radius: 3px;
   }
+  .attention{
+    position: relative;
+    font-size: 1em;
+    margin: 3% auto;
+  }
+
 }    /* Конец media 768-1199 */
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .wrapper {
@@ -483,6 +494,12 @@ label{
     border-style: solid;
     border-width: 3px;
     border-radius: 3px;
+  }
+
+  .attention{
+    position: relative;
+    font-size: 1em;
+    margin: 3% auto;
   }
 
 }   /* Конец media 320-767 */

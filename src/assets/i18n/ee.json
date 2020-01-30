@@ -436,8 +436,8 @@
   "allValue.publish" : "Avaldada",
   "allValue.publishV" : "Avaldada tööpakkumine",
   "allValue.publishCV" : "Avaldada CV",
-  "allValue.publishText" : "* Kui teie CV pole veel avaldamiseks valmis, võite Te seda teha hiljem leheküljel “Minu CVd”. Selleks peab valima nimekirjast “Valida tegevus” punkt “Avaldada”.",
-  "allValue.publishVacancyText" : "* Kui tööpakkumise kirjeldus pole veel avaldamiseks valmis,võite te seda teha hiljem leheküljel “Kõik tööpakkumised”. Selleks peab valima nimekirjast “Valida tegevus” punkt “Avaldada”.",
+  "allValue.publishText" : "* Kui teie CV pole veel avaldamiseks valmis, võite Te seda teha hiljem leheküljel “ Minu resümeed”. Selleks peab valima nimekirjast “Valida tegevus” punkt “Avaldada”.",
+  "allValue.publishVacancyText" : "* Kui tööpakkumise kirjeldus pole veel avaldamiseks valmis,võite te seda teha hiljem leheküljel “Meie tööpakkumised”. Selleks peab valima nimekirjast “Valida tegevus” punkt “Avaldada”.",
   "cv-view.succPublish" : "Avaldamine on õnnestunud",
   "allValue.publishvacancyquestion" : "Kas Te soovite avaldada antud tööpakkumist?",
   "allValue.publishCVquestion" : "Kas te soovite avaldada antud CV?"
