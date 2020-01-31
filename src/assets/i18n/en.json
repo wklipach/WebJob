@@ -440,5 +440,6 @@
   "allValue.publishVacancyText" : "* If the job description is not yet ready for publication, you can do it later on the page “Our vacancies”. To do this, select “Publish” from the “Actions” drop-down list.",
   "cv-view.succPublish": "Successfully published",
   "allValue.publishvacancyquestion": "Would you like to post this job?",
-  "allValue.publishCVquestion": "Would you like to post this CV?"
+  "allValue.publishCVquestion": "Would you like to post this CV?",
+  "allValue.saveandpublish": "Save & publish"
 }

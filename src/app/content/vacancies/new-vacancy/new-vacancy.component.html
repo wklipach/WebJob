@@ -93,9 +93,11 @@
 
       <button type="submit" class="btn-save" [disabled]="newVacancyForm.invalid">{{'allValue.save' | translate}}</button>
       <button class="btn-cancel" routerLink="/vacancies" routerLinkActive="active">{{'allValue.Cancel' | translate}}</button>
+      <button class="btn-savePublish" routerLink="/vacancies" routerLinkActive="active">{{'allValue.saveandpublish' | translate}}</button>
 
-      <div class="attention">{{'allValue.publishVacancyText' | translate}}</div>
+
 
     </form>
   </div>
+  <div class="attention">{{'allValue.publishVacancyText' | translate}}</div>
 </div>

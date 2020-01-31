@@ -58,11 +58,6 @@
   .logotype{
     position: relative;
     display: block;
-    border-width: 1px;
-    border-color: rgb(188, 188, 188);
-    border-style: solid;
-    border-radius: 3px;
-    background-color: rgb(220, 220, 220);
     width: 103px;
     height: 103px;
     margin: 0 auto;
@@ -515,11 +510,6 @@
   .logotype{
     position: relative;
     display: block;
-    border-width: 1px;
-    border-color: rgb(188, 188, 188);
-    border-style: solid;
-    border-radius: 3px;
-    background-color: rgb(220, 220, 220);
     width: 103px;
     height: 103px;
     margin: 0 auto;
@@ -975,9 +965,6 @@
   }
   .logotype{
     position: relative;
-    border: solid 1px rgb(188, 188, 188);
-    border-radius: 3px;
-    background-color: rgb(220, 220, 220);
     width: 103px;
     height: 103px;
     margin-left: 12px;

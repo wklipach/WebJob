@@ -1055,9 +1055,6 @@ label{
   }
   .logotype{
     position: relative;
-    border: solid 1px rgb(188, 188, 188);
-    border-radius: 3px;
-    background-color: rgb(220, 220, 220);
     margin-top: 10px;
     margin-left: 12px;
     float: left;

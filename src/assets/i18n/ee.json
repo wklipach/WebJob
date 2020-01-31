@@ -440,5 +440,6 @@
   "allValue.publishVacancyText" : "* Kui tööpakkumise kirjeldus pole veel avaldamiseks valmis,võite te seda teha hiljem leheküljel “Meie tööpakkumised”. Selleks peab valima nimekirjast “Valida tegevus” punkt “Avaldada”.",
   "cv-view.succPublish" : "Avaldamine on õnnestunud",
   "allValue.publishvacancyquestion" : "Kas Te soovite avaldada antud tööpakkumist?",
-  "allValue.publishCVquestion" : "Kas te soovite avaldada antud CV?"
+  "allValue.publishCVquestion" : "Kas te soovite avaldada antud CV?",
+  "allValue.saveandpublish": "Salvestada ja avaldada"
 }

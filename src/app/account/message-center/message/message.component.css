@@ -50,10 +50,6 @@
 }
 
 .logotype{
-  border-width: 1px;
-  border-color: rgb(188, 188, 188);
-  border-style: solid;
-  border-radius: 3px;
   position: relative;
   width: 103px;
   height: 103px;
@@ -63,11 +59,6 @@
   cursor: pointer;
 }
 .logotype-company{
-  border-width: 1px;
-  border-color: rgb(188, 188, 188);
-  border-style: solid;
-  border-radius: 3px;
-  background-color: rgb(220, 220, 220);
   position: relative;
   width: 130px;
   height: 40px;
@@ -259,10 +250,6 @@ label{
   }
 
   .logotype{
-    border-width: 1px;
-    border-color: rgb(188, 188, 188);
-    border-style: solid;
-    border-radius: 3px;
     position: relative;
     width: 103px;
     height: 103px;
@@ -272,11 +259,6 @@ label{
     cursor: pointer;
   }
   .logotype-company{
-    border-width: 1px;
-    border-color: rgb(188, 188, 188);
-    border-style: solid;
-    border-radius: 3px;
-    background-color: rgb(220, 220, 220);
     position: relative;
     width: 130px;
     height: 40px;
@@ -472,10 +454,6 @@ label{
   }
   .logotypeEr{
     display: inline-block;
-    border-width: 1px;
-    border-color: rgb(188, 188, 188);
-    border-style: solid;
-    border-radius: 3px;
     position: relative;
     width: 130px;
     height: 40px;
@@ -483,10 +461,6 @@ label{
   }
 
   .logotype{
-    border-width: 1px;
-    border-color: rgb(188, 188, 188);
-    border-style: solid;
-    border-radius: 3px;
     position: relative;
     width: 103px;
     height: 103px;
@@ -496,11 +470,6 @@ label{
     cursor: pointer;
   }
   .logotype-company{
-    border-width: 1px;
-    border-color: rgb(188, 188, 188);
-    border-style: solid;
-    border-radius: 3px;
-    background-color: rgb(220, 220, 220);
     position: relative;
     width: 130px;
     height: 40px;
