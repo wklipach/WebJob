@@ -4,7 +4,7 @@
   <div class="top">{{'allValue.newvc' | translate}}</div>
   <div class="box">
 
-    <form [formGroup]="newVacancyForm" novalidate (ngSubmit)="submit()">
+    <form [formGroup]="newVacancyForm">
 
       <label class="shortTitle">{{'allValue.namevc' | translate}}</label>
       <input type="text" class="inputVacancyShortTitle" maxlength="90" formControlName="inputVacancyShortTitle"
@@ -91,9 +91,9 @@
             <!-- Отрасль -->
       <app-cv_industry></app-cv_industry>
 
-      <button type="submit" class="btn-save" [disabled]="newVacancyForm.invalid">{{'allValue.save' | translate}}</button>
+      <button class="btn-save" [disabled]="newVacancyForm.invalid" (click)="submit()">{{'allValue.save' | translate}}</button>
       <button class="btn-cancel" routerLink="/vacancies" routerLinkActive="active">{{'allValue.Cancel' | translate}}</button>
-      <button class="btn-savePublish" routerLink="/vacancies" routerLinkActive="active">{{'allValue.saveandpublish' | translate}}</button>
+      <button class="btn-savePublish" [disabled]="newVacancyForm.invalid" (click)="publicVacancy()">{{'allValue.saveandpublish' | translate}}</button>
 
 
 

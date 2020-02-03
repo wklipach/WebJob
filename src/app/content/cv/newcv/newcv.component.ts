@@ -240,10 +240,11 @@ chf() {
 }
 
   /* сохранение данных */
-  newcv() {
+  newcv(bPublish: boolean = false) {
 
     // получаем изначальные данные без динамических блоков
     let MyCv: CV = this.loadMainCV();
+    MyCv.bPublish =  bPublish;
 
 
     //console.log('CV',MyCv);

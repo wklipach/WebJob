@@ -32,6 +32,8 @@ export class Vacancy{
   // Требования
   VacancyRequirements: string;
 
+  bPublish: boolean = false;
+
 }
 
 export class  dataVacancy extends Vacancy {

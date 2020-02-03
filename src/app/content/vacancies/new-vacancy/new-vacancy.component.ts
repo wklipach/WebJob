@@ -169,7 +169,7 @@ export class NewVacancyComponent implements OnInit {
 
   }
 
-  submit() {
+  submit(bPublish: boolean = false) {
 
     if (this.id_user <= 0) {
       return;
@@ -244,6 +244,8 @@ export class NewVacancyComponent implements OnInit {
     // дата создания вакансии
     MyVacancy.DateTimeCreate = currentDate;
 
+    MyVacancy.bPublish = bPublish;
+
     return this.httpService.postNewVacancy(MyVacancy).subscribe(
       () => {
 
@@ -252,6 +254,13 @@ export class NewVacancyComponent implements OnInit {
       }
     );
 
+  }
+
+
+  publicVacancy() {
+    //
+    this.submit(true);
+    //
   }
 
 

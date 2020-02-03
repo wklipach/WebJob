@@ -30,6 +30,8 @@ export class CV{
   //описание умений словами
   sSkills: string = '';
   sEducation: string = '';
+
+  bPublish: boolean = false;
 }
 
 export class  dataCV extends CV {
